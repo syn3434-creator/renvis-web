@@ -63,8 +63,8 @@ nav{display:flex;gap:28px;font-size:.82rem;letter-spacing:.08em}
 .machine-body{padding:24px}
 .machine h3{margin:0;font-size:1.35rem}.machine p{font-size:.88rem;margin-bottom:0}
 .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
-.portrait{background:radial-gradient(circle at 50% 40%,#252c35,#0c0f14 68%);min-height:560px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;border:1px solid var(--line)}
-.portrait img{max-height:500px;width:auto;filter:drop-shadow(0 15px 30px rgba(0,0,0,.45))}
+.portrait{background:#fff;min-height:560px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--line)}
+.portrait img{width:100%;height:100%;object-fit:contain;filter:none}
 .quote{font-size:clamp(1.7rem,3.3vw,3.3rem);line-height:1.35;color:white;font-weight:700;letter-spacing:-.03em}
 .company{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
 .info{border-top:1px solid var(--line)}
@@ -84,7 +84,7 @@ footer{padding:48px 0 28px}
  .hero h1{font-size:clamp(3.2rem,18vw,6rem)}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:none}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
  .section{padding:82px 0}.section-head,.about,.company{grid-template-columns:1fr;gap:28px}.services{grid-template-columns:1fr}.service{min-height:360px}
  .ba-grid{grid-template-columns:1fr}.arrow{transform:rotate(90deg);font-size:2rem}.rentals{grid-template-columns:1fr}.machine img{aspect-ratio:16/11}
- .portrait{min-height:430px}.portrait img{max-height:390px}.cta-grid,.footer-top{align-items:flex-start;flex-direction:column}.row{grid-template-columns:1fr;gap:5px}
+ .portrait{min-height:430px}.portrait img{max-height:none}.cta-grid,.footer-top{align-items:flex-start;flex-direction:column}.row{grid-template-columns:1fr;gap:5px}
 }
 </style>
 </head>
