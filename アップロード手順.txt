@@ -1,0 +1,17 @@
+RENVIS GitHub完全入替版
+
+【重要】
+このZIPは解凍してから使用してください。ZIP自体はアップロードしません。
+
+【作業手順】
+1. GitHubの Renvis-web を開く
+2. 現在あるファイルをすべて削除して、Commit changes
+3. Add file → Upload files
+4. このフォルダ内のファイルをすべて選択してアップロード
+5. Commit changes
+6. GitHub Pagesの反映を1〜3分待って再読み込み
+
+【正しい状態】
+GitHubの一番上の階層に index.html があり、
+その横に hero.webp、renvis-logo.png などの画像が並びます。
+assetsフォルダは使いません。

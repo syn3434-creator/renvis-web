@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="株式会社レンビス。建機アタッチメントのレンタル・修理・販売・オーダーメイド。">
+<title>株式会社レンビス | RENVIS</title>
+<style>
+:root{
+  --bg:#080a0d; --panel:#10141a; --panel2:#151a21; --text:#f4f5f7;
+  --muted:#a9b0ba; --line:rgba(255,255,255,.12); --silver:#cfd4db;
+  --blue:#2f7df4; --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.75}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--silver);font-weight:700}
+h2{font-size:clamp(2rem,5vw,4.4rem);line-height:1.05;margin:.3em 0 .45em;letter-spacing:-.04em}
+p{color:var(--muted)}
+header{position:fixed;z-index:50;inset:0 0 auto;height:88px;display:flex;align-items:center;border-bottom:1px solid transparent;transition:.3s}
+header.scrolled{background:rgba(5,7,10,.86);backdrop-filter:blur(18px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;width:min(var(--max),calc(100% - 48px));margin:auto}
+.logo{width:230px}
+nav{display:flex;gap:28px;font-size:.82rem;letter-spacing:.08em}
+.contact-top{border:1px solid rgba(255,255,255,.35);padding:11px 18px}
+.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url("hero.webp") center/cover no-repeat;transform:scale(1.03)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,5,8,.9) 0%,rgba(3,5,8,.45) 48%,rgba(3,5,8,.18) 100%),linear-gradient(0deg,#080a0d 0%,transparent 38%)}
+.hero-content{position:relative;z-index:2;padding:180px 0 100px;width:100%}
+.hero h1{font-size:clamp(3.8rem,10vw,9rem);line-height:.88;letter-spacing:-.065em;margin:.18em 0 .22em;font-weight:800}
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.7)}
+.hero-copy{max-width:620px;font-size:clamp(1rem,1.5vw,1.25rem);color:#f0f2f4}
+.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-width:190px;padding:15px 22px;border:1px solid rgba(255,255,255,.25);font-weight:700;font-size:.86rem;letter-spacing:.08em;transition:.25s}
+.btn.primary{background:#fff;color:#080a0d;border-color:#fff}
+.btn:hover{transform:translateY(-2px)}
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:34px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat b{display:block;font-size:1.25rem;color:#fff}.stat span{font-size:.78rem;color:var(--muted)}
+.section{padding:120px 0}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:52px}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.service{min-height:420px;position:relative;overflow:hidden;background:#111;border:1px solid var(--line)}
+.service img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:saturate(.8) brightness(.72);transition:.7s}
+.service:hover img{transform:scale(1.035);filter:saturate(1) brightness(.8)}
+.service:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,4,6,.92),transparent 70%)}
+.service-copy{position:absolute;z-index:2;inset:auto 32px 28px}
+.service-copy small{color:#d8dde4;letter-spacing:.2em}.service-copy h3{font-size:2rem;margin:.2em 0}
+.repair-block{background:linear-gradient(140deg,#11161d,#090b0f);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ba-grid{display:grid;grid-template-columns:1fr 84px 1fr;align-items:center;gap:20px}
+.ba-card{position:relative;background:#0b0e12;border:1px solid var(--line);overflow:hidden}
+.ba-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.label{position:absolute;left:16px;top:16px;background:rgba(4,6,9,.86);padding:8px 13px;font-size:.72rem;letter-spacing:.18em}
+.arrow{text-align:center;font-size:2.5rem;color:var(--silver)}
+.rentals{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.machine{background:var(--panel);border:1px solid var(--line)}
+.machine img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.machine-body{padding:24px}
+.machine h3{margin:0;font-size:1.35rem}.machine p{font-size:.88rem;margin-bottom:0}
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
+.portrait{background:radial-gradient(circle at 50% 40%,#252c35,#0c0f14 68%);min-height:560px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;border:1px solid var(--line)}
+.portrait img{max-height:500px;width:auto;filter:drop-shadow(0 15px 30px rgba(0,0,0,.45))}
+.quote{font-size:clamp(1.7rem,3.3vw,3.3rem);line-height:1.35;color:white;font-weight:700;letter-spacing:-.03em}
+.company{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.info{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:160px 1fr;padding:18px 0;border-bottom:1px solid var(--line)}
+.cta{background:#e9edf2;color:#080a0d;padding:90px 0}
+.cta p{color:#4b535e}.cta-grid{display:flex;justify-content:space-between;align-items:end;gap:40px}
+.cta .btn{border-color:#111}.cta .btn.primary{background:#080a0d;color:white}
+footer{padding:48px 0 28px}
+.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:center}
+.footer-logo{width:210px;opacity:.9}
+.copyright{font-size:.7rem;color:#707784;margin-top:40px;border-top:1px solid var(--line);padding-top:20px}
+.reveal{opacity:0;transform:translateY(24px);transition:.8s ease}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){
+ header{height:70px}.nav{width:calc(100% - 28px)}.logo{width:175px}nav a:not(.contact-top){display:none}.contact-top{padding:8px 12px}
+ .wrap{width:calc(100% - 28px)}.hero-bg{background-position:56% center}.hero-content{padding:150px 0 70px}
+ .hero h1{font-size:clamp(3.2rem,18vw,6rem)}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:none}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .section{padding:82px 0}.section-head,.about,.company{grid-template-columns:1fr;gap:28px}.services{grid-template-columns:1fr}.service{min-height:360px}
+ .ba-grid{grid-template-columns:1fr}.arrow{transform:rotate(90deg);font-size:2rem}.rentals{grid-template-columns:1fr}.machine img{aspect-ratio:16/11}
+ .portrait{min-height:430px}.portrait img{max-height:390px}.cta-grid,.footer-top{align-items:flex-start;flex-direction:column}.row{grid-template-columns:1fr;gap:5px}
+}
+</style>
+</head>
+<body>
+<header id="header">
+  <div class="nav">
+    <a href="#top"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
+    <nav>
+      <a href="#service">SERVICE</a><a href="#repair">REPAIR</a><a href="#rental">RENTAL</a><a href="#company">COMPANY</a>
+      <a class="contact-top" href="tel:0946428311">0946-42-8311</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="wrap">
+      <div class="eyebrow">Attachment Professional / Fukuoka</div>
+      <h1>BE A<br><span>PERFORMER.</span></h1>
+      <p class="hero-copy">建機アタッチメントのレンタル・修理・販売・管理。<br>現場を止めないために、技術とスピードで応える。</p>
+      <div class="hero-actions"><a class="btn primary" href="tel:0946428311">電話で問い合わせ</a><a class="btn" href="#service">事業内容を見る</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats"><div class="wrap stats-grid">
+  <div class="stat"><b>RENTAL</b><span>建機アタッチメントレンタル</span></div>
+  <div class="stat"><b>REPAIR</b><span>修理・肉盛り・再生</span></div>
+  <div class="stat"><b>SALES</b><span>新品・中古販売</span></div>
+  <div class="stat"><b>CUSTOM</b><span>オーダーメイド製作</span></div>
+</div></section>
+
+<section class="section" id="service"><div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">Our Service</div><h2>現場に必要なものを、<br>必要なかたちで。</h2></div><p>レンタルだけで終わらない。修理、販売、管理、そして既製品では届かないご要望への特注製作まで、現場目線で一貫して支えます。</p></div>
+  <div class="services">
+    <article class="service reveal"><img src="rental-fx55.webp" alt=""><div class="service-copy"><small>01 / RENTAL</small><h3>レンタル</h3></div></article>
+    <article class="service reveal"><img src="repair-after-top.webp" alt=""><div class="service-copy"><small>02 / REPAIR</small><h3>修理・再生</h3></div></article>
+    <article class="service reveal"><img src="rental-tswd1700.webp" alt=""><div class="service-copy"><small>03 / SALES</small><h3>販売</h3></div></article>
+    <article class="service reveal"><img src="hero.webp" alt=""><div class="service-copy"><small>04 / CUSTOM MADE</small><h3>オーダーメイド</h3></div></article>
+  </div>
+</div></section>
+
+<section class="section repair-block" id="repair"><div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">Repair & Rebuild</div><h2>傷は歴史。<br>修理は未来。</h2></div><p>摩耗した大割機を肉盛り・再生。交換だけではなく、使い続けるための最適な方法を考えます。</p></div>
+  <div class="ba-grid reveal">
+    <div class="ba-card"><span class="label">BEFORE</span><img src="repair-before-front.webp" alt="修理前"></div>
+    <div class="arrow">→</div>
+    <div class="ba-card"><span class="label">AFTER</span><img src="repair-after-front.webp" alt="修理後"></div>
+  </div>
+</div></section>
+
+<section class="section" id="rental"><div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">Rental Lineup</div><h2>現場に合わせて、<br>最適な一台を。</h2></div><p>小型から大型まで、用途に合わせたアタッチメントをご用意しています。機種選定もご相談ください。</p></div>
+  <div class="rentals">
+    <article class="machine reveal"><img src="rental-fx55.webp" alt="FX55α"><div class="machine-body"><h3>FX55α</h3><p>油圧ブレーカー</p></div></article>
+    <article class="machine reveal"><img src="rental-sv30.webp" alt="SV30"><div class="machine-body"><h3>SV30</h3><p>小割圧砕機</p></div></article>
+    <article class="machine reveal"><img src="rental-tswd1700.webp" alt="TS-WD1700V-2"><div class="machine-body"><h3>TS-WD1700V-2</h3><p>1.6クラス 大割機</p></div></article>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap about">
+  <div class="portrait reveal"><img src="president.png" alt="代表イラスト"></div>
+  <div class="reveal"><div class="eyebrow">Our Philosophy</div><p class="quote">「できません」ではなく、<br>どうすればできるかを考える。</p><p>現場の困りごとに、答えはひとつではありません。レンビスは機械と現場を知るプロとして、スピードと技術で最善の一手を形にします。</p></div>
+</div></section>
+
+<section class="section" id="company"><div class="wrap company">
+  <div class="reveal"><div class="eyebrow">Company</div><h2>株式会社<br>レンビス</h2><p>建機アタッチメントのレンタル・修理・販売・管理</p></div>
+  <div class="info reveal">
+    <div class="row"><b>本社</b><span>福岡県朝倉郡筑前町松延804-1</span></div>
+    <div class="row"><b>機材ヤード</b><span>福岡県朝倉郡筑前町東小田字切坑1983-1</span></div>
+    <div class="row"><b>レンタルヤード</b><span>福岡県朝倉郡筑前町松延807-3</span></div>
+    <div class="row"><b>TEL</b><span><a href="tel:0946428311">0946-42-8311</a></span></div>
+    <div class="row"><b>FAX</b><span>0946-42-8312</span></div>
+  </div>
+</div></section>
+
+<section class="cta"><div class="wrap cta-grid">
+  <div><div class="eyebrow" style="color:#58616d">Contact</div><h2>現場の困りごと、<br>まずはご相談ください。</h2><p>機種選び、修理、納期、特注製作まで、お電話で承ります。</p></div>
+  <a class="btn primary" href="tel:0946428311">0946-42-8311</a>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div class="footer-top"><img class="footer-logo" src="renvis-logo.png" alt="RENVIS"><div>株式会社レンビス<br><span style="color:#8b929c;font-size:.85rem">Fukuoka, Japan</span></div></div><div class="copyright">© RENVIS Inc. All Rights Reserved.</div></div></footer>
+
+<script>
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body></html>
