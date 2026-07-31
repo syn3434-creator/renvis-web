@@ -3,242 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="株式会社レンビス。建機アタッチメントのレンタル・修理・販売・オーダーメイド。">
+<meta name="description" content="株式会社レンビス。建機アタッチメントのレンタル・修理・中古販売・管理、ピン・ブッシュ・部品製作。">
 <title>株式会社レンビス | RENVIS</title>
 <style>
-:root{
-  --bg:#080a0d; --panel:#10141a; --panel2:#151a21; --text:#f4f5f7;
-  --muted:#a9b0ba; --line:rgba(255,255,255,.12); --silver:#cfd4db;
-  --blue:#2f7df4; --max:1240px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-#service,#repair,#rental,#sales,#custom,#company{scroll-margin-top:96px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.75}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
-.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--silver);font-weight:700}
-.hero .eyebrow{display:inline-flex;flex-direction:column;gap:12px}
-.hero .eyebrow:after{content:"";display:block;width:92px;height:1px;background:rgba(220,225,232,.55)}
-h2{font-size:clamp(2rem,5vw,4.4rem);line-height:1.05;margin:.3em 0 .45em;letter-spacing:-.04em}
-p{color:var(--muted)}
-header{position:fixed;z-index:50;inset:0 0 auto;height:88px;display:flex;align-items:center;border-bottom:1px solid transparent;transition:.3s}
-header.scrolled{background:rgba(5,7,10,.86);backdrop-filter:blur(18px);border-color:var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;width:min(var(--max),calc(100% - 48px));margin:auto}
-.logo{
-  width:270px;
-  height:auto;
-  background:none;
-  mix-blend-mode:screen;
-  opacity:.94;
-  filter:drop-shadow(0 2px 8px rgba(0,0,0,.38));
-}
-nav{display:flex;gap:27px;font-size:.76rem;letter-spacing:.09em}
-.nav-actions{display:flex;align-items:center;gap:10px}
-.social-icon{
-  width:40px;height:40px;border:1px solid rgba(255,255,255,.24);
-  display:inline-flex;align-items:center;justify-content:center;
-  transition:.25s;background:rgba(5,7,10,.18)
-}
-.social-icon:hover{background:rgba(255,255,255,.08);transform:translateY(-2px);border-color:rgba(255,255,255,.55)}
-.social-icon svg{width:19px;height:19px;fill:none;stroke:#edf0f4;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.tiktok-icon svg{fill:#edf0f4;stroke:none}
-.contact-top{border:1px solid rgba(255,255,255,.35);padding:11px 18px}
-.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url("hero.webp") center/cover no-repeat;transform:scale(1.03)}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,5,8,.9) 0%,rgba(3,5,8,.45) 48%,rgba(3,5,8,.18) 100%),linear-gradient(0deg,#080a0d 0%,transparent 38%)}
-.hero-content{position:relative;z-index:2;padding:180px 0 100px;width:100%}
-.hero h1{
-  margin:30px 0 24px;
-  font-size:clamp(3.1rem,6.3vw,6.8rem);
-  line-height:.96;
-  letter-spacing:-.055em;
-  font-weight:650;
-  color:rgba(236,239,243,.58);
-}
-.hero h1 .first{color:rgba(246,248,250,.72)}
-.hero h1 .rest{
-  color:transparent;
-  -webkit-text-stroke:1px rgba(225,230,236,.42);
-  text-stroke:1px rgba(225,230,236,.42);
-}
-.hero-copy{max-width:620px;font-size:clamp(1rem,1.5vw,1.25rem);color:#f0f2f4}
-.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;min-width:190px;
-  padding:15px 22px;border:1px solid rgba(255,255,255,.28);
-  font-weight:700;font-size:.86rem;letter-spacing:.08em;transition:.25s;
-  position:relative;overflow:hidden
-}
-.btn:before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(110deg,transparent 28%,rgba(255,255,255,.25),transparent 72%);
-  transform:translateX(-130%);transition:transform .72s ease
-}
-.btn:hover:before{transform:translateX(130%)}
-.btn.primary{background:linear-gradient(180deg,#f7f8f9,#d7dbe0);color:#080a0d;border-color:#eef1f4}
-.btn:hover{transform:translateY(-2px)}
-.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{
-  padding:34px 24px;border-right:1px solid var(--line);
-  display:block;position:relative;transition:.25s;cursor:pointer
-}
-.stat:after{
-  content:"↓";position:absolute;right:22px;top:50%;transform:translateY(-50%);
-  color:rgba(255,255,255,.28);transition:.25s
-}
-.stat:hover{background:rgba(255,255,255,.035)}
-.stat:hover:after{color:#fff;transform:translateY(-35%)}
-.stat:last-child{border-right:none}
-.stat b{display:block;font-size:1.25rem;color:#fff}.stat span{font-size:.78rem;color:var(--muted)}
-.section{padding:120px 0}
-.section-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:52px}
-.services{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.service{min-height:420px;position:relative;overflow:hidden;background:#111;border:1px solid var(--line)}
-.service img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:saturate(.8) brightness(.72);transition:.7s}
-.service:hover img{transform:scale(1.035);filter:saturate(1) brightness(.8)}
-.service:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,4,6,.92),transparent 70%)}
-.service-copy{position:absolute;z-index:2;inset:auto 32px 28px}
-.service-copy small{color:#d8dde4;letter-spacing:.2em}.service-copy h3{font-size:2rem;margin:.2em 0}
-.repair-block{background:linear-gradient(140deg,#11161d,#090b0f);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.ba-grid{display:grid;grid-template-columns:1fr 84px 1fr;align-items:center;gap:20px}
-.ba-card{position:relative;background:#0b0e12;border:1px solid var(--line);overflow:hidden}
-.ba-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.label{position:absolute;left:16px;top:16px;background:rgba(4,6,9,.86);padding:8px 13px;font-size:.72rem;letter-spacing:.18em}
-.arrow{text-align:center;font-size:2.5rem;color:var(--silver)}
-.rentals{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.machine{background:var(--panel);border:1px solid var(--line)}
-.machine img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.machine-body{padding:24px}
-.machine h3{margin:0;font-size:1.35rem}.machine p{font-size:.88rem;margin-bottom:0}
-.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
-.portrait{background:radial-gradient(circle at 50% 40%,#252c35,#0c0f14 68%);min-height:560px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;border:1px solid var(--line)}
-.portrait img{max-height:500px;width:auto;filter:drop-shadow(0 15px 30px rgba(0,0,0,.45))}
-.quote{font-size:clamp(1.7rem,3.3vw,3.3rem);line-height:1.35;color:white;font-weight:700;letter-spacing:-.03em}
-.company{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
-.info{border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:160px 1fr;padding:18px 0;border-bottom:1px solid var(--line)}
-.cta{background:#e9edf2;color:#080a0d;padding:90px 0}
-.cta p{color:#4b535e}.cta-grid{display:flex;justify-content:space-between;align-items:end;gap:40px}
-.cta .btn{border-color:#111}.cta .btn.primary{background:#080a0d;color:white}
-footer{padding:48px 0 28px}
-.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:center}
-.footer-logo{width:235px;opacity:.92;filter:drop-shadow(0 2px 8px rgba(0,0,0,.28))}
-.copyright{font-size:.7rem;color:#707784;margin-top:40px;border-top:1px solid var(--line);padding-top:20px}
-.reveal{opacity:0;transform:translateY(24px);transition:.8s ease}
-.reveal.show{opacity:1;transform:none}
-@media(max-width:850px){
- header{height:70px}.nav{width:calc(100% - 28px)}.logo{width:205px}nav>a{display:none}.nav-actions{gap:6px}.social-icon{width:36px;height:36px}.contact-top{padding:8px 10px;font-size:.7rem}
- .wrap{width:calc(100% - 28px)}.hero-bg{background-position:56% center}.hero-content{padding:150px 0 70px}
- .hero h1{font-size:clamp(2.55rem,12.5vw,4.6rem);margin-top:24px}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:none}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
- .section{padding:82px 0}.section-head,.about,.company{grid-template-columns:1fr;gap:28px}.services{grid-template-columns:1fr}.service{min-height:360px}
- .ba-grid{grid-template-columns:1fr}.arrow{transform:rotate(90deg);font-size:2rem}.rentals{grid-template-columns:1fr}.machine img{aspect-ratio:16/11}
- .portrait{min-height:430px}.portrait img{max-height:390px}.cta-grid,.footer-top{align-items:flex-start;flex-direction:column}.row{grid-template-columns:1fr;gap:5px}
-}
+:root{--bg:#07090c;--panel:#10141a;--panel2:#151a21;--text:#f4f6f8;--muted:#aab1bb;--line:rgba(255,255,255,.13);--silver:#d5dae0;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.75}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.section{padding:118px 0}.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--silver);font-weight:700}h2{font-size:clamp(2rem,5vw,4.4rem);line-height:1.08;margin:.3em 0 .45em;letter-spacing:-.04em}p{color:var(--muted)}#service,#repair,#rental,#used,#management,#company,#sns{scroll-margin-top:88px}
+header{position:fixed;z-index:50;inset:0 0 auto;height:88px;display:flex;align-items:center;border-bottom:1px solid transparent;transition:.3s}header.scrolled{background:rgba(5,7,10,.9);backdrop-filter:blur(18px);border-color:var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;width:min(var(--max),calc(100% - 48px));margin:auto}.logo{width:270px;mix-blend-mode:screen;filter:drop-shadow(0 2px 10px rgba(0,0,0,.5))}.nav-links{display:flex;align-items:center;gap:25px;font-size:.75rem;letter-spacing:.08em}.contact-top{border:1px solid rgba(255,255,255,.4);padding:10px 16px}
+.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden}.hero-bg{position:absolute;inset:0;background:url("hero.webp") center/cover no-repeat;transform:scale(1.03)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,5,8,.94),rgba(3,5,8,.48) 52%,rgba(3,5,8,.15)),linear-gradient(0deg,#07090c 0%,transparent 42%)}.hero-content{position:relative;z-index:2;padding:180px 0 96px;width:100%}.hero h1{margin:28px 0 22px;font-size:clamp(2.2rem,4vw,4.2rem);line-height:1;letter-spacing:-.045em;font-weight:500;color:rgba(244,247,250,.48)}.hero-copy{max-width:650px;font-size:clamp(1rem,1.55vw,1.25rem);color:#f1f3f5}.hero-actions{display:flex;gap:13px;margin-top:32px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-width:190px;padding:15px 22px;border:1px solid rgba(255,255,255,.3);font-weight:700;font-size:.84rem;letter-spacing:.07em;transition:.25s}.btn.primary{background:linear-gradient(180deg,#f7f8f9,#d4d9df);color:#080a0d;border-color:#eef1f4}.btn:hover{transform:translateY(-2px);background-color:rgba(255,255,255,.06)}
+.hero-social{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}.sns-hero{min-width:190px;padding:14px 20px;border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(5,7,10,.45);backdrop-filter:blur(7px);font-size:.86rem;font-weight:700}.sns-dot{width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 16px rgba(255,255,255,.75)}
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}.stat{padding:34px 24px;border-right:1px solid var(--line);position:relative;transition:.25s}.stat:last-child{border-right:none}.stat:hover{background:rgba(255,255,255,.035)}.stat b{display:block;font-size:1.2rem}.stat span{font-size:.78rem;color:var(--muted)}.stat:after{content:"↘";position:absolute;right:21px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.3)}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:52px}.services{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.service{min-height:410px;position:relative;overflow:hidden;background:#111;border:1px solid var(--line)}.service img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:saturate(.78) brightness(.68);transition:.7s}.service:hover img{transform:scale(1.035);filter:saturate(1) brightness(.78)}.service:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,4,6,.94),transparent 72%)}.service-copy{position:absolute;z-index:2;inset:auto 30px 27px}.service-copy small{color:#d8dde4;letter-spacing:.2em}.service-copy h3{font-size:2rem;margin:.2em 0}.service-copy p{margin:0;max-width:520px;font-size:.88rem}
+.repair-block{background:linear-gradient(140deg,#11161d,#090b0f);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.ba-grid{display:grid;grid-template-columns:1fr 84px 1fr;align-items:center;gap:20px}.ba-card{position:relative;background:#0b0e12;border:1px solid var(--line);overflow:hidden}.ba-card img{width:100%;aspect-ratio:4/3;object-fit:cover}.label{position:absolute;left:16px;top:16px;background:rgba(4,6,9,.86);padding:8px 13px;font-size:.72rem;letter-spacing:.18em}.arrow{text-align:center;font-size:2.5rem;color:var(--silver)}
+.rentals{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.machine{background:var(--panel);border:1px solid var(--line)}.machine img{width:100%;aspect-ratio:4/5;object-fit:cover}.machine-body{padding:24px}.machine h3{margin:0;font-size:1.35rem}.machine p{font-size:.88rem;margin-bottom:0}
+.feature{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}.feature-image{position:relative;border:1px solid var(--line);overflow:hidden;background:#111}.feature-image img{width:100%;aspect-ratio:16/11;object-fit:cover;filter:saturate(.85) brightness(.78)}.feature-list{border-top:1px solid var(--line);margin-top:28px}.feature-row{display:grid;grid-template-columns:54px 1fr;padding:17px 0;border-bottom:1px solid var(--line)}.feature-row b{color:#fff}.feature-row span{color:var(--muted)}
+.management{background:#0d1116;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.management-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}.management-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}.management-card{padding:28px;border:1px solid var(--line);background:linear-gradient(145deg,#151a21,#0b0e12)}.management-card b{display:block;font-size:1.08rem;margin-bottom:8px}.management-card p{font-size:.86rem;margin:0}.partner{margin-top:22px;padding:22px;border-left:2px solid var(--silver);background:rgba(255,255,255,.025)}
+.sns-section{padding:90px 0;background:linear-gradient(135deg,#e9edf2,#cdd3da);color:#080a0d}.sns-section p{color:#4e5660}.sns-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}.sns-card{padding:34px;border:1px solid rgba(0,0,0,.2);display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.45);transition:.25s}.sns-card:hover{transform:translateY(-3px);background:#fff}.sns-card b{font-size:1.45rem}.sns-card span{font-size:.82rem;color:#59616c}
+.company{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.info{border-top:1px solid var(--line)}.row{display:grid;grid-template-columns:170px 1fr;padding:18px 0;border-bottom:1px solid var(--line)}.cta{background:#e9edf2;color:#080a0d;padding:90px 0}.cta p{color:#4b535e}.cta-grid{display:flex;justify-content:space-between;align-items:end;gap:40px}.cta .btn.primary{background:#080a0d;color:white}.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:center}footer{padding:48px 0 28px}.footer-logo{width:235px;mix-blend-mode:screen}.copyright{font-size:.7rem;color:#707784;margin-top:40px;border-top:1px solid var(--line);padding-top:20px}.reveal{opacity:0;transform:translateY(24px);transition:.8s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){header{height:70px}.nav{width:calc(100% - 28px)}.logo{width:205px}.nav-links>a:not(.contact-top){display:none}.contact-top{padding:8px 10px;font-size:.7rem}.wrap{width:calc(100% - 28px)}.hero-content{padding:150px 0 68px}.hero h1{font-size:clamp(2.05rem,10vw,3.4rem)}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:none}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.section{padding:82px 0}.section-head,.feature,.management-grid,.company{grid-template-columns:1fr;gap:30px}.services{grid-template-columns:1fr}.service{min-height:350px}.ba-grid{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.rentals{grid-template-columns:1fr}.machine img{aspect-ratio:16/11}.management-cards,.sns-grid{grid-template-columns:1fr}.cta-grid,.footer-top{align-items:flex-start;flex-direction:column}.row{grid-template-columns:1fr;gap:5px}.sns-hero{min-width:0;flex:1}}
 </style>
 </head>
 <body>
-<header id="header">
-  <div class="nav">
-    <a href="#top"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
-    <nav>
-      <a href="#service">SERVICE</a><a href="#repair">REPAIR</a><a href="#rental">RENTAL</a><a href="#company">COMPANY</a>
-      <span class="nav-actions">
-        <a class="social-icon" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="#edf0f4" stroke="none"/></svg>
-        </a>
-        <a class="social-icon tiktok-icon" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 3.2c.5 2.7 2 4.3 4.8 4.8v3.2c-1.8 0-3.4-.6-4.8-1.6v6.2a5.7 5.7 0 1 1-5-5.6v3.3a2.5 2.5 0 1 0 1.8 2.3V3.2h3.2z"/></svg>
-        </a>
-        <a class="contact-top" href="tel:0946428311">0946-42-8311</a>
-      </span>
-    </nav>
-  </div>
-</header>
-
+<header id="header"><div class="nav"><a href="#top"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="#rental">RENTAL</a><a href="#repair">REPAIR</a><a href="#used">USED SALES</a><a href="#management">MANAGEMENT</a><a href="#company">COMPANY</a><a class="contact-top" href="tel:0946428311">0946-42-8311</a></nav></div></header>
 <main id="top">
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="wrap">
-      <div class="eyebrow">Attachment Professional / Fukuoka</div>
-      <h1><span class="first">B</span><span class="rest">e a performer.</span></h1>
-      <p class="hero-copy">建機アタッチメントのレンタル・修理・販売・管理。<br>現場を止めないために、技術とスピードで応える。</p>
-      <div class="hero-actions"><a class="btn primary" href="tel:0946428311">電話で問い合わせ</a><a class="btn" href="#service">事業内容を見る</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="stats"><div class="wrap stats-grid">
-  <a class="stat" href="#rental"><b>RENTAL</b><span>建機アタッチメントレンタル</span></a>
-  <a class="stat" href="#repair"><b>REPAIR</b><span>修理・肉盛り・再生</span></a>
-  <a class="stat" href="#sales"><b>SALES</b><span>新品・中古販売</span></a>
-  <a class="stat" href="#custom"><b>CUSTOM</b><span>オーダーメイド製作</span></a>
-</div></section>
-
-<section class="section" id="service"><div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">Our Service</div><h2>現場に必要なものを、<br>必要なかたちで。</h2></div><p>レンタルだけで終わらない。修理、販売、管理、そして既製品では届かないご要望への特注製作まで、現場目線で一貫して支えます。</p></div>
-  <div class="services">
-    <article class="service reveal"><img src="rental-fx55.webp" alt=""><div class="service-copy"><small>01 / RENTAL</small><h3>レンタル</h3></div></article>
-    <article class="service reveal"><img src="repair-after-top.webp" alt=""><div class="service-copy"><small>02 / REPAIR</small><h3>修理・再生</h3></div></article>
-    <article class="service reveal" id="sales"><img src="rental-tswd1700.webp" alt=""><div class="service-copy"><small>03 / SALES</small><h3>販売</h3></div></article>
-    <article class="service reveal" id="custom"><img src="hero.webp" alt=""><div class="service-copy"><small>04 / CUSTOM MADE</small><h3>オーダーメイド</h3></div></article>
-  </div>
-</div></section>
-
-<section class="section repair-block" id="repair"><div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">Repair & Rebuild</div><h2>傷は歴史。<br>修理は未来。</h2></div><p>摩耗した大割機を肉盛り・再生。交換だけではなく、使い続けるための最適な方法を考えます。</p></div>
-  <div class="ba-grid reveal">
-    <div class="ba-card"><span class="label">BEFORE</span><img src="repair-before-front.webp" alt="修理前"></div>
-    <div class="arrow">→</div>
-    <div class="ba-card"><span class="label">AFTER</span><img src="repair-after-front.webp" alt="修理後"></div>
-  </div>
-</div></section>
-
-<section class="section" id="rental"><div class="wrap">
-  <div class="section-head reveal"><div><div class="eyebrow">Rental Lineup</div><h2>現場に合わせて、<br>最適な一台を。</h2></div><p>小型から大型まで、用途に合わせたアタッチメントをご用意しています。機種選定もご相談ください。</p></div>
-  <div class="rentals">
-    <article class="machine reveal"><img src="rental-fx55.webp" alt="FX55α"><div class="machine-body"><h3>FX55α</h3><p>油圧ブレーカー</p></div></article>
-    <article class="machine reveal"><img src="rental-sv30.webp" alt="SV30"><div class="machine-body"><h3>SV30</h3><p>小割圧砕機</p></div></article>
-    <article class="machine reveal"><img src="rental-tswd1700.webp" alt="TS-WD1700V-2"><div class="machine-body"><h3>TS-WD1700V-2</h3><p>1.6クラス 大割機</p></div></article>
-  </div>
-</div></section>
-
-
-<section class="section" id="company"><div class="wrap company">
-  <div class="reveal"><div class="eyebrow">Company</div><h2>株式会社<br>レンビス</h2><p>建機アタッチメントのレンタル・修理・販売・管理</p></div>
-  <div class="info reveal">
-    <div class="row"><b>本社</b><span>福岡県朝倉郡筑前町松延804-1</span></div>
-    <div class="row"><b>機材ヤード</b><span>福岡県朝倉郡筑前町東小田字切坑1983-1</span></div>
-    <div class="row"><b>レンタルヤード</b><span>福岡県朝倉郡筑前町松延807-3</span></div>
-    <div class="row"><b>TEL</b><span><a href="tel:0946428311">0946-42-8311</a></span></div>
-    <div class="row"><b>FAX</b><span>0946-42-8312</span></div>
-  </div>
-</div></section>
-
-<section class="cta"><div class="wrap cta-grid">
-  <div><div class="eyebrow" style="color:#58616d">Contact</div><h2>現場の困りごと、<br>まずはご相談ください。</h2><p>機種選び、修理、納期、特注製作まで、お電話で承ります。</p></div>
-  <a class="btn primary" href="tel:0946428311">0946-42-8311</a>
-</div></section>
+<section class="hero"><div class="hero-bg"></div><div class="hero-content"><div class="wrap"><div class="eyebrow">Attachment Professional / Fukuoka</div><h1>Be a performer.</h1><p class="hero-copy">建機アタッチメントのレンタル・修理・中古販売・管理。<br>現場を止めないために、技術とスピードで応える。</p><div class="hero-actions"><a class="btn primary" href="tel:0946428311">電話で問い合わせ</a><a class="btn" href="#service">事業内容を見る</a></div><div class="hero-social"><a class="sns-hero" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener"><span class="sns-dot"></span>Instagramを見る</a><a class="sns-hero" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener"><span class="sns-dot"></span>TikTokを見る</a></div></div></div></section>
+<section class="stats"><div class="wrap stats-grid"><a class="stat" href="#rental"><b>RENTAL</b><span>アタッチメントレンタル</span></a><a class="stat" href="#repair"><b>REPAIR</b><span>修理・肉盛り・再生</span></a><a class="stat" href="#used"><b>USED SALES</b><span>中古機・中古アタッチメント</span></a><a class="stat" href="#management"><b>MANAGEMENT</b><span>管理・部品製作</span></a></div></section>
+<section class="section" id="service"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">Our Service</div><h2>現場を支える、<br>4つの力。</h2></div><p>レンタル、修理、中古販売、管理・部品製作まで。現場で本当に必要とされるサービスを、ひとつの窓口で支えます。</p></div><div class="services"><a class="service reveal" href="#rental"><img src="rental-fx55.webp" alt="レンタル"><div class="service-copy"><small>01 / RENTAL</small><h3>レンタル</h3><p>小型から大型まで、用途に合わせた一台をご提案。</p></div></a><a class="service reveal" href="#repair"><img src="repair-after-top.webp" alt="修理"><div class="service-copy"><small>02 / REPAIR</small><h3>修理・再生</h3><p>肉盛り、部品交換、オーバーホールまで対応。</p></div></a><a class="service reveal" href="#used"><img src="rental-tswd1700.webp" alt="中古販売"><div class="service-copy"><small>03 / USED SALES</small><h3>中古販売</h3><p>建機・アタッチメントの中古在庫と入荷情報。</p></div></a><a class="service reveal" href="#management"><img src="hero.webp" alt="管理・部品製作"><div class="service-copy"><small>04 / MANAGEMENT</small><h3>管理・部品製作</h3><p>管理からピン・ブッシュ・各種部品製作まで。</p></div></a></div></div></section>
+<section class="section repair-block" id="repair"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">Repair & Rebuild</div><h2>その一台に、<br>もう一度仕事を。</h2></div><p>摩耗、曲がり、破損を見極め、交換だけに頼らず最適な修理方法をご提案します。</p></div><div class="ba-grid reveal"><div class="ba-card"><span class="label">BEFORE</span><img src="repair-before-front.webp" alt="修理前"></div><div class="arrow">→</div><div class="ba-card"><span class="label">AFTER</span><img src="repair-after-front.webp" alt="修理後"></div></div></div></section>
+<section class="section" id="rental"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">Rental Lineup</div><h2>必要な時に、<br>すぐ使える一台を。</h2></div><p>小型から大型まで、用途と現場条件に合わせて機種選定からサポートします。</p></div><div class="rentals"><article class="machine reveal"><img src="rental-fx55.webp" alt="FX55α"><div class="machine-body"><h3>FX55α</h3><p>油圧ブレーカー</p></div></article><article class="machine reveal"><img src="rental-sv30.webp" alt="SV30"><div class="machine-body"><h3>SV30</h3><p>小割圧砕機</p></div></article><article class="machine reveal"><img src="rental-tswd1700.webp" alt="TS-WD1700V-2"><div class="machine-body"><h3>TS-WD1700V-2</h3><p>1.6クラス 大割機</p></div></article></div></div></section>
+<section class="section" id="used"><div class="wrap feature"><div class="feature-image reveal"><img src="rental-tswd1700.webp" alt="中古販売"></div><div class="reveal"><div class="eyebrow">Used Sales</div><h2>次の現場で、<br>もう一度力を。</h2><p>中古建機・中古アタッチメントの販売情報を掲載します。状態、仕様、納期についてはお気軽にお問い合わせください。</p><div class="feature-list"><div class="feature-row"><b>01</b><span>中古建機・アタッチメント販売</span></div><div class="feature-row"><b>02</b><span>入荷情報・在庫確認</span></div><div class="feature-row"><b>03</b><span>状態・仕様・納期のご相談</span></div></div><div class="hero-actions"><a class="btn" href="tel:0946428311">在庫を問い合わせる</a></div></div></div></section>
+<section class="section management" id="management"><div class="wrap management-grid"><div class="reveal"><div class="eyebrow">Management & Parts</div><h2>使う前も、<br>使った後も。</h2><p>アタッチメント管理に加え、久木田マシーンサービスとの連携によるピン・ブッシュ・各種部品製作に対応します。</p><div class="partner"><b>久木田マシーンサービスと連携</b><p>現物確認や寸法に合わせた部品製作についてご相談いただけます。</p></div></div><div class="management-cards"><div class="management-card reveal"><b>アタッチメント管理</b><p>保管、状態確認、修理履歴などを一体的に管理。</p></div><div class="management-card reveal"><b>ピン製作</b><p>現物・寸法に合わせたピン製作に対応。</p></div><div class="management-card reveal"><b>ブッシュ製作</b><p>摩耗部品の交換や適合確認をご相談いただけます。</p></div><div class="management-card reveal"><b>各種部品製作</b><p>既製品で対応しにくい部品も内容を確認してご提案。</p></div></div></div></section>
+<section class="sns-section" id="sns"><div class="wrap"><div class="eyebrow" style="color:#505862">Latest Works</div><h2>最新の修理・レンタル事例は、<br>SNSで更新中。</h2><p>写真では伝わりにくい工程や機械の動きも、動画でご覧いただけます。</p><div class="sns-grid"><a class="sns-card" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener"><div><b>Instagram</b><br><span>修理・レンタル事例を見る</span></div><strong>→</strong></a><a class="sns-card" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener"><div><b>TikTok</b><br><span>現場動画・作業工程を見る</span></div><strong>→</strong></a></div></div></section>
+<section class="section" id="company"><div class="wrap company"><div class="reveal"><div class="eyebrow">Company</div><h2>株式会社<br>レンビス</h2><p>建機アタッチメントのレンタル・修理・中古販売・管理</p></div><div class="info reveal"><div class="row"><b>本社</b><span>福岡県朝倉郡筑前町松延804-1</span></div><div class="row"><b>機材ヤード</b><span>福岡県朝倉郡筑前町東小田字切坑1983-1</span></div><div class="row"><b>レンタル修理ヤード</b><span>福岡県朝倉郡筑前町松延807-3</span></div><div class="row"><b>TEL</b><span><a href="tel:0946428311">0946-42-8311</a></span></div><div class="row"><b>FAX</b><span>0946-42-8312</span></div></div></div></section>
+<section class="cta"><div class="wrap cta-grid"><div><div class="eyebrow" style="color:#58616d">Contact</div><h2>現場の困りごと、<br>まずはご相談ください。</h2><p>機種選び、修理、中古在庫、部品製作まで、お電話で承ります。</p></div><a class="btn primary" href="tel:0946428311">0946-42-8311</a></div></section>
 </main>
-
-<footer><div class="wrap"><div class="footer-top"><img class="footer-logo" src="renvis-logo.png" alt="RENVIS">
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-      <div>株式会社レンビス<br><span style="color:#8b929c;font-size:.85rem">Fukuoka, Japan</span></div>
-      <a class="social-icon" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="#edf0f4" stroke="none"/></svg>
-      </a>
-      <a class="social-icon tiktok-icon" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <svg viewBox="0 0 24 24"><path d="M14.2 3.2c.5 2.7 2 4.3 4.8 4.8v3.2c-1.8 0-3.4-.6-4.8-1.6v6.2a5.7 5.7 0 1 1-5-5.6v3.3a2.5 2.5 0 1 0 1.8 2.3V3.2h3.2z"/></svg>
-      </a>
-    </div></div><div class="copyright">© RENVIS Inc. All Rights Reserved.</div></div></footer>
-
-<script>
-const header=document.getElementById('header');
-addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+<footer><div class="wrap"><div class="footer-top"><img class="footer-logo" src="renvis-logo.png" alt="RENVIS"><div>株式会社レンビス<br><span style="color:#8b929c;font-size:.85rem">Fukuoka, Japan</span></div></div><div class="copyright">© RENVIS Inc. All Rights Reserved.</div></div></footer>
+<script>const header=document.getElementById('header');addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30));const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
 </body></html>
