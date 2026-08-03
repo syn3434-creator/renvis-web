@@ -137,6 +137,63 @@ footer{border-top:1px solid var(--line);padding:38px 0 24px}.footer-row{display:
   .stock-summary{grid-template-columns:1fr}
 }
 
+
+/* STATUS COUNTS ABOVE SEARCH BAR */
+.stock-summary{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:0!important;
+  margin:18px 0 10px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+}
+.stock-summary .box{
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  min-width:auto!important;
+  padding:0 18px!important;
+  border:0!important;
+  border-right:1px solid var(--line)!important;
+  background:transparent!important;
+}
+.stock-summary .box:first-child{padding-left:0!important}
+.stock-summary .box:last-child{
+  padding-right:0!important;
+  border-right:0!important;
+}
+.stock-summary small{
+  display:inline!important;
+  margin:0!important;
+  font-size:.72rem!important;
+  letter-spacing:.04em!important;
+  color:var(--muted)!important;
+}
+.stock-summary b{
+  display:inline!important;
+  margin:0!important;
+  font-size:1rem!important;
+  line-height:1!important;
+}
+.search-toggle-wrap{margin-top:0!important}
+@media(max-width:760px){
+  .stock-summary{
+    justify-content:flex-start!important;
+    overflow-x:auto!important;
+    padding-bottom:4px!important;
+    margin:12px 0 8px!important;
+  }
+  .stock-summary .box{
+    flex:0 0 auto!important;
+    padding:0 10px!important;
+  }
+  .stock-summary .box:first-child{padding-left:0!important}
+  .stock-summary small{font-size:.66rem!important}
+  .stock-summary b{font-size:.86rem!important}
+}
+
 </style></head>
 <body>
 <header><div class="nav"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="index.html#rental">RENTAL</a><a href="index.html#repair">REPAIR</a><a class="active" href="used-sales.html">USED SALES</a><a href="index.html#management">MANAGEMENT</a></nav><a class="back-home" href="index.html">HOMEへ戻る</a></div></header>
@@ -144,6 +201,7 @@ footer{border-top:1px solid var(--line);padding:38px 0 24px}.footer-row{display:
 <section class="hero"><div class="wrap"><div class="eyebrow">Used Attachment Search</div><h1>USED SALES</h1><p>メーカー・種類・対応クラス・年式・価格・販売状況から、中古建機アタッチメントを絞り込めます。</p><span class="demo-note">掲載商品はすべてダミーです。実際の在庫・販売状況ではありません。</span></div></section>
 <section class="section"><div class="wrap"><div class="section-title"><div><div class="eyebrow">New Arrivals</div><h2>新着商品</h2></div><div class="carousel-controls"><button id="prevArrival" aria-label="前へ">←</button><button id="nextArrival" aria-label="次へ">→</button></div></div><div class="arrivals" id="arrivals"></div></div></section>
 <section class="search-section"><div class="wrap">
+
 <div class="stock-summary" id="stockSummary">
   <div class="box available"><small>販売中</small><b id="availableCount">0件</b></div>
   <div class="box negotiation"><small>商談中</small><b id="negotiationCount">0件</b></div>

@@ -142,6 +142,136 @@ footer{padding:38px 0 25px}.footer-top{display:flex;justify-content:space-betwee
   }
 }
 
+
+/* VER1.1 MOBILE ONLY */
+.mobile-menu-overlay,
+.mobile-drawer{display:none}
+
+@media(max-width:760px){
+  .hero-actions{
+    display:none!important;
+  }
+
+  .mobile-menu-overlay{
+    display:block;
+    position:fixed;
+    inset:0;
+    z-index:998;
+    background:rgba(0,0,0,.66);
+    opacity:0;
+    visibility:hidden;
+    transition:.28s ease;
+  }
+
+  .mobile-menu-overlay.open{
+    opacity:1;
+    visibility:visible;
+  }
+
+  .mobile-drawer{
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:999;
+    width:min(86vw,360px);
+    height:100dvh;
+    padding:22px 20px 28px;
+    background:linear-gradient(180deg,#0b0f14,#050709);
+    border-left:1px solid var(--line);
+    transform:translateX(105%);
+    transition:transform .32s ease;
+    box-shadow:-24px 0 70px rgba(0,0,0,.45);
+  }
+
+  .mobile-drawer.open{
+    transform:translateX(0);
+  }
+
+  .mobile-drawer-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .mobile-drawer-logo{
+    width:190px;
+    mix-blend-mode:screen;
+  }
+
+  .mobile-close{
+    width:42px;
+    height:42px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:#fff;
+    font-size:1.55rem;
+    cursor:pointer;
+  }
+
+  .mobile-menu-links{
+    display:flex;
+    flex-direction:column;
+    margin-top:18px;
+  }
+
+  .mobile-menu-links a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    min-height:54px;
+    border-bottom:1px solid var(--line);
+    font-weight:800;
+    letter-spacing:.05em;
+  }
+
+  .mobile-menu-links a:after{
+    content:"→";
+    color:#8c96a1;
+  }
+
+  .mobile-menu-actions{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:9px;
+    margin-top:auto;
+    padding-top:20px;
+  }
+
+  .mobile-menu-actions a{
+    min-height:48px;
+    display:grid;
+    place-items:center;
+    border:1px solid var(--line);
+    font-size:.72rem;
+    font-weight:800;
+  }
+
+  .mobile-menu-actions .ig{
+    background:linear-gradient(135deg,#f9ce34,#ee2a7b 48%,#6228d7);
+    border-color:transparent;
+  }
+
+  .mobile-menu-actions .tt{
+    background:#050505;
+    border-color:#25f4ee;
+    box-shadow:inset 3px 0 #fe2c55,inset -3px 0 #25f4ee;
+  }
+
+  .mobile-menu-actions .tel{
+    background:linear-gradient(135deg,#1173d6,#2498ef);
+    border-color:#48aaf3;
+  }
+
+  body.menu-open{
+    overflow:hidden;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -155,10 +285,35 @@ footer{padding:38px 0 25px}.footer-top{display:flex;justify-content:space-betwee
    <a class="icon-link instagram-icon" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></a>
    <a class="icon-link tiktok-icon" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14.2 3.2c.5 2.7 2 4.3 4.8 4.8v3.2c-1.8 0-3.4-.6-4.8-1.6v6.2a5.7 5.7 0 1 1-5-5.6v3.3a2.5 2.5 0 1 0 1.8 2.3V3.2h3.2z"/></svg></a>
    <a class="icon-link phone-icon" href="tel:0946428311" aria-label="電話"><svg viewBox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"/></svg></a>
-   <button class="menu-btn" aria-label="メニュー"><span></span><span></span><span></span></button>
+   <button class="menu-btn" id="menuOpen" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileDrawer"><span></span><span></span><span></span></button>
   </div>
  </div>
 </header>
+
+<div class="mobile-menu-overlay" id="menuOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="mobile-drawer-head">
+    <img class="mobile-drawer-logo" src="renvis-logo.png" alt="RENVIS">
+    <button class="mobile-close" id="menuClose" type="button" aria-label="メニューを閉じる">×</button>
+  </div>
+
+  <nav class="mobile-menu-links" aria-label="スマホメニュー">
+    <a href="#top">HOME</a>
+    <a href="#rental">RENTAL</a>
+    <a href="#repair">REPAIR</a>
+    <a href="used-sales.html">USED SALES</a>
+    <a href="#management">MANAGEMENT</a>
+    <a href="#company">COMPANY</a>
+    <a href="tel:0946428311">CONTACT</a>
+  </nav>
+
+  <div class="mobile-menu-actions">
+    <a class="ig" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener">Instagram</a>
+    <a class="tt" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener">TikTok</a>
+    <a class="tel" href="tel:0946428311">TEL</a>
+  </div>
+</aside>
+
 <main id="top">
 <section class="hero">
  <div class="hero-bg"></div>
@@ -210,6 +365,34 @@ footer{padding:38px 0 25px}.footer-top{display:flex;justify-content:space-betwee
 <script>
 const header=document.getElementById('header');
 addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>28));
+
+const menuOpen=document.getElementById('menuOpen');
+const menuClose=document.getElementById('menuClose');
+const mobileDrawer=document.getElementById('mobileDrawer');
+const menuOverlay=document.getElementById('menuOverlay');
+
+function openMobileMenu(){
+  mobileDrawer.classList.add('open');
+  menuOverlay.classList.add('open');
+  document.body.classList.add('menu-open');
+  mobileDrawer.setAttribute('aria-hidden','false');
+  menuOpen.setAttribute('aria-expanded','true');
+}
+
+function closeMobileMenu(){
+  mobileDrawer.classList.remove('open');
+  menuOverlay.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  mobileDrawer.setAttribute('aria-hidden','true');
+  menuOpen.setAttribute('aria-expanded','false');
+}
+
+menuOpen?.addEventListener('click',openMobileMenu);
+menuClose?.addEventListener('click',closeMobileMenu);
+menuOverlay?.addEventListener('click',closeMobileMenu);
+mobileDrawer?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMobileMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMobileMenu();});
+
 </script>
 </body>
 </html>
