@@ -16,13 +16,61 @@ header{position:sticky;top:0;z-index:60;height:82px;display:flex;align-items:cen
 footer{border-top:1px solid var(--line);padding:38px 0 24px}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px}.footer-logo{width:220px;mix-blend-mode:screen}.copyright{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;color:#707883;font-size:.7rem}
 @media(max-width:1150px){.products{grid-template-columns:repeat(3,1fr)}.filter-grid{grid-template-columns:1fr 1fr}.range-grid{grid-template-columns:1fr 1fr}.logo{width:235px}.nav-links{gap:15px}}
 @media(max-width:760px){.wrap,.nav{width:calc(100% - 28px)}header{height:70px}.logo{width:185px}.nav-links{display:none}.back-home{margin-left:auto;padding:8px 10px}.hero{padding:64px 0 48px}.hero h1{font-size:clamp(3rem,15vw,5.2rem)}.section{padding:40px 0}.filter-grid,.range-grid{grid-template-columns:1fr}.filter-panel{padding:16px}.results-head{align-items:flex-start;flex-direction:column}.products{grid-template-columns:1fr}.product-media{height:270px}.footer-row{align-items:flex-start;flex-direction:column}.arrivals{grid-auto-columns:82vw}}
+
+.search-toggle-wrap{padding:10px 0 20px}
+.search-toggle{
+  width:100%;min-height:62px;display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:0 22px;border:1px solid var(--line);background:linear-gradient(180deg,#121820,#0b0f14);
+  color:#fff;font-weight:800;cursor:pointer;letter-spacing:.03em
+}
+.search-toggle strong{display:flex;align-items:center;gap:11px}
+.search-toggle .toggle-icon{font-size:1.1rem;transition:.25s}
+.search-toggle[aria-expanded="true"] .toggle-icon{transform:rotate(180deg)}
+.filter-collapse{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.filter-collapse.open{grid-template-rows:1fr}
+.filter-collapse-inner{overflow:hidden}
+.filter-panel{margin-top:12px}
+.favorite{
+  position:absolute;right:14px;bottom:14px;width:42px;height:42px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.35);background:rgba(4,6,9,.82);color:#fff;
+  display:grid;place-items:center;font-size:1.35rem;cursor:pointer;z-index:3;transition:.2s
+}
+.favorite:hover{transform:scale(1.06);border-color:#fff}
+.favorite.active{color:#ffd55a;background:rgba(25,20,6,.92);border-color:#ffd55a}
+.favorite-count{display:inline-flex;align-items:center;gap:7px;color:#cbd1d8;font-size:.78rem;margin-left:12px}
+.product-media .new-ribbon{
+  position:absolute;left:14px;bottom:14px;background:#fff;color:#080a0d;
+  padding:7px 10px;font-size:.68rem;font-weight:900;letter-spacing:.12em
+}
+.help-cta{
+  margin:16px 0 72px;padding:38px;border:1px solid var(--line);
+  background:linear-gradient(135deg,#111821,#090c10);display:flex;justify-content:space-between;align-items:center;gap:24px
+}
+.help-cta h2{margin:0 0 8px;font-size:clamp(1.5rem,3vw,2.6rem)}
+.help-cta p{margin:0;color:var(--muted)}
+.help-actions{display:flex;gap:10px;flex-wrap:wrap}
+.help-actions a{padding:13px 18px;border:1px solid var(--line);font-weight:800;font-size:.78rem}
+.help-actions .phone{background:#1576c8;border-color:#4aa9ed}
+.help-actions .instagram{background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)}
+.help-actions .tiktok{background:#050505;border-color:#25f4ee;box-shadow:inset 3px 0 #fe2c55,inset -3px 0 #25f4ee}
+.company-mini{border-top:1px solid var(--line);padding:34px 0 10px}
+.company-mini-grid{display:grid;grid-template-columns:1.1fr repeat(3,1fr);gap:20px}
+.company-mini h3{margin:0 0 8px}
+.company-mini small,.company-mini p{color:#9ea7b2;font-size:.75rem;line-height:1.7;margin:0}
+@media(max-width:760px){
+  .help-cta{align-items:flex-start;flex-direction:column;padding:24px}
+  .help-actions{width:100%}.help-actions a{width:100%;text-align:center}
+  .company-mini-grid{grid-template-columns:1fr}
+  .search-toggle{padding:0 16px}
+}
+
 </style></head>
 <body>
 <header><div class="nav"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="index.html#rental">RENTAL</a><a href="index.html#repair">REPAIR</a><a class="active" href="used-sales.html">USED SALES</a><a href="index.html#management">MANAGEMENT</a></nav><a class="back-home" href="index.html">HOMEへ戻る</a></div></header>
 <main>
 <section class="hero"><div class="wrap"><div class="eyebrow">Used Attachment Search</div><h1>USED SALES</h1><p>メーカー・種類・対応クラス・年式・価格・販売状況から、中古建機アタッチメントを絞り込めます。</p><span class="demo-note">掲載商品はすべてダミーです。実際の在庫・販売状況ではありません。</span></div></section>
 <section class="section"><div class="wrap"><div class="section-title"><div><div class="eyebrow">New Arrivals</div><h2>新着商品</h2></div><div class="carousel-controls"><button id="prevArrival" aria-label="前へ">←</button><button id="nextArrival" aria-label="次へ">→</button></div></div><div class="arrivals" id="arrivals"></div></div></section>
-<section class="search-section"><div class="wrap"><div class="filter-panel">
+<section class="search-section"><div class="wrap"><div class="search-toggle-wrap"><button id="searchToggle" class="search-toggle" type="button" aria-expanded="false"><strong>🔍 詳細条件で検索する <span class="favorite-count">お気に入り <b id="favoriteCount">0</b>件</span></strong><span class="toggle-icon">▼</span></button><div id="filterCollapse" class="filter-collapse"><div class="filter-collapse-inner"><div class="filter-panel">
 <div class="filter-grid">
  <div class="field"><label>キーワード・型式</label><input id="keyword" type="search" placeholder="例：TS-WD1700V-2"></div>
  <div class="field"><label>メーカー</label><select id="maker"><option value="">すべてのメーカー</option><option>オカダアイヨン</option><option>日本ニューマチック</option><option>タグチ工業</option><option>古河ロックドリル</option><option>東空販売</option><option>坂戸工作所</option><option>甲南建機</option></select></div>
@@ -38,12 +86,34 @@ footer{border-top:1px solid var(--line);padding:38px 0 24px}.footer-row{display:
 <div class="filter-actions"><button class="filter-btn" id="searchBtn">検索する</button><button class="filter-btn secondary" id="resetBtn">条件をリセット</button></div>
 <div class="type-scroll"><h3>種類から選ぶ</h3><div class="type-chips" id="chips"></div></div>
 </div>
-<div class="results-head"><div><div class="eyebrow">All Products</div><h2>中古商品一覧</h2><div class="result-count" id="count"></div></div><select id="sort" class="sort-select"><option value="new">新着順</option><option value="priceAsc">価格が安い順</option><option value="priceDesc">価格が高い順</option><option value="yearDesc">年式が新しい順</option><option value="maker">メーカー順</option><option value="type">種類順</option></select></div>
+</div></div></div></div><div class="results-head"><div><div class="eyebrow">All Products</div><h2>中古商品一覧</h2><div class="result-count" id="count"></div></div><select id="sort" class="sort-select"><option value="new">新着順</option><option value="priceAsc">価格が安い順</option><option value="priceDesc">価格が高い順</option><option value="yearDesc">年式が新しい順</option><option value="maker">メーカー順</option><option value="type">種類順</option></select></div>
 <div class="products" id="products"><div class="no-results" id="noResults">条件に一致する商品がありません。</div></div>
+
+<div class="help-cta">
+  <div>
+    <div class="eyebrow">Can’t find it?</div>
+    <h2>お探しの商品が見つからない場合も、<br>お気軽にお問い合わせください。</h2>
+    <p>入荷予定・類似商品・買取相談についてもご案内します。</p>
+  </div>
+  <div class="help-actions">
+    <a class="phone" href="tel:0946428311">電話で問い合わせ</a>
+    <a class="instagram" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener">Instagram</a>
+    <a class="tiktok" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener">TikTok</a>
+  </div>
+</div>
+<div class="company-mini">
+  <div class="company-mini-grid">
+    <div><h3>株式会社レンビス</h3><small>代表取締役　堀口 隼人<br>TEL 0946-42-8311 / FAX 0946-42-8312</small></div>
+    <div><h3>本社</h3><p>福岡県朝倉郡筑前町松延804-1</p></div>
+    <div><h3>機材ヤード</h3><p>福岡県朝倉郡筑前町東小田字切坑1983-1</p></div>
+    <div><h3>レンタル修理ヤード</h3><p>福岡県朝倉郡筑前町松延807-3</p></div>
+  </div>
+</div>
 </div></section></main>
 <footer><div class="wrap"><div class="footer-row"><img class="footer-logo" src="renvis-logo.png" alt="RENVIS"><div>株式会社レンビス<br><span style="color:#8d96a0;font-size:.82rem">中古建機アタッチメント販売</span></div></div><div class="copyright">© 2026 RENVIS Co., Ltd. All Rights Reserved.</div></div></footer>
 <script>
 const types=["大割機", "小割機", "マグネット", "油圧ブレーカー", "鉄骨切断機", "木材切断機", "木材破砕機（マルチャー）", "機械式フォーク", "油圧式フォーク", "ログフォーク", "アースオーガ", "油圧式オーガ", "油圧式切削機", "ツインヘッダー", "標準バケット", "幅狭バケット", "幅広バケット", "法面バケット", "スケルトンバケット", "ホイールローダー用バケット", "特殊バケット", "バケットクラッシャー", "グラップル", "リッパー", "ポイント（爪・ツース盤）", "ブレード", "マルチブレード", "草刈り機", "クイックヒッチ", "クイックカプラ"];
+const favorites=new Set(JSON.parse(localStorage.getItem("renvisFavorites")||"[]"));
 const products=[{"id": 1, "maker": "オカダアイヨン", "type": "大割機", "model": "TS-WD1700V-2", "cls": "45〜70t", "year": 2021, "price": 4800000, "status": "販売中", "img": "rental-tswd1700.webp", "date": 20, "photo": true, "new": true}, {"id": 2, "maker": "タグチ工業", "type": "大割機", "model": "GUZZILLA DS-120A", "cls": "12〜20t", "year": 2019, "price": 3200000, "status": "商談中", "img": "repair-after-front.webp", "date": 19, "photo": true, "new": true}, {"id": 3, "maker": "日本ニューマチック", "type": "小割機", "model": "SV-30", "cls": "3〜5t", "year": 2023, "price": 980000, "status": "販売中", "img": "rental-sv30.webp", "date": 18, "photo": true, "new": true}, {"id": 4, "maker": "古河ロックドリル", "type": "油圧ブレーカー", "model": "Fx55α", "cls": "5〜8t", "year": 2022, "price": 1250000, "status": "販売中", "img": "rental-fx55.webp", "date": 17, "photo": true, "new": true}, {"id": 5, "maker": "オカダアイヨン", "type": "小割機", "model": "OSC-83V", "cls": "7〜12t", "year": 2018, "price": 1450000, "status": "SOLD OUT", "img": "repair-after-top.webp", "date": 16, "photo": true, "new": false}, {"id": 6, "maker": "坂戸工作所", "type": "マグネット", "model": "MAG-900", "cls": "12〜20t", "year": 2020, "price": 1680000, "status": "販売中", "img": "repair-before-top.webp", "date": 15, "photo": true, "new": false}, {"id": 7, "maker": "東空販売", "type": "油圧ブレーカー", "model": "TNB-6E", "cls": "5〜8t", "year": 2017, "price": 760000, "status": "商談中", "img": "hero.webp", "date": 14, "photo": true, "new": false}, {"id": 8, "maker": "オカダアイヨン", "type": "鉄骨切断機", "model": "TS-S550C", "cls": "12〜20t", "year": 2019, "price": 2900000, "status": "販売中", "img": "repair-before-front.webp", "date": 13, "photo": true, "new": false}, {"id": 9, "maker": "甲南建機", "type": "機械式フォーク", "model": "KF-70", "cls": "5〜8t", "year": 2016, "price": 420000, "status": "SOLD OUT", "img": "rental-sv30.webp", "date": 12, "photo": true, "new": false}, {"id": 10, "maker": "タグチ工業", "type": "油圧式フォーク", "model": "GV-120", "cls": "7〜12t", "year": 2020, "price": 980000, "status": "販売中", "img": "repair-after-front.webp", "date": 11, "photo": true, "new": false}, {"id": 11, "maker": "坂戸工作所", "type": "ログフォーク", "model": "LF-100", "cls": "7〜12t", "year": 2018, "price": 650000, "status": "販売中", "img": "repair-before-top.webp", "date": 10, "photo": true, "new": false}, {"id": 12, "maker": "甲南建機", "type": "アースオーガ", "model": "KA-1200", "cls": "12〜20t", "year": 2015, "price": 880000, "status": "商談中", "img": "hero.webp", "date": 9, "photo": true, "new": false}, {"id": 13, "maker": "日本ニューマチック", "type": "油圧式オーガ", "model": "HA-60", "cls": "5〜8t", "year": 2021, "price": 1050000, "status": "販売中", "img": "rental-fx55.webp", "date": 8, "photo": true, "new": false}, {"id": 14, "maker": "古河ロックドリル", "type": "ツインヘッダー", "model": "TH-20", "cls": "12〜20t", "year": 2017, "price": 2100000, "status": "販売中", "img": "repair-before-front.webp", "date": 7, "photo": true, "new": false}, {"id": 15, "maker": "オカダアイヨン", "type": "スケルトンバケット", "model": "SB-120", "cls": "7〜12t", "year": 2020, "price": 550000, "status": "販売中", "img": "rental-tswd1700.webp", "date": 6, "photo": true, "new": false}, {"id": 16, "maker": "タグチ工業", "type": "バケットクラッシャー", "model": "BC-150", "cls": "12〜20t", "year": 2018, "price": 2350000, "status": "SOLD OUT", "img": "repair-after-top.webp", "date": 5, "photo": true, "new": false}, {"id": 17, "maker": "坂戸工作所", "type": "グラップル", "model": "GR-70", "cls": "5〜8t", "year": 2022, "price": 790000, "status": "販売中", "img": "rental-sv30.webp", "date": 4, "photo": true, "new": false}, {"id": 18, "maker": "甲南建機", "type": "クイックヒッチ", "model": "QH-120", "cls": "7〜12t", "year": 2019, "price": 390000, "status": "販売中", "img": "repair-after-front.webp", "date": 3, "photo": true, "new": false}, {"id": 19, "maker": "東空販売", "type": "草刈り機", "model": "TM-80", "cls": "5〜8t", "year": 2016, "price": 590000, "status": "商談中", "img": "", "date": 2, "photo": false, "new": false}, {"id": 20, "maker": "古河ロックドリル", "type": "リッパー", "model": "FR-120", "cls": "12〜20t", "year": 2014, "price": 350000, "status": "販売中", "img": "", "date": 1, "photo": false, "new": false}];
 const $=id=>document.getElementById(id);
 const yen=n=>"¥"+n.toLocaleString("ja-JP");
@@ -58,11 +128,12 @@ function getFiltered(){
  const yMin=+$("yearMin").value||0,yMax=+$("yearMax").value||9999,pMin=+$("priceMin").value||0,pMax=+$("priceMax").value||Infinity,photo=$("photoOnly").checked;
  return products.filter(p=>(!kw||`${p.maker} ${p.type} ${p.model} ${p.cls}`.toLowerCase().includes(kw))&&(!maker||p.maker===maker)&&(!type||p.type===type)&&(!cls||p.cls===cls)&&(!status||p.status===status)&&p.year>=yMin&&p.year<=yMax&&p.price>=pMin&&p.price<=pMax&&(!photo||p.photo));
 }
+function updateFavoriteCount(){document.getElementById("favoriteCount").textContent=favorites.size;}
 function render(){
  let list=getFiltered(),sort=$("sort").value;
  if(sort==="new")list.sort((a,b)=>b.date-a.date);if(sort==="priceAsc")list.sort((a,b)=>a.price-b.price);if(sort==="priceDesc")list.sort((a,b)=>b.price-a.price);if(sort==="yearDesc")list.sort((a,b)=>b.year-a.year);if(sort==="maker")list.sort((a,b)=>a.maker.localeCompare(b.maker,"ja"));if(sort==="type")list.sort((a,b)=>types.indexOf(a.type)-types.indexOf(b.type));
  $("count").textContent=`${list.length}件の商品が見つかりました`;
- const cards=list.map(p=>`<article class="product"><div class="product-media">${imageMarkup(p)}<span class="status ${statusClass(p.status)}">${p.status}</span><span class="dummy">DUMMY</span></div><div class="product-body"><div class="maker">${p.maker}</div><h3>${p.model}</h3><div class="meta"><span>${p.type}</span><span>${p.cls}</span><span>${p.year}年</span><span>中古品</span></div><div class="price"><b>${yen(p.price)}</b><a class="detail-btn" href="used-detail.html?id=${p.id}">詳細を見る →</a></div><a class="inquiry" href="tel:0946428311">この商品について問い合わせる</a></div></article>`).join("");
+ const cards=list.map(p=>`<article class="product"><div class="product-media">${imageMarkup(p)}<span class="status ${statusClass(p.status)}">${p.status}</span><span class="dummy">DUMMY</span>${p.new?'<span class="new-ribbon">NEW</span>':''}<button class="favorite ${favorites.has(p.id)?'active':''}" type="button" data-id="${p.id}" aria-label="お気に入り">${favorites.has(p.id)?'★':'☆'}</button></div><div class="product-body"><div class="maker">${p.maker}</div><h3>${p.model}</h3><div class="meta"><span>${p.type}</span><span>${p.cls}</span><span>${p.year}年</span><span>中古品</span></div><div class="price"><b>${yen(p.price)}</b><a class="detail-btn" href="used-detail.html?id=${p.id}">詳細を見る →</a></div><a class="inquiry" href="tel:0946428311">この商品について問い合わせる</a></div></article>`).join("");
  $("products").innerHTML=cards+`<div class="no-results" id="noResults" style="${list.length?"":"display:block"}">条件に一致する商品がありません。</div>`;
 }
 function reset(){
@@ -72,5 +143,21 @@ $("chips").innerHTML=types.map(t=>`<button class="chip" data-type="${t}">${t}</b
 $("chips").addEventListener("click",e=>{if(!e.target.classList.contains("chip"))return;const t=e.target.dataset.type;const active=e.target.classList.toggle("active");document.querySelectorAll(".chip").forEach(c=>{if(c!==e.target)c.classList.remove("active")});$("type").value=active?t:"";render();});
 ["searchBtn","sort"].forEach(id=>$(id).addEventListener(id==="sort"?"change":"click",render));$("resetBtn").addEventListener("click",reset);
 $("prevArrival").onclick=()=>$("arrivals").scrollBy({left:-340,behavior:"smooth"});$("nextArrival").onclick=()=>$("arrivals").scrollBy({left:340,behavior:"smooth"});
-renderArrivals();render();
+document.getElementById("products").addEventListener("click",e=>{
+  const btn=e.target.closest(".favorite");
+  if(!btn)return;
+  e.preventDefault();
+  const id=Number(btn.dataset.id);
+  if(favorites.has(id))favorites.delete(id);else favorites.add(id);
+  localStorage.setItem("renvisFavorites",JSON.stringify([...favorites]));
+  updateFavoriteCount();
+  render();
+});
+const searchToggle=document.getElementById("searchToggle");
+const filterCollapse=document.getElementById("filterCollapse");
+searchToggle.addEventListener("click",()=>{
+  const open=filterCollapse.classList.toggle("open");
+  searchToggle.setAttribute("aria-expanded",String(open));
+});
+renderArrivals();updateFavoriteCount();render();
 </script></body></html>
