@@ -17,6 +17,88 @@ header{position:sticky;top:0;z-index:80;height:76px;display:flex;align-items:cen
 .bottom-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:14px;margin-bottom:28px}.help-box,.company-box{border:1px solid var(--line);background:linear-gradient(145deg,#0d1218,#080b0f);padding:22px}.help-box{border-color:rgba(224,181,63,.7);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}.help-box h2{font-size:1.25rem;margin:0 0 5px}.help-box p{color:#bec5cd;font-size:.76rem;margin:0}.help-actions{display:flex;gap:9px}.help-actions a{min-width:132px;padding:14px 15px;text-align:center;font-size:.72rem;font-weight:900;border:1px solid var(--line)}.help-actions .phone{background:linear-gradient(135deg,#e1b23d,#f7d064);color:#090b0e}.help-actions .instagram{background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf)}.help-actions .tiktok{background:#050505;border-color:#25f4ee;box-shadow:inset 3px 0 #fe2c55,inset -3px 0 #25f4ee}.company-box h2{font-size:1.2rem;margin:0 0 8px}.company-box p{margin:5px 0;color:#c3cad2;font-size:.72rem}.company-addresses{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:13px}.company-addresses div{border-top:1px solid var(--line);padding-top:8px;font-size:.63rem;color:#9ba5b0}footer{border-top:1px solid var(--line);padding:17px 0 24px;color:#777f89;font-size:.68rem;text-align:center}
 @media(max-width:1100px){.overview-grid{grid-template-columns:1fr}.stock-summary{grid-template-columns:repeat(2,1fr)}.stock-box:nth-child(2){border-right:0}.stock-box:nth-child(-n+2){border-bottom:1px solid var(--line)}.arrivals{grid-auto-columns:calc((100% - 32px)/3)}.products{grid-template-columns:repeat(3,1fr)}.bottom-grid{grid-template-columns:1fr}}
 @media(max-width:760px){.wrap,.nav{width:calc(100% - 28px)}header{height:68px}.logo{width:185px}.nav-links{display:none}.home-btn{margin-left:auto}.overview{padding:28px 0 20px}.overview-grid{gap:26px}h1{font-size:clamp(3.2rem,16vw,5rem)}.stock-summary{grid-template-columns:1fr 1fr}.stock-box{min-height:62px;gap:8px}.stock-box b{font-size:1.35rem}.filter-grid,.range-grid{grid-template-columns:1fr}.arrivals{grid-auto-columns:82vw}.products{grid-template-columns:1fr}.card-image{height:240px}.bottom-grid{grid-template-columns:1fr}.help-box{grid-template-columns:1fr}.help-actions{display:grid;grid-template-columns:1fr}.company-addresses{grid-template-columns:1fr}.toggle-right .fav-label{display:none}}
+
+/* THIN HERO + SINGLE SEARCH/STATUS BAR */
+.overview{
+  padding:20px 0 16px!important;
+}
+.overview-grid{
+  grid-template-columns:minmax(360px,.72fr) minmax(650px,1.28fr)!important;
+  gap:38px!important;
+  align-items:start!important;
+}
+h1{
+  font-size:clamp(3rem,5.2vw,5.4rem)!important;
+  margin:5px 0 12px!important;
+}
+.lead{
+  font-size:.9rem!important;
+  line-height:1.7!important;
+}
+.demo-note{
+  margin-top:12px!important;
+  padding:7px 11px!important;
+  font-size:.67rem!important;
+}
+.summary-area{
+  display:block!important;
+  padding-top:8px;
+}
+.stock-summary{
+  display:none!important;
+}
+.search-toggle{
+  height:56px!important;
+  padding:0 18px!important;
+}
+.toggle-left{
+  gap:10px!important;
+}
+.toggle-right{
+  gap:14px!important;
+  font-size:.72rem!important;
+  white-space:nowrap;
+}
+.toggle-right .stat{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding-left:13px;
+  border-left:1px solid var(--line);
+}
+.toggle-right .stat:first-child{
+  border-left:0;
+  padding-left:0;
+}
+.toggle-right .available-stat b{color:var(--green)}
+.toggle-right .negotiation-stat b{color:var(--yellow)}
+.toggle-right .sold-stat b{color:#b7bec7}
+.toggle-right .total-stat b{color:var(--blue)}
+.arrival-section{
+  padding:4px 0 28px!important;
+}
+.section-head{
+  margin-bottom:12px!important;
+}
+.section-head h2{
+  font-size:1.85rem!important;
+}
+.filter-panel{
+  margin-top:8px!important;
+}
+@media(max-width:1100px){
+  .overview-grid{grid-template-columns:1fr!important}
+  .summary-area{padding-top:0}
+}
+@media(max-width:760px){
+  .overview{padding:22px 0 14px!important}
+  h1{font-size:clamp(3rem,15vw,4.8rem)!important}
+  .toggle-right .negotiation-stat,
+  .toggle-right .sold-stat,
+  .toggle-right .total-stat{display:none}
+  .search-toggle{padding:0 14px!important}
+}
+
 </style>
 </head>
 <body>
@@ -45,15 +127,15 @@ header{position:sticky;top:0;z-index:80;height:76px;display:flex;align-items:cen
       <div class="demo-note">ⓘ 掲載商品はすべてダミーです。実際の在庫・販売状況ではありません。</div>
     </div>
     <div class="summary-area">
-      <div class="stock-summary">
-        <div class="stock-box available"><span class="stock-icon">♧</span><div><small>販売中</small><b id="availableCount">0件</b></div></div>
-        <div class="stock-box negotiation"><span class="stock-icon">♢</span><div><small>商談中</small><b id="negotiationCount">0件</b></div></div>
-        <div class="stock-box sold"><span class="stock-icon">⊗</span><div><small>SOLD OUT</small><b id="soldCount">0件</b></div></div>
-        <div class="stock-box total"><span class="stock-icon">◇</span><div><small>掲載総数</small><b id="totalCount">0件</b></div></div>
-      </div>
       <button id="searchToggle" class="search-toggle" type="button" aria-expanded="false">
         <span class="toggle-left"><span class="search-symbol">⌕</span>詳細条件で検索する <span class="toggle-arrow">⌄</span></span>
-        <span class="toggle-right"><span class="fav-label">お気に入り</span><b id="favoriteCount">0件</b><span>☆</span></span>
+        <span class="toggle-right">
+          <span class="stat available-stat">販売中 <b id="availableCount">0件</b></span>
+          <span class="stat negotiation-stat">商談中 <b id="negotiationCount">0件</b></span>
+          <span class="stat sold-stat">SOLD OUT <b id="soldCount">0件</b></span>
+          <span class="stat total-stat">掲載 <b id="totalCount">0件</b></span>
+          <span class="stat favorite-stat">☆ <b id="favoriteCount">0件</b></span>
+        </span>
       </button>
       <div id="filterCollapse" class="filter-collapse">
         <div class="filter-inner">
