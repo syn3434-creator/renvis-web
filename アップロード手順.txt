@@ -1,16 +1,18 @@
-RENVIS ロゴ完全透過・SNS・項目リンク対応版
+RENVIS TOP Version 1.0 完成版
 
-変更点
-・ロゴの暗い背景と縦筋を完全に除去
-・ロゴを溶接写真になじませる表示へ変更
-・Instagram / TikTokアイコンをヘッダーとフッターに追加
-・RENTAL / REPAIR / SALES / CUSTOMをクリックすると該当箇所へ移動
-・スマホ表示にも対応
+変更内容
+・PC版ファーストビューを上方向へ圧縮し、問い合わせ/SNSボタンまで表示
+・右上はInstagram/TikTokカラーアイコン、電話アイコンのみ
+・RENTAL / REPAIR / USED SALES / MANAGEMENTに整理
+・トップページ最後に会社概要を追加
+・代表取締役 堀口隼人、3拠点、TEL、FAXを掲載
+・3拠点のGoogleマップボタンを追加
+・© 2026 RENVIS Co., Ltd. All Rights Reserved.を追加
 
-アップロード方法
+反映方法
 1. ZIPを解凍
-2. 中のファイルをすべて選択
-3. GitHubのRenvis-webへドラッグ＆ドロップ
-4. Commit changesを押す
+2. renvis-webフォルダ内の全ファイルを現在のrenvis-webフォルダへコピー
+3. 同名ファイルは「置き換える」を選択
+4. GitHub Desktopで変更をCommitし、Push origin
 
-ZIPそのものはGitHubへアップロードしないでください。
+.gitフォルダはこのZIPには入れていません。現在の.gitは削除しないでください。
