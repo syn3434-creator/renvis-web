@@ -1,18 +1,25 @@
-RENVIS TOP Version 1.0 完成版
+RENVIS 中古販売ページ 本日完成版
 
-変更内容
-・PC版ファーストビューを上方向へ圧縮し、問い合わせ/SNSボタンまで表示
-・右上はInstagram/TikTokカラーアイコン、電話アイコンのみ
-・RENTAL / REPAIR / USED SALES / MANAGEMENTに整理
-・トップページ最後に会社概要を追加
-・代表取締役 堀口隼人、3拠点、TEL、FAXを掲載
-・3拠点のGoogleマップボタンを追加
-・© 2026 RENVIS Co., Ltd. All Rights Reserved.を追加
+【追加・更新】
+・トップページの電話／Instagram／TikTokボタンを色分けして修正
+・中古販売検索ページを完成
+・年式（下限〜上限）
+・販売価格（下限〜上限）
+・対応クラス
+・販売状況
+・写真ありのみ
+・NEW ARRIVALS横スライダー
+・新着順／価格順／年式順／メーカー順／種類順
+・ダミー商品20件
+・商品詳細ページ
+・スマホ対応
 
-反映方法
-1. ZIPを解凍
-2. renvis-webフォルダ内の全ファイルを現在のrenvis-webフォルダへコピー
-3. 同名ファイルは「置き換える」を選択
-4. GitHub Desktopで変更をCommitし、Push origin
+【入れ方】
+1. このZIPを「すべて展開」
+2. 展開した renvis-web フォルダの中身をすべてコピー
+3. 現在使用中の renvis-web フォルダ内へ貼り付け
+4. 同じ名前のファイルは「置き換える」
+5. GitHub Desktopで Commit to main
+6. Push origin
 
-.gitフォルダはこのZIPには入れていません。現在の.gitは削除しないでください。
+.git フォルダは削除しないでください。

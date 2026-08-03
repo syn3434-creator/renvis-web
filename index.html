@@ -78,6 +78,45 @@ footer{padding:38px 0 25px}.footer-top{display:flex;justify-content:space-betwee
  .section{padding:78px 0}.section-head{align-items:flex-start;flex-direction:column}.service-cards{grid-template-columns:1fr}.card{border-right:none;border-bottom:1px solid var(--line);min-height:0}.card:last-child{border-bottom:none}.card-media{height:230px}
  .company-grid{grid-template-columns:1fr;gap:34px}.company-row{grid-template-columns:1fr;gap:4px}.map-buttons{grid-template-columns:1fr}.contact-wrap,.footer-top{align-items:flex-start;flex-direction:column}
 }
+
+/* FINAL CTA COLOR OVERRIDES */
+.hero-actions{align-items:stretch}
+.action-btn{
+  min-height:58px;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:11px!important;
+  white-space:nowrap!important;
+  line-height:1.2!important;
+  border-radius:5px;
+  padding:0 22px!important;
+  font-weight:800;
+  letter-spacing:.02em;
+}
+.action-btn .action-icon{flex:0 0 28px!important;width:28px!important;height:28px!important}
+.action-btn.primary{
+  background:linear-gradient(135deg,#1173d6,#2498ef)!important;
+  color:#fff!important;
+  border-color:#48aaf3!important;
+}
+.action-btn[href*="instagram"]{
+  background:linear-gradient(135deg,#feda75 0%,#fa7e1e 25%,#d62976 55%,#962fbf 78%,#4f5bd5 100%)!important;
+  color:#fff!important;
+  border-color:rgba(255,255,255,.4)!important;
+}
+.action-btn[href*="tiktok"]{
+  background:#050505!important;
+  color:#fff!important;
+  border-color:#25f4ee!important;
+  box-shadow:inset 3px 0 0 #fe2c55,inset -3px 0 0 #25f4ee!important;
+}
+.action-btn[href*="tiktok"] .action-icon svg{filter:drop-shadow(-1px 0 #25f4ee) drop-shadow(1px 0 #fe2c55)}
+@media(max-width:760px){
+  .action-btn{min-height:56px!important;width:100%}
+}
+
 </style>
 </head>
 <body>
