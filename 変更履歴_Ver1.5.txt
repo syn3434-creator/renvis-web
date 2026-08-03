@@ -1,0 +1,24 @@
+RENVIS HP Ver1.5 MANAGEMENT完成版
+
+追加内容
+・management.html
+・アタッチメント管理
+・ピン／ブッシュ／カラー／シャフト等の部品製作
+・部品製作例
+・COMING SOON枠
+・管理でできること
+・ご依頼の流れ
+・電話／Instagram／TikTok導線
+・スマホ対応
+・トップページのMANAGEMENTリンクを専用ページへ変更
+
+上書き方法
+1. ZIPを「すべて展開」
+2. renvis-webフォルダの中身をすべてコピー
+3. 現在使用中のrenvis-webへ貼り付け
+4. 同名ファイルは「置き換える」
+5. GitHub Desktopで「Ver1.5 MANAGEMENTページ追加」と入力
+6. Commit to main
+7. Push origin
+
+.gitフォルダは削除しないでください。
