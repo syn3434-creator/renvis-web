@@ -27,4 +27,4 @@ if(galleryImages.length){
   });
 }else{
   visual.innerHTML=`<span class="no-photo">NO PHOTO</span>`;
-}document.getElementById("table").innerHTML=`<div class="row"><b>メーカー</b><span>${p.maker}</span></div><div class="row"><b>種類</b><span>${p.type}</span></div><div class="row"><b>型式</b><span>${p.model}</span></div><div class="row"><b>対応クラス</b><span>${p.cls}</span></div><div class="row"><b>年式</b><span>${p.year}年</span></div><div class="row"><b>販売状況</b><span>${p.status}</span></div><div class="row"><b>所在地</b><span>福岡県</span></div>`;</script></body></html>
+}document.getElementById("table").innerHTML=`<div class="row"><b>メーカー</b><span>${p.maker}</span></div><div class="row"><b>種類</b><span>${p.type}</span></div><div class="row"><b>型式</b><span>${p.model}</span></div><div class="row"><b>対応クラス</b><span>${p.cls}</span></div><div class="row"><b>年式</b><span>${p.year}年</span></div><div class="row"><b>販売状況</b><span>${p.status}</span></div><div class="row"><b>商品状態</b><span>${p.id%3===1?"整備済み":p.id%3===2?"点検済み":"現状販売"}</span></div><div class="row"><b>所在地</b><span>福岡県</span></div>`;</script></body></html>

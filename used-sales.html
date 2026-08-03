@@ -1,189 +1,191 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="株式会社レンビスの中古建機アタッチメント検索ページ。メーカー・種類・年式・価格・販売状況から検索できます。">
 <title>中古アタッチメント販売・検索 | RENVIS</title>
 <style>
-:root{--bg:#07090c;--panel:#0d1117;--panel2:#121820;--text:#f4f6f8;--muted:#9fa8b3;--line:rgba(255,255,255,.13);--gold:#d7b45a;--blue:#2c84e9;--green:#35c77b;--yellow:#e7b64f;--max:1460px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}button,input,select{font:inherit}img{display:block;max-width:100%}.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
-header{position:sticky;top:0;z-index:60;height:82px;display:flex;align-items:center;background:rgba(5,7,10,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{width:min(var(--max),calc(100% - 64px));margin:auto;display:flex;align-items:center;gap:30px}.logo{width:285px;mix-blend-mode:screen}.nav-links{display:flex;gap:28px;margin-left:auto;font-size:.78rem;letter-spacing:.08em;font-weight:700}.nav-links a{padding:12px 0;border-bottom:1px solid transparent}.nav-links a:hover,.nav-links .active{border-color:#fff}.back-home{border:1px solid var(--line);padding:10px 16px;font-size:.78rem;font-weight:700}
-.hero{padding:84px 0 64px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 80% 20%,rgba(44,132,233,.14),transparent 35%),linear-gradient(145deg,#0c1118,#07090c 70%)}.eyebrow{font-size:.72rem;letter-spacing:.24em;color:#cbd1d8;text-transform:uppercase}.hero h1{font-size:clamp(3.1rem,7vw,7.2rem);line-height:.92;letter-spacing:-.055em;margin:.16em 0 .22em}.hero p{max-width:760px;color:#c9cfd6;font-size:1.05rem}.demo-note{display:inline-flex;margin-top:16px;border:1px solid rgba(215,180,90,.45);color:#f0d184;background:rgba(215,180,90,.08);padding:8px 12px;font-size:.78rem}
-.section{padding:52px 0}.section-title{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}.section-title h2{margin:3px 0 0;font-size:clamp(1.9rem,3vw,3.1rem)}.carousel-controls{display:flex;gap:8px}.carousel-controls button{width:44px;height:44px;border:1px solid var(--line);background:#0b0f14;color:#fff;cursor:pointer}.arrivals{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.arrivals::-webkit-scrollbar{height:7px}.arrivals::-webkit-scrollbar-thumb{background:#3c444e}.arrival{scroll-snap-align:start;border:1px solid var(--line);background:linear-gradient(180deg,#121820,#0a0d12);min-width:260px}.arrival img{width:100%;height:180px;object-fit:cover;filter:saturate(.8) brightness(.82)}.arrival-body{padding:17px}.arrival small{color:var(--gold);letter-spacing:.11em}.arrival h3{margin:5px 0;font-size:1.12rem}.arrival b{font-size:.95rem}
-.search-section{padding:10px 0 32px}.filter-panel{background:linear-gradient(180deg,#10151c,#0b0f14);border:1px solid var(--line);padding:24px}.filter-grid{display:grid;grid-template-columns:1.55fr repeat(3,1fr);gap:12px}.range-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}.field label{display:block;color:var(--muted);font-size:.74rem;margin-bottom:7px;letter-spacing:.06em}.field input,.field select{width:100%;height:48px;border:1px solid var(--line);background:#080b0f;color:#fff;padding:0 14px;outline:none}.range-pair{display:grid;grid-template-columns:1fr 18px 1fr;align-items:end;gap:6px}.range-pair i{font-style:normal;text-align:center;color:var(--muted);padding-bottom:13px}.check-row{display:flex;align-items:center;gap:9px;height:48px;border:1px solid var(--line);background:#080b0f;padding:0 13px;margin-top:25px}.check-row input{width:18px;height:18px}.filter-actions{display:flex;gap:10px;margin-top:18px}.filter-btn{height:45px;padding:0 22px;border:1px solid var(--line);background:#f2f4f6;color:#080a0d;font-weight:800;cursor:pointer}.filter-btn.secondary{background:transparent;color:#fff}.type-scroll{margin-top:20px;border-top:1px solid var(--line);padding-top:18px}.type-scroll h3{font-size:.86rem;margin:0 0 12px}.type-chips{display:flex;gap:8px;overflow:auto;padding-bottom:8px}.chip{white-space:nowrap;border:1px solid var(--line);background:#090c10;color:#c6ccd3;padding:8px 13px;cursor:pointer;font-size:.78rem}.chip.active,.chip:hover{background:#eef1f4;color:#080a0d;border-color:#eef1f4}
-.results-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:46px 0 20px}.results-head h2{font-size:clamp(1.8rem,3vw,3rem);margin:0}.result-count{color:#cbd1d8}.sort-select{height:42px;background:#090c10;color:#fff;border:1px solid var(--line);padding:0 12px}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding-bottom:80px}.product{border:1px solid var(--line);background:linear-gradient(180deg,#10151b,#090c10);overflow:hidden;transition:.25s;display:flex;flex-direction:column}.product:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.34)}.product-media{height:245px;position:relative;background:linear-gradient(135deg,#1a2028,#090c10);display:grid;place-items:center}.product-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.8) brightness(.82)}.no-photo{color:#7f8995;font-size:.82rem;letter-spacing:.12em}.status{position:absolute;left:14px;top:14px;padding:7px 10px;background:rgba(4,6,9,.9);border:1px solid currentColor;font-size:.7rem;font-weight:800;letter-spacing:.08em}.status.available{color:var(--green)}.status.negotiation{color:var(--yellow)}.status.sold{color:#adb4bd}.dummy{position:absolute;right:14px;top:14px;padding:6px 9px;background:rgba(4,6,9,.82);color:#c8ced5;font-size:.65rem}.product-body{padding:20px;display:flex;flex-direction:column;flex:1}.maker{font-size:.72rem;letter-spacing:.12em;color:#9da6b1}.product h3{font-size:1.3rem;line-height:1.25;margin:7px 0 12px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:15px}.meta span{font-size:.72rem;border:1px solid var(--line);padding:6px 8px;color:#c2c9d0}.price{border-top:1px solid var(--line);padding-top:14px;margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}.price b{font-size:1rem}.detail-btn{font-size:.78rem;font-weight:800;color:#fff}.inquiry{display:block;text-align:center;margin-top:12px;padding:11px;border:1px solid #2d8ee8;background:#116bbd;font-size:.78rem;font-weight:800}.no-results{display:none;grid-column:1/-1;border:1px solid var(--line);padding:60px 20px;text-align:center;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:38px 0 24px}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px}.footer-logo{width:220px;mix-blend-mode:screen}.copyright{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;color:#707883;font-size:.7rem}
-@media(max-width:1150px){.products{grid-template-columns:repeat(3,1fr)}.filter-grid{grid-template-columns:1fr 1fr}.range-grid{grid-template-columns:1fr 1fr}.logo{width:235px}.nav-links{gap:15px}}
-@media(max-width:760px){.wrap,.nav{width:calc(100% - 28px)}header{height:70px}.logo{width:185px}.nav-links{display:none}.back-home{margin-left:auto;padding:8px 10px}.hero{padding:64px 0 48px}.hero h1{font-size:clamp(3rem,15vw,5.2rem)}.section{padding:40px 0}.filter-grid,.range-grid{grid-template-columns:1fr}.filter-panel{padding:16px}.results-head{align-items:flex-start;flex-direction:column}.products{grid-template-columns:1fr}.product-media{height:270px}.footer-row{align-items:flex-start;flex-direction:column}.arrivals{grid-auto-columns:82vw}}
-
-.search-toggle-wrap{padding:10px 0 20px}
-.search-toggle{
-  width:100%;min-height:62px;display:flex;align-items:center;justify-content:space-between;
-  gap:18px;padding:0 22px;border:1px solid var(--line);background:linear-gradient(180deg,#121820,#0b0f14);
-  color:#fff;font-weight:800;cursor:pointer;letter-spacing:.03em
-}
-.search-toggle strong{display:flex;align-items:center;gap:11px}
-.search-toggle .toggle-icon{font-size:1.1rem;transition:.25s}
-.search-toggle[aria-expanded="true"] .toggle-icon{transform:rotate(180deg)}
-.filter-collapse{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
-.filter-collapse.open{grid-template-rows:1fr}
-.filter-collapse-inner{overflow:hidden}
-.filter-panel{margin-top:12px}
-.favorite{
-  position:absolute;right:14px;bottom:14px;width:42px;height:42px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.35);background:rgba(4,6,9,.82);color:#fff;
-  display:grid;place-items:center;font-size:1.35rem;cursor:pointer;z-index:3;transition:.2s
-}
-.favorite:hover{transform:scale(1.06);border-color:#fff}
-.favorite.active{color:#ffd55a;background:rgba(25,20,6,.92);border-color:#ffd55a}
-.favorite-count{display:inline-flex;align-items:center;gap:7px;color:#cbd1d8;font-size:.78rem;margin-left:12px}
-.product-media .new-ribbon{
-  position:absolute;left:14px;bottom:14px;background:#fff;color:#080a0d;
-  padding:7px 10px;font-size:.68rem;font-weight:900;letter-spacing:.12em
-}
-.help-cta{
-  margin:16px 0 72px;padding:38px;border:1px solid var(--line);
-  background:linear-gradient(135deg,#111821,#090c10);display:flex;justify-content:space-between;align-items:center;gap:24px
-}
-.help-cta h2{margin:0 0 8px;font-size:clamp(1.5rem,3vw,2.6rem)}
-.help-cta p{margin:0;color:var(--muted)}
-.help-actions{display:flex;gap:10px;flex-wrap:wrap}
-.help-actions a{padding:13px 18px;border:1px solid var(--line);font-weight:800;font-size:.78rem}
-.help-actions .phone{background:#1576c8;border-color:#4aa9ed}
-.help-actions .instagram{background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)}
-.help-actions .tiktok{background:#050505;border-color:#25f4ee;box-shadow:inset 3px 0 #fe2c55,inset -3px 0 #25f4ee}
-.company-mini{border-top:1px solid var(--line);padding:34px 0 10px}
-.company-mini-grid{display:grid;grid-template-columns:1.1fr repeat(3,1fr);gap:20px}
-.company-mini h3{margin:0 0 8px}
-.company-mini small,.company-mini p{color:#9ea7b2;font-size:.75rem;line-height:1.7;margin:0}
-@media(max-width:760px){
-  .help-cta{align-items:flex-start;flex-direction:column;padding:24px}
-  .help-actions{width:100%}.help-actions a{width:100%;text-align:center}
-  .company-mini-grid{grid-template-columns:1fr}
-  .search-toggle{padding:0 16px}
-}
-
-
-/* FINAL PRODUCT CARD REFINEMENTS */
-.favorite{
-  width:34px!important;height:34px!important;font-size:1.05rem!important;
-  right:12px!important;bottom:12px!important
-}
-.favorite:hover{transform:scale(1.08)}
-.product-media .new-ribbon{
-  background:rgba(7,9,12,.9)!important;color:#e7c35f!important;
-  border:1px solid rgba(231,195,95,.7)!important;
-  padding:5px 9px!important;font-size:.62rem!important;
-  box-shadow:inset 3px 0 0 #e7c35f
-}
-.dummy{
-  color:#aeb6bf!important;background:rgba(7,9,12,.78)!important;
-  border:1px solid rgba(255,255,255,.16)!important;
-  padding:5px 8px!important;font-size:.58rem!important;
-  letter-spacing:.05em
-}
-.meta{grid-template-columns:repeat(3,1fr)!important}
-.meta span.location{color:#d6dce3}
-.price b{font-size:1.05rem}
-@media(max-width:760px){
-  .meta{grid-template-columns:1fr 1fr!important}
-}
-
-</style></head>
+:root{--bg:#06080b;--panel:#0b0f14;--panel2:#10161d;--text:#f7f8fa;--muted:#9aa4af;--line:rgba(255,255,255,.15);--gold:#e0b53f;--green:#4dde65;--yellow:#ffb516;--blue:#4ca9ff;--max:1480px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input,select{font:inherit}img{display:block;max-width:100%}.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
+header{position:sticky;top:0;z-index:80;height:76px;display:flex;align-items:center;background:rgba(4,6,8,.96);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}.nav{width:min(var(--max),calc(100% - 64px));margin:auto;display:flex;align-items:center;gap:28px}.logo{width:245px;mix-blend-mode:screen}.nav-links{display:flex;gap:25px;margin-left:auto;font-size:.77rem;font-weight:800;letter-spacing:.06em}.nav-links a{padding:12px 0;border-bottom:2px solid transparent}.nav-links a:hover,.nav-links .active{border-color:var(--gold);color:#fff}.home-btn{border:1px solid var(--line);padding:9px 14px;font-size:.74rem;font-weight:800}
+.overview{padding:38px 0 26px}.overview-grid{display:grid;grid-template-columns:minmax(390px,.75fr) minmax(650px,1.25fr);gap:48px;align-items:center}.eyebrow{color:var(--gold);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}h1{font-size:clamp(3.4rem,6.5vw,6.8rem);line-height:.88;letter-spacing:-.055em;margin:8px 0 18px}.lead{max-width:570px;color:#d1d6dc;font-size:.98rem;margin:0}.demo-note{display:inline-flex;align-items:center;gap:8px;margin-top:18px;border:1px solid rgba(224,181,63,.65);color:#e9c85e;background:rgba(224,181,63,.055);padding:9px 13px;font-size:.72rem;font-weight:700}
+.summary-area{display:grid;gap:14px}.stock-summary{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:linear-gradient(180deg,#0f141b,#090c10);padding:17px 6px}.stock-box{display:flex;align-items:center;justify-content:center;gap:13px;min-height:70px;border-right:1px solid var(--line)}.stock-box:last-child{border:0}.stock-icon{font-size:1.7rem}.stock-box small{display:block;color:#bec5cd;font-size:.72rem}.stock-box b{display:block;font-size:1.9rem;line-height:1.1}.stock-box.available b,.stock-box.available .stock-icon{color:var(--green)}.stock-box.negotiation b,.stock-box.negotiation .stock-icon{color:var(--yellow)}.stock-box.sold b,.stock-box.sold .stock-icon{color:#b4bbc4}.stock-box.total b,.stock-box.total .stock-icon{color:var(--blue)}
+.search-toggle{width:100%;height:58px;border:1px solid var(--line);background:linear-gradient(180deg,#0f141a,#090c10);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 20px;cursor:pointer;font-weight:800}.toggle-left{display:flex;align-items:center;gap:12px}.search-symbol{font-size:1.3rem}.toggle-right{display:flex;align-items:center;gap:13px;color:#bbc2ca;font-weight:500;font-size:.78rem}.toggle-arrow{font-size:1rem;transition:.25s}.search-toggle[aria-expanded="true"] .toggle-arrow{transform:rotate(180deg)}.filter-collapse{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s ease}.filter-collapse.open{grid-template-rows:1fr}.filter-inner{overflow:hidden}.filter-panel{margin-top:10px;border:1px solid var(--line);background:linear-gradient(180deg,#0e141b,#090c10);padding:20px}.filter-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:11px}.range-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:11px}.field label{display:block;color:var(--muted);font-size:.68rem;margin-bottom:6px}.field input,.field select{width:100%;height:44px;border:1px solid var(--line);background:#07090c;color:#fff;padding:0 12px}.range-pair{display:grid;grid-template-columns:1fr 16px 1fr;align-items:end;gap:5px}.range-pair i{font-style:normal;text-align:center;color:var(--muted);padding-bottom:11px}.check-row{height:44px;margin-top:23px;border:1px solid var(--line);display:flex;align-items:center;gap:9px;padding:0 12px;background:#07090c;font-size:.77rem}.check-row input{width:17px;height:17px}.filter-actions{display:flex;gap:9px;margin-top:15px}.filter-btn{height:42px;padding:0 20px;border:1px solid var(--gold);background:var(--gold);color:#08090b;font-weight:900;cursor:pointer}.filter-btn.secondary{background:transparent;color:#fff;border-color:var(--line)}.type-chips{display:flex;gap:7px;overflow:auto;margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}.chip{white-space:nowrap;border:1px solid var(--line);background:#080b0f;color:#c1c8d0;padding:7px 11px;font-size:.7rem;cursor:pointer}.chip.active,.chip:hover{background:#fff;color:#08090b}
+.arrival-section{padding:0 0 34px}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:15px}.section-head h2{font-size:2rem;margin:2px 0 0}.carousel-buttons{display:flex;gap:8px}.carousel-buttons button{width:42px;height:42px;border:1px solid var(--line);background:#080b0f;color:#fff;cursor:pointer}.arrivals{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}.arrivals::-webkit-scrollbar{height:5px}.arrivals::-webkit-scrollbar-thumb{background:#3a424c}.card{scroll-snap-align:start;border:1px solid var(--line);background:linear-gradient(180deg,#0f151c,#080b0f);overflow:hidden;position:relative;display:flex;flex-direction:column;min-width:0}.card-image{height:210px;position:relative;background:#151a20}.card-image img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) brightness(.9)}.no-photo{height:100%;display:grid;place-items:center;color:#77818d;letter-spacing:.12em;font-size:.75rem}.new-badge{position:absolute;left:11px;top:11px;border:1px solid var(--gold);background:rgba(5,7,9,.92);color:#f1cf67;padding:5px 9px;font-size:.62rem;font-weight:900;letter-spacing:.1em}.favorite{position:absolute;right:11px;top:11px;width:37px;height:37px;border-radius:50%;border:1px solid #fff;background:rgba(5,7,9,.86);color:#fff;display:grid;place-items:center;font-size:1.2rem;cursor:pointer}.favorite.active{color:#ffd34e;border-color:#ffd34e}.card-body{padding:15px 15px 13px;display:flex;flex-direction:column;flex:1}.category{color:var(--gold);font-size:.68rem;font-weight:800;margin-bottom:4px}.card h3{font-size:1.3rem;line-height:1.1;margin:0 0 5px}.maker{color:#c1c7ce;font-size:.75rem;margin-bottom:12px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.tag{border:1px solid var(--line);padding:4px 7px;font-size:.63rem;color:#d0d5db}.tag.condition.maintained{color:#51df68;border-color:#2a8f3a}.tag.condition.inspected{color:#ffb413;border-color:#9d6b00}.tag.condition.as-is{color:#c1c7ce}.price-row{border-top:1px solid var(--line);padding-top:11px;margin-top:auto;display:flex;align-items:end;justify-content:space-between;gap:10px}.price{font-size:1rem;font-weight:900}.detail{color:#f0bd38;font-size:.75rem;font-weight:900;white-space:nowrap}
+.all-products{padding:12px 0 55px}.results-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:17px}.results-head h2{font-size:2rem;margin:2px 0 0}.count{color:#b5bdc6;font-size:.8rem}.sort{height:40px;border:1px solid var(--line);background:#080b0f;color:#fff;padding:0 11px}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.status{position:absolute;left:11px;top:11px;padding:5px 8px;background:rgba(5,7,9,.92);border:1px solid currentColor;font-size:.62rem;font-weight:900}.status.available{color:var(--green)}.status.negotiation{color:var(--yellow)}.status.sold{color:#bbc1c9}.updating{position:absolute;right:11px;bottom:11px;padding:4px 7px;border:1px solid var(--line);background:rgba(5,7,9,.82);color:#aeb6bf;font-size:.55rem}.no-results{display:none;grid-column:1/-1;padding:55px;text-align:center;border:1px solid var(--line);color:var(--muted)}
+.bottom-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:14px;margin-bottom:28px}.help-box,.company-box{border:1px solid var(--line);background:linear-gradient(145deg,#0d1218,#080b0f);padding:22px}.help-box{border-color:rgba(224,181,63,.7);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}.help-box h2{font-size:1.25rem;margin:0 0 5px}.help-box p{color:#bec5cd;font-size:.76rem;margin:0}.help-actions{display:flex;gap:9px}.help-actions a{min-width:132px;padding:14px 15px;text-align:center;font-size:.72rem;font-weight:900;border:1px solid var(--line)}.help-actions .phone{background:linear-gradient(135deg,#e1b23d,#f7d064);color:#090b0e}.help-actions .instagram{background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf)}.help-actions .tiktok{background:#050505;border-color:#25f4ee;box-shadow:inset 3px 0 #fe2c55,inset -3px 0 #25f4ee}.company-box h2{font-size:1.2rem;margin:0 0 8px}.company-box p{margin:5px 0;color:#c3cad2;font-size:.72rem}.company-addresses{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:13px}.company-addresses div{border-top:1px solid var(--line);padding-top:8px;font-size:.63rem;color:#9ba5b0}footer{border-top:1px solid var(--line);padding:17px 0 24px;color:#777f89;font-size:.68rem;text-align:center}
+@media(max-width:1100px){.overview-grid{grid-template-columns:1fr}.stock-summary{grid-template-columns:repeat(2,1fr)}.stock-box:nth-child(2){border-right:0}.stock-box:nth-child(-n+2){border-bottom:1px solid var(--line)}.arrivals{grid-auto-columns:calc((100% - 32px)/3)}.products{grid-template-columns:repeat(3,1fr)}.bottom-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.wrap,.nav{width:calc(100% - 28px)}header{height:68px}.logo{width:185px}.nav-links{display:none}.home-btn{margin-left:auto}.overview{padding:28px 0 20px}.overview-grid{gap:26px}h1{font-size:clamp(3.2rem,16vw,5rem)}.stock-summary{grid-template-columns:1fr 1fr}.stock-box{min-height:62px;gap:8px}.stock-box b{font-size:1.35rem}.filter-grid,.range-grid{grid-template-columns:1fr}.arrivals{grid-auto-columns:82vw}.products{grid-template-columns:1fr}.card-image{height:240px}.bottom-grid{grid-template-columns:1fr}.help-box{grid-template-columns:1fr}.help-actions{display:grid;grid-template-columns:1fr}.company-addresses{grid-template-columns:1fr}.toggle-right .fav-label{display:none}}
+</style>
+</head>
 <body>
-<header><div class="nav"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="index.html#rental">RENTAL</a><a href="index.html#repair">REPAIR</a><a class="active" href="used-sales.html">USED SALES</a><a href="index.html#management">MANAGEMENT</a></nav><a class="back-home" href="index.html">HOMEへ戻る</a></div></header>
-<main>
-<section class="hero"><div class="wrap"><div class="eyebrow">Used Attachment Search</div><h1>USED SALES</h1><p>メーカー・種類・対応クラス・年式・価格・販売状況から、中古建機アタッチメントを絞り込めます。</p><span class="demo-note">掲載商品はすべてダミーです。実際の在庫・販売状況ではありません。</span></div></section>
-<section class="section"><div class="wrap"><div class="section-title"><div><div class="eyebrow">New Arrivals</div><h2>新着商品</h2></div><div class="carousel-controls"><button id="prevArrival" aria-label="前へ">←</button><button id="nextArrival" aria-label="次へ">→</button></div></div><div class="arrivals" id="arrivals"></div></div></section>
-<section class="search-section"><div class="wrap"><div class="search-toggle-wrap"><button id="searchToggle" class="search-toggle" type="button" aria-expanded="false"><strong>🔍 詳細条件で検索する <span class="favorite-count">お気に入り <b id="favoriteCount">0</b>件</span></strong><span class="toggle-icon">▼</span></button><div id="filterCollapse" class="filter-collapse"><div class="filter-collapse-inner"><div class="filter-panel">
-<div class="filter-grid">
- <div class="field"><label>キーワード・型式</label><input id="keyword" type="search" placeholder="例：TS-WD1700V-2"></div>
- <div class="field"><label>メーカー</label><select id="maker"><option value="">すべてのメーカー</option><option>オカダアイヨン</option><option>日本ニューマチック</option><option>タグチ工業</option><option>古河ロックドリル</option><option>東空販売</option><option>坂戸工作所</option><option>甲南建機</option></select></div>
- <div class="field"><label>種類</label><select id="type"><option value="">すべての種類</option><option>大割機</option><option>小割機</option><option>マグネット</option><option>油圧ブレーカー</option><option>鉄骨切断機</option><option>木材切断機</option><option>木材破砕機（マルチャー）</option><option>機械式フォーク</option><option>油圧式フォーク</option><option>ログフォーク</option><option>アースオーガ</option><option>油圧式オーガ</option><option>油圧式切削機</option><option>ツインヘッダー</option><option>標準バケット</option><option>幅狭バケット</option><option>幅広バケット</option><option>法面バケット</option><option>スケルトンバケット</option><option>ホイールローダー用バケット</option><option>特殊バケット</option><option>バケットクラッシャー</option><option>グラップル</option><option>リッパー</option><option>ポイント（爪・ツース盤）</option><option>ブレード</option><option>マルチブレード</option><option>草刈り機</option><option>クイックヒッチ</option><option>クイックカプラ</option></select></div>
- <div class="field"><label>対応クラス</label><select id="class"><option value="">すべてのクラス</option><option>3〜5t</option><option>5〜8t</option><option>7〜12t</option><option>12〜20t</option><option>20〜30t</option><option>30〜50t</option><option>45〜70t</option></select></div>
-</div>
-<div class="range-grid">
- <div class="field"><label>年式</label><div class="range-pair"><select id="yearMin"><option value="">下限なし</option><option value="2010">2010年</option><option value="2011">2011年</option><option value="2012">2012年</option><option value="2013">2013年</option><option value="2014">2014年</option><option value="2015">2015年</option><option value="2016">2016年</option><option value="2017">2017年</option><option value="2018">2018年</option><option value="2019">2019年</option><option value="2020">2020年</option><option value="2021">2021年</option><option value="2022">2022年</option><option value="2023">2023年</option><option value="2024">2024年</option><option value="2025">2025年</option><option value="2026">2026年</option></select><i>〜</i><select id="yearMax"><option value="">上限なし</option><option value="2010">2010年</option><option value="2011">2011年</option><option value="2012">2012年</option><option value="2013">2013年</option><option value="2014">2014年</option><option value="2015">2015年</option><option value="2016">2016年</option><option value="2017">2017年</option><option value="2018">2018年</option><option value="2019">2019年</option><option value="2020">2020年</option><option value="2021">2021年</option><option value="2022">2022年</option><option value="2023">2023年</option><option value="2024">2024年</option><option value="2025">2025年</option><option value="2026">2026年</option></select></div></div>
- <div class="field"><label>販売価格</label><div class="range-pair"><select id="priceMin"><option value="">下限なし</option><option value="300000">30万円</option><option value="500000">50万円</option><option value="1000000">100万円</option><option value="2000000">200万円</option><option value="3000000">300万円</option><option value="5000000">500万円</option></select><i>〜</i><select id="priceMax"><option value="">上限なし</option><option value="500000">50万円</option><option value="1000000">100万円</option><option value="2000000">200万円</option><option value="3000000">300万円</option><option value="5000000">500万円</option><option value="10000000">1,000万円</option></select></div></div>
- <div class="field"><label>販売状況</label><select id="status"><option value="">すべて</option><option>販売中</option><option>商談中</option><option>SOLD OUT</option></select></div>
- <label class="check-row"><input id="photoOnly" type="checkbox"><span>写真ありのみ</span></label>
-</div>
-<div class="filter-actions"><button class="filter-btn" id="searchBtn">検索する</button><button class="filter-btn secondary" id="resetBtn">条件をリセット</button></div>
-<div class="type-scroll"><h3>種類から選ぶ</h3><div class="type-chips" id="chips"></div></div>
-</div>
-</div></div></div></div><div class="results-head"><div><div class="eyebrow">All Products</div><h2>中古商品一覧</h2><div class="result-count" id="count"></div></div><select id="sort" class="sort-select"><option value="new">新着順</option><option value="priceAsc">価格が安い順</option><option value="priceDesc">価格が高い順</option><option value="yearDesc">年式が新しい順</option><option value="maker">メーカー順</option><option value="type">種類順</option></select></div>
-<div class="products" id="products"><div class="no-results" id="noResults">条件に一致する商品がありません。</div></div>
+<header>
+  <div class="nav">
+    <a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
+    <nav class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="index.html#rental">RENTAL</a>
+      <a href="index.html#repair">REPAIR</a>
+      <a class="active" href="used-sales.html">USED SALES</a>
+      <a href="index.html#management">MANAGEMENT</a>
+      <a href="index.html#company">COMPANY</a>
+    </nav>
+    <a class="home-btn" href="index.html">TOPへ</a>
+  </div>
+</header>
 
-<div class="help-cta">
-  <div>
-    <div class="eyebrow">Can’t find it?</div>
-    <h2>お探しの商品が見つからない場合も、<br>お気軽にお問い合わせください。</h2>
-    <p>入荷予定・類似商品・買取相談についてもご案内します。</p>
+<main>
+<section class="overview">
+  <div class="wrap overview-grid">
+    <div>
+      <div class="eyebrow">Used Attachment Search</div>
+      <h1>USED SALES</h1>
+      <p class="lead">メーカー・種類・対応クラス・年式・価格・販売状況から、<br>中古建機アタッチメントを絞り込めます。</p>
+      <div class="demo-note">ⓘ 掲載商品はすべてダミーです。実際の在庫・販売状況ではありません。</div>
+    </div>
+    <div class="summary-area">
+      <div class="stock-summary">
+        <div class="stock-box available"><span class="stock-icon">♧</span><div><small>販売中</small><b id="availableCount">0件</b></div></div>
+        <div class="stock-box negotiation"><span class="stock-icon">♢</span><div><small>商談中</small><b id="negotiationCount">0件</b></div></div>
+        <div class="stock-box sold"><span class="stock-icon">⊗</span><div><small>SOLD OUT</small><b id="soldCount">0件</b></div></div>
+        <div class="stock-box total"><span class="stock-icon">◇</span><div><small>掲載総数</small><b id="totalCount">0件</b></div></div>
+      </div>
+      <button id="searchToggle" class="search-toggle" type="button" aria-expanded="false">
+        <span class="toggle-left"><span class="search-symbol">⌕</span>詳細条件で検索する <span class="toggle-arrow">⌄</span></span>
+        <span class="toggle-right"><span class="fav-label">お気に入り</span><b id="favoriteCount">0件</b><span>☆</span></span>
+      </button>
+      <div id="filterCollapse" class="filter-collapse">
+        <div class="filter-inner">
+          <div class="filter-panel">
+            <div class="filter-grid">
+              <div class="field"><label>キーワード・型式</label><input id="keyword" type="search" placeholder="例：TS-WD1700V-2"></div>
+              <div class="field"><label>メーカー</label><select id="maker"><option value="">すべてのメーカー</option><option>オカダアイヨン</option><option>日本ニューマチック</option><option>タグチ工業</option><option>古河ロックドリル</option><option>東空販売</option><option>坂戸工作所</option><option>甲南建機</option></select></div>
+              <div class="field"><label>種類</label><select id="type"><option value="">すべての種類</option><option>大割機</option><option>小割機</option><option>マグネット</option><option>油圧ブレーカー</option><option>鉄骨切断機</option><option>木材切断機</option><option>木材破砕機（マルチャー）</option><option>機械式フォーク</option><option>油圧式フォーク</option><option>ログフォーク</option><option>アースオーガ</option><option>油圧式オーガ</option><option>油圧式切削機</option><option>ツインヘッダー</option><option>標準バケット</option><option>幅狭バケット</option><option>幅広バケット</option><option>法面バケット</option><option>スケルトンバケット</option><option>ホイールローダー用バケット</option><option>特殊バケット</option><option>バケットクラッシャー</option><option>グラップル</option><option>リッパー</option><option>ポイント（爪・ツース盤）</option><option>ブレード</option><option>マルチブレード</option><option>草刈り機</option><option>クイックヒッチ</option><option>クイックカプラ</option></select></div>
+              <div class="field"><label>対応クラス</label><select id="class"><option value="">すべてのクラス</option><option>3〜5t</option><option>5〜8t</option><option>7〜12t</option><option>12〜20t</option><option>20〜30t</option><option>30〜50t</option><option>45〜70t</option></select></div>
+            </div>
+            <div class="range-grid">
+              <div class="field"><label>年式</label><div class="range-pair"><select id="yearMin"><option value="">下限なし</option><option value="2010">2010年</option><option value="2011">2011年</option><option value="2012">2012年</option><option value="2013">2013年</option><option value="2014">2014年</option><option value="2015">2015年</option><option value="2016">2016年</option><option value="2017">2017年</option><option value="2018">2018年</option><option value="2019">2019年</option><option value="2020">2020年</option><option value="2021">2021年</option><option value="2022">2022年</option><option value="2023">2023年</option><option value="2024">2024年</option><option value="2025">2025年</option><option value="2026">2026年</option></select><i>〜</i><select id="yearMax"><option value="">上限なし</option><option value="2010">2010年</option><option value="2011">2011年</option><option value="2012">2012年</option><option value="2013">2013年</option><option value="2014">2014年</option><option value="2015">2015年</option><option value="2016">2016年</option><option value="2017">2017年</option><option value="2018">2018年</option><option value="2019">2019年</option><option value="2020">2020年</option><option value="2021">2021年</option><option value="2022">2022年</option><option value="2023">2023年</option><option value="2024">2024年</option><option value="2025">2025年</option><option value="2026">2026年</option></select></div></div>
+              <div class="field"><label>販売価格</label><div class="range-pair"><select id="priceMin"><option value="">下限なし</option><option value="300000">30万円</option><option value="500000">50万円</option><option value="1000000">100万円</option><option value="2000000">200万円</option><option value="3000000">300万円</option><option value="5000000">500万円</option></select><i>〜</i><select id="priceMax"><option value="">上限なし</option><option value="500000">50万円</option><option value="1000000">100万円</option><option value="2000000">200万円</option><option value="3000000">300万円</option><option value="5000000">500万円</option><option value="10000000">1,000万円</option></select></div></div>
+              <div class="field"><label>販売状況</label><select id="status"><option value="">すべて</option><option>販売中</option><option>商談中</option><option>SOLD OUT</option></select></div>
+              <label class="check-row"><input id="photoOnly" type="checkbox">写真ありのみ</label>
+            </div>
+            <div class="filter-actions"><button id="searchBtn" class="filter-btn">検索する</button><button id="resetBtn" class="filter-btn secondary">条件をリセット</button></div>
+            <div id="chips" class="type-chips"><button class="chip" type="button" data-type="大割機">大割機</button><button class="chip" type="button" data-type="小割機">小割機</button><button class="chip" type="button" data-type="マグネット">マグネット</button><button class="chip" type="button" data-type="油圧ブレーカー">油圧ブレーカー</button><button class="chip" type="button" data-type="鉄骨切断機">鉄骨切断機</button><button class="chip" type="button" data-type="木材切断機">木材切断機</button><button class="chip" type="button" data-type="木材破砕機（マルチャー）">木材破砕機（マルチャー）</button><button class="chip" type="button" data-type="機械式フォーク">機械式フォーク</button><button class="chip" type="button" data-type="油圧式フォーク">油圧式フォーク</button><button class="chip" type="button" data-type="ログフォーク">ログフォーク</button><button class="chip" type="button" data-type="アースオーガ">アースオーガ</button><button class="chip" type="button" data-type="油圧式オーガ">油圧式オーガ</button><button class="chip" type="button" data-type="油圧式切削機">油圧式切削機</button><button class="chip" type="button" data-type="ツインヘッダー">ツインヘッダー</button><button class="chip" type="button" data-type="標準バケット">標準バケット</button><button class="chip" type="button" data-type="幅狭バケット">幅狭バケット</button><button class="chip" type="button" data-type="幅広バケット">幅広バケット</button><button class="chip" type="button" data-type="法面バケット">法面バケット</button><button class="chip" type="button" data-type="スケルトンバケット">スケルトンバケット</button><button class="chip" type="button" data-type="ホイールローダー用バケット">ホイールローダー用バケット</button><button class="chip" type="button" data-type="特殊バケット">特殊バケット</button><button class="chip" type="button" data-type="バケットクラッシャー">バケットクラッシャー</button><button class="chip" type="button" data-type="グラップル">グラップル</button><button class="chip" type="button" data-type="リッパー">リッパー</button><button class="chip" type="button" data-type="ポイント（爪・ツース盤）">ポイント（爪・ツース盤）</button><button class="chip" type="button" data-type="ブレード">ブレード</button><button class="chip" type="button" data-type="マルチブレード">マルチブレード</button><button class="chip" type="button" data-type="草刈り機">草刈り機</button><button class="chip" type="button" data-type="クイックヒッチ">クイックヒッチ</button><button class="chip" type="button" data-type="クイックカプラ">クイックカプラ</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="help-actions">
-    <a class="phone" href="tel:0946428311">電話で問い合わせ</a>
-    <a class="instagram" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener">Instagram</a>
-    <a class="tiktok" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener">TikTok</a>
+</section>
+
+<section class="arrival-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">New Arrivals</div><h2>新着商品</h2></div>
+      <div class="carousel-buttons"><button id="prevArrival">←</button><button id="nextArrival">→</button></div>
+    </div>
+    <div id="arrivals" class="arrivals"></div>
   </div>
-</div>
-<div class="company-mini">
-  <div class="company-mini-grid">
-    <div><h3>株式会社レンビス</h3><small>代表取締役　堀口 隼人<br>TEL 0946-42-8311 / FAX 0946-42-8312</small></div>
-    <div><h3>本社</h3><p>福岡県朝倉郡筑前町松延804-1</p></div>
-    <div><h3>機材ヤード</h3><p>福岡県朝倉郡筑前町東小田字切坑1983-1</p></div>
-    <div><h3>レンタル修理ヤード</h3><p>福岡県朝倉郡筑前町松延807-3</p></div>
+</section>
+
+<section class="all-products">
+  <div class="wrap">
+    <div class="results-head">
+      <div><div class="eyebrow">All Products</div><h2>中古商品一覧</h2><div id="count" class="count"></div></div>
+      <select id="sort" class="sort"><option value="new">新着順</option><option value="priceAsc">価格が安い順</option><option value="priceDesc">価格が高い順</option><option value="yearDesc">年式が新しい順</option><option value="maker">メーカー順</option><option value="type">種類順</option></select>
+    </div>
+    <div id="products" class="products"></div>
+
+    <div class="bottom-grid">
+      <div class="help-box">
+        <div>
+          <div class="eyebrow">Can’t find it?</div>
+          <h2>お探しの商品が見つからないですか？</h2>
+          <p>掲載していない商品も全国ネットワークからお探しします。メーカー・型式・対応クラスをご相談ください。</p>
+        </div>
+        <div class="help-actions">
+          <a class="phone" href="tel:0946428311">電話で問い合わせ</a>
+          <a class="instagram" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener">Instagram</a>
+          <a class="tiktok" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div class="company-box" id="company">
+        <h2>株式会社レンビス</h2>
+        <p>代表取締役　堀口 隼人</p>
+        <p>TEL 0946-42-8311　FAX 0946-42-8312</p>
+        <div class="company-addresses">
+          <div><b>本社</b><br>福岡県朝倉郡筑前町松延804-1</div>
+          <div><b>機材ヤード</b><br>福岡県朝倉郡筑前町東小田字切坑1983-1</div>
+          <div><b>レンタル修理ヤード</b><br>福岡県朝倉郡筑前町松延807-3</div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-</div></section></main>
-<footer><div class="wrap"><div class="footer-row"><img class="footer-logo" src="renvis-logo.png" alt="RENVIS"><div>株式会社レンビス<br><span style="color:#8d96a0;font-size:.82rem">中古建機アタッチメント販売</span></div></div><div class="copyright">© 2026 RENVIS Co., Ltd. All Rights Reserved.</div></div></footer>
+</section>
+</main>
+<footer>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
+
 <script>
 const types=["大割機", "小割機", "マグネット", "油圧ブレーカー", "鉄骨切断機", "木材切断機", "木材破砕機（マルチャー）", "機械式フォーク", "油圧式フォーク", "ログフォーク", "アースオーガ", "油圧式オーガ", "油圧式切削機", "ツインヘッダー", "標準バケット", "幅狭バケット", "幅広バケット", "法面バケット", "スケルトンバケット", "ホイールローダー用バケット", "特殊バケット", "バケットクラッシャー", "グラップル", "リッパー", "ポイント（爪・ツース盤）", "ブレード", "マルチブレード", "草刈り機", "クイックヒッチ", "クイックカプラ"];
+const products=[{"id": 1, "maker": "オカダアイヨン", "type": "大割機", "model": "TS-WD1700V-2", "cls": "45〜70t", "year": 2021, "price": 4800000, "status": "販売中", "condition": "整備済み", "img": "rental-tswd1700.webp", "date": 20, "photo": true, "new": true}, {"id": 2, "maker": "タグチ工業", "type": "大割機", "model": "GUZZILLA DS-120A", "cls": "12〜20t", "year": 2019, "price": 3200000, "status": "商談中", "condition": "点検済み", "img": "repair-after-front.webp", "date": 19, "photo": true, "new": true}, {"id": 3, "maker": "日本ニューマチック", "type": "小割機", "model": "SV-30", "cls": "3〜5t", "year": 2023, "price": 980000, "status": "販売中", "condition": "整備済み", "img": "rental-sv30.webp", "date": 18, "photo": true, "new": true}, {"id": 4, "maker": "古河ロックドリル", "type": "油圧ブレーカー", "model": "Fx55α", "cls": "5〜8t", "year": 2022, "price": 1250000, "status": "販売中", "condition": "点検済み", "img": "rental-fx55.webp", "date": 17, "photo": true, "new": true}, {"id": 5, "maker": "オカダアイヨン", "type": "小割機", "model": "OSC-83V", "cls": "7〜12t", "year": 2018, "price": 1450000, "status": "SOLD OUT", "condition": "現状販売", "img": "repair-after-top.webp", "date": 16, "photo": true, "new": false}, {"id": 6, "maker": "坂戸工作所", "type": "マグネット", "model": "MAG-900", "cls": "12〜20t", "year": 2020, "price": 1680000, "status": "販売中", "condition": "点検済み", "img": "repair-before-top.webp", "date": 15, "photo": true, "new": false}, {"id": 7, "maker": "東空販売", "type": "油圧ブレーカー", "model": "TNB-6E", "cls": "5〜8t", "year": 2017, "price": 760000, "status": "商談中", "condition": "現状販売", "img": "hero.webp", "date": 14, "photo": true, "new": false}, {"id": 8, "maker": "オカダアイヨン", "type": "鉄骨切断機", "model": "TS-S550C", "cls": "12〜20t", "year": 2019, "price": 2900000, "status": "販売中", "condition": "整備済み", "img": "repair-before-front.webp", "date": 13, "photo": true, "new": false}, {"id": 9, "maker": "甲南建機", "type": "機械式フォーク", "model": "KF-70", "cls": "5〜8t", "year": 2016, "price": 420000, "status": "SOLD OUT", "condition": "現状販売", "img": "rental-sv30.webp", "date": 12, "photo": true, "new": false}, {"id": 10, "maker": "タグチ工業", "type": "油圧式フォーク", "model": "GV-120", "cls": "7〜12t", "year": 2020, "price": 980000, "status": "販売中", "condition": "点検済み", "img": "repair-after-front.webp", "date": 11, "photo": true, "new": false}, {"id": 11, "maker": "坂戸工作所", "type": "ログフォーク", "model": "LF-100", "cls": "7〜12t", "year": 2018, "price": 650000, "status": "販売中", "condition": "現状販売", "img": "repair-before-top.webp", "date": 10, "photo": true, "new": false}, {"id": 12, "maker": "甲南建機", "type": "アースオーガ", "model": "KA-1200", "cls": "12〜20t", "year": 2015, "price": 880000, "status": "商談中", "condition": "点検済み", "img": "hero.webp", "date": 9, "photo": true, "new": false}, {"id": 13, "maker": "日本ニューマチック", "type": "油圧式オーガ", "model": "HA-60", "cls": "5〜8t", "year": 2021, "price": 1050000, "status": "販売中", "condition": "整備済み", "img": "rental-fx55.webp", "date": 8, "photo": true, "new": false}, {"id": 14, "maker": "古河ロックドリル", "type": "ツインヘッダー", "model": "TH-20", "cls": "12〜20t", "year": 2017, "price": 2100000, "status": "販売中", "condition": "現状販売", "img": "repair-before-front.webp", "date": 7, "photo": true, "new": false}, {"id": 15, "maker": "オカダアイヨン", "type": "スケルトンバケット", "model": "SB-120", "cls": "7〜12t", "year": 2020, "price": 550000, "status": "販売中", "condition": "点検済み", "img": "rental-tswd1700.webp", "date": 6, "photo": true, "new": false}, {"id": 16, "maker": "タグチ工業", "type": "バケットクラッシャー", "model": "BC-150", "cls": "12〜20t", "year": 2018, "price": 2350000, "status": "SOLD OUT", "condition": "現状販売", "img": "repair-after-top.webp", "date": 5, "photo": true, "new": false}, {"id": 17, "maker": "坂戸工作所", "type": "グラップル", "model": "GR-70", "cls": "5〜8t", "year": 2022, "price": 790000, "status": "販売中", "condition": "整備済み", "img": "rental-sv30.webp", "date": 4, "photo": true, "new": false}, {"id": 18, "maker": "甲南建機", "type": "クイックヒッチ", "model": "QH-120", "cls": "7〜12t", "year": 2019, "price": 390000, "status": "販売中", "condition": "点検済み", "img": "repair-after-front.webp", "date": 3, "photo": true, "new": false}, {"id": 19, "maker": "東空販売", "type": "草刈り機", "model": "TM-80", "cls": "5〜8t", "year": 2016, "price": 590000, "status": "商談中", "condition": "現状販売", "img": "", "date": 2, "photo": false, "new": false}, {"id": 20, "maker": "古河ロックドリル", "type": "リッパー", "model": "FR-120", "cls": "12〜20t", "year": 2014, "price": 350000, "status": "販売中", "condition": "現状販売", "img": "", "date": 1, "photo": false, "new": false}];
 const favorites=new Set(JSON.parse(localStorage.getItem("renvisFavorites")||"[]"));
-const products=[{"id": 1, "maker": "オカダアイヨン", "type": "大割機", "model": "TS-WD1700V-2", "cls": "45〜70t", "year": 2021, "price": 4800000, "status": "販売中", "img": "rental-tswd1700.webp", "date": 20, "photo": true, "new": true}, {"id": 2, "maker": "タグチ工業", "type": "大割機", "model": "GUZZILLA DS-120A", "cls": "12〜20t", "year": 2019, "price": 3200000, "status": "商談中", "img": "repair-after-front.webp", "date": 19, "photo": true, "new": true}, {"id": 3, "maker": "日本ニューマチック", "type": "小割機", "model": "SV-30", "cls": "3〜5t", "year": 2023, "price": 980000, "status": "販売中", "img": "rental-sv30.webp", "date": 18, "photo": true, "new": true}, {"id": 4, "maker": "古河ロックドリル", "type": "油圧ブレーカー", "model": "Fx55α", "cls": "5〜8t", "year": 2022, "price": 1250000, "status": "販売中", "img": "rental-fx55.webp", "date": 17, "photo": true, "new": true}, {"id": 5, "maker": "オカダアイヨン", "type": "小割機", "model": "OSC-83V", "cls": "7〜12t", "year": 2018, "price": 1450000, "status": "SOLD OUT", "img": "repair-after-top.webp", "date": 16, "photo": true, "new": false}, {"id": 6, "maker": "坂戸工作所", "type": "マグネット", "model": "MAG-900", "cls": "12〜20t", "year": 2020, "price": 1680000, "status": "販売中", "img": "repair-before-top.webp", "date": 15, "photo": true, "new": false}, {"id": 7, "maker": "東空販売", "type": "油圧ブレーカー", "model": "TNB-6E", "cls": "5〜8t", "year": 2017, "price": 760000, "status": "商談中", "img": "hero.webp", "date": 14, "photo": true, "new": false}, {"id": 8, "maker": "オカダアイヨン", "type": "鉄骨切断機", "model": "TS-S550C", "cls": "12〜20t", "year": 2019, "price": 2900000, "status": "販売中", "img": "repair-before-front.webp", "date": 13, "photo": true, "new": false}, {"id": 9, "maker": "甲南建機", "type": "機械式フォーク", "model": "KF-70", "cls": "5〜8t", "year": 2016, "price": 420000, "status": "SOLD OUT", "img": "rental-sv30.webp", "date": 12, "photo": true, "new": false}, {"id": 10, "maker": "タグチ工業", "type": "油圧式フォーク", "model": "GV-120", "cls": "7〜12t", "year": 2020, "price": 980000, "status": "販売中", "img": "repair-after-front.webp", "date": 11, "photo": true, "new": false}, {"id": 11, "maker": "坂戸工作所", "type": "ログフォーク", "model": "LF-100", "cls": "7〜12t", "year": 2018, "price": 650000, "status": "販売中", "img": "repair-before-top.webp", "date": 10, "photo": true, "new": false}, {"id": 12, "maker": "甲南建機", "type": "アースオーガ", "model": "KA-1200", "cls": "12〜20t", "year": 2015, "price": 880000, "status": "商談中", "img": "hero.webp", "date": 9, "photo": true, "new": false}, {"id": 13, "maker": "日本ニューマチック", "type": "油圧式オーガ", "model": "HA-60", "cls": "5〜8t", "year": 2021, "price": 1050000, "status": "販売中", "img": "rental-fx55.webp", "date": 8, "photo": true, "new": false}, {"id": 14, "maker": "古河ロックドリル", "type": "ツインヘッダー", "model": "TH-20", "cls": "12〜20t", "year": 2017, "price": 2100000, "status": "販売中", "img": "repair-before-front.webp", "date": 7, "photo": true, "new": false}, {"id": 15, "maker": "オカダアイヨン", "type": "スケルトンバケット", "model": "SB-120", "cls": "7〜12t", "year": 2020, "price": 550000, "status": "販売中", "img": "rental-tswd1700.webp", "date": 6, "photo": true, "new": false}, {"id": 16, "maker": "タグチ工業", "type": "バケットクラッシャー", "model": "BC-150", "cls": "12〜20t", "year": 2018, "price": 2350000, "status": "SOLD OUT", "img": "repair-after-top.webp", "date": 5, "photo": true, "new": false}, {"id": 17, "maker": "坂戸工作所", "type": "グラップル", "model": "GR-70", "cls": "5〜8t", "year": 2022, "price": 790000, "status": "販売中", "img": "rental-sv30.webp", "date": 4, "photo": true, "new": false}, {"id": 18, "maker": "甲南建機", "type": "クイックヒッチ", "model": "QH-120", "cls": "7〜12t", "year": 2019, "price": 390000, "status": "販売中", "img": "repair-after-front.webp", "date": 3, "photo": true, "new": false}, {"id": 19, "maker": "東空販売", "type": "草刈り機", "model": "TM-80", "cls": "5〜8t", "year": 2016, "price": 590000, "status": "商談中", "img": "", "date": 2, "photo": false, "new": false}, {"id": 20, "maker": "古河ロックドリル", "type": "リッパー", "model": "FR-120", "cls": "12〜20t", "year": 2014, "price": 350000, "status": "販売中", "img": "", "date": 1, "photo": false, "new": false}];
 const $=id=>document.getElementById(id);
-const yen=n=>"¥"+n.toLocaleString("ja-JP");
+const yen=n=>n.toLocaleString("ja-JP")+"円（税込）";
 const statusClass=s=>s==="販売中"?"available":s==="商談中"?"negotiation":"sold";
-function imageMarkup(p){return p.photo?`<img src="${p.img}" alt="${p.model}">`:`<span class="no-photo">NO PHOTO</span>`}
-function renderArrivals(){
- const list=products.filter(p=>p.new).sort((a,b)=>b.date-a.date);
- $("arrivals").innerHTML=list.map(p=>`<a class="arrival" href="used-detail.html?id=${p.id}">${imageMarkup(p)}<div class="arrival-body"><small>${p.maker}</small><h3>${p.model}</h3><div>${p.year}年 / ${p.cls}</div><b>${yen(p.price)}</b></div></a>`).join("");
+const conditionClass=c=>c==="整備済み"?"maintained":c==="点検済み"?"inspected":"as-is";
+function image(p){return p.photo?`<img src="${p.img}" alt="${p.model}">`:`<div class="no-photo">NO PHOTO</div>`}
+function card(p,arrival=false){
+ return `<article class="card">
+  <div class="card-image">${image(p)}${arrival?'<span class="new-badge">NEW</span>':`<span class="status ${statusClass(p.status)}">${p.status}</span>`}<button class="favorite ${favorites.has(p.id)?'active':''}" data-id="${p.id}" type="button">${favorites.has(p.id)?'★':'☆'}</button>${arrival?'':'<span class="updating">商品情報更新中</span>'}</div>
+  <div class="card-body">
+    <div class="category">${p.type}</div><h3>${p.model}</h3><div class="maker">${p.maker}</div>
+    <div class="tags"><span class="tag condition ${conditionClass(p.condition)}">${p.condition}</span><span class="tag">${p.cls}</span><span class="tag">${p.year}年</span><span class="tag">● 福岡県</span></div>
+    <div class="price-row"><div class="price">${yen(p.price)}</div><a class="detail" href="used-detail.html?id=${p.id}">詳細を見る →</a></div>
+  </div></article>`;
 }
-function getFiltered(){
- const kw=$("keyword").value.trim().toLowerCase(), maker=$("maker").value, type=$("type").value, cls=$("class").value, status=$("status").value;
- const yMin=+$("yearMin").value||0,yMax=+$("yearMax").value||9999,pMin=+$("priceMin").value||0,pMax=+$("priceMax").value||Infinity,photo=$("photoOnly").checked;
- return products.filter(p=>(!kw||`${p.maker} ${p.type} ${p.model} ${p.cls}`.toLowerCase().includes(kw))&&(!maker||p.maker===maker)&&(!type||p.type===type)&&(!cls||p.cls===cls)&&(!status||p.status===status)&&p.year>=yMin&&p.year<=yMax&&p.price>=pMin&&p.price<=pMax&&(!photo||p.photo));
+function updateFavoriteCount(){$("favoriteCount").textContent=favorites.size+"件"}
+function renderArrivals(){$("arrivals").innerHTML=products.filter(p=>p.new).sort((a,b)=>b.date-a.date).map(p=>card(p,true)).join("")}
+function filtered(){
+ const kw=$("keyword").value.trim().toLowerCase(),maker=$("maker").value,type=$("type").value,cls=$("class").value,status=$("status").value;
+ const ymin=+$("yearMin").value||0,ymax=+$("yearMax").value||9999,pmin=+$("priceMin").value||0,pmax=+$("priceMax").value||Infinity,photo=$("photoOnly").checked;
+ return products.filter(p=>(!kw||`${p.maker} ${p.type} ${p.model} ${p.cls}`.toLowerCase().includes(kw))&&(!maker||p.maker===maker)&&(!type||p.type===type)&&(!cls||p.cls===cls)&&(!status||p.status===status)&&p.year>=ymin&&p.year<=ymax&&p.price>=pmin&&p.price<=pmax&&(!photo||p.photo));
 }
-function updateFavoriteCount(){document.getElementById("favoriteCount").textContent=favorites.size;}
 function render(){
- let list=getFiltered(),sort=$("sort").value;
- if(sort==="new")list.sort((a,b)=>b.date-a.date);if(sort==="priceAsc")list.sort((a,b)=>a.price-b.price);if(sort==="priceDesc")list.sort((a,b)=>b.price-a.price);if(sort==="yearDesc")list.sort((a,b)=>b.year-a.year);if(sort==="maker")list.sort((a,b)=>a.maker.localeCompare(b.maker,"ja"));if(sort==="type")list.sort((a,b)=>types.indexOf(a.type)-types.indexOf(b.type));
- $("count").textContent=`${list.length}件の商品が見つかりました`;
- const cards=list.map(p=>`<article class="product"><div class="product-media">${imageMarkup(p)}<span class="status ${statusClass(p.status)}">${p.status}</span><span class="dummy">掲載準備中</span>${p.new?'<span class="new-ribbon">NEW</span>':''}<button class="favorite ${favorites.has(p.id)?'active':''}" type="button" data-id="${p.id}" aria-label="お気に入り">${favorites.has(p.id)?'★':'☆'}</button></div><div class="product-body"><div class="maker">${p.maker}</div><h3>${p.model}</h3><div class="meta"><span>${p.cls}</span><span>${p.year}年</span><span class="location">📍福岡県</span></div><div class="price"><b>${p.price.toLocaleString("ja-JP")}円（税込）</b><a class="detail-btn" href="used-detail.html?id=${p.id}">詳細を見る →</a></div><a class="inquiry" href="tel:0946428311">この商品について問い合わせる</a></div></article>`).join("");
- $("products").innerHTML=cards+`<div class="no-results" id="noResults" style="${list.length?"":"display:block"}">条件に一致する商品がありません。</div>`;
+ let list=filtered();const sort=$("sort").value;
+ if(sort==="new")list.sort((a,b)=>b.date-a.date);
+ if(sort==="priceAsc")list.sort((a,b)=>a.price-b.price);
+ if(sort==="priceDesc")list.sort((a,b)=>b.price-a.price);
+ if(sort==="yearDesc")list.sort((a,b)=>b.year-a.year);
+ if(sort==="maker")list.sort((a,b)=>a.maker.localeCompare(b.maker,"ja"));
+ if(sort==="type")list.sort((a,b)=>types.indexOf(a.type)-types.indexOf(b.type));
+ $("count").textContent=list.length+"件の商品が見つかりました";
+ $("products").innerHTML=list.length?list.map(p=>card(p,false)).join(""):`<div class="no-results" style="display:block">条件に一致する商品がありません。</div>`;
 }
 function reset(){
- ["keyword","maker","type","class","yearMin","yearMax","priceMin","priceMax","status"].forEach(id=>$(id).value="");$("photoOnly").checked=false;$("sort").value="new";document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));render();
+ ["keyword","maker","type","class","yearMin","yearMax","priceMin","priceMax","status"].forEach(id=>$(id).value="");
+ $("photoOnly").checked=false;$("sort").value="new";
+ document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));render();
 }
-$("chips").innerHTML=types.map(t=>`<button class="chip" data-type="${t}">${t}</button>`).join("");
-$("chips").addEventListener("click",e=>{if(!e.target.classList.contains("chip"))return;const t=e.target.dataset.type;const active=e.target.classList.toggle("active");document.querySelectorAll(".chip").forEach(c=>{if(c!==e.target)c.classList.remove("active")});$("type").value=active?t:"";render();});
-["searchBtn","sort"].forEach(id=>$(id).addEventListener(id==="sort"?"change":"click",render));$("resetBtn").addEventListener("click",reset);
-$("prevArrival").onclick=()=>$("arrivals").scrollBy({left:-340,behavior:"smooth"});$("nextArrival").onclick=()=>$("arrivals").scrollBy({left:340,behavior:"smooth"});
-document.getElementById("products").addEventListener("click",e=>{
-  const btn=e.target.closest(".favorite");
-  if(!btn)return;
-  e.preventDefault();
-  const id=Number(btn.dataset.id);
-  if(favorites.has(id))favorites.delete(id);else favorites.add(id);
+document.addEventListener("click",e=>{
+ const fav=e.target.closest(".favorite");
+ if(fav){
+  e.preventDefault();const id=Number(fav.dataset.id);
+  favorites.has(id)?favorites.delete(id):favorites.add(id);
   localStorage.setItem("renvisFavorites",JSON.stringify([...favorites]));
-  updateFavoriteCount();
-  render();
+  updateFavoriteCount();renderArrivals();render();
+ }
 });
-const searchToggle=document.getElementById("searchToggle");
-const filterCollapse=document.getElementById("filterCollapse");
-searchToggle.addEventListener("click",()=>{
-  const open=filterCollapse.classList.toggle("open");
-  searchToggle.setAttribute("aria-expanded",String(open));
-});
-renderArrivals();updateFavoriteCount();render();
-</script></body></html>
+$("searchToggle").onclick=()=>{const open=$("filterCollapse").classList.toggle("open");$("searchToggle").setAttribute("aria-expanded",String(open))};
+$("searchBtn").onclick=render;$("resetBtn").onclick=reset;$("sort").onchange=render;
+$("chips").onclick=e=>{if(!e.target.classList.contains("chip"))return;const active=e.target.classList.toggle("active");document.querySelectorAll(".chip").forEach(c=>{if(c!==e.target)c.classList.remove("active")});$("type").value=active?e.target.dataset.type:"";render()};
+$("prevArrival").onclick=()=>$("arrivals").scrollBy({left:-360,behavior:"smooth"});
+$("nextArrival").onclick=()=>$("arrivals").scrollBy({left:360,behavior:"smooth"});
+$("availableCount").textContent=products.filter(p=>p.status==="販売中").length+"件";
+$("negotiationCount").textContent=products.filter(p=>p.status==="商談中").length+"件";
+$("soldCount").textContent=products.filter(p=>p.status==="SOLD OUT").length+"件";
+$("totalCount").textContent=products.length+"件";
+updateFavoriteCount();renderArrivals();render();
+</script>
+</body>
+</html>
