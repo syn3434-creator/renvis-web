@@ -64,6 +64,32 @@ footer{border-top:1px solid var(--line);padding:38px 0 24px}.footer-row{display:
   .search-toggle{padding:0 16px}
 }
 
+
+/* FINAL PRODUCT CARD REFINEMENTS */
+.favorite{
+  width:34px!important;height:34px!important;font-size:1.05rem!important;
+  right:12px!important;bottom:12px!important
+}
+.favorite:hover{transform:scale(1.08)}
+.product-media .new-ribbon{
+  background:rgba(7,9,12,.9)!important;color:#e7c35f!important;
+  border:1px solid rgba(231,195,95,.7)!important;
+  padding:5px 9px!important;font-size:.62rem!important;
+  box-shadow:inset 3px 0 0 #e7c35f
+}
+.dummy{
+  color:#aeb6bf!important;background:rgba(7,9,12,.78)!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  padding:5px 8px!important;font-size:.58rem!important;
+  letter-spacing:.05em
+}
+.meta{grid-template-columns:repeat(3,1fr)!important}
+.meta span.location{color:#d6dce3}
+.price b{font-size:1.05rem}
+@media(max-width:760px){
+  .meta{grid-template-columns:1fr 1fr!important}
+}
+
 </style></head>
 <body>
 <header><div class="nav"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="index.html#rental">RENTAL</a><a href="index.html#repair">REPAIR</a><a class="active" href="used-sales.html">USED SALES</a><a href="index.html#management">MANAGEMENT</a></nav><a class="back-home" href="index.html">HOMEへ戻る</a></div></header>
@@ -133,7 +159,7 @@ function render(){
  let list=getFiltered(),sort=$("sort").value;
  if(sort==="new")list.sort((a,b)=>b.date-a.date);if(sort==="priceAsc")list.sort((a,b)=>a.price-b.price);if(sort==="priceDesc")list.sort((a,b)=>b.price-a.price);if(sort==="yearDesc")list.sort((a,b)=>b.year-a.year);if(sort==="maker")list.sort((a,b)=>a.maker.localeCompare(b.maker,"ja"));if(sort==="type")list.sort((a,b)=>types.indexOf(a.type)-types.indexOf(b.type));
  $("count").textContent=`${list.length}件の商品が見つかりました`;
- const cards=list.map(p=>`<article class="product"><div class="product-media">${imageMarkup(p)}<span class="status ${statusClass(p.status)}">${p.status}</span><span class="dummy">DUMMY</span>${p.new?'<span class="new-ribbon">NEW</span>':''}<button class="favorite ${favorites.has(p.id)?'active':''}" type="button" data-id="${p.id}" aria-label="お気に入り">${favorites.has(p.id)?'★':'☆'}</button></div><div class="product-body"><div class="maker">${p.maker}</div><h3>${p.model}</h3><div class="meta"><span>${p.type}</span><span>${p.cls}</span><span>${p.year}年</span><span>中古品</span></div><div class="price"><b>${yen(p.price)}</b><a class="detail-btn" href="used-detail.html?id=${p.id}">詳細を見る →</a></div><a class="inquiry" href="tel:0946428311">この商品について問い合わせる</a></div></article>`).join("");
+ const cards=list.map(p=>`<article class="product"><div class="product-media">${imageMarkup(p)}<span class="status ${statusClass(p.status)}">${p.status}</span><span class="dummy">掲載準備中</span>${p.new?'<span class="new-ribbon">NEW</span>':''}<button class="favorite ${favorites.has(p.id)?'active':''}" type="button" data-id="${p.id}" aria-label="お気に入り">${favorites.has(p.id)?'★':'☆'}</button></div><div class="product-body"><div class="maker">${p.maker}</div><h3>${p.model}</h3><div class="meta"><span>${p.cls}</span><span>${p.year}年</span><span class="location">📍福岡県</span></div><div class="price"><b>${p.price.toLocaleString("ja-JP")}円（税込）</b><a class="detail-btn" href="used-detail.html?id=${p.id}">詳細を見る →</a></div><a class="inquiry" href="tel:0946428311">この商品について問い合わせる</a></div></article>`).join("");
  $("products").innerHTML=cards+`<div class="no-results" id="noResults" style="${list.length?"":"display:block"}">条件に一致する商品がありません。</div>`;
 }
 function reset(){
