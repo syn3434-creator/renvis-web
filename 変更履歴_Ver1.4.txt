@@ -1,0 +1,25 @@
+RENVIS HP Ver1.4 REPAIR完成版
+
+追加内容
+・repair.html
+・repair-detail.html
+・実際の修理写真を配置
+・Before / After比較
+・修理実績2件
+・COMING SOON枠2件
+・対応修理一覧
+・修理の流れ
+・電話／Instagram／TikTok導線
+・スマホ対応
+・トップページのREPAIRリンクを専用ページへ変更
+
+上書き方法
+1. ZIPを「すべて展開」
+2. renvis-webフォルダの中身をすべてコピー
+3. 現在使用中のrenvis-webへ貼り付け
+4. 同名ファイルは「置き換える」
+5. GitHub Desktopで「Ver1.4 REPAIRページ追加」と入力
+6. Commit to main
+7. Push origin
+
+.gitフォルダは削除しないでください。
