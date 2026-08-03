@@ -1,0 +1,21 @@
+RENVIS 中古販売検索ページ 完成版
+
+追加ファイル
+・used-sales.html
+
+トップページ変更
+・ヘッダーの USED SALES
+・4項目メニューの USED SALES
+・中古販売カードの「検索ページを見る」
+上記から used-sales.html が開くように設定しています。
+
+アップロード方法
+1. ZIPを解凍
+2. renvis-webフォルダ内のファイルをすべて選択
+3. 現在のrenvis-webフォルダへコピー
+4. 同名ファイルは「置き換える」を選択
+5. .gitフォルダは削除しない
+6. GitHub DesktopでCommit、Push
+
+注意
+掲載商品はすべて検索確認用のダミーです。
