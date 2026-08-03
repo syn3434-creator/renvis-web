@@ -1,0 +1,17 @@
+RENVIS TOP V1 最終修正版
+
+【変更内容】
+・ロゴ下の表記を「ATTACHMENT RENTAL & REPAIR / FUKUOKA」に変更
+・ヘッダーに CONTACT を追加
+・電話ボタンを青、Instagramを公式グラデーション、TikTokを黒＋公式カラー表現に変更
+・電話ボタンの文字折り返しを防止
+・PC版を少し上方向へ圧縮
+・会社概要、3拠点、TEL・FAX、MAPリンクを維持
+
+【反映方法】
+1. ZIPを解凍
+2. renvis-webフォルダ内のファイルを全選択
+3. 現在のrenvis-webフォルダへコピー
+4. 同名ファイルは「置き換える」を選択
+5. .gitフォルダは削除しない
+6. GitHub DesktopでCommit → Push

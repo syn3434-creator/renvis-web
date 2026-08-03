@@ -8,7 +8,7 @@
 <style>
 :root{
   --bg:#07090c;--panel:#0d1116;--text:#f4f6f8;--muted:#a9b1bb;
-  --line:rgba(255,255,255,.15);--silver:#d9dde3;--max:1460px;
+  --line:rgba(255,255,255,.15);--silver:#d9dde3;--blue:#0f67c7;--blue2:#2d8cff;--max:1460px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -18,34 +18,34 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 header{position:fixed;z-index:60;inset:0 0 auto;height:82px;display:flex;align-items:center;transition:.25s}
 header.scrolled{background:rgba(5,7,10,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav{width:min(var(--max),calc(100% - 64px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:28px}
-.logo{width:330px;height:auto;mix-blend-mode:screen;filter:drop-shadow(0 3px 10px rgba(0,0,0,.48))}
-.nav-links{display:flex;align-items:center;gap:34px;margin-left:auto;font-size:.78rem;letter-spacing:.08em;font-weight:700}
+.brand{display:flex;flex-direction:column;gap:6px;flex:0 0 auto}.logo{width:330px;height:auto;mix-blend-mode:screen;filter:drop-shadow(0 3px 10px rgba(0,0,0,.48))}.brand-tagline{font-size:.63rem;letter-spacing:.18em;font-weight:700;color:#e9edf2;white-space:nowrap}
+.nav-links{display:flex;align-items:center;gap:28px;margin-left:auto;font-size:.75rem;letter-spacing:.07em;font-weight:700}
 .nav-links a{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.25)}
 .nav-actions{display:flex;align-items:center;gap:12px}
-.icon-link{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.34);background:rgba(2,4,7,.3);transition:.22s}
+.icon-link{width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.42);background:rgba(2,4,7,.38);transition:.22s}
 .icon-link:hover{transform:translateY(-2px);border-color:#fff;background:rgba(255,255,255,.07)}
 .icon-link svg{width:22px;height:22px}
-.instagram-icon{border:none;background:linear-gradient(135deg,#f9ce34,#ee2a7b 48%,#6228d7);border-radius:11px}
+.instagram-icon{border:none;background:linear-gradient(135deg,#f9ce34 0%,#ee2a7b 50%,#6228d7 100%);border-radius:12px;box-shadow:0 0 18px rgba(238,42,123,.22)}
 .instagram-icon svg{stroke:#fff;fill:none;stroke-width:1.8}
-.tiktok-icon{border:none;background:transparent;position:relative}
+.tiktok-icon{border-color:rgba(255,255,255,.38);background:#050608;position:relative;box-shadow:inset 0 0 0 1px rgba(37,244,238,.09),0 0 16px rgba(254,44,85,.08)}
 .tiktok-icon svg{width:27px;height:27px;filter:drop-shadow(-2px 0 #25f4ee) drop-shadow(2px 0 #fe2c55);fill:#fff}
-.phone-icon svg{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.phone-icon{background:#050608;border-color:rgba(255,255,255,.65);box-shadow:0 0 14px rgba(255,255,255,.08)}.phone-icon svg{fill:none;stroke:#fff;stroke-width:2.15;stroke-linecap:round;stroke-linejoin:round}
 .menu-btn{width:44px;height:44px;border:0;background:transparent;display:grid;place-content:center;gap:6px;cursor:pointer}
 .menu-btn span{display:block;width:31px;height:2px;background:#fff}
 .hero{height:min(760px,88vh);min-height:620px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
 .hero-bg{position:absolute;inset:0;background:url("hero.webp") 52% center/cover no-repeat;transform:scale(1.015)}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,4,7,.94) 0%,rgba(2,4,7,.58) 43%,rgba(2,4,7,.12) 100%),linear-gradient(0deg,#07090c 0%,transparent 32%)}
-.hero-content{position:relative;z-index:2;width:100%;padding:130px 0 46px}
+.hero-content{position:relative;z-index:2;width:100%;padding:118px 0 34px}
 .hero-copy-box{max-width:680px}
-.hero h1{font-size:clamp(4.5rem,7vw,7.6rem);line-height:.83;letter-spacing:-.065em;margin:0 0 30px;font-weight:800;color:#f2f3f5}
+.hero h1{font-size:clamp(4.5rem,7vw,7.6rem);line-height:.83;letter-spacing:-.065em;margin:14px 0 24px;font-weight:800;color:#f2f3f5}
 .hero h1 span{display:block}
 .hero-lead{font-size:clamp(1.05rem,1.4vw,1.3rem);color:#f0f2f4;margin:0 0 14px}
 .hero-sub{font-size:clamp(.95rem,1.1vw,1.08rem);color:#e3e6ea;margin:0 0 28px}
-.hero-actions{display:grid;grid-template-columns:1.08fr 1fr 1fr;gap:14px;max-width:880px}
-.action-btn{min-height:60px;border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;gap:16px;padding:0 22px;font-weight:700;letter-spacing:.03em;transition:.24s;background:rgba(5,7,10,.62)}
+.hero-actions{display:grid;grid-template-columns:1.08fr 1fr 1fr;gap:14px;max-width:940px}
+.action-btn{min-height:60px;border:1px solid rgba(255,255,255,.32);display:flex;align-items:center;justify-content:flex-start;gap:14px;padding:0 20px;font-weight:700;letter-spacing:.02em;line-height:1.25;white-space:nowrap;transition:.24s;background:rgba(5,7,10,.72)}
 .action-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
-.action-btn.primary{background:linear-gradient(180deg,#fff,#dfe3e8);color:#080a0d;border-color:#fff}
-.action-icon{width:30px;height:30px;display:grid;place-items:center;flex:0 0 auto}
+.action-btn.primary{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border-color:#348ee8;box-shadow:0 10px 28px rgba(15,103,199,.24)}.action-btn.instagram-action{background:linear-gradient(110deg,#f9a43b 0%,#e52d77 52%,#7b2be2 100%);border-color:rgba(255,255,255,.35);box-shadow:0 10px 28px rgba(229,45,119,.2)}.action-btn.tiktok-action{background:#050608;border-color:rgba(255,255,255,.5);box-shadow:inset 0 0 0 1px rgba(37,244,238,.12),0 10px 28px rgba(254,44,85,.08)}
+.action-icon{width:32px;height:32px;display:grid;place-items:center;flex:0 0 auto}.action-btn .action-icon.instagram-icon{border-radius:9px}.action-btn .action-icon.tiktok-icon{border:0;box-shadow:none}.action-btn .action-icon.phone-icon{border:0;background:transparent;box-shadow:none}
 .action-icon svg{width:27px;height:27px}
 .services-nav{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#090c10}
 .services-nav-grid{display:grid;grid-template-columns:repeat(4,1fr)}
@@ -68,13 +68,13 @@ h2{font-size:clamp(2.1rem,4vw,4.1rem);line-height:1.05;margin:.2em 0;letter-spac
 .map-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.map-btn{border:1px solid var(--line);padding:15px 14px;text-align:center;font-size:.82rem;font-weight:700;transition:.2s}.map-btn:hover{background:#f1f3f5;color:#080a0d}
 .contact-strip{padding:72px 0;background:#e9edf1;color:#080a0d}.contact-wrap{display:flex;align-items:center;justify-content:space-between;gap:30px}.contact-strip h2{margin:0 0 10px;font-size:clamp(2rem,3.5vw,3.8rem)}.contact-strip p{margin:0;color:#4d5661}.contact-call{background:#080a0d;color:#fff;padding:18px 26px;font-weight:700;white-space:nowrap}
 footer{padding:38px 0 25px}.footer-top{display:flex;justify-content:space-between;align-items:center;gap:30px}.footer-logo{width:240px;mix-blend-mode:screen}.copyright{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);color:#747c86;font-size:.72rem}
-#rental,#repair,#used,#management,#company{scroll-margin-top:88px}
+#rental,#repair,#used,#management,#company,#contact{scroll-margin-top:88px}
 @media(max-width:1050px){
- .logo{width:250px}.nav-links{gap:18px}.hero h1{font-size:clamp(4rem,8.5vw,6.4rem)}
+ .logo{width:250px}.brand-tagline{font-size:.53rem}.nav-links{gap:15px}.hero h1{font-size:clamp(4rem,8.5vw,6.4rem)}
  .hero-actions{grid-template-columns:1fr 1fr}.action-btn.primary{grid-column:1/-1}.service-cards{grid-template-columns:1fr 1fr}.card:nth-child(2){border-right:none}.card:nth-child(-n+2){border-bottom:1px solid var(--line)}
 }
 @media(max-width:760px){
- .wrap,.nav{width:calc(100% - 28px)}header{height:72px}.logo{width:205px}.nav-links{display:none}.nav-actions{gap:6px}.icon-link,.menu-btn{width:38px;height:38px}.hero{height:auto;min-height:100svh}.hero-bg{background-position:58% center}.hero-content{padding:135px 0 66px}.hero h1{font-size:clamp(3.4rem,16vw,5.3rem);margin-bottom:28px}.hero-lead{font-size:1.05rem}.hero-actions{grid-template-columns:1fr}.action-btn.primary{grid-column:auto}.services-nav-grid{grid-template-columns:1fr 1fr}.service-tab:nth-child(2){border-right:none}.service-tab:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .wrap,.nav{width:calc(100% - 28px)}header{height:72px}.logo{width:205px}.brand-tagline{font-size:.47rem;letter-spacing:.11em}.nav-links{display:none}.nav-actions{gap:6px}.icon-link,.menu-btn{width:38px;height:38px}.hero{height:auto;min-height:100svh}.hero-bg{background-position:58% center}.hero-content{padding:135px 0 66px}.hero h1{font-size:clamp(3.4rem,16vw,5.3rem);margin-bottom:28px}.hero-lead{font-size:1.05rem}.hero-actions{grid-template-columns:1fr}.action-btn.primary{grid-column:auto}.services-nav-grid{grid-template-columns:1fr 1fr}.service-tab:nth-child(2){border-right:none}.service-tab:nth-child(-n+2){border-bottom:1px solid var(--line)}
  .section{padding:78px 0}.section-head{align-items:flex-start;flex-direction:column}.service-cards{grid-template-columns:1fr}.card{border-right:none;border-bottom:1px solid var(--line);min-height:0}.card:last-child{border-bottom:none}.card-media{height:230px}
  .company-grid{grid-template-columns:1fr;gap:34px}.company-row{grid-template-columns:1fr;gap:4px}.map-buttons{grid-template-columns:1fr}.contact-wrap,.footer-top{align-items:flex-start;flex-direction:column}
 }
@@ -83,9 +83,9 @@ footer{padding:38px 0 25px}.footer-top{display:flex;justify-content:space-betwee
 <body>
 <header id="header">
  <div class="nav">
-  <a href="#top"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
+  <a class="brand" href="#top"><img class="logo" src="renvis-logo.png" alt="RENVIS"><span class="brand-tagline">ATTACHMENT RENTAL &amp; REPAIR / FUKUOKA</span></a>
   <nav class="nav-links">
-   <a href="#rental">RENTAL</a><a href="#repair">REPAIR</a><a href="#used">USED SALES</a><a href="#management">MANAGEMENT</a>
+   <a href="#rental">RENTAL</a><a href="#repair">REPAIR</a><a href="#used">USED SALES</a><a href="#management">MANAGEMENT</a><a href="#contact">CONTACT</a>
   </nav>
   <div class="nav-actions">
    <a class="icon-link instagram-icon" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></a>
@@ -104,8 +104,8 @@ footer{padding:38px 0 25px}.footer-top{display:flex;justify-content:space-betwee
   <p class="hero-sub">現場を止めないために、技術とスピードで応える。</p>
   <div class="hero-actions">
    <a class="action-btn primary" href="tel:0946428311"><span class="action-icon phone-icon"><svg viewBox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"/></svg></span>電話でお問い合わせ</a>
-   <a class="action-btn" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener"><span class="action-icon instagram-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></span>Instagramを見る</a>
-   <a class="action-btn" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener"><span class="action-icon tiktok-icon"><svg viewBox="0 0 24 24"><path d="M14.2 3.2c.5 2.7 2 4.3 4.8 4.8v3.2c-1.8 0-3.4-.6-4.8-1.6v6.2a5.7 5.7 0 1 1-5-5.6v3.3a2.5 2.5 0 1 0 1.8 2.3V3.2h3.2z"/></svg></span>TikTokを見る</a>
+   <a class="action-btn instagram-action" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener"><span class="action-icon instagram-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></span>Instagramを見る</a>
+   <a class="action-btn tiktok-action" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener"><span class="action-icon tiktok-icon"><svg viewBox="0 0 24 24"><path d="M14.2 3.2c.5 2.7 2 4.3 4.8 4.8v3.2c-1.8 0-3.4-.6-4.8-1.6v6.2a5.7 5.7 0 1 1-5-5.6v3.3a2.5 2.5 0 1 0 1.8 2.3V3.2h3.2z"/></svg></span>TikTokを見る</a>
   </div>
  </div></div></div>
 </section>
@@ -140,7 +140,7 @@ footer{padding:38px 0 25px}.footer-top{display:flex;justify-content:space-betwee
   <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E6%9C%9D%E5%80%89%E9%83%A1%E7%AD%91%E5%89%8D%E7%94%BA%E6%9D%BE%E5%BB%B6807-3">レンタル修理ヤードMAP</a>
  </div></div>
 </div></section>
-<section class="contact-strip"><div class="wrap contact-wrap"><div><h2>現場の困りごと、まずはご相談ください。</h2><p>レンタル・修理・中古販売・管理・部品製作まで、お電話で承ります。</p></div><a class="contact-call" href="tel:0946428311">0946-42-8311</a></div></section>
+<section class="contact-strip" id="contact"><div class="wrap contact-wrap"><div><h2>現場の困りごと、まずはご相談ください。</h2><p>レンタル・修理・中古販売・管理・部品製作まで、お電話で承ります。</p></div><a class="contact-call" href="tel:0946428311">0946-42-8311</a></div></section>
 </main>
 <footer><div class="wrap"><div class="footer-top"><img class="footer-logo" src="renvis-logo.png" alt="RENVIS"><div>株式会社レンビス<br><span style="color:#8a929c;font-size:.84rem">Fukuoka, Japan</span></div></div><div class="copyright">© 2026 RENVIS Co., Ltd. All Rights Reserved.</div></div></footer>
 <script>
