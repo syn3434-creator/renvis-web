@@ -333,12 +333,38 @@ html,body{max-width:100%;overflow-x:hidden}
   .company-name{font-size:clamp(2rem,11vw,3rem)!important}
 }
 
+
+/* VER1.7 PUBLIC FINAL */
+.brand{display:flex;flex-direction:column;align-items:flex-start;flex:0 0 auto}
+.brand-company{margin-top:-5px;padding-left:3px;color:#eef1f4;font-size:.72rem;letter-spacing:.18em;font-weight:600;text-shadow:0 2px 8px rgba(0,0,0,.7)}
+.contact-icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.hero-actions{grid-template-columns:repeat(4,minmax(0,1fr));max-width:1180px}
+.action-btn.contact-btn{background:rgba(7,10,14,.86)!important;border-color:rgba(255,255,255,.55)!important;color:#fff!important}
+.achievement-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0c1015,#080b0f)}
+.achievement-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.achievement-item{min-height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid var(--line);text-align:center;padding:18px}
+.achievement-item:last-child{border-right:0}
+.achievement-item strong{font-size:clamp(2rem,3.6vw,3.8rem);line-height:1;color:#f3f5f7;letter-spacing:-.04em}
+.achievement-item strong span{font-size:.38em;margin-left:.16em;color:#d9dde3;letter-spacing:0}
+.achievement-item strong.area{font-size:clamp(1.8rem,3vw,3rem);letter-spacing:.02em}
+.achievement-item small{margin-top:10px;color:#d9b84e;font-size:.74rem;letter-spacing:.14em;font-weight:800}
+@media(min-width:761px){.menu-btn{display:none!important}}
+@media(max-width:1050px) and (min-width:761px){.hero-actions{grid-template-columns:repeat(2,1fr)}.action-btn.primary{grid-column:auto}}
+@media(max-width:760px){
+ .brand-company{font-size:.58rem;letter-spacing:.12em;margin-top:-3px}
+ .hero-lead{font-size:clamp(1rem,5.2vw,1.24rem)!important;line-height:1.55;word-break:keep-all}
+ .achievement-item{min-height:94px;padding:12px 5px}
+ .achievement-item strong{font-size:clamp(1.35rem,7vw,2rem)}
+ .achievement-item strong.area{font-size:clamp(1.18rem,5.6vw,1.65rem)}
+ .achievement-item small{font-size:.56rem;letter-spacing:.06em;margin-top:7px;white-space:nowrap}
+}
+
 </style>
 </head>
 <body>
 <header id="header">
  <div class="nav">
-  <a href="#top"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
+  <a class="brand" href="#top"><img class="logo" src="renvis-logo.png" alt="RENVIS"><span class="brand-company">株式会社レンビス</span></a>
   <nav class="nav-links">
    <a href="rental.html">RENTAL</a><a href="repair.html">REPAIR</a><a href="used-sales.html">USED SALES</a><a href="management.html">MANAGEMENT</a>
   </nav>
@@ -380,14 +406,21 @@ html,body{max-width:100%;overflow-x:hidden}
  <div class="hero-bg"></div>
  <div class="hero-content"><div class="wrap"><div class="hero-copy-box">
   <h1><span>Be a</span><span>performer.</span></h1>
-  <p class="hero-lead">建機アタッチメントの<br>レンタル・修理・中古販売・管理。</p>
-  <p class="hero-sub">現場を止めないために、技術とスピードで応える。</p>
+  <p class="hero-lead">建設・解体現場を支える<br>アタッチメントのプロフェッショナル</p>
   <div class="hero-actions">
    <a class="action-btn primary" href="tel:0946428311"><span class="action-icon phone-icon"><svg viewBox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"/></svg></span>電話でお問い合わせ</a>
+   <a class="action-btn contact-btn" href="contact.html"><span class="action-icon contact-icon"><svg viewBox="0 0 24 24"><path d="M3.5 5.5h17v13h-17z"/><path d="M4 6l8 6 8-6"/></svg></span>お問い合わせ</a>
    <a class="action-btn" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener"><span class="action-icon instagram-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></span>Instagramを見る</a>
    <a class="action-btn" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener"><span class="action-icon tiktok-icon"><svg viewBox="0 0 24 24"><path d="M14.2 3.2c.5 2.7 2 4.3 4.8 4.8v3.2c-1.8 0-3.4-.6-4.8-1.6v6.2a5.7 5.7 0 1 1-5-5.6v3.3a2.5 2.5 0 1 0 1.8 2.3V3.2h3.2z"/></svg></span>TikTokを見る</a>
   </div>
  </div></div></div>
+</section>
+<section class="achievement-strip" aria-label="レンビスの実績">
+ <div class="wrap achievement-grid">
+  <div class="achievement-item"><strong>2,000<span>件以上</span></strong><small>累計修理実績</small></div>
+  <div class="achievement-item"><strong>250<span>台</span></strong><small>レンタル保有台数</small></div>
+  <div class="achievement-item"><strong class="area">九州全域</strong><small>対応エリア</small></div>
+ </div>
 </section>
 <section class="services-nav"><div class="wrap services-nav-grid">
  <a class="service-tab" href="rental.html"><b>RENTAL</b><span>建機アタッチメントレンタル</span></a>
@@ -401,7 +434,7 @@ html,body{max-width:100%;overflow-x:hidden}
   <article class="card" id="rental"><div class="card-media"><img src="rental-fx55.webp" alt="レンタル"><div class="card-no">01</div><div class="card-title"><b>RENTAL</b><span>レンタル</span></div></div><div class="card-body"><p>必要な時に、すぐ使える一台を。用途に合わせた建機アタッチメントをご用意します。</p><a href="rental.html">レンタルページを見る →</a></div></article>
   <article class="card" id="repair"><div class="card-media"><img src="repair-after-top.webp" alt="修理"><div class="card-no">02</div><div class="card-title"><b>REPAIR</b><span>修理・再生</span></div></div><div class="card-body"><p>溶接補修・肉盛り・部品交換・オーバーホール。もう一度、現場で働ける一台へ。</p><a href="repair.html">修理ページを見る →</a></div></article>
   <article class="card" id="used"><div class="card-media"><img src="rental-tswd1700.webp" alt="中古販売"><div class="card-no">03</div><div class="card-title"><b>USED SALES</b><span>中古販売</span></div></div><div class="card-body"><p>状態を確認した中古アタッチメントを厳選。入荷情報はSNSでもお知らせします。</p><a href="used-sales.html">検索ページを見る →</a></div></article>
-  <article class="card" id="management"><div class="card-media"><img src="repair-before-top.webp" alt="管理・部品製作"><div class="card-no">04</div><div class="card-title"><b>MANAGEMENT</b><span>管理・部品製作</span></div></div><div class="card-body"><p>アタッチメント管理、ピン・ブッシュ・各種部品製作。久木田マシーンサービスと連携して対応します。</p><a href="management.html">管理・部品製作ページを見る →</a></div></article>
+  <article class="card" id="management"><div class="card-media"><img src="repair-before-top.webp" alt="管理・部品製作"><div class="card-no">04</div><div class="card-title"><b>MANAGEMENT</b><span>管理・部品製作</span></div></div><div class="card-body"><p>お客様のアタッチメントのカルテ作成、修理、履歴管理。また取付ショベル変更に伴う部品の改造、製作を行っております。</p><a href="management.html">管理・部品製作ページを見る →</a></div></article>
  </div>
 </div></section>
 <section class="section company-section" id="company"><div class="wrap company-grid">
