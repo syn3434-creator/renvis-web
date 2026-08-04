@@ -17,6 +17,69 @@ header{position:sticky;top:0;z-index:80;height:76px;display:flex;align-items:cen
 .bottom-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:14px;margin-bottom:28px}.help-box,.company-box{border:1px solid var(--line);background:linear-gradient(145deg,#0d1218,#080b0f);padding:22px}.help-box{border-color:rgba(224,181,63,.7);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}.help-box h2{font-size:1.25rem;margin:0 0 5px}.help-box p{color:#bec5cd;font-size:.76rem;margin:0}.help-actions{display:flex;gap:9px}.help-actions a{min-width:132px;padding:14px 15px;text-align:center;font-size:.72rem;font-weight:900;border:1px solid var(--line)}.help-actions .phone{background:linear-gradient(135deg,#e1b23d,#f7d064);color:#090b0e}.help-actions .instagram{background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf)}.help-actions .tiktok{background:#050505;border-color:#25f4ee;box-shadow:inset 3px 0 #fe2c55,inset -3px 0 #25f4ee}.company-box h2{font-size:1.2rem;margin:0 0 8px}.company-box p{margin:5px 0;color:#c3cad2;font-size:.72rem}.company-addresses{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:13px}.company-addresses div{border-top:1px solid var(--line);padding-top:8px;font-size:.63rem;color:#9ba5b0}footer{border-top:1px solid var(--line);padding:17px 0 24px;color:#777f89;font-size:.68rem;text-align:center}
 @media(max-width:1100px){.overview-grid{grid-template-columns:1fr}.stock-summary{grid-template-columns:repeat(2,1fr)}.stock-box:nth-child(2){border-right:0}.stock-box:nth-child(-n+2){border-bottom:1px solid var(--line)}.arrivals{grid-auto-columns:calc((100% - 32px)/3)}.products{grid-template-columns:repeat(3,1fr)}.bottom-grid{grid-template-columns:1fr}}
 @media(max-width:760px){.wrap,.nav{width:calc(100% - 28px)}header{height:68px}.logo{width:185px}.nav-links{display:none}.home-btn{margin-left:auto}.overview{padding:28px 0 20px}.overview-grid{gap:26px}h1{font-size:clamp(3.2rem,16vw,5rem)}.stock-summary{grid-template-columns:1fr 1fr}.stock-box{min-height:62px;gap:8px}.stock-box b{font-size:1.35rem}.filter-grid,.range-grid{grid-template-columns:1fr}.arrivals{grid-auto-columns:82vw}.products{grid-template-columns:1fr}.card-image{height:240px}.bottom-grid{grid-template-columns:1fr}.help-box{grid-template-columns:1fr}.help-actions{display:grid;grid-template-columns:1fr}.company-addresses{grid-template-columns:1fr}.toggle-right .fav-label{display:none}}
+
+/* VER1.6 MOBILE FIXES */
+html,body{max-width:100%;overflow-x:hidden}
+@media(max-width:760px){
+  .overview-grid{min-width:0}
+  .overview .lead{
+    max-width:none!important;
+    font-size:.91rem!important;
+    line-height:1.85!important;
+    overflow-wrap:anywhere;
+  }
+  .overview .lead .desktop-break{display:none}
+  .stock-summary{
+    width:100%;
+    padding:0!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  .stock-box{
+    min-width:0;
+    min-height:88px!important;
+    padding:12px 8px!important;
+    gap:9px!important;
+    justify-content:center!important;
+  }
+  .stock-icon{font-size:1.45rem!important;flex:0 0 auto}
+  .stock-box small{
+    font-size:.68rem!important;
+    white-space:nowrap;
+  }
+  .stock-box b{
+    font-size:1.35rem!important;
+    white-space:nowrap;
+  }
+  .search-toggle{
+    min-width:0;
+    padding:0 14px!important;
+  }
+  .toggle-left{
+    min-width:0;
+    gap:8px!important;
+    font-size:.83rem;
+    white-space:nowrap;
+  }
+  .toggle-right{
+    flex:0 0 auto;
+    gap:8px!important;
+  }
+  .field label{
+    white-space:normal!important;
+    overflow-wrap:anywhere;
+  }
+  .filter-grid,.range-grid{min-width:0}
+  .field,.range-pair{min-width:0}
+  .field input,.field select{min-width:0}
+}
+@media(max-width:380px){
+  .stock-box{padding:10px 5px!important;gap:6px!important}
+  .stock-icon{font-size:1.25rem!important}
+  .stock-box b{font-size:1.2rem!important}
+  .stock-box small{font-size:.62rem!important}
+  .toggle-left{font-size:.76rem}
+}
+
 </style>
 </head>
 <body>
@@ -41,7 +104,7 @@ header{position:sticky;top:0;z-index:80;height:76px;display:flex;align-items:cen
     <div>
       <div class="eyebrow">Used Attachment Search</div>
       <h1>USED SALES</h1>
-      <p class="lead">メーカー・種類・対応クラス・年式・価格・販売状況から、<br>中古建機アタッチメントを絞り込めます。</p>
+      <p class="lead">メーカー・種類・対応クラス・年式・価格・販売状況から<br class="desktop-break">中古建機アタッチメントを絞り込めます。</p>
       <div class="demo-note">ⓘ 掲載商品はすべてダミーです。実際の在庫・販売状況ではありません。</div>
     </div>
     <div class="summary-area">
@@ -124,7 +187,7 @@ header{position:sticky;top:0;z-index:80;height:76px;display:flex;align-items:cen
   </div>
 </section>
 </main>
-<footer>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
+<footer><div style="margin-bottom:8px"><a href="contact.html">お問い合わせ</a>　｜　<a href="legal.html">特定商取引法</a>　｜　<a href="privacy.html">プライバシーポリシー</a></div>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
 
 <script>
 const types=["大割機", "小割機", "マグネット", "油圧ブレーカー", "鉄骨切断機", "木材切断機", "木材破砕機（マルチャー）", "機械式フォーク", "油圧式フォーク", "ログフォーク", "アースオーガ", "油圧式オーガ", "油圧式切削機", "ツインヘッダー", "標準バケット", "幅狭バケット", "幅広バケット", "法面バケット", "スケルトンバケット", "ホイールローダー用バケット", "特殊バケット", "バケットクラッシャー", "グラップル", "リッパー", "ポイント（爪・ツース盤）", "ブレード", "マルチブレード", "草刈り機", "クイックヒッチ", "クイックカプラ"];

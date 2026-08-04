@@ -20,11 +20,48 @@ header{position:sticky;top:0;z-index:80;height:76px;display:flex;align-items:cen
 footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-size:.68rem;text-align:center}
 @media(max-width:1100px){.main-case{grid-template-columns:1fr}.cases-grid{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:repeat(3,1fr)}.flow{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){.wrap,.nav{width:calc(100% - 28px)}header{height:68px}.logo{width:185px}.nav-links{display:none}.home-btn{margin-left:auto}.hero{min-height:470px}.hero-content{padding:90px 0 42px}h1{font-size:clamp(3.5rem,17vw,5.2rem)}.hero h2{font-size:1.8rem}.section{padding:42px 0}.main-case{padding:16px}.compare{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.compare-img{height:280px}.cases-grid{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr}.cta{align-items:flex-start;flex-direction:column}.cta-actions{width:100%}.cta-actions a{width:100%;text-align:center}}
+
+/* VER1.6 MOBILE FIXES */
+html,body{max-width:100%;overflow-x:hidden}
+.hero-copy-line{display:block}
+@media(max-width:760px){
+  .hero-content{padding:72px 0 38px!important}
+  .hero h2{
+    font-size:clamp(1.58rem,7.8vw,2rem)!important;
+    line-height:1.42!important;
+    max-width:100%!important;
+    word-break:keep-all;
+    overflow-wrap:normal;
+  }
+  .hero-copy-line{display:block}
+  .hero p{
+    font-size:.86rem!important;
+    line-height:1.9!important;
+    max-width:100%!important;
+    word-break:normal;
+    overflow-wrap:anywhere;
+  }
+  .section-head{
+    display:block!important;
+  }
+  .section-head p{
+    margin-top:8px!important;
+    max-width:100%;
+    line-height:1.8;
+  }
+  .main-case{min-width:0}
+  .case-info h3{
+    font-size:clamp(1.35rem,6.4vw,1.75rem)!important;
+    word-break:keep-all;
+  }
+  .case-info p{line-height:1.85}
+}
+
 </style></head>
 <body>
 <header><div class="nav"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="index.html">HOME</a><a href="rental.html">RENTAL</a><a class="active" href="repair.html">REPAIR</a><a href="used-sales.html">USED SALES</a><a href="index.html#management">MANAGEMENT</a></nav><a class="home-btn" href="index.html">TOPへ</a></div></header>
 <main>
-<section class="hero"><div class="wrap hero-content"><div class="eyebrow">Attachment Repair</div><h1>REPAIR</h1><h2>現場を止めない。<br>その一台に、もう一度仕事を。</h2><p>肉盛り、溶接補修、刃交換、ピン・ブッシュ交換、オーバーホールまで。写真で修理内容と仕上がりをご確認いただけます。</p></div></section>
+<section class="hero"><div class="wrap hero-content"><div class="eyebrow">Attachment Repair</div><h1>REPAIR</h1><h2><span class="hero-copy-line">現場を止めない。</span><span class="hero-copy-line">その一台に、もう一度仕事を。</span></h2><p>肉盛り、溶接補修、刃交換、ピン・ブッシュ交換、オーバーホールまで。写真で修理内容と仕上がりをご確認いただけます。</p></div></section>
 
 <section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Featured Repair Case</div><h2>修理実績</h2></div><p>実際の施工前後を掲載しています。</p></div>
 <div class="main-case">
@@ -61,5 +98,5 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
 <div class="cta"><div><div class="eyebrow">Contact</div><h2>修理のご相談・お見積りはお気軽に。</h2><p>状態が分かる写真だけでもご相談いただけます。</p></div><div class="cta-actions"><a class="phone" href="tel:0946428311">電話で問い合わせ</a><a class="instagram" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener">Instagram</a><a class="tiktok" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener">TikTok</a></div></div>
 </div></section>
 </main>
-<footer>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
+<footer><div style="margin-bottom:8px"><a href="contact.html">お問い合わせ</a>　｜　<a href="legal.html">特定商取引法</a>　｜　<a href="privacy.html">プライバシーポリシー</a></div>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
 </body></html>

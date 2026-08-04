@@ -1,0 +1,59 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>お問い合わせ | RENVIS</title><style>
+:root{--bg:#06080b;--panel:#0d1218;--text:#f5f7f9;--muted:#9da7b2;--line:rgba(255,255,255,.14);--gold:#dfb63d;--blue:#278ddf;--red:#d53137;--max:1100px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.75}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+header{height:76px;display:flex;align-items:center;border-bottom:1px solid var(--line);background:#07090c}
+.head{display:flex;align-items:center;justify-content:space-between}
+.logo{width:245px;mix-blend-mode:screen}
+.back{border:1px solid var(--line);padding:10px 15px;font-size:.78rem;font-weight:800}
+.hero{padding:54px 0 34px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 78% 25%,rgba(39,141,223,.13),transparent 35%),linear-gradient(145deg,#0d131a,#06080b)}
+.eyebrow{color:var(--gold);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(2.7rem,6vw,5.2rem);line-height:1;margin:8px 0 10px}
+.hero p{color:#c7ced5;margin:0}
+main{padding:42px 0 72px}
+.panel{border:1px solid var(--line);background:linear-gradient(145deg,#10161d,#080b0f);padding:28px}
+h2{font-size:1.55rem;margin:0 0 20px}
+footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#737d87;text-align:center;font-size:.68rem}
+@media(max-width:760px){.wrap{width:calc(100% - 28px)}header{height:68px}.logo{width:185px}.hero{padding:38px 0 26px}.panel{padding:18px}h1{font-size:clamp(2.6rem,14vw,4rem)}}
+
+.form-grid{display:grid;grid-template-columns:180px 1fr;gap:16px 22px;align-items:start}
+.label{padding-top:12px;font-weight:800;font-size:.82rem}.required{display:inline-block;margin-left:8px;background:var(--red);padding:2px 7px;border-radius:999px;font-size:.6rem}
+input,select,textarea{width:100%;border:1px solid var(--line);background:#07090c;color:#fff;padding:12px;font:inherit}input,select{height:48px}textarea{min-height:190px;resize:vertical}
+.radio-row{display:flex;gap:18px;flex-wrap:wrap;padding-top:10px}.radio-row label{font-size:.8rem}
+.address-fields{display:grid;gap:10px}.actions{display:flex;justify-content:center;gap:10px;margin-top:28px}button{border:1px solid var(--gold);background:var(--gold);color:#080a0d;padding:14px 28px;font-weight:900;cursor:pointer}button.secondary{background:transparent;color:#fff;border-color:var(--line)}
+.notice{margin-top:18px;border:1px solid rgba(223,182,61,.45);padding:13px;color:#dec878;font-size:.75rem}
+.confirm{display:none;margin-top:26px}.confirm.open{display:block}.confirm dl{display:grid;grid-template-columns:180px 1fr;margin:0}.confirm dt,.confirm dd{margin:0;padding:11px;border-bottom:1px solid var(--line)}.confirm dt{font-weight:800}
+@media(max-width:760px){.form-grid{grid-template-columns:1fr;gap:6px}.label{padding-top:8px}.actions{flex-direction:column}button{width:100%}.confirm dl{grid-template-columns:1fr}.confirm dt{padding-bottom:2px;border-bottom:0}.confirm dd{padding-top:2px}}
+</style></head><body>
+<header><div class="wrap head"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><a class="back" href="index.html">TOPへ</a></div></header>
+<section class="hero"><div class="wrap"><div class="eyebrow">Contact</div><h1>お問い合わせ</h1><p>内容を確認後、メール作成画面を開きます。</p></div></section>
+<main><div class="wrap"><form class="panel" id="contactForm">
+<h2>お問い合わせフォーム</h2>
+<div class="form-grid">
+<div class="label">会社名<span class="required">必須</span></div><input name="company" required>
+<div class="label">業種<span class="required">必須</span></div><select name="industry" required><option value="">選択してください</option><option>建築業</option><option>土木業</option><option>解体業</option><option>農業、林業</option><option>金属、その他鉱業</option><option>鉄スクラップ処理業</option><option>廃棄物処理、リサイクル業</option><option>製造業</option><option>卸、小売業</option><option>貿易業</option><option>レンタル業</option><option>修理、整備業</option><option>その他</option></select>
+<div class="label">ご担当者名<span class="required">必須</span></div><input name="name" required>
+<div class="label">フリガナ<span class="required">必須</span></div><input name="kana" required>
+<div class="label">電話番号<span class="required">必須</span></div><input name="tel" inputmode="tel" required>
+<div class="label">メールアドレス<span class="required">必須</span></div><input name="email" type="email" required>
+<div class="label">ご住所</div><div class="address-fields"><input name="postal" placeholder="郵便番号"><input name="address" placeholder="ご住所"><input name="building" placeholder="番地・建物名など"></div>
+<div class="label">連絡方法</div><div class="radio-row"><label><input type="radio" name="contact_method" value="電話"> 電話</label><label><input type="radio" name="contact_method" value="メール"> メール</label><label><input type="radio" name="contact_method" value="どちらでも" checked> どちらでも</label></div>
+<div class="label">件名<span class="required">必須</span></div><select name="subject" required><option value="">選択してください</option><option>中古アタッチメント売買に関する問合せ</option><option>中古建設機械売買に関する問合せ</option><option>レンタル商品に関するお問合せ</option><option>修理に関するお問合せ</option><option>商品・部品製作に関するお問合せ</option><option>その他お問合せ</option></select>
+<div class="label">お問い合わせ内容<span class="required">必須</span></div><textarea name="message" required></textarea>
+</div>
+<div class="notice">このサイトはGitHub Pagesの静的サイトです。「確認画面へ」の後、メール作成画面が開きます。入力内容は自動送信されません。</div>
+<div class="actions"><button type="submit">確認画面へ</button></div>
+</form>
+<section class="panel confirm" id="confirm"><h2>入力内容の確認</h2><dl id="confirmList"></dl><div class="actions"><button class="secondary" type="button" id="editBtn">修正する</button><button type="button" id="mailBtn">メールを作成する</button></div></section>
+</div></main><footer>© 2026 RENVIS Co., Ltd.</footer>
+<script>
+const form=document.getElementById('contactForm'),confirmBox=document.getElementById('confirm'),list=document.getElementById('confirmList');
+let values={};
+form.addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(form);values=Object.fromEntries(fd.entries());const labels={company:'会社名',industry:'業種',name:'ご担当者名',kana:'フリガナ',tel:'電話番号',email:'メールアドレス',postal:'郵便番号',address:'ご住所',building:'番地・建物名',contact_method:'連絡方法',subject:'件名',message:'お問い合わせ内容'};list.innerHTML=Object.keys(labels).map(k=>`<dt>${labels[k]}</dt><dd>${String(values[k]||'').replace(/</g,'&lt;').replace(/\n/g,'<br>')}</dd>`).join('');form.style.display='none';confirmBox.classList.add('open');scrollTo({top:0,behavior:'smooth'})});
+document.getElementById('editBtn').onclick=()=>{confirmBox.classList.remove('open');form.style.display='block';};
+document.getElementById('mailBtn').onclick=()=>{const body=`会社名：${values.company}\n業種：${values.industry}\n担当者名：${values.name}\nフリガナ：${values.kana}\n電話番号：${values.tel}\nメール：${values.email}\n住所：〒${values.postal||''} ${values.address||''} ${values.building||''}\n希望連絡方法：${values.contact_method}\n\nお問い合わせ内容：\n${values.message}`;location.href=`mailto:info@renvis.co.jp?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(body)}`;}
+</script></body></html>

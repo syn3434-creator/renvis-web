@@ -87,6 +87,30 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
   .service-grid,.parts-grid,.management-box{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}
   .cta{align-items:flex-start;flex-direction:column}.cta-actions{width:100%}.cta-actions a{width:100%;text-align:center}
 }
+
+/* VER1.6 MOBILE FIXES */
+html,body{max-width:100%;overflow-x:hidden}
+img{max-width:100%}
+@media(max-width:760px){
+  .hero,.hero-grid,.hero-grid>*{min-width:0}
+  .hero h1{
+    font-size:clamp(2.55rem,12.4vw,4rem)!important;
+    letter-spacing:-.06em!important;
+    max-width:100%;
+    white-space:nowrap;
+  }
+  .hero .sub{
+    font-size:.82rem!important;
+    line-height:1.85!important;
+    overflow-wrap:anywhere;
+  }
+  .service-card,.part-card,.manage-panel,.step{min-width:0}
+  .part-body h3,.manage-panel h3{overflow-wrap:anywhere}
+}
+@media(max-width:360px){
+  .hero h1{font-size:2.42rem!important}
+}
+
 </style>
 </head>
 <body>
@@ -207,6 +231,6 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
   </div>
 </section>
 </main>
-<footer>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
+<footer><div style="margin-bottom:8px"><a href="contact.html">お問い合わせ</a>　｜　<a href="legal.html">特定商取引法</a>　｜　<a href="privacy.html">プライバシーポリシー</a></div>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
 </body>
 </html>

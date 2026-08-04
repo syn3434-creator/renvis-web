@@ -288,6 +288,51 @@ footer{padding:38px 0 25px}.footer-top{display:flex;justify-content:space-betwee
   }
 }
 
+
+/* VER1.6 FINAL FIXES */
+html,body{max-width:100%;overflow-x:hidden}
+.rental-map-card{
+  margin-top:28px;
+  border:1px solid var(--line);
+  padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  background:linear-gradient(145deg,#0f141a,#080b0f);
+}
+.rental-map-card b{display:block;font-size:1.05rem;margin-top:4px}
+.rental-map-card span{display:block;color:#c5cbd2;font-size:.78rem;margin-top:4px}
+.rental-map-card .map-btn{flex:0 0 auto;min-width:230px}
+.site-info-section{border-top:1px solid var(--line);background:#07090c}
+.site-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.site-info-card{
+  min-height:190px;
+  border:1px solid var(--line);
+  padding:22px;
+  background:linear-gradient(145deg,#10161d,#080b0f);
+  display:flex;
+  flex-direction:column;
+  transition:.2s;
+}
+.site-info-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.38)}
+.site-info-card.primary{border-color:rgba(224,182,61,.65)}
+.site-info-card small{color:var(--gold);letter-spacing:.15em;font-weight:800}
+.site-info-card b{font-size:1.15rem;margin:10px 0 7px}
+.site-info-card span{color:var(--muted);font-size:.76rem}
+.site-info-card i{font-style:normal;color:#efc65e;font-weight:900;font-size:.72rem;margin-top:auto;padding-top:18px}
+@media(min-width:1060px){
+  .company-grid{grid-template-columns:minmax(520px,.9fr) minmax(0,1.35fr)!important}
+  .company-name{white-space:nowrap!important}
+}
+@media(max-width:760px){
+  .rental-map-card{align-items:flex-start;flex-direction:column}
+  .rental-map-card .map-btn{width:100%;min-width:0}
+  .site-info-grid{grid-template-columns:1fr}
+  .site-info-card{min-height:160px}
+  .company-name{font-size:clamp(2rem,11vw,3rem)!important}
+}
+
 </style>
 </head>
 <body>
@@ -365,17 +410,47 @@ footer{padding:38px 0 25px}.footer-top{display:flex;justify-content:space-betwee
   <div class="company-row"><b>代表取締役</b><span>堀口 隼人</span></div>
   <div class="company-row"><b>本社</b><span>福岡県朝倉郡筑前町松延804-1</span></div>
   <div class="company-row"><b>機材ヤード</b><span>福岡県朝倉郡筑前町東小田字切坑1983-1</span></div>
-  <div class="company-row"><b>レンタル修理ヤード</b><span>福岡県朝倉郡筑前町松延807-3</span></div>
+  <div class="company-row"><b>レンタルヤード</b><span>福岡県朝倉郡筑前町松延807-3</span></div>
   <div class="company-row"><b>TEL</b><span><a href="tel:0946428311">0946-42-8311</a></span></div>
   <div class="company-row"><b>FAX</b><span>0946-42-8312</span></div>
  </div>
- <div class="map-buttons">
-  <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E6%9C%9D%E5%80%89%E9%83%A1%E7%AD%91%E5%89%8D%E7%94%BA%E6%9D%BE%E5%BB%B6804-1">本社MAP</a>
-  <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E6%9C%9D%E5%80%89%E9%83%A1%E7%AD%91%E5%89%8D%E7%94%BA%E6%9D%B1%E5%B0%8F%E7%94%B0%E5%AD%97%E5%88%87%E5%9D%911983-1">機材ヤードMAP</a>
-  <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E6%9C%9D%E5%80%89%E9%83%A1%E7%AD%91%E5%89%8D%E7%94%BA%E6%9D%BE%E5%BB%B6807-3">レンタル修理ヤードMAP</a>
- </div></div>
+ <div class="rental-map-card">
+  <div>
+    <div class="eyebrow">Rental Yard Map</div>
+    <b>レンタルヤード</b>
+    <span>福岡県朝倉郡筑前町松延807-3</span>
+  </div>
+  <a class="map-btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/CjdG6c4iFFKjvPVD9">Googleマップで見る →</a>
+</div></div>
 </div></section>
 <section class="contact-strip"><div class="wrap contact-wrap"><div><h2>現場の困りごと、まずはご相談ください。</h2><p>レンタル・修理・中古販売・管理・部品製作まで、お電話で承ります。</p></div><a class="contact-call" href="tel:0946428311">0946-42-8311</a></div></section>
+
+<section class="section site-info-section" id="contact-links">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">Information</div><h2>お問い合わせ・各種ご案内</h2></div>
+      <p>ご相談内容に合わせて、必要なページをご確認ください。</p>
+    </div>
+    <div class="site-info-grid">
+      <a class="site-info-card primary" href="contact.html">
+        <small>CONTACT</small><b>お問い合わせ</b>
+        <span>レンタル・修理・中古販売・部品製作のご相談はこちら。</span>
+        <i>フォームを見る →</i>
+      </a>
+      <a class="site-info-card" href="legal.html">
+        <small>LEGAL NOTICE</small><b>特定商取引法に基づく表記</b>
+        <span>ご注文・お支払い・返品交換などのご案内。</span>
+        <i>内容を見る →</i>
+      </a>
+      <a class="site-info-card" href="privacy.html">
+        <small>PRIVACY POLICY</small><b>プライバシーポリシー</b>
+        <span>個人情報の取り扱いについて掲載しています。</span>
+        <i>内容を見る →</i>
+      </a>
+    </div>
+  </div>
+</section>
+
 </main>
 <footer><div class="wrap"><div class="footer-top"><img class="footer-logo" src="renvis-logo.png" alt="RENVIS"><div>株式会社レンビス<br><span style="color:#8a929c;font-size:.84rem">Fukuoka, Japan</span></div></div><div class="copyright">© 2026 RENVIS Co., Ltd. All Rights Reserved.</div></div></footer>
 <script>
