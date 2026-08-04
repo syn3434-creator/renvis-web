@@ -504,6 +504,181 @@ html,body{max-width:100%;overflow-x:hidden}
   .company-map-btn{display:flex;margin:10px 0 0;width:max-content}
 }
 
+
+/* VER1.7 BUTTON WIDTH FIX */
+@media(min-width:1051px){
+  .hero-actions{
+    grid-template-columns:1.16fr 1fr 1.08fr 1.08fr!important;
+    max-width:1120px!important;
+    gap:14px!important;
+  }
+  .action-btn{
+    min-width:0!important;
+    min-height:52px!important;
+    padding:0 16px!important;
+    font-size:.88rem!important;
+    white-space:nowrap!important;
+  }
+  .action-btn .action-icon{
+    width:24px!important;
+    height:24px!important;
+    flex:0 0 24px!important;
+  }
+  .action-btn .action-icon svg{
+    width:22px!important;
+    height:22px!important;
+  }
+}
+@media(min-width:761px) and (max-width:1050px){
+  .hero-actions{
+    grid-template-columns:1fr 1fr!important;
+    max-width:760px!important;
+  }
+  .action-btn{
+    min-height:52px!important;
+    font-size:.9rem!important;
+  }
+}
+
+
+/* VER1.8 FINAL CTA */
+@media(min-width:1051px){
+  .hero-actions{
+    display:grid!important;
+    grid-template-columns:1.18fr 1.05fr 1.15fr 1.12fr!important;
+    gap:14px!important;
+    max-width:1160px!important;
+  }
+  .action-btn{
+    min-width:0!important;
+    min-height:54px!important;
+    padding:0 18px!important;
+    font-size:.86rem!important;
+    line-height:1.1!important;
+    white-space:nowrap!important;
+    justify-content:center!important;
+    gap:10px!important;
+  }
+  .action-btn .action-icon{
+    width:25px!important;
+    height:25px!important;
+    flex:0 0 25px!important;
+  }
+  .action-btn .action-icon svg{
+    width:23px!important;
+    height:23px!important;
+  }
+}
+@media(min-width:761px) and (max-width:1050px){
+  .hero-actions{
+    grid-template-columns:1fr 1fr!important;
+    max-width:800px!important;
+    gap:12px!important;
+  }
+  .action-btn{
+    min-height:54px!important;
+    font-size:.88rem!important;
+  }
+}
+
+
+/* VER1.8 COMPANY + SIMPLE FOOTER */
+.company-details{
+  border-top:1px solid var(--line);
+  background:linear-gradient(145deg,#0b0f14,#07090c);
+}
+.company-details-table{border-top:1px solid var(--line)}
+.company-details-row{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  min-height:58px;
+  border-bottom:1px solid var(--line);
+}
+.company-details-row b,
+.company-details-row span{padding:16px 18px}
+.company-details-row b{
+  color:#e5c15b;
+  border-right:1px solid var(--line);
+  font-weight:700;
+}
+.company-details-row span{color:#e8edf2}
+.rental-yard-map{
+  margin-top:28px;
+  padding:24px 28px;
+  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  background:#090d12;
+}
+.rental-yard-map h3{margin:5px 0 2px;font-size:1.25rem}
+.rental-yard-map p{margin:0;color:#b9c2cb}
+.rental-yard-map a{
+  flex:0 0 auto;
+  padding:13px 18px;
+  border:1px solid rgba(229,193,91,.65);
+  color:#edcc70;
+  font-size:.78rem;
+  font-weight:800;
+}
+.simple-footer{
+  border-top:1px solid var(--line);
+  padding:28px 0 22px;
+  background:#06080b;
+}
+.simple-footer-inner{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:28px;
+}
+.simple-footer-brand{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:5px;
+}
+.simple-footer .footer-logo{width:185px}
+.simple-footer-brand span{
+  color:#d7dde3;
+  font-size:.68rem;
+  letter-spacing:.12em;
+}
+.simple-footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:22px;
+  color:#9ca6b0;
+  font-size:.7rem;
+}
+.simple-footer .copyright{
+  margin:0;
+  padding:0;
+  border:0;
+  white-space:nowrap;
+}
+@media(max-width:760px){
+  .company-details-row{grid-template-columns:1fr}
+  .company-details-row b{
+    border-right:0;
+    padding-bottom:4px;
+  }
+  .company-details-row span{padding-top:4px}
+  .rental-yard-map{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:20px;
+  }
+  .rental-yard-map a{width:100%;text-align:center}
+  .simple-footer-inner{
+    grid-template-columns:1fr;
+    align-items:flex-start;
+  }
+  .simple-footer-links{justify-content:flex-start}
+}
+
 </style>
 </head>
 <body>
@@ -634,6 +809,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
 </main>
 
+
 <section class="section company-details" id="company-details">
   <div class="wrap">
     <div class="section-head">
@@ -642,18 +818,14 @@ html,body{max-width:100%;overflow-x:hidden}
         <h2>会社概要</h2>
       </div>
     </div>
+
     <div class="company-details-table">
       <div class="company-details-row"><b>商号</b><span>株式会社レンビス</span></div>
       <div class="company-details-row"><b>設立</b><span>平成28年6月1日</span></div>
       <div class="company-details-row"><b>代表者</b><span>代表取締役　堀口 隼人</span></div>
       <div class="company-details-row"><b>本社・修理ヤード</b><span>福岡県朝倉郡筑前町松延804-1</span></div>
       <div class="company-details-row"><b>機材ヤード</b><span>福岡県朝倉郡筑前町東小田字切坑1983-1</span></div>
-      <div class="company-details-row rental-yard-row">
-        <b>レンタルヤード</b>
-        <span>福岡県朝倉郡筑前町松延807-3
-          <a class="company-map-btn" href="https://maps.app.goo.gl/CjdG6c4iFFKjvPVD9" target="_blank" rel="noopener">Google Mapを見る →</a>
-        </span>
-      </div>
+      <div class="company-details-row"><b>レンタルヤード</b><span>福岡県朝倉郡筑前町松延807-3</span></div>
       <div class="company-details-row"><b>TEL</b><span>0946-42-8311</span></div>
       <div class="company-details-row"><b>FAX</b><span>0946-42-8312</span></div>
       <div class="company-details-row"><b>決算</b><span>5月</span></div>
@@ -661,10 +833,30 @@ html,body{max-width:100%;overflow-x:hidden}
       <div class="company-details-row"><b>古物商許可</b><span>第901121610010号</span></div>
       <div class="company-details-row"><b>取引銀行</b><span>福岡銀行・西日本シティ銀行・筑邦銀行・佐賀銀行</span></div>
     </div>
+
+    <div class="rental-yard-map">
+      <div>
+        <div class="eyebrow">Rental Yard Map</div>
+        <h3>レンタルヤード</h3>
+        <p>福岡県朝倉郡筑前町松延807-3</p>
+      </div>
+      <a href="https://maps.app.goo.gl/CjdG6c4iFFKjvPVD9" target="_blank" rel="noopener">Googleマップで見る →</a>
+    </div>
   </div>
 </section>
 
-<footer><div class="wrap"><div class="footer-top"><img class="footer-logo" src="renvis-logo.png" alt="RENVIS"><div>株式会社レンビス<br><span style="color:#8a929c;font-size:.84rem">Fukuoka, Japan</span></div></div><div class="copyright">© 2026 RENVIS Co., Ltd. All Rights Reserved.</div></div></footer>
+
+
+<footer class="simple-footer">
+  <div class="wrap simple-footer-inner">
+    <div class="simple-footer-brand">
+      <img class="footer-logo" src="renvis-logo.png" alt="RENVIS">
+      <span>株式会社レンビス</span>
+    </div>
+    <div class="simple-footer-links"></div>
+    <div class="copyright">© RENVIS Co., Ltd. All Rights Reserved.</div>
+  </div>
+</footer>
 <script>
 const header=document.getElementById('header');
 addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>28));
