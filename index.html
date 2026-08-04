@@ -359,6 +359,151 @@ html,body{max-width:100%;overflow-x:hidden}
  .achievement-item small{font-size:.56rem;letter-spacing:.06em;margin-top:7px;white-space:nowrap}
 }
 
+
+/* VER1.7 FINAL POLISH */
+.brand-company-name{
+  display:block;
+  margin-top:2px;
+  color:rgba(255,255,255,.82);
+  font-size:.66rem;
+  font-weight:300;
+  letter-spacing:.18em;
+  line-height:1;
+  white-space:nowrap;
+}
+.nav > a:first-child{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top:7px;
+}
+.logo{
+  width:300px!important;
+}
+@media(min-width:761px){
+  .menu-btn{display:none!important}
+}
+.hero-actions{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:12px!important;
+  max-width:1000px!important;
+}
+.action-btn{
+  min-height:58px!important;
+  padding:0 18px!important;
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center!important;
+}
+.action-btn .action-icon,
+.action-btn span{
+  display:inline-flex;
+  align-items:center;
+}
+.hero-copy-box{
+  max-width:760px!important;
+}
+.hero-lead{
+  line-height:1.55!important;
+  margin-bottom:26px!important;
+}
+.stats-strip{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#080b0f;
+}
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  min-height:96px;
+}
+.stat-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
+  border-right:1px solid rgba(255,255,255,.11);
+  padding:12px 18px;
+}
+.stat-item:last-child{border-right:0}
+.stat-item strong{
+  font-size:clamp(1.8rem,3.2vw,3.2rem);
+  line-height:1;
+  letter-spacing:-.04em;
+  font-weight:800;
+}
+.stat-item strong span{
+  font-size:.38em;
+  margin-left:4px;
+  font-weight:700;
+}
+.stat-item strong.area{
+  font-size:clamp(1.55rem,2.7vw,2.7rem);
+}
+.stat-item small{
+  color:var(--muted);
+  font-size:.72rem;
+  letter-spacing:.08em;
+}
+.company-details{
+  border-top:1px solid var(--line);
+  background:linear-gradient(145deg,#0b0f14,#07090c);
+}
+.company-details-table{
+  border-top:1px solid var(--line);
+}
+.company-details-row{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  border-bottom:1px solid var(--line);
+  min-height:58px;
+}
+.company-details-row b,
+.company-details-row span{
+  padding:16px 18px;
+}
+.company-details-row b{
+  color:#e5c15b;
+  font-weight:700;
+  border-right:1px solid var(--line);
+}
+.company-details-row span{
+  color:#e9edf1;
+}
+.company-map-btn{
+  display:inline-flex;
+  margin-left:18px;
+  padding:8px 12px;
+  border:1px solid rgba(229,193,91,.65);
+  color:#edcc70;
+  font-size:.72rem;
+  font-weight:800;
+}
+@media(max-width:1050px){
+  .hero-actions{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:760px){
+  .logo{width:185px!important}
+  .brand-company-name{
+    font-size:.54rem;
+    letter-spacing:.14em;
+    margin-top:2px;
+  }
+  .nav > a:first-child{padding-top:4px}
+  .hero-actions{grid-template-columns:1fr!important}
+  .stats-grid{grid-template-columns:repeat(3,minmax(0,1fr));min-height:82px}
+  .stat-item{padding:10px 5px}
+  .stat-item strong{font-size:clamp(1.15rem,7vw,1.8rem)}
+  .stat-item strong.area{font-size:clamp(1.05rem,5.6vw,1.55rem)}
+  .stat-item small{font-size:.55rem;letter-spacing:0;text-align:center}
+  .company-details-row{grid-template-columns:1fr}
+  .company-details-row b{border-right:0;padding-bottom:4px}
+  .company-details-row span{padding-top:4px}
+  .company-map-btn{display:flex;margin:10px 0 0;width:max-content}
+}
+
 </style>
 </head>
 <body>
@@ -415,13 +560,16 @@ html,body{max-width:100%;overflow-x:hidden}
   </div>
  </div></div></div>
 </section>
-<section class="achievement-strip" aria-label="レンビスの実績">
- <div class="wrap achievement-grid">
-  <div class="achievement-item"><strong>2,000<span>件以上</span></strong><small>累計修理実績</small></div>
-  <div class="achievement-item"><strong>250<span>台</span></strong><small>レンタル保有台数</small></div>
-  <div class="achievement-item"><strong class="area">九州全域</strong><small>対応エリア</small></div>
- </div>
+
+
+<section class="stats-strip" aria-label="実績">
+  <div class="wrap stats-grid">
+    <div class="stat-item"><strong>2,000<span>件以上</span></strong><small>累計修理実績</small></div>
+    <div class="stat-item"><strong>250<span>台</span></strong><small>レンタル保有台数</small></div>
+    <div class="stat-item"><strong class="area">九州全域</strong><small>対応エリア</small></div>
+  </div>
 </section>
+
 <section class="services-nav"><div class="wrap services-nav-grid">
  <a class="service-tab" href="rental.html"><b>RENTAL</b><span>建機アタッチメントレンタル</span></a>
  <a class="service-tab" href="#repair"><b>REPAIR</b><span>修理・肉盛り・再生</span></a>
@@ -485,6 +633,37 @@ html,body{max-width:100%;overflow-x:hidden}
 </section>
 
 </main>
+
+<section class="section company-details" id="company-details">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Company</div>
+        <h2>会社概要</h2>
+      </div>
+    </div>
+    <div class="company-details-table">
+      <div class="company-details-row"><b>商号</b><span>株式会社レンビス</span></div>
+      <div class="company-details-row"><b>設立</b><span>平成28年6月1日</span></div>
+      <div class="company-details-row"><b>代表者</b><span>代表取締役　堀口 隼人</span></div>
+      <div class="company-details-row"><b>本社・修理ヤード</b><span>福岡県朝倉郡筑前町松延804-1</span></div>
+      <div class="company-details-row"><b>機材ヤード</b><span>福岡県朝倉郡筑前町東小田字切坑1983-1</span></div>
+      <div class="company-details-row rental-yard-row">
+        <b>レンタルヤード</b>
+        <span>福岡県朝倉郡筑前町松延807-3
+          <a class="company-map-btn" href="https://maps.app.goo.gl/CjdG6c4iFFKjvPVD9" target="_blank" rel="noopener">Google Mapを見る →</a>
+        </span>
+      </div>
+      <div class="company-details-row"><b>TEL</b><span>0946-42-8311</span></div>
+      <div class="company-details-row"><b>FAX</b><span>0946-42-8312</span></div>
+      <div class="company-details-row"><b>決算</b><span>5月</span></div>
+      <div class="company-details-row"><b>事業内容</b><span>建設機械アタッチメントのレンタル・修理・販売・管理</span></div>
+      <div class="company-details-row"><b>古物商許可</b><span>第901121610010号</span></div>
+      <div class="company-details-row"><b>取引銀行</b><span>福岡銀行・西日本シティ銀行・筑邦銀行・佐賀銀行</span></div>
+    </div>
+  </div>
+</section>
+
 <footer><div class="wrap"><div class="footer-top"><img class="footer-logo" src="renvis-logo.png" alt="RENVIS"><div>株式会社レンビス<br><span style="color:#8a929c;font-size:.84rem">Fukuoka, Japan</span></div></div><div class="copyright">© 2026 RENVIS Co., Ltd. All Rights Reserved.</div></div></footer>
 <script>
 const header=document.getElementById('header');
