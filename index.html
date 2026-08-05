@@ -845,52 +845,60 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 
 
-/* VER1.0 LAYOUT FINAL */
-.stat-item strong{color:var(--gold)}
-.stat-item small{color:#d3d8de}
-
-.mobile-contact-card{display:none}
-
+/* VER1.0 FINAL MOBILE HEADER + GOLD STATS */
+.stats-strip .stat-item > strong,
+.stats-strip .stat-item > strong span,
+.stats-strip .stat-item > strong.area{
+  color:#D8B65A!important;
+}
+.mobile-contact-button{display:none}
 @media(max-width:760px){
-  /* Mobile only: remove the four large CTA buttons */
-  .hero-cta-strip,
-  .hero-actions{
-    display:none!important;
+  /* PC layout remains unchanged; only mobile header is adjusted */
+  .nav{
+    width:calc(100% - 16px)!important;
+    gap:4px!important;
   }
-
-  /* Keep inquiry access in the header icon and at the bottom of the drawer */
-  .mobile-contact-card{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    margin-top:auto;
-    padding:20px 16px;
-    border:1px solid rgba(224,182,61,.52);
-    background:linear-gradient(145deg,#111820,#080b0f);
+  .nav > .brand{min-width:0;flex:1 1 auto}
+  .logo{width:154px!important;max-width:154px!important}
+  .brand-company{font-size:.48rem!important;letter-spacing:.08em!important}
+  .nav-actions{gap:4px!important;flex:0 0 auto}
+  .nav-actions .icon-link{
+    width:36px!important;
+    height:36px!important;
   }
-  .mobile-contact-card-icon{
-    color:var(--gold);
-    font-size:1.25rem;
-    line-height:1;
+  .nav-actions .icon-link svg{width:20px!important;height:20px!important}
+  .nav-actions .phone-icon,
+  .nav-actions .mail-icon{display:none!important}
+  .mobile-contact-button{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    height:36px;
+    padding:0 11px;
+    border:1px solid #D8B65A;
+    color:#E7C86A;
+    background:rgba(5,7,10,.62);
+    font-size:.68rem;
+    font-weight:800;
+    white-space:nowrap;
   }
-  .mobile-contact-card strong{
-    color:#fff;
-    font-size:1rem;
+  .mobile-contact-button svg{
+    width:18px;height:18px;
+    fill:none;stroke:#E7C86A;stroke-width:2;
+    stroke-linecap:round;stroke-linejoin:round;
   }
-  .mobile-contact-card span{
-    color:#aab3bd;
-    font-size:.72rem;
-    line-height:1.7;
-  }
-  .mobile-contact-card a{
-    margin-top:4px;
-    color:var(--gold);
-    font-size:.76rem;
-    font-weight:900;
-  }
-
-  /* No extra inquiry card inside the hero */
-  .mobile-inquiry-card{display:none!important}
+  .menu-btn{width:36px!important;height:36px!important;gap:5px!important}
+  .menu-btn span{width:27px!important}
+  .mobile-drawer{overflow-y:auto!important}
+  .mobile-inquiry-card{margin-top:24px!important}
+  .hero-cta-strip,.hero-actions{display:none!important}
+}
+@media(max-width:390px){
+  .logo{width:145px!important;max-width:145px!important}
+  .mobile-contact-button{padding:0 9px;font-size:.64rem}
+  .nav-actions .icon-link{width:34px!important;height:34px!important}
+  .menu-btn{width:34px!important;height:34px!important}
 }
 
 </style>
@@ -905,6 +913,10 @@ html,body{max-width:100%;overflow-x:hidden}
   <div class="nav-actions">
    <a class="icon-link instagram-icon" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></a>
    <a class="icon-link tiktok-icon" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14.2 3.2c.5 2.7 2 4.3 4.8 4.8v3.2c-1.8 0-3.4-.6-4.8-1.6v6.2a5.7 5.7 0 1 1-5-5.6v3.3a2.5 2.5 0 1 0 1.8 2.3V3.2h3.2z"/></svg></a>
+   <a class="mobile-contact-button" href="contact.html" aria-label="お問い合わせ">
+     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"/></svg>
+     <span>お問い合わせ</span>
+   </a>
    <a class="icon-link phone-icon" href="tel:0946428311" aria-label="電話"><svg viewBox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"/></svg></a>
    
 <a class="icon-link mail-icon" href="contact.html" aria-label="お問い合わせ">
@@ -932,13 +944,13 @@ html,body{max-width:100%;overflow-x:hidden}
     <a href="used-sales.html">USED SALES</a>
     <a href="management.html">MANAGEMENT</a>
     <a href="#company">COMPANY</a>
-    <a href="contact.html">CONTACT</a>
+    <a href="tel:0946428311">CONTACT</a>
   </nav>
 
-  <div class="mobile-contact-card">
-    <div class="mobile-contact-card-icon" aria-hidden="true">✉</div>
+  <div class="mobile-inquiry-card">
+    <div class="mobile-inquiry-icon">✉</div>
     <strong>お問い合わせ</strong>
-    <span>レンタル・修理・販売など、<br>お気軽にご相談ください。</span>
+    <span>レンタル・修理・販売など、お気軽にご相談ください。</span>
     <a href="contact.html">お問い合わせフォームへ →</a>
   </div>
 
@@ -951,10 +963,7 @@ html,body{max-width:100%;overflow-x:hidden}
   <h1><span>Be a</span><span>performer.</span></h1>
   <p class="hero-lead">建設・解体現場を支える<br>アタッチメントのプロフェッショナル</p>
 
-  <strong>お問い合わせ</strong>
-  <span>レンタル・修理・販売など、お気軽にご相談ください。</span>
-  <a href="contact.html">お問い合わせフォームへ →</a>
-</div></div></div></div>
+</div></div></div>
 </section>
 
 
