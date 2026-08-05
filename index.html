@@ -844,6 +844,55 @@ html,body{max-width:100%;overflow-x:hidden}
   }
 }
 
+
+/* VER1.0 LAYOUT FINAL */
+.stat-item strong{color:var(--gold)}
+.stat-item small{color:#d3d8de}
+
+.mobile-contact-card{display:none}
+
+@media(max-width:760px){
+  /* Mobile only: remove the four large CTA buttons */
+  .hero-cta-strip,
+  .hero-actions{
+    display:none!important;
+  }
+
+  /* Keep inquiry access in the header icon and at the bottom of the drawer */
+  .mobile-contact-card{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-top:auto;
+    padding:20px 16px;
+    border:1px solid rgba(224,182,61,.52);
+    background:linear-gradient(145deg,#111820,#080b0f);
+  }
+  .mobile-contact-card-icon{
+    color:var(--gold);
+    font-size:1.25rem;
+    line-height:1;
+  }
+  .mobile-contact-card strong{
+    color:#fff;
+    font-size:1rem;
+  }
+  .mobile-contact-card span{
+    color:#aab3bd;
+    font-size:.72rem;
+    line-height:1.7;
+  }
+  .mobile-contact-card a{
+    margin-top:4px;
+    color:var(--gold);
+    font-size:.76rem;
+    font-weight:900;
+  }
+
+  /* No extra inquiry card inside the hero */
+  .mobile-inquiry-card{display:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -883,10 +932,16 @@ html,body{max-width:100%;overflow-x:hidden}
     <a href="used-sales.html">USED SALES</a>
     <a href="management.html">MANAGEMENT</a>
     <a href="#company">COMPANY</a>
-    <a href="tel:0946428311">CONTACT</a>
+    <a href="contact.html">CONTACT</a>
   </nav>
 
-  
+  <div class="mobile-contact-card">
+    <div class="mobile-contact-card-icon" aria-hidden="true">✉</div>
+    <strong>お問い合わせ</strong>
+    <span>レンタル・修理・販売など、<br>お気軽にご相談ください。</span>
+    <a href="contact.html">お問い合わせフォームへ →</a>
+  </div>
+
 </aside>
 
 <main id="top">
@@ -896,8 +951,6 @@ html,body{max-width:100%;overflow-x:hidden}
   <h1><span>Be a</span><span>performer.</span></h1>
   <p class="hero-lead">建設・解体現場を支える<br>アタッチメントのプロフェッショナル</p>
 
-<div class="mobile-inquiry-card">
-  <div class="mobile-inquiry-icon">✉</div>
   <strong>お問い合わせ</strong>
   <span>レンタル・修理・販売など、お気軽にご相談ください。</span>
   <a href="contact.html">お問い合わせフォームへ →</a>
