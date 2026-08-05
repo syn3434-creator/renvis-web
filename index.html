@@ -679,6 +679,86 @@ html,body{max-width:100%;overflow-x:hidden}
   .simple-footer-links{justify-content:flex-start}
 }
 
+
+/* VER1.8 PUBLIC FINAL POSITIONING */
+.hero-cta-strip{
+  background:#080b0f;
+  padding:18px 0 22px;
+  border-bottom:1px solid var(--line);
+}
+.hero-cta-strip .hero-actions{
+  display:grid!important;
+  grid-template-columns:1.18fr 1.05fr 1.15fr 1.12fr!important;
+  gap:14px!important;
+  max-width:none!important;
+  margin:0!important;
+}
+.hero-cta-strip .action-btn{
+  min-width:0!important;
+  min-height:54px!important;
+  padding:0 18px!important;
+  font-size:.86rem!important;
+  white-space:nowrap!important;
+  justify-content:center!important;
+  gap:10px!important;
+}
+.hero-cta-strip .action-icon{
+  width:25px!important;
+  height:25px!important;
+  flex:0 0 25px!important;
+}
+.hero-cta-strip .action-icon svg{
+  width:23px!important;
+  height:23px!important;
+}
+.company-details{
+  background:linear-gradient(145deg,#0b0f14,#07090c);
+  border-top:1px solid var(--line);
+}
+.rental-yard-inline > span{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.inline-map-btn{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 13px;
+  border:1px solid rgba(229,193,91,.65);
+  color:#edcc70!important;
+  font-size:.72rem;
+  font-weight:800;
+  white-space:nowrap;
+}
+@media(max-width:1050px){
+  .hero-cta-strip .hero-actions{
+    grid-template-columns:1fr 1fr!important;
+  }
+}
+@media(max-width:760px){
+  .hero-cta-strip{
+    padding:14px 0 18px;
+  }
+  .hero-cta-strip .hero-actions{
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+  .hero-cta-strip .action-btn{
+    min-height:50px!important;
+  }
+  .rental-yard-inline > span{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:10px;
+  }
+  .inline-map-btn{
+    width:100%;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -727,13 +807,7 @@ html,body{max-width:100%;overflow-x:hidden}
  <div class="hero-content"><div class="wrap"><div class="hero-copy-box">
   <h1><span>Be a</span><span>performer.</span></h1>
   <p class="hero-lead">建設・解体現場を支える<br>アタッチメントのプロフェッショナル</p>
-  <div class="hero-actions">
-   <a class="action-btn primary" href="tel:0946428311"><span class="action-icon phone-icon"><svg viewBox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"/></svg></span>電話でお問い合わせ</a>
-   <a class="action-btn contact-btn" href="contact.html"><span class="action-icon contact-icon"><svg viewBox="0 0 24 24"><path d="M3.5 5.5h17v13h-17z"/><path d="M4 6l8 6 8-6"/></svg></span>お問い合わせ</a>
-   <a class="action-btn" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener"><span class="action-icon instagram-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></span>Instagramを見る</a>
-   <a class="action-btn" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener"><span class="action-icon tiktok-icon"><svg viewBox="0 0 24 24"><path d="M14.2 3.2c.5 2.7 2 4.3 4.8 4.8v3.2c-1.8 0-3.4-.6-4.8-1.6v6.2a5.7 5.7 0 1 1-5-5.6v3.3a2.5 2.5 0 1 0 1.8 2.3V3.2h3.2z"/></svg></span>TikTokを見る</a>
-  </div>
- </div></div></div>
+</div></div></div>
 </section>
 
 
@@ -744,6 +818,18 @@ html,body{max-width:100%;overflow-x:hidden}
     <div class="stat-item"><strong class="area">九州全域</strong><small>対応エリア</small></div>
   </div>
 </section>
+
+<section class="hero-cta-strip" aria-label="お問い合わせ">
+  <div class="wrap">
+    <div class="hero-actions">
+   <a class="action-btn primary" href="tel:0946428311"><span class="action-icon phone-icon"><svg viewBox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"/></svg></span>電話でお問い合わせ</a>
+   <a class="action-btn contact-btn" href="contact.html"><span class="action-icon contact-icon"><svg viewBox="0 0 24 24"><path d="M3.5 5.5h17v13h-17z"/><path d="M4 6l8 6 8-6"/></svg></span>お問い合わせ</a>
+   <a class="action-btn" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener"><span class="action-icon instagram-icon"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1" fill="#fff" stroke="none"/></svg></span>Instagramを見る</a>
+   <a class="action-btn" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener"><span class="action-icon tiktok-icon"><svg viewBox="0 0 24 24"><path d="M14.2 3.2c.5 2.7 2 4.3 4.8 4.8v3.2c-1.8 0-3.4-.6-4.8-1.6v6.2a5.7 5.7 0 1 1-5-5.6v3.3a2.5 2.5 0 1 0 1.8 2.3V3.2h3.2z"/></svg></span>TikTokを見る</a>
+  </div>
+  </div>
+</section>
+
 
 <section class="services-nav"><div class="wrap services-nav-grid">
  <a class="service-tab" href="rental.html"><b>RENTAL</b><span>建機アタッチメントレンタル</span></a>
@@ -760,26 +846,40 @@ html,body{max-width:100%;overflow-x:hidden}
   <article class="card" id="management"><div class="card-media"><img src="repair-before-top.webp" alt="管理・部品製作"><div class="card-no">04</div><div class="card-title"><b>MANAGEMENT</b><span>管理・部品製作</span></div></div><div class="card-body"><p>お客様のアタッチメントのカルテ作成、修理、履歴管理。また取付ショベル変更に伴う部品の改造、製作を行っております。</p><a href="management.html">管理・部品製作ページを見る →</a></div></article>
  </div>
 </div></section>
-<section class="section company-section" id="company"><div class="wrap company-grid">
- <div><div class="eyebrow">Company</div><div class="company-name">株式会社レンビス<small>RENVIS Co., Ltd.</small></div><p>建機アタッチメントのレンタル・修理・中古販売・管理・部品製作。</p></div>
- <div><div class="company-table">
-  <div class="company-row"><b>代表取締役</b><span>堀口 隼人</span></div>
-  <div class="company-row"><b>本社</b><span>福岡県朝倉郡筑前町松延804-1</span></div>
-  <div class="company-row"><b>機材ヤード</b><span>福岡県朝倉郡筑前町東小田字切坑1983-1</span></div>
-  <div class="company-row"><b>レンタルヤード</b><span>福岡県朝倉郡筑前町松延807-3</span></div>
-  <div class="company-row"><b>TEL</b><span><a href="tel:0946428311">0946-42-8311</a></span></div>
-  <div class="company-row"><b>FAX</b><span>0946-42-8312</span></div>
- </div>
- <div class="rental-map-card">
-  <div>
-    <div class="eyebrow">Rental Yard Map</div>
-    <b>レンタルヤード</b>
-    <span>福岡県朝倉郡筑前町松延807-3</span>
-  </div>
-  <a class="map-btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/CjdG6c4iFFKjvPVD9">Googleマップで見る →</a>
-</div></div>
-</div></section>
 <section class="contact-strip"><div class="wrap contact-wrap"><div><h2>現場の困りごと、まずはご相談ください。</h2><p>レンタル・修理・中古販売・管理・部品製作まで、お電話で承ります。</p></div><a class="contact-call" href="tel:0946428311">0946-42-8311</a></div></section>
+
+
+<section class="section company-details" id="company">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Company Information</div>
+        <h2>会社情報</h2>
+      </div>
+    </div>
+
+    <div class="company-details-table">
+      <div class="company-details-row"><b>商号</b><span>株式会社レンビス</span></div>
+      <div class="company-details-row"><b>設立</b><span>平成28年6月1日</span></div>
+      <div class="company-details-row"><b>代表者</b><span>代表取締役　堀口 隼人</span></div>
+      <div class="company-details-row"><b>本社・修理ヤード</b><span>福岡県朝倉郡筑前町松延804-1</span></div>
+      <div class="company-details-row"><b>機材ヤード</b><span>福岡県朝倉郡筑前町東小田字切坑1983-1</span></div>
+      <div class="company-details-row rental-yard-inline">
+        <b>レンタルヤード</b>
+        <span>
+          <span class="rental-yard-address">福岡県朝倉郡筑前町松延807-3</span>
+          <a class="inline-map-btn" href="https://maps.app.goo.gl/CjdG6c4iFFKjvPVD9" target="_blank" rel="noopener">Googleマップで見る →</a>
+        </span>
+      </div>
+      <div class="company-details-row"><b>TEL</b><span><a href="tel:0946428311">0946-42-8311</a></span></div>
+      <div class="company-details-row"><b>FAX</b><span>0946-42-8312</span></div>
+      <div class="company-details-row"><b>決算</b><span>5月</span></div>
+      <div class="company-details-row"><b>事業内容</b><span>建設機械アタッチメントのレンタル・修理・販売・管理</span></div>
+      <div class="company-details-row"><b>古物商許可</b><span>第901121610010号</span></div>
+      <div class="company-details-row"><b>取引銀行</b><span>福岡銀行・西日本シティ銀行・筑邦銀行・佐賀銀行</span></div>
+    </div>
+  </div>
+</section>
 
 <section class="section site-info-section" id="contact-links">
   <div class="wrap">
@@ -808,43 +908,6 @@ html,body{max-width:100%;overflow-x:hidden}
 </section>
 
 </main>
-
-
-<section class="section company-details" id="company-details">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Company</div>
-        <h2>会社概要</h2>
-      </div>
-    </div>
-
-    <div class="company-details-table">
-      <div class="company-details-row"><b>商号</b><span>株式会社レンビス</span></div>
-      <div class="company-details-row"><b>設立</b><span>平成28年6月1日</span></div>
-      <div class="company-details-row"><b>代表者</b><span>代表取締役　堀口 隼人</span></div>
-      <div class="company-details-row"><b>本社・修理ヤード</b><span>福岡県朝倉郡筑前町松延804-1</span></div>
-      <div class="company-details-row"><b>機材ヤード</b><span>福岡県朝倉郡筑前町東小田字切坑1983-1</span></div>
-      <div class="company-details-row"><b>レンタルヤード</b><span>福岡県朝倉郡筑前町松延807-3</span></div>
-      <div class="company-details-row"><b>TEL</b><span>0946-42-8311</span></div>
-      <div class="company-details-row"><b>FAX</b><span>0946-42-8312</span></div>
-      <div class="company-details-row"><b>決算</b><span>5月</span></div>
-      <div class="company-details-row"><b>事業内容</b><span>建設機械アタッチメントのレンタル・修理・販売・管理</span></div>
-      <div class="company-details-row"><b>古物商許可</b><span>第901121610010号</span></div>
-      <div class="company-details-row"><b>取引銀行</b><span>福岡銀行・西日本シティ銀行・筑邦銀行・佐賀銀行</span></div>
-    </div>
-
-    <div class="rental-yard-map">
-      <div>
-        <div class="eyebrow">Rental Yard Map</div>
-        <h3>レンタルヤード</h3>
-        <p>福岡県朝倉郡筑前町松延807-3</p>
-      </div>
-      <a href="https://maps.app.goo.gl/CjdG6c4iFFKjvPVD9" target="_blank" rel="noopener">Googleマップで見る →</a>
-    </div>
-  </div>
-</section>
-
 
 
 <footer class="simple-footer">
