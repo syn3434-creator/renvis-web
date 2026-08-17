@@ -1,0 +1,10 @@
+RENVIS HP Ver2.0 CMS
+
+・Supabase の repairs テーブルから修理実績一覧を自動取得
+・repair_images テーブルから BEFORE / AFTER 写真を自動取得
+・repair-detail.html を Supabase 連携
+・Storage の公開画像 URL をそのまま表示
+・Supabase が一時停止/通信失敗した場合は既存の静的修理実績をフォールバック表示
+・supabase-config.js に公開用URL/Publishable keyを分離
+
+※ service_role / secret key は使用していません。

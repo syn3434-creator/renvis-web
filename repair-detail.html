@@ -1,5 +1,47 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>修理実績詳細 | RENVIS</title>
 <style>
 :root{--bg:#06080b;--panel:#10161d;--text:#f5f7f9;--muted:#a1aab5;--line:rgba(255,255,255,.14);--gold:#e0b63d;--blue:#197aca}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}header{height:76px;display:flex;align-items:center;border-bottom:1px solid var(--line);background:#080a0d}.head{display:flex;align-items:center;justify-content:space-between}.logo{width:245px;mix-blend-mode:screen}.back{border:1px solid var(--line);padding:10px 15px;font-size:.78rem}main{padding:52px 0 84px}.eyebrow{color:var(--gold);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}h1{font-size:clamp(2.4rem,5vw,4.6rem);line-height:1;margin:8px 0 12px}.summary{color:#c4cbd3;max-width:760px;line-height:1.8}.tags{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0 28px}.tag{border:1px solid rgba(224,182,61,.5);color:#e9ca70;padding:6px 9px;font-size:.68rem}.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}.panel{border:1px solid var(--line);background:#0b0f14;padding:14px}.panel h2{font-size:.8rem;letter-spacing:.13em;margin:0 0 10px;color:#b9c1c9}.panel.after h2{color:var(--gold)}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}.gallery img{width:100%;height:330px;object-fit:cover;border:1px solid var(--line)}.gallery.single{grid-template-columns:1fr}.note{margin-top:26px;padding:18px;border:1px solid rgba(224,182,61,.5);background:rgba(224,182,61,.05);color:#e8ce7d;line-height:1.8}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}.btn{padding:15px;text-align:center;border:1px solid var(--line);font-weight:900}.btn.primary{background:linear-gradient(135deg,#1979ca,#2b99ed);border-color:#4aa9ed}@media(max-width:760px){.wrap{width:calc(100% - 28px)}.logo{width:185px}.compare{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.gallery img{height:280px}.actions{grid-template-columns:1fr}}
-</style></head><body><header><div class="wrap head"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><a class="back" href="repair.html">一覧へ戻る</a></div></header><main><div class="wrap"><div class="eyebrow" id="caseNo"></div><h1 id="title"></h1><p class="summary" id="summary"></p><div class="tags" id="tags"></div><div class="compare"><section class="panel"><h2>BEFORE</h2><div class="gallery" id="beforeGallery"></div></section><section class="panel after"><h2>AFTER</h2><div class="gallery" id="afterGallery"></div></section></div><div class="note">修理内容・費用・納期は、機種や摩耗状態によって異なります。状態が分かる写真を添えてお問い合わせください。</div><div class="actions"><a class="btn primary" href="tel:0946428311">電話で相談する</a><a class="btn" href="repair.html">修理実績一覧へ戻る</a></div></div></main>
-<script>const cases=[{"id": 1, "model": "小割機 肉盛り・刃先再生", "subtitle": "摩耗部再生・肉盛り補修", "before": ["repair-case1-before-main.png"], "after": ["repair-case1-after-main.png"], "tags": ["肉盛り", "刃先再生", "摩耗部補修", "仕上げ加工"], "summary": "摩耗が進んだ刃先と本体周辺を再生し、使用に耐える状態へ整えました。"}, {"id": 2, "model": "大型アタッチメント 再生修理", "subtitle": "本体補修・肉盛り・再塗装", "before": ["repair-case2-before-main.jpg", "repair-case2-before-close.jpg"], "after": ["repair-case2-after-main.jpg", "repair-case2-after-close.jpg", "repair-case2-after-side.jpg"], "tags": ["肉盛り", "本体補修", "再生加工", "再塗装"], "summary": "摩耗した本体・爪周辺を補修し、各部を整形したうえで再塗装まで仕上げました。"}];const id=+new URLSearchParams(location.search).get("id")||1;const c=cases.find(x=>x.id===id)||cases[0];document.title=c.model+" | RENVIS REPAIR";document.getElementById("caseNo").textContent="Repair Case "+String(c.id).padStart(2,"0");document.getElementById("title").textContent=c.model;document.getElementById("summary").textContent=c.summary;document.getElementById("tags").innerHTML=c.tags.map(t=>`<span class="tag">${t}</span>`).join("");const render=(id,arr)=>{const el=document.getElementById(id);el.classList.toggle("single",arr.length===1);el.innerHTML=arr.map(src=>`<img src="${src}" alt="">`).join("")};render("beforeGallery",c.before);render("afterGallery",c.after);</script></body></html>
+.empty-gallery{min-height:180px;display:grid;place-items:center;color:#737d87;border:1px dashed var(--line);font-size:.78rem}
+</style><script src="supabase-config.js"></script></head><body><header><div class="wrap head"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><a class="back" href="repair.html">一覧へ戻る</a></div></header><main><div class="wrap"><div class="eyebrow" id="caseNo"></div><h1 id="title"></h1><p class="summary" id="summary"></p><div class="tags" id="tags"></div><div class="compare"><section class="panel"><h2>BEFORE</h2><div class="gallery" id="beforeGallery"></div></section><section class="panel after"><h2>AFTER</h2><div class="gallery" id="afterGallery"></div></section></div><div class="note">修理内容・費用・納期は、機種や摩耗状態によって異なります。状態が分かる写真を添えてお問い合わせください。</div><div class="actions"><a class="btn primary" href="tel:0946428311">電話で相談する</a><a class="btn" href="repair.html">修理実績一覧へ戻る</a></div></div></main>
+<script>
+(() => {
+  const FALLBACK_CASES=[
+    {id:1,model:'小割機 肉盛り・刃先再生',subtitle:'摩耗部再生・肉盛り補修',before:['repair-case1-before-main.png'],after:['repair-case1-after-main.png'],tags:['肉盛り','刃先再生','摩耗部補修','仕上げ加工'],summary:'摩耗が進んだ刃先と本体周辺を再生し、使用に耐える状態へ整えました。'},
+    {id:2,model:'大型アタッチメント 再生修理',subtitle:'本体補修・肉盛り・再塗装',before:['repair-case2-before-main.jpg','repair-case2-before-close.jpg'],after:['repair-case2-after-main.jpg','repair-case2-after-close.jpg','repair-case2-after-side.jpg'],tags:['肉盛り','本体補修','再生加工','再塗装'],summary:'摩耗した本体・爪周辺を補修し、各部を整形したうえで再塗装まで仕上げました。'}
+  ];
+  const id=Number(new URLSearchParams(location.search).get('id'))||1;
+  const esc=(v='')=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const renderGallery=(elId, arr) => {
+    const el=document.getElementById(elId);
+    el.classList.toggle('single',arr.length===1);
+    el.innerHTML=arr.length ? arr.map(x=>`<img src="${esc(typeof x==='string'?x:x.image_url)}" alt="${esc((typeof x==='object'&&x.caption)||'')}" loading="lazy">`).join('') : '<div class="empty-gallery">画像は準備中です</div>';
+  };
+  const renderCase = c => {
+    document.title=(c.model||'修理実績')+' | RENVIS REPAIR';
+    document.getElementById('caseNo').textContent='Repair Case '+String(c.id).padStart(2,'0');
+    document.getElementById('title').textContent=c.model||'修理実績';
+    document.getElementById('summary').textContent=c.summary||'';
+    document.getElementById('tags').innerHTML=(c.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
+    renderGallery('beforeGallery',c.before||[]);
+    renderGallery('afterGallery',c.after||[]);
+  };
+  const fallback=()=>renderCase(FALLBACK_CASES.find(x=>x.id===id)||FALLBACK_CASES[0]);
+  const cfg=window.RENVIS_SUPABASE;
+  if(!cfg?.url||!cfg?.key){ fallback(); return; }
+  const api=cfg.url.replace(/\/$/,'')+'/rest/v1';
+  const headers={apikey:cfg.key,Accept:'application/json'};
+  const get=async path=>{const r=await fetch(api+path,{headers});if(!r.ok)throw new Error(`Supabase ${r.status}`);return r.json()};
+  Promise.all([
+    get(`/repairs?id=eq.${encodeURIComponent(id)}&select=*&limit=1`),
+    get(`/repair_images?repair_id=eq.${encodeURIComponent(id)}&select=*&order=sort_order.asc.nullslast,id.asc`)
+  ]).then(([rows,images])=>{
+    if(!rows.length){fallback();return;}
+    const r=rows[0];
+    const title=r.title||[r.maker,r.model].filter(Boolean).join(' ')||`修理実績 ${r.id}`;
+    const summary=r.description||[r.maker,r.model,r.category].filter(Boolean).join(' / ')||'';
+    const before=images.filter(x=>String(x.image_type||'').toLowerCase()==='before'&&x.image_url);
+    const after=images.filter(x=>String(x.image_type||'').toLowerCase()==='after'&&x.image_url);
+    renderCase({id:r.id,model:title,summary,tags:[r.maker,r.model,r.category].filter(Boolean),before,after});
+  }).catch(err=>{console.error('RENVIS CMS detail error:',err);fallback();});
+})();
+</script></body></html>
