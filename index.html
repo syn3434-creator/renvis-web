@@ -927,6 +927,22 @@ html,body{max-width:100%;overflow-x:hidden}
 
 .service-cards .card[data-href]{cursor:pointer;}
 
+
+/* 事業内容カード：PC版のみコンパクト化 */
+@media (min-width: 769px){
+  .service-cards .card{
+    min-height: 0 !important;
+  }
+  .service-cards .service-card-inner{
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  .service-cards .service-icon{
+    height: 108px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
 </style>
 </head>
 <body>
