@@ -21,6 +21,24 @@
   const cfg=window.RENVIS_SUPABASE;
   const esc=(v='')=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const yen=n=>Number.isFinite(Number(n))?Number(n).toLocaleString("ja-JP")+"円（税込）":"価格応相談";
+function normalizeTonClass(value){
+  const s=String(value??"").trim();
+  if(!s) return "";
+  if(/[tｔＴ]/i.test(s)) return s.replace(/[ｔＴ]/g,"t").replace(/～/g,"〜");
+  const key=s.replace(/\s+/g,"").replace(/クラス/g,"");
+  const map={
+    "0.1":"3t",
+    "0.2":"7t",
+    "0.25":"7t",
+    "0.4":"12t",
+    "0.45":"12t",
+    "0.7":"20t",
+    "1.2":"35t",
+    "1.6":"50t"
+  };
+  return map[key] || s;
+}
+
   if(!id||!cfg?.url||!cfg?.key){ document.getElementById("model").textContent="商品情報を取得できません"; return; }
   try{
     const db=window.supabase.createClient(cfg.url,cfg.key);
@@ -44,7 +62,7 @@
       thumbs.addEventListener("click",e=>{ const btn=e.target.closest(".thumb"); if(!btn)return; document.getElementById("mainImage").src=btn.dataset.src; thumbs.querySelectorAll(".thumb").forEach(x=>x.classList.remove("active")); btn.classList.add("active"); });
     }else{ visual.innerHTML='<span class="no-photo">NO PHOTO</span>'; }
     const rows=[
-      ["メーカー",item.maker],["種類",item.type],["型式",item.model],["対応クラス",item.cls],
+      ["メーカー",item.maker],["種類",item.type],["型式",item.model],["対応クラス",normalizeTonClass(item.cls)],
       ["年式",item.year?item.year+"年":""],["販売状況",item.status||"販売中"],["商品状態",item.condition],["所在地","福岡県"]
     ].filter(([,v])=>v!==null&&v!==undefined&&String(v)!=="");
     document.getElementById("table").innerHTML=rows.map(([k,v])=>`<div class="row"><b>${esc(k)}</b><span>${esc(v)}</span></div>`).join("");

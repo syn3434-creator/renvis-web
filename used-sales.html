@@ -125,7 +125,7 @@ html,body{max-width:100%;overflow-x:hidden}
               <div class="field"><label>キーワード・型式</label><input id="keyword" type="search" placeholder="例：TS-WD1700V-2"></div>
               <div class="field"><label>メーカー</label><select id="maker"><option value="">すべてのメーカー</option><option>オカダアイヨン</option><option>日本ニューマチック</option><option>タグチ工業</option><option>古河ロックドリル</option><option>東空販売</option><option>坂戸工作所</option><option>甲南建機</option></select></div>
               <div class="field"><label>種類</label><select id="type"><option value="">すべての種類</option><option>大割機</option><option>小割機</option><option>マグネット</option><option>油圧ブレーカー</option><option>鉄骨切断機</option><option>木材切断機</option><option>木材破砕機（マルチャー）</option><option>機械式フォーク</option><option>油圧式フォーク</option><option>ログフォーク</option><option>アースオーガ</option><option>油圧式オーガ</option><option>油圧式切削機</option><option>ツインヘッダー</option><option>標準バケット</option><option>幅狭バケット</option><option>幅広バケット</option><option>法面バケット</option><option>スケルトンバケット</option><option>ホイールローダー用バケット</option><option>特殊バケット</option><option>バケットクラッシャー</option><option>グラップル</option><option>リッパー</option><option>ポイント（爪・ツース盤）</option><option>ブレード</option><option>マルチブレード</option><option>草刈り機</option><option>クイックヒッチ</option><option>クイックカプラ</option></select></div>
-              <div class="field"><label>対応クラス</label><select id="class"><option value="">すべてのクラス</option><option>3〜5t</option><option>5〜8t</option><option>7〜12t</option><option>12〜20t</option><option>20〜30t</option><option>30〜50t</option><option>45〜70t</option></select></div>
+              <div class="field"><label>対応クラス</label><select id="class"><option value="">すべて</option><option>3〜5t</option><option>5〜8t</option><option>7〜12t</option><option>12〜20t</option><option>20〜30t</option><option>30〜50t</option><option>45〜70t</option></select></div>
             </div>
             <div class="range-grid">
               <div class="field"><label>年式</label><div class="range-pair"><select id="yearMin"><option value="">下限なし</option><option value="2010">2010年</option><option value="2011">2011年</option><option value="2012">2012年</option><option value="2013">2013年</option><option value="2014">2014年</option><option value="2015">2015年</option><option value="2016">2016年</option><option value="2017">2017年</option><option value="2018">2018年</option><option value="2019">2019年</option><option value="2020">2020年</option><option value="2021">2021年</option><option value="2022">2022年</option><option value="2023">2023年</option><option value="2024">2024年</option><option value="2025">2025年</option><option value="2026">2026年</option></select><i>〜</i><select id="yearMax"><option value="">上限なし</option><option value="2010">2010年</option><option value="2011">2011年</option><option value="2012">2012年</option><option value="2013">2013年</option><option value="2014">2014年</option><option value="2015">2015年</option><option value="2016">2016年</option><option value="2017">2017年</option><option value="2018">2018年</option><option value="2019">2019年</option><option value="2020">2020年</option><option value="2021">2021年</option><option value="2022">2022年</option><option value="2023">2023年</option><option value="2024">2024年</option><option value="2025">2025年</option><option value="2026">2026年</option></select></div></div>
@@ -200,6 +200,24 @@ const $=id=>document.getElementById(id);
 const yen=n=>Number.isFinite(Number(n))?Number(n).toLocaleString("ja-JP")+"円（税込）":"価格応相談";
 const statusClass=s=>s==="販売中"?"available":s==="商談中"?"negotiation":"sold";
 const conditionClass=c=>c==="整備済み"?"maintained":c==="点検済み"?"inspected":"as-is";
+function normalizeTonClass(value){
+  const s=String(value??"").trim();
+  if(!s) return "";
+  if(/[tｔＴ]/i.test(s)) return s.replace(/[ｔＴ]/g,"t").replace(/～/g,"〜");
+  const key=s.replace(/\s+/g,"").replace(/クラス/g,"");
+  const map={
+    "0.1":"3t",
+    "0.2":"7t",
+    "0.25":"7t",
+    "0.4":"12t",
+    "0.45":"12t",
+    "0.7":"20t",
+    "1.2":"35t",
+    "1.6":"50t"
+  };
+  return map[key] || s;
+}
+
 function image(p){return p.photo?`<img src="${p.img}" alt="${p.model||p.title||"中古商品"}">`:`<div class="no-photo">NO PHOTO</div>`}
 function card(p,arrival=false){
  return `<article class="card">
@@ -247,6 +265,20 @@ $("searchBtn").onclick=render;$("resetBtn").onclick=reset;$("sort").onchange=ren
 $("chips").onclick=e=>{if(!e.target.classList.contains("chip"))return;const active=e.target.classList.toggle("active");document.querySelectorAll(".chip").forEach(c=>{if(c!==e.target)c.classList.remove("active")});$("type").value=active?e.target.dataset.type:"";render()};
 $("prevArrival").onclick=()=>$("arrivals").scrollBy({left:-360,behavior:"smooth"});
 $("nextArrival").onclick=()=>$("arrivals").scrollBy({left:360,behavior:"smooth"});
+
+function updateClassOptions(){
+  const select=$("class");
+  if(!select) return;
+  const current=select.value;
+  const values=[...new Set(products.map(p=>p.cls).filter(Boolean))].sort((a,b)=>{
+    const na=parseFloat(String(a).replace(/[^\d.]/g,""))||9999;
+    const nb=parseFloat(String(b).replace(/[^\d.]/g,""))||9999;
+    return na-nb || String(a).localeCompare(String(b),"ja");
+  });
+  select.innerHTML='<option value="">すべて</option>'+values.map(v=>`<option value="${v}">${v}</option>`).join("");
+  if(values.includes(current)) select.value=current;
+}
+
 function updateCounts(){
  $("availableCount").textContent=products.filter(p=>p.status==="販売中").length+"件";
  $("negotiationCount").textContent=products.filter(p=>p.status==="商談中").length+"件";
@@ -267,7 +299,7 @@ async function loadUsedItems(){
    maker:row.maker??row["Maker"]??row["メーカー"]??"",
    type:row.type??"",
    model:row.model??row["モデル"]??"",
-   cls:row.cls??"",
+   cls:normalizeTonClass(row.cls??""),
    year:row.year==null?null:Number(row.year),
    price:row.price??row["プライス"]??row["価格"]??null,
    status:row.status??"販売中",
@@ -278,7 +310,7 @@ async function loadUsedItems(){
    new:index<8
   }));
 
-  updateCounts(); updateFavoriteCount(); renderArrivals(); render();
+  updateClassOptions(); updateCounts(); updateFavoriteCount(); renderArrivals(); render();
  }catch(err){
   console.error("used_items load error:",err);
   products=[]; updateCounts(); updateFavoriteCount();
