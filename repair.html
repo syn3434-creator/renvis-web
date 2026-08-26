@@ -113,6 +113,20 @@ html,body{max-width:100%;overflow-x:hidden}
 .repair-point span{display:block;color:#aeb8c2;font-size:.72rem}
 @media(max-width:900px){.repair-rental-grid{grid-template-columns:1fr;gap:24px}.repair-rental-photo{height:330px}}
 @media(max-width:760px){.repair-rental-hero{padding:28px 0}.repair-rental-copy h1{font-size:clamp(3.6rem,18vw,5.2rem)}.repair-rental-copy h2{font-size:clamp(1.5rem,7vw,1.9rem)}.repair-rental-photo{height:260px}.repair-points{grid-template-columns:1fr}.repair-point+ .repair-point{border-left:0;border-top:1px solid var(--line)}}
+
+/* 2026-08-26 COMPACT: hero height aligned closer to RENTAL */
+@media(min-width:901px){
+  .repair-rental-hero{padding:24px 0 26px}
+  .repair-rental-grid{gap:54px}
+  .repair-rental-copy h1{font-size:clamp(4rem,6vw,6.5rem)}
+  .repair-rental-copy .hero-jp{margin-bottom:18px}
+  .repair-rental-copy h2{font-size:clamp(1.6rem,2.2vw,2.55rem);margin-bottom:12px}
+  .repair-rental-copy p{line-height:1.7}
+  .repair-rental-photo{height:320px}
+  .repair-points{margin-top:16px}
+  .repair-point{padding:14px 18px}
+}
+
 </style>
 <script src="supabase-config.js"></script>
 </head>
