@@ -1023,12 +1023,16 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 .card.rental .service-icon .rental-crusher-upload{width:228px!important;height:178px!important;max-width:100%!important}
 @media(max-width:760px){.card.rental .service-icon .rental-crusher-upload{width:178px!important;height:142px!important}}
-.arrival-banner{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(90deg,#0b0f14,#111820,#0b0f14);padding:14px 0}
-.arrival-banner-inner{display:flex;align-items:center;gap:18px;min-height:48px}
-.arrival-banner-label{flex:0 0 auto;color:#e0b63d;font-size:.68rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
-.arrival-banner-text{font-weight:800;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.arrival-banner-link{margin-left:auto;flex:0 0 auto;color:#e8c75f;font-size:.76rem;font-weight:900;white-space:nowrap}
-@media(max-width:760px){.arrival-banner-inner{gap:10px}.arrival-banner-label{font-size:.58rem}.arrival-banner-text{font-size:.78rem}.arrival-banner-link{font-size:.68rem}}
+.arrival-banner{padding:20px 0 18px;background:#080b0f;border-top:1px solid #272d33;border-bottom:1px solid #272d33;position:relative;overflow:hidden}
+.arrival-banner:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:#e0b63d}
+.arrival-banner-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;min-height:74px;border:1px solid rgba(224,182,61,.42);background:linear-gradient(100deg,rgba(224,182,61,.10),rgba(14,18,24,.96) 42%,rgba(8,11,15,.98));padding:18px 24px}
+.arrival-banner-label{display:inline-flex;align-items:center;justify-content:center;background:#e0b63d;color:#090b0e;padding:10px 15px;font-size:.72rem;font-weight:1000;letter-spacing:.14em;white-space:nowrap}
+.arrival-banner-copy{min-width:0}
+.arrival-banner-text{display:block;color:#fff;font-size:clamp(1.15rem,2.1vw,1.7rem);font-weight:1000;line-height:1.1;letter-spacing:.01em}
+.arrival-banner-sub{display:block;margin-top:6px;color:#aeb6bf;font-size:.72rem;font-weight:700;letter-spacing:.02em}
+.arrival-banner-link{display:inline-flex;align-items:center;justify-content:center;min-width:180px;padding:14px 18px;background:#e0b63d;color:#090b0e;font-size:.76rem;font-weight:1000;white-space:nowrap}
+.arrival-banner-link:hover{filter:brightness(1.06)}
+@media(max-width:760px){.arrival-banner{padding:12px 0}.arrival-banner-inner{grid-template-columns:1fr auto;gap:12px;min-height:0;padding:14px}.arrival-banner-label{grid-column:1/-1;justify-self:start;padding:7px 10px;font-size:.58rem}.arrival-banner-text{font-size:1.02rem}.arrival-banner-sub{font-size:.64rem}.arrival-banner-link{min-width:0;padding:11px 12px;font-size:.67rem}}
 </style>
 </head>
 <body>
@@ -1110,7 +1114,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <section class="arrival-banner" aria-label="新着情報">
 <div class="wrap arrival-banner-inner">
 <span class="arrival-banner-label">NEW ARRIVAL</span>
-<span class="arrival-banner-text">新着商品を入荷しました</span>
+<div class="arrival-banner-copy"><span class="arrival-banner-text">SV-30 入荷しました。</span><span class="arrival-banner-sub">中古アタッチメントの新着情報</span></div>
 <a class="arrival-banner-link" href="used-sales.html">中古販売を見る →</a>
 </div>
 </section>

@@ -23,10 +23,21 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
 @media(max-width:760px){.wrap,.nav{width:calc(100% - 28px)}header{height:68px}.logo{width:185px}.nav-links{display:none}.home-btn{margin-left:auto}.hero{padding:25px 0 20px}.hero-grid{gap:18px}h1{font-size:clamp(3.3rem,16vw,5rem)}.hero-photo{height:205px}.strengths{grid-template-columns:1fr}.strength{border-right:0;border-bottom:1px solid var(--line)}.strength:last-child{border-bottom:0}.section{padding:34px 0}.categories{grid-template-columns:1fr 1fr}.category-card img{height:105px}.search-grid{grid-template-columns:1fr}.featured{grid-template-columns:1fr}.products{grid-template-columns:1fr}.card-image{height:260px}.flow{grid-template-columns:1fr 1fr}.cta{align-items:flex-start;flex-direction:column}}
 
 .strengths{grid-template-columns:repeat(2,1fr)!important;}
+
+/* 2026-08-26 bilingual desktop navigation */
+.nav-links a{display:flex;flex-direction:column;align-items:center;gap:3px;line-height:1.05}
+.nav-links a .nav-en{display:block;font-size:.82rem;font-weight:900;letter-spacing:.02em}
+.nav-links a .nav-ja{display:block;font-size:.60rem;font-weight:700;letter-spacing:.02em;color:#cfd5dc}
+.nav-links a.active .nav-ja{color:inherit}
+.home-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.05}
+.home-btn .nav-en{font-size:.76rem;font-weight:900}
+.home-btn .nav-ja{font-size:.56rem;color:#cfd5dc;font-weight:700}
+@media(max-width:760px){.nav-links{display:none!important}.home-btn .nav-ja{display:none}}
+
 </style>
 </head>
 <body>
-<header><div class="nav"><a href="index.html"><img alt="RENVIS" class="logo" src="renvis-logo.png"/></a><nav class="nav-links"><a href="index.html">HOME</a><a class="active" href="rental.html">RENTAL</a><a href="repair.html">REPAIR</a><a href="used-sales.html">USED SALES</a><a href="management.html">MANAGEMENT</a></nav><a class="home-btn" href="index.html">TOPへ</a></div></header>
+<header><div class="nav"><a href="index.html"><img alt="RENVIS" class="logo" src="renvis-logo.png"/></a><nav class="nav-links"><a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a><a class="active" href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a><a href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a><a href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a><a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a></nav><a class="home-btn" href="index.html"><span class="nav-en">TOPへ</span><span class="nav-ja">トップへ</span></a></div></header>
 <main>
 <section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Attachment Rental</div><h1>RENTAL</h1><p class="lead">建機用アタッチメントレンタル</p><p class="sub">必要な一台を、必要な時に。料金・貸出状況はお気軽にお問い合わせください。</p><div class="strengths"><div class="strength"><b>幅広いラインアップ</b><span>主力アタッチメントを順次掲載</span></div><div class="strength"><b>自社修理対応</b><span>貸出後のトラブルにも対応</span></div></div></div><div class="hero-photo"><img alt="レンタルアタッチメント" src="rental-tswd1700.webp"/></div></div></section>
 <section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Popular Categories</div><h2>種類から探す</h2></div><p>よく使われるカテゴリーから、すぐに一覧を絞り込めます。</p></div><div class="categories" id="categories"><button class="category-card" data-group="大割機" data-type="大割機"><img alt="大割機" src="rental-tswd1700.webp"/><span>大割機</span></button><button class="category-card" data-group="小割機" data-type="小割機"><img alt="小割機" src="rental-sv30.webp"/><span>小割機</span></button><button class="category-card" data-group="油圧ブレーカー" data-type="油圧ブレーカー"><img alt="油圧ブレーカー" src="rental-fx55.webp"/><span>油圧ブレーカー</span></button><button class="category-card" data-group="グラップル" data-type="グラップル"><img alt="グラップル" src="repair-after-top.webp"/><span>グラップル</span></button><button class="category-card" data-group="フォーク" data-type=""><img alt="フォーク" src="repair-after-front.webp"/><span>フォーク</span></button><button class="category-card" data-group="バケット" data-type=""><img alt="バケット" src="repair-before-top.webp"/><span>バケット</span></button></div></div></section>
