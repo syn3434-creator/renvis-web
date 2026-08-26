@@ -1,0 +1,31 @@
+RENVIS 修正版 2026-08-26
+
+変更対象のみ修正。既存のSupabase設定ファイルや画像ファイルは変更しません。
+
+index.html
+・PC上部ナビに小さい日本語を追加
+・RENTALの承認済み大割機画像は変更せず、サイズだけ少し拡大
+・事業カードの日本語表記を維持
+・MANAGEMENTカードの確定説明文を維持
+
+repair.html
+・Supabase連携版を土台として維持
+・REPAIR直下に「修理・再生」を追加
+・キャッチコピーを2行に固定
+  現場を止めない。
+  その一台に、もう一度仕事を。
+・PC上部ナビに小さい日本語を追加
+
+management.html
+・説明文を確定文言へ変更
+  お客様のアタッチメントのカルテ作成、修理、履歴管理。
+  また取付ショベル変更に伴う部品の改造、製作を行っております。
+・PC上部ナビに小さい日本語を追加
+
+used-sales.html / used-detail.html
+・Supabase連携を維持
+・used_item_images の used_item_id 紐づけ写真を優先
+・sort_order順の先頭写真を一覧代表画像として表示
+・thumbnail_url は紐づけ写真がない場合のみ使用
+
+supabase-config.js、RLS、Supabaseテーブル構造は変更していません。

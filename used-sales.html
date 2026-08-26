@@ -88,10 +88,10 @@ html,body{max-width:100%;overflow-x:hidden}
     <a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
     <nav class="nav-links">
       <a href="index.html">HOME</a>
-      <a href="rental.html">RENTAL</a>
-      <a href="repair.html">REPAIR</a>
+      <a href="index.html#rental">RENTAL</a>
+      <a href="index.html#repair">REPAIR</a>
       <a class="active" href="used-sales.html">USED SALES</a>
-      <a href="management.html">MANAGEMENT</a>
+      <a href="index.html#management">MANAGEMENT</a>
       <a href="index.html#company">COMPANY</a>
     </nav>
     <a class="home-btn" href="index.html">TOPへ</a>
@@ -105,7 +105,7 @@ html,body{max-width:100%;overflow-x:hidden}
       <div class="eyebrow">Used Attachment Search</div>
       <h1>USED SALES</h1>
       <p class="lead">メーカー・種類・対応クラス・年式・価格・販売状況から<br class="desktop-break">中古建機アタッチメントを絞り込めます。</p>
-      <div class="demo-note">ⓘ 掲載商品はすべてダミーです。実際の在庫・販売状況ではありません。</div>
+      <div class="demo-note">ⓘ 掲載内容・販売状況は随時更新しています。最新状況はお問い合わせください。</div>
     </div>
     <div class="summary-area">
       <div class="stock-summary">
@@ -189,23 +189,24 @@ html,body{max-width:100%;overflow-x:hidden}
 </main>
 <footer><div style="margin-bottom:8px"><a href="contact.html">お問い合わせ</a>　｜　<a href="legal.html">特定商取引法</a>　｜　<a href="privacy.html">プライバシーポリシー</a></div>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
 
-<script>
-function tonClass(v){const s=String(v??"").trim();if(!s)return"";if(/[tｔＴ]/i.test(s))return s.replace(/[ｔＴ]/g,"t");const k=s.replace(/クラス/g,"").trim();return({"0.1":"3t","0.2":"7t","0.25":"7t","0.45":"12t","0.7":"20t","1.2":"35t","1.6":"50t"})[k]||s;}
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
 
+<script>
 const types=["大割機", "小割機", "マグネット", "油圧ブレーカー", "鉄骨切断機", "木材切断機", "木材破砕機（マルチャー）", "機械式フォーク", "油圧式フォーク", "ログフォーク", "アースオーガ", "油圧式オーガ", "油圧式切削機", "ツインヘッダー", "標準バケット", "幅狭バケット", "幅広バケット", "法面バケット", "スケルトンバケット", "ホイールローダー用バケット", "特殊バケット", "バケットクラッシャー", "グラップル", "リッパー", "ポイント（爪・ツース盤）", "ブレード", "マルチブレード", "草刈り機", "クイックヒッチ", "クイックカプラ"];
-const products=[{"id": 1, "maker": "オカダアイヨン", "type": "大割機", "model": "TS-WD1700V-2", "cls": "45〜70t", "year": 2021, "price": 4800000, "status": "販売中", "condition": "整備済み", "img": "rental-tswd1700.webp", "date": 20, "photo": true, "new": true}, {"id": 2, "maker": "タグチ工業", "type": "大割機", "model": "GUZZILLA DS-120A", "cls": "12〜20t", "year": 2019, "price": 3200000, "status": "商談中", "condition": "点検済み", "img": "repair-after-front.webp", "date": 19, "photo": true, "new": true}, {"id": 3, "maker": "日本ニューマチック", "type": "小割機", "model": "SV-30", "cls": "3〜5t", "year": 2023, "price": 980000, "status": "販売中", "condition": "整備済み", "img": "rental-sv30.webp", "date": 18, "photo": true, "new": true}, {"id": 4, "maker": "古河ロックドリル", "type": "油圧ブレーカー", "model": "Fx55α", "cls": "5〜8t", "year": 2022, "price": 1250000, "status": "販売中", "condition": "点検済み", "img": "rental-fx55.webp", "date": 17, "photo": true, "new": true}, {"id": 5, "maker": "オカダアイヨン", "type": "小割機", "model": "OSC-83V", "cls": "7〜12t", "year": 2018, "price": 1450000, "status": "SOLD OUT", "condition": "現状販売", "img": "repair-after-top.webp", "date": 16, "photo": true, "new": false}, {"id": 6, "maker": "坂戸工作所", "type": "マグネット", "model": "MAG-900", "cls": "12〜20t", "year": 2020, "price": 1680000, "status": "販売中", "condition": "点検済み", "img": "repair-before-top.webp", "date": 15, "photo": true, "new": false}, {"id": 7, "maker": "東空販売", "type": "油圧ブレーカー", "model": "TNB-6E", "cls": "5〜8t", "year": 2017, "price": 760000, "status": "商談中", "condition": "現状販売", "img": "hero.webp", "date": 14, "photo": true, "new": false}, {"id": 8, "maker": "オカダアイヨン", "type": "鉄骨切断機", "model": "TS-S550C", "cls": "12〜20t", "year": 2019, "price": 2900000, "status": "販売中", "condition": "整備済み", "img": "repair-before-front.webp", "date": 13, "photo": true, "new": false}, {"id": 9, "maker": "甲南建機", "type": "機械式フォーク", "model": "KF-70", "cls": "5〜8t", "year": 2016, "price": 420000, "status": "SOLD OUT", "condition": "現状販売", "img": "rental-sv30.webp", "date": 12, "photo": true, "new": false}, {"id": 10, "maker": "タグチ工業", "type": "油圧式フォーク", "model": "GV-120", "cls": "7〜12t", "year": 2020, "price": 980000, "status": "販売中", "condition": "点検済み", "img": "repair-after-front.webp", "date": 11, "photo": true, "new": false}, {"id": 11, "maker": "坂戸工作所", "type": "ログフォーク", "model": "LF-100", "cls": "7〜12t", "year": 2018, "price": 650000, "status": "販売中", "condition": "現状販売", "img": "repair-before-top.webp", "date": 10, "photo": true, "new": false}, {"id": 12, "maker": "甲南建機", "type": "アースオーガ", "model": "KA-1200", "cls": "12〜20t", "year": 2015, "price": 880000, "status": "商談中", "condition": "点検済み", "img": "hero.webp", "date": 9, "photo": true, "new": false}, {"id": 13, "maker": "日本ニューマチック", "type": "油圧式オーガ", "model": "HA-60", "cls": "5〜8t", "year": 2021, "price": 1050000, "status": "販売中", "condition": "整備済み", "img": "rental-fx55.webp", "date": 8, "photo": true, "new": false}, {"id": 14, "maker": "古河ロックドリル", "type": "ツインヘッダー", "model": "TH-20", "cls": "12〜20t", "year": 2017, "price": 2100000, "status": "販売中", "condition": "現状販売", "img": "repair-before-front.webp", "date": 7, "photo": true, "new": false}, {"id": 15, "maker": "オカダアイヨン", "type": "スケルトンバケット", "model": "SB-120", "cls": "7〜12t", "year": 2020, "price": 550000, "status": "販売中", "condition": "点検済み", "img": "rental-tswd1700.webp", "date": 6, "photo": true, "new": false}, {"id": 16, "maker": "タグチ工業", "type": "バケットクラッシャー", "model": "BC-150", "cls": "12〜20t", "year": 2018, "price": 2350000, "status": "SOLD OUT", "condition": "現状販売", "img": "repair-after-top.webp", "date": 5, "photo": true, "new": false}, {"id": 17, "maker": "坂戸工作所", "type": "グラップル", "model": "GR-70", "cls": "5〜8t", "year": 2022, "price": 790000, "status": "販売中", "condition": "整備済み", "img": "rental-sv30.webp", "date": 4, "photo": true, "new": false}, {"id": 18, "maker": "甲南建機", "type": "クイックヒッチ", "model": "QH-120", "cls": "7〜12t", "year": 2019, "price": 390000, "status": "販売中", "condition": "点検済み", "img": "repair-after-front.webp", "date": 3, "photo": true, "new": false}, {"id": 19, "maker": "東空販売", "type": "草刈り機", "model": "TM-80", "cls": "5〜8t", "year": 2016, "price": 590000, "status": "商談中", "condition": "現状販売", "img": "", "date": 2, "photo": false, "new": false}, {"id": 20, "maker": "古河ロックドリル", "type": "リッパー", "model": "FR-120", "cls": "12〜20t", "year": 2014, "price": 350000, "status": "販売中", "condition": "現状販売", "img": "", "date": 1, "photo": false, "new": false}];
+let products=[];
 const favorites=new Set(JSON.parse(localStorage.getItem("renvisFavorites")||"[]"));
 const $=id=>document.getElementById(id);
-const yen=n=>n.toLocaleString("ja-JP")+"円（税込）";
+const yen=n=>Number.isFinite(Number(n))?Number(n).toLocaleString("ja-JP")+"円（税込）":"価格応相談";
 const statusClass=s=>s==="販売中"?"available":s==="商談中"?"negotiation":"sold";
 const conditionClass=c=>c==="整備済み"?"maintained":c==="点検済み"?"inspected":"as-is";
-function image(p){return p.photo?`<img src="${p.img}" alt="${p.model}">`:`<div class="no-photo">NO PHOTO</div>`}
+function image(p){return p.photo?`<img src="${p.img}" alt="${p.model||p.title||"中古商品"}">`:`<div class="no-photo">NO PHOTO</div>`}
 function card(p,arrival=false){
  return `<article class="card">
   <div class="card-image">${image(p)}${arrival?'<span class="new-badge">NEW</span>':`<span class="status ${statusClass(p.status)}">${p.status}</span>`}<button class="favorite ${favorites.has(p.id)?'active':''}" data-id="${p.id}" type="button">${favorites.has(p.id)?'★':'☆'}</button>${arrival?'':'<span class="updating">商品情報更新中</span>'}</div>
   <div class="card-body">
-    <div class="category">${p.type}</div><h3>${p.model}</h3><div class="maker">${p.maker}</div>
-    <div class="tags"><span class="tag condition ${conditionClass(p.condition)}">${p.condition}</span><span class="tag">${p.cls}</span><span class="tag">${p.year}年</span><span class="tag">● 福岡県</span></div>
+    <div class="category">${p.type||"中古商品"}</div><h3>${p.model||p.title||"中古商品"}</h3><div class="maker">${p.maker||""}</div>
+    <div class="tags">${p.condition?`<span class="tag condition ${conditionClass(p.condition)}">${p.condition}</span>`:""}${p.cls?`<span class="tag">${p.cls}</span>`:""}${p.year?`<span class="tag">${p.year}年</span>`:""}<span class="tag">● 福岡県</span></div>
     <div class="price-row"><div class="price">${yen(p.price)}</div><a class="detail" href="used-detail.html?id=${p.id}">詳細を見る →</a></div>
   </div></article>`;
 }
@@ -246,11 +247,56 @@ $("searchBtn").onclick=render;$("resetBtn").onclick=reset;$("sort").onchange=ren
 $("chips").onclick=e=>{if(!e.target.classList.contains("chip"))return;const active=e.target.classList.toggle("active");document.querySelectorAll(".chip").forEach(c=>{if(c!==e.target)c.classList.remove("active")});$("type").value=active?e.target.dataset.type:"";render()};
 $("prevArrival").onclick=()=>$("arrivals").scrollBy({left:-360,behavior:"smooth"});
 $("nextArrival").onclick=()=>$("arrivals").scrollBy({left:360,behavior:"smooth"});
-$("availableCount").textContent=products.filter(p=>p.status==="販売中").length+"件";
-$("negotiationCount").textContent=products.filter(p=>p.status==="商談中").length+"件";
-$("soldCount").textContent=products.filter(p=>p.status==="SOLD OUT").length+"件";
-$("totalCount").textContent=products.length+"件";
-updateFavoriteCount();renderArrivals();render();
+function updateCounts(){
+ $("availableCount").textContent=products.filter(p=>p.status==="販売中").length+"件";
+ $("negotiationCount").textContent=products.filter(p=>p.status==="商談中").length+"件";
+ $("soldCount").textContent=products.filter(p=>p.status==="SOLD OUT").length+"件";
+ $("totalCount").textContent=products.length+"件";
+}
+
+async function loadUsedItems(){
+ try{
+  if(!window.RENVIS_SUPABASE?.url||!window.RENVIS_SUPABASE?.key)throw new Error("Supabase設定を読み込めませんでした。");
+  const db=window.supabase.createClient(window.RENVIS_SUPABASE.url,window.RENVIS_SUPABASE.key);
+  const [{data,error},{data:imageRows,error:imageError}]=await Promise.all([
+   db.from("used_items").select("*").eq("is_public",true).order("sort_order",{ascending:true}).order("created_at",{ascending:false}),
+   db.from("used_item_images").select("*").order("used_item_id",{ascending:true}).order("sort_order",{ascending:true}).order("id",{ascending:true})
+  ]);
+  if(error)throw error;
+  if(imageError)throw imageError;
+  const firstImageByItem=new Map();
+  for(const imgRow of (imageRows||[])){
+   const itemId=Number(imgRow.used_item_id);
+   if(!firstImageByItem.has(itemId) && imgRow.image_url) firstImageByItem.set(itemId,imgRow.image_url);
+  }
+
+  products=(data||[]).map((row,index)=>({
+   id:Number(row.id),
+   title:row.title??row["タイトル"]??"",
+   maker:row.maker??row["Maker"]??row["メーカー"]??"",
+   type:row.type??"",
+   model:row.model??row["モデル"]??"",
+   cls:row.cls??"",
+   year:row.year==null?null:Number(row.year),
+   price:row.price??row["プライス"]??row["価格"]??null,
+   status:row.status??"販売中",
+   condition:row.condition??row["条件"]??"",
+   img:firstImageByItem.get(Number(row.id))||row.thumbnail_url||"",
+   photo:Boolean(firstImageByItem.get(Number(row.id))||row.thumbnail_url),
+   date:row.created_at?new Date(row.created_at).getTime():0,
+   new:index<8
+  }));
+
+  updateCounts(); updateFavoriteCount(); renderArrivals(); render();
+ }catch(err){
+  console.error("used_items load error:",err);
+  products=[]; updateCounts(); updateFavoriteCount();
+  $("arrivals").innerHTML="";
+  $("count").textContent="商品情報を読み込めませんでした";
+  $("products").innerHTML='<div class="no-results" style="display:block">商品情報の取得に失敗しました。時間をおいて再度お試しください。</div>';
+ }
+}
+loadUsedItems();
 </script>
 </body>
 </html>
