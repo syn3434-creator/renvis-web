@@ -127,6 +127,22 @@ html,body{max-width:100%;overflow-x:hidden}
   .repair-point{padding:14px 18px}
 }
 
+
+/* 2026-08-26 RENTAL WIDTH MATCH: match RENTAL hero proportions */
+@media(min-width:901px){
+  .repair-rental-hero{padding:32px 0 34px}
+  .repair-rental-grid{grid-template-columns:minmax(0,.39fr) minmax(0,.61fr);gap:52px;align-items:center}
+  .repair-rental-copy h1{font-size:clamp(4.1rem,5.3vw,5.9rem)}
+  .repair-rental-copy .hero-jp{margin-bottom:15px}
+  .repair-rental-copy h2{font-size:clamp(1.55rem,1.95vw,2.25rem);line-height:1.35;margin-bottom:13px}
+  .repair-rental-copy p{font-size:.86rem;line-height:1.75}
+  .repair-rental-photo{height:310px}
+  .repair-points{margin-top:18px}
+  .repair-point{padding:13px 18px}
+  .repair-point b{font-size:.88rem}
+  .repair-point span{font-size:.69rem}
+}
+
 </style>
 <script src="supabase-config.js"></script>
 </head>
