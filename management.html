@@ -111,6 +111,14 @@ img{max-width:100%}
   .hero h1{font-size:2.42rem!important}
 }
 
+
+/* 2026-08-26 PATCH: bilingual header */
+@media(min-width:761px){
+ .nav-links a,.home-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.08}
+ .nav-en{display:block;font-size:.77rem;font-weight:800;letter-spacing:.06em}
+ .nav-ja{display:block;font-size:.56rem;font-weight:600;letter-spacing:.02em;color:#e1e5e9;white-space:nowrap}
+ .home-btn{padding:8px 14px}
+}
 </style>
 </head>
 <body>
@@ -118,13 +126,13 @@ img{max-width:100%}
   <div class="nav">
     <a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
     <nav class="nav-links">
-      <a href="index.html">HOME</a>
-      <a href="rental.html">RENTAL</a>
-      <a href="repair.html">REPAIR</a>
-      <a href="used-sales.html">USED SALES</a>
-      <a class="active" href="management.html">MANAGEMENT</a>
+      <a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a>
+      <a href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a>
+      <a href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a>
+      <a href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a>
+      <a class="active" href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a>
     </nav>
-    <a class="home-btn" href="index.html">TOPへ</a>
+    <a class="home-btn" href="index.html"><span class="nav-en">TOPへ</span><span class="nav-ja">トップへ</span></a>
   </div>
 </header>
 
@@ -135,14 +143,13 @@ img{max-width:100%}
       <div class="eyebrow">Attachment Management & Parts</div>
       <h1>MANAGEMENT</h1>
       <p class="lead">管理・部品製作</p>
-      <p class="sub">アタッチメントの状態管理から、ピン・ブッシュ・各種部品製作まで対応します。</p>
+      <p class="sub">お客様のアタッチメントのカルテ作成、修理、履歴管理。<br>また取付ショベル変更に伴う部品の改造、製作を行っております。</p>
       <div class="strengths">
         <div class="strength"><b>状態を見える化</b><span>摩耗・ガタ・交換時期を整理</span></div>
         <div class="strength"><b>部品製作に対応</b><span>ピン・ブッシュ・カラーなど</span></div>
         <div class="strength"><b>修理まで一貫対応</b><span>製作後の組付け・補修も相談可能</span></div>
       </div>
     </div>
-    
   </div>
 </section>
 
@@ -234,4 +241,7 @@ img{max-width:100%}
 <footer><div style="margin-bottom:8px"><a href="contact.html">お問い合わせ</a>　｜　<a href="legal.html">特定商取引法</a>　｜　<a href="privacy.html">プライバシーポリシー</a></div>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
 </body>
 </html>
-<style>.hero-grid{grid-template-columns:1fr!important;gap:0!important}</style>
+<style>
+/* 2026-08-26 FINAL: top image removed */
+.hero-grid{grid-template-columns:1fr!important;}
+</style>

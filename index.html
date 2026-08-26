@@ -1320,6 +1320,16 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMobileMenu();})
 
 
 
+
+// 2026-08-26 FINAL: service cards navigate on the first click/tap
+document.querySelectorAll('.service-cards a.card[href]').forEach(card=>{
+  card.style.touchAction='manipulation';
+  card.addEventListener('pointerup', e=>{
+    if(e.button !== undefined && e.button !== 0) return;
+    const href=card.getAttribute('href');
+    if(href) window.location.assign(href);
+  }, {passive:true});
+});
 </script>
 </body>
 </html>
