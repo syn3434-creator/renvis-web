@@ -80,6 +80,14 @@ html,body{max-width:100%;overflow-x:hidden}
   .toggle-left{font-size:.76rem}
 }
 
+
+/* 2026-08-26 PATCH: bilingual header */
+@media(min-width:761px){
+ .nav-links a,.home-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.08}
+ .nav-en{display:block;font-size:.77rem;font-weight:800;letter-spacing:.06em}
+ .nav-ja{display:block;font-size:.56rem;font-weight:600;letter-spacing:.02em;color:#e1e5e9;white-space:nowrap}
+ .home-btn{padding:8px 14px}
+}
 </style>
 </head>
 <body>
@@ -87,14 +95,14 @@ html,body{max-width:100%;overflow-x:hidden}
   <div class="nav">
     <a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
     <nav class="nav-links">
-      <a href="index.html">HOME</a>
-      <a href="index.html#rental">RENTAL</a>
-      <a href="index.html#repair">REPAIR</a>
-      <a class="active" href="used-sales.html">USED SALES</a>
-      <a href="index.html#management">MANAGEMENT</a>
-      <a href="index.html#company">COMPANY</a>
+      <a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a>
+      <a href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a>
+      <a href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a>
+      <a class="active" href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a>
+      <a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a>
+      <a href="index.html#company"><span class="nav-en">COMPANY</span><span class="nav-ja">会社案内</span></a>
     </nav>
-    <a class="home-btn" href="index.html">TOPへ</a>
+    <a class="home-btn" href="index.html"><span class="nav-en">TOPへ</span><span class="nav-ja">トップへ</span></a>
   </div>
 </header>
 
@@ -258,38 +266,42 @@ async function loadUsedItems(){
  try{
   if(!window.RENVIS_SUPABASE?.url||!window.RENVIS_SUPABASE?.key)throw new Error("Supabase設定を読み込めませんでした。");
   const db=window.supabase.createClient(window.RENVIS_SUPABASE.url,window.RENVIS_SUPABASE.key);
-  const [{data,error},{data:imageRows,error:imageError}]=await Promise.all([
+  const [{data:items,error:itemError},{data:images,error:imageError}]=await Promise.all([
    db.from("used_items").select("*").eq("is_public",true).order("sort_order",{ascending:true}).order("created_at",{ascending:false}),
    db.from("used_item_images").select("*").order("used_item_id",{ascending:true}).order("sort_order",{ascending:true}).order("id",{ascending:true})
   ]);
-  if(error)throw error;
+  if(itemError)throw itemError;
   if(imageError)throw imageError;
-  const firstImageByItem=new Map();
-  for(const imgRow of (imageRows||[])){
-   const itemId=Number(imgRow.used_item_id);
-   if(!firstImageByItem.has(itemId) && imgRow.image_url) firstImageByItem.set(itemId,imgRow.image_url);
-  }
 
-  products=(data||[]).map((row,index)=>({
-   id:Number(row.id),
-   title:row.title??row["タイトル"]??"",
-   maker:row.maker??row["Maker"]??row["メーカー"]??"",
-   type:row.type??"",
-   model:row.model??row["モデル"]??"",
-   cls:row.cls??"",
-   year:row.year==null?null:Number(row.year),
-   price:row.price??row["プライス"]??row["価格"]??null,
-   status:row.status??"販売中",
-   condition:row.condition??row["条件"]??"",
-   img:firstImageByItem.get(Number(row.id))||row.thumbnail_url||"",
-   photo:Boolean(firstImageByItem.get(Number(row.id))||row.thumbnail_url),
-   date:row.created_at?new Date(row.created_at).getTime():0,
-   new:index<8
-  }));
+  const firstImageByItem=new Map();
+  (images||[]).forEach(img=>{
+   const id=Number(img.used_item_id);
+   if(!firstImageByItem.has(id) && img.image_url) firstImageByItem.set(id,img.image_url);
+  });
+
+  products=(items||[]).map((row,index)=>{
+   const linkedImage=firstImageByItem.get(Number(row.id))||row.thumbnail_url||"";
+   return {
+    id:Number(row.id),
+    title:row.title??row["タイトル"]??"",
+    maker:row.maker??row["Maker"]??row["メーカー"]??"",
+    type:row.type??"",
+    model:row.model??row["モデル"]??"",
+    cls:row.cls??"",
+    year:row.year==null?null:Number(row.year),
+    price:row.price??row["プライス"]??row["価格"]??null,
+    status:row.status??"販売中",
+    condition:row.condition??row["条件"]??"",
+    img:linkedImage,
+    photo:Boolean(linkedImage),
+    date:row.created_at?new Date(row.created_at).getTime():0,
+    new:index<8
+   };
+  });
 
   updateCounts(); updateFavoriteCount(); renderArrivals(); render();
  }catch(err){
-  console.error("used_items load error:",err);
+  console.error("used_items / used_item_images load error:",err);
   products=[]; updateCounts(); updateFavoriteCount();
   $("arrivals").innerHTML="";
   $("count").textContent="商品情報を読み込めませんでした";

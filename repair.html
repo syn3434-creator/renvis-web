@@ -83,17 +83,22 @@ html,body{max-width:100%;overflow-x:hidden}
 .cms-img-placeholder{height:100%;min-height:210px;display:grid;place-items:center;background:linear-gradient(135deg,#171c22,#0b0f14);color:#6e7781;font-weight:900;letter-spacing:.08em}
 
 
-.nav-links a{display:flex;flex-direction:column;align-items:center;line-height:1.12}
-.nav-links .nav-en{display:block}.nav-links .nav-ja{display:block;margin-top:4px;font-size:.62rem;letter-spacing:.02em;font-weight:600;white-space:nowrap}
-.hero-jp{font-size:.9rem;font-weight:800;margin:-8px 0 18px;color:#f4f6f8;letter-spacing:.06em}
-.hero-copy-line{display:block;white-space:nowrap}
-@media(max-width:760px){.hero-copy-line{white-space:normal}.hero-jp{font-size:.82rem}}
-
+/* 2026-08-26 PATCH: header and hero aligned with RENTAL / USED SALES */
+@media(min-width:761px){
+ .nav-links a,.home-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.08}
+ .nav-en{display:block;font-size:.77rem;font-weight:800;letter-spacing:.06em}
+ .nav-ja{display:block;font-size:.56rem;font-weight:600;letter-spacing:.02em;color:#e1e5e9;white-space:nowrap}
+ .home-btn{padding:8px 14px}
+}
+.hero-jp{font-size:.95rem;font-weight:800;letter-spacing:.04em;margin:-8px 0 28px;color:#f5f7f9}
+.hero h2{max-width:1000px!important}
+@media(min-width:761px){.hero-copy-line{white-space:nowrap}}
+@media(max-width:760px){.hero-jp{font-size:.82rem;margin:-4px 0 22px}.hero-copy-line{white-space:normal}}
 </style>
 <script src="supabase-config.js"></script>
 </head>
 <body>
-<header><div class="nav"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a><a href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a><a class="active" href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a><a href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a><a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a></nav><a class="home-btn" href="index.html">TOPへ</a></div></header>
+<header><div class="nav"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a><a href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a><a class="active" href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a><a href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a><a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a><a href="index.html#company"><span class="nav-en">COMPANY</span><span class="nav-ja">会社案内</span></a></nav><a class="home-btn" href="index.html"><span class="nav-en">TOPへ</span><span class="nav-ja">トップへ</span></a></div></header>
 <main>
 <section class="hero"><div class="wrap hero-content"><div class="eyebrow">Attachment Repair</div><h1>REPAIR</h1><div class="hero-jp">修理・再生</div><h2><span class="hero-copy-line">現場を止めない。</span><span class="hero-copy-line">その一台に、もう一度仕事を。</span></h2><p><span class="repair-desc-line">肉盛り・溶接補修・刃交換・ピン・ブッシュ交換・オーバーホールまで対応。</span><span class="repair-desc-line">修理内容と仕上がりを、実例とともにご紹介します。</span></p></div></section>
 
