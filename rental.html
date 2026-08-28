@@ -3,66 +3,369 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="株式会社レンビスの建機用アタッチメントレンタル。種類・対応クラス・メーカーから検索できます。">
+<meta name="description" content="株式会社レンビスの建機用アタッチメントレンタル。種類からメーカーを選び、メーカー公式カタログで詳しい仕様をご確認いただけます。">
 <title>建機アタッチメントレンタル | RENVIS</title>
 <style>
-:root{--bg:#06080b;--panel:#0c1117;--panel2:#111820;--text:#f5f7f9;--muted:#9da7b2;--line:rgba(255,255,255,.14);--gold:#ddb646;--blue:#2b8ce8;--max:1460px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,input,select{font:inherit}img{display:block;max-width:100%}.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
-header{position:sticky;top:0;z-index:80;height:76px;display:flex;align-items:center;background:rgba(4,6,8,.96);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}.nav{width:min(var(--max),calc(100% - 64px));margin:auto;display:flex;align-items:center;gap:28px}.logo{width:245px;mix-blend-mode:screen}.nav-links{display:flex;gap:25px;margin-left:auto;font-size:.77rem;font-weight:800;letter-spacing:.06em}.nav-links a{padding:12px 0;border-bottom:2px solid transparent}.nav-links a:hover,.nav-links .active{border-color:var(--gold)}.home-btn{border:1px solid var(--line);padding:9px 14px;font-size:.74rem;font-weight:800}
-.hero{padding:34px 0 26px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 80% 20%,rgba(43,140,232,.14),transparent 34%),linear-gradient(145deg,#0b1016,#06080b 72%)}.hero-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:44px;align-items:center}.eyebrow{color:var(--gold);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}h1{font-size:clamp(3.8rem,6.3vw,6.5rem);line-height:.88;letter-spacing:-.055em;margin:7px 0 14px}.lead{font-size:1.1rem;color:#ecf0f3;margin:0 0 8px}.sub{font-size:.9rem;color:#bec6ce;margin:0}.hero-photo{height:260px;border:1px solid var(--line);overflow:hidden;position:relative;background:#131920}.hero-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) brightness(.82)}.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,7,10,.55),transparent 55%)}
-.strengths{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin-top:16px}.strength{padding:16px 18px;border-right:1px solid var(--line)}.strength:last-child{border-right:0}.strength b{display:block;font-size:.86rem}.strength span{display:block;color:var(--muted);font-size:.7rem;margin-top:3px}
-.section{padding:44px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:16px}.section-head h2{font-size:2rem;margin:2px 0 0}.section-head p{color:var(--muted);font-size:.8rem;margin:0}
-.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.category-card{border:1px solid var(--line);background:#0b0f14;padding:0;cursor:pointer;color:#fff;text-align:left;overflow:hidden;transition:.22s}.category-card:hover{transform:translateY(-3px);border-color:#fff}.category-card img{width:100%;height:120px;object-fit:cover;filter:saturate(.78) brightness(.75)}.category-card span{display:block;padding:11px 12px;font-weight:800;font-size:.78rem}
-.search-panel{border:1px solid var(--line);background:linear-gradient(180deg,#0f151c,#090c10);padding:18px}.search-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.field label{display:block;color:var(--muted);font-size:.68rem;margin-bottom:6px}.field input,.field select{width:100%;height:44px;border:1px solid var(--line);background:#07090c;color:#fff;padding:0 12px}.search-actions{display:flex;gap:9px;margin-top:13px}.btn{height:42px;padding:0 20px;border:1px solid var(--gold);background:var(--gold);color:#08090b;font-weight:900;cursor:pointer}.btn.secondary{background:transparent;color:#fff;border-color:var(--line)}
-.featured{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{border:1px solid var(--line);background:linear-gradient(180deg,#10161d,#080b0f);overflow:hidden;display:flex;flex-direction:column;transition:.22s}.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.35)}.card-image{height:230px;position:relative;background:#161b21}.card-image img{width:100%;height:100%;object-fit:cover;filter:saturate(.84) brightness(.86)}.badge{position:absolute;left:11px;top:11px;border:1px solid var(--gold);background:rgba(5,7,9,.9);color:#efcc66;padding:5px 8px;font-size:.6rem;font-weight:900;letter-spacing:.08em}.card-body{padding:15px;display:flex;flex-direction:column;flex:1}.type{color:var(--gold);font-size:.67rem;font-weight:800;margin-bottom:4px}.card h3{font-size:1.25rem;line-height:1.1;margin:0 0 5px}.maker{color:#c1c7ce;font-size:.74rem;margin-bottom:11px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.tag{border:1px solid var(--line);padding:4px 7px;font-size:.63rem;color:#cdd3da}.card-footer{border-top:1px solid var(--line);padding-top:11px;margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}.detail{color:#f0bf3d;font-size:.75rem;font-weight:900}.inquiry{color:#bfc7cf;font-size:.68rem}.no-results{display:none;grid-column:1/-1;border:1px solid var(--line);padding:50px;text-align:center;color:var(--muted)}
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{border:1px solid var(--line);padding:20px;background:#0a0e13}.step small{color:var(--gold);font-weight:900}.step h3{font-size:1rem;margin:8px 0 5px}.step p{font-size:.72rem;color:var(--muted);margin:0}
-.cta{margin-top:28px;border:1px solid rgba(221,182,70,.7);background:linear-gradient(135deg,#111820,#080b0f);padding:28px;display:flex;align-items:center;justify-content:space-between;gap:24px}.cta h2{font-size:1.45rem;margin:0 0 5px}.cta p{color:var(--muted);font-size:.78rem;margin:0}.cta a{padding:14px 20px;background:linear-gradient(135deg,#1979ca,#2b99ed);font-weight:900;font-size:.78rem}
-footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-size:.68rem;text-align:center}
-@media(max-width:1100px){.hero-grid{grid-template-columns:1fr}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(3,1fr)}.featured{grid-template-columns:1fr 1fr 1fr}}
-@media(max-width:760px){.wrap,.nav{width:calc(100% - 28px)}header{height:68px}.logo{width:185px}.nav-links{display:none}.home-btn{margin-left:auto}.hero{padding:25px 0 20px}.hero-grid{gap:18px}h1{font-size:clamp(3.3rem,16vw,5rem)}.hero-photo{height:205px}.strengths{grid-template-columns:1fr}.strength{border-right:0;border-bottom:1px solid var(--line)}.strength:last-child{border-bottom:0}.section{padding:34px 0}.categories{grid-template-columns:1fr 1fr}.category-card img{height:105px}.search-grid{grid-template-columns:1fr}.featured{grid-template-columns:1fr}.products{grid-template-columns:1fr}.card-image{height:260px}.flow{grid-template-columns:1fr 1fr}.cta{align-items:flex-start;flex-direction:column}}
+:root{
+  --bg:#06080b;--panel:#0c1117;--panel2:#111820;--text:#f5f7f9;
+  --muted:#9da7b2;--line:rgba(255,255,255,.14);--gold:#ddb646;
+  --blue:#2b8ce8;--max:1460px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
 
-/* 2026-08-26: bilingual navigation */
-.nav-links a,.home-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1.08}
-.nav-en{display:block;font-size:.77rem;font-weight:800;letter-spacing:.06em}
-.nav-ja{display:block;font-size:.56rem;font-weight:600;letter-spacing:.02em;color:#e1e5e9;white-space:nowrap}
-.home-btn{padding:8px 14px}
+header{position:sticky;top:0;z-index:80;height:76px;display:flex;align-items:center;background:rgba(4,6,8,.96);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+.nav{width:min(var(--max),calc(100% - 64px));margin:auto;display:flex;align-items:center;gap:28px}
+.logo{width:245px;mix-blend-mode:screen}
+.nav-links{display:flex;gap:25px;margin-left:auto;font-size:.77rem;font-weight:800;letter-spacing:.06em}
+.nav-links a{padding:12px 0;border-bottom:2px solid transparent}
+.nav-links a:hover,.nav-links .active{border-color:var(--gold)}
+.home-btn{border:1px solid var(--line);padding:9px 14px;font-size:.74rem;font-weight:800}
+
+.hero{padding:34px 0 26px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 80% 20%,rgba(43,140,232,.14),transparent 34%),linear-gradient(145deg,#0b1016,#06080b 72%)}
+.hero-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:44px;align-items:center}
+.eyebrow{color:var(--gold);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(3.8rem,6.3vw,6.5rem);line-height:.88;letter-spacing:-.055em;margin:7px 0 14px}
+.lead{font-size:1.1rem;color:#ecf0f3;margin:0 0 8px}
+.sub{font-size:.9rem;color:#bec6ce;margin:0}
+.hero-photo{height:260px;border:1px solid var(--line);overflow:hidden;position:relative;background:#131920}
+.hero-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) brightness(.82)}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,7,10,.55),transparent 55%)}
+.strengths{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin-top:16px}
+.strength{padding:16px 18px;border-right:1px solid var(--line)}
+.strength:last-child{border-right:0}
+.strength b{display:block;font-size:.86rem}
+.strength span{display:block;color:var(--muted);font-size:.7rem;margin-top:3px}
+
+.section{padding:48px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:20px}
+.section-head h2{font-size:2rem;margin:2px 0 0}
+.section-head p{color:var(--muted);font-size:.8rem;margin:0;max-width:580px;text-align:right}
+
+.route{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 22px;
+  color:#c8d0d7;font-size:.74rem
+}
+.route span{border:1px solid var(--line);padding:7px 10px;background:#090d12}
+.route b{color:var(--gold)}
+
+.categories{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.category-card{
+  border:1px solid var(--line);background:#0b0f14;padding:0;cursor:pointer;color:#fff;
+  text-align:left;overflow:hidden;transition:.22s;position:relative
+}
+.category-card:hover,.category-card.active{transform:translateY(-3px);border-color:var(--gold)}
+.category-card img{width:100%;height:105px;object-fit:cover;filter:saturate(.78) brightness(.72)}
+.category-card span{display:block;padding:12px 12px;font-weight:900;font-size:.8rem}
+.category-card small{position:absolute;right:9px;top:9px;background:rgba(6,8,11,.88);border:1px solid rgba(255,255,255,.16);padding:4px 7px;font-size:.58rem;color:#c9d0d7}
+.category-card.ready small{color:#f0ca61;border-color:rgba(221,182,70,.55)}
+
+.catalog-panel{display:none;margin-top:26px}
+.catalog-panel.open{display:block}
+.catalog-intro{
+  border:1px solid var(--line);background:linear-gradient(135deg,#101820,#080c11);
+  padding:22px 24px;margin-bottom:16px;display:flex;justify-content:space-between;gap:30px;align-items:center
+}
+.catalog-intro h3{font-size:1.35rem;margin:2px 0 4px}
+.catalog-intro p{margin:0;color:var(--muted);font-size:.78rem}
+.catalog-intro .note{max-width:540px;font-size:.72rem;color:#c5ccd3}
+
+.makers{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.maker-card{
+  border:1px solid var(--line);background:linear-gradient(180deg,#10161d,#080b0f);
+  padding:22px;display:flex;flex-direction:column;min-height:285px
+}
+.maker-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.maker-name small{display:block;color:var(--gold);font-size:.62rem;letter-spacing:.14em;margin-bottom:4px}
+.maker-name h3{font-size:1.45rem;margin:0;line-height:1.15}
+.maker-count{border:1px solid var(--line);padding:6px 9px;font-size:.64rem;color:#cbd2d8;white-space:nowrap}
+.stock-label{margin-top:20px;color:var(--muted);font-size:.66rem}
+.models{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.model{border:1px solid var(--line);padding:5px 7px;font-size:.64rem;color:#d7dde2;background:#0a0e13}
+.maker-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:22px}
+.catalog-btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:43px;padding:0 15px;
+  background:var(--gold);color:#08090b;font-size:.72rem;font-weight:900
+}
+.catalog-btn.secondary{background:transparent;color:#fff;border:1px solid var(--line)}
+.catalog-btn:hover{filter:brightness(1.08)}
+.stock-note{
+  margin-top:14px;border-left:3px solid var(--gold);padding:10px 12px;background:rgba(221,182,70,.06);
+  color:#c9d0d6;font-size:.7rem
+}
+
+.coming{
+  display:none;margin-top:22px;border:1px dashed rgba(255,255,255,.22);padding:28px;text-align:center;color:var(--muted)
+}
+.coming.open{display:block}
+.coming strong{display:block;color:#fff;font-size:1rem;margin-bottom:4px}
+
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.step{border:1px solid var(--line);padding:20px;background:#0a0e13}
+.step small{color:var(--gold);font-weight:900}
+.step h3{font-size:1rem;margin:8px 0 5px}
+.step p{font-size:.72rem;color:var(--muted);margin:0}
+.cta{margin-top:28px;border:1px solid rgba(221,182,70,.7);background:linear-gradient(135deg,#111820,#080b0f);padding:28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.cta h2{font-size:1.45rem;margin:0 0 5px}
+.cta p{color:var(--muted);font-size:.78rem;margin:0}
+.cta-links{display:flex;gap:8px;flex-wrap:wrap}
+.cta a{padding:14px 20px;background:linear-gradient(135deg,#1979ca,#2b99ed);font-weight:900;font-size:.78rem}
+.cta a.mail{background:transparent;border:1px solid var(--line)}
+
+footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-size:.68rem;text-align:center}
+
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:1fr}
+  .categories{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:760px){
+  .wrap,.nav{width:calc(100% - 28px)}
+  header{height:68px}.logo{width:185px}.nav-links{display:none}.home-btn{margin-left:auto}
+  .hero{padding:25px 0 20px}.hero-grid{gap:18px}h1{font-size:clamp(3.3rem,16vw,5rem)}.hero-photo{height:205px}
+  .strengths{grid-template-columns:1fr}.strength{border-right:0;border-bottom:1px solid var(--line)}.strength:last-child{border-bottom:0}
+  .section{padding:34px 0}.section-head{display:block}.section-head p{text-align:left;margin-top:7px}
+  .categories{grid-template-columns:1fr 1fr}.category-card img{height:105px}
+  .catalog-intro{display:block}.catalog-intro .note{margin-top:12px}
+  .makers{grid-template-columns:1fr}.maker-card{min-height:0}
+  .flow{grid-template-columns:1fr 1fr}.cta{align-items:flex-start;flex-direction:column}
+}
+
+/* NEW ARRIVAL / おすすめレンタル機 */
+.featured-section{display:block;padding:34px 0 8px}
+.featured-section.show{display:block}
+.featured-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:16px}
+.featured-head h2{font-size:2rem;margin:2px 0 0}
+.featured-head p{margin:0;color:var(--muted);font-size:.78rem;text-align:right}
+.featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.featured-card{border:1px solid var(--line);background:linear-gradient(180deg,#11171e,#080b0f);overflow:hidden;position:relative}
+.featured-card img{display:block;width:100%;height:210px;object-fit:cover}
+.featured-badge{position:absolute;left:12px;top:12px;background:var(--gold);color:#08090b;font-weight:900;font-size:.62rem;letter-spacing:.1em;padding:6px 8px}
+.featured-body{padding:16px}
+.featured-body small{display:block;color:var(--gold);font-size:.62rem;letter-spacing:.12em;margin-bottom:4px}
+.featured-body h3{font-size:1.12rem;margin:0 0 6px}
+.featured-body p{font-size:.72rem;color:var(--muted);margin:0 0 14px}
+.featured-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.featured-meta span{border:1px solid var(--line);padding:5px 7px;font-size:.62rem;color:#d7dde2}
+.featured-empty{grid-column:1/-1;min-height:150px;border:1px dashed rgba(221,182,70,.5);background:linear-gradient(135deg,#101820,#080c11);display:flex;align-items:center;justify-content:center;gap:18px;padding:26px;text-align:left}
+.featured-empty-mark{border:1px solid var(--gold);color:var(--gold);font-size:.65rem;font-weight:900;letter-spacing:.16em;padding:8px 10px}
+.featured-empty strong{display:block;font-size:1rem;margin-bottom:4px}
+.featured-empty p{margin:0;color:var(--muted);font-size:.72rem}
+.featured-link{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;background:linear-gradient(135deg,#1979ca,#2b99ed);font-size:.7rem;font-weight:900}
+@media(max-width:760px){.featured-head{display:block}.featured-head p{text-align:left;margin-top:7px}.featured-grid{grid-template-columns:1fr}.featured-card img{height:190px}}
+
 </style>
 </head>
 <body>
-<header><div class="nav"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a><a class="active" href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a><a href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a><a href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a><a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a></nav><a class="home-btn" href="index.html"><span class="nav-en">TOPへ</span><span class="nav-ja">トップへ</span></a></div></header>
+
+<header>
+  <div class="nav">
+    <a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
+    <nav class="nav-links">
+      <a href="index.html">HOME</a>
+      <a class="active" href="rental.html">RENTAL</a>
+      <a href="index.html#repair">REPAIR</a>
+      <a href="used-sales.html">USED SALES</a>
+      <a href="index.html#management">MANAGEMENT</a>
+    </nav>
+    <a class="home-btn" href="index.html">TOPへ</a>
+  </div>
+</header>
+
 <main>
-<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Attachment Rental</div><h1>RENTAL</h1><p class="lead">建機用アタッチメントレンタル</p><p class="sub">必要な一台を、必要な時に。料金・貸出状況はお気軽にお問い合わせください。</p><div class="strengths"><div class="strength"><b>幅広いラインアップ</b><span>主力アタッチメントを順次掲載</span></div><div class="strength"><b>自社修理対応</b><span>貸出後のトラブルにも対応</span></div><div class="strength"><b>九州エリア対応</b><span>福岡県朝倉郡筑前町からご案内</span></div></div></div></div></section>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Attachment Rental</div>
+      <h1>RENTAL</h1>
+      <p class="lead">建機用アタッチメントレンタル</p>
+      <p class="sub">種類からメーカーを選び、メーカー公式カタログで詳しい仕様をご確認いただけます。</p>
+      <div class="strengths">
+        <div class="strength"><b>幅広いラインアップ</b><span>用途・ショベルクラスからご提案</span></div>
+        <div class="strength"><b>メーカー資料で確認</b><span>詳しい仕様は公式カタログへ</span></div>
+        <div class="strength"><b>在庫はお問い合わせ</b><span>最新の貸出状況をご案内</span></div>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="rental-tswd1700.webp" alt="レンタルアタッチメント"></div>
+  </div>
+</section>
 
-<section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Popular Categories</div><h2>種類から探す</h2></div><p>よく使われるカテゴリーから、すぐに一覧を絞り込めます。</p></div><div class="categories" id="categories"><button class="category-card" data-type="大割機" data-group="大割機"><img src="rental-tswd1700.webp" alt="大割機"><span>大割機</span></button><button class="category-card" data-type="小割機" data-group="小割機"><img src="rental-sv30.webp" alt="小割機"><span>小割機</span></button><button class="category-card" data-type="油圧ブレーカー" data-group="油圧ブレーカー"><img src="rental-fx55.webp" alt="油圧ブレーカー"><span>油圧ブレーカー</span></button><button class="category-card" data-type="グラップル" data-group="グラップル"><img src="repair-after-top.webp" alt="グラップル"><span>グラップル</span></button><button class="category-card" data-type="" data-group="フォーク"><img src="repair-after-front.webp" alt="フォーク"><span>フォーク</span></button><button class="category-card" data-type="" data-group="バケット"><img src="repair-before-top.webp" alt="バケット"><span>バケット</span></button></div></div></section>
 
-<section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Search</div><h2>レンタル機を検索</h2></div><p>種類・対応クラス・メーカー・型式で検索できます。</p></div><div class="search-panel"><div class="search-grid"><div class="field"><label>種類</label><select id="type"><option value="">すべての種類</option><option>大割機</option><option>小割機</option><option>油圧ブレーカー</option><option>グラップル</option><option>機械式フォーク</option><option>油圧式フォーク</option><option>スケルトンバケット</option><option>鉄骨切断機</option><option>マグネット</option><option>草刈り機</option><option>アースオーガ</option><option>クイックヒッチ</option></select></div><div class="field"><label>対応クラス</label><select id="class"><option value="">すべてのクラス</option><option>3〜5t</option><option>5〜8t</option><option>7〜12t</option><option>12〜20t</option><option>20〜30t</option><option>30〜50t</option><option>45〜70t</option></select></div><div class="field"><label>メーカー</label><select id="maker"><option value="">すべてのメーカー</option><option>オカダアイヨン</option><option>日本ニューマチック</option><option>タグチ工業</option><option>古河ロックドリル</option><option>東空販売</option><option>坂戸工作所</option><option>甲南建機</option></select></div><div class="field"><label>キーワード・型式</label><input id="keyword" type="search" placeholder="例：TS-WD1700V-2"></div></div><div class="search-actions"><button class="btn" id="searchBtn">検索する</button><button class="btn secondary" id="resetBtn">条件をリセット</button></div></div></div></section>
+<section class="featured-section" id="featured-rentals">
+  <div class="wrap">
+    <div class="featured-head">
+      <div>
+        <div class="eyebrow">New Arrival</div>
+        <h2>おすすめレンタル機</h2>
+      </div>
+      <p>新しく入荷したレンタル機・おすすめ機種をご紹介します。</p>
+    </div>
+    <div class="featured-grid" id="featuredGrid"><article class="featured-empty"><div class="featured-empty-mark">NEW</div><div><strong>おすすめレンタル機</strong><p>新入荷・おすすめ機種はこちらに掲載します。</p></div></article></div>
+  </div>
+</section>
 
-<section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Recommended</div><h2>おすすめレンタル機</h2></div><p>まず見てほしい主力アタッチメントです。</p></div><div class="featured" id="featured"></div></div></section>
+<section class="section" id="rental-browser">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Find Your Attachment</div>
+        <h2>種類から探す</h2>
+      </div>
+      <p>カテゴリーを選択すると、取扱メーカーと公式カタログを確認できます。</p>
+    </div>
 
-<section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">All Rental Attachments</div><h2>レンタル一覧</h2><div id="count" style="color:var(--muted);font-size:.78rem"></div></div></div><div class="products" id="products"></div></div></section>
+    <div class="route">
+      <span>① 種類を選ぶ</span><b>→</b><span>② メーカーを選ぶ</span><b>→</b><span>③ 公式カタログを見る</span><b>→</b><span>④ 在庫を問い合わせる</span>
+    </div>
 
-<section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Rental Flow</div><h2>レンタルの流れ</h2></div></div><div class="flow"><div class="step"><small>01</small><h3>お問い合わせ</h3><p>ご希望の種類・クラス・期間をお知らせください。</p></div><div class="step"><small>02</small><h3>機種のご提案</h3><p>用途に合わせて、最適なアタッチメントをご案内します。</p></div><div class="step"><small>03</small><h3>お引き渡し</h3><p>日程や受け渡し方法を確認してご用意します。</p></div><div class="step"><small>04</small><h3>ご返却</h3><p>ご使用後、予定の方法でご返却ください。</p></div></div><div class="cta"><div><div class="eyebrow">Contact</div><h2>料金・貸出状況はお問い合わせください。</h2><p>用途や機械クラスが分からない場合も、こちらでご提案します。</p></div><a href="tel:0946428311">電話で問い合わせる</a></div></div></section>
+    <div class="categories" id="categories">
+      <button class="category-card ready active" data-category="crusher"><img src="rental-tswd1700.webp" alt="大割機"><small>CATALOG</small><span>大割機</span></button>
+      <button class="category-card ready" data-category="pulverizer"><img src="rental-sv30.webp" alt="小割機"><small>CATALOG</small><span>小割機</span></button>
+      <button class="category-card ready" data-category="magpulverizer"><img src="rental-sv30.webp" alt="マグネット付き小割機"><small>CATALOG</small><span>マグネット付き小割機</span></button>
+      <button class="category-card ready" data-category="steelcutter"><img src="repair-after-top.webp" alt="鉄骨カッター"><small>CATALOG</small><span>鉄骨カッター</span></button>
+      <button class="category-card ready" data-category="wastecutter"><img src="repair-after-top.webp" alt="産廃カッター"><small>INFO</small><span>産廃カッター</span></button>
+      <button class="category-card ready" data-category="woodcutter"><img src="repair-after-top.webp" alt="機械式木材カッター"><small>INFO</small><span>機械式木材カッター</span></button>
+      <button class="category-card ready" data-category="breaker"><img src="rental-fx55.webp" alt="油圧ブレーカー"><small>CATALOG</small><span>油圧ブレーカー</span></button>
+      <button class="category-card ready" data-category="mechfork"><img src="repair-after-front.webp" alt="機械式フォーク"><small>INFO</small><span>機械式フォーク</span></button>
+      <button class="category-card ready" data-category="hydfork"><img src="repair-after-front.webp" alt="油圧式・チルトフォーク"><small>INFO</small><span>油圧式・チルトフォーク</span></button>
+      <button class="category-card ready" data-category="rotfork"><img src="repair-after-front.webp" alt="回転フォーク"><small>INFO</small><span>回転フォーク</span></button>
+      <button class="category-card ready" data-category="skeleton"><img src="repair-before-top.webp" alt="スケルトンバケット"><small>INFO</small><span>スケルトンバケット</span></button>
+      <button class="category-card ready" data-category="auger"><img src="repair-before-top.webp" alt="オーガ"><small>INFO</small><span>オーガ</span></button>
+      <button class="category-card ready" data-category="mower"><img src="repair-before-top.webp" alt="草刈機"><small>INFO</small><span>草刈機</span></button>
+      <button class="category-card ready" data-category="extension"><img src="repair-before-top.webp" alt="エキステンションアーム"><small>STOCK</small><span>エキステンションアーム</span></button>
+      <button class="category-card ready" data-category="cooler"><img src="repair-before-top.webp" alt="スポットクーラー"><small>STOCK</small><span>スポットクーラー</span></button>
+      <button class="category-card ready" data-category="other"><img src="repair-before-top.webp" alt="その他アタッチメント"><small>CONTACT</small><span>その他アタッチメント</span></button>
+    </div>
+
+    <div id="catalogPanel" class="catalog-panel open"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">Rental Flow</div><h2>レンタルの流れ</h2></div>
+    </div>
+    <div class="flow">
+      <div class="step"><small>01</small><h3>種類・メーカーを確認</h3><p>カテゴリーからメーカーとカタログをご確認ください。</p></div>
+      <div class="step"><small>02</small><h3>お問い合わせ</h3><p>型式・ショベルクラス・期間などをお知らせください。</p></div>
+      <div class="step"><small>03</small><h3>在庫確認・ご提案</h3><p>貸出状況を確認し、用途に適した機種をご案内します。</p></div>
+      <div class="step"><small>04</small><h3>お引き渡し</h3><p>日程や受け渡し方法を確認してご用意します。</p></div>
+    </div>
+
+    <div class="cta">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>在庫・貸出状況を確認する</h2>
+        <p>型式が分からない場合も、ショベルのクラスや用途からご案内します。</p>
+      </div>
+      <div class="cta-links">
+        <a href="tel:0946428311">電話で問い合わせる</a>
+        <a class="mail" href="contact.html">お問い合わせフォーム</a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
-<footer><div style="margin-bottom:8px"><a href="contact.html">お問い合わせ</a>　｜　<a href="legal.html">特定商取引法</a>　｜　<a href="privacy.html">プライバシーポリシー</a></div>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
+
+<footer>
+  <div style="margin-bottom:8px">
+    <a href="contact.html">お問い合わせ</a>　｜　
+    <a href="legal.html">特定商取引法</a>　｜　
+    <a href="privacy.html">プライバシーポリシー</a>
+  </div>
+  © 2026 RENVIS Co., Ltd. All Rights Reserved.
+</footer>
+
 <script>
-const products=[{"id": 1, "maker": "オカダアイヨン", "type": "大割機", "model": "TS-WD1700V-2", "cls": "45〜70t", "use": "コンクリート解体", "img": "rental-tswd1700.webp", "new": true, "featured": true}, {"id": 2, "maker": "日本ニューマチック", "type": "小割機", "model": "SV30", "cls": "3〜5t", "use": "コンクリート解体", "img": "rental-sv30.webp", "new": true, "featured": true}, {"id": 3, "maker": "古河ロックドリル", "type": "油圧ブレーカー", "model": "Fx55α", "cls": "5〜8t", "use": "土木・解体", "img": "rental-fx55.webp", "new": true, "featured": true}, {"id": 4, "maker": "オカダアイヨン", "type": "鉄骨切断機", "model": "TS-S550C", "cls": "12〜20t", "use": "鉄骨解体", "img": "repair-before-front.webp", "new": true, "featured": false}, {"id": 5, "maker": "タグチ工業", "type": "大割機", "model": "GUZZILLA DS-120A", "cls": "12〜20t", "use": "コンクリート解体", "img": "repair-after-front.webp", "new": false, "featured": false}, {"id": 6, "maker": "日本ニューマチック", "type": "小割機", "model": "SV47X", "cls": "20〜30t", "use": "コンクリート解体", "img": "repair-after-top.webp", "new": false, "featured": false}, {"id": 7, "maker": "坂戸工作所", "type": "マグネット", "model": "MAG-900", "cls": "12〜20t", "use": "産廃・選別", "img": "repair-before-top.webp", "new": false, "featured": false}, {"id": 8, "maker": "タグチ工業", "type": "油圧式フォーク", "model": "GV-120", "cls": "7〜12t", "use": "木造解体・選別", "img": "repair-after-front.webp", "new": false, "featured": false}, {"id": 9, "maker": "甲南建機", "type": "機械式フォーク", "model": "KF-70", "cls": "5〜8t", "use": "木造解体・選別", "img": "rental-sv30.webp", "new": false, "featured": false}, {"id": 10, "maker": "坂戸工作所", "type": "グラップル", "model": "GR-70", "cls": "5〜8t", "use": "木材・産廃", "img": "repair-after-top.webp", "new": false, "featured": false}, {"id": 11, "maker": "オカダアイヨン", "type": "スケルトンバケット", "model": "SB-120", "cls": "7〜12t", "use": "選別・土木", "img": "rental-tswd1700.webp", "new": false, "featured": false}, {"id": 12, "maker": "東空販売", "type": "油圧ブレーカー", "model": "TNB-6E", "cls": "5〜8t", "use": "土木・解体", "img": "hero.webp", "new": false, "featured": false}, {"id": 13, "maker": "甲南建機", "type": "アースオーガ", "model": "KA-1200", "cls": "12〜20t", "use": "基礎・土木", "img": "hero.webp", "new": false, "featured": false}, {"id": 14, "maker": "タグチ工業", "type": "クイックヒッチ", "model": "QH-120", "cls": "7〜12t", "use": "交換作業", "img": "repair-before-front.webp", "new": false, "featured": false}, {"id": 15, "maker": "古河ロックドリル", "type": "大割機", "model": "VX-225", "cls": "20〜30t", "use": "コンクリート解体", "img": "repair-after-front.webp", "new": false, "featured": false}, {"id": 16, "maker": "オカダアイヨン", "type": "小割機", "model": "OSC-83V", "cls": "7〜12t", "use": "コンクリート解体", "img": "repair-after-top.webp", "new": false, "featured": false}, {"id": 17, "maker": "坂戸工作所", "type": "グラップル", "model": "GR-120", "cls": "12〜20t", "use": "木材・産廃", "img": "repair-before-top.webp", "new": false, "featured": false}, {"id": 18, "maker": "甲南建機", "type": "スケルトンバケット", "model": "SB-70", "cls": "5〜8t", "use": "選別・土木", "img": "rental-sv30.webp", "new": false, "featured": false}, {"id": 19, "maker": "東空販売", "type": "草刈り機", "model": "TM-80", "cls": "5〜8t", "use": "法面・林業", "img": "rental-fx55.webp", "new": false, "featured": false}, {"id": 20, "maker": "オカダアイヨン", "type": "鉄骨切断機", "model": "TS-S320C-A", "cls": "7〜12t", "use": "鉄骨解体", "img": "repair-before-front.webp", "new": false, "featured": false}];
-const $=id=>document.getElementById(id);
-function card(p,featured=false){
- return `<article class="card"><div class="card-image"><img src="${p.img}" alt="${p.model}">${featured?'<span class="badge">RECOMMENDED</span>':p.new?'<span class="badge">NEW</span>':''}</div><div class="card-body"><div class="type">${p.type}</div><h3>${p.model}</h3><div class="maker">${p.maker}</div><div class="tags"><span class="tag">${p.cls}</span><span class="tag">${p.use}</span></div><div class="card-footer"><span class="inquiry">料金・貸出状況はお問い合わせ</span><a class="detail" href="rental-detail.html?id=${p.id}">詳細を見る →</a></div></div></article>`;
+const DATA={
+ crusher:{en:'Primary Crusher',title:'大割機',makers:[
+  ['OKADA AIYON',['TS-W250','TS350RCD','TS-WB350F','TS-WB500V-F','TS-WB620V','TS-WD720V-F','TS-WD950VL','TS-W1100V','TS-WB1100V','TSRC-1000V','TS-WD1400V','TS-WD1700V-2'],[['TS-W 公式カタログ','https://media.okadaaiyon.com/cms/uploads/ctlg_TS-W_Crusher_202606.pdf'],['TSRC 公式カタログ','https://media.okadaaiyon.com/cms/uploads/ctlg_TSRC_Crusher_202606_v2.pdf']]],
+  ['NPK',['SV30','SV-5X','S-15X','S-22XB','SV-24X','SV-47X'],[['メーカー公式カタログ','http://www.npk.jp/digital/con_j15/index.html#page=17']]],
+  ['TAGUCHI',['DS-40F','D-60F','DS-60A','DS-120A','DS200A'],[['メーカー公式カタログ','https://www.taguchi.co.jp/products-catalog/']]],
+  ['FURUKAWA ROCK DRILL',['Vx135-F','Vx145-F'],[['メーカー公式カタログ','https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf']]]]},
+ pulverizer:{en:'Pulverizer',title:'小割機',makers:[
+  ['OKADA AIYON',['OSCシリーズ'],[['OSC 公式カタログ','https://media.okadaaiyon.com/cms/uploads/ctlg_OSC_202604.pdf']]],
+  ['NPK',['小割機'],[['メーカー公式カタログ','http://www.npk.jp/digital/con_j15/index.html#page=17']]],
+  ['FURUKAWA ROCK DRILL',['小割機'],[['メーカー公式カタログ','https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf']]],
+  ['JACTY',['NK-70S'],[]]]},
+ magpulverizer:{en:'Magnet Pulverizer',title:'マグネット付き小割機',makers:[
+  ['OKADA AIYON',['OSC-83MV','OSC-81VM','OSC-83','OSC-160GMA','OSC-200GMA'],[['OSC 公式カタログ','https://media.okadaaiyon.com/cms/uploads/ctlg_OSC_202604.pdf']]]]},
+ steelcutter:{en:'Steel Cutter',title:'鉄骨カッター',makers:[
+  ['OKADA AIYON',['TS-S250C','TS-S320C','TS-S430C','TS-S450C','TS500RCL-2','TS-S550C','TS-W650XCV','TS-W650CV','TS-S660C'],[['メーカー製品情報','https://okadaaiyon.com/products/']]]]},
+ wastecutter:{en:'Waste Cutter',title:'産廃カッター',makers:[
+  ['OKADA AIYON',['C-100'],[['クリーンカッター製品情報','https://okadaaiyon.com/products/product/662']]],
+  ['その他保有型式',['RC-160-A','CF-200','C-200','MC200HW','OTKC-50W'],[]]]},
+ woodcutter:{en:'Mechanical Wood Cutter',title:'機械式木材カッター',makers:[
+  ['保有型式',['MCT-60','NCDW-70'],[]]]},
+ breaker:{en:'Hydraulic Breaker',title:'油圧ブレーカー',makers:[
+  ['OKADA AIYON',['TOP18J','TOP15','TOP-32J','TOP40','TOPV-50','TOP-43J','TOP60A','TOP-100A','TOP205J','TOP-203','TOP-210','TOP-205B','TOP-300B','S-205J','S-205B'],[['メーカー製品情報','https://okadaaiyon.com/products/']]],
+  ['TOKU',['TNB-2E','TNB-3M','TNB-7E','TNB-14E','TNB-151LU'],[['公式カタログ一覧','https://www.toku-net.co.jp/catalog/index.html']]],
+  ['FURUKAWA ROCK DRILL',['FX35α-SS','FX55α'],[['メーカー公式カタログ','https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf']]],
+  ['MKB系',['MKB900','MKB900SS','MKB1500V'],[]],['その他',['F22SS'],[]]]},
+ mechfork:{en:'Mechanical Fork',title:'機械式フォーク',makers:[
+  ['KBL',['KRF','KR40','KR60','KR120','BA040KRA','BA060KRA'],[['KRフォーク製品情報','https://www.kbl-ltd.co.jp/product/attachment/krfork/']]],
+  ['室戸鉄工所',['PF60B'],[['メーカー製品情報','http://muroto.co.jp/product/']]],
+  ['その他保有型式',['SP-3','SP3-120','a-60L','a-250L'],[]]]},
+ hydfork:{en:'Hydraulic / Tilt Fork',title:'油圧式・チルトフォーク',makers:[
+  ['丸順',['IFC120-2','IFC200'],[['丸順 製品一覧','https://www.marujun.jp/products/index.html']]],
+  ['その他保有型式',['KR40T','HS250L','HF-100'],[]]]},
+ rotfork:{en:'Rotary Fork',title:'回転フォーク',makers:[
+  ['OKADA AIYON',['ASG-30R'],[['メーカー製品情報','https://okadaaiyon.com/products/']]]]},
+ skeleton:{en:'Skeleton Bucket',title:'スケルトンバケット',makers:[
+  ['KBL',['50×50','80×80','100×100','100×150','210×220'],[['スケルトンバケット製品情報','https://www.kbl-ltd.co.jp/product/attachment/skeleton-bucket/']]]]},
+ auger:{en:'Hydraulic Auger',title:'オーガ',makers:[
+  ['丸善工業',['AG-2000','AG-3000'],[['AG-3000 製品情報','https://maruzenkogyo.co.jp/products/ag-3000']]]]},
+ mower:{en:'Mower',title:'草刈機',makers:[
+  ['三陽機器',['HKM-902','HKM-902PS','HKM-1200PS','HKM-1200PS-ST'],[['HKMシリーズ製品情報','https://www.sanyokiki.co.jp/product-guidance/kusakari-top-line-up/hkm']]]]},
+ extension:{en:'Extension Arm',title:'エキステンションアーム',makers:[
+  ['保有タイプ',['REX70（1,000mm / 1,500mm）','REX120（1,500mm / 2,000mm）','REX200（1,500mm / 2,000mm）'],[]]]},
+ cooler:{en:'Spot Cooler',title:'スポットクーラー',makers:[
+  ['レンタル品',['100V・現場用'],[]]]},
+ other:{en:'Other Attachments',title:'その他アタッチメント',custom:'一覧にない機種・特殊アタッチメントもお問い合わせください。'}
+};
+const panel=document.getElementById('catalogPanel');
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function render(key){
+ const d=DATA[key];
+ let body='';
+ if(d.custom){body=`<div class="maker-card" style="grid-column:1/-1;min-height:0"><div class="maker-name"><small>CONTACT</small><h3>${esc(d.title)}</h3></div><div class="stock-note">${esc(d.custom)}</div><div class="maker-actions"><a class="catalog-btn" href="contact.html">お問い合わせする</a></div></div>`}
+ else body=d.makers.map(([name,models,links])=>`<article class="maker-card"><div class="maker-top"><div class="maker-name"><small>MANUFACTURER / STOCK</small><h3>${esc(name)}</h3></div><div class="maker-count">RENVIS STOCK</div></div><div class="stock-label">保有型式・仕様</div><div class="models">${models.map(x=>`<span class="model">${esc(x)}</span>`).join('')}</div><div class="maker-actions">${links.length?links.map(([label,url],i)=>`<a class="catalog-btn${i?' secondary':''}" href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`).join(''):`<a class="catalog-btn secondary" href="contact.html">詳細はお問い合わせ</a>`}</div></article>`).join('');
+ panel.innerHTML=`<div class="catalog-intro"><div><div class="eyebrow">${esc(d.en)}</div><h3>${esc(d.title)}｜${d.custom?'お問い合わせ':'メーカー・保有型式から確認'}</h3><p>${d.custom?'掲載外の機種もご相談ください。':'RENVIS保有型式を確認して、詳しい仕様はメーカー公式情報へ。'}</p></div><div class="note">※メーカー公式カタログ・製品ページには、弊社で保有していない機種も掲載されています。<br>最新の在庫・貸出状況はお問い合わせください。</div></div><div class="makers">${body}</div>${d.custom?'':`<div class="stock-note">型式が分からなくても大丈夫です。ショベルのクラス・用途・現場条件をお知らせいただければ、適したアタッチメントをご案内します。</div>`}`;
 }
-function filtered(){
- const type=$("type").value,cls=$("class").value,maker=$("maker").value,kw=$("keyword").value.trim().toLowerCase();
- return products.filter(p=>(!type||p.type===type)&&(!cls||p.cls===cls)&&(!maker||p.maker===maker)&&(!kw||`${p.model} ${p.maker} ${p.type}`.toLowerCase().includes(kw)));
+const buttons=[...document.querySelectorAll('.category-card')];
+buttons.forEach(btn=>btn.addEventListener('click',()=>{buttons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');render(btn.dataset.category);panel.scrollIntoView({behavior:'smooth',block:'nearest'})}));
+render('crusher');
+
+/*
+  おすすめレンタル機
+  入荷時は下の配列に1件追加するだけで表示されます。
+  0件のときはセクション自体を自動で非表示にします。
+
+  例:
+  {
+    name:'TS-WD1700V-2',
+    category:'大割機',
+    image:'rental-tswd1700.webp',
+    meta:['40〜48tクラス','OKADA AIYON'],
+    text:'新入荷。大型解体現場向けのおすすめレンタル機です。',
+    link:'contact.html'
+  }
+*/
+const FEATURED_RENTALS=[];
+const featuredSection=document.getElementById('featured-rentals');
+const featuredGrid=document.getElementById('featuredGrid');
+function renderFeatured(){
+  if(!FEATURED_RENTALS.length){featuredSection.classList.add('show');return;}
+  featuredGrid.innerHTML=FEATURED_RENTALS.slice(0,4).map(item=>`<article class="featured-card"><div style="position:relative"><img src="${esc(item.image)}" alt="${esc(item.name)}"><span class="featured-badge">NEW ARRIVAL</span></div><div class="featured-body"><small>${esc(item.category||'RENTAL')}</small><h3>${esc(item.name)}</h3><div class="featured-meta">${(item.meta||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div><p>${esc(item.text||'新しく入荷したおすすめレンタル機です。')}</p><a class="featured-link" href="${esc(item.link||'contact.html')}">在庫・貸出状況を問い合わせる</a></div></article>`).join('');
+  featuredSection.classList.add('show');
 }
-function render(){
- const list=filtered();$("count").textContent=list.length+"件を表示中";
- $("products").innerHTML=list.length?list.map(p=>card(p)).join(""):`<div class="no-results" style="display:block">条件に一致するレンタル機がありません。</div>`;
-}
-function reset(){["type","class","maker","keyword"].forEach(id=>$(id).value="");render();}
-$("featured").innerHTML=products.filter(p=>p.featured).map(p=>card(p,true)).join("");
-$("searchBtn").onclick=render;$("resetBtn").onclick=reset;
-$("categories").onclick=e=>{const btn=e.target.closest(".category-card");if(!btn)return;const g=btn.dataset.group;if(g==="フォーク"){$("type").value="";$("keyword").value="フォーク"}else if(g==="バケット"){$("type").value="";$("keyword").value="バケット"}else{$("type").value=btn.dataset.type;$("keyword").value=""}render();document.getElementById("products").scrollIntoView({behavior:"smooth",block:"start"})};
-render();
+renderFeatured();
+
 </script>
 </body>
 </html>
