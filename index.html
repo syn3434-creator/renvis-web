@@ -1106,7 +1106,7 @@ html,body{max-width:100%;overflow-x:hidden}
   }
 }
 </style>
-</head>
+<style id="arrival-impact-slider">.arrival-slider{padding:20px 0 18px;background:#080b0f;border-top:1px solid #272d33;border-bottom:1px solid #272d33;position:relative;overflow:hidden}.arrival-slider:before{display:none!important}.arrival-slider .wrap{position:relative}.arrival-slides{position:relative;min-height:138px}.arrival-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transform:translateX(18px);transition:.55s ease;pointer-events:none}.arrival-slide.is-active{opacity:1;visibility:visible;transform:none;pointer-events:auto}.arrival-slider .arrival-banner-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;min-height:138px;border:0!important;padding:24px 76px 24px 36px}.arrival-slide.used .arrival-banner-inner{background:linear-gradient(112deg,#e1ad1d,#f2ca46 58%,#bd8410)!important}.arrival-slide.rental .arrival-banner-inner{background:linear-gradient(112deg,#056bc4,#169ef2 58%,#07559b)!important}.arrival-slide.repair .arrival-banner-inner{background:linear-gradient(112deg,#a91828,#e23a35 58%,#82111c)!important}.arrival-slider .arrival-banner-label{background:#080a0d!important;color:#fff!important}.arrival-slide.used .arrival-banner-text,.arrival-slide.used .arrival-banner-sub{color:#080a0d!important}.arrival-slide.rental .arrival-banner-text,.arrival-slide.repair .arrival-banner-text{color:#fff!important}.arrival-slide.rental .arrival-banner-sub,.arrival-slide.repair .arrival-banner-sub{color:rgba(255,255,255,.82)!important}.arrival-slider .arrival-banner-link{background:#080a0d!important;color:#fff!important}.arrival-arrow{position:absolute;z-index:5;top:50%;transform:translateY(-60%);width:40px;height:40px;border:1px solid rgba(255,255,255,.35);background:rgba(5,7,10,.55);color:#fff;font-size:28px;display:grid;place-items:center;cursor:pointer}.arrival-arrow.prev{left:9px}.arrival-arrow.next{right:9px}.arrival-dots{position:absolute;z-index:6;left:50%;bottom:9px;transform:translateX(-50%);display:flex;gap:7px}.arrival-dots button{width:7px;height:7px;border:0;border-radius:50%;padding:0;background:rgba(255,255,255,.48)}.arrival-dots button.is-active{width:22px;border-radius:8px;background:#fff}@media(max-width:760px){.arrival-slider{padding:12px 0}.arrival-slides{min-height:178px}.arrival-slider .arrival-banner-inner{min-height:178px;grid-template-columns:1fr auto!important;gap:10px!important;padding:18px 42px 26px 18px!important}.arrival-slider .arrival-banner-label{grid-column:1/-1}.arrival-slider .arrival-banner-text{font-size:1rem!important}.arrival-arrow{width:32px;height:38px}.arrival-arrow.prev{left:4px}.arrival-arrow.next{right:4px}}</style></head>
 <body>
 <header id="header">
 <div class="nav">
@@ -1183,13 +1183,7 @@ html,body{max-width:100%;overflow-x:hidden}
 </div>
 </div>
 </section>
-<section class="arrival-banner" aria-label="新着情報">
-<div class="wrap arrival-banner-inner">
-<span class="arrival-banner-label">NEW ARRIVAL</span>
-<div class="arrival-banner-copy"><span class="arrival-banner-text">SV-30 入荷しました。</span><span class="arrival-banner-sub">中古アタッチメントの新着情報</span></div>
-<a class="arrival-banner-link" href="used-sales.html">中古販売を見る →</a>
-</div>
-</section>
+<section class="arrival-banner arrival-slider" aria-label="新着情報"><div class="wrap"><div class="arrival-slides"><article class="arrival-slide is-active used"><div class="arrival-banner-inner"><span class="arrival-banner-label">NEW ARRIVAL</span><div class="arrival-banner-copy"><strong class="arrival-banner-text">SV-30 入荷しました。</strong><span class="arrival-banner-sub">中古アタッチメントの新着情報</span></div><a class="arrival-banner-link" href="used-sales.html">中古販売を見る →</a></div></article><article class="arrival-slide rental"><div class="arrival-banner-inner"><span class="arrival-banner-label">NEW RENTAL</span><div class="arrival-banner-copy"><strong class="arrival-banner-text">KBL 0.45クラス フォーク 新品入荷</strong><span class="arrival-banner-sub">ZX135用｜レンタル機</span></div><a class="arrival-banner-link" href="rental.html">レンタルを見る →</a></div></article><article class="arrival-slide repair"><div class="arrival-banner-inner"><span class="arrival-banner-label">REPAIR</span><div class="arrival-banner-copy"><strong class="arrival-banner-text">修理・再生 お見積り無料</strong><span class="arrival-banner-sub">アタッチメントの修理・再生もRENVISへ</span></div><a class="arrival-banner-link" href="repair.html">修理・再生を見る →</a></div></article></div><button class="arrival-arrow prev" type="button" aria-label="前のバナー">‹</button><button class="arrival-arrow next" type="button" aria-label="次のバナー">›</button><div class="arrival-dots"><button class="is-active" data-dot="0"></button><button data-dot="1"></button><button data-dot="2"></button></div></div></section>
 <section class="section"><div class="wrap">
 <div class="section-head"><div><div class="eyebrow">Our Services</div><h2>事業内容</h2></div><a href="#company">会社概要を見る →</a></div>
 <div class="service-cards">
@@ -1331,5 +1325,5 @@ document.querySelectorAll('.service-cards a.card[href]').forEach(card=>{
   }, {passive:true});
 });
 </script>
-</body>
+<script id="arrival-slider-js">(()=>{const s=[...document.querySelectorAll('.arrival-slide')],d=[...document.querySelectorAll('[data-dot]')],p=document.querySelector('.arrival-arrow.prev'),n=document.querySelector('.arrival-arrow.next'),box=document.querySelector('.arrival-slider');if(!s.length)return;let i=0,t;const show=x=>{i=(x+s.length)%s.length;s.forEach((e,j)=>e.classList.toggle('is-active',j===i));d.forEach((e,j)=>e.classList.toggle('is-active',j===i))};const start=()=>{clearInterval(t);t=setInterval(()=>show(i+1),4500)};p.onclick=()=>{show(i-1);start()};n.onclick=()=>{show(i+1);start()};d.forEach((e,j)=>e.onclick=()=>{show(j);start()});box.onmouseenter=()=>clearInterval(t);box.onmouseleave=start;let x=null;box.addEventListener('touchstart',e=>x=e.touches[0].clientX,{passive:true});box.addEventListener('touchend',e=>{if(x!==null&&Math.abs(e.changedTouches[0].clientX-x)>45)show(i+(e.changedTouches[0].clientX<x?1:-1));x=null;start()},{passive:true});show(0);start()})();</script></body>
 </html>
