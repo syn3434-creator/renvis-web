@@ -192,7 +192,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
         <div class="strength"><b>在庫はお問い合わせ</b><span>最新の貸出状況をご案内</span></div>
       </div>
     </div>
-    <div class="hero-photo"><img src="rental-tswd1700.webp" alt="レンタルアタッチメント"></div>
+    <div class="hero-photo"><img src="rental-hero-silver-yard.webp" alt="シルバーで統一したレンタルアタッチメントヤード"></div>
   </div>
 </section>
 
@@ -358,7 +358,16 @@ render('crusher');
     link:'contact.html'
   }
 */
-const FEATURED_RENTALS=[];
+const FEATURED_RENTALS=[
+  {
+    name:'KBL 0.45クラス フォーク',
+    category:'NEW RENTAL',
+    image:'rental-new-kbl-045-fork.webp',
+    meta:['KBL','0.45クラス','ZX135用'],
+    text:'新品レンタル機が入荷しました。最新の在庫・貸出状況はお問い合わせください。',
+    link:'contact.html'
+  }
+];
 const featuredSection=document.getElementById('featured-rentals');
 const featuredGrid=document.getElementById('featuredGrid');
 function renderFeatured(){
