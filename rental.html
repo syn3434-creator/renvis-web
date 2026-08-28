@@ -59,16 +59,16 @@ h1{font-size:clamp(3.8rem,6.3vw,6.5rem);line-height:.88;letter-spacing:-.055em;m
   border:1px solid var(--line);background:#0b0f14;padding:0;cursor:pointer;color:#fff;
   text-align:left;overflow:hidden;transition:.22s;position:relative
 }
-.category-card:hover,.category-card.active{transform:translateY(-3px);border-color:var(--gold)}
-.category-card span{display:block;padding:24px 12px 18px;font-weight:900;font-size:.86rem;line-height:1.35}
-.category-card small{position:absolute;right:9px;top:9px;background:rgba(6,8,11,.88);border:1px solid rgba(255,255,255,.16);padding:4px 7px;font-size:.58rem;color:#c9d0d7}
-.category-card.ready small{color:#f0ca61;border-color:rgba(221,182,70,.55)}
+.category-card:hover{transform:translateY(-2px);border-color:#66717b;background:#10161c}.category-card.active{transform:none;background:#10161c}
+.category-card span{display:block;padding:20px 12px;font-weight:900;font-size:.86rem;line-height:1.35}
+.category-card.active{border-color:var(--gold);box-shadow:inset 0 -3px 0 var(--gold)}
 
 .catalog-panel{display:none;margin-top:26px}
 .catalog-panel.open{display:block}
 .catalog-intro{
-  border:1px solid var(--line);background:linear-gradient(135deg,#101820,#080c11);
-  padding:22px 24px;margin-bottom:16px;display:flex;justify-content:space-between;gap:30px;align-items:center
+  border:0;background:transparent;
+  padding:18px 0 24px;margin-bottom:10px;display:flex;justify-content:space-between;gap:30px;align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.08)
 }
 .catalog-intro h3{font-size:1.35rem;margin:2px 0 4px}
 .catalog-intro p{margin:0;color:var(--muted);font-size:.78rem}
@@ -122,6 +122,10 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
   .hero-grid{grid-template-columns:1fr}
   .categories{grid-template-columns:repeat(3,1fr)}
 }
+.nav-links a,.home-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1.08}
+.nav-en{font-weight:900;letter-spacing:.06em}
+.nav-ja{font-size:.52rem;font-weight:700;letter-spacing:.05em;color:#8e969e}
+.nav-links a.active .nav-ja,.nav-links a:hover .nav-ja{color:#d8b64d}
 @media(max-width:760px){
   .wrap,.nav{width:calc(100% - 28px)}
   header{height:68px}.logo{width:185px}.nav-links{display:none}.home-btn{margin-left:auto}
@@ -164,13 +168,13 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
   <div class="nav">
     <a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
     <nav class="nav-links">
-      <a href="index.html">HOME</a>
-      <a class="active" href="rental.html">RENTAL</a>
-      <a href="index.html#repair">REPAIR</a>
-      <a href="used-sales.html">USED SALES</a>
-      <a href="index.html#management">MANAGEMENT</a>
+      <a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a>
+      <a class="active" href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a>
+      <a href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a>
+      <a href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a>
+      <a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理</span></a>
     </nav>
-    <a class="home-btn" href="index.html">TOPへ</a>
+    <a class="home-btn" href="index.html"><span class="nav-en">TOPへ</span><span class="nav-ja">トップへ</span></a>
   </div>
 </header>
 
@@ -221,22 +225,22 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
     </div>
 
     <div class="categories" id="categories">
-      <button class="category-card ready active" data-category="crusher"><small>CATALOG</small><span>大割機</span></button>
-      <button class="category-card ready" data-category="pulverizer"><small>CATALOG</small><span>小割機</span></button>
-      <button class="category-card ready" data-category="magpulverizer"><small>CATALOG</small><span>マグネット付き小割機</span></button>
-      <button class="category-card ready" data-category="steelcutter"><small>CATALOG</small><span>鉄骨カッター</span></button>
-      <button class="category-card ready" data-category="wastecutter"><small>INFO</small><span>産廃カッター</span></button>
-      <button class="category-card ready" data-category="woodcutter"><small>INFO</small><span>機械式木材カッター</span></button>
-      <button class="category-card ready" data-category="breaker"><small>CATALOG</small><span>油圧ブレーカー</span></button>
-      <button class="category-card ready" data-category="mechfork"><small>INFO</small><span>機械式フォーク</span></button>
-      <button class="category-card ready" data-category="hydfork"><small>INFO</small><span>油圧式・チルトフォーク</span></button>
-      <button class="category-card ready" data-category="rotfork"><small>INFO</small><span>回転フォーク</span></button>
-      <button class="category-card ready" data-category="skeleton"><small>INFO</small><span>スケルトンバケット</span></button>
-      <button class="category-card ready" data-category="auger"><small>INFO</small><span>オーガ</span></button>
-      <button class="category-card ready" data-category="mower"><small>INFO</small><span>草刈機</span></button>
-      <button class="category-card ready" data-category="extension"><small>STOCK</small><span>エキステンションアーム</span></button>
-      <button class="category-card ready" data-category="cooler"><small>STOCK</small><span>スポットクーラー</span></button>
-      <button class="category-card ready" data-category="other"><small>CONTACT</small><span>その他アタッチメント</span></button>
+      <button class="category-card ready active" data-category="crusher"><span>大割機</span></button>
+      <button class="category-card ready" data-category="pulverizer"><span>小割機</span></button>
+      <button class="category-card ready" data-category="magpulverizer"><span>マグネット付き小割機</span></button>
+      <button class="category-card ready" data-category="steelcutter"><span>鉄骨カッター</span></button>
+      <button class="category-card ready" data-category="wastecutter"><span>産廃カッター</span></button>
+      <button class="category-card ready" data-category="woodcutter"><span>機械式木材カッター</span></button>
+      <button class="category-card ready" data-category="breaker"><span>油圧ブレーカー</span></button>
+      <button class="category-card ready" data-category="mechfork"><span>機械式フォーク</span></button>
+      <button class="category-card ready" data-category="hydfork"><span>油圧式・チルトフォーク</span></button>
+      <button class="category-card ready" data-category="rotfork"><span>回転フォーク</span></button>
+      <button class="category-card ready" data-category="skeleton"><span>スケルトンバケット</span></button>
+      <button class="category-card ready" data-category="auger"><span>オーガ</span></button>
+      <button class="category-card ready" data-category="mower"><span>草刈機</span></button>
+      <button class="category-card ready" data-category="extension"><span>エキステンションアーム</span></button>
+      <button class="category-card ready" data-category="cooler"><span>スポットクーラー</span></button>
+      <button class="category-card ready" data-category="other"><span>その他アタッチメント</span></button>
     </div>
 
     <div id="catalogPanel" class="catalog-panel open"></div>
@@ -283,9 +287,9 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
 const DATA={
  crusher:{en:'Primary Crusher',title:'大割機',makers:[
   ['OKADA AIYON',['TS-W250','TS350RCD','TS-WB350F','TS-WB500V-F','TS-WB620V','TS-WD720V-F','TS-WD950VL','TS-W1100V','TS-WB1100V','TSRC-1000V','TS-WD1400V','TS-WD1700V-2'],[['TS-W 公式カタログ','https://media.okadaaiyon.com/cms/uploads/ctlg_TS-W_Crusher_202606.pdf'],['TSRC 公式カタログ','https://media.okadaaiyon.com/cms/uploads/ctlg_TSRC_Crusher_202606_v2.pdf']]],
-  ['NPK',['SV30','SV-5X','S-15X','S-22XB','SV-24X','SV-47X'],[['メーカー公式カタログ','http://www.npk.jp/digital/con_j15/index.html#page=17']]],
+  ['NPK',['SV30','SV-5X','S-15X','S-22XB','SV-24X','SV-47X'],[['NPK 圧砕機資料','https://www.npk.jp/construction/shovel/recommendable_excavator_v6.pdf']]],
   ['TAGUCHI',['DS-40F','D-60F','DS-60A','DS-120A','DS200A'],[]],
-  ['FURUKAWA ROCK DRILL',['Vx135-F','Vx145-F'],[['メーカー公式カタログ','https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf']]]]},
+  ['FURUKAWA ROCK DRILL',['Vx135-F','Vx145-F'],[['大割用 Vxシリーズ','https://www.furukawarockdrill.co.jp/crusher']]]]},
  pulverizer:{en:'Pulverizer',title:'小割機',makers:[
   ['OKADA AIYON',['OSCシリーズ'],[['OSC 公式カタログ','https://media.okadaaiyon.com/cms/uploads/ctlg_OSC_202604.pdf']]],
   ['NPK',['小割機'],[['メーカー公式カタログ','http://www.npk.jp/digital/con_j15/index.html#page=17']]],
