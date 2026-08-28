@@ -1106,7 +1106,64 @@ html,body{max-width:100%;overflow-x:hidden}
   }
 }
 </style>
-<style id="arrival-impact-slider">.arrival-slider{padding:20px 0 18px;background:#080b0f;border-top:1px solid #272d33;border-bottom:1px solid #272d33;position:relative;overflow:hidden}.arrival-slider:before{display:none!important}.arrival-slider .wrap{position:relative}.arrival-slides{position:relative;min-height:138px}.arrival-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transform:translateX(18px);transition:.55s ease;pointer-events:none}.arrival-slide.is-active{opacity:1;visibility:visible;transform:none;pointer-events:auto}.arrival-slider .arrival-banner-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;min-height:138px;border:0!important;padding:24px 76px 24px 36px}.arrival-slide.used .arrival-banner-inner{background:linear-gradient(112deg,#e1ad1d,#f2ca46 58%,#bd8410)!important}.arrival-slide.rental .arrival-banner-inner{background:linear-gradient(112deg,#056bc4,#169ef2 58%,#07559b)!important}.arrival-slide.repair .arrival-banner-inner{background:linear-gradient(112deg,#a91828,#e23a35 58%,#82111c)!important}.arrival-slider .arrival-banner-label{background:#080a0d!important;color:#fff!important}.arrival-slide.used .arrival-banner-text,.arrival-slide.used .arrival-banner-sub{color:#080a0d!important}.arrival-slide.rental .arrival-banner-text,.arrival-slide.repair .arrival-banner-text{color:#fff!important}.arrival-slide.rental .arrival-banner-sub,.arrival-slide.repair .arrival-banner-sub{color:rgba(255,255,255,.82)!important}.arrival-slider .arrival-banner-link{background:#080a0d!important;color:#fff!important}.arrival-arrow{position:absolute;z-index:5;top:50%;transform:translateY(-60%);width:40px;height:40px;border:1px solid rgba(255,255,255,.35);background:rgba(5,7,10,.55);color:#fff;font-size:28px;display:grid;place-items:center;cursor:pointer}.arrival-arrow.prev{left:9px}.arrival-arrow.next{right:9px}.arrival-dots{position:absolute;z-index:6;left:50%;bottom:9px;transform:translateX(-50%);display:flex;gap:7px}.arrival-dots button{width:7px;height:7px;border:0;border-radius:50%;padding:0;background:rgba(255,255,255,.48)}.arrival-dots button.is-active{width:22px;border-radius:8px;background:#fff}@media(max-width:760px){.arrival-slider{padding:12px 0}.arrival-slides{min-height:178px}.arrival-slider .arrival-banner-inner{min-height:178px;grid-template-columns:1fr auto!important;gap:10px!important;padding:18px 42px 26px 18px!important}.arrival-slider .arrival-banner-label{grid-column:1/-1}.arrival-slider .arrival-banner-text{font-size:1rem!important}.arrival-arrow{width:32px;height:38px}.arrival-arrow.prev{left:4px}.arrival-arrow.next{right:4px}}</style></head>
+
+<style id="floating-inquiry-20260828">
+.floating-inquiry{
+  position:fixed;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:85;
+  width:112px;
+  height:112px;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  color:#fff;
+  background:radial-gradient(circle at 35% 30%,#d6ad49 0%,#a8781d 48%,#6d4b0e 100%);
+  border:2px solid rgba(255,255,255,.88);
+  box-shadow:0 0 0 1px rgba(216,182,90,.55),0 0 28px rgba(216,182,90,.48),0 12px 30px rgba(0,0,0,.45);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.03em;
+  text-align:center;
+  transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
+}
+.floating-inquiry:hover{
+  transform:translateY(-50%) scale(1.045);
+  filter:brightness(1.06);
+  box-shadow:0 0 0 1px rgba(216,182,90,.72),0 0 36px rgba(216,182,90,.62),0 14px 34px rgba(0,0,0,.5);
+}
+.floating-inquiry-icon{
+  width:34px;height:28px;display:grid;place-items:center;
+}
+.floating-inquiry-icon svg{
+  width:32px;height:26px;
+  fill:none;stroke:#fff;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+@media(max-width:760px){
+  .floating-inquiry{
+    right:12px;
+    top:auto;
+    bottom:18px;
+    transform:none;
+    width:74px;
+    height:74px;
+    gap:3px;
+    font-size:.62rem;
+    box-shadow:0 0 0 1px rgba(216,182,90,.5),0 0 20px rgba(216,182,90,.42),0 10px 24px rgba(0,0,0,.4);
+  }
+  .floating-inquiry:hover{transform:scale(1.035)}
+  .floating-inquiry-icon{width:26px;height:22px}
+  .floating-inquiry-icon svg{width:24px;height:20px}
+}
+</style>
+
+</head>
 <body>
 <header id="header">
 <div class="nav">
@@ -1158,6 +1215,17 @@ html,body{max-width:100%;overflow-x:hidden}
 <a href="contact.html">お問い合わせフォームへ →</a>
 </div>
 </aside>
+
+<a class="floating-inquiry" href="contact.html" aria-label="問い合わせ">
+  <span class="floating-inquiry-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24">
+      <path d="M3 5h18v14H3z"></path>
+      <path d="m3 6 9 7 9-7"></path>
+    </svg>
+  </span>
+  <span>問い合わせ</span>
+</a>
+
 <main id="top">
 <section class="hero">
 <div class="hero-bg"></div>
@@ -1173,17 +1241,14 @@ html,body{max-width:100%;overflow-x:hidden}
 <div class="stat-item"><strong class="area">全国</strong><small>対応エリア</small></div>
 </div>
 </section>
-<section aria-label="お問い合わせ" class="hero-cta-strip">
-<div class="wrap">
-<div class="hero-actions">
-<a class="action-btn primary" href="tel:0946428311"><span class="action-icon phone-icon"><svg viewbox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"></path></svg></span>電話でお問い合わせ</a>
-<a class="action-btn contact-btn" href="contact.html"><span class="action-icon contact-icon"><svg viewbox="0 0 24 24"><path d="M3.5 5.5h17v13h-17z"></path><path d="M4 6l8 6 8-6"></path></svg></span>お問い合わせ</a>
-<a class="action-btn" href="https://www.instagram.com/renvisrenvis/" rel="noopener" target="_blank"><span class="action-icon instagram-icon"><svg viewbox="0 0 24 24"><rect height="17" rx="5" width="17" x="3.5" y="3.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.6" cy="6.7" fill="#fff" r="1" stroke="none"></circle></svg></span>Instagramを見る</a>
-<a class="action-btn" href="https://www.tiktok.com/@renvisrenvis" rel="noopener" target="_blank"><span class="action-icon tiktok-icon"><svg viewbox="0 0 24 24"><path d="M14.2 3.2c.5 2.7 2 4.3 4.8 4.8v3.2c-1.8 0-3.4-.6-4.8-1.6v6.2a5.7 5.7 0 1 1-5-5.6v3.3a2.5 2.5 0 1 0 1.8 2.3V3.2h3.2z"></path></svg></span>TikTokを見る</a>
-</div>
+
+<section class="arrival-banner" aria-label="新着情報">
+<div class="wrap arrival-banner-inner">
+<span class="arrival-banner-label">NEW ARRIVAL</span>
+<div class="arrival-banner-copy"><span class="arrival-banner-text">SV-30 入荷しました。</span><span class="arrival-banner-sub">中古アタッチメントの新着情報</span></div>
+<a class="arrival-banner-link" href="used-sales.html">中古販売を見る →</a>
 </div>
 </section>
-<section class="arrival-banner arrival-slider" aria-label="新着情報"><div class="wrap"><div class="arrival-slides"><article class="arrival-slide is-active used"><div class="arrival-banner-inner"><span class="arrival-banner-label">NEW ARRIVAL</span><div class="arrival-banner-copy"><strong class="arrival-banner-text">SV-30 入荷しました。</strong><span class="arrival-banner-sub">中古アタッチメントの新着情報</span></div><a class="arrival-banner-link" href="used-sales.html">中古販売を見る →</a></div></article><article class="arrival-slide rental"><div class="arrival-banner-inner"><span class="arrival-banner-label">NEW RENTAL</span><div class="arrival-banner-copy"><strong class="arrival-banner-text">KBL 0.45クラス フォーク 新品入荷</strong><span class="arrival-banner-sub">ZX135用｜レンタル機</span></div><a class="arrival-banner-link" href="rental.html">レンタルを見る →</a></div></article><article class="arrival-slide repair"><div class="arrival-banner-inner"><span class="arrival-banner-label">REPAIR</span><div class="arrival-banner-copy"><strong class="arrival-banner-text">修理・再生 お見積り無料</strong><span class="arrival-banner-sub">アタッチメントの修理・再生もRENVISへ</span></div><a class="arrival-banner-link" href="repair.html">修理・再生を見る →</a></div></article></div><button class="arrival-arrow prev" type="button" aria-label="前のバナー">‹</button><button class="arrival-arrow next" type="button" aria-label="次のバナー">›</button><div class="arrival-dots"><button class="is-active" data-dot="0"></button><button data-dot="1"></button><button data-dot="2"></button></div></div></section>
 <section class="section"><div class="wrap">
 <div class="section-head"><div><div class="eyebrow">Our Services</div><h2>事業内容</h2></div><a href="#company">会社概要を見る →</a></div>
 <div class="service-cards">
@@ -1325,5 +1390,5 @@ document.querySelectorAll('.service-cards a.card[href]').forEach(card=>{
   }, {passive:true});
 });
 </script>
-<script id="arrival-slider-js">(()=>{const s=[...document.querySelectorAll('.arrival-slide')],d=[...document.querySelectorAll('[data-dot]')],p=document.querySelector('.arrival-arrow.prev'),n=document.querySelector('.arrival-arrow.next'),box=document.querySelector('.arrival-slider');if(!s.length)return;let i=0,t;const show=x=>{i=(x+s.length)%s.length;s.forEach((e,j)=>e.classList.toggle('is-active',j===i));d.forEach((e,j)=>e.classList.toggle('is-active',j===i))};const start=()=>{clearInterval(t);t=setInterval(()=>show(i+1),4500)};p.onclick=()=>{show(i-1);start()};n.onclick=()=>{show(i+1);start()};d.forEach((e,j)=>e.onclick=()=>{show(j);start()});box.onmouseenter=()=>clearInterval(t);box.onmouseleave=start;let x=null;box.addEventListener('touchstart',e=>x=e.touches[0].clientX,{passive:true});box.addEventListener('touchend',e=>{if(x!==null&&Math.abs(e.changedTouches[0].clientX-x)>45)show(i+(e.changedTouches[0].clientX<x?1:-1));x=null;start()},{passive:true});show(0);start()})();</script></body>
+</body>
 </html>
