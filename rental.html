@@ -55,13 +55,12 @@ h1{font-size:clamp(3.8rem,6.3vw,6.5rem);line-height:.88;letter-spacing:-.055em;m
 .route b{color:var(--gold)}
 
 .categories{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.category-card{
+.category-card{min-height:92px;display:flex;align-items:center;justify-content:center;text-align:center;
   border:1px solid var(--line);background:#0b0f14;padding:0;cursor:pointer;color:#fff;
   text-align:left;overflow:hidden;transition:.22s;position:relative
 }
 .category-card:hover,.category-card.active{transform:translateY(-3px);border-color:var(--gold)}
-.category-card img{width:100%;height:105px;object-fit:cover;filter:saturate(.78) brightness(.72)}
-.category-card span{display:block;padding:12px 12px;font-weight:900;font-size:.8rem}
+.category-card span{display:block;padding:24px 12px 18px;font-weight:900;font-size:.86rem;line-height:1.35}
 .category-card small{position:absolute;right:9px;top:9px;background:rgba(6,8,11,.88);border:1px solid rgba(255,255,255,.16);padding:4px 7px;font-size:.58rem;color:#c9d0d7}
 .category-card.ready small{color:#f0ca61;border-color:rgba(221,182,70,.55)}
 
@@ -129,8 +128,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
   .hero{padding:25px 0 20px}.hero-grid{gap:18px}h1{font-size:clamp(3.3rem,16vw,5rem)}.hero-photo{height:205px}
   .strengths{grid-template-columns:1fr}.strength{border-right:0;border-bottom:1px solid var(--line)}.strength:last-child{border-bottom:0}
   .section{padding:34px 0}.section-head{display:block}.section-head p{text-align:left;margin-top:7px}
-  .categories{grid-template-columns:1fr 1fr}.category-card img{height:105px}
-  .catalog-intro{display:block}.catalog-intro .note{margin-top:12px}
+  .categories{grid-template-columns:1fr 1fr}  .catalog-intro{display:block}.catalog-intro .note{margin-top:12px}
   .makers{grid-template-columns:1fr}.maker-card{min-height:0}
   .flow{grid-template-columns:1fr 1fr}.cta{align-items:flex-start;flex-direction:column}
 }
@@ -223,22 +221,22 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
     </div>
 
     <div class="categories" id="categories">
-      <button class="category-card ready active" data-category="crusher"><img src="rental-tswd1700.webp" alt="大割機"><small>CATALOG</small><span>大割機</span></button>
-      <button class="category-card ready" data-category="pulverizer"><img src="rental-sv30.webp" alt="小割機"><small>CATALOG</small><span>小割機</span></button>
-      <button class="category-card ready" data-category="magpulverizer"><img src="rental-sv30.webp" alt="マグネット付き小割機"><small>CATALOG</small><span>マグネット付き小割機</span></button>
-      <button class="category-card ready" data-category="steelcutter"><img src="repair-after-top.webp" alt="鉄骨カッター"><small>CATALOG</small><span>鉄骨カッター</span></button>
-      <button class="category-card ready" data-category="wastecutter"><img src="repair-after-top.webp" alt="産廃カッター"><small>INFO</small><span>産廃カッター</span></button>
-      <button class="category-card ready" data-category="woodcutter"><img src="repair-after-top.webp" alt="機械式木材カッター"><small>INFO</small><span>機械式木材カッター</span></button>
-      <button class="category-card ready" data-category="breaker"><img src="rental-fx55.webp" alt="油圧ブレーカー"><small>CATALOG</small><span>油圧ブレーカー</span></button>
-      <button class="category-card ready" data-category="mechfork"><img src="repair-after-front.webp" alt="機械式フォーク"><small>INFO</small><span>機械式フォーク</span></button>
-      <button class="category-card ready" data-category="hydfork"><img src="repair-after-front.webp" alt="油圧式・チルトフォーク"><small>INFO</small><span>油圧式・チルトフォーク</span></button>
-      <button class="category-card ready" data-category="rotfork"><img src="repair-after-front.webp" alt="回転フォーク"><small>INFO</small><span>回転フォーク</span></button>
-      <button class="category-card ready" data-category="skeleton"><img src="repair-before-top.webp" alt="スケルトンバケット"><small>INFO</small><span>スケルトンバケット</span></button>
-      <button class="category-card ready" data-category="auger"><img src="repair-before-top.webp" alt="オーガ"><small>INFO</small><span>オーガ</span></button>
-      <button class="category-card ready" data-category="mower"><img src="repair-before-top.webp" alt="草刈機"><small>INFO</small><span>草刈機</span></button>
-      <button class="category-card ready" data-category="extension"><img src="repair-before-top.webp" alt="エキステンションアーム"><small>STOCK</small><span>エキステンションアーム</span></button>
-      <button class="category-card ready" data-category="cooler"><img src="repair-before-top.webp" alt="スポットクーラー"><small>STOCK</small><span>スポットクーラー</span></button>
-      <button class="category-card ready" data-category="other"><img src="repair-before-top.webp" alt="その他アタッチメント"><small>CONTACT</small><span>その他アタッチメント</span></button>
+      <button class="category-card ready active" data-category="crusher"><small>CATALOG</small><span>大割機</span></button>
+      <button class="category-card ready" data-category="pulverizer"><small>CATALOG</small><span>小割機</span></button>
+      <button class="category-card ready" data-category="magpulverizer"><small>CATALOG</small><span>マグネット付き小割機</span></button>
+      <button class="category-card ready" data-category="steelcutter"><small>CATALOG</small><span>鉄骨カッター</span></button>
+      <button class="category-card ready" data-category="wastecutter"><small>INFO</small><span>産廃カッター</span></button>
+      <button class="category-card ready" data-category="woodcutter"><small>INFO</small><span>機械式木材カッター</span></button>
+      <button class="category-card ready" data-category="breaker"><small>CATALOG</small><span>油圧ブレーカー</span></button>
+      <button class="category-card ready" data-category="mechfork"><small>INFO</small><span>機械式フォーク</span></button>
+      <button class="category-card ready" data-category="hydfork"><small>INFO</small><span>油圧式・チルトフォーク</span></button>
+      <button class="category-card ready" data-category="rotfork"><small>INFO</small><span>回転フォーク</span></button>
+      <button class="category-card ready" data-category="skeleton"><small>INFO</small><span>スケルトンバケット</span></button>
+      <button class="category-card ready" data-category="auger"><small>INFO</small><span>オーガ</span></button>
+      <button class="category-card ready" data-category="mower"><small>INFO</small><span>草刈機</span></button>
+      <button class="category-card ready" data-category="extension"><small>STOCK</small><span>エキステンションアーム</span></button>
+      <button class="category-card ready" data-category="cooler"><small>STOCK</small><span>スポットクーラー</span></button>
+      <button class="category-card ready" data-category="other"><small>CONTACT</small><span>その他アタッチメント</span></button>
     </div>
 
     <div id="catalogPanel" class="catalog-panel open"></div>
@@ -286,7 +284,7 @@ const DATA={
  crusher:{en:'Primary Crusher',title:'大割機',makers:[
   ['OKADA AIYON',['TS-W250','TS350RCD','TS-WB350F','TS-WB500V-F','TS-WB620V','TS-WD720V-F','TS-WD950VL','TS-W1100V','TS-WB1100V','TSRC-1000V','TS-WD1400V','TS-WD1700V-2'],[['TS-W 公式カタログ','https://media.okadaaiyon.com/cms/uploads/ctlg_TS-W_Crusher_202606.pdf'],['TSRC 公式カタログ','https://media.okadaaiyon.com/cms/uploads/ctlg_TSRC_Crusher_202606_v2.pdf']]],
   ['NPK',['SV30','SV-5X','S-15X','S-22XB','SV-24X','SV-47X'],[['メーカー公式カタログ','http://www.npk.jp/digital/con_j15/index.html#page=17']]],
-  ['TAGUCHI',['DS-40F','D-60F','DS-60A','DS-120A','DS200A'],[['メーカー公式カタログ','https://www.taguchi.co.jp/products-catalog/']]],
+  ['TAGUCHI',['DS-40F','D-60F','DS-60A','DS-120A','DS200A'],[]],
   ['FURUKAWA ROCK DRILL',['Vx135-F','Vx145-F'],[['メーカー公式カタログ','https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf']]]]},
  pulverizer:{en:'Pulverizer',title:'小割機',makers:[
   ['OKADA AIYON',['OSCシリーズ'],[['OSC 公式カタログ','https://media.okadaaiyon.com/cms/uploads/ctlg_OSC_202604.pdf']]],
