@@ -1167,6 +1167,108 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 </style>
 
+
+
+<style id="arrival-slider-cool-metal-corrected-20260828">
+/* Cool Metal carousel - targets actual slide classes */
+.arrival-banner{
+  background:#070a0d!important;
+}
+.arrival-slider .arrival-slide .arrival-banner-inner{
+  position:relative;
+  overflow:hidden;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+}
+.arrival-slider .arrival-slide .arrival-banner-inner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(118deg,rgba(255,255,255,.055) 0 1px,transparent 1px 18%),
+    radial-gradient(circle at 78% 35%,rgba(255,255,255,.07),transparent 34%);
+  opacity:.55;
+}
+.arrival-slider .arrival-slide.used .arrival-banner-inner{
+  background:linear-gradient(108deg,#111418 0%,#343b42 54%,#15191e 100%)!important;
+  border-color:rgba(188,199,208,.25)!important;
+}
+.arrival-slider .arrival-slide.rental .arrival-banner-inner{
+  background:linear-gradient(108deg,#07131e 0%,#173b57 55%,#081925 100%)!important;
+  border-color:rgba(66,161,224,.30)!important;
+}
+.arrival-slider .arrival-slide.repair .arrival-banner-inner{
+  background:linear-gradient(108deg,#151019 0%,#422b49 55%,#18111c 100%)!important;
+  border-color:rgba(190,112,204,.28)!important;
+}
+.arrival-slider .arrival-slide .arrival-banner-label,
+.arrival-slider .arrival-slide .arrival-banner-copy,
+.arrival-slider .arrival-slide .arrival-banner-link{
+  position:relative;z-index:1;
+}
+.arrival-slider .arrival-slide.used .arrival-banner-label{color:#d6dde3!important}
+.arrival-slider .arrival-slide.rental .arrival-banner-label{color:#6fc4ff!important}
+.arrival-slider .arrival-slide.repair .arrival-banner-label{color:#d895e2!important}
+.arrival-slider .arrival-slide.used .arrival-banner-link{
+  background:#0b0e11!important;color:#fff!important;border-color:#aab4bd!important;
+}
+.arrival-slider .arrival-slide.rental .arrival-banner-link{
+  background:#08121b!important;color:#fff!important;border-color:#2e9fe8!important;
+}
+.arrival-slider .arrival-slide.repair .arrival-banner-link{
+  background:#110c14!important;color:#fff!important;border-color:#a95db7!important;
+}
+.arrival-slider .arrival-slide .arrival-banner-text{color:#fff!important}
+.arrival-slider .arrival-slide .arrival-banner-sub{color:#c7cdd3!important}
+</style>
+
+
+<style id="used-banner-champagne-silver-final-20260828">
+/* 1st banner: brighter champagne silver metal */
+.arrival-slider .arrival-slide.used .arrival-banner-inner{
+  background:
+    linear-gradient(106deg,
+      #766f61 0%,
+      #9a927f 24%,
+      #625d53 51%,
+      #2b2b29 76%,
+      #151719 100%)!important;
+  border-color:rgba(218,195,130,.48)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.13),
+    inset 0 -1px 0 rgba(0,0,0,.28)!important;
+}
+.arrival-slider .arrival-slide.used .arrival-banner-inner::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(115deg,rgba(255,245,210,.16),transparent 34%),
+    radial-gradient(circle at 34% 0%,rgba(255,235,175,.16),transparent 31%);
+  z-index:0;
+}
+.arrival-slider .arrival-slide.used .arrival-banner-label{
+  color:#f1c85d!important;
+  border-color:rgba(241,200,93,.55)!important;
+}
+.arrival-slider .arrival-slide.used .arrival-banner-text{
+  color:#fff!important;
+  text-shadow:0 1px 8px rgba(0,0,0,.28);
+}
+.arrival-slider .arrival-slide.used .arrival-banner-sub{
+  color:#f1f1ee!important;
+}
+.arrival-slider .arrival-slide.used .arrival-banner-link{
+  background:rgba(8,9,10,.86)!important;
+  color:#fff!important;
+  border-color:#d8b958!important;
+  border-left:3px solid #d8b958!important;
+}
+</style>
+
 </head>
 <body>
 <header id="header">
@@ -1381,5 +1483,5 @@ document.querySelectorAll('.service-cards a.card[href]').forEach(card=>{
   }, {passive:true});
 });
 </script>
-<script id="arrival-slider-js">(()=>{const s=[...document.querySelectorAll('.arrival-slide')],d=[...document.querySelectorAll('[data-dot]')],p=document.querySelector('.arrival-arrow.prev'),n=document.querySelector('.arrival-arrow.next'),box=document.querySelector('.arrival-slider');if(!s.length)return;let i=0,t;const show=x=>{i=(x+s.length)%s.length;s.forEach((e,j)=>e.classList.toggle('is-active',j===i));d.forEach((e,j)=>e.classList.toggle('is-active',j===i))};const start=()=>{clearInterval(t);t=setInterval(()=>show(i+1),4500)};p.onclick=()=>{show(i-1);start()};n.onclick=()=>{show(i+1);start()};d.forEach((e,j)=>e.onclick=()=>{show(j);start()});box.onmouseenter=()=>clearInterval(t);box.onmouseleave=start;let x=null;box.addEventListener('touchstart',e=>x=e.touches[0].clientX,{passive:true});box.addEventListener('touchend',e=>{if(x!==null&&Math.abs(e.changedTouches[0].clientX-x)>45)show(i+(e.changedTouches[0].clientX<x?1:-1));x=null;start()},{passive:true});show(0);start()})();</script></body>
+<script id="arrival-slider-js">(()=>{const s=[...document.querySelectorAll('.arrival-slide')],d=[...document.querySelectorAll('[data-dot]')],p=document.querySelector('.arrival-arrow.prev'),n=document.querySelector('.arrival-arrow.next'),box=document.querySelector('.arrival-slider');if(!s.length)return;let i=0,t;const show=x=>{i=(x+s.length)%s.length;s.forEach((e,j)=>e.classList.toggle('is-active',j===i));d.forEach((e,j)=>e.classList.toggle('is-active',j===i))};const start=()=>{clearInterval(t);const delay=window.matchMedia('(max-width: 760px)').matches?3000:2000;t=setInterval(()=>show(i+1),delay)};p.onclick=()=>{show(i-1);start()};n.onclick=()=>{show(i+1);start()};d.forEach((e,j)=>e.onclick=()=>{show(j);start()});box.onmouseenter=()=>clearInterval(t);box.onmouseleave=start;let x=null;box.addEventListener('touchstart',e=>x=e.touches[0].clientX,{passive:true});box.addEventListener('touchend',e=>{if(x!==null&&Math.abs(e.changedTouches[0].clientX-x)>45)show(i+(e.changedTouches[0].clientX<x?1:-1));x=null;start()},{passive:true});show(0);start()})();</script></body>
 </html>
