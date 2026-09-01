@@ -227,6 +227,15 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
 }
 </style>
 
+
+<style id="featured-kbl07-fit-20260901">
+.featured-card img.featured-img-contain{
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#11161b!important;
+}
+</style>
+
 </head>
 <body>
 
@@ -238,7 +247,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
       <a class="active" href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a>
       <a href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a>
       <a href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a>
-      <a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理</span></a>
+      <a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a>
     </nav>
     <a class="home-btn" href="index.html"><span class="nav-en">TOPへ</span><span class="nav-ja">トップへ</span></a>
   </div>
@@ -432,13 +441,22 @@ const FEATURED_RENTALS=[
     meta:['KBL','0.45クラス','ZX135用'],
     text:'新品レンタル機が入荷しました。最新の在庫・貸出状況はお問い合わせください。',
     link:'contact.html'
+  },
+  {
+    name:'KBL 0.7クラス スケルトンバケット',
+    category:'NEW RENTAL',
+    image:'rental-new-kbl-07-skeleton.webp',
+    meta:['KBL','0.7クラス / 20tクラス','マス目 80×80'],
+    text:'新品レンタル機が入荷しました。細かな選別・仕分け作業に。最新の在庫・貸出状況はお問い合わせください。',
+    link:'contact.html',
+    contain:true
   }
 ];
 const featuredSection=document.getElementById('featured-rentals');
 const featuredGrid=document.getElementById('featuredGrid');
 function renderFeatured(){
   if(!FEATURED_RENTALS.length){featuredSection.classList.add('show');return;}
-  featuredGrid.innerHTML=FEATURED_RENTALS.slice(0,4).map(item=>`<article class="featured-card"><div style="position:relative"><img src="${esc(item.image)}" alt="${esc(item.name)}"><span class="featured-badge">NEW ARRIVAL</span></div><div class="featured-body"><small>${esc(item.category||'RENTAL')}</small><h3>${esc(item.name)}</h3><div class="featured-meta">${(item.meta||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div><p>${esc(item.text||'新しく入荷したおすすめレンタル機です。')}</p><a class="featured-link" href="${esc(item.link||'contact.html')}">在庫・貸出状況を問い合わせる</a></div></article>`).join('');
+  featuredGrid.innerHTML=FEATURED_RENTALS.slice(0,4).map(item=>`<article class="featured-card"><div style="position:relative"><img src="${esc(item.image)}" alt="${esc(item.name)}" class="${item.contain?'featured-img-contain':''}"><span class="featured-badge">NEW ARRIVAL</span></div><div class="featured-body"><small>${esc(item.category||'RENTAL')}</small><h3>${esc(item.name)}</h3><div class="featured-meta">${(item.meta||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div><p>${esc(item.text||'新しく入荷したおすすめレンタル機です。')}</p><a class="featured-link" href="${esc(item.link||'contact.html')}">在庫・貸出状況を問い合わせる</a></div></article>`).join('');
   featuredSection.classList.add('show');
 }
 renderFeatured();
