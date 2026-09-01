@@ -161,6 +161,72 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
 @media(max-width:760px){.featured-head{display:block}.featured-head p{text-align:left;margin-top:7px}.featured-grid{grid-template-columns:1fr}.featured-card img{height:190px}}
 
 </style>
+
+<style id="strengths-linebreak-fix-20260831">
+/* RENTAL hero strengths: prevent awkward Japanese one-character wraps */
+.strength{
+  padding:15px 12px!important;
+  min-width:0;
+}
+.strength b{
+  display:block;
+  font-size:clamp(.72rem,.82vw,.82rem)!important;
+  line-height:1.55;
+  letter-spacing:.01em;
+  white-space:nowrap;
+  word-break:keep-all;
+}
+.strength span{
+  display:block;
+  margin-top:4px!important;
+  font-size:clamp(.60rem,.67vw,.67rem)!important;
+  line-height:1.65;
+  white-space:nowrap;
+  word-break:keep-all;
+  overflow-wrap:normal;
+}
+@media (max-width:1180px) and (min-width:761px){
+  .strength{padding:14px 9px!important}
+  .strength b{font-size:.72rem!important}
+  .strength span{font-size:.59rem!important}
+}
+@media (max-width:760px){
+  .strength{padding:13px 14px!important}
+  .strength b{font-size:.82rem!important;white-space:nowrap}
+  .strength span{font-size:.67rem!important;white-space:nowrap}
+}
+</style>
+
+
+<style id="rental-natural-linebreak-final-20260901">
+.hero .rental-sub{
+  line-height:1.75!important;
+  max-width:680px;
+  word-break:keep-all;
+  overflow-wrap:normal;
+}
+.strength b{
+  white-space:nowrap!important;
+  word-break:keep-all!important;
+}
+.strength span{
+  white-space:normal!important;
+  word-break:keep-all!important;
+  overflow-wrap:normal!important;
+  line-height:1.6!important;
+}
+@media (min-width:761px){
+  .strength{padding:15px 14px!important}
+  .strength b{font-size:.80rem!important}
+  .strength span{font-size:.66rem!important}
+}
+@media (max-width:760px){
+  .hero .rental-sub{font-size:.82rem!important;line-height:1.7!important}
+  .strength b{font-size:.82rem!important}
+  .strength span{font-size:.68rem!important}
+}
+</style>
+
 </head>
 <body>
 
@@ -185,11 +251,11 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
       <div class="eyebrow">Attachment Rental</div>
       <h1>RENTAL</h1>
       <p class="lead">建機用アタッチメントレンタル</p>
-      <p class="sub">種類からメーカーを選び、メーカー公式カタログで詳しい仕様をご確認いただけます。</p>
+      <p class="sub rental-sub">種類からメーカーを選び、<br>メーカー公式カタログで詳しい仕様をご確認いただけます。</p>
       <div class="strengths">
-        <div class="strength"><b>幅広いラインアップ</b><span>用途・ショベルクラスからご提案</span></div>
-        <div class="strength"><b>メーカー資料で確認</b><span>詳しい仕様は公式カタログへ</span></div>
-        <div class="strength"><b>在庫はお問い合わせ</b><span>最新の貸出状況をご案内</span></div>
+        <div class="strength"><b>幅広いラインアップ</b><span>用途・ショベルクラスから<br>ご提案</span></div>
+        <div class="strength"><b>メーカー資料で確認</b><span>詳しい仕様は<br>公式カタログへ</span></div>
+        <div class="strength"><b>在庫はお問い合わせ</b><span>最新の貸出状況を<br>ご案内</span></div>
       </div>
     </div>
     <div class="hero-photo"><img src="rental-hero-silver-yard.webp" alt="シルバーで統一したレンタルアタッチメントヤード"></div>
