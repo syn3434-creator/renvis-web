@@ -1351,6 +1351,125 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 </style>
 
+
+<style id="renvis-service-cards-final-compact-20260902">
+/* PC: 4サービスカードの縦幅を圧縮 */
+@media (min-width:761px){
+  .service-cards{
+    gap:12px!important;
+  }
+  .service-cards .card{
+    min-height:320px!important;
+    height:auto!important;
+    padding:20px 24px 18px!important;
+  }
+  .service-cards .card-top{
+    min-height:0!important;
+    margin-bottom:2px!important;
+  }
+  .service-cards .card-no{
+    font-size:1.35rem!important;
+    line-height:1!important;
+  }
+  .service-cards .service-icon{
+    width:92px!important;
+    height:82px!important;
+    min-height:82px!important;
+    margin:0 auto 8px!important;
+  }
+  .service-cards .service-icon img,
+  .service-cards .service-icon svg{
+    max-width:82px!important;
+    max-height:76px!important;
+  }
+  .service-cards .card-title{
+    margin-bottom:8px!important;
+  }
+  .service-cards .card-title b{
+    font-size:1.45rem!important;
+    line-height:1.02!important;
+  }
+  .service-cards .card-title span{
+    margin-top:5px!important;
+    font-size:.82rem!important;
+  }
+  .service-cards .card-body p{
+    margin:10px 0 16px!important;
+    font-size:.78rem!important;
+    line-height:1.65!important;
+  }
+  .service-cards .card-body a,
+  .service-cards .card-body>span{
+    font-size:.78rem!important;
+  }
+  .service-cards .card.management .card-title b{
+    font-size:1.18rem!important;
+  }
+}
+
+/* SP: 説明文を省いて、2列のままさらにコンパクト */
+@media (max-width:760px){
+  .service-cards{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:8px!important;
+  }
+  .service-cards .card{
+    min-height:210px!important;
+    height:auto!important;
+    padding:12px 10px 12px!important;
+  }
+  .service-cards .card-top{
+    min-height:0!important;
+    margin:0!important;
+  }
+  .service-cards .card-no{
+    font-size:1rem!important;
+    margin:0 0 3px!important;
+  }
+  .service-cards .service-icon{
+    width:46px!important;
+    height:46px!important;
+    min-height:46px!important;
+    margin:0 auto 6px!important;
+  }
+  .service-cards .service-icon img,
+  .service-cards .service-icon svg{
+    width:46px!important;
+    height:46px!important;
+    max-width:46px!important;
+    max-height:46px!important;
+  }
+  .service-cards .card-title{
+    margin:0 0 10px!important;
+  }
+  .service-cards .card-title b{
+    font-size:1.02rem!important;
+    line-height:1.04!important;
+    letter-spacing:-.025em!important;
+  }
+  .service-cards .card.management .card-title b{
+    font-size:.82rem!important;
+  }
+  .service-cards .card-title span{
+    font-size:.72rem!important;
+    margin-top:5px!important;
+  }
+  .service-cards .card-body{
+    margin-top:auto!important;
+  }
+  .service-cards .card-body p{
+    display:none!important;
+  }
+  .service-cards .card-body a,
+  .service-cards .card-body>span{
+    display:block!important;
+    font-size:.7rem!important;
+    line-height:1.35!important;
+    margin:0!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header id="header">
