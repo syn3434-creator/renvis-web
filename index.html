@@ -1270,206 +1270,40 @@ html,body{max-width:100%;overflow-x:hidden}
 </style>
 
 
-<style id="renvis-mobile-batch-fix-20260902">
-@media (max-width:760px){
-
-  /* TOP：4サービスカードをコンパクト化 */
-  .services-grid,
-  .service-grid,
-  .cards{
-    gap:10px!important;
-  }
-  .card{
-    min-height:0!important;
-    height:auto!important;
-    padding:18px 14px 16px!important;
-  }
-  .card-top{
-    min-height:0!important;
-    margin-bottom:8px!important;
-  }
-  .card-no{
-    font-size:1.55rem!important;
-    line-height:1!important;
-    margin-bottom:8px!important;
-  }
-  .service-icon{
-    height:58px!important;
-    min-height:58px!important;
-    margin:2px 0 10px!important;
-  }
-  .service-icon img,
-  .service-icon svg{
-    width:58px!important;
-    height:58px!important;
-    max-width:58px!important;
-    max-height:58px!important;
-  }
-  .card-title{
-    margin:0 0 10px!important;
-  }
-  .card-title b{
-    font-size:1.42rem!important;
-    line-height:1.02!important;
-    letter-spacing:-.02em!important;
-    overflow-wrap:anywhere!important;
-  }
-  .card-title span{
-    font-size:.88rem!important;
-    margin-top:7px!important;
-  }
-  .card-body p{
-    font-size:.82rem!important;
-    line-height:1.62!important;
-    margin:0 0 14px!important;
-  }
-  .card-body a,
-  .card-body>span{
-    font-size:.82rem!important;
-    line-height:1.45!important;
-  }
-
-  /* MANAGEMENTだけ長いのでさらに少し縮小 */
-  .card.management .card-title b,
-  .management .card-title b{
-    font-size:1.12rem!important;
-    letter-spacing:-.035em!important;
-  }
-
-  /* お問い合わせ・各種ご案内：スマホの不自然な1文字落ちを防ぐ */
-  .site-info-section .section-head>p{
-    max-width:100%!important;
-    font-size:.9rem!important;
-    line-height:1.7!important;
-    word-break:normal!important;
-    overflow-wrap:normal!important;
-    letter-spacing:0!important;
-  }
-  .site-info-section .section-head>p br{
-    display:none!important;
-  }
-}
-</style>
-
-
-<style id="renvis-service-cards-final-compact-20260902">
-/* PC: 4サービスカードの縦幅を圧縮 */
+<style id="renvis-final-index-layout-20260902">
+/* FINAL: service cards */
 @media (min-width:761px){
-  .service-cards{
-    gap:12px!important;
-  }
-  .service-cards .card{
-    min-height:320px!important;
-    height:auto!important;
-    padding:20px 24px 18px!important;
-  }
-  .service-cards .card-top{
-    min-height:0!important;
-    margin-bottom:2px!important;
-  }
-  .service-cards .card-no{
-    font-size:1.35rem!important;
-    line-height:1!important;
-  }
-  .service-cards .service-icon{
-    width:92px!important;
-    height:82px!important;
-    min-height:82px!important;
-    margin:0 auto 8px!important;
-  }
-  .service-cards .service-icon img,
-  .service-cards .service-icon svg{
-    max-width:82px!important;
-    max-height:76px!important;
-  }
-  .service-cards .card-title{
-    margin-bottom:8px!important;
-  }
-  .service-cards .card-title b{
-    font-size:1.45rem!important;
-    line-height:1.02!important;
-  }
-  .service-cards .card-title span{
-    margin-top:5px!important;
-    font-size:.82rem!important;
-  }
-  .service-cards .card-body p{
-    margin:10px 0 16px!important;
-    font-size:.78rem!important;
-    line-height:1.65!important;
-  }
-  .service-cards .card-body a,
-  .service-cards .card-body>span{
-    font-size:.78rem!important;
-  }
-  .service-cards .card.management .card-title b{
-    font-size:1.18rem!important;
-  }
+  .service-cards{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important;align-items:stretch!important}
+  .service-cards .card{min-height:0!important;height:340px!important;padding:20px 24px 18px!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
+  .service-cards .card-top{min-height:0!important;margin:0 0 2px!important}
+  .service-cards .card-no{font-size:1.45rem!important;line-height:1!important;margin:0!important}
+  .service-cards .service-icon{width:86px!important;height:78px!important;min-height:78px!important;margin:0 auto 8px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+  .service-cards .service-icon img,.service-cards .service-icon svg{width:76px!important;height:70px!important;max-width:76px!important;max-height:70px!important;object-fit:contain!important;transform:none!important}
+  .service-cards .card-title{margin:0 0 8px!important;min-height:56px!important}
+  .service-cards .card-title b{font-size:1.45rem!important;line-height:1.03!important;letter-spacing:-.025em!important;white-space:normal!important}
+  .service-cards .card.management .card-title b{font-size:1.14rem!important}
+  .service-cards .card-title span{font-size:.82rem!important;margin-top:6px!important;line-height:1.2!important}
+  .service-cards .card-body{display:flex!important;flex:1!important;flex-direction:column!important;min-height:0!important}
+  .service-cards .card-body p{font-size:.76rem!important;line-height:1.6!important;margin:8px 0 12px!important;display:-webkit-box!important;-webkit-line-clamp:3!important;-webkit-box-orient:vertical!important;overflow:hidden!important}
+  .service-cards .card-body a,.service-cards .card-body>span{margin-top:auto!important;font-size:.76rem!important;line-height:1.35!important}
 }
-
-/* SP: 説明文を省いて、2列のままさらにコンパクト */
 @media (max-width:760px){
-  .service-cards{
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-    gap:8px!important;
-  }
-  .service-cards .card{
-    min-height:210px!important;
-    height:auto!important;
-    padding:12px 10px 12px!important;
-  }
-  .service-cards .card-top{
-    min-height:0!important;
-    margin:0!important;
-  }
-  .service-cards .card-no{
-    font-size:1rem!important;
-    margin:0 0 3px!important;
-  }
-  .service-cards .service-icon{
-    width:46px!important;
-    height:46px!important;
-    min-height:46px!important;
-    margin:0 auto 6px!important;
-  }
-  .service-cards .service-icon img,
-  .service-cards .service-icon svg{
-    width:46px!important;
-    height:46px!important;
-    max-width:46px!important;
-    max-height:46px!important;
-  }
-  .service-cards .card-title{
-    margin:0 0 10px!important;
-  }
-  .service-cards .card-title b{
-    font-size:1.02rem!important;
-    line-height:1.04!important;
-    letter-spacing:-.025em!important;
-  }
-  .service-cards .card.management .card-title b{
-    font-size:.82rem!important;
-  }
-  .service-cards .card-title span{
-    font-size:.72rem!important;
-    margin-top:5px!important;
-  }
-  .service-cards .card-body{
-    margin-top:auto!important;
-  }
-  .service-cards .card-body p{
-    display:none!important;
-  }
-  .service-cards .card-body a,
-  .service-cards .card-body>span{
-    display:block!important;
-    font-size:.7rem!important;
-    line-height:1.35!important;
-    margin:0!important;
-  }
+  .service-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+  .service-cards .card{min-height:0!important;height:190px!important;padding:12px 12px 11px!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
+  .service-cards .card-top{min-height:0!important;margin:0!important}
+  .service-cards .card-no{font-size:.95rem!important;line-height:1!important;margin:0 0 2px!important}
+  .service-cards .service-icon{width:52px!important;height:52px!important;min-height:52px!important;margin:0 auto 5px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
+  .service-cards .service-icon img,.service-cards .service-icon svg{width:48px!important;height:48px!important;max-width:48px!important;max-height:48px!important;object-fit:contain!important;transform:none!important;margin:0!important}
+  .service-cards .card-title{margin:0 0 8px!important;min-height:48px!important}
+  .service-cards .card-title b{display:block!important;font-size:.98rem!important;line-height:1.02!important;letter-spacing:-.03em!important;white-space:normal!important;overflow-wrap:anywhere!important}
+  .service-cards .card.management .card-title b{font-size:.76rem!important;letter-spacing:-.045em!important}
+  .service-cards .card-title span{font-size:.68rem!important;margin-top:5px!important;line-height:1.15!important}
+  .service-cards .card-body{display:flex!important;flex:1!important;align-items:flex-end!important}
+  .service-cards .card-body p{display:none!important}
+  .service-cards .card-body a,.service-cards .card-body>span{font-size:.66rem!important;line-height:1.25!important;margin:0!important;white-space:normal!important}
+  .site-info-section .section-head>p{font-size:.86rem!important;line-height:1.65!important;word-break:keep-all!important;overflow-wrap:normal!important;max-width:100%!important}
 }
 </style>
-
 </head>
 <body>
 <header id="header">
