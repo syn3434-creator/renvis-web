@@ -546,6 +546,219 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
 }
 </style>
 
+
+<style id="renvis-4pages-final-hero-20260902">
+/* FINAL: RENTAL / REPAIR / USED SALES / MANAGEMENT hero alignment */
+@media (min-width:761px){
+  :root{--renvis-hero-max:1600px;--renvis-hero-h:455px}
+
+  /* Keep header/navigation untouched. Only unify each page's first view. */
+  .hero,
+  .overview{
+    height:var(--renvis-hero-h)!important;
+    min-height:var(--renvis-hero-h)!important;
+    max-height:var(--renvis-hero-h)!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    overflow:hidden!important;
+    border-bottom:1px solid var(--line)!important;
+    background:linear-gradient(110deg,#070a0e 0%,#0a0d11 58%,#080b0f 100%)!important;
+  }
+  .hero:before,.hero:after{display:none!important}
+
+  .hero .wrap.hero-content,
+  .hero .wrap,
+  .overview .wrap.overview-grid,
+  .overview .wrap{
+    width:min(var(--renvis-hero-max),calc(100% - 64px))!important;
+    max-width:var(--renvis-hero-max)!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  .hero .hero-content,
+  .overview .overview-grid{
+    padding:0!important;
+    display:block!important;
+    height:auto!important;
+  }
+
+  /* Gold line sits on the common left guide; text starts at same position on all 4 pages. */
+  .hero .hero-content,
+  .overview .overview-grid > div:first-child{
+    position:relative!important;
+    max-width:980px!important;
+    padding-left:40px!important;
+  }
+  .hero .hero-content:before,
+  .overview .overview-grid > div:first-child:before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:-18px;
+    bottom:-18px;
+    width:4px;
+    border-radius:3px;
+    background:var(--gold);
+  }
+
+  .hero .eyebrow,
+  .overview .eyebrow{
+    color:var(--gold)!important;
+    font-size:.82rem!important;
+    line-height:1.2!important;
+    letter-spacing:.18em!important;
+    font-weight:900!important;
+    margin:0 0 18px!important;
+    text-transform:uppercase!important;
+  }
+  .hero h1,
+  .overview h1{
+    font-size:5.6rem!important;
+    line-height:.86!important;
+    letter-spacing:-.055em!important;
+    margin:0 0 18px!important;
+    font-weight:850!important;
+  }
+  .hero-jp,
+  .overview .hero-jp{
+    display:block!important;
+    color:#f4f6f8!important;
+    font-size:1.03rem!important;
+    line-height:1.4!important;
+    letter-spacing:.04em!important;
+    font-weight:800!important;
+    margin:0 0 34px!important;
+  }
+  .hero p,
+  .hero .unified-desc,
+  .overview .lead{
+    color:#d1d7dd!important;
+    font-size:.96rem!important;
+    line-height:1.9!important;
+    max-width:900px!important;
+    margin:0!important;
+  }
+  .hero .unified-desc span,
+  .hero .repair-desc-line{display:block!important}
+
+  /* USED SALES search/status tools remain intact, just move below the unified hero. */
+  .overview .summary-area{display:none!important}
+  .used-tools{padding:26px 0 34px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .used-tools .wrap{width:min(1460px,calc(100% - 64px));margin:auto}
+}
+
+@media (max-width:760px){
+  .hero,.overview{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:38px 0 34px!important;
+    display:block!important;
+    overflow:visible!important;
+    background:linear-gradient(145deg,#0b1016,#06080b 72%)!important;
+  }
+  .hero:before,.hero:after{display:none!important}
+  .hero .hero-content,
+  .overview .overview-grid{display:block!important;padding:0!important}
+  .hero .hero-content,
+  .overview .overview-grid > div:first-child{
+    position:relative!important;
+    padding-left:22px!important;
+    max-width:none!important;
+  }
+  .hero .hero-content:before,
+  .overview .overview-grid > div:first-child:before{
+    content:"";position:absolute;left:0;top:-7px;bottom:-7px;width:3px;border-radius:2px;background:var(--gold);
+  }
+  .hero .eyebrow,.overview .eyebrow{font-size:.68rem!important;margin:0 0 12px!important;letter-spacing:.16em!important}
+  .hero h1,.overview h1{font-size:clamp(3.15rem,15vw,4.5rem)!important;line-height:.9!important;margin:0 0 12px!important;white-space:normal!important}
+  .hero-jp,.overview .hero-jp{font-size:.86rem!important;margin:0 0 22px!important}
+  .hero p,.hero .unified-desc,.overview .lead{font-size:.84rem!important;line-height:1.85!important;margin:0!important}
+  .overview .summary-area{display:none!important}
+  .used-tools{padding:20px 0 28px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .used-tools .wrap{width:calc(100% - 28px);margin:auto}
+}
+</style>
+
+
+<style id="renvis-4pages-slim-hero-20260902">
+/* Slim / compact first-view override */
+@media (min-width:761px){
+  :root{--renvis-hero-h:320px!important}
+  .hero,.overview{
+    height:320px!important;
+    min-height:320px!important;
+    max-height:320px!important;
+  }
+  .hero .hero-content,
+  .overview .overview-grid > div:first-child{
+    padding-left:34px!important;
+    max-width:980px!important;
+  }
+  .hero .hero-content:before,
+  .overview .overview-grid > div:first-child:before{
+    top:-10px!important;
+    bottom:-10px!important;
+    width:3px!important;
+  }
+  .hero .eyebrow,.overview .eyebrow{
+    font-size:.72rem!important;
+    margin:0 0 11px!important;
+    letter-spacing:.17em!important;
+  }
+  .hero h1,.overview h1{
+    font-size:4.35rem!important;
+    line-height:.88!important;
+    margin:0 0 10px!important;
+  }
+  .hero-jp,.overview .hero-jp{
+    font-size:.91rem!important;
+    line-height:1.35!important;
+    margin:0 0 18px!important;
+  }
+  .hero p,.hero .unified-desc,.overview .lead{
+    font-size:.86rem!important;
+    line-height:1.68!important;
+    max-width:900px!important;
+  }
+  .used-tools{padding:20px 0 26px!important}
+}
+@media (max-width:760px){
+  .hero,.overview{
+    padding:24px 0 22px!important;
+  }
+  .hero .hero-content,
+  .overview .overview-grid > div:first-child{
+    padding-left:18px!important;
+  }
+  .hero .hero-content:before,
+  .overview .overview-grid > div:first-child:before{
+    top:-4px!important;
+    bottom:-4px!important;
+    width:2px!important;
+  }
+  .hero .eyebrow,.overview .eyebrow{
+    font-size:.62rem!important;
+    margin:0 0 8px!important;
+  }
+  .hero h1,.overview h1{
+    font-size:clamp(2.75rem,13vw,3.8rem)!important;
+    margin:0 0 8px!important;
+  }
+  .hero-jp,.overview .hero-jp{
+    font-size:.80rem!important;
+    margin:0 0 14px!important;
+  }
+  .hero p,.hero .unified-desc,.overview .lead{
+    font-size:.79rem!important;
+    line-height:1.68!important;
+  }
+  .used-tools{padding:16px 0 22px!important}
+}
+</style>
+
 </head>
 <body>
 
@@ -566,9 +779,9 @@ footer{border-top:1px solid var(--line);padding:20px 0 25px;color:#747d87;font-s
 <main>
 <section class="hero">
   <div class="wrap hero-content">
-    <div class="eyebrow">Attachment Rental</div>
+    <div class="eyebrow">ATTACHMENT RENTAL</div>
     <h1>RENTAL</h1>
-    <div class="hero-jp">建機用アタッチメントレンタル</div>
+    <div class="hero-jp">レンタル</div>
     <p class="unified-desc">
       <span>種類からメーカーを選び、</span>
       <span>メーカー公式カタログで詳しい仕様をご確認いただけます。</span>
