@@ -1269,6 +1269,88 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 </style>
 
+
+<style id="renvis-mobile-batch-fix-20260902">
+@media (max-width:760px){
+
+  /* TOP：4サービスカードをコンパクト化 */
+  .services-grid,
+  .service-grid,
+  .cards{
+    gap:10px!important;
+  }
+  .card{
+    min-height:0!important;
+    height:auto!important;
+    padding:18px 14px 16px!important;
+  }
+  .card-top{
+    min-height:0!important;
+    margin-bottom:8px!important;
+  }
+  .card-no{
+    font-size:1.55rem!important;
+    line-height:1!important;
+    margin-bottom:8px!important;
+  }
+  .service-icon{
+    height:58px!important;
+    min-height:58px!important;
+    margin:2px 0 10px!important;
+  }
+  .service-icon img,
+  .service-icon svg{
+    width:58px!important;
+    height:58px!important;
+    max-width:58px!important;
+    max-height:58px!important;
+  }
+  .card-title{
+    margin:0 0 10px!important;
+  }
+  .card-title b{
+    font-size:1.42rem!important;
+    line-height:1.02!important;
+    letter-spacing:-.02em!important;
+    overflow-wrap:anywhere!important;
+  }
+  .card-title span{
+    font-size:.88rem!important;
+    margin-top:7px!important;
+  }
+  .card-body p{
+    font-size:.82rem!important;
+    line-height:1.62!important;
+    margin:0 0 14px!important;
+  }
+  .card-body a,
+  .card-body>span{
+    font-size:.82rem!important;
+    line-height:1.45!important;
+  }
+
+  /* MANAGEMENTだけ長いのでさらに少し縮小 */
+  .card.management .card-title b,
+  .management .card-title b{
+    font-size:1.12rem!important;
+    letter-spacing:-.035em!important;
+  }
+
+  /* お問い合わせ・各種ご案内：スマホの不自然な1文字落ちを防ぐ */
+  .site-info-section .section-head>p{
+    max-width:100%!important;
+    font-size:.9rem!important;
+    line-height:1.7!important;
+    word-break:normal!important;
+    overflow-wrap:normal!important;
+    letter-spacing:0!important;
+  }
+  .site-info-section .section-head>p br{
+    display:none!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header id="header">
