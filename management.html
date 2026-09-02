@@ -226,6 +226,26 @@ img{max-width:100%}
 }
 </style>
 
+
+<style id="renvis-hero-bottom-line-unified-20260902">
+/* PC: RENTAL / REPAIR / MANAGEMENT のヒーロー下端を同じ高さに統一 */
+@media (min-width:761px){
+  .hero{
+    height:540px!important;
+    min-height:540px!important;
+    box-sizing:border-box!important;
+    border-bottom:1px solid var(--line)!important;
+  }
+}
+/* スマホは内容量に応じて自然な高さにする */
+@media (max-width:760px){
+  .hero{
+    height:auto!important;
+    min-height:0!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header>

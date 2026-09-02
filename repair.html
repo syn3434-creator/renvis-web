@@ -83,76 +83,39 @@ html,body{max-width:100%;overflow-x:hidden}
 .cms-img-placeholder{height:100%;min-height:210px;display:grid;place-items:center;background:linear-gradient(135deg,#171c22,#0b0f14);color:#6e7781;font-weight:900;letter-spacing:.08em}
 
 
-/* 2026-08-26 PATCH: header and hero aligned with RENTAL / USED SALES */
-@media(min-width:761px){
- .nav-links a,.home-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.08}
- .nav-en{display:block;font-size:.77rem;font-weight:800;letter-spacing:.06em}
- .nav-ja{display:block;font-size:.56rem;font-weight:600;letter-spacing:.02em;color:#e1e5e9;white-space:nowrap}
- .home-btn{padding:8px 14px}
-}
-.hero-jp{font-size:.95rem;font-weight:800;letter-spacing:.04em;margin:-8px 0 28px;color:#f5f7f9}
-.hero h2{max-width:1000px!important}
-@media(min-width:761px){.hero-copy-line{white-space:nowrap}}
-@media(max-width:760px){.hero-jp{font-size:.82rem;margin:-4px 0 22px}.hero-copy-line{white-space:normal}}
-
-/* 2026-08-26 FINAL: REPAIR hero unified with RENTAL layout */
-.repair-rental-hero{padding:36px 0 34px;background:#080d12;border-bottom:1px solid var(--line)}
-.repair-rental-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:center}
-.repair-rental-copy{min-width:0}
-.repair-rental-copy .eyebrow{margin-bottom:8px}
-.repair-rental-copy h1{font-size:clamp(4.2rem,6.6vw,7.2rem);margin:0 0 8px;line-height:.9}
-.repair-rental-copy .hero-jp{margin:0 0 22px;font-size:1rem}
-.repair-rental-copy h2{font-size:clamp(1.75rem,2.55vw,3rem);line-height:1.32;margin:0 0 16px;letter-spacing:-.025em}
-.repair-rental-copy p{color:#c7ced5;margin:0;font-size:.92rem;line-height:1.85}
-.repair-rental-photo{height:390px;overflow:hidden;border:1px solid var(--line);background:#0a0d11}
-.repair-rental-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
-.repair-points{display:grid;grid-template-columns:1fr 1fr;margin-top:22px;border:1px solid var(--line)}
-.repair-point{padding:18px 20px;min-width:0}
-.repair-point+ .repair-point{border-left:1px solid var(--line)}
-.repair-point b{display:block;font-size:.92rem;margin-bottom:3px}
-.repair-point span{display:block;color:#aeb8c2;font-size:.72rem}
-@media(max-width:900px){.repair-rental-grid{grid-template-columns:1fr;gap:0}}
-@media(max-width:760px){.repair-rental-hero{padding:28px 0}.repair-rental-copy h1{font-size:clamp(3.6rem,18vw,5.2rem)}.repair-rental-copy h2{font-size:clamp(1.5rem,7vw,1.9rem)}.repair-rental-photo{height:260px}.repair-points{grid-template-columns:1fr}.repair-point+ .repair-point{border-left:0;border-top:1px solid var(--line)}}
-
-/* 2026-08-26 COMPACT: hero height aligned closer to RENTAL */
-@media(min-width:901px){
-  .repair-rental-hero{padding:24px 0 26px}
-  .repair-rental-grid{gap:54px}
-  .repair-rental-copy h1{font-size:clamp(4rem,6vw,6.5rem)}
-  .repair-rental-copy .hero-jp{margin-bottom:18px}
-  .repair-rental-copy h2{font-size:clamp(1.6rem,2.2vw,2.55rem);margin-bottom:12px}
-  .repair-rental-copy p{line-height:1.7}
-  .repair-rental-photo{height:320px}
-  .repair-points{margin-top:16px}
-  .repair-point{padding:14px 18px}
-}
-
-
-/* 2026-08-26 RENTAL WIDTH MATCH: match RENTAL hero proportions */
-@media(min-width:901px){
-  .repair-rental-hero{padding:32px 0 34px}
-  .repair-rental-grid{grid-template-columns:1fr;gap:0;align-items:center}
-  .repair-rental-copy h1{font-size:clamp(4.1rem,5.3vw,5.9rem)}
-  .repair-rental-copy .hero-jp{margin-bottom:15px}
-  .repair-rental-copy h2{font-size:clamp(1.55rem,1.95vw,2.25rem);line-height:1.35;margin-bottom:13px}
-  .repair-rental-copy p{font-size:.86rem;line-height:1.75}
-  .repair-rental-photo{height:310px}
-  .repair-points{margin-top:18px}
-  .repair-point{padding:13px 18px}
-  .repair-point b{font-size:.88rem}
-  .repair-point span{font-size:.69rem}
-}
+.nav-links a{display:flex;flex-direction:column;align-items:center;line-height:1.12}
+.nav-links .nav-en{display:block}.nav-links .nav-ja{display:block;margin-top:4px;font-size:.62rem;letter-spacing:.02em;font-weight:600;white-space:nowrap}
+.hero-jp{font-size:.9rem;font-weight:800;margin:-8px 0 18px;color:#f4f6f8;letter-spacing:.06em}
+.hero-copy-line{display:block;white-space:nowrap}
+@media(max-width:760px){.hero-copy-line{white-space:normal}.hero-jp{font-size:.82rem}}
 
 </style>
 <script src="supabase-config.js"></script>
+
+<style id="renvis-hero-bottom-line-unified-20260902">
+/* PC: RENTAL / REPAIR / MANAGEMENT のヒーロー下端を同じ高さに統一 */
+@media (min-width:761px){
+  .hero{
+    height:540px!important;
+    min-height:540px!important;
+    box-sizing:border-box!important;
+    border-bottom:1px solid var(--line)!important;
+  }
+}
+/* スマホは内容量に応じて自然な高さにする */
+@media (max-width:760px){
+  .hero{
+    height:auto!important;
+    min-height:0!important;
+  }
+}
+</style>
+
 </head>
 <body>
-<header><div class="nav"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a><a href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a><a class="active" href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a><a href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a><a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a><a href="index.html#company"><span class="nav-en">COMPANY</span><span class="nav-ja">会社案内</span></a></nav><a class="home-btn" href="index.html"><span class="nav-en">TOPへ</span><span class="nav-ja">トップへ</span></a></div></header>
+<header><div class="nav"><a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a><nav class="nav-links"><a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a><a href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a><a class="active" href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a><a href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a><a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a></nav><a class="home-btn" href="index.html">TOPへ</a></div></header>
 <main>
-<section class="repair-rental-hero"><div class="wrap repair-rental-grid">
-<div class="repair-rental-copy"><div class="eyebrow">ATTACHMENT REPAIR</div><h1>REPAIR</h1><div class="hero-jp">修理・再生</div><h2><span class="hero-copy-line">現場を止めない。</span><span class="hero-copy-line">その一台に、もう一度仕事を。</span></h2><p><span class="repair-desc-line">肉盛り・溶接補修・刃交換・ピン・ブッシュ交換・オーバーホールまで対応。</span><span class="repair-desc-line">修理内容と仕上がりを、実例とともにご紹介します。</span></p><div class="repair-points"><div class="repair-point"><b>幅広い修理対応</b><span>主要アタッチメントの修理・再生に対応</span></div><div class="repair-point"><b>自社修理対応</b><span>状態を確認し、必要な修理をご提案</span></div></div></div>
-
-</div></section>
+<section class="hero"><div class="wrap hero-content"><div class="eyebrow">Attachment Repair</div><h1>REPAIR</h1><div class="hero-jp">修理・再生</div><h2><span class="hero-copy-line">現場を止めない。</span><span class="hero-copy-line">その一台に、もう一度仕事を。</span></h2><p><span class="repair-desc-line">肉盛り・溶接補修・刃交換・ピン・ブッシュ交換・オーバーホールまで対応。</span><span class="repair-desc-line">修理内容と仕上がりを、実例とともにご紹介します。</span></p></div></section>
 
 <section class="section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Featured Repair Case</div><h2>修理実績</h2></div><p>実際の施工前後を掲載しています。</p></div>
 <div class="main-case" id="featuredRepair">
