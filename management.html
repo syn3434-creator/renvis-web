@@ -230,56 +230,356 @@ img{max-width:100%}
 
 
 
-<style id="renvis-final-inner-layout-20260902">
-/* FINAL desktop hero alignment */
+<style id="renvis-rental-baseline-top-unify-20260902">
+:root{--renvis-top-section-height:424px}
 @media (min-width:761px){
-  .hero{height:330px!important;min-height:330px!important;max-height:330px!important;padding:34px 0 24px!important;box-sizing:border-box!important;border-bottom:1px solid var(--line)!important;overflow:hidden!important;align-items:flex-start!important}
-  .hero .wrap.hero-content{position:relative!important;width:auto!important;max-width:none!important;margin:0 56px!important;padding:0 0 0 28px!important;box-sizing:border-box!important}
-  .hero .wrap.hero-content::before{content:""!important;display:block!important;position:absolute!important;left:0!important;top:0!important;bottom:0!important;width:2px!important;background:var(--gold,#d8b64c)!important}
-  .hero .eyebrow{font-size:.76rem!important;letter-spacing:.16em!important;line-height:1.2!important;margin:0 0 14px!important}
-  .hero h1{font-size:4rem!important;line-height:.92!important;letter-spacing:-.035em!important;margin:0 0 13px!important;white-space:nowrap!important}
-  .hero .hero-jp{font-size:.86rem!important;line-height:1.35!important;font-weight:800!important;letter-spacing:.05em!important;margin:0 0 22px!important}
-  .hero p,.hero .unified-desc{font-size:.88rem!important;line-height:1.65!important;margin:0!important;max-width:820px!important}
-  .hero h2{display:none!important}
-
-  .overview{height:330px!important;min-height:330px!important;max-height:330px!important;padding:34px 0 24px!important;box-sizing:border-box!important;border-bottom:1px solid var(--line)!important;overflow:hidden!important}
-  .overview .wrap.overview-grid{position:relative!important;width:auto!important;max-width:none!important;margin:0 56px!important;padding-left:28px!important;box-sizing:border-box!important}
-  .overview .wrap.overview-grid::before{content:""!important;position:absolute!important;left:0!important;top:0!important;bottom:0!important;width:2px!important;background:var(--gold,#d8b64c)!important}
-  .overview .eyebrow{font-size:.76rem!important;letter-spacing:.16em!important;margin:0 0 14px!important}
-  .overview h1{font-size:4rem!important;line-height:.92!important;letter-spacing:-.035em!important;margin:0 0 13px!important}
-  .overview .lead{font-size:.86rem!important;line-height:1.6!important}
-  .demo-note{font-size:.72rem!important;padding:9px 12px!important;margin-top:12px!important}
+  .hero, .overview{
+    height:var(--renvis-top-section-height)!important;
+    min-height:var(--renvis-top-section-height)!important;
+    max-height:var(--renvis-top-section-height)!important;
+    box-sizing:border-box!important;
+    border-bottom:1px solid var(--line)!important;
+    overflow:hidden!important;
+  }
+  /* RENTAL / MANAGEMENT: same top and bottom spacing */
+  body:not(.used-sales-page) .hero{padding:34px 0 26px!important}
+  /* REPAIR uses an inner hero-content, so neutralize the outer flex-bottom spacing */
+  .hero .hero-content{padding:0!important;width:100%!important}
+  .hero{align-items:flex-start!important}
+  /* USED SALES uses overview instead of hero */
+  .overview{padding:34px 0 26px!important}
 }
-/* FINAL mobile hero + menu */
 @media (max-width:760px){
-  .hero{height:auto!important;min-height:0!important;max-height:none!important;padding:26px 0 24px!important}
-  .hero .wrap.hero-content{position:relative!important;width:auto!important;max-width:none!important;margin:0 14px!important;padding:0 0 0 16px!important;box-sizing:border-box!important}
-  .hero .wrap.hero-content::before{content:""!important;display:block!important;position:absolute!important;left:0!important;top:1px!important;bottom:1px!important;width:2px!important;background:var(--gold,#d8b64c)!important}
-  .hero .eyebrow{font-size:.58rem!important;letter-spacing:.13em!important;line-height:1.2!important;margin:0 0 9px!important}
-  .hero h1{font-size:clamp(2.45rem,11.5vw,3.2rem)!important;line-height:.94!important;letter-spacing:-.04em!important;margin:0 0 9px!important;max-width:100%!important;white-space:normal!important}
-  .hero .hero-jp{font-size:.72rem!important;line-height:1.35!important;margin:0 0 14px!important}
-  .hero p,.hero .unified-desc{font-size:.72rem!important;line-height:1.6!important;margin:0!important;max-width:100%!important}
-  .hero .unified-desc span{display:inline!important}.hero .unified-desc span+span::before{content:" "!important}
-  .hero h2{display:none!important}
-
-  .overview{height:auto!important;min-height:0!important;max-height:none!important;padding:26px 0 24px!important}
-  .overview .wrap.overview-grid{position:relative!important;width:auto!important;max-width:none!important;margin:0 14px!important;padding-left:16px!important;box-sizing:border-box!important;display:block!important}
-  .overview .wrap.overview-grid::before{content:""!important;position:absolute!important;left:0!important;top:1px!important;bottom:1px!important;width:2px!important;background:var(--gold,#d8b64c)!important}
-  .overview .eyebrow{font-size:.58rem!important;letter-spacing:.13em!important;margin:0 0 9px!important}
-  .overview h1{font-size:clamp(2.45rem,11.5vw,3.2rem)!important;line-height:.94!important;margin:0 0 10px!important}
-  .overview .lead{font-size:.72rem!important;line-height:1.6!important}
-  .overview .summary-area{margin-top:16px!important}
-
-  header .nav{width:calc(100% - 24px)!important;margin:0 auto!important;display:flex!important;align-items:center!important;gap:8px!important}
-  header .logo{width:min(42vw,176px)!important;height:auto!important}
-  header .nav-links{display:none!important}
-  header .home-btn{margin-left:auto!important;flex:0 0 auto!important;min-width:64px!important;height:44px!important;padding:0 9px!important;font-size:.72rem!important}
-  .inner-menu-btn{display:flex!important;width:42px!important;height:42px!important;flex:0 0 42px!important;border:0!important;background:transparent!important;padding:8px 5px!important;flex-direction:column!important;justify-content:center!important;gap:5px!important}
-  .inner-menu-btn span{display:block!important;width:100%!important;height:3px!important;background:#fff!important;border-radius:1px!important}
+  .hero,.overview{height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important}
 }
-@media (min-width:761px){.inner-menu-btn,.inner-menu-overlay,.inner-mobile-drawer{display:none!important}}
 </style>
-<style id="management-final-mobile-title-20260902">@media(max-width:760px){.hero h1{font-size:clamp(2.05rem,9.5vw,2.7rem)!important;letter-spacing:-.05em!important}}</style>
+
+<style id="renvis-four-page-hero-unified-compact-20260902">
+/* 4ページ共通: RENTALを基準に、上部の位置・文字サイズ・縦幅を統一 */
+@media (min-width:761px){
+  :root{--max:1460px!important}
+  .wrap,.nav{width:min(1460px,calc(100% - 64px))!important;margin-left:auto!important;margin-right:auto!important}
+
+  /* RENTAL / REPAIR / MANAGEMENT */
+  .hero{
+    height:420px!important;
+    min-height:420px!important;
+    max-height:420px!important;
+    padding:28px 0 22px!important;
+    box-sizing:border-box!important;
+    align-items:flex-start!important;
+    border-bottom:1px solid var(--line)!important;
+    overflow:hidden!important;
+  }
+  .hero-grid{height:100%!important;align-content:start!important;align-items:start!important}
+  .hero-grid>div:first-child{max-width:1000px!important}
+  .hero-content{padding:0!important;width:min(1460px,calc(100% - 64px))!important;margin:0 auto!important}
+
+  /* USED SALES */
+  .overview{
+    height:420px!important;
+    min-height:420px!important;
+    max-height:420px!important;
+    padding:28px 0 22px!important;
+    box-sizing:border-box!important;
+    border-bottom:1px solid var(--line)!important;
+    overflow:hidden!important;
+  }
+  .overview-grid{height:100%!important;align-content:start!important;align-items:center!important;gap:42px!important}
+
+  /* 共通タイトル */
+  .hero .eyebrow,.overview .eyebrow{font-size:.68rem!important;letter-spacing:.18em!important}
+  .hero h1,.overview h1{
+    font-size:5.25rem!important;
+    line-height:.88!important;
+    letter-spacing:-.052em!important;
+    margin:8px 0 14px!important;
+  }
+  .hero .lead,.overview .lead{font-size:1rem!important;line-height:1.7!important;margin:0 0 8px!important}
+
+  /* RENTAL / MANAGEMENT の説明と3カード */
+  .hero .rental-sub,.hero .management-sub{font-size:.92rem!important;line-height:1.75!important;margin-top:12px!important}
+  .hero .strengths{margin-top:15px!important}
+  .hero .strength{padding:16px 18px!important;min-height:108px!important}
+  .hero .strength h3{font-size:.94rem!important;margin:0 0 7px!important}
+  .hero .strength p{font-size:.78rem!important;line-height:1.65!important}
+
+  /* REPAIRだけ大きかったコピーを他ページの密度へ合わせる */
+  .hero-jp{font-size:.88rem!important;margin:-4px 0 16px!important}
+  .hero h2{font-size:2.15rem!important;line-height:1.22!important;margin:0 0 13px!important;max-width:760px!important}
+  .hero p{font-size:.88rem!important;line-height:1.72!important;max-width:820px!important}
+
+  /* USED SALES の左側も同じタイトル感に */
+  .overview .lead{max-width:620px!important}
+  .overview .demo-note{margin-top:14px!important;padding:8px 12px!important;font-size:.7rem!important}
+  .overview .stock-summary{min-height:116px!important}
+  .overview .stock-box{min-height:116px!important;padding:16px 14px!important}
+  .overview .stock-box b{font-size:2rem!important}
+  .overview .search-toggle{height:66px!important;margin-top:14px!important}
+}
+
+@media (max-width:760px){
+  .hero,.overview{height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important}
+}
+</style>
+
+
+<style id="renvis-4pages-more-compact-20260902">
+/* 4ページ共通：上部をさらにコンパクト化 */
+@media (min-width:761px){
+  .hero,
+  .overview{
+    height:330px!important;
+    min-height:330px!important;
+    box-sizing:border-box!important;
+    padding-top:34px!important;
+    padding-bottom:26px!important;
+  }
+
+  /* 共通コンテナ位置 */
+  .hero .wrap,
+  .overview .wrap,
+  .hero-grid,
+  .overview-grid{
+    max-width:1380px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  /* RENTAL / MANAGEMENT */
+  .hero h1{
+    font-size:4.15rem!important;
+    line-height:.92!important;
+    margin:8px 0 12px!important;
+  }
+  .hero .eyebrow{
+    font-size:.78rem!important;
+    letter-spacing:.16em!important;
+  }
+  .hero .lead,
+  .hero .rental-sub,
+  .hero p{
+    font-size:.92rem!important;
+    line-height:1.65!important;
+  }
+  .hero .strengths{
+    margin-top:20px!important;
+  }
+  .hero .strength-card,
+  .hero .strengths>div{
+    padding:16px 18px!important;
+  }
+  .hero .strength-card h3,
+  .hero .strengths h3{
+    font-size:.92rem!important;
+  }
+  .hero .strength-card p,
+  .hero .strengths p{
+    font-size:.78rem!important;
+    line-height:1.55!important;
+  }
+
+  /* REPAIR：左に寄りすぎているため内側へ */
+  body:has(.hero .eyebrow:first-child) .hero .wrap{
+    padding-left:72px!important;
+    padding-right:72px!important;
+  }
+
+  /* REPAIR 専用 */
+  .hero .repair-copy,
+  .hero .hero-copy{
+    max-width:900px!important;
+  }
+  .hero .lead-title,
+  .hero .catch,
+  .hero h2{
+    font-size:1.75rem!important;
+    line-height:1.28!important;
+    margin-top:18px!important;
+    margin-bottom:12px!important;
+  }
+
+  /* USED SALES */
+  .overview h1{
+    font-size:4.15rem!important;
+    line-height:.92!important;
+    margin:8px 0 12px!important;
+  }
+  .overview .eyebrow{
+    font-size:.78rem!important;
+    letter-spacing:.16em!important;
+  }
+  .overview .lead{
+    font-size:.9rem!important;
+    line-height:1.6!important;
+  }
+  .demo-note{
+    margin-top:14px!important;
+    padding:10px 14px!important;
+    font-size:.74rem!important;
+  }
+  .stock-summary{
+    min-height:100px!important;
+  }
+  .stock-box{
+    min-height:100px!important;
+    padding:12px!important;
+  }
+  .stock-box b{
+    font-size:1.7rem!important;
+  }
+  .search-toggle{
+    min-height:54px!important;
+  }
+}
+</style>
+
+
+<style id="renvis-three-hero-exact-unify-20260902">
+@media (min-width:761px){
+  .hero{
+    height:330px!important;
+    min-height:330px!important;
+    max-height:330px!important;
+    padding:36px 0 24px!important;
+    box-sizing:border-box!important;
+    border-bottom:1px solid var(--line)!important;
+    overflow:hidden!important;
+    align-items:flex-start!important;
+  }
+  .hero .wrap.hero-content{
+    width:calc(100% - 160px)!important;
+    max-width:none!important;
+    margin:0 auto!important;
+    padding:0!important;
+  }
+  .hero .eyebrow{
+    font-size:.78rem!important;
+    line-height:1.2!important;
+    letter-spacing:.16em!important;
+    margin:0 0 16px!important;
+  }
+  .hero h1{
+    font-size:4rem!important;
+    line-height:.92!important;
+    letter-spacing:-.035em!important;
+    margin:0 0 14px!important;
+    white-space:nowrap!important;
+  }
+  .hero .hero-jp{
+    font-size:.88rem!important;
+    line-height:1.35!important;
+    font-weight:800!important;
+    letter-spacing:.06em!important;
+    margin:0 0 25px!important;
+  }
+  .hero p,
+  .hero .unified-desc{
+    margin:0!important;
+    max-width:820px!important;
+    font-size:.90rem!important;
+    line-height:1.72!important;
+    font-weight:400!important;
+  }
+  .hero .unified-desc span,
+  .hero .repair-desc-line{
+    display:block!important;
+  }
+  /* Catch copy is intentionally removed. */
+  .hero h2{display:none!important;}
+}
+@media (max-width:760px){
+  .hero{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:32px 0 28px!important;
+  }
+  .hero .wrap.hero-content{
+    width:calc(100% - 36px)!important;
+    margin:0 auto!important;
+    padding:0!important;
+  }
+  .hero h1{
+    font-size:clamp(2.8rem,14vw,4rem)!important;
+    line-height:.95!important;
+    margin:8px 0 12px!important;
+  }
+  .hero .hero-jp{
+    margin:0 0 20px!important;
+    font-size:.84rem!important;
+  }
+  .hero p,.hero .unified-desc{
+    font-size:.86rem!important;
+    line-height:1.7!important;
+    margin:0!important;
+  }
+  .hero h2{display:none!important;}
+}
+</style>
+
+
+<style id="renvis-hero-left-position-final-20260902">
+@media (min-width:761px){
+  .hero .wrap.hero-content{
+    width:auto!important;
+    max-width:none!important;
+    margin-left:100px!important;
+    margin-right:70px!important;
+    padding:0!important;
+  }
+}
+@media (max-width:760px){
+  .hero .wrap.hero-content{
+    width:auto!important;
+    margin-left:22px!important;
+    margin-right:22px!important;
+    padding:0!important;
+  }
+}
+</style>
+
+
+<style id="renvis-mobile-hero-line-gap-only-20260903">
+/* PC版は一切変更しない。スマホ版のみ黄色ラインと文字の距離を調整 */
+@media (max-width:760px){
+  .hero .wrap.hero-content{
+    border-left:3px solid var(--gold,#ddb646)!important;
+    padding-left:5px!important;
+  }
+}
+</style>
+
+<style id="renvis-mobile-menu-final-20260903">
+/* PC版は変更しない。スマホだけTOPボタンを消し、ナビを三本メニュー内へ収納 */
+.mobile-menu-toggle{display:none}
+@media(max-width:760px){
+  header .home-btn{display:none!important}
+  header .nav{position:relative!important}
+  header .mobile-menu-toggle{
+    display:grid!important;place-content:center;gap:5px;
+    width:42px;height:42px;margin-left:auto;padding:0;
+    border:0;background:transparent;cursor:pointer;z-index:1002;
+  }
+  header .mobile-menu-toggle span{display:block;width:29px;height:2px;background:#fff}
+  header .nav-links{
+    display:none!important;position:fixed!important;top:68px!important;left:0!important;right:0!important;
+    z-index:1000!important;margin:0!important;padding:16px 20px 22px!important;
+    background:#080b0f!important;border-top:1px solid rgba(255,255,255,.12)!important;
+    border-bottom:1px solid rgba(255,255,255,.16)!important;
+    flex-direction:column!important;align-items:stretch!important;gap:0!important;
+    box-shadow:0 18px 40px rgba(0,0,0,.45)!important;
+  }
+  header .nav-links.mobile-open{display:flex!important}
+  header .nav-links a{
+    display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;
+    min-height:50px!important;padding:0 4px!important;border-bottom:1px solid rgba(255,255,255,.10)!important;
+  }
+  header .nav-links a:last-child{border-bottom:0!important}
+  header .nav-links .nav-en{font-size:.88rem!important}
+  header .nav-links .nav-ja{font-size:.68rem!important;color:#aeb6bf!important;margin-left:auto!important}
+}
+</style>
 </head>
 <body>
 <header>
@@ -293,25 +593,9 @@ img{max-width:100%}
       <a class="active" href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a>
     </nav>
     <a class="home-btn" href="index.html"><span class="nav-en">TOPへ</span><span class="nav-ja">トップへ</span></a>
-  <button class="inner-menu-btn" id="innerMenuOpen" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button></div>
+      <button class="mobile-menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
 </header>
-
-<div class="inner-menu-overlay" id="innerMenuOverlay"></div>
-<aside class="inner-mobile-drawer" id="innerMobileDrawer" aria-hidden="true">
-  <div class="inner-drawer-head">
-    <img src="renvis-logo.png" alt="RENVIS">
-    <button class="inner-menu-close" id="innerMenuClose" type="button" aria-label="メニューを閉じる">×</button>
-  </div>
-  <nav class="inner-mobile-links" aria-label="スマホメニュー">
-    <a href="index.html">HOME <small>ホーム</small></a>
-    <a href="rental.html">RENTAL <small>レンタル</small></a>
-    <a href="repair.html">REPAIR <small>修理・再生</small></a>
-    <a href="used-sales.html">USED SALES <small>中古販売</small></a>
-    <a href="management.html">MANAGEMENT <small>管理・部品製作</small></a>
-    <a href="contact.html">CONTACT <small>お問い合わせ</small></a>
-  </nav>
-</aside>
-
 
 <main>
 <section class="hero">
@@ -416,34 +700,17 @@ img{max-width:100%}
 </main>
 <footer><div style="margin-bottom:8px"><a href="contact.html">お問い合わせ</a>　｜　<a href="legal.html">特定商取引法</a>　｜　<a href="privacy.html">プライバシーポリシー</a></div>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
 
-<script id="inner-mobile-menu-script-20260902">
+<script id="renvis-mobile-menu-script-20260903">
 (()=>{
-  const open=document.getElementById('innerMenuOpen');
-  const close=document.getElementById('innerMenuClose');
-  const drawer=document.getElementById('innerMobileDrawer');
-  const overlay=document.getElementById('innerMenuOverlay');
-  if(!open||!close||!drawer||!overlay)return;
-  const show=()=>{
-    drawer.classList.add('open');
-    overlay.classList.add('open');
-    document.body.classList.add('inner-menu-open');
-    drawer.setAttribute('aria-hidden','false');
-    open.setAttribute('aria-expanded','true');
-  };
-  const hide=()=>{
-    drawer.classList.remove('open');
-    overlay.classList.remove('open');
-    document.body.classList.remove('inner-menu-open');
-    drawer.setAttribute('aria-hidden','true');
-    open.setAttribute('aria-expanded','false');
-  };
-  open.addEventListener('click',show);
-  close.addEventListener('click',hide);
-  overlay.addEventListener('click',hide);
-  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',hide));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});
+ const btn=document.querySelector('.mobile-menu-toggle');
+ const menu=document.querySelector('header .nav-links');
+ if(!btn||!menu)return;
+ const close=()=>{menu.classList.remove('mobile-open');btn.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')};
+ btn.addEventListener('click',()=>{const open=!menu.classList.contains('mobile-open');menu.classList.toggle('mobile-open',open);btn.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
+ menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+ window.addEventListener('resize',()=>{if(innerWidth>760)close()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 })();
 </script>
-
 </body>
 </html>
