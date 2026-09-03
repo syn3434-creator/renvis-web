@@ -82,85 +82,68 @@ html,body{max-width:100%;overflow-x:hidden}
 
 </style>
 
-<style id="renvis-final-inner-layout-20260902">
-/* FINAL desktop hero alignment */
-@media (min-width:761px){
-  .hero{height:330px!important;min-height:330px!important;max-height:330px!important;padding:34px 0 24px!important;box-sizing:border-box!important;border-bottom:1px solid var(--line)!important;overflow:hidden!important;align-items:flex-start!important}
-  .hero .wrap.hero-content{position:relative!important;width:auto!important;max-width:none!important;margin:0 56px!important;padding:0 0 0 28px!important;box-sizing:border-box!important}
-  .hero .wrap.hero-content::before{content:""!important;display:block!important;position:absolute!important;left:0!important;top:0!important;bottom:0!important;width:2px!important;background:var(--gold,#d8b64c)!important}
-  .hero .eyebrow{font-size:.76rem!important;letter-spacing:.16em!important;line-height:1.2!important;margin:0 0 14px!important}
-  .hero h1{font-size:4rem!important;line-height:.92!important;letter-spacing:-.035em!important;margin:0 0 13px!important;white-space:nowrap!important}
-  .hero .hero-jp{font-size:.86rem!important;line-height:1.35!important;font-weight:800!important;letter-spacing:.05em!important;margin:0 0 22px!important}
-  .hero p,.hero .unified-desc{font-size:.88rem!important;line-height:1.65!important;margin:0!important;max-width:820px!important}
-  .hero h2{display:none!important}
-
-  .overview{height:330px!important;min-height:330px!important;max-height:330px!important;padding:34px 0 24px!important;box-sizing:border-box!important;border-bottom:1px solid var(--line)!important;overflow:hidden!important}
-  .overview .wrap.overview-grid{position:relative!important;width:auto!important;max-width:none!important;margin:0 56px!important;padding-left:28px!important;box-sizing:border-box!important}
-  .overview .wrap.overview-grid::before{content:""!important;position:absolute!important;left:0!important;top:0!important;bottom:0!important;width:2px!important;background:var(--gold,#d8b64c)!important}
-  .overview .eyebrow{font-size:.76rem!important;letter-spacing:.16em!important;margin:0 0 14px!important}
-  .overview h1{font-size:4rem!important;line-height:.92!important;letter-spacing:-.035em!important;margin:0 0 13px!important}
-  .overview .lead{font-size:.86rem!important;line-height:1.6!important}
-  .demo-note{font-size:.72rem!important;padding:9px 12px!important;margin-top:12px!important}
+<style id="mobile-drawer-unified-20260903">
+/* PC版は既存CSSをそのまま使用。以下はスマホ専用メニューのみ */
+.mobile-menu-toggle,.mobile-menu-overlay,.mobile-drawer{display:none}
+@media(max-width:760px){
+  .home-btn{display:none!important}
+  .mobile-menu-toggle{display:grid!important;place-content:center;gap:6px;width:44px;height:44px;margin-left:auto;border:0;background:transparent;cursor:pointer}
+  .mobile-menu-toggle span{display:block;width:31px;height:2px;background:#fff}
+  .mobile-menu-overlay{display:block;position:fixed;inset:0;z-index:998;background:rgba(0,0,0,.66);opacity:0;visibility:hidden;transition:.28s ease}
+  .mobile-menu-overlay.open{opacity:1;visibility:visible}
+  .mobile-drawer{display:flex;flex-direction:column;position:fixed;top:0;right:0;z-index:999;width:min(86vw,360px);height:100dvh;padding:22px 20px 28px;background:linear-gradient(180deg,#0b0f14,#050709);border-left:1px solid rgba(255,255,255,.15);transform:translateX(105%);transition:transform .32s ease;box-shadow:-24px 0 70px rgba(0,0,0,.45);overflow-y:auto}
+  .mobile-drawer.open{transform:translateX(0)}
+  .mobile-drawer-head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.15)}
+  .mobile-drawer-logo{width:190px;mix-blend-mode:screen}
+  .mobile-close{width:42px;height:42px;border:1px solid rgba(255,255,255,.15);background:transparent;color:#fff;font-size:1.55rem;cursor:pointer}
+  .mobile-menu-links{display:flex;flex-direction:column;margin-top:18px}
+  .mobile-menu-links a{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:54px!important;padding:0!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.15)!important;color:#fff!important;font-size:1rem!important;font-weight:800!important;letter-spacing:.05em!important;line-height:1!important}
+  .mobile-menu-links a:after{content:"→";color:#8c96a1;font-size:1.35rem}
+  .mobile-inquiry-card{margin-top:24px;padding:18px;border:1px solid rgba(255,255,255,.15);background:#0a0e13;display:flex;flex-direction:column;gap:7px}
+  .mobile-inquiry-card .mobile-inquiry-icon{font-size:1.25rem}
+  .mobile-inquiry-card strong{font-size:1rem}
+  .mobile-inquiry-card span{color:#9ca6b0;font-size:.74rem;line-height:1.7}
+  .mobile-inquiry-card a{margin-top:6px;color:#e5c15b;font-size:.78rem;font-weight:800}
+  body.mobile-menu-open{overflow:hidden}
 }
-/* FINAL mobile hero + menu */
-@media (max-width:760px){
-  .hero{height:auto!important;min-height:0!important;max-height:none!important;padding:26px 0 24px!important}
-  .hero .wrap.hero-content{position:relative!important;width:auto!important;max-width:none!important;margin:0 14px!important;padding:0 0 0 16px!important;box-sizing:border-box!important}
-  .hero .wrap.hero-content::before{content:""!important;display:block!important;position:absolute!important;left:0!important;top:1px!important;bottom:1px!important;width:2px!important;background:var(--gold,#d8b64c)!important}
-  .hero .eyebrow{font-size:.58rem!important;letter-spacing:.13em!important;line-height:1.2!important;margin:0 0 9px!important}
-  .hero h1{font-size:clamp(2.45rem,11.5vw,3.2rem)!important;line-height:.94!important;letter-spacing:-.04em!important;margin:0 0 9px!important;max-width:100%!important;white-space:normal!important}
-  .hero .hero-jp{font-size:.72rem!important;line-height:1.35!important;margin:0 0 14px!important}
-  .hero p,.hero .unified-desc{font-size:.72rem!important;line-height:1.6!important;margin:0!important;max-width:100%!important}
-  .hero .unified-desc span{display:inline!important}.hero .unified-desc span+span::before{content:" "!important}
-  .hero h2{display:none!important}
-
-  .overview{height:auto!important;min-height:0!important;max-height:none!important;padding:26px 0 24px!important}
-  .overview .wrap.overview-grid{position:relative!important;width:auto!important;max-width:none!important;margin:0 14px!important;padding-left:16px!important;box-sizing:border-box!important;display:block!important}
-  .overview .wrap.overview-grid::before{content:""!important;position:absolute!important;left:0!important;top:1px!important;bottom:1px!important;width:2px!important;background:var(--gold,#d8b64c)!important}
-  .overview .eyebrow{font-size:.58rem!important;letter-spacing:.13em!important;margin:0 0 9px!important}
-  .overview h1{font-size:clamp(2.45rem,11.5vw,3.2rem)!important;line-height:.94!important;margin:0 0 10px!important}
-  .overview .lead{font-size:.72rem!important;line-height:1.6!important}
-  .overview .summary-area{margin-top:16px!important}
-
-  header .nav{width:calc(100% - 24px)!important;margin:0 auto!important;display:flex!important;align-items:center!important;gap:8px!important}
-  header .logo{width:min(42vw,176px)!important;height:auto!important}
-  header .nav-links{display:none!important}
-  header .home-btn{margin-left:auto!important;flex:0 0 auto!important;min-width:64px!important;height:44px!important;padding:0 9px!important;font-size:.72rem!important}
-  .inner-menu-btn{display:flex!important;width:42px!important;height:42px!important;flex:0 0 42px!important;border:0!important;background:transparent!important;padding:8px 5px!important;flex-direction:column!important;justify-content:center!important;gap:5px!important}
-  .inner-menu-btn span{display:block!important;width:100%!important;height:3px!important;background:#fff!important;border-radius:1px!important}
-}
-@media (min-width:761px){.inner-menu-btn,.inner-menu-overlay,.inner-mobile-drawer{display:none!important}}
 </style>
 </head>
-<body class="used-sales-page">
+<body>
 <header>
   <div class="nav">
     <a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
     <nav class="nav-links">
-      <a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a>
-      <a href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a>
-      <a href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a>
-      <a class="active" href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a>
-      <a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a>
+      <a href="index.html">HOME</a>
+      <a href="index.html#rental">RENTAL</a>
+      <a href="index.html#repair">REPAIR</a>
+      <a class="active" href="used-sales.html">USED SALES</a>
+      <a href="index.html#management">MANAGEMENT</a>
+      <a href="index.html#company">COMPANY</a>
     </nav>
-    <a class="home-btn" href="index.html">TOPへ</a>
-  <button class="inner-menu-btn" id="innerMenuOpen" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button></div>
-</header>
-
-<div class="inner-menu-overlay" id="innerMenuOverlay"></div>
-<aside class="inner-mobile-drawer" id="innerMobileDrawer" aria-hidden="true">
-  <div class="inner-drawer-head">
-    <img src="renvis-logo.png" alt="RENVIS">
-    <button class="inner-menu-close" id="innerMenuClose" type="button" aria-label="メニューを閉じる">×</button>
+    <a class="home-btn" href="index.html">TOPへ</a><button aria-controls="mobileDrawer" aria-expanded="false" aria-label="メニューを開く" class="mobile-menu-toggle" id="menuOpen" type="button"><span></span><span></span><span></span></button>
   </div>
-  <nav class="inner-mobile-links" aria-label="スマホメニュー">
-    <a href="index.html">HOME <small>ホーム</small></a>
-    <a href="rental.html">RENTAL <small>レンタル</small></a>
-    <a href="repair.html">REPAIR <small>修理・再生</small></a>
-    <a href="used-sales.html">USED SALES <small>中古販売</small></a>
-    <a href="management.html">MANAGEMENT <small>管理・部品製作</small></a>
-    <a href="contact.html">CONTACT <small>お問い合わせ</small></a>
+</header>
+<div class="mobile-menu-overlay" id="menuOverlay"></div>
+<aside aria-hidden="true" class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-drawer-head">
+    <img alt="RENVIS" class="mobile-drawer-logo" src="renvis-logo.png">
+    <button aria-label="メニューを閉じる" class="mobile-close" id="menuClose" type="button">×</button>
+  </div>
+  <nav aria-label="スマホメニュー" class="mobile-menu-links">
+    <a href="index.html">HOME</a>
+    <a href="rental.html">RENTAL</a>
+    <a href="repair.html">REPAIR</a>
+    <a href="used-sales.html">USED SALES</a>
+    <a href="management.html">MANAGEMENT</a>
+    <a href="index.html#company">COMPANY</a>
+    <a href="contact.html">CONTACT</a>
   </nav>
+  <div class="mobile-inquiry-card">
+    <div class="mobile-inquiry-icon">✉</div>
+    <strong>お問い合わせ</strong>
+    <span>レンタル・修理・販売など、お気軽にご相談ください。</span>
+    <a href="contact.html">お問い合わせフォームへ →</a>
+  </div>
 </aside>
 
 
@@ -171,7 +154,7 @@ html,body{max-width:100%;overflow-x:hidden}
       <div class="eyebrow">Used Attachment Search</div>
       <h1>USED SALES</h1>
       <p class="lead">メーカー・種類・対応クラス・年式・価格・販売状況から<br class="desktop-break">中古建機アタッチメントを絞り込めます。</p>
-      <div class="demo-note">ⓘ 掲載内容・販売状況は随時更新しています。最新状況はお問い合わせください。</div>
+      <div class="demo-note">ⓘ 掲載商品はすべてダミーです。実際の在庫・販売状況ではありません。</div>
     </div>
     <div class="summary-area">
       <div class="stock-summary">
@@ -255,24 +238,21 @@ html,body{max-width:100%;overflow-x:hidden}
 </main>
 <footer><div style="margin-bottom:8px"><a href="contact.html">お問い合わせ</a>　｜　<a href="legal.html">特定商取引法</a>　｜　<a href="privacy.html">プライバシーポリシー</a></div>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-config.js"></script>
-
 <script>
 const types=["大割機", "小割機", "マグネット", "油圧ブレーカー", "鉄骨切断機", "木材切断機", "木材破砕機（マルチャー）", "機械式フォーク", "油圧式フォーク", "ログフォーク", "アースオーガ", "油圧式オーガ", "油圧式切削機", "ツインヘッダー", "標準バケット", "幅狭バケット", "幅広バケット", "法面バケット", "スケルトンバケット", "ホイールローダー用バケット", "特殊バケット", "バケットクラッシャー", "グラップル", "リッパー", "ポイント（爪・ツース盤）", "ブレード", "マルチブレード", "草刈り機", "クイックヒッチ", "クイックカプラ"];
-let products=[];
+const products=[{"id": 1, "maker": "オカダアイヨン", "type": "大割機", "model": "TS-WD1700V-2", "cls": "45〜70t", "year": 2021, "price": 4800000, "status": "販売中", "condition": "整備済み", "img": "rental-tswd1700.webp", "date": 20, "photo": true, "new": true}, {"id": 2, "maker": "タグチ工業", "type": "大割機", "model": "GUZZILLA DS-120A", "cls": "12〜20t", "year": 2019, "price": 3200000, "status": "商談中", "condition": "点検済み", "img": "repair-after-front.webp", "date": 19, "photo": true, "new": true}, {"id": 3, "maker": "日本ニューマチック", "type": "小割機", "model": "SV-30", "cls": "3〜5t", "year": 2023, "price": 980000, "status": "販売中", "condition": "整備済み", "img": "rental-sv30.webp", "date": 18, "photo": true, "new": true}, {"id": 4, "maker": "古河ロックドリル", "type": "油圧ブレーカー", "model": "Fx55α", "cls": "5〜8t", "year": 2022, "price": 1250000, "status": "販売中", "condition": "点検済み", "img": "rental-fx55.webp", "date": 17, "photo": true, "new": true}, {"id": 5, "maker": "オカダアイヨン", "type": "小割機", "model": "OSC-83V", "cls": "7〜12t", "year": 2018, "price": 1450000, "status": "SOLD OUT", "condition": "現状販売", "img": "repair-after-top.webp", "date": 16, "photo": true, "new": false}, {"id": 6, "maker": "坂戸工作所", "type": "マグネット", "model": "MAG-900", "cls": "12〜20t", "year": 2020, "price": 1680000, "status": "販売中", "condition": "点検済み", "img": "repair-before-top.webp", "date": 15, "photo": true, "new": false}, {"id": 7, "maker": "東空販売", "type": "油圧ブレーカー", "model": "TNB-6E", "cls": "5〜8t", "year": 2017, "price": 760000, "status": "商談中", "condition": "現状販売", "img": "hero.webp", "date": 14, "photo": true, "new": false}, {"id": 8, "maker": "オカダアイヨン", "type": "鉄骨切断機", "model": "TS-S550C", "cls": "12〜20t", "year": 2019, "price": 2900000, "status": "販売中", "condition": "整備済み", "img": "repair-before-front.webp", "date": 13, "photo": true, "new": false}, {"id": 9, "maker": "甲南建機", "type": "機械式フォーク", "model": "KF-70", "cls": "5〜8t", "year": 2016, "price": 420000, "status": "SOLD OUT", "condition": "現状販売", "img": "rental-sv30.webp", "date": 12, "photo": true, "new": false}, {"id": 10, "maker": "タグチ工業", "type": "油圧式フォーク", "model": "GV-120", "cls": "7〜12t", "year": 2020, "price": 980000, "status": "販売中", "condition": "点検済み", "img": "repair-after-front.webp", "date": 11, "photo": true, "new": false}, {"id": 11, "maker": "坂戸工作所", "type": "ログフォーク", "model": "LF-100", "cls": "7〜12t", "year": 2018, "price": 650000, "status": "販売中", "condition": "現状販売", "img": "repair-before-top.webp", "date": 10, "photo": true, "new": false}, {"id": 12, "maker": "甲南建機", "type": "アースオーガ", "model": "KA-1200", "cls": "12〜20t", "year": 2015, "price": 880000, "status": "商談中", "condition": "点検済み", "img": "hero.webp", "date": 9, "photo": true, "new": false}, {"id": 13, "maker": "日本ニューマチック", "type": "油圧式オーガ", "model": "HA-60", "cls": "5〜8t", "year": 2021, "price": 1050000, "status": "販売中", "condition": "整備済み", "img": "rental-fx55.webp", "date": 8, "photo": true, "new": false}, {"id": 14, "maker": "古河ロックドリル", "type": "ツインヘッダー", "model": "TH-20", "cls": "12〜20t", "year": 2017, "price": 2100000, "status": "販売中", "condition": "現状販売", "img": "repair-before-front.webp", "date": 7, "photo": true, "new": false}, {"id": 15, "maker": "オカダアイヨン", "type": "スケルトンバケット", "model": "SB-120", "cls": "7〜12t", "year": 2020, "price": 550000, "status": "販売中", "condition": "点検済み", "img": "rental-tswd1700.webp", "date": 6, "photo": true, "new": false}, {"id": 16, "maker": "タグチ工業", "type": "バケットクラッシャー", "model": "BC-150", "cls": "12〜20t", "year": 2018, "price": 2350000, "status": "SOLD OUT", "condition": "現状販売", "img": "repair-after-top.webp", "date": 5, "photo": true, "new": false}, {"id": 17, "maker": "坂戸工作所", "type": "グラップル", "model": "GR-70", "cls": "5〜8t", "year": 2022, "price": 790000, "status": "販売中", "condition": "整備済み", "img": "rental-sv30.webp", "date": 4, "photo": true, "new": false}, {"id": 18, "maker": "甲南建機", "type": "クイックヒッチ", "model": "QH-120", "cls": "7〜12t", "year": 2019, "price": 390000, "status": "販売中", "condition": "点検済み", "img": "repair-after-front.webp", "date": 3, "photo": true, "new": false}, {"id": 19, "maker": "東空販売", "type": "草刈り機", "model": "TM-80", "cls": "5〜8t", "year": 2016, "price": 590000, "status": "商談中", "condition": "現状販売", "img": "", "date": 2, "photo": false, "new": false}, {"id": 20, "maker": "古河ロックドリル", "type": "リッパー", "model": "FR-120", "cls": "12〜20t", "year": 2014, "price": 350000, "status": "販売中", "condition": "現状販売", "img": "", "date": 1, "photo": false, "new": false}];
 const favorites=new Set(JSON.parse(localStorage.getItem("renvisFavorites")||"[]"));
 const $=id=>document.getElementById(id);
-const yen=n=>Number.isFinite(Number(n))?Number(n).toLocaleString("ja-JP")+"円（税込）":"価格応相談";
+const yen=n=>n.toLocaleString("ja-JP")+"円（税込）";
 const statusClass=s=>s==="販売中"?"available":s==="商談中"?"negotiation":"sold";
 const conditionClass=c=>c==="整備済み"?"maintained":c==="点検済み"?"inspected":"as-is";
-function image(p){return p.photo?`<img src="${p.img}" alt="${p.model||p.title||"中古商品"}">`:`<div class="no-photo">NO PHOTO</div>`}
+function image(p){return p.photo?`<img src="${p.img}" alt="${p.model}">`:`<div class="no-photo">NO PHOTO</div>`}
 function card(p,arrival=false){
  return `<article class="card">
   <div class="card-image">${image(p)}${arrival?'<span class="new-badge">NEW</span>':`<span class="status ${statusClass(p.status)}">${p.status}</span>`}<button class="favorite ${favorites.has(p.id)?'active':''}" data-id="${p.id}" type="button">${favorites.has(p.id)?'★':'☆'}</button>${arrival?'':'<span class="updating">商品情報更新中</span>'}</div>
   <div class="card-body">
-    <div class="category">${p.type||"中古商品"}</div><h3>${p.model||p.title||"中古商品"}</h3><div class="maker">${p.maker||""}</div>
-    <div class="tags">${p.condition?`<span class="tag condition ${conditionClass(p.condition)}">${p.condition}</span>`:""}${p.cls?`<span class="tag">${p.cls}</span>`:""}${p.year?`<span class="tag">${p.year}年</span>`:""}<span class="tag">● 福岡県</span></div>
+    <div class="category">${p.type}</div><h3>${p.model}</h3><div class="maker">${p.maker}</div>
+    <div class="tags"><span class="tag condition ${conditionClass(p.condition)}">${p.condition}</span><span class="tag">${p.cls}</span><span class="tag">${p.year}年</span><span class="tag">● 福岡県</span></div>
     <div class="price-row"><div class="price">${yen(p.price)}</div><a class="detail" href="used-detail.html?id=${p.id}">詳細を見る →</a></div>
   </div></article>`;
 }
@@ -313,77 +293,26 @@ $("searchBtn").onclick=render;$("resetBtn").onclick=reset;$("sort").onchange=ren
 $("chips").onclick=e=>{if(!e.target.classList.contains("chip"))return;const active=e.target.classList.toggle("active");document.querySelectorAll(".chip").forEach(c=>{if(c!==e.target)c.classList.remove("active")});$("type").value=active?e.target.dataset.type:"";render()};
 $("prevArrival").onclick=()=>$("arrivals").scrollBy({left:-360,behavior:"smooth"});
 $("nextArrival").onclick=()=>$("arrivals").scrollBy({left:360,behavior:"smooth"});
-function updateCounts(){
- $("availableCount").textContent=products.filter(p=>p.status==="販売中").length+"件";
- $("negotiationCount").textContent=products.filter(p=>p.status==="商談中").length+"件";
- $("soldCount").textContent=products.filter(p=>p.status==="SOLD OUT").length+"件";
- $("totalCount").textContent=products.length+"件";
-}
-
-async function loadUsedItems(){
- try{
-  if(!window.RENVIS_SUPABASE?.url||!window.RENVIS_SUPABASE?.key)throw new Error("Supabase設定を読み込めませんでした。");
-  const db=window.supabase.createClient(window.RENVIS_SUPABASE.url,window.RENVIS_SUPABASE.key);
-  const {data,error}=await db.from("used_items").select("*").eq("is_public",true).order("sort_order",{ascending:true}).order("created_at",{ascending:false});
-  if(error)throw error;
-
-  products=(data||[]).map((row,index)=>({
-   id:Number(row.id),
-   title:row.title??row["タイトル"]??"",
-   maker:row.maker??row["Maker"]??row["メーカー"]??"",
-   type:row.type??"",
-   model:row.model??row["モデル"]??"",
-   cls:row.cls??"",
-   year:row.year==null?null:Number(row.year),
-   price:row.price??row["プライス"]??row["価格"]??null,
-   status:row.status??"販売中",
-   condition:row.condition??row["条件"]??"",
-   img:row.thumbnail_url??"",
-   photo:Boolean(row.thumbnail_url),
-   date:row.created_at?new Date(row.created_at).getTime():0,
-   new:index<8
-  }));
-
-  updateCounts(); updateFavoriteCount(); renderArrivals(); render();
- }catch(err){
-  console.error("used_items load error:",err);
-  products=[]; updateCounts(); updateFavoriteCount();
-  $("arrivals").innerHTML="";
-  $("count").textContent="商品情報を読み込めませんでした";
-  $("products").innerHTML='<div class="no-results" style="display:block">商品情報の取得に失敗しました。時間をおいて再度お試しください。</div>';
- }
-}
-loadUsedItems();
+$("availableCount").textContent=products.filter(p=>p.status==="販売中").length+"件";
+$("negotiationCount").textContent=products.filter(p=>p.status==="商談中").length+"件";
+$("soldCount").textContent=products.filter(p=>p.status==="SOLD OUT").length+"件";
+$("totalCount").textContent=products.length+"件";
+updateFavoriteCount();renderArrivals();render();
 </script>
 
-<script id="inner-mobile-menu-script-20260902">
-(()=>{
-  const open=document.getElementById('innerMenuOpen');
-  const close=document.getElementById('innerMenuClose');
-  const drawer=document.getElementById('innerMobileDrawer');
-  const overlay=document.getElementById('innerMenuOverlay');
-  if(!open||!close||!drawer||!overlay)return;
-  const show=()=>{
-    drawer.classList.add('open');
-    overlay.classList.add('open');
-    document.body.classList.add('inner-menu-open');
-    drawer.setAttribute('aria-hidden','false');
-    open.setAttribute('aria-expanded','true');
-  };
-  const hide=()=>{
-    drawer.classList.remove('open');
-    overlay.classList.remove('open');
-    document.body.classList.remove('inner-menu-open');
-    drawer.setAttribute('aria-hidden','true');
-    open.setAttribute('aria-expanded','false');
-  };
-  open.addEventListener('click',show);
-  close.addEventListener('click',hide);
-  overlay.addEventListener('click',hide);
-  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',hide));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});
+<script id="mobile-drawer-script-20260903">
+(function(){
+  const openBtn=document.getElementById('menuOpen');
+  const closeBtn=document.getElementById('menuClose');
+  const drawer=document.getElementById('mobileDrawer');
+  const overlay=document.getElementById('menuOverlay');
+  if(!openBtn||!closeBtn||!drawer||!overlay)return;
+  const openMenu=()=>{drawer.classList.add('open');overlay.classList.add('open');drawer.setAttribute('aria-hidden','false');openBtn.setAttribute('aria-expanded','true');document.body.classList.add('mobile-menu-open')};
+  const closeMenu=()=>{drawer.classList.remove('open');overlay.classList.remove('open');drawer.setAttribute('aria-hidden','true');openBtn.setAttribute('aria-expanded','false');document.body.classList.remove('mobile-menu-open')};
+  openBtn.addEventListener('click',openMenu);closeBtn.addEventListener('click',closeMenu);overlay.addEventListener('click',closeMenu);
+  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 })();
 </script>
-
 </body>
 </html>
