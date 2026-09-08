@@ -339,10 +339,25 @@ function card(p,arrival=false){
 }
 function updateFavoriteCount(){$("favoriteCount").textContent=favorites.size+"件"}
 function renderArrivals(){$("arrivals").innerHTML=filtered().filter(p=>p.new).sort((a,b)=>b.date-a.date).map(p=>card(p,true)).join("")}
-function filtered(){
+function classMatch(productClass, selectedClass){
+  if(!selectedClass) return true;
+
+  const productTon = parseFloat(productClass);
+  const range = selectedClass.match(/\d+(?:\.\d+)?/g);
+
+  if(!Number.isFinite(productTon) || !range || range.length < 2){
+    return productClass === selectedClass;
+  }
+
+  const min = Number(range[0]);
+  const max = Number(range[1]);
+
+  return productTon >= min && productTon <= max;
+}
+  function filtered(){
  const kw=$("keyword").value.trim().toLowerCase(),maker=$("maker").value,type=$("type").value,cls=$("class").value,status=$("status").value;
  const ymin=+$("yearMin").value||0,ymax=+$("yearMax").value||9999,pmin=+$("priceMin").value||0,pmax=+$("priceMax").value||Infinity,photo=$("photoOnly").checked;
-return products.filter(p=>(!kw||`${p.title} ${p.maker} ${p.type} ${p.model} ${p.cls}`.toLowerCase().includes(kw))&&(!maker||p.maker===maker)&&(!type||p.type===type)&&(!cls||p.cls===cls)&&(!status||p.status===status)&&p.year>=ymin&&p.year<=ymax&&p.price>=pmin&&p.price<=pmax&&(!photo||p.photo));
+return products.filter(p=>(!kw||`${p.title} ${p.maker} ${p.type} ${p.model} ${p.cls}`.toLowerCase().includes(kw))&&(!maker||p.maker===maker)&&(!type||p.type===type)&&classMatch(p.cls,cls)&&(!status||p.status===status)&&p.year>=ymin&&p.year<=ymax&&p.price>=pmin&&p.price<=pmax&&(!photo||p.photo));
 }
   function render(){
  let list=filtered();const sort=$("sort").value;
