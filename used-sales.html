@@ -342,7 +342,7 @@ function renderArrivals(){$("arrivals").innerHTML=filtered().filter(p=>p.new).so
 function filtered(){
  const kw=$("keyword").value.trim().toLowerCase(),maker=$("maker").value,type=$("type").value,cls=$("class").value,status=$("status").value;
  const ymin=+$("yearMin").value||0,ymax=+$("yearMax").value||9999,pmin=+$("priceMin").value||0,pmax=+$("priceMax").value||Infinity,photo=$("photoOnly").checked;
- return products.filter(p=>(!kw||`${p.maker} ${p.type} ${p.model} ${p.cls}`.toLowerCase().includes(kw))&&(!maker||p.maker===maker)&&(!type||p.type===type)&&(!cls||p.cls===cls)&&(!status||p.status===status)&&p.year>=ymin&&p.year<=ymax&&p.price>=pmin&&p.price<=pmax&&(!photo||p.photo));
+ return products.filter(p=>(!kw||`${p.title} ${p.maker} ${p.type} ${p.model} ${p.cls}`.toLowerCase().includes(kw))&&(!maker||p.maker===maker)&&(!type||p.type===type)&&(!cls||p.cls===cls)&&(!status||p.status===status)&&p.year>=ymin&&p.year<=ymax&&p.price>=pmin&&p.price<=pmax&&(!photo||p.photo));
 }
 function render(){
  let list=filtered();const sort=$("sort").value;
