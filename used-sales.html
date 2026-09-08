@@ -338,7 +338,7 @@ function card(p,arrival=false){
   </div></article>`;
 }
 function updateFavoriteCount(){$("favoriteCount").textContent=favorites.size+"件"}
-function renderArrivals(){$("arrivals").innerHTML=products.filter(p=>p.new).sort((a,b)=>b.date-a.date).map(p=>card(p,true)).join("")}
+function renderArrivals(){$("arrivals").innerHTML=filtered().filter(p=>p.new).sort((a,b)=>b.date-a.date).map(p=>card(p,true)).join("")}
 function filtered(){
  const kw=$("keyword").value.trim().toLowerCase(),maker=$("maker").value,type=$("type").value,cls=$("class").value,status=$("status").value;
  const ymin=+$("yearMin").value||0,ymax=+$("yearMax").value||9999,pmin=+$("priceMin").value||0,pmax=+$("priceMax").value||Infinity,photo=$("photoOnly").checked;
@@ -370,7 +370,7 @@ document.addEventListener("click",e=>{
  }
 });
 $("searchToggle").onclick=()=>{const open=$("filterCollapse").classList.toggle("open");$("searchToggle").setAttribute("aria-expanded",String(open))};
-$("searchBtn").onclick=render;$("resetBtn").onclick=reset;$("sort").onchange=render;
+$("searchBtn").onclick=()=>{renderArrivals();render();};
 $("chips").onclick=e=>{if(!e.target.classList.contains("chip"))return;const active=e.target.classList.toggle("active");document.querySelectorAll(".chip").forEach(c=>{if(c!==e.target)c.classList.remove("active")});$("type").value=active?e.target.dataset.type:"";render()};
 $("prevArrival").onclick=()=>$("arrivals").scrollBy({left:-360,behavior:"smooth"});
 $("nextArrival").onclick=()=>$("arrivals").scrollBy({left:360,behavior:"smooth"});
@@ -403,7 +403,7 @@ async function loadUsedItems(){
    cls:row.cls??"",
    year:row.year==null?null:Number(row.year),
    price:row.price??row["プライス"]??row["価格"]??null,
-status:String(row.status??row["状態"]??"販売中").trim(),
+status:String(row.status??row["状態"]??"販売中").replace(/[\s\u200B-\u200D\uFEFF]/g,""),
    condition:row.condition??row["条件"]??"",
    img:row.thumbnail_url||firstImageByItem.get(Number(row.id))||"",
    photo:Boolean(row.thumbnail_url||firstImageByItem.get(Number(row.id))),
