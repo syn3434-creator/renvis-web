@@ -375,7 +375,7 @@ $("chips").onclick=e=>{if(!e.target.classList.contains("chip"))return;const acti
 $("prevArrival").onclick=()=>$("arrivals").scrollBy({left:-360,behavior:"smooth"});
 $("nextArrival").onclick=()=>$("arrivals").scrollBy({left:360,behavior:"smooth"});
 function updateCounts(){
- $("availableCount").textContent=products.filter(p=>p.status==="販売中").length+"件";
+$("availableCount").textContent=products.filter(p=>String(p.status).includes("販売中")).length+"件";
  $("negotiationCount").textContent=products.filter(p=>p.status==="商談中").length+"件";
  $("soldCount").textContent=products.filter(p=>p.status==="SOLD OUT").length+"件";
  $("totalCount").textContent=products.length+"件";
