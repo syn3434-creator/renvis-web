@@ -403,7 +403,7 @@ async function loadUsedItems(){
    cls:row.cls??"",
    year:row.year==null?null:Number(row.year),
    price:row.price??row["プライス"]??row["価格"]??null,
-   status:row.status??"販売中",
+status:row.status??row["状態"]??"販売中",
    condition:row.condition??row["条件"]??"",
    img:row.thumbnail_url||firstImageByItem.get(Number(row.id))||"",
    photo:Boolean(row.thumbnail_url||firstImageByItem.get(Number(row.id))),
