@@ -342,8 +342,7 @@ function renderArrivals(){$("arrivals").innerHTML=filtered().filter(p=>p.new).so
 function filtered(){
  const kw=$("keyword").value.trim().toLowerCase(),maker=$("maker").value,type=$("type").value,cls=$("class").value,status=$("status").value;
  const ymin=+$("yearMin").value||0,ymax=+$("yearMax").value||9999,pmin=+$("priceMin").value||0,pmax=+$("priceMax").value||Infinity,photo=$("photoOnly").checked;
- return products.filter(p=>(!kw||`${p.title} ${p.maker} ${p.type} ${p.model} ${p.cls}`.toLowerCase().includes(kw))&&(!maker||p.maker===maker)&&(!type||p.type===type)&&(!cls||p.cls===cls)&&(!status||p.status===status)&&p.year>=ymin&&p.year<=ymax&&p.price>=pmin&&p.price<=pmax&&(!photo||p.photo));
-}
+ (!cls||(()=>{const n=parseFloat(p.cls),r=cls.match(/\d+(?:\.\d+)?/g)?.map(Number)||[];return r.length>=2?n>=r[0]&&n<=r[1]:p.cls===cls})())
 function render(){
  let list=filtered();const sort=$("sort").value;
  if(sort==="new")list.sort((a,b)=>b.date-a.date);
@@ -356,9 +355,22 @@ function render(){
  $("products").innerHTML=list.length?list.map(p=>card(p,false)).join(""):`<div class="no-results" style="display:block">条件に一致する商品がありません。</div>`;
 }
 function reset(){
- ["keyword","maker","type","class","yearMin","yearMax","priceMin","priceMax","status"].forEach(id=>$(id).value="");
- $("photoOnly").checked=false;$("sort").value="new";
- document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));render();
+  $("keyword").value="";
+  $("maker").value="";
+  $("type").value="";
+  $("class").value="";
+  $("yearMin").value="";
+  $("yearMax").value="";
+  $("priceMin").value="";
+  $("priceMax").value="";
+  $("status").value="";
+  $("photoOnly").checked=false;
+  $("sort").value="new";
+
+  document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));
+
+  renderArrivals();
+  render();
 }
 document.addEventListener("click",e=>{
  const fav=e.target.closest(".favorite");
