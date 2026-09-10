@@ -20,7 +20,7 @@
   const id=Number(new URLSearchParams(location.search).get("id")||0);
   const cfg=window.RENVIS_SUPABASE;
   const esc=(v='')=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const yen=n=>Number.isFinite(Number(n))?Number(n).toLocaleString("ja-JP")+"円（税込）":"価格応相談";
+const yen=n=>(n===null||n===undefined||n==="")?"価格応相談":Number(n).toLocaleString("ja-JP")+"円（税込）";
   if(!id||!cfg?.url||!cfg?.key){ document.getElementById("model").textContent="商品情報を取得できません"; return; }
   try{
     const db=window.supabase.createClient(cfg.url,cfg.key);
