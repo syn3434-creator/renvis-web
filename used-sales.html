@@ -388,6 +388,7 @@ function reset(){
   renderArrivals();
   render();
 }
+  $("resetBtn").onclick=reset;
 document.addEventListener("click",e=>{
  const fav=e.target.closest(".favorite");
  if(fav){
@@ -440,7 +441,9 @@ status:String(row.status??row["状態"]??"販売中").replace(/[\s\u200B-\u200D\
   }));
 
   updateCounts(); updateFavoriteCount(); renderArrivals(); render();
- }catch(err){
+ }
+
+ catch(err){
   console.error("used_items load error:",err);
   products=[]; updateCounts(); updateFavoriteCount();
   $("arrivals").innerHTML="";
