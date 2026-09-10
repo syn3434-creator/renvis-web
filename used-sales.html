@@ -324,7 +324,7 @@ const types=["大割機", "小割機", "マグネット", "油圧ブレーカー
 let products=[];
 const favorites=new Set(JSON.parse(localStorage.getItem("renvisFavorites")||"[]"));
 const $=id=>document.getElementById(id);
-const yen=n=>Number.isFinite(Number(n))?Number(n).toLocaleString("ja-JP")+"円（税込）":"価格応相談";
+const yen=n=>(n===null||n===undefined||n==="")?"価格応相談":Number(n).toLocaleString("ja-JP")+"円（税込）";
 const statusClass=s=>s==="販売中"?"available":s==="商談中"?"negotiation":"sold";
 const conditionClass=c=>c==="整備済み"?"maintained":c==="点検済み"?"inspected":"as-is";
 function image(p){return p.photo?`<img src="${p.img}" alt="${p.model||p.title||"中古商品"}">`:`<div class="no-photo">NO PHOTO</div>`}
