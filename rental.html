@@ -411,37 +411,28 @@ header{
   overflow-wrap:anywhere;
 }
 
-.maker-count{
-  flex:0 0 auto;
-  border:1px solid var(--line);
-  padding:6px 9px;
-  font-size:.64rem;
-  color:#cbd2d8;
-  white-space:nowrap;
-}
-
-
 /* =========================
    MAKER PHOTO
    PC・スマホ共通比率
 ========================= */
-
 .maker-photo{
   width:100%;
-  aspect-ratio:4 / 3;
+  aspect-ratio:16 / 9;
   margin-top:18px;
   display:grid;
   place-items:center;
   overflow:hidden;
   border:1px solid rgba(255,255,255,.10);
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(255,255,255,.035),
-      transparent 60%
-    ),
-    #0a0e13;
-  padding:14px;
+  background:#0a0e13;
+  padding:22px;
+}
+
+.maker-photo img{
+  width:auto;
+  height:85%;
+  max-width:78%;
+  object-fit:contain;
+  object-position:center;
 }
 
 .maker-photo img{
@@ -1074,7 +1065,22 @@ footer{
   }
 
 }
+@media(max-width:760px){
 
+  .maker-photo{
+    aspect-ratio:16 / 10;
+    padding:18px;
+  }
+
+  .maker-photo img{
+    width:auto;
+    height:82%;
+    max-width:82%;
+    object-fit:contain;
+    object-position:center;
+  }
+
+}
 </style>
 
 </head>
@@ -2487,10 +2493,6 @@ function render(key){
 
                 </div>
 
-
-                <div class="maker-count">
-                  RENVIS STOCK
-                </div>
 
               </div>
 
