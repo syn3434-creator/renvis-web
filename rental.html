@@ -3,10 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="株式会社レンビスの建機用アタッチメントレンタル。種類からメーカーを選び、メーカー公式カタログで詳しい仕様をご確認いただけます。">
+
+<meta
+  name="description"
+  content="株式会社レンビスの建機用アタッチメントレンタル。種類からメーカーを選び、メーカー公式カタログで詳しい仕様をご確認いただけます。"
+>
+
 <title>建機アタッチメントレンタル | RENVIS</title>
 
 <style>
+
 :root{
   --bg:#06080b;
   --panel:#0c1117;
@@ -19,22 +25,49 @@
   --max:1460px;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
 body{
   margin:0;
+  max-width:100%;
+  overflow-x:hidden;
   background:var(--bg);
   color:var(--text);
   font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;
   line-height:1.6;
 }
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-img{display:block;max-width:100%}
-.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.wrap{
+  width:min(var(--max),calc(100% - 64px));
+  margin:auto;
+}
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
   position:sticky;
@@ -78,6 +111,7 @@ header{
   justify-content:center;
   gap:3px;
   line-height:1.08;
+  white-space:nowrap;
 }
 
 .nav-links a{
@@ -114,8 +148,14 @@ header{
   font-weight:800;
 }
 
+.home-btn .nav-ja{
+  font-size:.52rem;
+}
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
   width:100%;
@@ -123,14 +163,12 @@ header{
   min-height:220px;
   max-height:220px;
   padding:26px 0 10px;
-  box-sizing:border-box;
   background:#06080b;
   border-bottom:1px solid rgba(255,255,255,.15);
   overflow:hidden;
 }
 
 .hero .wrap.hero-content{
-  box-sizing:border-box;
   width:calc(100% - 36px);
   max-width:none;
   margin:0 18px;
@@ -179,7 +217,9 @@ header{
 }
 
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 .section{
   padding:48px 0;
@@ -187,7 +227,7 @@ header{
 
 .section-head{
   display:flex;
-  align-items:end;
+  align-items:flex-end;
   justify-content:space-between;
   gap:24px;
   margin-bottom:20px;
@@ -207,7 +247,9 @@ header{
 }
 
 
-/* ROUTE */
+/* =========================
+   ROUTE
+========================= */
 
 .route{
   display:flex;
@@ -230,15 +272,18 @@ header{
 }
 
 
-/* CATEGORIES */
+/* =========================
+   CATEGORIES
+========================= */
 
 .categories{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(5,minmax(0,1fr));
   gap:12px;
 }
 
 .category-card{
+  min-width:0;
   min-height:92px;
   display:flex;
   align-items:center;
@@ -269,6 +314,7 @@ header{
 
 .category-card span{
   display:block;
+  width:100%;
   padding:20px 12px;
   font-weight:900;
   font-size:.86rem;
@@ -276,7 +322,9 @@ header{
 }
 
 
-/* CATALOG */
+/* =========================
+   CATALOG
+========================= */
 
 .catalog-panel{
   display:none;
@@ -317,15 +365,18 @@ header{
 }
 
 
-/* MAKERS */
+/* =========================
+   MAKER CARDS
+========================= */
 
 .makers{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:14px;
 }
 
 .maker-card{
+  min-width:0;
   border:1px solid var(--line);
   background:linear-gradient(180deg,#10161d,#080b0f);
   padding:22px;
@@ -341,6 +392,10 @@ header{
   align-items:flex-start;
 }
 
+.maker-name{
+  min-width:0;
+}
+
 .maker-name small{
   display:block;
   color:var(--gold);
@@ -353,9 +408,11 @@ header{
   font-size:1.45rem;
   margin:0;
   line-height:1.15;
+  overflow-wrap:anywhere;
 }
 
 .maker-count{
+  flex:0 0 auto;
   border:1px solid var(--line);
   padding:6px 9px;
   font-size:.64rem;
@@ -364,24 +421,43 @@ header{
 }
 
 
-/* メーカー写真 */
+/* =========================
+   MAKER PHOTO
+   PC・スマホ共通比率
+========================= */
 
 .maker-photo{
+  width:100%;
+  aspect-ratio:4 / 3;
   margin-top:18px;
-  height:165px;
+  display:grid;
+  place-items:center;
   overflow:hidden;
-  border:1px solid var(--line);
-  background:#0a0e13;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255,255,255,.035),
+      transparent 60%
+    ),
+    #0a0e13;
+  padding:14px;
 }
 
 .maker-photo img{
+  display:block;
   width:100%;
   height:100%;
-  object-fit:cover;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center;
 }
 
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 .maker-actions{
   display:flex;
@@ -423,7 +499,9 @@ header{
 }
 
 
-/* CTA */
+/* =========================
+   CONTACT
+========================= */
 
 .cta{
   margin-top:28px;
@@ -466,18 +544,9 @@ header{
 }
 
 
-/* FOOTER */
-
-footer{
-  border-top:1px solid var(--line);
-  padding:20px 0 25px;
-  color:#747d87;
-  font-size:.68rem;
-  text-align:center;
-}
-
-
-/* FEATURED */
+/* =========================
+   FEATURED
+========================= */
 
 .featured-section{
   display:block;
@@ -488,7 +557,7 @@ footer{
   display:flex;
   justify-content:space-between;
   gap:24px;
-  align-items:end;
+  align-items:flex-end;
   margin-bottom:16px;
 }
 
@@ -506,11 +575,12 @@ footer{
 
 .featured-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:14px;
 }
 
 .featured-card{
+  min-width:0;
   border:1px solid var(--line);
   background:linear-gradient(180deg,#11171e,#080b0f);
   overflow:hidden;
@@ -526,7 +596,7 @@ footer{
 
 .featured-card img.featured-img-contain{
   object-fit:contain;
-  object-position:center center;
+  object-position:center;
   background:#11161b;
 }
 
@@ -589,7 +659,6 @@ footer{
   justify-content:center;
   gap:18px;
   padding:26px;
-  text-align:left;
 }
 
 .featured-empty-mark{
@@ -625,7 +694,22 @@ footer{
 }
 
 
-/* MOBILE MENU */
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:20px 0 25px;
+  color:#747d87;
+  font-size:.68rem;
+  text-align:center;
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
 
 .mobile-menu-toggle,
 .mobile-menu-overlay,
@@ -634,18 +718,26 @@ footer{
 }
 
 
-/* TABLET */
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:1100px){
 
   .categories{
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .featured-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:760px){
 
@@ -653,6 +745,7 @@ footer{
   .nav{
     width:calc(100% - 28px);
   }
+
 
   header{
     height:68px;
@@ -669,6 +762,7 @@ footer{
   .home-btn{
     display:none;
   }
+
 
   .mobile-menu-toggle{
     display:grid;
@@ -803,6 +897,8 @@ footer{
   }
 
 
+  /* HERO */
+
   .hero{
     height:auto;
     min-height:0;
@@ -839,6 +935,8 @@ footer{
   }
 
 
+  /* SECTIONS */
+
   .section{
     padding:34px 0;
   }
@@ -853,9 +951,24 @@ footer{
   }
 
 
+  /* CATEGORIES */
+
   .categories{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
   }
+
+  .category-card{
+    min-height:78px;
+  }
+
+  .category-card span{
+    padding:15px 8px;
+    font-size:.78rem;
+  }
+
+
+  /* CATALOG */
 
   .catalog-intro{
     display:block;
@@ -866,24 +979,61 @@ footer{
   }
 
 
+  /* MAKERS */
+
   .makers{
     grid-template-columns:1fr;
   }
 
   .maker-card{
     min-height:0;
+    padding:18px;
   }
+
+  .maker-name h3{
+    font-size:1.3rem;
+  }
+
+  .maker-count{
+    font-size:.58rem;
+    padding:6px 7px;
+  }
+
+
+  /* 写真はPCと同じ4:3比率 */
 
   .maker-photo{
-    height:190px;
+    width:100%;
+    aspect-ratio:4 / 3;
+    padding:10px;
   }
 
+  .maker-photo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+  }
+
+
+  /* CONTACT */
 
   .cta{
     align-items:flex-start;
     flex-direction:column;
+    padding:22px 18px;
   }
 
+  .cta-links{
+    width:100%;
+  }
+
+  .cta-links a{
+    flex:1;
+    text-align:center;
+  }
+
+
+  /* FEATURED */
 
   .featured-head{
     display:block;
@@ -903,9 +1053,32 @@ footer{
   }
 
 }
+
+
+@media(max-width:390px){
+
+  .categories{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .category-card span{
+    font-size:.74rem;
+  }
+
+  .maker-card{
+    padding:15px;
+  }
+
+  .maker-top{
+    gap:10px;
+  }
+
+}
+
 </style>
 
 </head>
+
 
 <body>
 
@@ -915,51 +1088,116 @@ footer{
   <div class="nav">
 
     <a href="index.html">
+
       <img
         class="logo"
         src="renvis-logo.png"
         alt="RENVIS"
       >
+
     </a>
+
 
     <nav class="nav-links">
 
       <a href="index.html">
-        <span class="nav-en">HOME</span>
-        <span class="nav-ja">ホーム</span>
+
+        <span class="nav-en">
+          HOME
+        </span>
+
+        <span class="nav-ja">
+          ホーム
+        </span>
+
       </a>
 
-      <a class="active" href="rental.html">
-        <span class="nav-en">RENTAL</span>
-        <span class="nav-ja">レンタル</span>
+
+      <a
+        class="active"
+        href="rental.html"
+      >
+
+        <span class="nav-en">
+          RENTAL
+        </span>
+
+        <span class="nav-ja">
+          レンタル
+        </span>
+
       </a>
+
 
       <a href="repair.html">
-        <span class="nav-en">REPAIR</span>
-        <span class="nav-ja">修理・再生</span>
+
+        <span class="nav-en">
+          REPAIR
+        </span>
+
+        <span class="nav-ja">
+          修理・再生
+        </span>
+
       </a>
+
 
       <a href="used-sales.html">
-        <span class="nav-en">USED SALES</span>
-        <span class="nav-ja">中古販売</span>
+
+        <span class="nav-en">
+          USED SALES
+        </span>
+
+        <span class="nav-ja">
+          中古販売
+        </span>
+
       </a>
+
 
       <a href="management.html">
-        <span class="nav-en">MANAGEMENT</span>
-        <span class="nav-ja">管理・部品製作</span>
+
+        <span class="nav-en">
+          MANAGEMENT
+        </span>
+
+        <span class="nav-ja">
+          管理・部品製作
+        </span>
+
       </a>
 
+
       <a href="index.html#company">
-        <span class="nav-en">COMPANY</span>
-        <span class="nav-ja">会社案内</span>
+
+        <span class="nav-en">
+          COMPANY
+        </span>
+
+        <span class="nav-ja">
+          会社案内
+        </span>
+
       </a>
 
     </nav>
 
-    <a class="home-btn" href="index.html">
-      <span class="nav-en">TOPへ</span>
-      <span class="nav-ja">トップへ</span>
+
+    <a
+      class="home-btn"
+      href="index.html"
+    >
+
+      <span class="nav-en">
+        TOPへ
+      </span>
+
+      <span class="nav-ja">
+        トップへ
+      </span>
+
     </a>
+
 
     <button
       aria-controls="mobileDrawer"
@@ -969,9 +1207,11 @@ footer{
       id="menuOpen"
       type="button"
     >
+
       <span></span>
       <span></span>
       <span></span>
+
     </button>
 
   </div>
@@ -1010,6 +1250,7 @@ footer{
 
   </div>
 
+
   <nav
     aria-label="スマホメニュー"
     class="mobile-menu-links"
@@ -1024,6 +1265,7 @@ footer{
     <a href="contact.html">CONTACT</a>
 
   </nav>
+
 
   <div class="mobile-inquiry-card">
 
@@ -1080,6 +1322,10 @@ footer{
 </section>
 
 
+<!-- =========================
+     おすすめレンタル
+========================= -->
+
 <section
   class="featured-section"
   id="featured-rentals"
@@ -1106,6 +1352,7 @@ footer{
       </p>
 
     </div>
+
 
     <div
       class="featured-grid"
@@ -1139,12 +1386,17 @@ footer{
 </section>
 
 
+<!-- =========================
+     種類から探す
+========================= -->
+
 <section
   class="section"
   id="rental-browser"
 >
 
   <div class="wrap">
+
 
     <div class="section-head">
 
@@ -1159,6 +1411,7 @@ footer{
         </h2>
 
       </div>
+
 
       <p>
         カテゴリーを選択すると、取扱メーカーと公式カタログを確認できます。
@@ -1206,12 +1459,14 @@ footer{
         <span>大割機</span>
       </button>
 
+
       <button
         class="category-card ready"
         data-category="pulverizer"
       >
         <span>小割機</span>
       </button>
+
 
       <button
         class="category-card ready"
@@ -1220,12 +1475,14 @@ footer{
         <span>マグネット付き小割機</span>
       </button>
 
+
       <button
         class="category-card ready"
         data-category="hydmagnet"
       >
         <span>油圧式マグネット</span>
       </button>
+
 
       <button
         class="category-card ready"
@@ -1234,12 +1491,14 @@ footer{
         <span>鉄骨カッター</span>
       </button>
 
+
       <button
         class="category-card ready"
         data-category="wastecutter"
       >
         <span>産廃カッター</span>
       </button>
+
 
       <button
         class="category-card ready"
@@ -1248,12 +1507,14 @@ footer{
         <span>機械式木材カッター</span>
       </button>
 
+
       <button
         class="category-card ready"
         data-category="breaker"
       >
         <span>油圧ブレーカー</span>
       </button>
+
 
       <button
         class="category-card ready"
@@ -1262,12 +1523,14 @@ footer{
         <span>杭打ちブレーカー</span>
       </button>
 
+
       <button
         class="category-card ready"
         data-category="mechfork"
       >
         <span>機械式フォーク</span>
       </button>
+
 
       <button
         class="category-card ready"
@@ -1276,12 +1539,14 @@ footer{
         <span>油圧式・チルトフォーク</span>
       </button>
 
+
       <button
         class="category-card ready"
         data-category="rotfork"
       >
         <span>回転フォーク</span>
       </button>
+
 
       <button
         class="category-card ready"
@@ -1290,12 +1555,14 @@ footer{
         <span>オレンジグラップル</span>
       </button>
 
+
       <button
         class="category-card ready"
         data-category="skeleton"
       >
         <span>スケルトンバケット</span>
       </button>
+
 
       <button
         class="category-card ready"
@@ -1304,12 +1571,14 @@ footer{
         <span>油圧式ふるい機</span>
       </button>
 
+
       <button
         class="category-card ready"
         data-category="bucketcrusher"
       >
         <span>バケットクラッシャー</span>
       </button>
+
 
       <button
         class="category-card ready"
@@ -1318,6 +1587,7 @@ footer{
         <span>オーガ</span>
       </button>
 
+
       <button
         class="category-card ready"
         data-category="mower"
@@ -1325,12 +1595,14 @@ footer{
         <span>草刈機</span>
       </button>
 
+
       <button
         class="category-card ready"
         data-category="extension"
       >
         <span>エキステンションアーム</span>
       </button>
+
 
       <button
         class="category-card ready"
@@ -1347,10 +1619,15 @@ footer{
       class="catalog-panel open"
     ></div>
 
+
   </div>
 
 </section>
 
+
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section class="section">
 
@@ -1373,6 +1650,7 @@ footer{
         </p>
 
       </div>
+
 
       <div class="cta-links">
 
@@ -1428,38 +1706,60 @@ footer{
 
 <script>
 
+/* =========================
+   RENTAL DATA
+========================= */
+
 const DATA = {
 
+
   crusher:{
+
     en:"Primary Crusher",
+
     title:"大割機",
+
     makers:[
+
 
       [
         "OKADA AIYON",
+
         [
+
           [
             "TS-W 公式カタログ",
             "https://media.okadaaiyon.com/cms/uploads/ctlg_TS-W_Crusher_202606.pdf"
           ],
+
           [
             "TSRC 公式カタログ",
             "https://media.okadaaiyon.com/cms/uploads/ctlg_TSRC_Crusher_202606_v2.pdf"
           ]
+
         ],
-        ""
+
+        "rental-okada-crusher.png"
+
       ],
+
 
       [
         "NPK",
+
         [
+
           [
             "NPK 圧砕機資料",
             "https://www.npk.jp/construction/shovel/recommendable_excavator_v6.pdf"
           ]
+
         ],
+
         ""
+
       ],
+
 
       [
         "TAGUCHI",
@@ -1467,58 +1767,87 @@ const DATA = {
         ""
       ],
 
+
       [
         "FURUKAWA ROCK DRILL",
+
         [
+
           [
             "大割用 Vxシリーズ",
             "https://www.furukawarockdrill.co.jp/crusher"
           ]
+
         ],
+
         ""
+
       ]
 
     ]
+
   },
 
 
   pulverizer:{
+
     en:"Pulverizer",
+
     title:"小割機",
+
     makers:[
+
 
       [
         "OKADA AIYON",
+
         [
+
           [
             "OSC 公式カタログ",
             "https://media.okadaaiyon.com/cms/uploads/ctlg_OSC_202604.pdf"
           ]
+
         ],
-        ""
+
+        "rental-okada-pulverizer.png"
+
       ],
+
 
       [
         "NPK",
+
         [
+
           [
             "メーカー公式カタログ",
             "http://www.npk.jp/digital/con_j15/index.html#page=17"
           ]
+
         ],
+
         ""
+
       ],
+
 
       [
         "FURUKAWA ROCK DRILL",
+
         [
+
           [
             "メーカー公式カタログ",
             "https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"
           ]
+
         ],
+
         ""
+
       ],
+
 
       [
         "JACTY",
@@ -1527,70 +1856,102 @@ const DATA = {
       ]
 
     ]
+
   },
 
 
   magpulverizer:{
+
     en:"Magnet Pulverizer",
+
     title:"マグネット付き小割機",
+
     makers:[
 
       [
         "OKADA AIYON",
+
         [
+
           [
             "OSC 公式カタログ",
             "https://media.okadaaiyon.com/cms/uploads/ctlg_OSC_202604.pdf"
           ]
+
         ],
+
         ""
+
       ]
 
     ]
+
   },
 
 
   hydmagnet:{
+
     en:"Hydraulic Magnet",
+
     title:"油圧式マグネット",
-    custom:"取扱メーカー・在庫状況はお問い合わせください。"
+
+    custom:
+      "取扱メーカー・在庫状況はお問い合わせください。"
+
   },
 
 
   steelcutter:{
+
     en:"Steel Cutter",
+
     title:"鉄骨カッター",
+
     makers:[
 
       [
         "OKADA AIYON",
+
         [
+
           [
             "メーカー製品情報",
             "https://okadaaiyon.com/products/"
           ]
+
         ],
+
         ""
+
       ]
 
     ]
+
   },
 
 
   wastecutter:{
+
     en:"Waste Cutter",
+
     title:"産廃カッター",
+
     makers:[
 
       [
         "OKADA AIYON",
+
         [
+
           [
             "クリーンカッター製品情報",
             "https://okadaaiyon.com/products/product/662"
           ]
+
         ],
+
         ""
+
       ],
 
       [
@@ -1600,12 +1961,16 @@ const DATA = {
       ]
 
     ]
+
   },
 
 
   woodcutter:{
+
     en:"Mechanical Wood Cutter",
+
     title:"機械式木材カッター",
+
     makers:[
 
       [
@@ -1615,52 +1980,76 @@ const DATA = {
       ]
 
     ]
+
   },
 
 
   breaker:{
+
     en:"Hydraulic Breaker",
+
     title:"油圧ブレーカー",
+
     makers:[
+
 
       [
         "OKADA AIYON",
+
         [
+
           [
             "メーカー製品情報",
             "https://okadaaiyon.com/products/"
           ]
+
         ],
+
         ""
+
       ],
+
 
       [
         "TOKU",
+
         [
+
           [
             "公式カタログ一覧",
             "https://www.toku-net.co.jp/catalog/index.html"
           ]
+
         ],
+
         ""
+
       ],
+
 
       [
         "FURUKAWA ROCK DRILL",
+
         [
+
           [
             "メーカー公式カタログ",
             "https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"
           ]
+
         ],
+
         ""
+
       ],
+
 
       [
         "MKB系",
         [],
         ""
       ],
+
 
       [
         "その他",
@@ -1669,42 +2058,64 @@ const DATA = {
       ]
 
     ]
+
   },
 
 
   pilebreaker:{
+
     en:"Pile Driving Breaker",
+
     title:"杭打ちブレーカー",
-    custom:"取扱メーカー・在庫状況はお問い合わせください。"
+
+    custom:
+      "取扱メーカー・在庫状況はお問い合わせください。"
+
   },
 
 
   mechfork:{
+
     en:"Mechanical Fork",
+
     title:"機械式フォーク",
+
     makers:[
+
 
       [
         "KBL",
+
         [
+
           [
             "KRフォーク製品情報",
             "https://www.kbl-ltd.co.jp/product/attachment/krfork/"
           ]
+
         ],
+
         ""
+
       ],
+
 
       [
         "室戸鉄工所",
+
         [
+
           [
             "メーカー製品情報",
             "http://muroto.co.jp/product/"
           ]
+
         ],
+
         ""
+
       ],
+
 
       [
         "その他保有メーカー",
@@ -1713,24 +2124,35 @@ const DATA = {
       ]
 
     ]
+
   },
 
 
   hydfork:{
+
     en:"Hydraulic / Tilt Fork",
+
     title:"油圧式・チルトフォーク",
+
     makers:[
+
 
       [
         "丸順",
+
         [
+
           [
             "丸順 製品一覧",
             "https://www.marujun.jp/products/index.html"
           ]
+
         ],
+
         ""
+
       ],
+
 
       [
         "その他保有メーカー",
@@ -1739,126 +2161,185 @@ const DATA = {
       ]
 
     ]
+
   },
 
 
   rotfork:{
+
     en:"Rotary Fork",
+
     title:"回転フォーク",
+
     makers:[
 
       [
         "OKADA AIYON",
+
         [
+
           [
             "メーカー製品情報",
             "https://okadaaiyon.com/products/"
           ]
+
         ],
+
         ""
+
       ]
 
     ]
+
   },
 
 
   orangegrapple:{
+
     en:"Orange Grapple",
+
     title:"オレンジグラップル",
+
     makers:[
 
       [
         "MARUJUN / 丸順",
+
         [
+
           [
             "丸順 オレンジグラップル公式ページ",
             "https://www.marujun.jp/products/orange-grapple/index.html"
           ]
+
         ],
+
         ""
+
       ]
 
     ]
+
   },
 
 
   skeleton:{
+
     en:"Skeleton Bucket",
+
     title:"スケルトンバケット",
+
     makers:[
 
       [
         "KBL",
+
         [
+
           [
             "スケルトンバケット製品情報",
             "https://www.kbl-ltd.co.jp/product/attachment/skeleton-bucket/"
           ]
+
         ],
+
         ""
+
       ]
 
     ]
+
   },
 
 
   screener:{
+
     en:"Hydraulic Screener",
+
     title:"油圧式ふるい機",
-    custom:"取扱メーカー・在庫状況はお問い合わせください。"
+
+    custom:
+      "取扱メーカー・在庫状況はお問い合わせください。"
+
   },
 
 
   bucketcrusher:{
+
     en:"Bucket Crusher",
+
     title:"バケットクラッシャー",
-    custom:"取扱メーカー・在庫状況はお問い合わせください。"
+
+    custom:
+      "取扱メーカー・在庫状況はお問い合わせください。"
+
   },
 
 
   auger:{
+
     en:"Hydraulic Auger",
+
     title:"オーガ",
+
     makers:[
 
       [
         "丸善工業",
+
         [
+
           [
             "AG-3000 製品情報",
             "https://maruzenkogyo.co.jp/products/ag-3000"
           ]
+
         ],
+
         ""
+
       ]
 
     ]
+
   },
 
 
   mower:{
+
     en:"Mower",
+
     title:"草刈機",
+
     makers:[
 
       [
         "三陽機器",
+
         [
+
           [
             "HKMシリーズ製品情報",
             "https://www.sanyokiki.co.jp/product-guidance/kusakari-top-line-up/hkm"
           ]
+
         ],
+
         ""
+
       ]
 
     ]
+
   },
 
 
   extension:{
+
     en:"Extension Arm",
+
     title:"エキステンションアーム",
+
     makers:[
 
       [
@@ -1868,12 +2349,16 @@ const DATA = {
       ]
 
     ]
+
   },
 
 
   cooler:{
+
     en:"Spot Cooler",
+
     title:"スポットクーラー",
+
     makers:[
 
       [
@@ -1883,10 +2368,15 @@ const DATA = {
       ]
 
     ]
+
   }
 
 };
 
+
+/* =========================
+   RENDER
+========================= */
 
 const panel =
   document.getElementById(
@@ -1916,6 +2406,14 @@ function render(key){
   const data =
     DATA[key];
 
+
+  if(
+    !data
+  ){
+    return;
+  }
+
+
   let body = "";
 
 
@@ -1925,7 +2423,7 @@ function render(key){
 
     body = `
 
-      <div
+      <article
         class="maker-card"
         style="grid-column:1/-1;min-height:0"
       >
@@ -1942,9 +2440,11 @@ function render(key){
 
         </div>
 
+
         <div class="stock-note">
           ${esc(data.custom)}
         </div>
+
 
         <div class="maker-actions">
 
@@ -1957,11 +2457,12 @@ function render(key){
 
         </div>
 
-      </div>
+      </article>
 
     `;
 
   }
+
   else{
 
     body =
@@ -1970,6 +2471,7 @@ function render(key){
           ([name,links,image]) => `
 
             <article class="maker-card">
+
 
               <div class="maker-top">
 
@@ -1985,6 +2487,7 @@ function render(key){
 
                 </div>
 
+
                 <div class="maker-count">
                   RENVIS STOCK
                 </div>
@@ -1996,6 +2499,7 @@ function render(key){
                 image
                 ?
                 `
+
                   <div class="maker-photo">
 
                     <img
@@ -2005,6 +2509,7 @@ function render(key){
                     >
 
                   </div>
+
                 `
                 :
                 ""
@@ -2034,16 +2539,19 @@ function render(key){
                     .join("")
                   :
                   `
+
                     <a
                       class="catalog-btn secondary"
                       href="contact.html"
                     >
                       詳細はお問い合わせ
                     </a>
+
                   `
                 }
 
               </div>
+
 
             </article>
 
@@ -2058,6 +2566,7 @@ function render(key){
 
     <div class="catalog-intro">
 
+
       <div>
 
         <div class="eyebrow">
@@ -2065,7 +2574,9 @@ function render(key){
         </div>
 
         <h3>
+
           ${esc(data.title)}｜
+
           ${
             data.custom
             ?
@@ -2073,9 +2584,12 @@ function render(key){
             :
             "メーカーから確認"
           }
+
         </h3>
 
+
         <p>
+
           ${
             data.custom
             ?
@@ -2083,6 +2597,7 @@ function render(key){
             :
             "詳しい仕様はメーカー公式情報をご確認ください。"
           }
+
         </p>
 
       </div>
@@ -2097,11 +2612,14 @@ function render(key){
 
       </div>
 
+
     </div>
 
 
     <div class="makers">
+
       ${body}
+
     </div>
 
 
@@ -2111,6 +2629,7 @@ function render(key){
       ""
       :
       `
+
         <div class="stock-note">
 
           型式が分からなくても大丈夫です。
@@ -2118,6 +2637,7 @@ function render(key){
           適したアタッチメントをご案内します。
 
         </div>
+
       `
     }
 
@@ -2125,6 +2645,10 @@ function render(key){
 
 }
 
+
+/* =========================
+   CATEGORY BUTTON
+========================= */
 
 const buttons =
   [
@@ -2135,11 +2659,13 @@ const buttons =
 
 
 buttons.forEach(
+
   button =>
 
     button.addEventListener(
       "click",
       () => {
+
 
         buttons.forEach(
           item =>
@@ -2164,29 +2690,39 @@ buttons.forEach(
 
 
         panel.scrollIntoView({
+
           behavior:"smooth",
+
           block:"nearest"
+
         });
 
       }
     )
+
 );
 
 
 render("crusher");
 
 
-/* おすすめレンタル機 */
+/* =========================
+   FEATURED RENTALS
+========================= */
 
 const FEATURED_RENTALS = [
 
+
   {
 
-    name:"KBL 0.45クラス フォーク",
+    name:
+      "KBL 0.45クラス フォーク",
 
-    category:"NEW RENTAL",
+    category:
+      "NEW RENTAL",
 
-    image:"rental-new-kbl-045-fork.webp",
+    image:
+      "rental-new-kbl-045-fork.webp",
 
     meta:[
       "KBL",
@@ -2197,18 +2733,22 @@ const FEATURED_RENTALS = [
     text:
       "新品レンタル機が入荷しました。最新の在庫・貸出状況はお問い合わせください。",
 
-    link:"contact.html"
+    link:
+      "contact.html"
 
   },
 
 
   {
 
-    name:"KBL 0.7クラス スケルトンバケット",
+    name:
+      "KBL 0.7クラス スケルトンバケット",
 
-    category:"NEW RENTAL",
+    category:
+      "NEW RENTAL",
 
-    image:"rental-new-kbl-07-skeleton.webp",
+    image:
+      "rental-new-kbl-07-skeleton.webp",
 
     meta:[
       "KBL",
@@ -2219,7 +2759,8 @@ const FEATURED_RENTALS = [
     text:
       "新品レンタル機が入荷しました。細かな選別・仕分け作業に。最新の在庫・貸出状況はお問い合わせください。",
 
-    link:"contact.html",
+    link:
+      "contact.html",
 
     contain:true
 
@@ -2250,6 +2791,7 @@ function renderFeatured(){
 
 
   featuredGrid.innerHTML =
+
     FEATURED_RENTALS
       .slice(
         0,
@@ -2260,12 +2802,23 @@ function renderFeatured(){
 
           <article class="featured-card">
 
+
             <div style="position:relative">
 
               <img
+
                 src="${esc(item.image)}"
+
                 alt="${esc(item.name)}"
-                class="${item.contain ? "featured-img-contain" : ""}"
+
+                class="${
+                  item.contain
+                  ?
+                  "featured-img-contain"
+                  :
+                  ""
+                }"
+
               >
 
               <span class="featured-badge">
@@ -2281,9 +2834,11 @@ function renderFeatured(){
                 ${esc(item.category || "RENTAL")}
               </small>
 
+
               <h3>
                 ${esc(item.name)}
               </h3>
+
 
               <div class="featured-meta">
 
@@ -2291,16 +2846,26 @@ function renderFeatured(){
                   (item.meta || [])
                     .map(
                       meta =>
-                        `<span>${esc(meta)}</span>`
+                        `
+                          <span>
+                            ${esc(meta)}
+                          </span>
+                        `
                     )
                     .join("")
                 }
 
               </div>
 
+
               <p>
-                ${esc(item.text || "新しく入荷したおすすめレンタル機です。")}
+                ${esc(
+                  item.text
+                  ||
+                  "新しく入荷したおすすめレンタル機です。"
+                )}
               </p>
+
 
               <a
                 class="featured-link"
@@ -2310,6 +2875,7 @@ function renderFeatured(){
               </a>
 
             </div>
+
 
           </article>
 
@@ -2327,22 +2893,30 @@ renderFeatured();
 
 <script>
 
+/* =========================
+   MOBILE DRAWER
+========================= */
+
 (() => {
+
 
   const openBtn =
     document.getElementById(
       "menuOpen"
     );
 
+
   const closeBtn =
     document.getElementById(
       "menuClose"
     );
 
+
   const drawer =
     document.getElementById(
       "mobileDrawer"
     );
+
 
   const overlay =
     document.getElementById(
@@ -2398,7 +2972,6 @@ renderFeatured();
 
   };
 
-
   const closeMenu = () => {
 
     drawer
@@ -2434,27 +3007,25 @@ renderFeatured();
 
   };
 
-
   openBtn.addEventListener(
     "click",
     openMenu
   );
-
 
   closeBtn.addEventListener(
     "click",
     closeMenu
   );
 
-
   overlay.addEventListener(
     "click",
     closeMenu
   );
 
-
   drawer
-    .querySelectorAll("a")
+    .querySelectorAll(
+      "a"
+    )
     .forEach(
       link =>
         link.addEventListener(
@@ -2462,7 +3033,6 @@ renderFeatured();
           closeMenu
         )
     );
-
 
   document.addEventListener(
     "keydown",
