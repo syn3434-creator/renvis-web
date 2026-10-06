@@ -4,208 +4,1324 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="株式会社レンビスの中古建機アタッチメント検索ページ。メーカー・種類・年式・価格・販売状況から検索できます。">
-<title>中古アタッチメント販売・検索 | RENVIS</title>
-<style>
-:root{--bg:#06080b;--panel:#0b0f14;--panel2:#10161d;--text:#f7f8fa;--muted:#9aa4af;--line:rgba(255,255,255,.15);--gold:#e0b53f;--green:#4dde65;--yellow:#ffb516;--blue:#4ca9ff;--max:1480px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input,select{font:inherit}img{display:block;max-width:100%}.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
-header{position:sticky;top:0;z-index:80;height:76px;display:flex;align-items:center;background:rgba(4,6,8,.96);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}.nav{width:min(var(--max),calc(100% - 64px));margin:auto;display:flex;align-items:center;gap:28px}.logo{width:245px;mix-blend-mode:screen}.nav-links{display:flex;gap:25px;margin-left:auto;font-size:.77rem;font-weight:800;letter-spacing:.06em}.nav-links a{padding:12px 0;border-bottom:2px solid transparent}
-.nav-en{display:block}
-.nav-ja{display:block;margin-top:4px;font-size:.62rem;letter-spacing:.02em;font-weight:600;white-space:nowrap}.nav-links a:hover,.nav-links .active{border-color:var(--gold);color:#fff}.home-btn{border:1px solid var(--line);padding:9px 14px;font-size:.74rem;font-weight:800}
-.overview{padding:38px 0 26px}.overview-grid{display:grid;grid-template-columns:minmax(390px,.75fr) minmax(650px,1.25fr);gap:48px;align-items:center}.eyebrow{color:var(--gold);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}h1{font-size:clamp(3.4rem,6.5vw,6.8rem);line-height:.88;letter-spacing:-.055em;margin:8px 0 18px}.lead{max-width:570px;color:#d1d6dc;font-size:.98rem;margin:0}.demo-note{display:inline-flex;align-items:center;gap:8px;margin-top:18px;border:1px solid rgba(224,181,63,.65);color:#e9c85e;background:rgba(224,181,63,.055);padding:9px 13px;font-size:.72rem;font-weight:700}
-.summary-area{display:grid;gap:14px}.stock-summary{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:linear-gradient(180deg,#0f141b,#090c10);padding:17px 6px}.stock-box{display:flex;align-items:center;justify-content:center;gap:13px;min-height:70px;border-right:1px solid var(--line)}.stock-box:last-child{border:0}.stock-icon{font-size:1.7rem}.stock-box small{display:block;color:#bec5cd;font-size:.72rem}.stock-box b{display:block;font-size:1.9rem;line-height:1.1}.stock-box.available b,.stock-box.available .stock-icon{color:var(--green)}.stock-box.negotiation b,.stock-box.negotiation .stock-icon{color:var(--yellow)}.stock-box.sold b,.stock-box.sold .stock-icon{color:#b4bbc4}.stock-box.total b,.stock-box.total .stock-icon{color:var(--blue)}
-.search-toggle{width:100%;height:58px;border:1px solid var(--line);background:linear-gradient(180deg,#0f141a,#090c10);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 20px;cursor:pointer;font-weight:800}.toggle-left{display:flex;align-items:center;gap:12px}.search-symbol{font-size:1.3rem}.toggle-right{display:flex;align-items:center;gap:13px;color:#bbc2ca;font-weight:500;font-size:.78rem}.toggle-arrow{font-size:1rem;transition:.25s}.search-toggle[aria-expanded="true"] .toggle-arrow{transform:rotate(180deg)}.filter-collapse{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s ease}.filter-collapse.open{grid-template-rows:1fr}.filter-inner{overflow:hidden}.filter-panel{margin-top:10px;border:1px solid var(--line);background:linear-gradient(180deg,#0e141b,#090c10);padding:20px}.filter-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:11px}.range-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:11px}.field label{display:block;color:var(--muted);font-size:.68rem;margin-bottom:6px}.field input,.field select{width:100%;height:44px;border:1px solid var(--line);background:#07090c;color:#fff;padding:0 12px}.range-pair{display:grid;grid-template-columns:1fr 16px 1fr;align-items:end;gap:5px}.range-pair i{font-style:normal;text-align:center;color:var(--muted);padding-bottom:11px}.check-row{height:44px;margin-top:23px;border:1px solid var(--line);display:flex;align-items:center;gap:9px;padding:0 12px;background:#07090c;font-size:.77rem}.check-row input{width:17px;height:17px}.filter-actions{display:flex;gap:9px;margin-top:15px}.filter-btn{height:42px;padding:0 20px;border:1px solid var(--gold);background:var(--gold);color:#08090b;font-weight:900;cursor:pointer}.filter-btn.secondary{background:transparent;color:#fff;border-color:var(--line)}.type-chips{display:flex;gap:7px;overflow:auto;margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}.chip{white-space:nowrap;border:1px solid var(--line);background:#080b0f;color:#c1c8d0;padding:7px 11px;font-size:.7rem;cursor:pointer}.chip.active,.chip:hover{background:#fff;color:#08090b}
-.arrival-section{padding:0 0 34px}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:15px}.section-head h2{font-size:2rem;margin:2px 0 0}.carousel-buttons{display:flex;gap:8px}.carousel-buttons button{width:42px;height:42px;border:1px solid var(--line);background:#080b0f;color:#fff;cursor:pointer}.arrivals{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/4);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}.arrivals::-webkit-scrollbar{height:5px}.arrivals::-webkit-scrollbar-thumb{background:#3a424c}.card{scroll-snap-align:start;border:1px solid var(--line);background:linear-gradient(180deg,#0f151c,#080b0f);overflow:hidden;position:relative;display:flex;flex-direction:column;min-width:0}.card-image{height:210px;position:relative;background:#151a20}.card-image img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) brightness(.9)}.no-photo{height:100%;display:grid;place-items:center;color:#77818d;letter-spacing:.12em;font-size:.75rem}.new-badge{position:absolute;left:11px;top:11px;border:1px solid var(--gold);background:rgba(5,7,9,.92);color:#f1cf67;padding:5px 9px;font-size:.62rem;font-weight:900;letter-spacing:.1em}.favorite{position:absolute;right:11px;top:11px;width:37px;height:37px;border-radius:50%;border:1px solid #fff;background:rgba(5,7,9,.86);color:#fff;display:grid;place-items:center;font-size:1.2rem;cursor:pointer}.favorite.active{color:#ffd34e;border-color:#ffd34e}.card-body{padding:15px 15px 13px;display:flex;flex-direction:column;flex:1}.category{color:var(--gold);font-size:.68rem;font-weight:800;margin-bottom:4px}.card h3{font-size:1.3rem;line-height:1.1;margin:0 0 5px}.maker{color:#c1c7ce;font-size:.75rem;margin-bottom:12px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.tag{border:1px solid var(--line);padding:4px 7px;font-size:.63rem;color:#d0d5db}.tag.condition.maintained{color:#51df68;border-color:#2a8f3a}.tag.condition.inspected{color:#ffb413;border-color:#9d6b00}.tag.condition.as-is{color:#c1c7ce}.price-row{border-top:1px solid var(--line);padding-top:11px;margin-top:auto;display:flex;align-items:end;justify-content:space-between;gap:10px}.price{font-size:1rem;font-weight:900}.detail{color:#f0bd38;font-size:.75rem;font-weight:900;white-space:nowrap}
-.all-products{padding:12px 0 55px}.results-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:17px}.results-head h2{font-size:2rem;margin:2px 0 0}.count{color:#b5bdc6;font-size:.8rem}.sort{height:40px;border:1px solid var(--line);background:#080b0f;color:#fff;padding:0 11px}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.status{position:absolute;left:11px;top:11px;padding:5px 8px;background:rgba(5,7,9,.92);border:1px solid currentColor;font-size:.62rem;font-weight:900}.status.available{color:var(--green)}.status.negotiation{color:var(--yellow)}.status.sold{color:#bbc1c9}.updating{position:absolute;right:11px;bottom:11px;padding:4px 7px;border:1px solid var(--line);background:rgba(5,7,9,.82);color:#aeb6bf;font-size:.55rem}.no-results{display:none;grid-column:1/-1;padding:55px;text-align:center;border:1px solid var(--line);color:var(--muted)}
-.bottom-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:14px;margin-bottom:28px}.help-box,.company-box{border:1px solid var(--line);background:linear-gradient(145deg,#0d1218,#080b0f);padding:22px}.help-box{border-color:rgba(224,181,63,.7);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}.help-box h2{font-size:1.25rem;margin:0 0 5px}.help-box p{color:#bec5cd;font-size:.76rem;margin:0}.help-actions{display:flex;gap:9px}.help-actions a{min-width:132px;padding:14px 15px;text-align:center;font-size:.72rem;font-weight:900;border:1px solid var(--line)}.help-actions .phone{background:linear-gradient(135deg,#e1b23d,#f7d064);color:#090b0e}.help-actions .instagram{background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf)}.help-actions .tiktok{background:#050505;border-color:#25f4ee;box-shadow:inset 3px 0 #fe2c55,inset -3px 0 #25f4ee}.company-box h2{font-size:1.2rem;margin:0 0 8px}.company-box p{margin:5px 0;color:#c3cad2;font-size:.72rem}.company-addresses{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:13px}.company-addresses div{border-top:1px solid var(--line);padding-top:8px;font-size:.63rem;color:#9ba5b0}footer{border-top:1px solid var(--line);padding:17px 0 24px;color:#777f89;font-size:.68rem;text-align:center}
-@media(max-width:1100px){.overview-grid{grid-template-columns:1fr}.stock-summary{grid-template-columns:repeat(2,1fr)}.stock-box:nth-child(2){border-right:0}.stock-box:nth-child(-n+2){border-bottom:1px solid var(--line)}.arrivals{grid-auto-columns:calc((100% - 32px)/3)}.products{grid-template-columns:repeat(3,1fr)}.bottom-grid{grid-template-columns:1fr}}
-@media(max-width:760px){.wrap,.nav{width:calc(100% - 28px)}header{height:68px}.logo{width:185px}.nav-links{display:none}.home-btn{margin-left:auto}.overview{padding:28px 0 20px}.overview-grid{gap:26px}h1{font-size:clamp(3.2rem,16vw,5rem)}.stock-summary{grid-template-columns:1fr 1fr}.stock-box{min-height:62px;gap:8px}.stock-box b{font-size:1.35rem}.filter-grid,.range-grid{grid-template-columns:1fr}.arrivals{grid-auto-columns:82vw}.products{grid-template-columns:1fr}.card-image{height:240px}.bottom-grid{grid-template-columns:1fr}.help-box{grid-template-columns:1fr}.help-actions{display:grid;grid-template-columns:1fr}.company-addresses{grid-template-columns:1fr}.toggle-right .fav-label{display:none}}
+<title>中古販売・検索 | RENVIS</title>
 
-/* VER1.6 MOBILE FIXES */
-html,body{max-width:100%;overflow-x:hidden}
-@media(max-width:760px){
-  .overview-grid{min-width:0}
-  .overview .lead{
-    max-width:none!important;
-    font-size:.91rem!important;
-    line-height:1.85!important;
-    overflow-wrap:anywhere;
+<style>
+:root{
+  --bg:#06080b;
+  --panel:#0b0f14;
+  --panel2:#10161d;
+  --text:#f7f8fa;
+  --muted:#9aa4af;
+  --line:rgba(255,255,255,.15);
+  --gold:#e0b53f;
+  --green:#4dde65;
+  --yellow:#ffb516;
+  --blue:#4ca9ff;
+  --max:1480px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+html,
+body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;
+  line-height:1.55;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.wrap{
+  width:min(var(--max),calc(100% - 64px));
+  margin:auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:80;
+  height:76px;
+  display:flex;
+  align-items:center;
+  background:rgba(4,6,8,.96);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  width:min(var(--max),calc(100% - 64px));
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.logo{
+  width:245px;
+  display:block;
+  mix-blend-mode:screen;
+}
+
+.nav-links{
+  display:flex;
+  align-items:stretch;
+  gap:25px;
+  margin-left:auto;
+  font-size:.77rem;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+
+.nav-links a,
+.home-btn{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  line-height:1.08;
+  white-space:nowrap;
+}
+
+.nav-links a{
+  padding:12px 0;
+  border-bottom:2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+  border-color:var(--gold);
+  color:#fff;
+}
+
+.nav-en{
+  display:block;
+  font-weight:900;
+  letter-spacing:.06em;
+}
+
+.nav-ja{
+  display:block;
+  font-size:.52rem;
+  letter-spacing:.05em;
+  font-weight:700;
+  color:#8e969e;
+  white-space:nowrap;
+}
+
+.nav-links a.active .nav-ja,
+.nav-links a:hover .nav-ja{
+  color:#d8b64d;
+}
+
+.home-btn{
+  border:1px solid var(--line);
+  padding:9px 14px;
+  font-size:.74rem;
+  font-weight:800;
+}
+
+.home-btn .nav-ja{
+  font-size:.52rem;
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu-toggle,
+.mobile-menu-overlay,
+.mobile-drawer{
+  display:none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.used-hero{
+  width:100%;
+  height:220px;
+  min-height:220px;
+  max-height:220px;
+  padding:26px 0 10px;
+  box-sizing:border-box;
+  align-items:flex-start;
+  overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.used-hero .wrap.used-hero-content{
+  box-sizing:border-box;
+  width:calc(100% - 36px);
+  max-width:none;
+  margin:0 18px;
+  padding:0 0 0 11px;
+  border-left:3px solid var(--gold);
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:.7rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+
+.used-hero .eyebrow{
+  font-size:.62rem;
+  line-height:1.15;
+  margin:0 0 9px;
+}
+
+.used-hero h1{
+  font-size:3.15rem;
+  line-height:.95;
+  margin:0 0 10px;
+  letter-spacing:-.035em;
+}
+
+.used-hero-jp{
+  font-size:.78rem;
+  line-height:1.35;
+  margin:0 0 14px;
+  font-weight:800;
+}
+
+.used-hero-desc{
+  font-size:.76rem;
+  line-height:1.62;
+  margin:0;
+  max-width:720px;
+}
+
+
+/* =========================
+   OVERVIEW / SEARCH
+========================= */
+
+.overview{
+  padding:38px 0 26px;
+}
+
+.overview-grid{
+  display:grid;
+  grid-template-columns:minmax(390px,.75fr) minmax(650px,1.25fr);
+  gap:48px;
+  align-items:center;
+}
+
+.summary-area{
+  display:grid;
+  gap:14px;
+}
+
+.stock-summary{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,#0f141b,#090c10);
+  padding:17px 6px;
+}
+
+.stock-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:13px;
+  min-height:70px;
+  border-right:1px solid var(--line);
+}
+
+.stock-box:last-child{
+  border:0;
+}
+
+.stock-icon{
+  font-size:1.7rem;
+}
+
+.stock-box small{
+  display:block;
+  color:#bec5cd;
+  font-size:.72rem;
+}
+
+.stock-box b{
+  display:block;
+  font-size:1.9rem;
+  line-height:1.1;
+}
+
+.stock-box.available b,
+.stock-box.available .stock-icon{
+  color:var(--green);
+}
+
+.stock-box.negotiation b,
+.stock-box.negotiation .stock-icon{
+  color:var(--yellow);
+}
+
+.stock-box.sold b,
+.stock-box.sold .stock-icon{
+  color:#b4bbc4;
+}
+
+.stock-box.total b,
+.stock-box.total .stock-icon{
+  color:var(--blue);
+}
+
+.search-toggle{
+  width:100%;
+  height:58px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,#0f141a,#090c10);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  font-weight:800;
+}
+
+.toggle-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.search-symbol{
+  font-size:1.3rem;
+}
+
+.toggle-right{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  color:#bbc2ca;
+  font-weight:500;
+  font-size:.78rem;
+}
+
+.toggle-arrow{
+  font-size:1rem;
+  transform:rotate(180deg);
+}
+
+.filter-collapse{
+  display:grid;
+  grid-template-rows:1fr;
+}
+
+.filter-inner{
+  overflow:hidden;
+}
+
+.filter-panel{
+  margin-top:10px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,#0e141b,#090c10);
+  padding:20px;
+}
+
+.filter-grid{
+  display:grid;
+  grid-template-columns:1.5fr repeat(3,1fr);
+  gap:11px;
+}
+
+.range-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:11px;
+  margin-top:11px;
+}
+
+.field label{
+  display:block;
+  color:var(--muted);
+  font-size:.68rem;
+  margin-bottom:6px;
+}
+
+.field input,
+.field select{
+  width:100%;
+  height:44px;
+  border:1px solid var(--line);
+  background:#07090c;
+  color:#fff;
+  padding:0 12px;
+}
+
+.range-pair{
+  display:grid;
+  grid-template-columns:1fr 16px 1fr;
+  align-items:end;
+  gap:5px;
+}
+
+.range-pair i{
+  font-style:normal;
+  text-align:center;
+  color:var(--muted);
+  padding-bottom:11px;
+}
+
+.check-row{
+  height:44px;
+  margin-top:23px;
+  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:0 12px;
+  background:#07090c;
+  font-size:.77rem;
+}
+
+.check-row input{
+  width:17px;
+  height:17px;
+}
+
+.filter-actions{
+  display:flex;
+  gap:9px;
+  margin-top:15px;
+}
+
+.filter-btn{
+  height:42px;
+  padding:0 20px;
+  border:1px solid var(--gold);
+  background:var(--gold);
+  color:#08090b;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.filter-btn.secondary{
+  background:transparent;
+  color:#fff;
+  border-color:var(--line);
+}
+
+.type-chips{
+  display:flex;
+  gap:7px;
+  overflow:auto;
+  margin-top:15px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+
+.chip{
+  white-space:nowrap;
+  border:1px solid var(--line);
+  background:#080b0f;
+  color:#c1c8d0;
+  padding:7px 11px;
+  font-size:.7rem;
+  cursor:pointer;
+}
+
+.chip.active,
+.chip:hover{
+  background:#fff;
+  color:#08090b;
+}
+
+
+/* =========================
+   ARRIVALS
+========================= */
+
+.arrival-section{
+  padding:0 0 34px;
+}
+
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  margin-bottom:15px;
+}
+
+.section-head h2{
+  font-size:2rem;
+  margin:2px 0 0;
+}
+
+.carousel-buttons{
+  display:flex;
+  gap:8px;
+}
+
+.carousel-buttons button{
+  width:42px;
+  height:42px;
+  border:1px solid var(--line);
+  background:#080b0f;
+  color:#fff;
+  cursor:pointer;
+}
+
+.arrivals{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:calc((100% - 48px)/4);
+  gap:16px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:8px;
+}
+
+.arrivals::-webkit-scrollbar{
+  height:5px;
+}
+
+.arrivals::-webkit-scrollbar-thumb{
+  background:#3a424c;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.card{
+  scroll-snap-align:start;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,#0f151c,#080b0f);
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+
+.card-image{
+  height:210px;
+  position:relative;
+  background:#151a20;
+}
+
+.card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:saturate(.88) brightness(.9);
+}
+
+.no-photo{
+  height:100%;
+  display:grid;
+  place-items:center;
+  color:#77818d;
+  letter-spacing:.12em;
+  font-size:.75rem;
+}
+
+.new-badge{
+  position:absolute;
+  left:11px;
+  top:11px;
+  border:1px solid var(--gold);
+  background:rgba(5,7,9,.92);
+  color:#f1cf67;
+  padding:5px 9px;
+  font-size:.62rem;
+  font-weight:900;
+  letter-spacing:.1em;
+}
+
+.favorite{
+  position:absolute;
+  right:11px;
+  top:11px;
+  width:37px;
+  height:37px;
+  border-radius:50%;
+  border:1px solid #fff;
+  background:rgba(5,7,9,.86);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:1.2rem;
+  cursor:pointer;
+}
+
+.favorite.active{
+  color:#ffd34e;
+  border-color:#ffd34e;
+}
+
+.card-body{
+  padding:15px 15px 13px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.category{
+  color:var(--gold);
+  font-size:.68rem;
+  font-weight:800;
+  margin-bottom:4px;
+}
+
+.card h3{
+  font-size:1.3rem;
+  line-height:1.1;
+  margin:0 0 5px;
+}
+
+.maker{
+  color:#c1c7ce;
+  font-size:.75rem;
+  margin-bottom:12px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:12px;
+}
+
+.tag{
+  border:1px solid var(--line);
+  padding:4px 7px;
+  font-size:.63rem;
+  color:#d0d5db;
+}
+
+.tag.condition.maintained{
+  color:#51df68;
+  border-color:#2a8f3a;
+}
+
+.tag.condition.inspected{
+  color:#ffb413;
+  border-color:#9d6b00;
+}
+
+.tag.condition.as-is{
+  color:#c1c7ce;
+}
+
+.price-row{
+  border-top:1px solid var(--line);
+  padding-top:11px;
+  margin-top:auto;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.price{
+  font-size:1rem;
+  font-weight:900;
+}
+
+.detail{
+  color:#f0bd38;
+  font-size:.75rem;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+
+/* =========================
+   ALL PRODUCTS
+========================= */
+
+.all-products{
+  padding:12px 0 55px;
+}
+
+.results-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  margin-bottom:17px;
+}
+
+.results-head h2{
+  font-size:2rem;
+  margin:2px 0 0;
+}
+
+.count{
+  color:#b5bdc6;
+  font-size:.8rem;
+}
+
+.sort{
+  height:40px;
+  border:1px solid var(--line);
+  background:#080b0f;
+  color:#fff;
+  padding:0 11px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.status{
+  position:absolute;
+  left:11px;
+  top:11px;
+  padding:5px 8px;
+  background:rgba(5,7,9,.92);
+  border:1px solid currentColor;
+  font-size:.62rem;
+  font-weight:900;
+}
+
+.status.available{
+  color:var(--green);
+}
+
+.status.negotiation{
+  color:var(--yellow);
+}
+
+.status.sold{
+  color:#bbc1c9;
+}
+
+.updating{
+  position:absolute;
+  right:11px;
+  bottom:11px;
+  padding:4px 7px;
+  border:1px solid var(--line);
+  background:rgba(5,7,9,.82);
+  color:#aeb6bf;
+  font-size:.55rem;
+}
+
+.no-results{
+  display:none;
+  grid-column:1/-1;
+  padding:55px;
+  text-align:center;
+  border:1px solid var(--line);
+  color:var(--muted);
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.bottom-grid{
+  display:grid;
+  grid-template-columns:1.45fr .85fr;
+  gap:14px;
+  margin-bottom:28px;
+}
+
+.help-box,
+.company-box{
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,#0d1218,#080b0f);
+  padding:22px;
+}
+
+.help-box{
+  border-color:rgba(224,181,63,.7);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:22px;
+  align-items:center;
+}
+
+.help-box h2{
+  font-size:1.25rem;
+  margin:0 0 5px;
+}
+
+.help-box p{
+  color:#bec5cd;
+  font-size:.76rem;
+  margin:0;
+}
+
+.help-actions{
+  display:flex;
+  gap:9px;
+}
+
+.help-actions a{
+  min-width:132px;
+  padding:14px 15px;
+  text-align:center;
+  font-size:.72rem;
+  font-weight:900;
+  border:1px solid var(--line);
+}
+
+.help-actions .phone{
+  background:linear-gradient(135deg,#e1b23d,#f7d064);
+  color:#090b0e;
+}
+
+.help-actions .instagram{
+  background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf);
+}
+
+.help-actions .tiktok{
+  background:#050505;
+  border-color:#25f4ee;
+  box-shadow:inset 3px 0 #fe2c55,inset -3px 0 #25f4ee;
+}
+
+.company-box h2{
+  font-size:1.2rem;
+  margin:0 0 8px;
+}
+
+.company-box p{
+  margin:5px 0;
+  color:#c3cad2;
+  font-size:.72rem;
+}
+
+.company-addresses{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:8px;
+  margin-top:13px;
+}
+
+.company-addresses div{
+  border-top:1px solid var(--line);
+  padding-top:8px;
+  font-size:.63rem;
+  color:#9ba5b0;
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:17px 0 24px;
+  color:#777f89;
+  font-size:.68rem;
+  text-align:center;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:1100px){
+
+  .overview-grid{
+    grid-template-columns:1fr;
   }
-  .overview .lead .desktop-break{display:none}
+
+  .stock-summary{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stock-box:nth-child(2){
+    border-right:0;
+  }
+
+  .stock-box:nth-child(-n+2){
+    border-bottom:1px solid var(--line);
+  }
+
+  .arrivals{
+    grid-auto-columns:calc((100% - 32px)/3);
+  }
+
+  .products{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .bottom-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:760px){
+
+  .wrap,
+  .nav{
+    width:calc(100% - 28px);
+  }
+
+  header{
+    height:68px;
+  }
+
+  .logo{
+    width:185px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .home-btn{
+    display:none;
+  }
+
+  .mobile-menu-toggle{
+    display:grid;
+    place-content:center;
+    gap:6px;
+    width:44px;
+    height:44px;
+    margin-left:auto;
+    border:0;
+    background:transparent;
+    cursor:pointer;
+  }
+
+  .mobile-menu-toggle span{
+    display:block;
+    width:31px;
+    height:2px;
+    background:#fff;
+  }
+
+  .mobile-menu-overlay{
+    display:block;
+    position:fixed;
+    inset:0;
+    z-index:998;
+    background:rgba(0,0,0,.66);
+    opacity:0;
+    visibility:hidden;
+    transition:.28s ease;
+  }
+
+  .mobile-menu-overlay.open{
+    opacity:1;
+    visibility:visible;
+  }
+
+  .mobile-drawer{
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:999;
+    width:min(86vw,360px);
+    height:100dvh;
+    padding:22px 20px 28px;
+    background:linear-gradient(180deg,#0b0f14,#050709);
+    border-left:1px solid rgba(255,255,255,.15);
+    transform:translateX(105%);
+    transition:transform .32s ease;
+    box-shadow:-24px 0 70px rgba(0,0,0,.45);
+    overflow-y:auto;
+  }
+
+  .mobile-drawer.open{
+    transform:translateX(0);
+  }
+
+  .mobile-drawer-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    padding-bottom:20px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+  }
+
+  .mobile-drawer-logo{
+    width:190px;
+    mix-blend-mode:screen;
+  }
+
+  .mobile-close{
+    width:42px;
+    height:42px;
+    border:1px solid rgba(255,255,255,.15);
+    background:transparent;
+    color:#fff;
+    font-size:1.55rem;
+    cursor:pointer;
+  }
+
+  .mobile-menu-links{
+    display:flex;
+    flex-direction:column;
+    margin-top:18px;
+  }
+
+  .mobile-menu-links a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    min-height:54px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+    color:#fff;
+    font-size:1rem;
+    font-weight:800;
+    letter-spacing:.05em;
+  }
+
+  .mobile-menu-links a:after{
+    content:"→";
+    color:#8c96a1;
+    font-size:1.35rem;
+  }
+
+  .mobile-inquiry-card{
+    margin-top:24px;
+    padding:18px;
+    border:1px solid rgba(255,255,255,.15);
+    background:#0a0e13;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+
+  .mobile-inquiry-card span{
+    color:#9ca6b0;
+    font-size:.74rem;
+    line-height:1.7;
+  }
+
+  .mobile-inquiry-card a{
+    margin-top:6px;
+    color:#e5c15b;
+    font-size:.78rem;
+    font-weight:800;
+  }
+
+  body.mobile-menu-open{
+    overflow:hidden;
+  }
+
+  .used-hero{
+    height:auto;
+    min-height:0;
+    max-height:none;
+    padding:28px 0 14px;
+    overflow:visible;
+  }
+
+  .used-hero .wrap.used-hero-content{
+    width:calc(100% - 36px);
+    margin:0 18px;
+    padding:0 0 0 11px;
+  }
+
+  .used-hero .eyebrow{
+    font-size:.58rem;
+    margin:0 0 8px;
+  }
+
+  .used-hero h1{
+    font-size:2.65rem;
+    line-height:.96;
+    margin:0 0 9px;
+  }
+
+  .used-hero-jp{
+    font-size:.72rem;
+    margin:0 0 12px;
+  }
+
+  .used-hero-desc{
+    font-size:.72rem;
+    line-height:1.65;
+    margin:0;
+  }
+
+  .overview{
+    padding:28px 0 20px;
+  }
+
+  .overview-grid{
+    gap:26px;
+    min-width:0;
+  }
+
   .stock-summary{
     width:100%;
-    padding:0!important;
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    padding:0;
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
+
   .stock-box{
     min-width:0;
-    min-height:88px!important;
-    padding:12px 8px!important;
-    gap:9px!important;
-    justify-content:center!important;
+    min-height:88px;
+    padding:12px 8px;
+    gap:9px;
+    justify-content:center;
   }
-  .stock-icon{font-size:1.45rem!important;flex:0 0 auto}
+
+  .stock-icon{
+    font-size:1.45rem;
+    flex:0 0 auto;
+  }
+
   .stock-box small{
-    font-size:.68rem!important;
+    font-size:.68rem;
     white-space:nowrap;
   }
+
   .stock-box b{
-    font-size:1.35rem!important;
+    font-size:1.35rem;
     white-space:nowrap;
   }
+
   .search-toggle{
     min-width:0;
-    padding:0 14px!important;
+    padding:0 14px;
   }
+
   .toggle-left{
     min-width:0;
-    gap:8px!important;
+    gap:8px;
     font-size:.83rem;
     white-space:nowrap;
   }
+
   .toggle-right{
     flex:0 0 auto;
-    gap:8px!important;
+    gap:8px;
   }
+
+  .toggle-right .fav-label{
+    display:none;
+  }
+
   .field label{
-    white-space:normal!important;
+    white-space:normal;
     overflow-wrap:anywhere;
   }
-  .filter-grid,.range-grid{min-width:0}
-  .field,.range-pair{min-width:0}
-  .field input,.field select{min-width:0}
+
+  .filter-grid,
+  .range-grid{
+    grid-template-columns:1fr;
+    min-width:0;
+  }
+
+  .field,
+  .range-pair{
+    min-width:0;
+  }
+
+  .field input,
+  .field select{
+    min-width:0;
+  }
+
+  .arrivals{
+    grid-auto-columns:82vw;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .card-image{
+    height:240px;
+  }
+
+  .bottom-grid{
+    grid-template-columns:1fr;
+  }
+
+  .help-box{
+    grid-template-columns:1fr;
+  }
+
+  .help-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .company-addresses{
+    grid-template-columns:1fr;
+  }
 }
+
+
 @media(max-width:380px){
-  .stock-box{padding:10px 5px!important;gap:6px!important}
-  .stock-icon{font-size:1.25rem!important}
-  .stock-box b{font-size:1.2rem!important}
-  .stock-box small{font-size:.62rem!important}
-  .toggle-left{font-size:.76rem}
-}
 
-</style>
+  .stock-box{
+    padding:10px 5px;
+    gap:6px;
+  }
 
-<style id="mobile-drawer-unified-20260903">
-/* PC版は既存CSSをそのまま使用。以下はスマホ専用メニューのみ */
-.mobile-menu-toggle,.mobile-menu-overlay,.mobile-drawer{display:none}
-@media(max-width:760px){
-  .home-btn{display:none!important}
-  .mobile-menu-toggle{display:grid!important;place-content:center;gap:6px;width:44px;height:44px;margin-left:auto;border:0;background:transparent;cursor:pointer}
-  .mobile-menu-toggle span{display:block;width:31px;height:2px;background:#fff}
-  .mobile-menu-overlay{display:block;position:fixed;inset:0;z-index:998;background:rgba(0,0,0,.66);opacity:0;visibility:hidden;transition:.28s ease}
-  .mobile-menu-overlay.open{opacity:1;visibility:visible}
-  .mobile-drawer{display:flex;flex-direction:column;position:fixed;top:0;right:0;z-index:999;width:min(86vw,360px);height:100dvh;padding:22px 20px 28px;background:linear-gradient(180deg,#0b0f14,#050709);border-left:1px solid rgba(255,255,255,.15);transform:translateX(105%);transition:transform .32s ease;box-shadow:-24px 0 70px rgba(0,0,0,.45);overflow-y:auto}
-  .mobile-drawer.open{transform:translateX(0)}
-  .mobile-drawer-head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.15)}
-  .mobile-drawer-logo{width:190px;mix-blend-mode:screen}
-  .mobile-close{width:42px;height:42px;border:1px solid rgba(255,255,255,.15);background:transparent;color:#fff;font-size:1.55rem;cursor:pointer}
-  .mobile-menu-links{display:flex;flex-direction:column;margin-top:18px}
-  .mobile-menu-links a{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:54px!important;padding:0!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.15)!important;color:#fff!important;font-size:1rem!important;font-weight:800!important;letter-spacing:.05em!important;line-height:1!important}
-  .mobile-menu-links a:after{content:"→";color:#8c96a1;font-size:1.35rem}
-  .mobile-inquiry-card{margin-top:24px;padding:18px;border:1px solid rgba(255,255,255,.15);background:#0a0e13;display:flex;flex-direction:column;gap:7px}
-  .mobile-inquiry-card .mobile-inquiry-icon{font-size:1.25rem}
-  .mobile-inquiry-card strong{font-size:1rem}
-  .mobile-inquiry-card span{color:#9ca6b0;font-size:.74rem;line-height:1.7}
-  .mobile-inquiry-card a{margin-top:6px;color:#e5c15b;font-size:.78rem;font-weight:800}
-  body.mobile-menu-open{overflow:hidden}
+  .stock-icon{
+    font-size:1.25rem;
+  }
+
+  .stock-box b{
+    font-size:1.2rem;
+  }
+
+  .stock-box small{
+    font-size:.62rem;
+  }
+
+  .toggle-left{
+    font-size:.76rem;
+  }
 }
 </style>
-
-<style id="renvis-hero-layout-clean-20260903">
-/* Single source of truth for USED SALES heading block; Supabase code below is untouched. */
-@media (min-width:761px){
-  .used-hero{height:260px!important;min-height:260px!important;max-height:260px!important;padding:26px 0 22px!important;box-sizing:border-box!important;align-items:flex-start!important;overflow:hidden!important;}
-  .used-hero .wrap.used-hero-content{box-sizing:border-box!important;width:calc(100% - 36px)!important;max-width:none!important;margin:0 18px!important;padding:0 0 0 11px!important;border-left:3px solid var(--gold,#ddb646)!important;position:relative!important;transform:none!important;}
-  .used-hero .eyebrow{font-size:.62rem!important;line-height:1.15!important;margin:0 0 9px!important;}
-  .used-hero h1{font-size:3.15rem!important;line-height:.95!important;margin:0 0 10px!important;letter-spacing:-.035em!important;}
-  .used-hero-jp{font-size:.78rem!important;line-height:1.35!important;margin:0 0 14px!important;}
-  .used-hero-desc{font-size:.76rem!important;line-height:1.62!important;margin:0!important;max-width:720px!important;}
-}
-@media (max-width:760px){
-  .used-hero{height:auto!important;min-height:0!important;max-height:none!important;padding:28px 0 26px!important;overflow:visible!important;}
-  .used-hero .wrap.used-hero-content{box-sizing:border-box!important;width:calc(100% - 36px)!important;max-width:none!important;margin:0 18px!important;padding:0 0 0 11px!important;border-left:3px solid var(--gold,#ddb646)!important;transform:none!important;}
-  .used-hero .eyebrow{font-size:.58rem!important;margin:0 0 8px!important;}
-  .used-hero h1{font-size:2.65rem!important;line-height:.96!important;margin:0 0 9px!important;}
-  .used-hero-jp{font-size:.72rem!important;margin:0 0 12px!important;}
-  .used-hero-desc{font-size:.72rem!important;line-height:1.65!important;margin:0!important;}
-}
-</style>
-
-
-<style id="renvis-pc-header-unified-20260903">
-/* PC header: identical on RENTAL / REPAIR / USED SALES / MANAGEMENT */
-@media (min-width:761px){
-  header{
-    height:76px!important;
-    display:flex!important;
-    align-items:center!important;
-    background:rgba(4,6,8,.96)!important;
-    border-bottom:1px solid var(--line)!important;
-  }
-  header .nav{
-    width:min(var(--max),calc(100% - 64px))!important;
-    margin:0 auto!important;
-    display:flex!important;
-    align-items:center!important;
-    gap:28px!important;
-  }
-  header .logo{width:245px!important;display:block!important;mix-blend-mode:screen!important;}
-  header .nav-links{
-    display:flex!important;
-    align-items:stretch!important;
-    gap:25px!important;
-    margin-left:auto!important;
-    font-size:.77rem!important;
-    font-weight:800!important;
-    letter-spacing:.06em!important;
-  }
-  header .nav-links a, header .home-btn{
-    display:flex!important;
-    flex-direction:column!important;
-    align-items:center!important;
-    justify-content:center!important;
-    gap:3px!important;
-    line-height:1.08!important;
-    white-space:nowrap!important;
-  }
-  header .nav-links a{padding:12px 0!important;border-bottom:2px solid transparent!important;}
-  header .nav-en{display:block!important;font-weight:900!important;letter-spacing:.06em!important;}
-  header .nav-ja{display:block!important;margin-top:0!important;font-size:.52rem!important;font-weight:700!important;letter-spacing:.05em!important;color:#8e969e!important;white-space:nowrap!important;}
-  header .nav-links a.active{border-bottom-color:var(--gold)!important;}
-  header .nav-links a.active .nav-ja, header .nav-links a:hover .nav-ja{color:#d8b64d!important;}
-  header .home-btn{
-    border:1px solid var(--line)!important;
-    padding:9px 14px!important;
-    font-size:.74rem!important;
-    font-weight:800!important;
-  }
-  header .home-btn .nav-ja{font-size:.52rem!important;color:#8e969e!important;}
-  header .mobile-menu-toggle{display:none!important;}
-}
-</style>
-
 </head>
+
+
 <body>
+
 <header>
   <div class="nav">
-    <a href="index.html"><img class="logo" src="renvis-logo.png" alt="RENVIS"></a>
+
+    <a href="index.html">
+      <img class="logo" src="renvis-logo.png" alt="RENVIS">
+    </a>
+
     <nav class="nav-links">
-      <a href="index.html"><span class="nav-en">HOME</span><span class="nav-ja">ホーム</span></a>
-      <a href="rental.html"><span class="nav-en">RENTAL</span><span class="nav-ja">レンタル</span></a>
-      <a href="repair.html"><span class="nav-en">REPAIR</span><span class="nav-ja">修理・再生</span></a>
-      <a class="active" href="used-sales.html"><span class="nav-en">USED SALES</span><span class="nav-ja">中古販売</span></a>
-      <a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a>
-      <a href="index.html#company"><span class="nav-en">COMPANY</span><span class="nav-ja">会社案内</span></a>
+
+      <a href="index.html">
+        <span class="nav-en">HOME</span>
+        <span class="nav-ja">ホーム</span>
+      </a>
+
+      <a href="rental.html">
+        <span class="nav-en">RENTAL</span>
+        <span class="nav-ja">レンタル</span>
+      </a>
+
+      <a href="repair.html">
+        <span class="nav-en">REPAIR</span>
+        <span class="nav-ja">修理・再生</span>
+      </a>
+
+      <a class="active" href="used-sales.html">
+        <span class="nav-en">USED SALES</span>
+        <span class="nav-ja">中古販売</span>
+      </a>
+
+      <a href="management.html">
+        <span class="nav-en">MANAGEMENT</span>
+        <span class="nav-ja">管理・部品製作</span>
+      </a>
+
+      <a href="index.html#company">
+        <span class="nav-en">COMPANY</span>
+        <span class="nav-ja">会社案内</span>
+      </a>
+
     </nav>
-    <a class="home-btn" href="index.html"><span class="nav-en">TOPへ</span><span class="nav-ja">トップへ</span></a><button aria-controls="mobileDrawer" aria-expanded="false" aria-label="メニューを開く" class="mobile-menu-toggle" id="menuOpen" type="button"><span></span><span></span><span></span></button>
+
+    <a class="home-btn" href="index.html">
+      <span class="nav-en">TOPへ</span>
+      <span class="nav-ja">トップへ</span>
+    </a>
+
+    <button
+      aria-controls="mobileDrawer"
+      aria-expanded="false"
+      aria-label="メニューを開く"
+      class="mobile-menu-toggle"
+      id="menuOpen"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
   </div>
 </header>
+
+
 <div class="mobile-menu-overlay" id="menuOverlay"></div>
-<aside aria-hidden="true" class="mobile-drawer" id="mobileDrawer">
+
+
+<aside
+  aria-hidden="true"
+  class="mobile-drawer"
+  id="mobileDrawer"
+>
+
   <div class="mobile-drawer-head">
-    <img alt="RENVIS" class="mobile-drawer-logo" src="renvis-logo.png">
-    <button aria-label="メニューを閉じる" class="mobile-close" id="menuClose" type="button">×</button>
+
+    <img
+      alt="RENVIS"
+      class="mobile-drawer-logo"
+      src="renvis-logo.png"
+    >
+
+    <button
+      aria-label="メニューを閉じる"
+      class="mobile-close"
+      id="menuClose"
+      type="button"
+    >
+      ×
+    </button>
+
   </div>
-  <nav aria-label="スマホメニュー" class="mobile-menu-links">
+
+
+  <nav
+    aria-label="スマホメニュー"
+    class="mobile-menu-links"
+  >
+
     <a href="index.html">HOME</a>
     <a href="rental.html">RENTAL</a>
     <a href="repair.html">REPAIR</a>
@@ -213,281 +1329,2175 @@ html,body{max-width:100%;overflow-x:hidden}
     <a href="management.html">MANAGEMENT</a>
     <a href="index.html#company">COMPANY</a>
     <a href="contact.html">CONTACT</a>
+
   </nav>
+
+
   <div class="mobile-inquiry-card">
-    <div class="mobile-inquiry-icon">✉</div>
-    <strong>お問い合わせ</strong>
-    <span>レンタル・修理・販売など、お気軽にご相談ください。</span>
-    <a href="contact.html">お問い合わせフォームへ →</a>
+
+    <strong>
+      お問い合わせ
+    </strong>
+
+    <span>
+      レンタル・修理・販売など、
+      お気軽にご相談ください。
+    </span>
+
+    <a href="contact.html">
+      お問い合わせフォームへ →
+    </a>
+
   </div>
+
 </aside>
 
 
 <main>
-<section class="used-hero">
-  <div class="wrap used-hero-content">
-    <div class="eyebrow">USED ATTACHMENT SALES</div>
-    <h1>USED SALES</h1>
-    <div class="used-hero-jp">中古アタッチメント販売</div>
-    <p class="used-hero-desc">メーカー・種類・対応クラス・年式・価格・販売状況から<br class="desktop-break">中古建機アタッチメントを絞り込めます。</p>
-  </div>
-</section>
-<section class="overview used-search-overview">
-  <div class="wrap used-search-wrap">
-    <div class="summary-area">
-      <div class="stock-summary">
-        <div class="stock-box available"><span class="stock-icon">♧</span><div><small>販売中</small><b id="availableCount">0件</b></div></div>
-        <div class="stock-box negotiation"><span class="stock-icon">♢</span><div><small>商談中</small><b id="negotiationCount">0件</b></div></div>
-        <div class="stock-box sold"><span class="stock-icon">⊗</span><div><small>SOLD OUT</small><b id="soldCount">0件</b></div></div>
-        <div class="stock-box total"><span class="stock-icon">◇</span><div><small>掲載総数</small><b id="totalCount">0件</b></div></div>
+
+
+  <!-- HERO -->
+
+  <section class="used-hero">
+
+    <div class="wrap used-hero-content">
+
+      <div class="eyebrow">
+        USED ATTACHMENT SALES
       </div>
-      <button id="searchToggle" class="search-toggle" type="button" aria-expanded="false">
-        <span class="toggle-left"><span class="search-symbol">⌕</span>詳細条件で検索する <span class="toggle-arrow">⌄</span></span>
-        <span class="toggle-right"><span class="fav-label">お気に入り</span><b id="favoriteCount">0件</b><span>☆</span></span>
-      </button>
-      <div id="filterCollapse" class="filter-collapse">
-        <div class="filter-inner">
-          <div class="filter-panel">
-            <div class="filter-grid">
-              <div class="field"><label>キーワード・型式</label><input id="keyword" type="search" placeholder="例：TS-WD1700V-2"></div>
-              <div class="field"><label>メーカー</label><select id="maker"><option value="">すべてのメーカー</option><option>オカダアイヨン</option><option>日本ニューマチック</option><option>タグチ工業</option><option>古河ロックドリル</option><option>東空販売</option><option>坂戸工作所</option><option>甲南建機</option></select></div>
-              <div class="field"><label>種類</label><select id="type"><option value="">すべての種類</option><option>大割機</option><option>小割機</option><option>マグネット</option><option>油圧ブレーカー</option><option>鉄骨切断機</option><option>木材切断機</option><option>木材破砕機（マルチャー）</option><option>機械式フォーク</option><option>油圧式フォーク</option><option>ログフォーク</option><option>アースオーガ</option><option>油圧式オーガ</option><option>油圧式切削機</option><option>ツインヘッダー</option><option>標準バケット</option><option>幅狭バケット</option><option>幅広バケット</option><option>法面バケット</option><option>スケルトンバケット</option><option>ホイールローダー用バケット</option><option>特殊バケット</option><option>バケットクラッシャー</option><option>グラップル</option><option>リッパー</option><option>ポイント（爪・ツース盤）</option><option>ブレード</option><option>マルチブレード</option><option>草刈り機</option><option>クイックヒッチ</option><option>クイックカプラ</option></select></div>
-              <div class="field"><label>対応クラス</label><select id="class"><option value="">すべてのクラス</option><option>3〜5t</option><option>5〜8t</option><option>7〜12t</option><option>12〜20t</option><option>20〜30t</option><option>30〜50t</option><option>45〜70t</option></select></div>
+
+      <h1>
+        USED SALES
+      </h1>
+
+      <div class="used-hero-jp">
+        中古販売
+      </div>
+
+      <p class="used-hero-desc">
+
+        メーカー・種類・対応クラス・年式・価格・販売状況から<br class="desktop-break">
+
+        中古建機アタッチメントを絞り込めます。
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- SEARCH -->
+
+  <section class="overview used-search-overview">
+
+    <div class="wrap used-search-wrap">
+
+      <div class="summary-area">
+
+
+        <div class="stock-summary">
+
+          <div class="stock-box available">
+
+            <span class="stock-icon">
+              ♧
+            </span>
+
+            <div>
+
+              <small>
+                販売中
+              </small>
+
+              <b id="availableCount">
+                0件
+              </b>
+
             </div>
-            <div class="range-grid">
-              <div class="field"><label>年式</label><div class="range-pair"><select id="yearMin"><option value="">下限なし</option><option value="2010">2010年</option><option value="2011">2011年</option><option value="2012">2012年</option><option value="2013">2013年</option><option value="2014">2014年</option><option value="2015">2015年</option><option value="2016">2016年</option><option value="2017">2017年</option><option value="2018">2018年</option><option value="2019">2019年</option><option value="2020">2020年</option><option value="2021">2021年</option><option value="2022">2022年</option><option value="2023">2023年</option><option value="2024">2024年</option><option value="2025">2025年</option><option value="2026">2026年</option></select><i>〜</i><select id="yearMax"><option value="">上限なし</option><option value="2010">2010年</option><option value="2011">2011年</option><option value="2012">2012年</option><option value="2013">2013年</option><option value="2014">2014年</option><option value="2015">2015年</option><option value="2016">2016年</option><option value="2017">2017年</option><option value="2018">2018年</option><option value="2019">2019年</option><option value="2020">2020年</option><option value="2021">2021年</option><option value="2022">2022年</option><option value="2023">2023年</option><option value="2024">2024年</option><option value="2025">2025年</option><option value="2026">2026年</option></select></div></div>
-              <div class="field"><label>販売価格</label><div class="range-pair"><select id="priceMin"><option value="">下限なし</option><option value="300000">30万円</option><option value="500000">50万円</option><option value="1000000">100万円</option><option value="2000000">200万円</option><option value="3000000">300万円</option><option value="5000000">500万円</option></select><i>〜</i><select id="priceMax"><option value="">上限なし</option><option value="500000">50万円</option><option value="1000000">100万円</option><option value="2000000">200万円</option><option value="3000000">300万円</option><option value="5000000">500万円</option><option value="10000000">1,000万円</option></select></div></div>
-              <div class="field"><label>販売状況</label><select id="status"><option value="">すべて</option><option>販売中</option><option>商談中</option><option>SOLD OUT</option></select></div>
-              <label class="check-row"><input id="photoOnly" type="checkbox">写真ありのみ</label>
-            </div>
-            <div class="filter-actions"><button id="searchBtn" class="filter-btn">検索する</button><button id="resetBtn" class="filter-btn secondary">条件をリセット</button></div>
-            <div id="chips" class="type-chips"><button class="chip" type="button" data-type="大割機">大割機</button><button class="chip" type="button" data-type="小割機">小割機</button><button class="chip" type="button" data-type="マグネット">マグネット</button><button class="chip" type="button" data-type="油圧ブレーカー">油圧ブレーカー</button><button class="chip" type="button" data-type="鉄骨切断機">鉄骨切断機</button><button class="chip" type="button" data-type="木材切断機">木材切断機</button><button class="chip" type="button" data-type="木材破砕機（マルチャー）">木材破砕機（マルチャー）</button><button class="chip" type="button" data-type="機械式フォーク">機械式フォーク</button><button class="chip" type="button" data-type="油圧式フォーク">油圧式フォーク</button><button class="chip" type="button" data-type="ログフォーク">ログフォーク</button><button class="chip" type="button" data-type="アースオーガ">アースオーガ</button><button class="chip" type="button" data-type="油圧式オーガ">油圧式オーガ</button><button class="chip" type="button" data-type="油圧式切削機">油圧式切削機</button><button class="chip" type="button" data-type="ツインヘッダー">ツインヘッダー</button><button class="chip" type="button" data-type="標準バケット">標準バケット</button><button class="chip" type="button" data-type="幅狭バケット">幅狭バケット</button><button class="chip" type="button" data-type="幅広バケット">幅広バケット</button><button class="chip" type="button" data-type="法面バケット">法面バケット</button><button class="chip" type="button" data-type="スケルトンバケット">スケルトンバケット</button><button class="chip" type="button" data-type="ホイールローダー用バケット">ホイールローダー用バケット</button><button class="chip" type="button" data-type="特殊バケット">特殊バケット</button><button class="chip" type="button" data-type="バケットクラッシャー">バケットクラッシャー</button><button class="chip" type="button" data-type="グラップル">グラップル</button><button class="chip" type="button" data-type="リッパー">リッパー</button><button class="chip" type="button" data-type="ポイント（爪・ツース盤）">ポイント（爪・ツース盤）</button><button class="chip" type="button" data-type="ブレード">ブレード</button><button class="chip" type="button" data-type="マルチブレード">マルチブレード</button><button class="chip" type="button" data-type="草刈り機">草刈り機</button><button class="chip" type="button" data-type="クイックヒッチ">クイックヒッチ</button><button class="chip" type="button" data-type="クイックカプラ">クイックカプラ</button></div>
+
           </div>
+
+
+          <div class="stock-box negotiation">
+
+            <span class="stock-icon">
+              ♢
+            </span>
+
+            <div>
+
+              <small>
+                商談中
+              </small>
+
+              <b id="negotiationCount">
+                0件
+              </b>
+
+            </div>
+
+          </div>
+
+
+          <div class="stock-box sold">
+
+            <span class="stock-icon">
+              ⊗
+            </span>
+
+            <div>
+
+              <small>
+                SOLD OUT
+              </small>
+
+              <b id="soldCount">
+                0件
+              </b>
+
+            </div>
+
+          </div>
+
+
+          <div class="stock-box total">
+
+            <span class="stock-icon">
+              ◇
+            </span>
+
+            <div>
+
+              <small>
+                掲載総数
+              </small>
+
+              <b id="totalCount">
+                0件
+              </b>
+
+            </div>
+
+          </div>
+
         </div>
+
+
+        <button
+          id="searchToggle"
+          class="search-toggle"
+          type="button"
+          aria-expanded="true"
+        >
+
+          <span class="toggle-left">
+
+            <span class="search-symbol">
+              ⌕
+            </span>
+
+            詳細条件で検索する
+
+            <span class="toggle-arrow">
+              ⌄
+            </span>
+
+          </span>
+
+
+          <span class="toggle-right">
+
+            <span class="fav-label">
+              お気に入り
+            </span>
+
+            <b id="favoriteCount">
+              0件
+            </b>
+
+            <span>
+              ☆
+            </span>
+
+          </span>
+
+        </button>
+
+
+        <div
+          id="filterCollapse"
+          class="filter-collapse open"
+        >
+
+          <div class="filter-inner">
+
+            <div class="filter-panel">
+
+
+              <div class="filter-grid">
+
+
+                <div class="field">
+
+                  <label>
+                    キーワード・型式
+                  </label>
+
+                  <input
+                    id="keyword"
+                    type="search"
+                    placeholder="例：TS-WD1700V-2"
+                  >
+
+                </div>
+
+
+                <div class="field">
+
+                  <label>
+                    メーカー
+                  </label>
+
+                  <select id="maker">
+
+                    <option value="">
+                      すべてのメーカー
+                    </option>
+
+                    <option>
+                      オカダアイヨン
+                    </option>
+
+                    <option>
+                      日本ニューマチック
+                    </option>
+
+                    <option>
+                      タグチ工業
+                    </option>
+
+                    <option>
+                      古河ロックドリル
+                    </option>
+
+                    <option>
+                      東空販売
+                    </option>
+
+                    <option>
+                      坂戸工作所
+                    </option>
+
+                    <option>
+                      甲南建機
+                    </option>
+
+                    <option>
+                      丸順
+                    </option>
+
+                    <option>
+                      その他
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label>
+                    種類
+                  </label>
+
+                  <select id="type">
+
+                    <option value="">
+                      すべての種類
+                    </option>
+
+                    <option>大割機</option>
+                    <option>小割機</option>
+                    <option>マグネット小割機</option>
+                    <option>油圧ブレーカー</option>
+                    <option>機械式フォーク</option>
+                    <option>チルトフォーク</option>
+                    <option>回転式フォーク</option>
+                    <option>鉄骨カッター</option>
+                    <option>木材カッター</option>
+                    <option>産廃カッター</option>
+                    <option>平バケット</option>
+                    <option>爪バケット</option>
+                    <option>特殊バケット</option>
+                    <option>スケルトンバケット</option>
+                    <option>グラップル</option>
+                    <option>油圧式ふるい機</option>
+                    <option>バケットクラッシャー</option>
+                    <option>油圧式オーガ</option>
+                    <option>草刈り機</option>
+                    <option>クイックヒッチ</option>
+                    <option>切削・攪拌機</option>
+                    <option>マグネット</option>
+                    <option>パーツ</option>
+                    <option>油圧ショベル</option>
+                    <option>その他</option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label>
+                    対応クラス
+                  </label>
+
+                  <select id="class">
+
+                    <option value="">
+                      すべてのクラス
+                    </option>
+
+                    <option>
+                      3〜5t
+                    </option>
+
+                    <option>
+                      5〜8t
+                    </option>
+
+                    <option>
+                      7〜12t
+                    </option>
+
+                    <option>
+                      12〜20t
+                    </option>
+
+                    <option>
+                      20〜30t
+                    </option>
+
+                    <option>
+                      30〜50t
+                    </option>
+
+                    <option>
+                      45〜70t
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+              </div>
+
+
+              <div class="range-grid">
+
+
+                <div class="field">
+
+                  <label>
+                    年式
+                  </label>
+
+                  <div class="range-pair">
+
+                    <select id="yearMin">
+
+                      <option value="">
+                        下限なし
+                      </option>
+
+                      <option value="2010">2010年</option>
+                      <option value="2011">2011年</option>
+                      <option value="2012">2012年</option>
+                      <option value="2013">2013年</option>
+                      <option value="2014">2014年</option>
+                      <option value="2015">2015年</option>
+                      <option value="2016">2016年</option>
+                      <option value="2017">2017年</option>
+                      <option value="2018">2018年</option>
+                      <option value="2019">2019年</option>
+                      <option value="2020">2020年</option>
+                      <option value="2021">2021年</option>
+                      <option value="2022">2022年</option>
+                      <option value="2023">2023年</option>
+                      <option value="2024">2024年</option>
+                      <option value="2025">2025年</option>
+                      <option value="2026">2026年</option>
+
+                    </select>
+
+                    <i>
+                      〜
+                    </i>
+
+                    <select id="yearMax">
+
+                      <option value="">
+                        上限なし
+                      </option>
+
+                      <option value="2010">2010年</option>
+                      <option value="2011">2011年</option>
+                      <option value="2012">2012年</option>
+                      <option value="2013">2013年</option>
+                      <option value="2014">2014年</option>
+                      <option value="2015">2015年</option>
+                      <option value="2016">2016年</option>
+                      <option value="2017">2017年</option>
+                      <option value="2018">2018年</option>
+                      <option value="2019">2019年</option>
+                      <option value="2020">2020年</option>
+                      <option value="2021">2021年</option>
+                      <option value="2022">2022年</option>
+                      <option value="2023">2023年</option>
+                      <option value="2024">2024年</option>
+                      <option value="2025">2025年</option>
+                      <option value="2026">2026年</option>
+
+                    </select>
+
+                  </div>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label>
+                    販売価格
+                  </label>
+
+                  <div class="range-pair">
+
+                    <select id="priceMin">
+
+                      <option value="">
+                        下限なし
+                      </option>
+
+                      <option value="300000">
+                        30万円
+                      </option>
+
+                      <option value="500000">
+                        50万円
+                      </option>
+
+                      <option value="1000000">
+                        100万円
+                      </option>
+
+                      <option value="2000000">
+                        200万円
+                      </option>
+
+                      <option value="3000000">
+                        300万円
+                      </option>
+
+                      <option value="5000000">
+                        500万円
+                      </option>
+
+                    </select>
+
+                    <i>
+                      〜
+                    </i>
+
+                    <select id="priceMax">
+
+                      <option value="">
+                        上限なし
+                      </option>
+
+                      <option value="500000">
+                        50万円
+                      </option>
+
+                      <option value="1000000">
+                        100万円
+                      </option>
+
+                      <option value="2000000">
+                        200万円
+                      </option>
+
+                      <option value="3000000">
+                        300万円
+                      </option>
+
+                      <option value="5000000">
+                        500万円
+                      </option>
+
+                      <option value="10000000">
+                        1,000万円
+                      </option>
+
+                    </select>
+
+                  </div>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label>
+                    販売状況
+                  </label>
+
+                  <select id="status">
+
+                    <option value="">
+                      すべて
+                    </option>
+
+                    <option>
+                      販売中
+                    </option>
+
+                    <option>
+                      商談中
+                    </option>
+
+                    <option>
+                      SOLD OUT
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <label class="check-row">
+
+                  <input
+                    id="photoOnly"
+                    type="checkbox"
+                  >
+
+                  写真ありのみ
+
+                </label>
+
+
+              </div>
+
+
+              <div class="filter-actions">
+
+                <button
+                  id="searchBtn"
+                  class="filter-btn"
+                >
+                  検索する
+                </button>
+
+                <button
+                  id="resetBtn"
+                  class="filter-btn secondary"
+                >
+                  条件をリセット
+                </button>
+
+              </div>
+
+
+              <div
+                id="chips"
+                class="type-chips"
+              >
+
+                <button class="chip" type="button" data-type="大割機">大割機</button>
+                <button class="chip" type="button" data-type="小割機">小割機</button>
+                <button class="chip" type="button" data-type="マグネット小割機">マグネット小割機</button>
+                <button class="chip" type="button" data-type="油圧ブレーカー">油圧ブレーカー</button>
+                <button class="chip" type="button" data-type="機械式フォーク">機械式フォーク</button>
+                <button class="chip" type="button" data-type="チルトフォーク">チルトフォーク</button>
+                <button class="chip" type="button" data-type="回転式フォーク">回転式フォーク</button>
+                <button class="chip" type="button" data-type="鉄骨カッター">鉄骨カッター</button>
+                <button class="chip" type="button" data-type="木材カッター">木材カッター</button>
+                <button class="chip" type="button" data-type="産廃カッター">産廃カッター</button>
+                <button class="chip" type="button" data-type="平バケット">平バケット</button>
+                <button class="chip" type="button" data-type="爪バケット">爪バケット</button>
+                <button class="chip" type="button" data-type="特殊バケット">特殊バケット</button>
+                <button class="chip" type="button" data-type="スケルトンバケット">スケルトンバケット</button>
+                <button class="chip" type="button" data-type="グラップル">グラップル</button>
+                <button class="chip" type="button" data-type="油圧式ふるい機">油圧式ふるい機</button>
+                <button class="chip" type="button" data-type="バケットクラッシャー">バケットクラッシャー</button>
+                <button class="chip" type="button" data-type="油圧式オーガ">油圧式オーガ</button>
+                <button class="chip" type="button" data-type="草刈り機">草刈り機</button>
+                <button class="chip" type="button" data-type="クイックヒッチ">クイックヒッチ</button>
+                <button class="chip" type="button" data-type="切削・攪拌機">切削・攪拌機</button>
+                <button class="chip" type="button" data-type="マグネット">マグネット</button>
+                <button class="chip" type="button" data-type="パーツ">パーツ</button>
+                <button class="chip" type="button" data-type="油圧ショベル">油圧ショベル</button>
+                <button class="chip" type="button" data-type="その他">その他</button>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
-    </div>
-  </div>
-</section>
 
-<section class="arrival-section">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="eyebrow">New Arrivals</div><h2>新着商品</h2></div>
-      <div class="carousel-buttons"><button id="prevArrival">←</button><button id="nextArrival">→</button></div>
     </div>
-    <div id="arrivals" class="arrivals"></div>
-  </div>
-</section>
 
-<section class="all-products">
-  <div class="wrap">
-    <div class="results-head">
-      <div><div class="eyebrow">All Products</div><h2>中古商品一覧</h2><div id="count" class="count"></div></div>
-      <select id="sort" class="sort"><option value="new">新着順</option><option value="priceAsc">価格が安い順</option><option value="priceDesc">価格が高い順</option><option value="yearDesc">年式が新しい順</option><option value="maker">メーカー順</option><option value="type">種類順</option></select>
-    </div>
-    <div id="products" class="products"></div>
+  </section>
 
-    <div class="bottom-grid">
-      <div class="help-box">
+
+  <!-- NEW ARRIVALS -->
+
+  <section class="arrival-section">
+
+    <div class="wrap">
+
+      <div class="section-head">
+
         <div>
-          <div class="eyebrow">Can’t find it?</div>
-          <h2>お探しの商品が見つからないですか？</h2>
-          <p>掲載していない商品も全国ネットワークからお探しします。メーカー・型式・対応クラスをご相談ください。</p>
+
+          <div class="eyebrow">
+            New Arrivals
+          </div>
+
+          <h2>
+            新着商品
+          </h2>
+
         </div>
-        <div class="help-actions">
-          <a class="phone" href="tel:0946428311">電話で問い合わせ</a>
-          <a class="instagram" href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener">Instagram</a>
-          <a class="tiktok" href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener">TikTok</a>
+
+
+        <div class="carousel-buttons">
+
+          <button id="prevArrival">
+            ←
+          </button>
+
+          <button id="nextArrival">
+            →
+          </button>
+
         </div>
+
       </div>
-      <div class="company-box" id="company">
-        <h2>株式会社レンビス</h2>
-        <p>代表取締役　堀口 隼人</p>
-        <p>TEL 0946-42-8311　FAX 0946-42-8312</p>
-        <div class="company-addresses">
-          <div><b>本社</b><br>福岡県朝倉郡筑前町松延804-1</div>
-          <div><b>機材ヤード</b><br>福岡県朝倉郡筑前町東小田字切坑1983-1</div>
-          <div><b>レンタル修理ヤード</b><br>福岡県朝倉郡筑前町松延807-3</div>
-        </div>
-      </div>
+
+
+      <div
+        id="arrivals"
+        class="arrivals"
+      ></div>
+
     </div>
-  </div>
-</section>
+
+  </section>
+
+
+  <!-- ALL PRODUCTS -->
+
+  <section class="all-products">
+
+    <div class="wrap">
+
+      <div class="results-head">
+
+        <div>
+
+          <div class="eyebrow">
+            All Products
+          </div>
+
+          <h2>
+            中古商品一覧
+          </h2>
+
+          <div
+            id="count"
+            class="count"
+          ></div>
+
+        </div>
+
+
+        <select
+          id="sort"
+          class="sort"
+        >
+
+          <option value="new">
+            新着順
+          </option>
+
+          <option value="priceAsc">
+            価格が安い順
+          </option>
+
+          <option value="priceDesc">
+            価格が高い順
+          </option>
+
+          <option value="yearDesc">
+            年式が新しい順
+          </option>
+
+          <option value="maker">
+            メーカー順
+          </option>
+
+          <option value="type">
+            種類順
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div
+        id="products"
+        class="products"
+      ></div>
+
+
+      <div class="bottom-grid">
+
+
+        <div class="help-box">
+
+          <div>
+
+            <div class="eyebrow">
+              Can’t find it?
+            </div>
+
+            <h2>
+              お探しの商品が見つからないですか？
+            </h2>
+
+            <p>
+              掲載していない商品も全国ネットワークからお探しします。
+              メーカー・型式・対応クラスをご相談ください。
+            </p>
+
+          </div>
+
+
+          <div class="help-actions">
+
+            <a
+              class="phone"
+              href="tel:0946428311"
+            >
+              電話で問い合わせ
+            </a>
+
+            <a
+              class="instagram"
+              href="https://www.instagram.com/renvisrenvis/"
+              target="_blank"
+              rel="noopener"
+            >
+              Instagram
+            </a>
+
+            <a
+              class="tiktok"
+              href="https://www.tiktok.com/@renvisrenvis"
+              target="_blank"
+              rel="noopener"
+            >
+              TikTok
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="company-box"
+          id="company"
+        >
+
+          <h2>
+            株式会社レンビス
+          </h2>
+
+          <p>
+            代表取締役　堀口 隼人
+          </p>
+
+          <p>
+            TEL 0946-42-8311　
+            FAX 0946-42-8312
+          </p>
+
+
+          <div class="company-addresses">
+
+            <div>
+              <b>本社</b><br>
+              福岡県朝倉郡筑前町松延804-1
+            </div>
+
+            <div>
+              <b>機材ヤード</b><br>
+              福岡県朝倉郡筑前町東小田字切坑1983-1
+            </div>
+
+            <div>
+              <b>レンタル修理ヤード</b><br>
+              福岡県朝倉郡筑前町松延807-3
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
 </main>
-<footer><div style="margin-bottom:8px"><a href="contact.html">お問い合わせ</a>　｜　<a href="legal.html">特定商取引法</a>　｜　<a href="privacy.html">プライバシーポリシー</a></div>© 2026 RENVIS Co., Ltd. All Rights Reserved.</footer>
+
+
+<footer>
+
+  <div style="margin-bottom:8px">
+
+    <a href="contact.html">
+      お問い合わせ
+    </a>
+
+    　｜　
+
+    <a href="legal.html">
+      特定商取引法
+    </a>
+
+    　｜　
+
+    <a href="privacy.html">
+      プライバシーポリシー
+    </a>
+
+  </div>
+
+  © 2026 RENVIS Co., Ltd.
+  All Rights Reserved.
+
+</footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase-config.js"></script>
 
+
 <script>
-const types=["大割機", "小割機", "マグネット", "油圧ブレーカー", "鉄骨切断機", "木材切断機", "木材破砕機（マルチャー）", "機械式フォーク", "油圧式フォーク", "ログフォーク", "アースオーガ", "油圧式オーガ", "油圧式切削機", "ツインヘッダー", "標準バケット", "幅狭バケット", "幅広バケット", "法面バケット", "スケルトンバケット", "ホイールローダー用バケット", "特殊バケット", "バケットクラッシャー", "グラップル", "リッパー", "ポイント（爪・ツース盤）", "ブレード", "マルチブレード", "草刈り機", "クイックヒッチ", "クイックカプラ"];
-let products=[];
-const favorites=new Set(JSON.parse(localStorage.getItem("renvisFavorites")||"[]"));
-const $=id=>document.getElementById(id);
-const yen=n=>(n===null||n===undefined||n==="")?"価格応相談":Number(n).toLocaleString("ja-JP")+"円（税込）";
-const statusClass=s=>s==="販売中"?"available":s==="商談中"?"negotiation":"sold";
-const conditionClass=c=>c==="整備済み"?"maintained":c==="点検済み"?"inspected":"as-is";
-function image(p){return p.photo?`<img src="${p.img}" alt="${p.model||p.title||"中古商品"}">`:`<div class="no-photo">NO PHOTO</div>`}
-function card(p,arrival=false){
- return `<article class="card">
-  <div class="card-image">${image(p)}${arrival?'<span class="new-badge">NEW</span>':`<span class="status ${statusClass(p.status)}">${p.status}</span>`}<button class="favorite ${favorites.has(p.id)?'active':''}" data-id="${p.id}" type="button">${favorites.has(p.id)?'★':'☆'}</button>${arrival?'':'<span class="updating">商品情報更新中</span>'}</div>
-  <div class="card-body">
-    <div class="category">${p.type||"中古商品"}</div><h3>${p.model||p.title||"中古商品"}</h3><div class="maker">${p.maker||""}</div>
-    <div class="tags">${p.condition?`<span class="tag condition ${conditionClass(p.condition)}">${p.condition}</span>`:""}${p.cls?`<span class="tag">${p.cls}</span>`:""}${p.year?`<span class="tag">${p.year}年</span>`:""}<span class="tag">● 福岡県</span></div>
-    <div class="price-row"><div class="price">${yen(p.price)}</div><a class="detail" href="used-detail.html?id=${p.id}">詳細を見る →</a></div>
-  </div></article>`;
+
+const types = [
+  "大割機",
+  "小割機",
+  "マグネット小割機",
+  "油圧ブレーカー",
+  "機械式フォーク",
+  "チルトフォーク",
+  "回転式フォーク",
+  "鉄骨カッター",
+  "木材カッター",
+  "産廃カッター",
+  "平バケット",
+  "爪バケット",
+  "特殊バケット",
+  "スケルトンバケット",
+  "グラップル",
+  "油圧式ふるい機",
+  "バケットクラッシャー",
+  "油圧式オーガ",
+  "草刈り機",
+  "クイックヒッチ",
+  "切削・攪拌機",
+  "マグネット",
+  "パーツ",
+  "油圧ショベル",
+  "その他"
+];
+
+
+let products = [];
+
+
+const favorites =
+  new Set(
+    JSON.parse(
+      localStorage.getItem(
+        "renvisFavorites"
+      )
+      ||
+      "[]"
+    )
+  );
+
+
+const $ = id =>
+  document.getElementById(id);
+
+
+const yen = n =>
+  (
+    n === null
+    ||
+    n === undefined
+    ||
+    n === ""
+  )
+  ?
+  "価格応相談"
+  :
+  Number(n)
+    .toLocaleString("ja-JP")
+  +
+  "円（税込）";
+
+
+const statusClass = status =>
+  status === "販売中"
+  ?
+  "available"
+  :
+  status === "商談中"
+  ?
+  "negotiation"
+  :
+  "sold";
+
+
+const conditionClass = condition =>
+  condition === "整備済み"
+  ?
+  "maintained"
+  :
+  condition === "点検済み"
+  ?
+  "inspected"
+  :
+  "as-is";
+
+
+function image(product){
+
+  return product.photo
+    ?
+    `
+      <img
+        src="${product.img}"
+        alt="${product.model || product.title || "中古商品"}"
+      >
+    `
+    :
+    `
+      <div class="no-photo">
+        NO PHOTO
+      </div>
+    `;
+
 }
-function updateFavoriteCount(){$("favoriteCount").textContent=favorites.size+"件"}
-function renderArrivals(){$("arrivals").innerHTML=filtered().filter(p=>p.new).sort((a,b)=>b.date-a.date).map(p=>card(p,true)).join("")}
-function classMatch(productClass, selectedClass){
-  if(!selectedClass) return true;
 
-  const productTon = parseFloat(productClass);
-  const range = selectedClass.match(/\d+(?:\.\d+)?/g);
 
-  if(!Number.isFinite(productTon) || !range || range.length < 2){
-    return productClass === selectedClass;
+function card(
+  product,
+  arrival = false
+){
+
+  return `
+    <article class="card">
+
+      <div class="card-image">
+
+        ${image(product)}
+
+        ${
+          arrival
+          ?
+          '<span class="new-badge">NEW</span>'
+          :
+          `<span class="status ${statusClass(product.status)}">${product.status}</span>`
+        }
+
+        <button
+          class="favorite ${favorites.has(product.id) ? 'active' : ''}"
+          data-id="${product.id}"
+          type="button"
+        >
+          ${favorites.has(product.id) ? '★' : '☆'}
+        </button>
+
+        ${
+          arrival
+          ?
+          ''
+          :
+          '<span class="updating">商品情報更新中</span>'
+        }
+
+      </div>
+
+
+      <div class="card-body">
+
+        <div class="category">
+          ${product.type || "中古商品"}
+        </div>
+
+        <h3>
+          ${product.model || product.title || "中古商品"}
+        </h3>
+
+        <div class="maker">
+          ${product.maker || ""}
+        </div>
+
+
+        <div class="tags">
+
+          ${
+            product.condition
+            ?
+            `
+              <span class="tag condition ${conditionClass(product.condition)}">
+                ${product.condition}
+              </span>
+            `
+            :
+            ""
+          }
+
+          ${
+            product.cls
+            ?
+            `
+              <span class="tag">
+                ${product.cls}
+              </span>
+            `
+            :
+            ""
+          }
+
+          ${
+            product.year
+            ?
+            `
+              <span class="tag">
+                ${product.year}年
+              </span>
+            `
+            :
+            ""
+          }
+
+          <span class="tag">
+            ● 福岡県
+          </span>
+
+        </div>
+
+
+        <div class="price-row">
+
+          <div class="price">
+            ${yen(product.price)}
+          </div>
+
+          <a
+            class="detail"
+            href="used-detail.html?id=${product.id}"
+          >
+            詳細を見る →
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+  `;
+
+}
+
+
+function updateFavoriteCount(){
+
+  $("favoriteCount").textContent =
+    favorites.size +
+    "件";
+
+}
+
+
+function renderArrivals(){
+
+  $("arrivals").innerHTML =
+    filtered()
+      .filter(product => product.new)
+      .sort(
+        (a,b) =>
+          b.date -
+          a.date
+      )
+      .map(
+        product =>
+          card(
+            product,
+            true
+          )
+      )
+      .join("");
+
+}
+
+
+function classMatch(
+  productClass,
+  selectedClass
+){
+
+  if(
+    !selectedClass
+  ){
+    return true;
   }
 
-  const min = Number(range[0]);
-  const max = Number(range[1]);
 
-  return productTon >= min && productTon <= max;
+  const productTon =
+    parseFloat(
+      productClass
+    );
+
+
+  const range =
+    selectedClass.match(
+      /\d+(?:\.\d+)?/g
+    );
+
+
+  if(
+    !Number.isFinite(productTon)
+    ||
+    !range
+    ||
+    range.length < 2
+  ){
+
+    return (
+      productClass
+      ===
+      selectedClass
+    );
+
+  }
+
+
+  const min =
+    Number(
+      range[0]
+    );
+
+
+  const max =
+    Number(
+      range[1]
+    );
+
+
+  return (
+    productTon >= min
+    &&
+    productTon <= max
+  );
+
 }
-  function filtered(){
- const kw=$("keyword").value.trim().toLowerCase(),maker=$("maker").value,type=$("type").value,cls=$("class").value,status=$("status").value;
- const ymin=+$("yearMin").value||0,ymax=+$("yearMax").value||9999,pmin=+$("priceMin").value||0,pmax=+$("priceMax").value||Infinity,photo=$("photoOnly").checked;
-return products.filter(p=>(!kw||`${p.title} ${p.maker} ${p.type} ${p.model} ${p.cls}`.toLowerCase().includes(kw))&&(!maker||p.maker===maker)&&(!type||p.type===type)&&classMatch(p.cls,cls)&&(!status||p.status===status)&&p.year>=ymin&&p.year<=ymax&&p.price>=pmin&&p.price<=pmax&&(!photo||p.photo));
+
+
+function filtered(){
+
+  const keyword =
+    $("keyword")
+      .value
+      .trim()
+      .toLowerCase();
+
+
+  const maker =
+    $("maker").value;
+
+
+  const type =
+    $("type").value;
+
+
+  const cls =
+    $("class").value;
+
+
+  const status =
+    $("status").value;
+
+
+  const yearMin =
+    +$("yearMin").value
+    ||
+    0;
+
+
+  const yearMax =
+    +$("yearMax").value
+    ||
+    9999;
+
+
+  const priceMin =
+    +$("priceMin").value
+    ||
+    0;
+
+
+  const priceMax =
+    +$("priceMax").value
+    ||
+    Infinity;
+
+
+  const photoOnly =
+    $("photoOnly").checked;
+
+
+  return products.filter(
+    product =>
+
+      (
+        !keyword
+        ||
+        `
+          ${product.title}
+          ${product.maker}
+          ${product.type}
+          ${product.model}
+          ${product.cls}
+        `
+          .toLowerCase()
+          .includes(keyword)
+      )
+
+      &&
+
+      (
+        !maker
+        ||
+        product.maker === maker
+      )
+
+      &&
+
+      (
+        !type
+        ||
+        product.type === type
+      )
+
+      &&
+
+      classMatch(
+        product.cls,
+        cls
+      )
+
+      &&
+
+      (
+        !status
+        ||
+        product.status === status
+      )
+
+      &&
+
+      product.year >= yearMin
+
+      &&
+
+      product.year <= yearMax
+
+      &&
+
+      product.price >= priceMin
+
+      &&
+
+      product.price <= priceMax
+
+      &&
+
+      (
+        !photoOnly
+        ||
+        product.photo
+      )
+
+  );
+
 }
-  function render(){
- let list=filtered();const sort=$("sort").value;
- if(sort==="new")list.sort((a,b)=>b.date-a.date);
- if(sort==="priceAsc")list.sort((a,b)=>a.price-b.price);
- if(sort==="priceDesc")list.sort((a,b)=>b.price-a.price);
- if(sort==="yearDesc")list.sort((a,b)=>b.year-a.year);
- if(sort==="maker")list.sort((a,b)=>a.maker.localeCompare(b.maker,"ja"));
- if(sort==="type")list.sort((a,b)=>types.indexOf(a.type)-types.indexOf(b.type));
- $("count").textContent=list.length+"件の商品が見つかりました";
- $("products").innerHTML=list.length?list.map(p=>card(p,false)).join(""):`<div class="no-results" style="display:block">条件に一致する商品がありません。</div>`;
+
+
+function render(){
+
+  let list =
+    filtered();
+
+
+  const sort =
+    $("sort").value;
+
+
+  if(
+    sort === "new"
+  ){
+
+    list.sort(
+      (a,b) =>
+        b.date -
+        a.date
+    );
+
+  }
+
+
+  if(
+    sort === "priceAsc"
+  ){
+
+    list.sort(
+      (a,b) =>
+        a.price -
+        b.price
+    );
+
+  }
+
+
+  if(
+    sort === "priceDesc"
+  ){
+
+    list.sort(
+      (a,b) =>
+        b.price -
+        a.price
+    );
+
+  }
+
+
+  if(
+    sort === "yearDesc"
+  ){
+
+    list.sort(
+      (a,b) =>
+        b.year -
+        a.year
+    );
+
+  }
+
+
+  if(
+    sort === "maker"
+  ){
+
+    list.sort(
+      (a,b) =>
+        a.maker.localeCompare(
+          b.maker,
+          "ja"
+        )
+    );
+
+  }
+
+
+  if(
+    sort === "type"
+  ){
+
+    list.sort(
+      (a,b) =>
+        types.indexOf(a.type)
+        -
+        types.indexOf(b.type)
+    );
+
+  }
+
+
+  $("count").textContent =
+    list.length
+    +
+    "件の商品が見つかりました";
+
+
+  $("products").innerHTML =
+    list.length
+    ?
+    list
+      .map(
+        product =>
+          card(
+            product,
+            false
+          )
+      )
+      .join("")
+    :
+    `
+      <div
+        class="no-results"
+        style="display:block"
+      >
+        条件に一致する商品がありません。
+      </div>
+    `;
+
 }
+
+
 function reset(){
-  $("keyword").value="";
-  $("maker").value="";
-  $("type").value="";
-  $("class").value="";
-  $("yearMin").value="";
-  $("yearMax").value="";
-  $("priceMin").value="";
-  $("priceMax").value="";
-  $("status").value="";
-  $("photoOnly").checked=false;
-  $("sort").value="new";
 
-  document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));
+  $("keyword").value = "";
+  $("maker").value = "";
+  $("type").value = "";
+  $("class").value = "";
+  $("yearMin").value = "";
+  $("yearMax").value = "";
+  $("priceMin").value = "";
+  $("priceMax").value = "";
+  $("status").value = "";
+  $("photoOnly").checked = false;
+  $("sort").value = "new";
+
+
+  document
+    .querySelectorAll(".chip")
+    .forEach(
+      chip =>
+        chip
+          .classList
+          .remove("active")
+    );
+
 
   renderArrivals();
   render();
+
 }
-  $("resetBtn").onclick=reset;
-document.addEventListener("click",e=>{
- const fav=e.target.closest(".favorite");
- if(fav){
-  e.preventDefault();const id=Number(fav.dataset.id);
-  favorites.has(id)?favorites.delete(id):favorites.add(id);
-  localStorage.setItem("renvisFavorites",JSON.stringify([...favorites]));
-  updateFavoriteCount();renderArrivals();render();
- }
-});
-$("searchToggle").onclick=()=>{const open=$("filterCollapse").classList.toggle("open");$("searchToggle").setAttribute("aria-expanded",String(open))};
-$("searchBtn").onclick=()=>{renderArrivals();render();};
-$("chips").onclick=e=>{if(!e.target.classList.contains("chip"))return;const active=e.target.classList.toggle("active");document.querySelectorAll(".chip").forEach(c=>{if(c!==e.target)c.classList.remove("active")});$("type").value=active?e.target.dataset.type:"";render()};
-$("prevArrival").onclick=()=>$("arrivals").scrollBy({left:-360,behavior:"smooth"});
-$("nextArrival").onclick=()=>$("arrivals").scrollBy({left:360,behavior:"smooth"});
+
+
+$("resetBtn").onclick =
+  reset;
+
+
+document.addEventListener(
+  "click",
+  event => {
+
+    const favoriteButton =
+      event.target.closest(
+        ".favorite"
+      );
+
+
+    if(
+      favoriteButton
+    ){
+
+      event.preventDefault();
+
+
+      const id =
+        Number(
+          favoriteButton.dataset.id
+        );
+
+
+      if(
+        favorites.has(id)
+      ){
+
+        favorites.delete(id);
+
+      }
+      else{
+
+        favorites.add(id);
+
+      }
+
+
+      localStorage.setItem(
+        "renvisFavorites",
+        JSON.stringify(
+          [
+            ...favorites
+          ]
+        )
+      );
+
+
+      updateFavoriteCount();
+      renderArrivals();
+      render();
+
+    }
+
+  }
+);
+
+
+$("searchBtn").onclick =
+  () => {
+
+    renderArrivals();
+    render();
+
+  };
+
+
+$("chips").onclick =
+  event => {
+
+    if(
+      !event.target.classList.contains(
+        "chip"
+      )
+    ){
+      return;
+    }
+
+
+    const active =
+      event.target
+        .classList
+        .toggle(
+          "active"
+        );
+
+
+    document
+      .querySelectorAll(".chip")
+      .forEach(
+        chip => {
+
+          if(
+            chip
+            !==
+            event.target
+          ){
+
+            chip
+              .classList
+              .remove(
+                "active"
+              );
+
+          }
+
+        }
+      );
+
+
+    $("type").value =
+      active
+      ?
+      event.target.dataset.type
+      :
+      "";
+
+
+    render();
+
+  };
+
+
+$("prevArrival").onclick =
+  () =>
+    $("arrivals")
+      .scrollBy({
+        left:-360,
+        behavior:"smooth"
+      });
+
+
+$("nextArrival").onclick =
+  () =>
+    $("arrivals")
+      .scrollBy({
+        left:360,
+        behavior:"smooth"
+      });
+
+
+$("sort").onchange =
+  render;
+
+
 function updateCounts(){
-$("availableCount").textContent=products.filter(p=>String(p.status).includes("販売中")).length+"件";
- $("negotiationCount").textContent=products.filter(p=>p.status==="商談中").length+"件";
- $("soldCount").textContent=products.filter(p=>p.status==="SOLD OUT").length+"件";
- $("totalCount").textContent=products.length+"件";
+
+  $("availableCount").textContent =
+    products
+      .filter(
+        product =>
+          String(
+            product.status
+          )
+            .includes(
+              "販売中"
+            )
+      )
+      .length
+    +
+    "件";
+
+
+  $("negotiationCount").textContent =
+    products
+      .filter(
+        product =>
+          product.status
+          ===
+          "商談中"
+      )
+      .length
+    +
+    "件";
+
+
+  $("soldCount").textContent =
+    products
+      .filter(
+        product =>
+          product.status
+          ===
+          "SOLD OUT"
+      )
+      .length
+    +
+    "件";
+
+
+  $("totalCount").textContent =
+    products.length
+    +
+    "件";
+
 }
+
 
 async function loadUsedItems(){
- try{
-  if(!window.RENVIS_SUPABASE?.url||!window.RENVIS_SUPABASE?.key)throw new Error("Supabase設定を読み込めませんでした。");
-  const db=window.supabase.createClient(window.RENVIS_SUPABASE.url,window.RENVIS_SUPABASE.key);
-  const [{data,error},{data:imageRows,error:imageError}]=await Promise.all([
-    db.from("used_items").select("*").eq("is_public",true).order("sort_order",{ascending:true}).order("created_at",{ascending:false}),
-    db.from("used_item_images").select("used_item_id,image_url,sort_order,id").order("sort_order",{ascending:true}).order("id",{ascending:true})
-  ]);
-  if(error)throw error;
-  if(imageError)throw imageError;
-  const firstImageByItem=new Map();
-  (imageRows||[]).forEach(img=>{if(img.image_url&&!firstImageByItem.has(Number(img.used_item_id)))firstImageByItem.set(Number(img.used_item_id),img.image_url)});
 
-  products=(data||[]).map((row,index)=>({
-   id:Number(row.id),
-   title:row.title??row["タイトル"]??"",
-   maker:row.maker??row["Maker"]??row["メーカー"]??"",
-   type:row.type??"",
-   model:row.model??row["モデル"]??"",
-   cls:row.cls??"",
-   year:row.year==null?null:Number(row.year),
-   price:row.price??row["プライス"]??row["価格"]??null,
-status:String(row.status??row["状態"]??"販売中").replace(/[\s\u200B-\u200D\uFEFF]/g,""),
-   condition:row.condition??row["条件"]??"",
-   img:row.thumbnail_url||firstImageByItem.get(Number(row.id))||"",
-   photo:Boolean(row.thumbnail_url||firstImageByItem.get(Number(row.id))),
-   date:row.created_at?new Date(row.created_at).getTime():0,
- new:row.created_at ? (Date.now() - new Date(row.created_at).getTime()) <= 30*24*60*60*1000 : false
-  }));
+  try{
 
-  updateCounts(); updateFavoriteCount(); renderArrivals(); render();
- }
 
- catch(err){
-  console.error("used_items load error:",err);
-  products=[]; updateCounts(); updateFavoriteCount();
-  $("arrivals").innerHTML="";
-  $("count").textContent="商品情報を読み込めませんでした";
-  $("products").innerHTML='<div class="no-results" style="display:block">商品情報の取得に失敗しました。時間をおいて再度お試しください。</div>';
- }
+    if(
+      !window.RENVIS_SUPABASE?.url
+      ||
+      !window.RENVIS_SUPABASE?.key
+    ){
+
+      throw new Error(
+        "Supabase設定を読み込めませんでした。"
+      );
+
+    }
+
+
+    const db =
+      window.supabase
+        .createClient(
+          window.RENVIS_SUPABASE.url,
+          window.RENVIS_SUPABASE.key
+        );
+
+
+    const [
+      {
+        data,
+        error
+      },
+      {
+        data:imageRows,
+        error:imageError
+      }
+    ] =
+    await Promise.all([
+
+      db
+        .from(
+          "used_items"
+        )
+        .select("*")
+        .eq(
+          "is_public",
+          true
+        )
+        .order(
+          "sort_order",
+          {
+            ascending:true
+          }
+        )
+        .order(
+          "created_at",
+          {
+            ascending:false
+          }
+        ),
+
+      db
+        .from(
+          "used_item_images"
+        )
+        .select(
+          "used_item_id,image_url,sort_order,id"
+        )
+        .order(
+          "sort_order",
+          {
+            ascending:true
+          }
+        )
+        .order(
+          "id",
+          {
+            ascending:true
+          }
+        )
+
+    ]);
+
+
+    if(
+      error
+    ){
+      throw error;
+    }
+
+
+    if(
+      imageError
+    ){
+      throw imageError;
+    }
+
+
+    const firstImageByItem =
+      new Map();
+
+
+    (imageRows || [])
+      .forEach(
+        image => {
+
+          if(
+            image.image_url
+            &&
+            !firstImageByItem.has(
+              Number(
+                image.used_item_id
+              )
+            )
+          ){
+
+            firstImageByItem.set(
+              Number(
+                image.used_item_id
+              ),
+              image.image_url
+            );
+
+          }
+
+        }
+      );
+
+
+    products =
+      (data || [])
+        .map(
+          row => ({
+
+            id:
+              Number(
+                row.id
+              ),
+
+            title:
+              row.title
+              ??
+              row["タイトル"]
+              ??
+              "",
+
+            maker:
+              row.maker
+              ??
+              row["Maker"]
+              ??
+              row["メーカー"]
+              ??
+              "",
+
+            type:
+              row.type
+              ??
+              "",
+
+            model:
+              row.model
+              ??
+              row["モデル"]
+              ??
+              "",
+
+            cls:
+              row.cls
+              ??
+              "",
+
+            year:
+              row.year == null
+              ?
+              null
+              :
+              Number(
+                row.year
+              ),
+
+            price:
+              row.price
+              ??
+              row["プライス"]
+              ??
+              row["価格"]
+              ??
+              null,
+
+            status:
+              String(
+                row.status
+                ??
+                row["状態"]
+                ??
+                "販売中"
+              )
+                .replace(
+                  /[\s\u200B-\u200D\uFEFF]/g,
+                  ""
+                ),
+
+            condition:
+              row.condition
+              ??
+              row["条件"]
+              ??
+              "",
+
+            img:
+              row.thumbnail_url
+              ||
+              firstImageByItem.get(
+                Number(
+                  row.id
+                )
+              )
+              ||
+              "",
+
+            photo:
+              Boolean(
+                row.thumbnail_url
+                ||
+                firstImageByItem.get(
+                  Number(
+                    row.id
+                  )
+                )
+              ),
+
+            date:
+              row.created_at
+              ?
+              new Date(
+                row.created_at
+              )
+                .getTime()
+              :
+              0,
+
+            new:
+              row.created_at
+              ?
+              (
+                Date.now()
+                -
+                new Date(
+                  row.created_at
+                )
+                  .getTime()
+              )
+              <=
+              30
+              *
+              24
+              *
+              60
+              *
+              60
+              *
+              1000
+              :
+              false
+
+          })
+        );
+
+
+    updateCounts();
+    updateFavoriteCount();
+    renderArrivals();
+    render();
+
+  }
+
+
+  catch(error){
+
+    console.error(
+      "used_items load error:",
+      error
+    );
+
+
+    products = [];
+
+
+    updateCounts();
+    updateFavoriteCount();
+
+
+    $("arrivals").innerHTML = "";
+
+
+    $("count").textContent =
+      "商品情報を読み込めませんでした";
+
+
+    $("products").innerHTML =
+      `
+        <div
+          class="no-results"
+          style="display:block"
+        >
+          商品情報の取得に失敗しました。
+          時間をおいて再度お試しください。
+        </div>
+      `;
+
+  }
+
 }
+
+
 loadUsedItems();
+
 </script>
 
-<script id="mobile-drawer-script-20260903">
-(function(){
-  const openBtn=document.getElementById('menuOpen');
-  const closeBtn=document.getElementById('menuClose');
-  const drawer=document.getElementById('mobileDrawer');
-  const overlay=document.getElementById('menuOverlay');
-  if(!openBtn||!closeBtn||!drawer||!overlay)return;
-  const openMenu=()=>{drawer.classList.add('open');overlay.classList.add('open');drawer.setAttribute('aria-hidden','false');openBtn.setAttribute('aria-expanded','true');document.body.classList.add('mobile-menu-open')};
-  const closeMenu=()=>{drawer.classList.remove('open');overlay.classList.remove('open');drawer.setAttribute('aria-hidden','true');openBtn.setAttribute('aria-expanded','false');document.body.classList.remove('mobile-menu-open')};
-  openBtn.addEventListener('click',openMenu);closeBtn.addEventListener('click',closeMenu);overlay.addEventListener('click',closeMenu);
-  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+
+<script>
+
+(() => {
+
+  const openBtn =
+    document.getElementById(
+      "menuOpen"
+    );
+
+  const closeBtn =
+    document.getElementById(
+      "menuClose"
+    );
+
+  const drawer =
+    document.getElementById(
+      "mobileDrawer"
+    );
+
+  const overlay =
+    document.getElementById(
+      "menuOverlay"
+    );
+
+
+  if(
+    !openBtn
+    ||
+    !closeBtn
+    ||
+    !drawer
+    ||
+    !overlay
+  ){
+    return;
+  }
+
+
+  const openMenu = () => {
+
+    drawer
+      .classList
+      .add(
+        "open"
+      );
+
+    overlay
+      .classList
+      .add(
+        "open"
+      );
+
+    drawer
+      .setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+    openBtn
+      .setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+    document
+      .body
+      .classList
+      .add(
+        "mobile-menu-open"
+      );
+
+  };
+
+
+  const closeMenu = () => {
+
+    drawer
+      .classList
+      .remove(
+        "open"
+      );
+
+    overlay
+      .classList
+      .remove(
+        "open"
+      );
+
+    drawer
+      .setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+    openBtn
+      .setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    document
+      .body
+      .classList
+      .remove(
+        "mobile-menu-open"
+      );
+
+  };
+
+
+  openBtn.addEventListener(
+    "click",
+    openMenu
+  );
+
+
+  closeBtn.addEventListener(
+    "click",
+    closeMenu
+  );
+
+
+  overlay.addEventListener(
+    "click",
+    closeMenu
+  );
+
+
+  drawer
+    .querySelectorAll("a")
+    .forEach(
+      link =>
+        link.addEventListener(
+          "click",
+          closeMenu
+        )
+    );
+
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if(
+        event.key ===
+        "Escape"
+      ){
+
+        closeMenu();
+
+      }
+
+    }
+  );
+
 })();
+
 </script>
 
-<style id="renvis-hero-bottom-line-up-20260903">
-/* 見出し下の境界線だけ上へ。文字サイズ・横位置は変更しない */
-@media (min-width:761px){
-  .hero{height:220px!important;min-height:220px!important;max-height:220px!important;padding-bottom:10px!important;}
-  .used-hero{height:220px!important;min-height:220px!important;max-height:220px!important;padding-bottom:10px!important;}
-}
-@media (max-width:760px){
-  .hero,.used-hero{padding-bottom:14px!important;}
-}
-</style>
 
-<style id="renvis-hero-divider-unified-20260903">
-/* 見出し下の薄い境界線を4ページで完全統一 */
-.hero,.used-hero{
-  width:100%!important;
-  border-bottom:1px solid rgba(255,255,255,.15)!important;
-  margin-left:0!important;
-  margin-right:0!important;
-}
-</style>
 </body>
 </html>
