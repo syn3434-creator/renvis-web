@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -61,7 +62,10 @@
     }
 
     .wrap{
-      width:min(var(--max),calc(100% - 64px));
+      width:min(
+        var(--max),
+        calc(100% - 64px)
+      );
       margin:auto;
     }
 
@@ -74,35 +78,52 @@
       position:sticky;
       top:0;
       z-index:80;
+
       height:76px;
+
       display:flex;
       align-items:center;
+
       background:rgba(4,6,8,.96);
+
       backdrop-filter:blur(14px);
+
       border-bottom:1px solid var(--line);
     }
 
     .nav{
-      width:min(var(--max),calc(100% - 64px));
+      width:min(
+        var(--max),
+        calc(100% - 64px)
+      );
+
       margin:auto;
+
       display:flex;
       align-items:center;
+
       gap:28px;
     }
 
     .logo{
       width:245px;
+
       display:block;
+
       mix-blend-mode:screen;
     }
 
     .nav-links{
       display:flex;
       align-items:stretch;
+
       gap:25px;
+
       margin-left:auto;
+
       font-size:.77rem;
       font-weight:800;
+
       letter-spacing:.06em;
     }
 
@@ -112,13 +133,17 @@
       flex-direction:column;
       align-items:center;
       justify-content:center;
+
       gap:3px;
+
       line-height:1.08;
+
       white-space:nowrap;
     }
 
     .nav-links a{
       padding:12px 0;
+
       border-bottom:2px solid transparent;
     }
 
@@ -129,15 +154,20 @@
 
     .nav-en{
       display:block;
+
       font-weight:900;
+
       letter-spacing:.06em;
     }
 
     .nav-ja{
       display:block;
+
       font-size:.52rem;
       font-weight:700;
+
       letter-spacing:.05em;
+
       color:#8e969e;
     }
 
@@ -148,7 +178,9 @@
 
     .home-btn{
       border:1px solid var(--line);
+
       padding:9px 14px;
+
       font-size:.74rem;
       font-weight:800;
     }
@@ -171,65 +203,112 @@
 
     /* =========================
        HERO
+
+       USED SALESなどの
+       他サービスページと統一
     ========================= */
 
     .hero{
       width:100%;
-      border-bottom:1px solid var(--line);
-      background:
-        radial-gradient(
-          circle at 80% 10%,
-          rgba(224,182,61,.05),
-          transparent 28%
-        ),
-        linear-gradient(
-          180deg,
-          #080b0f,
-          #06080b
-        );
-      padding:34px 0 30px;
+
+      height:220px;
+      min-height:220px;
+      max-height:220px;
+
+      display:flex;
+      align-items:flex-start;
+
+      padding:26px 0 10px;
+
+      background:#06080b;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.15);
+
+      overflow:hidden;
     }
 
-    .hero-content{
-      padding-left:14px;
-      border-left:3px solid var(--gold);
+    .hero .wrap.hero-content{
+      box-sizing:border-box;
+
+      width:calc(100% - 36px);
+      max-width:none;
+
+      margin:0 18px;
+
+      padding:
+        0
+        0
+        0
+        11px;
+
+      border-left:
+        3px solid
+        var(--gold);
     }
 
     .eyebrow{
       color:var(--gold);
+
       font-size:.7rem;
-      letter-spacing:.19em;
-      text-transform:uppercase;
       font-weight:900;
+
+      letter-spacing:.19em;
+
+      text-transform:uppercase;
+    }
+
+    .hero .eyebrow{
+      font-size:.62rem;
+
+      line-height:1.15;
+
+      margin:
+        0
+        0
+        9px;
     }
 
     .hero h1{
-      margin:7px 0 5px;
-      font-size:clamp(3rem,5.3vw,5.4rem);
-      line-height:.92;
-      letter-spacing:-.045em;
+      font-size:3.15rem;
+
+      line-height:.95;
+
+      letter-spacing:-.035em;
+
+      margin:
+        0
+        0
+        10px;
     }
 
     .hero-jp{
-      margin:0 0 18px;
-      font-size:.84rem;
+      font-size:.78rem;
       font-weight:800;
-      letter-spacing:.08em;
-    }
 
-    .hero-lead{
-      margin:0 0 10px;
-      max-width:850px;
-      font-size:clamp(1.2rem,2vw,2rem);
-      font-weight:900;
-      letter-spacing:.01em;
+      line-height:1.35;
+
+      letter-spacing:.06em;
+
+      margin:
+        0
+        0
+        14px;
+
+      color:#f4f6f8;
     }
 
     .hero-desc{
+      max-width:720px;
+
       margin:0;
-      max-width:850px;
-      color:#c5ccd3;
-      font-size:.82rem;
+
+      color:#c7ced5;
+
+      font-size:.76rem;
+
+      line-height:1.62;
     }
 
     .repair-desc-line{
@@ -251,22 +330,38 @@
 
     .section-head{
       display:flex;
-      align-items:end;
+
+      align-items:flex-end;
       justify-content:space-between;
+
       gap:24px;
+
       margin-bottom:20px;
     }
 
     .section-head h2{
-      margin:3px 0 0;
-      font-size:clamp(1.8rem,2.7vw,2.7rem);
+      margin:
+        3px
+        0
+        0;
+
+      font-size:
+        clamp(
+          1.8rem,
+          2.7vw,
+          2.7rem
+        );
+
       line-height:1.18;
     }
 
     .section-head p{
       margin:0;
+
       color:var(--muted);
+
       font-size:.8rem;
+
       text-align:right;
     }
 
@@ -277,72 +372,118 @@
 
     .main-case{
       display:grid;
-      grid-template-columns:minmax(270px,.33fr) minmax(0,.67fr);
+
+      grid-template-columns:
+        minmax(270px,.33fr)
+        minmax(0,.67fr);
+
       gap:0;
-      border:1px solid var(--line);
+
+      overflow:hidden;
+
+      border:
+        1px solid
+        var(--line);
+
       background:
         linear-gradient(
           145deg,
           #0f151c,
           #080b0f
         );
-      overflow:hidden;
     }
 
     .case-info{
       padding:30px;
+
       display:flex;
       flex-direction:column;
       justify-content:center;
     }
 
     .case-info h3{
-      margin:8px 0 10px;
-      font-size:clamp(1.55rem,2.1vw,2.15rem);
+      margin:
+        8px
+        0
+        10px;
+
+      font-size:
+        clamp(
+          1.55rem,
+          2.1vw,
+          2.15rem
+        );
+
       line-height:1.25;
     }
 
     .case-info p{
       margin:0;
+
       color:var(--muted);
+
       font-size:.82rem;
     }
 
     .tags{
       display:flex;
       flex-wrap:wrap;
+
       gap:7px;
-      margin:18px 0 20px;
+
+      margin:
+        18px
+        0
+        20px;
     }
 
     .tag{
-      border:1px solid rgba(224,182,61,.45);
+      border:
+        1px solid
+        rgba(224,182,61,.45);
+
       color:#e7c86d;
-      padding:6px 9px;
+
+      padding:
+        6px
+        9px;
+
       font-size:.68rem;
     }
 
     .case-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:8px;
       align-items:center;
+
+      gap:8px;
     }
 
     .detail-btn{
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
+
       min-height:44px;
-      padding:0 17px;
-      border:1px solid var(--gold);
+
+      padding:
+        0
+        17px;
+
+      border:
+        1px solid
+        var(--gold);
+
       background:
         linear-gradient(
           135deg,
           #e4bd4c,
           #c89423
         );
+
       color:#090b0d;
+
       font-size:.76rem;
       font-weight:900;
     }
@@ -353,18 +494,29 @@
 
     .sns-link{
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
+
       min-height:44px;
-      padding:0 14px;
-      border:1px solid var(--line);
+
+      padding:
+        0
+        14px;
+
+      border:
+        1px solid
+        var(--line);
+
       color:#dfe4e8;
+
       font-size:.72rem;
       font-weight:800;
     }
 
     .sns-link:hover{
       border-color:var(--gold);
+
       color:var(--gold-soft);
     }
 
@@ -375,73 +527,123 @@
 
     .compare{
       display:grid;
-      grid-template-columns:1fr 42px 1fr;
+
+      grid-template-columns:
+        1fr
+        42px
+        1fr;
+
       align-items:stretch;
+
       min-width:0;
+
       background:#090d12;
     }
 
     .compare-col{
       position:relative;
+
       min-width:0;
     }
 
     .compare-col h4{
       position:absolute;
+
       z-index:2;
+
       left:16px;
       bottom:16px;
+
       margin:0;
-      padding:7px 10px;
-      background:rgba(7,9,12,.82);
-      border:1px solid rgba(255,255,255,.18);
+
+      padding:
+        7px
+        10px;
+
+      background:
+        rgba(
+          7,
+          9,
+          12,
+          .82
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.18);
+
       color:#e1e5e9;
+
       font-size:.7rem;
+
       letter-spacing:.16em;
     }
 
     .compare-col.after h4{
       color:#111;
+
       background:var(--gold);
+
       border-color:var(--gold);
     }
 
     .compare-img{
       height:100%;
+
       min-height:420px;
+
       overflow:hidden;
+
       background:#141920;
     }
 
     .compare-img img{
       width:100%;
       height:100%;
+
       object-fit:cover;
     }
 
     .arrow{
       display:grid;
+
       place-items:center;
+
       color:var(--gold);
+
       font-size:2rem;
+
       background:#080b0f;
-      border-left:1px solid var(--line);
-      border-right:1px solid var(--line);
+
+      border-left:
+        1px solid
+        var(--line);
+
+      border-right:
+        1px solid
+        var(--line);
     }
 
     .cms-img-placeholder{
       height:100%;
+
       min-height:300px;
+
       display:grid;
+
       place-items:center;
+
       background:
         linear-gradient(
           135deg,
           #171c22,
           #0b0f14
         );
+
       color:#6e7781;
+
       font-weight:900;
+
       letter-spacing:.08em;
     }
 
@@ -452,54 +654,89 @@
 
     .cases-grid{
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0,1fr)
+        );
+
       gap:14px;
     }
 
     .case-card{
-      border:1px solid var(--line);
-      background:#0b0f14;
       overflow:hidden;
+
+      border:
+        1px solid
+        var(--line);
+
+      background:#0b0f14;
+
       transition:
         transform .22s ease,
         border-color .22s ease;
     }
 
     .case-card:hover{
-      transform:translateY(-3px);
-      border-color:rgba(224,182,61,.5);
+      transform:
+        translateY(-3px);
+
+      border-color:
+        rgba(
+          224,
+          182,
+          61,
+          .5
+        );
     }
 
     .case-card-media{
       height:230px;
+
       overflow:hidden;
+
       background:#141920;
     }
 
     .case-card-media img{
       width:100%;
       height:100%;
+
       object-fit:cover;
-      filter:saturate(.88) brightness(.88);
-      transition:transform .35s ease;
+
+      filter:
+        saturate(.88)
+        brightness(.88);
+
+      transition:
+        transform .35s ease;
     }
 
-    .case-card:hover .case-card-media img{
-      transform:scale(1.025);
+    .case-card:hover
+    .case-card-media img{
+      transform:
+        scale(1.025);
     }
 
     .coming{
       height:100%;
+
       display:grid;
+
       place-items:center;
+
       background:
         linear-gradient(
           135deg,
           #171c22,
           #0b0f14
         );
+
       color:#6e7781;
+
       font-weight:900;
+
       letter-spacing:.1em;
     }
 
@@ -508,33 +745,47 @@
     }
 
     .case-card h3{
-      margin:4px 0 8px;
+      margin:
+        4px
+        0
+        8px;
+
       font-size:1.05rem;
+
       line-height:1.35;
     }
 
     .case-card p{
-      margin:0 0 14px;
+      margin:
+        0
+        0
+        14px;
+
       color:var(--muted);
+
       font-size:.72rem;
+
       min-height:2.4em;
     }
 
     .card-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
       align-items:center;
+
+      gap:10px;
     }
 
     .card-btn{
       color:#e6c55f;
+
       font-size:.72rem;
       font-weight:900;
     }
 
     .card-sns{
       color:#9ca6b0;
+
       font-size:.68rem;
       font-weight:800;
     }
@@ -549,9 +800,19 @@
     ========================= */
 
     .photo-message{
-      margin:8px 0 0;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+      margin:
+        8px
+        0
+        0;
+
+      border-top:
+        1px solid
+        var(--line);
+
+      border-bottom:
+        1px solid
+        var(--line);
+
       background:
         linear-gradient(
           90deg,
@@ -567,28 +828,50 @@
 
     .photo-message-inner{
       min-height:150px;
+
       display:flex;
+
       align-items:center;
       justify-content:space-between;
+
       gap:40px;
-      padding:34px 0;
+
+      padding:
+        34px
+        0;
     }
 
     .photo-message h2{
-      margin:4px 0 6px;
-      font-size:clamp(1.35rem,2.1vw,2rem);
+      margin:
+        4px
+        0
+        6px;
+
+      font-size:
+        clamp(
+          1.35rem,
+          2.1vw,
+          2rem
+        );
     }
 
     .photo-message p{
       margin:0;
+
       color:var(--muted);
+
       font-size:.8rem;
     }
 
     .photo-message-mark{
-      flex:0 0 auto;
+      flex:
+        0
+        0
+        auto;
+
       width:150px;
       height:1px;
+
       background:
         linear-gradient(
           90deg,
@@ -603,11 +886,17 @@
     ========================= */
 
     .cta-wrap{
-      padding:54px 0 64px;
+      padding:
+        54px
+        0
+        64px;
     }
 
     .cta{
-      border:1px solid rgba(224,182,61,.5);
+      border:
+        1px solid
+        rgba(224,182,61,.5);
+
       background:
         radial-gradient(
           circle at 20% 0,
@@ -619,42 +908,63 @@
           #111820,
           #080b0f
         );
+
       padding:30px;
+
       display:flex;
+
       align-items:center;
       justify-content:space-between;
+
       gap:24px;
     }
 
     .cta h2{
-      margin:2px 0 7px;
+      margin:
+        2px
+        0
+        7px;
+
       font-size:1.55rem;
     }
 
     .cta p{
       margin:0;
+
       color:var(--muted);
+
       font-size:.78rem;
     }
 
     .cta-actions{
       display:flex;
-      gap:9px;
       flex-wrap:wrap;
+
+      gap:9px;
     }
 
     .cta-actions a{
       min-width:150px;
-      padding:14px 18px;
-      border:1px solid var(--line);
-      font-weight:900;
+
+      padding:
+        14px
+        18px;
+
+      border:
+        1px solid
+        var(--line);
+
       font-size:.75rem;
+      font-weight:900;
+
       text-align:center;
     }
 
     .cta-actions .contact{
       background:var(--gold);
+
       border-color:var(--gold);
+
       color:#080a0c;
     }
 
@@ -662,6 +972,7 @@
     .cta-actions .instagram:hover,
     .cta-actions .tiktok:hover{
       border-color:var(--gold);
+
       color:var(--gold-soft);
     }
 
@@ -671,10 +982,19 @@
     ========================= */
 
     footer{
-      border-top:1px solid var(--line);
-      padding:22px 0 26px;
+      border-top:
+        1px solid
+        var(--line);
+
+      padding:
+        22px
+        0
+        26px;
+
       color:#747d87;
+
       font-size:.68rem;
+
       text-align:center;
     }
 
@@ -702,8 +1022,13 @@
       }
 
       .cases-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0,1fr)
+          );
       }
+
     }
 
 
@@ -717,6 +1042,9 @@
       .nav{
         width:calc(100% - 28px);
       }
+
+
+      /* HEADER */
 
       header{
         height:68px;
@@ -734,135 +1062,227 @@
         display:none;
       }
 
+
+      /* MOBILE MENU */
+
       .mobile-menu-toggle{
         display:grid;
+
         place-content:center;
+
         gap:6px;
+
         width:44px;
         height:44px;
+
         margin-left:auto;
+
         border:0;
+
         background:transparent;
+
         cursor:pointer;
       }
 
       .mobile-menu-toggle span{
         display:block;
+
         width:31px;
         height:2px;
+
         background:#fff;
       }
 
       .mobile-menu-overlay{
         display:block;
+
         position:fixed;
+
         inset:0;
+
         z-index:998;
-        background:rgba(0,0,0,.66);
+
+        background:
+          rgba(
+            0,
+            0,
+            0,
+            .66
+          );
+
         opacity:0;
+
         visibility:hidden;
+
         transition:.28s ease;
       }
 
       .mobile-menu-overlay.open{
         opacity:1;
+
         visibility:visible;
       }
 
       .mobile-drawer{
         display:flex;
+
         flex-direction:column;
+
         position:fixed;
+
         top:0;
         right:0;
+
         z-index:999;
-        width:min(86vw,360px);
+
+        width:min(
+          86vw,
+          360px
+        );
+
         height:100dvh;
-        padding:22px 20px 28px;
+
+        padding:
+          22px
+          20px
+          28px;
+
         background:
           linear-gradient(
             180deg,
             #0b0f14,
             #050709
           );
-        border-left:1px solid rgba(255,255,255,.15);
-        transform:translateX(105%);
-        transition:transform .32s ease;
-        box-shadow:-24px 0 70px rgba(0,0,0,.45);
+
+        border-left:
+          1px solid
+          rgba(255,255,255,.15);
+
+        transform:
+          translateX(105%);
+
+        transition:
+          transform .32s ease;
+
+        box-shadow:
+          -24px
+          0
+          70px
+          rgba(0,0,0,.45);
+
         overflow-y:auto;
       }
 
       .mobile-drawer.open{
-        transform:translateX(0);
+        transform:
+          translateX(0);
       }
 
       .mobile-drawer-head{
         display:flex;
+
         align-items:center;
         justify-content:space-between;
+
         gap:18px;
+
         padding-bottom:20px;
-        border-bottom:1px solid rgba(255,255,255,.15);
+
+        border-bottom:
+          1px solid
+          rgba(255,255,255,.15);
       }
 
       .mobile-drawer-logo{
         width:190px;
+
         mix-blend-mode:screen;
       }
 
       .mobile-close{
         width:42px;
         height:42px;
-        border:1px solid rgba(255,255,255,.15);
+
+        border:
+          1px solid
+          rgba(255,255,255,.15);
+
         background:transparent;
+
         color:#fff;
+
         font-size:1.55rem;
+
         cursor:pointer;
       }
 
       .mobile-menu-links{
         display:flex;
+
         flex-direction:column;
+
         margin-top:18px;
       }
 
       .mobile-menu-links a{
         display:flex;
+
         align-items:center;
         justify-content:space-between;
+
         min-height:54px;
-        border-bottom:1px solid rgba(255,255,255,.15);
+
+        border-bottom:
+          1px solid
+          rgba(255,255,255,.15);
+
         color:#fff;
+
         font-size:1rem;
         font-weight:800;
+
         letter-spacing:.05em;
       }
 
       .mobile-menu-links a:after{
         content:"→";
+
         color:#8c96a1;
+
         font-size:1.35rem;
       }
 
       .mobile-inquiry-card{
         margin-top:24px;
+
         padding:18px;
-        border:1px solid rgba(255,255,255,.15);
+
+        border:
+          1px solid
+          rgba(255,255,255,.15);
+
         background:#0a0e13;
+
         display:flex;
+
         flex-direction:column;
+
         gap:7px;
       }
 
       .mobile-inquiry-card span{
         color:#9ca6b0;
+
         font-size:.74rem;
+
         line-height:1.7;
       }
 
       .mobile-inquiry-card a{
         margin-top:6px;
+
         color:#e5c15b;
+
         font-size:.78rem;
         font-weight:800;
       }
@@ -872,31 +1292,72 @@
       }
 
 
-      /* HERO */
+      /* HERO
+         他ページと同じ位置関係
+      */
 
       .hero{
-        padding:28px 0 26px;
+        height:auto;
+        min-height:0;
+        max-height:none;
+
+        padding:
+          28px
+          0
+          14px;
+
+        overflow:visible;
       }
 
-      .hero-content{
-        padding-left:11px;
+      .hero .wrap.hero-content{
+        width:calc(100% - 36px);
+
+        margin:
+          0
+          18px;
+
+        padding:
+          0
+          0
+          0
+          11px;
+      }
+
+      .hero .eyebrow{
+        font-size:.58rem;
+
+        margin:
+          0
+          0
+          8px;
       }
 
       .hero h1{
-        font-size:2.9rem;
+        font-size:2.65rem;
+
+        line-height:.96;
+
+        margin:
+          0
+          0
+          9px;
       }
 
       .hero-jp{
-        font-size:.74rem;
-        margin-bottom:15px;
-      }
+        font-size:.72rem;
 
-      .hero-lead{
-        font-size:1.25rem;
+        margin:
+          0
+          0
+          12px;
       }
 
       .hero-desc{
-        font-size:.76rem;
+        max-width:100%;
+
+        font-size:.72rem;
+
+        line-height:1.65;
       }
 
 
@@ -912,12 +1373,15 @@
 
       .section-head{
         display:block;
+
         margin-bottom:16px;
       }
 
       .section-head p{
         margin-top:8px;
+
         text-align:left;
+
         line-height:1.8;
       }
 
@@ -925,7 +1389,9 @@
       /* FEATURED */
 
       .case-info{
-        padding:20px 16px;
+        padding:
+          20px
+          16px;
       }
 
       .case-info h3{
@@ -938,12 +1404,16 @@
 
       .compare-img{
         min-height:0;
+
         height:280px;
       }
 
       .arrow{
         min-height:42px;
-        transform:rotate(90deg);
+
+        transform:
+          rotate(90deg);
+
         border:0;
       }
 
@@ -972,12 +1442,17 @@
 
       .photo-message-inner{
         min-height:0;
+
         display:block;
-        padding:28px 0;
+
+        padding:
+          28px
+          0;
       }
 
       .photo-message-mark{
         width:90px;
+
         margin-top:18px;
       }
 
@@ -985,13 +1460,20 @@
       /* CTA */
 
       .cta-wrap{
-        padding:38px 0 48px;
+        padding:
+          38px
+          0
+          48px;
       }
 
       .cta{
         align-items:flex-start;
+
         flex-direction:column;
-        padding:22px 18px;
+
+        padding:
+          22px
+          18px;
       }
 
       .cta-actions{
@@ -1001,65 +1483,138 @@
       .cta-actions a{
         width:100%;
       }
+
     }
   </style>
 
+
   <script src="supabase-config.js"></script>
+
 </head>
 
 
 <body>
 
-  <!-- HEADER -->
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
+
     <div class="nav">
 
       <a href="index.html">
+
         <img
           class="logo"
           src="renvis-logo.png"
           alt="RENVIS"
         >
+
       </a>
+
 
       <nav class="nav-links">
 
         <a href="index.html">
-          <span class="nav-en">HOME</span>
-          <span class="nav-ja">ホーム</span>
+
+          <span class="nav-en">
+            HOME
+          </span>
+
+          <span class="nav-ja">
+            ホーム
+          </span>
+
         </a>
+
 
         <a href="rental.html">
-          <span class="nav-en">RENTAL</span>
-          <span class="nav-ja">レンタル</span>
+
+          <span class="nav-en">
+            RENTAL
+          </span>
+
+          <span class="nav-ja">
+            レンタル
+          </span>
+
         </a>
 
-        <a class="active" href="repair.html">
-          <span class="nav-en">REPAIR</span>
-          <span class="nav-ja">修理・再生</span>
+
+        <a
+          class="active"
+          href="repair.html"
+        >
+
+          <span class="nav-en">
+            REPAIR
+          </span>
+
+          <span class="nav-ja">
+            修理・再生
+          </span>
+
         </a>
+
 
         <a href="used-sales.html">
-          <span class="nav-en">USED SALES</span>
-          <span class="nav-ja">中古販売</span>
+
+          <span class="nav-en">
+            USED SALES
+          </span>
+
+          <span class="nav-ja">
+            中古販売
+          </span>
+
         </a>
+
 
         <a href="management.html">
-          <span class="nav-en">MANAGEMENT</span>
-          <span class="nav-ja">管理・部品製作</span>
+
+          <span class="nav-en">
+            MANAGEMENT
+          </span>
+
+          <span class="nav-ja">
+            管理・部品製作
+          </span>
+
         </a>
 
+
         <a href="index.html#company">
-          <span class="nav-en">COMPANY</span>
-          <span class="nav-ja">会社案内</span>
+
+          <span class="nav-en">
+            COMPANY
+          </span>
+
+          <span class="nav-ja">
+            会社案内
+          </span>
+
         </a>
 
       </nav>
 
-      <a class="home-btn" href="index.html">
-        <span class="nav-en">TOPへ</span>
-        <span class="nav-ja">トップへ</span>
+
+      <a
+        class="home-btn"
+        href="index.html"
+      >
+
+        <span class="nav-en">
+          TOPへ
+        </span>
+
+        <span class="nav-ja">
+          トップへ
+        </span>
+
       </a>
+
 
       <button
         class="mobile-menu-toggle"
@@ -1069,16 +1624,20 @@
         aria-expanded="false"
         aria-label="メニューを開く"
       >
+
         <span></span>
         <span></span>
         <span></span>
+
       </button>
 
     </div>
+
   </header>
 
 
   <!-- MOBILE OVERLAY -->
+
   <div
     class="mobile-menu-overlay"
     id="menuOverlay"
@@ -1086,6 +1645,7 @@
 
 
   <!-- MOBILE DRAWER -->
+
   <aside
     class="mobile-drawer"
     id="mobileDrawer"
@@ -1111,18 +1671,42 @@
 
     </div>
 
+
     <nav
-      aria-label="スマホメニュー"
       class="mobile-menu-links"
+      aria-label="スマホメニュー"
     >
-      <a href="index.html">HOME</a>
-      <a href="rental.html">RENTAL</a>
-      <a href="repair.html">REPAIR</a>
-      <a href="used-sales.html">USED SALES</a>
-      <a href="management.html">MANAGEMENT</a>
-      <a href="index.html#company">COMPANY</a>
-      <a href="contact.html">CONTACT</a>
+
+      <a href="index.html">
+        HOME
+      </a>
+
+      <a href="rental.html">
+        RENTAL
+      </a>
+
+      <a href="repair.html">
+        REPAIR
+      </a>
+
+      <a href="used-sales.html">
+        USED SALES
+      </a>
+
+      <a href="management.html">
+        MANAGEMENT
+      </a>
+
+      <a href="index.html#company">
+        COMPANY
+      </a>
+
+      <a href="contact.html">
+        CONTACT
+      </a>
+
     </nav>
+
 
     <div class="mobile-inquiry-card">
 
@@ -1147,16 +1731,16 @@
   <main>
 
 
-    <!-- =====================
+    <!-- =========================
          HERO
-    ====================== -->
+    ========================== -->
 
     <section class="hero">
 
       <div class="wrap hero-content">
 
         <div class="eyebrow">
-          Attachment Repair
+          ATTACHMENT REPAIR
         </div>
 
         <h1>
@@ -1167,18 +1751,14 @@
           修理・再生
         </div>
 
-        <p class="hero-lead">
-          特殊修理も、写真でわかりやすく。
-        </p>
-
         <p class="hero-desc">
 
           <span class="repair-desc-line">
-            溶接補修から油圧機器のオーバーホールまで幅広い修理に対応。
+            肉盛り・溶接補修・刃交換・ピン・ブッシュ交換・オーバーホールまで対応。
           </span>
 
           <span class="repair-desc-line">
-            修理内容と仕上がりを、実際の施工写真とともにご紹介します。
+            修理内容と仕上がりを、実例とともにご紹介します。
           </span>
 
         </p>
@@ -1188,9 +1768,9 @@
     </section>
 
 
-    <!-- =====================
-         FEATURED CASE
-    ====================== -->
+    <!-- =========================
+         FEATURED REPAIR
+    ========================== -->
 
     <section class="section">
 
@@ -1201,7 +1781,7 @@
           <div>
 
             <div class="eyebrow">
-              Featured Repair Case
+              FEATURED REPAIR CASE
             </div>
 
             <h2>
@@ -1211,7 +1791,8 @@
           </div>
 
           <p>
-            実際の施工前後を、写真でご覧いただけます。
+            実際の施工前後を、
+            写真でご覧いただけます。
           </p>
 
         </div>
@@ -1222,10 +1803,11 @@
           id="featuredRepair"
         >
 
+
           <div class="case-info">
 
             <div class="eyebrow">
-              Case 01
+              CASE 01
             </div>
 
             <h3>
@@ -1236,6 +1818,7 @@
               摩耗した刃先と本体周辺を再生し、
               使用に耐える状態まで仕上げました。
             </p>
+
 
             <div class="tags">
 
@@ -1256,6 +1839,7 @@
               </span>
 
             </div>
+
 
             <div class="case-actions">
 
@@ -1324,9 +1908,9 @@
     </section>
 
 
-    <!-- =====================
+    <!-- =========================
          REPAIR CASES
-    ====================== -->
+    ========================== -->
 
     <section class="section">
 
@@ -1337,7 +1921,7 @@
           <div>
 
             <div class="eyebrow">
-              Repair Cases
+              REPAIR CASES
             </div>
 
             <h2>
@@ -1371,10 +1955,11 @@
 
             </div>
 
+
             <div class="case-card-body">
 
               <div class="eyebrow">
-                Case 01
+                CASE 01
               </div>
 
               <h3>
@@ -1384,6 +1969,7 @@
               <p>
                 摩耗部補修・再生加工
               </p>
+
 
               <div class="card-actions">
 
@@ -1412,10 +1998,11 @@
 
             </div>
 
+
             <div class="case-card-body">
 
               <div class="eyebrow">
-                Case 02
+                CASE 02
               </div>
 
               <h3>
@@ -1425,6 +2012,7 @@
               <p>
                 本体補修・肉盛り・再塗装
               </p>
+
 
               <div class="card-actions">
 
@@ -1452,10 +2040,11 @@
 
             </div>
 
+
             <div class="case-card-body">
 
               <div class="eyebrow">
-                Case 03
+                CASE 03
               </div>
 
               <h3>
@@ -1465,6 +2054,7 @@
               <p>
                 写真と施工内容を追加して掲載できます。
               </p>
+
 
               <div class="card-actions">
 
@@ -1486,9 +2076,9 @@
     </section>
 
 
-    <!-- =====================
+    <!-- =========================
          PHOTO MESSAGE
-    ====================== -->
+    ========================== -->
 
     <section class="photo-message">
 
@@ -1497,7 +2087,7 @@
         <div>
 
           <div class="eyebrow">
-            Repair Quality
+            REPAIR QUALITY
           </div>
 
           <h2>
@@ -1512,6 +2102,7 @@
 
         </div>
 
+
         <div
           class="photo-message-mark"
           aria-hidden="true"
@@ -1522,9 +2113,9 @@
     </section>
 
 
-    <!-- =====================
+    <!-- =========================
          CTA
-    ====================== -->
+    ========================== -->
 
     <section class="cta-wrap">
 
@@ -1536,11 +2127,12 @@
           <div>
 
             <div class="eyebrow">
-              Contact
+              CONTACT
             </div>
 
             <h2>
-              特殊修理のご相談・お見積りはお気軽に。
+              特殊修理のご相談・
+              お見積りはお気軽に。
             </h2>
 
             <p>
@@ -1598,7 +2190,10 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
 
     <div style="margin-bottom:8px">
@@ -1621,20 +2216,21 @@
 
     </div>
 
-    © 2026 RENVIS Co., Ltd. All Rights Reserved.
+    © 2026 RENVIS Co., Ltd.
+    All Rights Reserved.
 
   </footer>
 
 
-
-  <!-- =====================
-       SUPABASE REPAIR CMS
-  ====================== -->
+  <!-- =========================
+       SUPABASE
+  ========================== -->
 
   <script>
     (() => {
 
-      const cfg = window.RENVIS_SUPABASE;
+      const cfg =
+        window.RENVIS_SUPABASE;
 
       if(
         !cfg?.url ||
@@ -1645,7 +2241,8 @@
 
 
       const api =
-        cfg.url.replace(/\/$/, '') +
+        cfg.url
+          .replace(/\/$/, '') +
         '/rest/v1';
 
 
@@ -1668,38 +2265,43 @@
         );
 
 
-      const titleOf = r =>
-        r.title ||
-        [r.maker,r.model]
-          .filter(Boolean)
-          .join(' ') ||
-        `修理実績 ${r.id}`;
-
-
-      const descOf = r =>
-        r.description ||
+      const titleOf = repair =>
+        repair.title ||
         [
-          r.maker,
-          r.model,
-          r.category
+          repair.maker,
+          repair.model
         ]
           .filter(Boolean)
-          .join(' / ') ||
+          .join(' ')
+        ||
+        `修理実績 ${repair.id}`;
+
+
+      const descOf = repair =>
+        repair.description ||
+        [
+          repair.maker,
+          repair.model,
+          repair.category
+        ]
+          .filter(Boolean)
+          .join(' / ')
+        ||
         '修理実績';
 
 
-      const tagsOf = r =>
+      const tagsOf = repair =>
         [
-          r.maker,
-          r.model,
-          r.category
+          repair.maker,
+          repair.model,
+          repair.category
         ]
           .filter(Boolean);
 
 
       async function get(path){
 
-        const res =
+        const response =
           await fetch(
             api + path,
             {
@@ -1707,15 +2309,19 @@
             }
           );
 
-        if(!res.ok){
+
+        if(
+          !response.ok
+        ){
 
           throw new Error(
-            `Supabase ${res.status}`
+            `Supabase ${response.status}`
           );
 
         }
 
-        return res.json();
+
+        return response.json();
 
       }
 
@@ -1725,31 +2331,35 @@
         const map =
           new Map();
 
+
         for(
-          const img of images
+          const image of images
         ){
 
-          const key =
+          const repairId =
             Number(
-              img.repair_id
+              image.repair_id
             );
 
+
           if(
-            !map.has(key)
+            !map.has(repairId)
           ){
 
             map.set(
-              key,
+              repairId,
               []
             );
 
           }
 
+
           map
-            .get(key)
-            .push(img);
+            .get(repairId)
+            .push(image);
 
         }
+
 
         return map;
 
@@ -1757,19 +2367,21 @@
 
 
       function pickImages(
-        arr,
+        images,
         type
       ){
 
-        return arr
+        return images
           .filter(
-            x =>
+            image =>
               String(
-                x.image_type || ''
+                image.image_type || ''
               )
-                .toLowerCase() === type
+                .toLowerCase()
+              ===
+              type
               &&
-              x.image_url
+              image.image_url
           )
           .sort(
             (a,b) =>
@@ -1801,16 +2413,21 @@
             'after'
           )[0]?.image_url;
 
+
         const before =
           pickImages(
             images,
             'before'
           )[0]?.image_url;
 
+
         return (
-          after ||
-          before ||
-          repair.thumbnail_url ||
+          after
+          ||
+          before
+          ||
+          repair.thumbnail_url
+          ||
           ''
         );
 
@@ -1822,7 +2439,9 @@
         alt
       ){
 
-        if(!src){
+        if(
+          !src
+        ){
 
           return `
             <div class="cms-img-placeholder">
@@ -1831,6 +2450,7 @@
           `;
 
         }
+
 
         return `
           <img
@@ -1842,17 +2462,6 @@
 
       }
 
-
-      /*
-        将来Supabaseに
-
-        instagram_url
-        tiktok_url
-        youtube_url
-
-        の列を追加すれば
-        案件ごとにSNSを表示できます。
-      */
 
       function featuredSocialLinks(
         repair
@@ -2016,10 +2625,9 @@
           grouped(images);
 
 
-
-        /* =================
-           FEATURED CASE
-        ================= */
+        /* =====================
+           FEATURED
+        ====================== */
 
         const featured =
           repairs[0];
@@ -2027,8 +2635,12 @@
 
         const featuredImages =
           byRepair.get(
-            Number(featured.id)
-          ) || [];
+            Number(
+              featured.id
+            )
+          )
+          ||
+          [];
 
 
         const before =
@@ -2074,7 +2686,7 @@
             <div class="case-info">
 
               <div class="eyebrow">
-                Case ${String(featured.id).padStart(2,'0')}
+                CASE ${String(featured.id).padStart(2,'0')}
               </div>
 
               <h3>
@@ -2085,6 +2697,7 @@
                 ${esc(descOf(featured))}
               </p>
 
+
               <div class="tags">
 
                 ${
@@ -2092,15 +2705,16 @@
                     .map(
                       tag =>
                         `
-                        <span class="tag">
-                          ${esc(tag)}
-                        </span>
+                          <span class="tag">
+                            ${esc(tag)}
+                          </span>
                         `
                     )
                     .join('')
                 }
 
               </div>
+
 
               <div class="case-actions">
 
@@ -2177,10 +2791,9 @@
         }
 
 
-
-        /* =================
+        /* =====================
            REPAIR CARDS
-        ================= */
+        ====================== */
 
         const grid =
           document.getElementById(
@@ -2200,8 +2813,12 @@
 
                   const repairImages =
                     byRepair.get(
-                      Number(repair.id)
-                    ) || [];
+                      Number(
+                        repair.id
+                      )
+                    )
+                    ||
+                    [];
 
 
                   const cover =
@@ -2222,17 +2839,17 @@
                           cover
                           ?
                           `
-                          <img
-                            src="${esc(cover)}"
-                            alt="${esc(titleOf(repair))}"
-                            loading="lazy"
-                          >
+                            <img
+                              src="${esc(cover)}"
+                              alt="${esc(titleOf(repair))}"
+                              loading="lazy"
+                            >
                           `
                           :
                           `
-                          <div class="coming">
-                            NO IMAGE
-                          </div>
+                            <div class="coming">
+                              NO IMAGE
+                            </div>
                           `
                         }
 
@@ -2244,7 +2861,7 @@
 
                         <div class="eyebrow">
 
-                          Case ${String(repair.id).padStart(2,'0')}
+                          CASE ${String(repair.id).padStart(2,'0')}
 
                         </div>
 
@@ -2316,10 +2933,9 @@
   </script>
 
 
-
-  <!-- =====================
-       MOBILE MENU SCRIPT
-  ====================== -->
+  <!-- =========================
+       MOBILE MENU
+  ========================== -->
 
   <script>
     (() => {
@@ -2346,9 +2962,12 @@
 
 
       if(
-        !openBtn ||
-        !closeBtn ||
-        !drawer ||
+        !openBtn
+        ||
+        !closeBtn
+        ||
+        !drawer
+        ||
         !overlay
       ){
         return;
@@ -2453,8 +3072,6 @@
 
           }
         );
-
-
       document
         .addEventListener(
           'keydown',
@@ -2474,6 +3091,7 @@
 
     })();
   </script>
+
 
 </body>
 </html>
