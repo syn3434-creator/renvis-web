@@ -2477,64 +2477,95 @@ function render(key){
 
 
               </div>
+${
+  image
+  ?
+  `
+    <div class="maker-media">
 
+      <div class="maker-actions maker-actions-side">
 
-              ${
-                image
-                ?
-                `
+        ${
+          links.length
+          ?
+          links
+            .map(
+              ([label,url],index) => `
 
-                  <div class="maker-photo">
+                <a
+                  class="catalog-btn${index ? " secondary" : ""}"
+                  href="${esc(url)}"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  ${esc(label)} ↗
+                </a>
 
-                    <img
-                      src="${esc(image)}"
-                      alt="${esc(name)} ${esc(data.title)}"
-                      loading="lazy"
-                    >
+              `
+            )
+            .join("")
+          :
+          `
+            <a
+              class="catalog-btn secondary"
+              href="contact.html"
+            >
+              詳細はお問い合わせ
+            </a>
+          `
+        }
 
-                  </div>
+      </div>
 
-                `
-                :
-                ""
-              }
+      <div class="maker-photo">
 
+        <img
+          src="${esc(image)}"
+          alt="${esc(name)} ${esc(data.title)}"
+          loading="lazy"
+        >
 
-              <div class="maker-actions">
+      </div>
 
-                ${
-                  links.length
-                  ?
-                  links
-                    .map(
-                      ([label,url],index) => `
+    </div>
+  `
+  :
+  `
+    <div class="maker-actions">
 
-                        <a
-                          class="catalog-btn${index ? " secondary" : ""}"
-                          href="${esc(url)}"
-                          target="_blank"
-                          rel="noopener"
-                        >
-                          ${esc(label)} ↗
-                        </a>
+      ${
+        links.length
+        ?
+        links
+          .map(
+            ([label,url],index) => `
 
-                      `
-                    )
-                    .join("")
-                  :
-                  `
+              <a
+                class="catalog-btn${index ? " secondary" : ""}"
+                href="${esc(url)}"
+                target="_blank"
+                rel="noopener"
+              >
+                ${esc(label)} ↗
+              </a>
 
-                    <a
-                      class="catalog-btn secondary"
-                      href="contact.html"
-                    >
-                      詳細はお問い合わせ
-                    </a>
+            `
+          )
+          .join("")
+        :
+        `
+          <a
+            class="catalog-btn secondary"
+            href="contact.html"
+          >
+            詳細はお問い合わせ
+          </a>
+        `
+      }
 
-                  `
-                }
-
-              </div>
+    </div>
+  `
+}
 
 
             </article>
