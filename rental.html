@@ -434,6 +434,30 @@ header{
   object-fit:contain;
   object-position:center;
 }
+  .maker-content-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:36px;
+  margin-top:22px;
+}
+
+.maker-content-row .maker-actions{
+  flex:1;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.maker-content-row .maker-photo{
+  flex:0 0 300px;
+  width:300px;
+  height:270px;
+  margin:0;
+}
 /* =========================
    BUTTONS
 ========================= */
@@ -719,7 +743,27 @@ footer{
 ========================= */
 
 @media(max-width:760px){
+.maker-content-row{
+  flex-direction:column;
+  align-items:stretch;
+  gap:18px;
+}
 
+.maker-content-row .maker-actions{
+  width:100%;
+  align-items:stretch;
+}
+
+.maker-content-row .catalog-btn{
+  width:100%;
+}
+
+.maker-content-row .maker-photo{
+  width:100%;
+  height:220px;
+  flex:0 0 auto;
+  margin:0;
+}
   .wrap,
   .nav{
     width:calc(100% - 28px);
@@ -2453,80 +2497,27 @@ function render(key){
       data.makers
         .map(
           ([name,links,image]) => `
+<article class="maker-card">
 
-            <article class="maker-card">
+  <div class="maker-top">
 
+    <div class="maker-name">
 
-              <div class="maker-top">
+      <small>
+        MANUFACTURER
+      </small>
 
-                <div class="maker-name">
-
-                  <small>
-                    MANUFACTURER 
-                  </small>
-
-                  <h3>
-                    ${esc(name)}
-                  </h3>
-
-                </div>
-
-
-              </div>
-${
-  image
-  ?
-  `
-    <div class="maker-media">
-
-      <div class="maker-actions maker-actions-side">
-
-        ${
-          links.length
-          ?
-          links
-            .map(
-              ([label,url],index) => `
-
-                <a
-                  class="catalog-btn${index ? " secondary" : ""}"
-                  href="${esc(url)}"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  ${esc(label)} ↗
-                </a>
-
-              `
-            )
-            .join("")
-          :
-          `
-            <a
-              class="catalog-btn secondary"
-              href="contact.html"
-            >
-              詳細はお問い合わせ
-            </a>
-          `
-        }
-
-      </div>
-
-      <div class="maker-photo">
-
-        <img
-          src="${esc(image)}"
-          alt="${esc(name)} ${esc(data.title)}"
-          loading="lazy"
-        >
-
-      </div>
+      <h3>
+        ${esc(name)}
+      </h3>
 
     </div>
-  `
-  :
-  `
+
+  </div>
+
+
+  <div class="maker-content-row">
+
     <div class="maker-actions">
 
       ${
@@ -2560,11 +2551,29 @@ ${
       }
 
     </div>
-  `
-}
 
 
-            </article>
+    ${
+      image
+      ?
+      `
+        <div class="maker-photo">
+
+          <img
+            src="${esc(image)}"
+            alt="${esc(name)} ${esc(data.title)}"
+            loading="lazy"
+          >
+
+        </div>
+      `
+      :
+      ""
+    }
+
+  </div>
+
+</article>
 
           `
         )
