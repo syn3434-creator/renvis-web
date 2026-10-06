@@ -421,18 +421,18 @@ header{
   margin-top:18px;
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:flex-end;
   overflow:hidden;
   border:1px solid rgba(255,255,255,.10);
   background:#0a0e13;
-  padding:20px;
+  padding:20px 60px 20px 20px;
 }
 
 .maker-photo img{
   display:block;
   width:auto;
   height:78%;
-  max-width:34%;
+  max-width:36%;
   max-height:78%;
   object-fit:contain;
   object-position:center;
@@ -973,16 +973,18 @@ footer{
     font-size:1.3rem;
   }
   /* 写真はPCと同じ4:3比率 */
-.maker-photo{
+
+  .maker-photo{
   aspect-ratio:16 / 10;
-  padding:16px;
+  padding:16px 30px 16px 16px;
+  justify-content:flex-end;
 }
 
 .maker-photo img{
   width:auto;
-  height:76%;
-  max-width:46%;
-  max-height:76%;
+  height:74%;
+  max-width:42%;
+  max-height:74%;
   object-fit:contain;
   object-position:center;
 }
