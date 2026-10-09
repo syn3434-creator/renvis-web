@@ -1627,18 +1627,26 @@
 
 
   <script src="supabase-config.js"></script>
-
-
-<style id="renvis-mobile-spacing-unified-20261009">
-/* Smartphone-only visual alignment. Desktop and content untouched. */
+<style id="renvis-mobile-clean-20261009">
+/* RENVIS mobile final: consolidated, applied before first paint. */
 @media (max-width:760px){
   header{height:58px!important;border-bottom:0!important;}
-  header .logo{width:175px!important;}
-  .hero{border-bottom:0!important;}
+  header .logo{width:145px!important;max-width:145px!important;}
+  .hero{border-bottom:0!important;padding-bottom:8px!important;}
   .hero + .section{padding-top:26px;}
   .section{padding-top:30px;padding-bottom:30px;}
   .section-head{margin-bottom:14px;}
   .section-head h2{line-height:1.25;}
+  .hero .wrap.hero-content,
+  .used-hero .wrap.used-hero-content{border-left:0!important;padding-left:0!important;}
+  .hero,.used-hero{border-bottom:0!important;}
+  .used-hero{padding-bottom:8px!important;}
+  .featured-section{padding-top:18px!important;}
+  .featured-head{margin-bottom:12px!important;}
+  .featured-body{padding:12px!important;}
+  .featured-body p{margin-bottom:8px!important;}
+  .featured-meta{margin-bottom:10px!important;}
+  .featured-card .featured-link{min-height:38px;}
 }
 </style>
 </head>
@@ -3191,29 +3199,5 @@
 
     })();
   </script>
-
-
-
-<style id="renvis-mobile-final-balance-20261009">
-/* Mobile-only adjustments approved from design preview. */
-@media (max-width:760px){
-  header{height:58px!important;border-bottom:0!important;}
-  header .logo{width:145px!important;max-width:145px!important;}
-  .hero .wrap.hero-content,
-  .used-hero .wrap.used-hero-content{
-    border-left:0!important;
-    padding-left:0!important;
-  }
-  .hero,.used-hero{border-bottom:0!important;}
-  .hero{padding-bottom:8px!important;}
-  .used-hero{padding-bottom:8px!important;}
-  .featured-section{padding-top:18px!important;}
-  .featured-head{margin-bottom:12px!important;}
-  .featured-body{padding:12px!important;}
-  .featured-body p{margin-bottom:8px!important;}
-  .featured-meta{margin-bottom:10px!important;}
-  .featured-card .featured-link{min-height:38px;}
-}
-</style>
 </body>
 </html>
