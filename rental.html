@@ -1021,6 +1021,39 @@ footer{
   .hero .unified-desc{max-width:100%!important;font-size:.56rem!important;line-height:1.5!important;margin:0!important;}
 }
 </style>
+
+<style id="renvis-four-pages-hero-20261009">
+/* Four-page shared hero, applied before paint. */
+@media(min-width:761px){
+  .hero,.used-hero{height:170px!important;min-height:170px!important;max-height:170px!important;padding:29px 0 20px!important;overflow:visible!important;background:#06080b!important;}
+  .hero .wrap.hero-content,.used-hero .wrap.used-hero-content{border-left:2px solid var(--gold)!important;padding-left:16px!important;}
+  .hero h1,.used-hero h1{font-size:3.15rem!important;line-height:1.05!important;margin:0 0 14px!important;letter-spacing:-.035em!important;white-space:normal!important;}
+  .hero .unified-desc,.hero .hero-desc,.used-hero .used-hero-desc{font-size:.82rem!important;line-height:1.65!important;margin:0!important;color:#bec6ce!important;max-width:920px!important;}
+}
+@media(max-width:760px){
+  .hero,.used-hero{height:auto!important;min-height:0!important;max-height:none!important;padding:20px 0 16px!important;overflow:visible!important;background:#06080b!important;}
+  .hero .wrap.hero-content,.used-hero .wrap.used-hero-content{border-left:0!important;padding-left:0!important;}
+  .hero h1,.used-hero h1{font-size:1.75rem!important;line-height:1.1!important;margin:0 0 10px!important;letter-spacing:-.035em!important;white-space:normal!important;}
+  .hero .unified-desc,.hero .hero-desc,.used-hero .used-hero-desc{font-size:.73rem!important;line-height:1.7!important;margin:0!important;color:#bec6ce!important;max-width:100%!important;}
+}
+</style>
+<style id="renvis-featured-heading-20261009">
+@media(max-width:760px){.featured-head h2{font-size:1.13rem!important;line-height:1.3!important}.featured-head .eyebrow{font-size:.52rem!important;letter-spacing:.12em!important}.featured-section{padding-top:14px!important}.featured-card .featured-badge{font-size:7px!important;padding:3px 5px!important}}
+</style>
+
+<style id="renvis-hero-divider-and-heading-refinement-20261009">
+/* Remove only the horizontal boundary below the hero; retain desktop gold vertical accent. */
+.hero, .used-hero { border-bottom:0!important; }
+/* Slightly reduce the headings immediately below the hero and matching section headings. */
+.section-head h2 { font-size:1.75rem!important; }
+@media (max-width:760px) {
+  .section-head h2 { font-size:1.18rem!important; line-height:1.3!important; }
+}
+.featured-head h2 { font-size:1.7rem!important; line-height:1.3!important; }
+@media (max-width:760px) {
+ .featured-head h2 { font-size:1rem!important; line-height:1.3!important; }
+}
+</style>
 </head>
 <body>
 <header>
@@ -1161,23 +1194,8 @@ footer{
 <main>
 <section class="hero">
   <div class="wrap hero-content">
-    <div class="eyebrow">
-      Attachment Rental
-    </div>
-    <h1>
-      RENTAL
-    </h1>
-    <div class="hero-jp">
-      建機用アタッチメントレンタル
-    </div>
-    <p class="unified-desc">
-      <span>
-        種類からメーカーを選び、
-      </span>
-      <span>
-        メーカー公式カタログで詳しい仕様をご確認いただけます。
-      </span>
-    </p>
+    <h1>RENTAL</h1>
+    <p class="unified-desc">建機用アタッチメントのレンタル。豊富な種類から現場に最適な一台を。</p>
   </div>
 </section>
 <!-- =========================
@@ -1197,9 +1215,6 @@ footer{
           おすすめレンタル機
         </h2>
       </div>
-      <p>
-        新しく入荷したレンタル機・おすすめ機種をご紹介します。
-      </p>
     </div>
     <div
       class="featured-grid"
@@ -2355,12 +2370,6 @@ function renderFeatured(){
                     .join("")
                 }
               </div>
-              <a
-                class="featured-link"
-                href="${esc(item.link || "contact.html")}"
-              >
-                在庫・貸出状況を問い合わせる
-              </a>
             </div>
           </article>
         `

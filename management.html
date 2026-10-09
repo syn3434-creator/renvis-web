@@ -354,6 +354,32 @@ img{max-width:100%}
   .hero .unified-desc{max-width:100%!important;font-size:.56rem!important;line-height:1.5!important;margin:0!important;}
 }
 </style>
+
+<style id="renvis-four-pages-hero-20261009">
+/* Four-page shared hero, applied before paint. */
+@media(min-width:761px){
+  .hero,.used-hero{height:170px!important;min-height:170px!important;max-height:170px!important;padding:29px 0 20px!important;overflow:visible!important;background:#06080b!important;}
+  .hero .wrap.hero-content,.used-hero .wrap.used-hero-content{border-left:2px solid var(--gold)!important;padding-left:16px!important;}
+  .hero h1,.used-hero h1{font-size:3.15rem!important;line-height:1.05!important;margin:0 0 14px!important;letter-spacing:-.035em!important;white-space:normal!important;}
+  .hero .unified-desc,.hero .hero-desc,.used-hero .used-hero-desc{font-size:.82rem!important;line-height:1.65!important;margin:0!important;color:#bec6ce!important;max-width:920px!important;}
+}
+@media(max-width:760px){
+  .hero,.used-hero{height:auto!important;min-height:0!important;max-height:none!important;padding:20px 0 16px!important;overflow:visible!important;background:#06080b!important;}
+  .hero .wrap.hero-content,.used-hero .wrap.used-hero-content{border-left:0!important;padding-left:0!important;}
+  .hero h1,.used-hero h1{font-size:1.75rem!important;line-height:1.1!important;margin:0 0 10px!important;letter-spacing:-.035em!important;white-space:normal!important;}
+  .hero .unified-desc,.hero .hero-desc,.used-hero .used-hero-desc{font-size:.73rem!important;line-height:1.7!important;margin:0!important;color:#bec6ce!important;max-width:100%!important;}
+}
+</style>
+
+<style id="renvis-hero-divider-and-heading-refinement-20261009">
+/* Remove only the horizontal boundary below the hero; retain desktop gold vertical accent. */
+.hero, .used-hero { border-bottom:0!important; }
+/* Slightly reduce the headings immediately below the hero and matching section headings. */
+.section-head h2 { font-size:1.75rem!important; }
+@media (max-width:760px) {
+  .section-head h2 { font-size:1.18rem!important; line-height:1.3!important; }
+}
+</style>
 </head>
 <body>
 <header>
@@ -397,13 +423,8 @@ img{max-width:100%}
 <main>
 <section class="hero">
   <div class="wrap hero-content">
-    <div class="eyebrow">Attachment Management & Parts</div>
     <h1>MANAGEMENT</h1>
-    <div class="hero-jp">管理・部品製作</div>
-    <p class="unified-desc">
-      <span>アタッチメントの状態管理から、</span>
-      <span>ピン・ブッシュ・各種部品製作まで対応します。</span>
-    </p>
+    <p class="unified-desc">アタッチメントの管理を、もっとシンプルに、もっとスマートに。</p>
   </div>
 </section>
 
@@ -508,24 +529,16 @@ img{max-width:100%}
 })();
 </script>
 
-<style id="renvis-hero-bottom-line-up-20260903">
-/* 見出し下の境界線だけ上へ。文字サイズ・横位置は変更しない */
-@media (min-width:761px){
-  .hero{height:220px!important;min-height:220px!important;max-height:220px!important;padding-bottom:10px!important;}
-  .used-hero{height:220px!important;min-height:220px!important;max-height:220px!important;padding-bottom:10px!important;}
+<style id="renvis-management-hero-final-20261009">
+/* Management only: remove hero divider and tighten the gap below the title. */
+.hero { border-bottom:0!important; }
+@media (min-width:761px) {
+  .hero { height:170px!important; min-height:170px!important; max-height:170px!important; }
+  .hero + .section { padding-top:28px!important; }
 }
-@media (max-width:760px){
-  .hero,.used-hero{padding-bottom:14px!important;}
-}
-</style>
-
-<style id="renvis-hero-divider-unified-20260903">
-/* 見出し下の薄い境界線を4ページで完全統一 */
-.hero,.used-hero{
-  width:100%!important;
-  border-bottom:1px solid rgba(255,255,255,.15)!important;
-  margin-left:0!important;
-  margin-right:0!important;
+@media (max-width:760px) {
+  .hero { height:auto!important; min-height:0!important; max-height:none!important; padding-bottom:16px!important; }
+  .hero + .section { padding-top:20px!important; }
 }
 </style>
 </body>

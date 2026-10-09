@@ -1649,6 +1649,32 @@
   .featured-card .featured-link{min-height:38px;}
 }
 </style>
+
+<style id="renvis-four-pages-hero-20261009">
+/* Four-page shared hero, applied before paint. */
+@media(min-width:761px){
+  .hero,.used-hero{height:170px!important;min-height:170px!important;max-height:170px!important;padding:29px 0 20px!important;overflow:visible!important;background:#06080b!important;}
+  .hero .wrap.hero-content,.used-hero .wrap.used-hero-content{border-left:2px solid var(--gold)!important;padding-left:16px!important;}
+  .hero h1,.used-hero h1{font-size:3.15rem!important;line-height:1.05!important;margin:0 0 14px!important;letter-spacing:-.035em!important;white-space:normal!important;}
+  .hero .unified-desc,.hero .hero-desc,.used-hero .used-hero-desc{font-size:.82rem!important;line-height:1.65!important;margin:0!important;color:#bec6ce!important;max-width:920px!important;}
+}
+@media(max-width:760px){
+  .hero,.used-hero{height:auto!important;min-height:0!important;max-height:none!important;padding:20px 0 16px!important;overflow:visible!important;background:#06080b!important;}
+  .hero .wrap.hero-content,.used-hero .wrap.used-hero-content{border-left:0!important;padding-left:0!important;}
+  .hero h1,.used-hero h1{font-size:1.75rem!important;line-height:1.1!important;margin:0 0 10px!important;letter-spacing:-.035em!important;white-space:normal!important;}
+  .hero .unified-desc,.hero .hero-desc,.used-hero .used-hero-desc{font-size:.73rem!important;line-height:1.7!important;margin:0!important;color:#bec6ce!important;max-width:100%!important;}
+}
+</style>
+
+<style id="renvis-hero-divider-and-heading-refinement-20261009">
+/* Remove only the horizontal boundary below the hero; retain desktop gold vertical accent. */
+.hero, .used-hero { border-bottom:0!important; }
+/* Slightly reduce the headings immediately below the hero and matching section headings. */
+.section-head h2 { font-size:1.75rem!important; }
+@media (max-width:760px) {
+  .section-head h2 { font-size:1.18rem!important; line-height:1.3!important; }
+}
+</style>
 </head>
 
 
@@ -1897,28 +1923,9 @@
     <section class="hero">
 
       <div class="wrap hero-content">
-
-        <div class="eyebrow">
-          ATTACHMENT REPAIR
-        </div>
-
-        <h1>
-          REPAIR
-        </h1>
-
-        <div class="hero-jp">
-          修理・再生
-        </div>
-
-        <p class="hero-desc">
-
-          <span class="repair-desc-line">
-          溶接補修から油圧機器のオーバーホールまで幅広い修理に対応。
-          </span>
-
-        </p>
-
-      </div>
+    <h1>REPAIR</h1>
+    <p class="hero-desc">溶接補修から油圧機器のオーバーホールまで、幅広い修理・再生に対応。</p>
+  </div>
 
     </section>
 
