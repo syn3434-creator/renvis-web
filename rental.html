@@ -2113,7 +2113,7 @@ function render(key){
                 target="_blank"
                 rel="noopener"
               >
-                ${esc(label)} ↗
+                ${esc((/^(TS-W|TSRC)\b/.test(label) ? label.split(" ")[0] + "｜" : "") + (/\.pdf(?:[?#]|$)|\/catalog(?:ue)?(?:\/|[-?#]|$)|\/catarogue\/|\/digital\/|\/book\//i.test(url) ? "カタログを見る" : "製品情報を見る"))} ↗
               </a>
             `
           )
