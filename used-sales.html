@@ -1530,47 +1530,6 @@ footer{
         </div>
 
 
-        <button
-          id="searchToggle"
-          class="search-toggle"
-          type="button"
-          aria-expanded="true"
-        >
-
-          <span class="toggle-left">
-
-            <span class="search-symbol">
-              ⌕
-            </span>
-
-            詳細条件で検索する
-
-            <span class="toggle-arrow">
-              ⌄
-            </span>
-
-          </span>
-
-
-          <span class="toggle-right">
-
-            <span class="fav-label">
-              お気に入り
-            </span>
-
-            <b id="favoriteCount">
-              0件
-            </b>
-
-            <span>
-              ☆
-            </span>
-
-          </span>
-
-        </button>
-
-
         <div
           id="filterCollapse"
           class="filter-collapse open"
@@ -2490,7 +2449,8 @@ function card(
 
 function updateFavoriteCount(){
 
-  $("favoriteCount").textContent =
+  const favoriteCount = $("favoriteCount");
+  if(favoriteCount) favoriteCount.textContent =
     favorites.size +
     "件";
 
