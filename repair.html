@@ -1794,29 +1794,23 @@
       }
     }
 
-/* BEFORE / AFTER collage cards */
-.repair-collage-media{
-  width:100%;
-  aspect-ratio: 4 / 3;
-  border:1px solid rgba(255,255,255,.08);
-  background:#0b111a;
-  overflow:hidden;
+/* Repair Solutions: all six image slots share the same dimensions. */
+.repair-menu-board .repair-collage-media{
+  aspect-ratio:4 / 3;
+  min-height:0;
   display:flex;
   align-items:center;
   justify-content:center;
 }
-
-.repair-collage-media img{
-  display:block;
+.repair-menu-board .repair-collage-media img{
   width:100%;
   height:100%;
   object-fit:contain;
 }
+/* BEFORE / AFTER collage cards */
+.repair-collage-media{width:100%;border:1px solid rgba(255,255,255,.08);background:#0b111a;overflow:hidden;}
+.repair-collage-media img{display:block;width:100%;height:auto;object-fit:contain;}
 
-.repair-collage-media.placeholder{
-  aspect-ratio: 4 / 3;
-  min-height:auto;
-}
 </style>
 
 
@@ -2124,10 +2118,6 @@
               <div class="repair-collage-media">
                 <img src="repair-welding-before-after.jpg" alt="肉盛り・溶接のビフォーアフター">
               </div>
-              <p class="repair-menu-desc">
-                摩耗・損傷のある部位を肉盛り補修し、溶接・仕上げ・再塗装まで行った事例です。
-
-              </p>
             </div>
           </article>
 
@@ -2137,9 +2127,6 @@
               <div class="repair-collage-media">
                 <img src="repair-toe-before-after.jpg" alt="爪先切替のビフォーアフター">
               </div>
-              <p class="repair-menu-desc">
-                摩耗した爪先の切替・補修を行い、使用状態に合わせて再生した事例です。
-              </p>
             </div>
           </article>
 
