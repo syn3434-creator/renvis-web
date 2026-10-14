@@ -1699,9 +1699,28 @@
 .repair-solutions-section{padding-top:34px;}
 .renvis-facilities{padding:18px 0 58px;}
 .renvis-facilities .section-head{margin-bottom:20px;}
-.renvis-facilities-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
-.renvis-facility-card{min-width:0;border:1px solid var(--line);background:linear-gradient(145deg,#0f151c,#080b0f);overflow:hidden;}
-.renvis-facility-photo{height:260px;background:#11161c;border-bottom:1px solid var(--line);}
+.renvis-facilities-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+
+.renvis-facility-card{
+  min-width:0;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,#0f151c,#080b0f);
+  overflow:hidden;
+}
+
+.renvis-facility-photo{
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  background:#11161c;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+
 .renvis-facility-photo img{
   width:100%;
   height:100%;
@@ -1709,13 +1728,14 @@
   object-fit:contain;
   object-position:center;
 }
-.renvis-facility-title{margin:0;padding:18px 20px;font-size:1.1rem;line-height:1.4;font-weight:800;}
 @media(max-width:760px){
  .repair-solutions-section{padding-top:16px!important;}
  .renvis-facilities{padding:12px 0 34px;}
  .renvis-facilities-grid{grid-template-columns:1fr;gap:14px;}
- .renvis-facility-photo{height:210px;}
- .renvis-facility-title{padding:14px 16px;font-size:1rem;}
+.renvis-facility-photo{
+  height:auto;
+  aspect-ratio:16/9;
+} .renvis-facility-title{padding:14px 16px;font-size:1rem;}
 }
 
 /* 修理実績：縦写真対応。BEFORE→AFTERを上下に表示 */
