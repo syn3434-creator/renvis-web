@@ -1702,6 +1702,13 @@
 .renvis-facilities-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
 .renvis-facility-card{min-width:0;border:1px solid var(--line);background:linear-gradient(145deg,#0f151c,#080b0f);overflow:hidden;}
 .renvis-facility-photo{height:260px;background:#11161c;border-bottom:1px solid var(--line);}
+    .renvis-facility-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
 .renvis-facility-title{margin:0;padding:18px 20px;font-size:1.1rem;line-height:1.4;font-weight:800;}
 @media(max-width:760px){
  .repair-solutions-section{padding-top:16px!important;}
@@ -2180,10 +2187,12 @@
             <div class="renvis-facility-photo" aria-label="回転ポジショナーの作業風景"><img src="repair-positioner.jpg" alt="回転ポジショナーを使用した溶接補修作業" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
             <h3 class="renvis-facility-title">回転ポジショナー</h3>
           </article>
-          <article class="renvis-facility-card">
-            <div class="renvis-facility-photo" aria-label="大型油圧ユニットの写真掲載予定"></div>
-            <h3 class="renvis-facility-title">大型油圧ユニット</h3>
-          </article>
+      <article class="renvis-facility-card">
+  <div class="renvis-facility-photo" aria-label="大型油圧ユニット">
+    <img src="大型油圧ユニットの工場内部.png" alt="大型油圧ユニット">
+  </div>
+  <h3 class="renvis-facility-title">大型油圧ユニット</h3>
+</article>
         </div>
       </div>
     </section>
