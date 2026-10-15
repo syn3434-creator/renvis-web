@@ -3022,6 +3022,10 @@ async function loadUsedItems(){
                 .replace(
                   /[\s\u200B-\u200D\uFEFF]/g,
                   ""
+                )
+                .replace(
+                  /^SOLDOUT$/i,
+                  "SOLD OUT"
                 ),
 
             condition:
