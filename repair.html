@@ -1699,43 +1699,16 @@
 .repair-solutions-section{padding-top:34px;}
 .renvis-facilities{padding:18px 0 58px;}
 .renvis-facilities .section-head{margin-bottom:20px;}
-.renvis-facilities-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
-}
-
-.renvis-facility-card{
-  min-width:0;
-  border:1px solid var(--line);
-  background:linear-gradient(145deg,#0f151c,#080b0f);
-  overflow:hidden;
-}
-
-.renvis-facility-photo{
-  width:100%;
-  height:auto;
-  aspect-ratio:16/9;
-  background:#11161c;
-  border-bottom:1px solid var(--line);
-  overflow:hidden;
-}
-
-.renvis-facility-photo img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:contain;
-  object-position:center;
-}
+.renvis-facilities-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.renvis-facility-card{min-width:0;border:1px solid var(--line);background:linear-gradient(145deg,#0f151c,#080b0f);overflow:hidden;}
+.renvis-facility-photo{height:260px;background:#11161c;border-bottom:1px solid var(--line);}
+.renvis-facility-title{margin:0;padding:18px 20px;font-size:1.1rem;line-height:1.4;font-weight:800;}
 @media(max-width:760px){
  .repair-solutions-section{padding-top:16px!important;}
  .renvis-facilities{padding:12px 0 34px;}
  .renvis-facilities-grid{grid-template-columns:1fr;gap:14px;}
-.renvis-facility-photo{
-  height:auto;
-  aspect-ratio:16/9;
-} .renvis-facility-title{padding:14px 16px;font-size:1rem;}
+ .renvis-facility-photo{height:210px;}
+ .renvis-facility-title{padding:14px 16px;font-size:1rem;}
 }
 
 /* 修理実績：縦写真対応。BEFORE→AFTERを上下に表示 */
@@ -2167,14 +2140,14 @@
           <article class="repair-menu-card">
             <div class="repair-menu-card-head"><div><div class="repair-menu-no">04</div><h3>大型ベアリング再生</h3></div></div>
             <div class="repair-menu-body">
-              <div class="repair-collage-media placeholder">コラージュ画像追加予定</div>
+              <div class="repair-collage-media"><img src="repair-bearing-before-after.png" alt="大型ベアリング再生 BEFORE AFTER" loading="lazy"></div>
             </div>
           </article>
 
           <article class="repair-menu-card">
             <div class="repair-menu-card-head"><div><div class="repair-menu-no">05</div><h3>シリンダーチューブ再生</h3></div></div>
             <div class="repair-menu-body">
-              <div class="repair-collage-media placeholder">コラージュ画像追加予定</div>
+              <div class="repair-collage-media"><img src="repair-cylinder-before-after.png" alt="シリンダーチューブ再生 BEFORE AFTER" loading="lazy"></div>
             </div>
           </article>
 
@@ -2207,12 +2180,10 @@
             <div class="renvis-facility-photo" aria-label="回転ポジショナーの作業風景"><img src="repair-positioner.jpg" alt="回転ポジショナーを使用した溶接補修作業" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
             <h3 class="renvis-facility-title">回転ポジショナー</h3>
           </article>
-      <article class="renvis-facility-card">
-  <div class="renvis-facility-photo" aria-label="大型油圧ユニット">
-    <img src="大型油圧ユニットの工場内部.png" alt="大型油圧ユニット">
-  </div>
-  <h3 class="renvis-facility-title">大型油圧ユニット</h3>
-</article>
+          <article class="renvis-facility-card">
+            <div class="renvis-facility-photo" aria-label="大型油圧ユニットの写真掲載予定"></div>
+            <h3 class="renvis-facility-title">大型油圧ユニット</h3>
+          </article>
         </div>
       </div>
     </section>
