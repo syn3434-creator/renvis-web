@@ -1367,6 +1367,19 @@ footer{
   .card[data-product-id]{transition:none;}
   .card[data-product-id]:hover{transform:none;}
 }
+
+/* Small requested adjustments: black lower area and space around product cards */
+.used-bottom-section{
+  background:#06080b;
+  padding:30px 0 2px;
+}
+.all-products .wrap{
+  width:min(var(--max),calc(100% - 96px));
+}
+@media(max-width:760px){
+  .all-products .wrap{width:calc(100% - 44px);}
+  .used-bottom-section{padding:24px 0 2px;}
+}
 </style>
 </head>
 
@@ -1990,6 +2003,13 @@ footer{
       ></div>
 
 
+    </div>
+
+  </section>
+
+  <!-- BOTTOM CONTACT / COMPANY: dark background -->
+  <section class="used-bottom-section">
+    <div class="wrap">
       <div class="bottom-grid">
 
 
