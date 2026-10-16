@@ -1909,6 +1909,10 @@
   }
 }
 
+
+/* 修理実績の原寸画像は切り抜かず枠内に表示 */
+.repair-menu-board .repair-collage-media { aspect-ratio:4 / 3; height:auto; overflow:hidden; }
+.repair-menu-board .repair-collage-media img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; }
 </style>
 
 
@@ -2264,7 +2268,7 @@
           <article class="repair-menu-card">
             <div class="repair-menu-card-head"><div><div class="repair-menu-no">07</div><h3>アーム曲がり修正</h3></div></div>
             <div class="repair-menu-body">
-              <div class="repair-collage-media"><img src="arm-bend-before-after.jpg" alt="アーム曲がり修正 BEFORE AFTER"></div>
+              <div class="repair-collage-media"><img src="arm-bend-before-after.png" alt="アーム曲がり修正 BEFORE AFTER"></div>
             </div>
           </article>
 
