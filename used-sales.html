@@ -1311,6 +1311,63 @@ footer{
   .stock-box b{font-size:1rem;}
 }
 </style>
+
+<style id="renvis-used-sales-ab-20261016">
+/* AB design: clear new arrivals showcase and charcoal product catalog */
+.arrival-section{
+  background:#06080b;
+  padding:34px 0 52px;
+}
+.arrival-section .section-head{
+  margin-bottom:22px;
+}
+.arrival-section .section-head h2{
+  letter-spacing:.035em;
+}
+.arrival-section-note,.all-products-note{
+  margin:7px 0 0;
+  color:#aab3bc;
+  font-size:.76rem;
+  line-height:1.65;
+}
+.arrival-section .arrivals .card-image{
+  height:240px;
+}
+.all-products{
+  background:#1c2126;
+  padding:48px 0 64px;
+  scroll-margin-top:84px;
+}
+.all-products .results-head{
+  margin-bottom:24px;
+}
+.all-products .card{
+  background:linear-gradient(180deg,#20262d,#11161c);
+  border-color:rgba(255,255,255,.19);
+}
+.card[data-product-id]{
+  cursor:pointer;
+  transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.card[data-product-id]:hover,
+.card[data-product-id]:focus-visible{
+  border-color:rgba(224,181,63,.75);
+  transform:translateY(-3px);
+  box-shadow:0 12px 28px rgba(0,0,0,.26);
+}
+.card[data-product-id]:focus-visible{outline:2px solid #e0b53f;outline-offset:3px;}
+.card[data-product-id] .favorite{cursor:pointer;}
+@media(max-width:760px){
+  .arrival-section{padding:24px 0 34px;}
+  .arrival-section .arrivals .card-image{height:190px;}
+  .all-products{padding:35px 0 44px;scroll-margin-top:65px;}
+  .arrival-section-note,.all-products-note{font-size:.68rem;}
+}
+@media(prefers-reduced-motion:reduce){
+  .card[data-product-id]{transition:none;}
+  .card[data-product-id]:hover{transform:none;}
+}
+</style>
 </head>
 
 
@@ -1836,6 +1893,7 @@ footer{
           <h2>
             新着商品
           </h2>
+          <p class="arrival-section-note">新しく入荷したアタッチメントをピックアップ</p>
 
         </div>
 
@@ -1867,7 +1925,7 @@ footer{
 
   <!-- ALL PRODUCTS -->
 
-  <section class="all-products">
+  <section class="all-products" id="usedProductResults">
 
     <div class="wrap">
 
@@ -1882,6 +1940,7 @@ footer{
           <h2>
             中古商品一覧
           </h2>
+          <p class="all-products-note">現在掲載中の中古アタッチメントをすべて表示</p>
 
           <div
             id="count"
@@ -2186,7 +2245,7 @@ function card(
 ){
 
   return `
-    <article class="card">
+    <article class="card" role="link" tabindex="0" data-product-id="${product.id}" aria-label="${product.model || product.title || "中古商品"}の詳細を見る">
 
       <div class="card-image">
 
@@ -2285,12 +2344,7 @@ function card(
             ${yen(product.price)}
           </div>
 
-          <a
-            class="detail"
-            href="used-detail.html?id=${product.id}"
-          >
-            詳細を見る →
-          </a>
+
 
         </div>
 
@@ -2683,11 +2737,31 @@ document.addEventListener(
 );
 
 
+// Product cards open details; favorite buttons retain their own action.
+document.addEventListener("click", event => {
+  if(event.target.closest(".favorite")) return;
+  const card = event.target.closest(".card[data-product-id]");
+  if(!card || event.target.closest("a, button, input, select")) return;
+  window.location.href = "used-detail.html?id=" + encodeURIComponent(card.dataset.productId);
+});
+document.addEventListener("keydown", event => {
+  if(event.key !== "Enter" && event.key !== " ") return;
+  if(event.target.closest(".favorite")) return;
+  const card = event.target.closest(".card[data-product-id]");
+  if(!card || event.target !== card) return;
+  event.preventDefault();
+  window.location.href = "used-detail.html?id=" + encodeURIComponent(card.dataset.productId);
+});
+
 $("searchBtn").onclick =
   () => {
 
     renderArrivals();
     render();
+    const resultsSection = $("usedProductResults");
+    if(resultsSection){
+      resultsSection.scrollIntoView({behavior: "smooth", block: "start"});
+    }
 
   };
 
