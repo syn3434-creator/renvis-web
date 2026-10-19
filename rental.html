@@ -466,7 +466,7 @@ header{
 ========================= */
 .featured-section{
   display:block;
-  padding:34px 0 8px;
+  padding:18px 0 8px;
 }
 .featured-head{
   display:flex;
@@ -1064,7 +1064,7 @@ footer{
 }
 </style>
 <style id="renvis-featured-heading-20261009">
-@media(max-width:760px){.featured-head h2{font-size:1.13rem!important;line-height:1.3!important}.featured-head .eyebrow{font-size:.52rem!important;letter-spacing:.12em!important}.featured-section{padding-top:14px!important}.featured-card .featured-badge{font-size:7px!important;padding:3px 5px!important}}
+@media(max-width:760px){.featured-head h2{font-size:1.13rem!important;line-height:1.3!important}.featured-head .eyebrow{font-size:.52rem!important;letter-spacing:.12em!important}.featured-section{padding-top:4px!important}.featured-card .featured-badge{font-size:7px!important;padding:3px 5px!important}}
 </style>
 
 <style id="renvis-hero-divider-and-heading-refinement-20261009">
@@ -1105,6 +1105,37 @@ footer{
  .featured-body h3{font-size:clamp(11px,3.2vw,13px);line-height:1.35;margin-bottom:6px}
  .featured-meta{margin-bottom:0!important}
 }
+</style>
+<style id="renvis-rental-pickup-css">
+/* RENVIS SNS PICKUP | added section only */
+.rental-pickup{padding:24px 0 34px;background:#06080b}
+.rental-pickup__heading{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.rental-pickup__eyebrow{font-size:10px;letter-spacing:.2em;font-weight:800;color:#ddb646}
+.rental-pickup__heading h2{margin:2px 0 0;font-size:clamp(21px,2.5vw,30px);line-height:1.25;letter-spacing:.015em}
+.rental-pickup__sub{color:#9da7b2;font-size:12px;margin:0}
+.rental-pickup__viewport{min-width:0}
+.rental-pickup__track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;justify-content:center}
+.rental-pickup__slide{min-width:0;display:flex;justify-content:center;align-items:center}
+.rental-pickup__slide img{display:block;width:100%;max-width:390px;height:auto;aspect-ratio:941 / 1672;object-fit:contain;object-position:center;background:#090b0e;border:1px solid rgba(255,255,255,.10);user-select:none;-webkit-user-drag:none}
+.rental-pickup__controls{display:none}
+@media(max-width:760px){
+  .rental-pickup{padding:10px 0 24px}
+  .rental-pickup .wrap{width:100%;max-width:100%}
+  .rental-pickup__heading{margin:0 14px 10px;align-items:center}
+  .rental-pickup__heading h2{font-size:18px}
+  .rental-pickup__sub{display:none}
+  .rental-pickup__viewport{width:100%;overflow:hidden}
+  .rental-pickup__track{display:flex;gap:0;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}
+  .rental-pickup__track::-webkit-scrollbar{display:none}
+  .rental-pickup__slide{flex:0 0 100%;width:100%;scroll-snap-align:start;scroll-snap-stop:always;padding:0 12px;min-height:0}
+  .rental-pickup__slide img{width:auto;max-width:100%;height:auto;max-height:calc(100svh - 195px);aspect-ratio:941 / 1672;object-fit:contain;border:0}
+  .rental-pickup__controls{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:12px}
+  .rental-pickup__arrow{width:36px;height:36px;display:grid;place-items:center;color:#e8e8e8;background:transparent;border:1px solid #41464d;border-radius:50%;cursor:pointer}
+  .rental-pickup__dots{display:flex;align-items:center;gap:8px}
+  .rental-pickup__dot{width:7px;height:7px;border:0;border-radius:50%;background:#61666c;padding:0;cursor:pointer}
+  .rental-pickup__dot[aria-current="true"]{background:#ddb646;width:22px;border-radius:8px}
+}
+@media(prefers-reduced-motion:reduce){.rental-pickup__track{scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -1250,6 +1281,33 @@ footer{
     <p class="unified-desc">建機用アタッチメントのレンタル。豊富な種類から現場に最適な一台を。</p>
   </div>
 </section>
+
+<!-- RENVIS SNS PICKUP START: independent of existing featured rentals -->
+<section class="rental-pickup" aria-labelledby="rentalPickupTitle">
+  <div class="wrap">
+    <div class="rental-pickup__heading">
+      <div><div class="rental-pickup__eyebrow">RENTAL / PICK UP</div><h2 id="rentalPickupTitle">注目のレンタル情報</h2></div>
+      <p class="rental-pickup__sub">最新のレンタル情報をお届けします。</p>
+    </div>
+    <div class="rental-pickup__viewport" aria-roledescription="カルーセル" aria-label="注目のレンタル情報 3件">
+      <div class="rental-pickup__track" id="rentalPickupTrack">
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="1 / 3：SV30 新品入荷"><img src="rental-pickup-sv30.png" alt="新品入荷 第2弾 NPK SV30。3トンクラス最大級の開口幅。レンタル可能。" width="941" height="1672" fetchpriority="high"></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="2 / 3：1.6クラス大割機"><img src="rental-pickup-16crusher.png" alt="九州唯一。1.6クラスの大割機 TS-WD1700V-2、レンタルできます。" width="941" height="1672" loading="lazy"></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="3 / 3：100V機器"><img src="rental-pickup-100v.png" alt="100VだからコンセントでOK。レンタル機器のご案内。" width="941" height="1672" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="rental-pickup__controls" aria-label="スライド切り替え">
+      <button type="button" class="rental-pickup__arrow" id="rentalPickupPrev" aria-label="前の画像">&#x2039;</button>
+      <div class="rental-pickup__dots">
+        <button type="button" class="rental-pickup__dot" data-pickup-index="0" aria-label="SV30を表示" aria-current="true"></button>
+        <button type="button" class="rental-pickup__dot" data-pickup-index="1" aria-label="1.6クラス大割機を表示" aria-current="false"></button>
+        <button type="button" class="rental-pickup__dot" data-pickup-index="2" aria-label="100V機器を表示" aria-current="false"></button>
+      </div>
+      <button type="button" class="rental-pickup__arrow" id="rentalPickupNext" aria-label="次の画像">&#x203A;</button>
+    </div>
+  </div>
+</section>
+<!-- RENVIS SNS PICKUP END -->
 <!-- =========================
      おすすめレンタル
 ========================= -->
@@ -2373,13 +2431,12 @@ render("crusher");
 const FEATURED_RENTALS = [
   {
     name:
-      "KBL 0.45クラス フォーク",
+      "0.45クラス フォーク",
     category:
       "NEW RENTAL",
     image:
       "rental-new-kbl-045-fork.webp",
     meta:[
-      "KBL",
       "0.45クラス",
       "ZX135用"
     ],
@@ -2390,13 +2447,12 @@ const FEATURED_RENTALS = [
   },
   {
     name:
-      "KBL 0.7クラス スケルトンバケット",
+      "0.7クラス スケルトンバケット",
     category:
       "NEW RENTAL",
     image:
       "rental-new-kbl-07-skeleton.webp",
     meta:[
-      "KBL",
       "0.7クラス / 20tクラス",
       "マス目 80×80"
     ],
@@ -2597,6 +2653,26 @@ renderFeatured();
       }
     }
   );
+})();
+</script>
+
+<script id="renvis-rental-pickup-script">
+(function(){
+  const track=document.getElementById('rentalPickupTrack');
+  if(!track)return;
+  const dots=[...document.querySelectorAll('.rental-pickup__dot')];
+  const prev=document.getElementById('rentalPickupPrev');
+  const next=document.getElementById('rentalPickupNext');
+  const count=dots.length;
+  let index=0;
+  const update=(i)=>{index=Math.max(0,Math.min(count-1,i));dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===index)));};
+  const go=(i)=>{const target=(i+count)%count;track.scrollTo({left:target*track.clientWidth,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});update(target);};
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
+  prev.addEventListener('click',()=>go(index-1));
+  next.addEventListener('click',()=>go(index+1));
+  let scheduled=false;
+  track.addEventListener('scroll',()=>{if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{update(Math.round(track.scrollLeft/Math.max(1,track.clientWidth)));scheduled=false;});},{passive:true});
+  window.addEventListener('resize',()=>{if(window.innerWidth<=760)track.scrollLeft=index*track.clientWidth;});
 })();
 </script>
 </body>
