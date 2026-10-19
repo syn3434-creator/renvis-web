@@ -1914,56 +1914,33 @@
 .repair-menu-board .repair-collage-media { aspect-ratio:4 / 3; height:auto; overflow:hidden; }
 .repair-menu-board .repair-collage-media img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; }
 
-/* Mobile repair hero: place the headline on the photo without changing desktop. */
-@media (max-width:760px){
-  .repair-hero{position:relative!important;overflow:hidden!important;}
-  .repair-hero .repair-hero-visual{position:relative!important;inset:auto!important;width:100%!important;}
-  .repair-hero .repair-hero-visual img{display:block!important;width:100%!important;height:auto!important;object-fit:contain!important;}
-  .repair-hero .repair-hero-visual::after{
-    background:linear-gradient(0deg,rgba(3,5,8,.83) 0%,rgba(3,5,8,.38) 32%,transparent 75%)!important;
-  }
-  .repair-hero .repair-hero-copy{
-    position:absolute!important;left:0!important;right:0!important;bottom:0!important;
-    z-index:2!important;width:100%!important;max-width:none!important;
-    margin:0!important;padding:38px 16px 14px!important;
-    background:none!important;box-sizing:border-box!important;
-  }
-  .repair-hero .eyebrow{margin-bottom:5px!important;font-size:.52rem!important;}
-  .repair-hero h1{
-    font-size:clamp(1.13rem,5.3vw,1.52rem)!important;
-    line-height:1.2!important;letter-spacing:-.055em!important;
-    white-space:nowrap!important;margin:0 0 5px!important;
-    text-shadow:0 2px 12px rgba(0,0,0,.85)!important;
-  }
-  .repair-hero .hero-desc{
-    font-size:clamp(.59rem,2.55vw,.76rem)!important;
-    line-height:1.5!important;color:#fff!important;
-    text-shadow:0 2px 8px rgba(0,0,0,.9)!important;
-  }
+/* RENVIS animated repair hero: independent transparent text layers.
+   All styles below are scoped to this hero; other page content remains unchanged. */
+.repair-hero .repair-hero-visual{position:relative!important;width:100%;height:100%;overflow:hidden!important;background:#080a0d}
+.repair-hero .repair-hero-visual::after{display:none!important}
+.repair-hero .repair-hero-visual img.repair-hero-photo{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ object-fit:cover!important;object-position:center center!important;animation:none!important;transform:none!important;
+}
+.repair-hero .repair-hero-visual img.repair-type-layer{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ object-fit:fill!important;pointer-events:none!important;transform:none;opacity:0;
+}
+.repair-hero .repair-type-bg{animation:repairBgReveal 1.3s ease-out .12s both!important}
+.repair-hero .repair-type-first{animation:repairTextReveal 1s cubic-bezier(.18,.7,.22,1) .55s both!important}
+.repair-hero .repair-type-second{animation:repairTextReveal 1s cubic-bezier(.18,.7,.22,1) 1.05s both!important}
+.repair-hero .repair-hero-sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@keyframes repairBgReveal{from{opacity:0}to{opacity:1}}
+@keyframes repairTextReveal{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@media(max-width:760px){
+ .repair-hero{height:auto!important;aspect-ratio:1672 / 941!important;min-height:0!important;overflow:hidden!important}
+ .repair-hero .repair-hero-visual{position:absolute!important;inset:0!important;height:100%!important}
+ .repair-hero .repair-hero-visual img.repair-hero-photo{object-fit:fill!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .repair-hero .repair-hero-visual img.repair-type-layer{animation:none!important;opacity:1!important;translate:none!important}
 }
 
-/* Catchphrase only: industrial white and metallic silver A design. */
-.repair-hero h1{
-  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif!important;
-  font-weight:900!important;
-  letter-spacing:-.065em!important;
-}
-.repair-hero h1 .repair-catch-first,
-.repair-hero h1 .repair-catch-second{display:block;}
-.repair-hero h1 .repair-catch-first{color:#ffffff;}
-.repair-hero h1 .repair-catch-second{
-  color:#c5ccd2;
-  text-shadow:0 2px 13px rgba(0,0,0,.58),0 1px 0 rgba(255,255,255,.16);
-}
-@media (max-width:760px){
-  .repair-hero h1{
-    font-size:clamp(1.07rem,5.1vw,1.48rem)!important;
-    letter-spacing:-.075em!important;
-    white-space:nowrap!important;
-  }
-  .repair-hero h1 .repair-catch-first,
-  .repair-hero h1 .repair-catch-second{display:inline;}
-}
 </style>
 
 
@@ -2219,19 +2196,14 @@
          HERO
     ========================== -->
 
-    <section class="hero repair-hero">
-
+    <section class="hero repair-hero" aria-label="諦めるには、まだ早い。溶接補修から油圧機器の再生まで、幅広い修理に対応。">
       <div class="repair-hero-visual">
-        <img src="repair-hero-photo.png" alt="回転ポジショナーでの溶接補修作業" fetchpriority="high">
-        <span class="repair-spark-glow" aria-hidden="true"></span>
+        <img class="repair-hero-photo" src="repair-hero-photo.png" alt="回転ポジショナーでの溶接補修作業" fetchpriority="high">
+        <img class="repair-type-layer repair-type-bg" src="repair-hero-background-type.png" alt="" aria-hidden="true">
+        <img class="repair-type-layer repair-type-first" src="repair-hero-line-one.png" alt="" aria-hidden="true">
+        <img class="repair-type-layer repair-type-second" src="repair-hero-line-two.png" alt="" aria-hidden="true">
       </div>
-
-      <div class="wrap repair-hero-copy">
-        <div class="eyebrow">REPAIR</div>
-        <h1><span class="repair-catch-first">諦めるには、</span><span class="repair-catch-second">まだ早い。</span></h1>
-        <p class="hero-desc">溶接補修から油圧機器の再生まで、幅広い修理に対応。</p>
-      </div>
-
+      <h1 class="repair-hero-sr-only">諦めるには、まだ早い。</h1>
     </section>
     <!-- =========================
          REPAIR MENU BOARD
