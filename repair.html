@@ -2013,6 +2013,89 @@
   }
 }
 </style>
+
+<style id="renvis-repair-hero-final-20261019">
+/* Only REPAIR hero: keep exact user-selected artwork, never crop its lettering. */
+.repair-hero{
+  width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;
+  aspect-ratio:1672 / 941!important;overflow:hidden!important;position:relative!important;
+  padding:0!important;background:#07090c!important;border:0!important;
+}
+.repair-hero .repair-hero-visual{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  overflow:hidden!important;background:#07090c!important;
+}
+.repair-hero .repair-hero-visual::after,
+.repair-hero .repair-hero-visual img.repair-type-layer,
+.repair-hero .repair-mobile-hero-text,
+.repair-hero .repair-spark-glow,
+.repair-hero .repair-hero-copy{display:none!important;}
+.repair-hero .repair-hero-visual picture{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;
+}
+.repair-hero .repair-hero-visual img.repair-hero-photo{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  object-fit:contain!important;object-position:center!important;transform:none!important;
+  animation:renvisRepairPosterReveal 1.25s ease-out both!important;
+}
+@keyframes renvisRepairPosterReveal{
+  from{opacity:0;filter:brightness(.82);}
+  to{opacity:1;filter:brightness(1);}
+}
+@media(max-width:760px){
+  .repair-hero{
+    height:calc(100svh - 68px)!important;min-height:0!important;max-height:none!important;
+    aspect-ratio:auto!important;
+  }
+  .repair-hero .repair-hero-visual img.repair-hero-photo{
+    object-fit:contain!important;object-position:center center!important;
+    animation:renvisRepairMobileReveal 1.35s cubic-bezier(.2,.7,.25,1) both!important;
+  }
+}
+@keyframes renvisRepairMobileReveal{
+  from{opacity:0;translate:0 12px;filter:brightness(.84);}
+  to{opacity:1;translate:0 0;filter:brightness(1);}
+}
+@media(prefers-reduced-motion:reduce){
+  .repair-hero .repair-hero-visual img.repair-hero-photo{animation:none!important;opacity:1!important;translate:none!important;filter:none!important;}
+}
+</style>
+
+<style id="renvis-repair-individual-text-animation-20261019">
+/* Repair hero only: the original poster lettering is separated into timed layers. */
+.repair-hero .repair-hero-visual{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#07090c!important}
+.repair-hero .repair-hero-visual::after{display:none!important}
+.repair-hero .repair-hero-background,
+.repair-hero .repair-hero-animated-type{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;overflow:hidden!important}
+.repair-hero .repair-hero-background img.repair-hero-photo,
+.repair-hero .repair-hero-animated-type img{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  display:block!important;object-fit:contain!important;object-position:center!important;
+  max-width:none!important;transform:none!important;filter:none!important;
+}
+.repair-hero .repair-hero-background img.repair-hero-photo{animation:renvisRepairBackgroundIntro 1.05s ease-out both!important}
+.repair-hero .repair-hero-animated-type{opacity:0;pointer-events:none!important;will-change:opacity,transform}
+.repair-hero .repair-hero-type-one{animation:renvisRepairTextIn .95s cubic-bezier(.2,.7,.2,1) .45s forwards!important}
+.repair-hero .repair-hero-type-two{animation:renvisRepairTextIn .95s cubic-bezier(.2,.7,.2,1) 1.08s forwards!important}
+.repair-hero .repair-hero-type-description{animation:renvisRepairTextIn .8s ease-out 2.05s forwards!important}
+.repair-hero .repair-hero-gold-flare{position:absolute;z-index:5;left:75%;top:50%;width:12%;height:20%;pointer-events:none;
+  background:radial-gradient(ellipse,rgba(255,196,73,.38),rgba(255,185,46,.09) 34%,transparent 72%);
+  mix-blend-mode:screen;opacity:0;filter:blur(14px);animation:renvisRepairGoldPulse 1.4s ease-in-out 1.6s both!important}
+@keyframes renvisRepairBackgroundIntro{from{opacity:0;filter:brightness(.7)}to{opacity:1;filter:brightness(1)}}
+@keyframes renvisRepairTextIn{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
+@keyframes renvisRepairGoldPulse{0%{opacity:0}40%{opacity:.8}100%{opacity:0}}
+@media(max-width:760px){
+  .repair-hero{height:calc(100svh - 68px)!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important}
+  .repair-hero .repair-hero-gold-flare{left:48%;top:37%;width:18%;height:13%}
+}
+@media(prefers-reduced-motion:reduce){
+  .repair-hero .repair-hero-background img.repair-hero-photo,
+  .repair-hero .repair-hero-animated-type,
+  .repair-hero .repair-hero-gold-flare{animation:none!important;transform:none!important;filter:none!important}
+  .repair-hero .repair-hero-animated-type{opacity:1!important}
+  .repair-hero .repair-hero-gold-flare{opacity:0!important}
+}
+</style>
 </head>
 
 
@@ -2234,14 +2317,23 @@
 
     <section class="hero repair-hero" aria-label="諦めるには、まだ早い。溶接補修から油圧機器の再生まで、幅広い修理に対応。">
       <div class="repair-hero-visual">
-        <picture><source media="(max-width:760px)" srcset="repair-hero-mobile-portrait.jpg"><img class="repair-hero-photo" src="repair-hero-photo.png" alt="回転ポジショナーでの溶接補修作業" fetchpriority="high"></picture>
-        <img class="repair-type-layer repair-type-bg" src="repair-hero-background-type.png" alt="" aria-hidden="true">
-        <img class="repair-type-layer repair-type-first" src="repair-hero-line-one.png" alt="" aria-hidden="true">
-        <img class="repair-type-layer repair-type-second" src="repair-hero-line-two.png" alt="" aria-hidden="true">
-      </div>
-      <div class="repair-mobile-hero-text" aria-hidden="true">
-        <strong>諦めるには、<br>まだ早い。</strong>
-        <p>溶接補修から油圧機器の再生まで、幅広い修理に対応。</p>
+        <picture class="repair-hero-background">
+          <source media="(max-width:760px)" srcset="repair-hero-mobile-clean.png">
+          <img class="repair-hero-photo" src="repair-hero-pc-clean.png" alt="回転ポジショナーでの溶接補修作業" fetchpriority="high">
+        </picture>
+        <picture class="repair-hero-animated-type repair-hero-type-one" aria-hidden="true">
+          <source media="(max-width:760px)" srcset="repair-hero-mobile-text-1.png">
+          <img src="repair-hero-pc-text-1.png" alt="">
+        </picture>
+        <picture class="repair-hero-animated-type repair-hero-type-two" aria-hidden="true">
+          <source media="(max-width:760px)" srcset="repair-hero-mobile-text-2.png">
+          <img src="repair-hero-pc-text-2.png" alt="">
+        </picture>
+        <picture class="repair-hero-animated-type repair-hero-type-description" aria-hidden="true">
+          <source media="(max-width:760px)" srcset="repair-hero-mobile-text-3.png">
+          <img src="repair-hero-pc-text-3.png" alt="">
+        </picture>
+        <span class="repair-hero-gold-flare" aria-hidden="true"></span>
       </div>
       <h1 class="repair-hero-sr-only">諦めるには、まだ早い。</h1>
     </section>
