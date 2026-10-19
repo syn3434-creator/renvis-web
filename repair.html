@@ -2135,6 +2135,69 @@
   .repair-hero .repair-hero-pc-line,.repair-hero .repair-hero-pc-desc{animation:none!important;opacity:1!important;transform:none!important;}
 }
 </style>
+
+<style id="renvis-repair-pc-exact-image-20261019">
+/* PC only: use the exact user-selected artwork, including its baked-in lettering. */
+@media (min-width:761px){
+  .repair-hero{aspect-ratio:1715 / 917!important;}
+  .repair-hero .repair-hero-pc-live-type,
+  .repair-hero .repair-hero-animated-type,
+  .repair-hero .repair-mobile-hero-text{display:none!important;}
+  .repair-hero .repair-hero-visual img.repair-hero-photo{object-fit:contain!important;}
+}
+</style>
+
+<style id="renvis-repair-mobile-real-text-only-20261019">
+/* Mobile: live typography only, no background-contaminated PNG letter layers. */
+.repair-hero .repair-hero-mobile-live-type{display:none!important}
+@media(max-width:760px){
+  .repair-hero .repair-hero-mobile-live-type{
+    position:absolute!important;z-index:12!important;
+    display:flex!important;flex-direction:column!important;align-items:center!important;
+    justify-content:center!important;text-align:center!important;
+    top:27%!important;left:4%!important;width:92%!important;height:26%!important;
+    color:#fff!important;pointer-events:none!important;
+    font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif!important;
+    -webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.65));
+  }
+  .repair-hero .repair-hero-mobile-live-line{
+    display:block!important;white-space:nowrap!important;
+    font-size:clamp(25px,8.8vw,52px)!important;
+    font-weight:600!important;letter-spacing:-.06em!important;line-height:1.24!important;
+    opacity:0;transform:translateY(12px);
+  }
+  .repair-hero .repair-hero-mobile-live-one{
+    animation:renvisRepairMobileTextOnly .85s cubic-bezier(.2,.7,.2,1) .5s both!important;
+  }
+  .repair-hero .repair-hero-mobile-live-two{
+    animation:renvisRepairMobileTextOnly .85s cubic-bezier(.2,.7,.2,1) 1.12s both!important;
+  }
+  .repair-hero .repair-hero-mobile-live-gold{
+    color:#e8b44c!important;
+    background:linear-gradient(165deg,#fff1b2 5%,#f8d275 35%,#cf9220 75%,#e9bd5a 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .repair-hero .repair-hero-mobile-live-desc{
+    width:100%;margin:clamp(9px,2.5vw,18px) 0 0!important;
+    padding-top:clamp(8px,2vw,14px)!important;
+    border-top:1px solid rgba(226,174,68,.88)!important;
+    color:#f7f7f5!important;font-size:clamp(11px,3.1vw,17px)!important;
+    line-height:1.65!important;letter-spacing:0!important;
+    opacity:0;transform:translateY(10px);
+    animation:renvisRepairMobileTextOnly .8s ease-out 2s both!important;
+  }
+  .repair-hero .repair-hero-gold-flare{display:none!important;animation:none!important}
+}
+@keyframes renvisRepairMobileTextOnly{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(max-width:760px) and (prefers-reduced-motion:reduce){
+  .repair-hero .repair-hero-mobile-live-line,
+  .repair-hero .repair-hero-mobile-live-desc{animation:none!important;opacity:1!important;transform:none!important}
+}
+</style>
 </head>
 
 
@@ -2360,18 +2423,11 @@
           <source media="(max-width:760px)" srcset="repair-hero-mobile-clean.png">
           <img class="repair-hero-photo" src="repair-hero-pc-clean.png" alt="回転ポジショナーでの溶接補修作業" fetchpriority="high">
         </picture>
-        <picture class="repair-hero-animated-type repair-hero-type-one" aria-hidden="true">
-          <source media="(max-width:760px)" srcset="repair-hero-mobile-text-1.png">
-          <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="">
-        </picture>
-        <picture class="repair-hero-animated-type repair-hero-type-two" aria-hidden="true">
-          <source media="(max-width:760px)" srcset="repair-hero-mobile-text-2.png">
-          <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="">
-        </picture>
-        <picture class="repair-hero-animated-type repair-hero-type-description" aria-hidden="true">
-          <source media="(max-width:760px)" srcset="repair-hero-mobile-text-3.png">
-          <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="">
-        </picture>
+        <div class="repair-hero-mobile-live-type" aria-hidden="true">
+          <div class="repair-hero-mobile-live-line repair-hero-mobile-live-one">諦めるには、</div>
+          <div class="repair-hero-mobile-live-line repair-hero-mobile-live-two">まだ<span class="repair-hero-mobile-live-gold">早</span>い。</div>
+          <p class="repair-hero-mobile-live-desc">溶接補修から油圧機器の再生まで、<br>幅広い修理に対応。</p>
+        </div>
         <div class="repair-hero-pc-live-type" aria-hidden="true">
           <div class="repair-hero-pc-line repair-hero-pc-line-one">諦めるには、</div>
           <div class="repair-hero-pc-line repair-hero-pc-line-two">まだ<span class="repair-hero-pc-gold">早</span>い。</div>
