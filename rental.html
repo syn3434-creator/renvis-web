@@ -1108,18 +1108,20 @@ footer{
 </style>
 <style id="renvis-rental-pickup-css">
 /* RENVIS SNS PICKUP | added section only */
-.rental-pickup{padding:24px 0 34px;background:#06080b}
+.rental-pickup{padding:8px 0 34px;background:#06080b}
 .rental-pickup__heading{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}
 .rental-pickup__eyebrow{font-size:10px;letter-spacing:.2em;font-weight:800;color:#ddb646}
 .rental-pickup__heading h2{margin:2px 0 0;font-size:clamp(21px,2.5vw,30px);line-height:1.25;letter-spacing:.015em}
 .rental-pickup__sub{color:#9da7b2;font-size:12px;margin:0}
 .rental-pickup__viewport{min-width:0}
-.rental-pickup__track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;justify-content:center}
+.rental-pickup__track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;justify-content:center}
 .rental-pickup__slide{min-width:0;display:flex;justify-content:center;align-items:center}
+.rental-pickup__post-link{display:flex;justify-content:center;align-items:center;width:100%;min-width:0;cursor:pointer}
+.rental-pickup__post-link:focus-visible{outline:2px solid #ddb646;outline-offset:3px}
 .rental-pickup__slide img{display:block;width:100%;max-width:390px;height:auto;aspect-ratio:941 / 1672;object-fit:contain;object-position:center;background:#090b0e;border:1px solid rgba(255,255,255,.10);user-select:none;-webkit-user-drag:none}
 .rental-pickup__controls{display:none}
 @media(max-width:760px){
-  .rental-pickup{padding:10px 0 24px}
+  .rental-pickup{padding:4px 0 24px}
   .rental-pickup .wrap{width:100%;max-width:100%}
   .rental-pickup__heading{margin:0 14px 10px;align-items:center}
   .rental-pickup__heading h2{font-size:18px}
@@ -1283,17 +1285,14 @@ footer{
 </section>
 
 <!-- RENVIS SNS PICKUP START: independent of existing featured rentals -->
-<section class="rental-pickup" aria-labelledby="rentalPickupTitle">
+<section class="rental-pickup" aria-label="TikTok レンタル情報">
   <div class="wrap">
-    <div class="rental-pickup__heading">
-      <div><div class="rental-pickup__eyebrow">RENTAL / PICK UP</div><h2 id="rentalPickupTitle">注目のレンタル情報</h2></div>
-      <p class="rental-pickup__sub">最新のレンタル情報をお届けします。</p>
-    </div>
-    <div class="rental-pickup__viewport" aria-roledescription="カルーセル" aria-label="注目のレンタル情報 3件">
+    <div class="rental-pickup__viewport" aria-roledescription="カルーセル" aria-label="TikTok レンタル情報 4件">
       <div class="rental-pickup__track" id="rentalPickupTrack">
-        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="1 / 3：SV30 新品入荷"><img src="rental-pickup-sv30.png" alt="新品入荷 第2弾 NPK SV30。3トンクラス最大級の開口幅。レンタル可能。" width="941" height="1672" fetchpriority="high"></div>
-        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="2 / 3：1.6クラス大割機"><img src="rental-pickup-16crusher.png" alt="九州唯一。1.6クラスの大割機 TS-WD1700V-2、レンタルできます。" width="941" height="1672" loading="lazy"></div>
-        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="3 / 3：100V機器"><img src="rental-pickup-100v.png" alt="100VだからコンセントでOK。レンタル機器のご案内。" width="941" height="1672" loading="lazy"></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="1 / 4：SV30 新品入荷"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7640264523626155271" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「SV30 新品入荷」の投稿を見る（新しいタブ）"><img src="rental-pickup-sv30.png" alt="新品入荷 第2弾 NPK SV30。3トンクラス最大級の開口幅。レンタル可能。" width="941" height="1672" fetchpriority="high"></a></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="2 / 4：1.6クラス大割機"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7639189331361533191" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「1.6クラス大割機」の投稿を見る（新しいタブ）"><img src="rental-pickup-16crusher.png" alt="九州唯一。1.6クラスの大割機 TS-WD1700V-2、レンタルできます。" width="941" height="1672" loading="lazy"></a></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="3 / 4：100V機器"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7660328277575208210" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「100V機器」の投稿を見る（新しいタブ）"><img src="rental-pickup-100v.png" alt="100VだからコンセントでOK。レンタル機器のご案内。" width="941" height="1672" loading="lazy"></a></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="4 / 4：鉄骨カッター3台入荷"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7642164181227080978" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「鉄骨カッター3台入荷」の投稿を見る（新しいタブ）"><img src="rental-pickup-steelcutters.png" alt="鉄骨カッター3台入荷。3トン・7トン・12トン、3台ともにアーツ旋回。" width="941" height="1672" loading="lazy"></a></div>
       </div>
     </div>
     <div class="rental-pickup__controls" aria-label="スライド切り替え">
@@ -1302,50 +1301,13 @@ footer{
         <button type="button" class="rental-pickup__dot" data-pickup-index="0" aria-label="SV30を表示" aria-current="true"></button>
         <button type="button" class="rental-pickup__dot" data-pickup-index="1" aria-label="1.6クラス大割機を表示" aria-current="false"></button>
         <button type="button" class="rental-pickup__dot" data-pickup-index="2" aria-label="100V機器を表示" aria-current="false"></button>
+        <button type="button" class="rental-pickup__dot" data-pickup-index="3" aria-label="鉄骨カッター3台入荷を表示" aria-current="false"></button>
       </div>
       <button type="button" class="rental-pickup__arrow" id="rentalPickupNext" aria-label="次の画像">&#x203A;</button>
     </div>
   </div>
 </section>
 <!-- RENVIS SNS PICKUP END -->
-<!-- =========================
-     おすすめレンタル
-========================= -->
-<section
-  class="featured-section"
-  id="featured-rentals"
->
-  <div class="wrap">
-    <div class="featured-head">
-      <div>
-        <div class="eyebrow">
-          New Arrival
-        </div>
-        <h2>
-          おすすめレンタル機
-        </h2>
-      </div>
-    </div>
-    <div
-      class="featured-grid"
-      id="featuredGrid"
-    >
-      <article class="featured-empty">
-        <div class="featured-empty-mark">
-          NEW
-        </div>
-        <div>
-          <strong>
-            おすすめレンタル機
-          </strong>
-          <p>
-            新入荷・おすすめ機種はこちらに掲載します。
-          </p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
 <!-- =========================
      種類から探す
 ========================= -->
@@ -2425,112 +2387,7 @@ if(orangeMarujun){
 }
 
 render("crusher");
-/* =========================
-   FEATURED RENTALS
-========================= */
-const FEATURED_RENTALS = [
-  {
-    name:
-      "0.45クラス フォーク",
-    category:
-      "NEW RENTAL",
-    image:
-      "rental-new-kbl-045-fork.webp",
-    meta:[
-      "0.45クラス",
-      "ZX135用"
-    ],
-    text:
-      "新品レンタル機が入荷しました。最新の在庫・貸出状況はお問い合わせください。",
-    link:
-      "contact.html"
-  },
-  {
-    name:
-      "0.7クラス スケルトンバケット",
-    category:
-      "NEW RENTAL",
-    image:
-      "rental-new-kbl-07-skeleton.webp",
-    meta:[
-      "0.7クラス / 20tクラス",
-      "マス目 80×80"
-    ],
-    text:
-      "新品レンタル機が入荷しました。細かな選別・仕分け作業に。最新の在庫・貸出状況はお問い合わせください。",
-    link:
-      "contact.html",
-    contain:true
-  }
-];
-const featuredSection =
-  document.getElementById(
-    "featured-rentals"
-  );
-const featuredGrid =
-  document.getElementById(
-    "featuredGrid"
-  );
-function renderFeatured(){
-  if(
-    !FEATURED_RENTALS.length
-  ){
-    return;
-  }
-  featuredGrid.innerHTML =
-    FEATURED_RENTALS
-      .slice(
-        0,
-        4
-      )
-      .map(
-        item => `
-          <article class="featured-card">
-            <div style="position:relative">
-              <img
-                src="${esc(item.image)}"
-                alt="${esc(item.name)}"
-                class="${
-                  item.contain
-                  ?
-                  "featured-img-contain"
-                  :
-                  ""
-                }"
-                draggable="false"
-              >
-              <span class="featured-badge">
-                NEW ARRIVAL
-              </span>
-            </div>
-            <div class="featured-body">
-              <small>
-                ${esc(item.category || "RENTAL")}
-              </small>
-              <h3>
-                ${esc(item.name)}
-              </h3>
-              <div class="featured-meta">
-                ${
-                  (item.meta || [])
-                    .map(
-                      meta =>
-                        `
-                          <span>
-                            ${esc(meta)}
-                          </span>
-                        `
-                    )
-                    .join("")
-                }
-              </div>
-            </div>
-          </article>
-        `
-      )
-      .join("");
-}
-renderFeatured();
+
 </script>
 <script>
 /* =========================
