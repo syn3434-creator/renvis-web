@@ -1175,6 +1175,18 @@ footer{
  .rental-pickup__controls{margin-top:9px}
 }
 </style>
+<style id="renvis-pickup-mobile-stable-20261020">
+/* Stable one-card carousel: translate complete slides instead of scrolling. */
+@media(max-width:760px){
+ .rental-pickup__viewport{width:100%;overflow:hidden;}
+ .rental-pickup__track{display:flex;width:100%;gap:0;overflow:visible!important;scroll-snap-type:none!important;scroll-behavior:auto!important;touch-action:pan-y;transition:transform .48s ease;will-change:transform;}
+ .rental-pickup__slide{display:flex;box-sizing:border-box;flex:0 0 100%;width:100%;min-width:100%;padding:0 12px;align-items:center;justify-content:center;scroll-snap-align:none;}
+ .rental-pickup__post-link{display:flex;align-items:center;justify-content:center;width:100%;min-width:0;}
+ .rental-pickup__slide img{display:block;width:auto!important;height:auto!important;max-width:100%!important;max-height:min(690px,calc(100svh - 210px))!important;object-fit:contain!important;object-position:center!important;flex-shrink:1;}
+ .rental-pickup__tap-guide{margin:10px 12px 0;text-align:center;}
+}
+@media(max-width:760px) and (prefers-reduced-motion:reduce){.rental-pickup__track{transition:none!important}}
+</style>
 </head>
 <body>
 <header>
@@ -2547,53 +2559,53 @@ render("crusher");
 
 <script id="renvis-rental-pickup-script">
 (function(){
-  const track=document.getElementById('rentalPickupTrack');
-  if(!track)return;
-  const dots=[...document.querySelectorAll('.rental-pickup__dot')];
-  const prev=document.getElementById('rentalPickupPrev');
-  const next=document.getElementById('rentalPickupNext');
-  const count=dots.length;
-  const mobile=()=>window.matchMedia('(max-width:760px)').matches;
-  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
-  let index=0,timer=null,scrollTick=false;
-  const update=i=>{
-    index=(i+count)%count;
-    dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===index)));
-  };
-  const go=(i,instant=false)=>{
-    if(!mobile())return;
-    const target=(i+count)%count;
-    update(target);
-    track.scrollTo({left:target*track.clientWidth,behavior:instant||reduced.matches?'instant':'smooth'});
-  };
-  const stop=()=>{if(timer!==null){clearInterval(timer);timer=null;}};
-  const start=()=>{
-    stop();
-    if(!mobile()||reduced.matches||document.hidden)return;
-    timer=setInterval(()=>go(index+1),3500);
-  };
-  const choose=i=>{go(i);start();};
-  dots.forEach((dot,i)=>dot.addEventListener('click',()=>choose(i)));
-  prev.addEventListener('click',()=>choose(index-1));
-  next.addEventListener('click',()=>choose(index+1));
-  track.addEventListener('scroll',()=>{
-    if(!mobile()||scrollTick)return;
-    scrollTick=true;
-    requestAnimationFrame(()=>{
-      update(Math.round(track.scrollLeft/Math.max(1,track.clientWidth)));
-      scrollTick=false;
-    });
-  },{passive:true});
-  track.addEventListener('touchstart',stop,{passive:true});
-  track.addEventListener('touchend',()=>{setTimeout(start,700)},{passive:true});
-  track.addEventListener('pointerenter',stop);
-  track.addEventListener('pointerleave',start);
-  track.addEventListener('focusin',stop);
-  track.addEventListener('focusout',start);
-  document.addEventListener('visibilitychange',start);
-  window.addEventListener('resize',()=>{if(mobile())go(index,true);start();});
-  reduced.addEventListener('change',start);
-  start();
+ const track=document.getElementById('rentalPickupTrack');
+ if(!track)return;
+ const slides=[...track.querySelectorAll('.rental-pickup__slide')];
+ const dots=[...document.querySelectorAll('.rental-pickup__dot')];
+ const prev=document.getElementById('rentalPickupPrev');
+ const next=document.getElementById('rentalPickupNext');
+ const viewport=track.closest('.rental-pickup__viewport');
+ const mobile=window.matchMedia('(max-width:760px)');
+ const reduced=window.matchMedia('(prefers-reduced-motion:reduce)');
+ const count=slides.length;
+ let index=0,timer=null,touchStartX=null,touchStartY=null;
+ function render(animate=true){
+  track.style.transitionDuration=animate&&!reduced.matches?'480ms':'0ms';
+  track.style.transform=mobile.matches?'translate3d('+(-index*100)+'%,0,0)':'';
+  dots.forEach((dot,i)=>dot.setAttribute('aria-current',String(i===index)));
+ }
+ function stop(){if(timer!==null){clearTimeout(timer);timer=null;}}
+ function schedule(){
+  stop();
+  if(!mobile.matches||document.hidden||reduced.matches||count<2)return;
+  timer=setTimeout(()=>{index=(index+1)%count;render();schedule();},3500);
+ }
+ function choose(i){index=(i+count)%count;render();schedule();}
+ dots.forEach((dot,i)=>dot.addEventListener('click',()=>choose(i)));
+ if(prev)prev.addEventListener('click',()=>choose(index-1));
+ if(next)next.addEventListener('click',()=>choose(index+1));
+ viewport.addEventListener('touchstart',e=>{
+  if(!mobile.matches||!e.touches.length)return;
+  touchStartX=e.touches[0].clientX;
+  touchStartY=e.touches[0].clientY;
+  stop();
+ },{passive:true});
+ viewport.addEventListener('touchend',e=>{
+  if(touchStartX!==null&&e.changedTouches.length){
+   const dx=e.changedTouches[0].clientX-touchStartX;
+   const dy=e.changedTouches[0].clientY-touchStartY;
+   if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.2){choose(index+(dx<0?1:-1));}
+   else schedule();
+  } else schedule();
+  touchStartX=touchStartY=null;
+ },{passive:true});
+ viewport.addEventListener('touchcancel',()=>{touchStartX=touchStartY=null;schedule();},{passive:true});
+ document.addEventListener('visibilitychange',schedule);
+ window.addEventListener('resize',()=>{render(false);schedule();});
+ if(mobile.addEventListener)mobile.addEventListener('change',()=>{render(false);schedule();});
+ if(reduced.addEventListener)reduced.addEventListener('change',()=>{render(false);schedule();});
+ render(false);schedule();
 })();
 </script>
 </body>
