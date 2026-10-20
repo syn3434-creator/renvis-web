@@ -1,1 +1,2555 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta
+  name="description"
+  content="株式会社レンビスの建機用アタッチメントレンタル。種類からメーカーを選び、メーカー公式カタログで詳しい仕様をご確認いただけます。"
+>
+<title>建機アタッチメントレンタル | RENVIS</title>
+<style>
+:root{
+  --bg:#06080b;
+  --panel:#0c1117;
+  --panel2:#111820;
+  --text:#f5f7f9;
+  --muted:#9da7b2;
+  --line:rgba(255,255,255,.14);
+  --gold:#ddb646;
+  --blue:#2b8ce8;
+  --max:1460px;
+}
+*{
+  box-sizing:border-box;
+}
+html{
+  scroll-behavior:smooth;
+  max-width:100%;
+  overflow-x:hidden;
+}
+img{-webkit-user-drag:none;user-select:none}
+body{
+  margin:0;
+  max-width:100%;
+  overflow-x:hidden;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;
+  line-height:1.6;
+}
+a{
+  color:inherit;
+  text-decoration:none;
+}
+button{
+  font:inherit;
+}
+img{
+  display:block;
+  max-width:100%;
+}
+.wrap{
+  width:min(var(--max),calc(100% - 64px));
+  margin:auto;
+}
+/* =========================
+   HEADER
+========================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:80;
+  height:76px;
+  display:flex;
+  align-items:center;
+  background:rgba(4,6,8,.96);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  width:min(var(--max),calc(100% - 64px));
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+.logo{
+  width:245px;
+  mix-blend-mode:screen;
+}
+.nav-links{
+  display:flex;
+  gap:25px;
+  margin-left:auto;
+  font-size:.77rem;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+.nav-links a,
+.home-btn{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  line-height:1.08;
+  white-space:nowrap;
+}
+.nav-links a{
+  padding:12px 0;
+  border-bottom:2px solid transparent;
+}
+.nav-links a:hover,
+.nav-links .active{
+  border-color:var(--gold);
+}
+.nav-en{
+  font-weight:900;
+  letter-spacing:.06em;
+}
+.nav-ja{
+  font-size:.52rem;
+  font-weight:700;
+  letter-spacing:.05em;
+  color:#8e969e;
+}
+.nav-links a.active .nav-ja,
+.nav-links a:hover .nav-ja{
+  color:#d8b64d;
+}
+.home-btn{
+  border:1px solid var(--line);
+  padding:9px 14px;
+  font-size:.74rem;
+  font-weight:800;
+}
+.home-btn .nav-ja{
+  font-size:.52rem;
+}
+/* =========================
+   HERO
+========================= */
+.hero{
+  width:100%;
+  height:220px;
+  min-height:220px;
+  max-height:220px;
+  padding:26px 0 10px;
+  background:#06080b;
+  border-bottom:1px solid rgba(255,255,255,.15);
+  overflow:hidden;
+}
+.hero .wrap.hero-content{
+  width:calc(100% - 36px);
+  max-width:none;
+  margin:0 18px;
+  padding:0 0 0 11px;
+  border-left:3px solid var(--gold);
+}
+.eyebrow{
+  color:var(--gold);
+  font-size:.7rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.hero .eyebrow{
+  font-size:.62rem;
+  line-height:1.15;
+  margin:0 0 9px;
+}
+.hero h1{
+  font-size:3.15rem;
+  line-height:.95;
+  letter-spacing:-.035em;
+  margin:0 0 10px;
+}
+.hero-jp{
+  font-size:.78rem;
+  line-height:1.35;
+  margin:0 0 14px;
+  font-weight:800;
+}
+.unified-desc{
+  max-width:720px;
+  margin:0;
+  color:#bec6ce;
+  font-size:.76rem;
+  line-height:1.62;
+}
+.unified-desc span{
+  display:block;
+}
+/* =========================
+   SECTIONS
+========================= */
+.section{
+  padding:48px 0;
+}
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:20px;
+}
+.section-head h2{
+  font-size:2rem;
+  margin:2px 0 0;
+}
+.section-head p{
+  color:var(--muted);
+  font-size:.8rem;
+  margin:0;
+  max-width:580px;
+  text-align:right;
+}
+/* =========================
+   ROUTE
+========================= */
+.route{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:0 0 22px;
+  color:#c8d0d7;
+  font-size:.74rem;
+}
+.route span{
+  border:1px solid var(--line);
+  padding:7px 10px;
+  background:#090d12;
+}
+.route b{
+  color:var(--gold);
+}
+/* =========================
+   CATEGORIES
+========================= */
+.categories{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:12px;
+}
+.category-card{
+  min-width:0;
+  min-height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border:1px solid var(--line);
+  background:#0b0f14;
+  padding:0;
+  cursor:pointer;
+  color:#fff;
+  overflow:hidden;
+  transition:.22s;
+  position:relative;
+}
+.category-card:hover{
+  transform:translateY(-2px);
+  border-color:#66717b;
+  background:#10161c;
+}
+.category-card.active{
+  transform:none;
+  background:#10161c;
+  border-color:var(--gold);
+  box-shadow:inset 0 -3px 0 var(--gold);
+}
+.category-card span{
+  display:block;
+  width:100%;
+  padding:20px 12px;
+  font-weight:900;
+  font-size:.86rem;
+  line-height:1.35;
+}
+/* =========================
+   CATALOG
+========================= */
+.catalog-panel{
+  display:none;
+  margin-top:26px;
+}
+.catalog-panel.open{
+  display:block;
+}
+.catalog-intro{
+  border:0;
+  background:transparent;
+  padding:18px 0 24px;
+  margin-bottom:10px;
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.catalog-intro h3{
+  font-size:1.35rem;
+  margin:2px 0 4px;
+}
+.catalog-intro p{
+  margin:0;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.catalog-intro .note{
+  max-width:540px;
+  font-size:.72rem;
+  color:#c5ccd3;
+}
+/* =========================
+   MAKER CARDS
+========================= */
+.makers{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.maker-card{
+  min-width:0;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,#10161d,#080b0f);
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  min-height:285px;
+}
+.maker-top{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:flex-start;
+}
+.maker-name{
+  min-width:0;
+}
+.maker-name small{
+  display:block;
+  color:var(--gold);
+  font-size:.62rem;
+  letter-spacing:.14em;
+  margin-bottom:4px;
+}
+.maker-name h3{
+  font-size:1.45rem;
+  margin:0;
+  line-height:1.15;
+  overflow-wrap:anywhere;
+}
+/* =========================
+   MAKER PHOTO
+   PC・スマホ共通比率
+========================= */
+.maker-photo{
+  width:300px;
+  height:270px;
+  margin:20px 0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  background:#0a0e13;
+  padding:12px;
+}
+.maker-photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+  .maker-content-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:36px;
+  margin-top:22px;
+}
+.maker-content-row .maker-actions{
+  flex:1;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+}
+.maker-content-row .maker-photo{
+  flex:0 0 300px;
+  width:300px;
+  height:270px;
+  margin:0;
+}
+/* =========================
+   BUTTONS
+========================= */
+.maker-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:auto;
+  padding-top:22px;
+}
+.catalog-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:43px;
+  padding:0 15px;
+  background:var(--gold);
+  color:#08090b;
+  font-size:.72rem;
+  font-weight:900;
+}
+.catalog-btn.secondary{
+  background:transparent;
+  color:#fff;
+  border:1px solid var(--line);
+}
+.catalog-btn:hover{
+  filter:brightness(1.08);
+}
+.stock-note{
+  margin-top:14px;
+  border-left:3px solid var(--gold);
+  padding:10px 12px;
+  background:rgba(221,182,70,.06);
+  color:#c9d0d6;
+  font-size:.7rem;
+}
+/* =========================
+   CONTACT
+========================= */
+.cta{
+  margin-top:28px;
+  border:1px solid rgba(221,182,70,.7);
+  background:linear-gradient(135deg,#111820,#080b0f);
+  padding:28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.cta h2{
+  font-size:1.45rem;
+  margin:0 0 5px;
+}
+.cta p{
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0;
+}
+.cta-links{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.cta a{
+  padding:14px 20px;
+  background:linear-gradient(135deg,#1979ca,#2b99ed);
+  font-weight:900;
+  font-size:.78rem;
+}
+.cta a.mail{
+  background:transparent;
+  border:1px solid var(--line);
+}
+/* =========================
+   FEATURED
+========================= */
+.featured-section{
+  display:block;
+  padding:18px 0 8px;
+}
+.featured-head{
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:flex-end;
+  margin-bottom:16px;
+}
+.featured-head h2{
+  font-size:2rem;
+  margin:2px 0 0;
+}
+.featured-head p{
+  margin:0;
+  color:var(--muted);
+  font-size:.78rem;
+  text-align:right;
+}
+.featured-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.featured-card{
+  min-width:0;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,#11171e,#080b0f);
+  overflow:hidden;
+  position:relative;
+}
+.featured-card img{
+  display:block;
+  width:100%;
+  height:210px;
+  object-fit:cover;
+}
+.featured-card img.featured-img-contain{
+  object-fit:contain;
+  object-position:center;
+  background:#11161b;
+}
+.featured-badge{
+  position:absolute;
+  left:12px;
+  top:12px;
+  background:var(--gold);
+  color:#08090b;
+  font-weight:900;
+  font-size:.62rem;
+  letter-spacing:.1em;
+  padding:6px 8px;
+}
+.featured-body{
+  padding:16px;
+}
+.featured-body small{
+  display:block;
+  color:var(--gold);
+  font-size:.62rem;
+  letter-spacing:.12em;
+  margin-bottom:4px;
+}
+.featured-body h3{
+  font-size:1.12rem;
+  margin:0 0 6px;
+}
+.featured-body p{
+  font-size:.72rem;
+  color:var(--muted);
+  margin:0 0 14px;
+}
+.featured-meta{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.featured-meta span{
+  border:1px solid var(--line);
+  padding:5px 7px;
+  font-size:.62rem;
+  color:#d7dde2;
+}
+.featured-empty{
+  grid-column:1/-1;
+  min-height:150px;
+  border:1px dashed rgba(221,182,70,.5);
+  background:linear-gradient(135deg,#101820,#080c11);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  padding:26px;
+}
+.featured-empty-mark{
+  border:1px solid var(--gold);
+  color:var(--gold);
+  font-size:.65rem;
+  font-weight:900;
+  letter-spacing:.16em;
+  padding:8px 10px;
+}
+.featured-empty strong{
+  display:block;
+  font-size:1rem;
+  margin-bottom:4px;
+}
+.featured-empty p{
+  margin:0;
+  color:var(--muted);
+  font-size:.72rem;
+}
+.featured-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:0 14px;
+  background:linear-gradient(135deg,#1979ca,#2b99ed);
+  font-size:.7rem;
+  font-weight:900;
+}
+/* =========================
+   FOOTER
+========================= */
+footer{
+  border-top:1px solid var(--line);
+  padding:20px 0 25px;
+  color:#747d87;
+  font-size:.68rem;
+  text-align:center;
+}
+/* =========================
+   MOBILE MENU
+========================= */
+.mobile-menu-toggle,
+.mobile-menu-overlay,
+.mobile-drawer{
+  display:none;
+}
+/* =========================
+   TABLET
+========================= */
+@media(max-width:1100px){
+  .categories{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  .featured-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:760px){
+.maker-content-row{
+  flex-direction:column;
+  align-items:stretch;
+  gap:18px;
+}
+.maker-content-row .maker-actions{
+  width:100%;
+  align-items:stretch;
+}
+.maker-content-row .catalog-btn{
+  width:100%;
+}
+.maker-content-row .maker-photo{
+  width:100%;
+  height:220px;
+  flex:0 0 auto;
+  margin:0;
+}
+  .wrap,
+  .nav{
+    width:calc(100% - 28px);
+  }
+  header{
+    height:68px;
+  }
+  .logo{
+    width:185px;
+  }
+  .nav-links{
+    display:none;
+  }
+  .home-btn{
+    display:none;
+  }
+  .mobile-menu-toggle{
+    display:grid;
+    place-content:center;
+    gap:6px;
+    width:44px;
+    height:44px;
+    margin-left:auto;
+    border:0;
+    background:transparent;
+    cursor:pointer;
+  }
+  .mobile-menu-toggle span{
+    display:block;
+    width:31px;
+    height:2px;
+    background:#fff;
+  }
+  .mobile-menu-overlay{
+    display:block;
+    position:fixed;
+    inset:0;
+    z-index:998;
+    background:rgba(0,0,0,.66);
+    opacity:0;
+    visibility:hidden;
+    transition:.28s ease;
+  }
+  .mobile-menu-overlay.open{
+    opacity:1;
+    visibility:visible;
+  }
+  .mobile-drawer{
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:999;
+    width:min(86vw,360px);
+    height:100dvh;
+    padding:22px 20px 28px;
+    background:linear-gradient(180deg,#0b0f14,#050709);
+    border-left:1px solid rgba(255,255,255,.15);
+    transform:translateX(105%);
+    transition:transform .32s ease;
+    box-shadow:-24px 0 70px rgba(0,0,0,.45);
+    overflow-y:auto;
+  }
+  .mobile-drawer.open{
+    transform:translateX(0);
+  }
+  .mobile-drawer-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    padding-bottom:20px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+  }
+  .mobile-drawer-logo{
+    width:190px;
+    mix-blend-mode:screen;
+  }
+  .mobile-close{
+    width:42px;
+    height:42px;
+    border:1px solid rgba(255,255,255,.15);
+    background:transparent;
+    color:#fff;
+    font-size:1.55rem;
+    cursor:pointer;
+  }
+  .mobile-menu-links{
+    display:flex;
+    flex-direction:column;
+    margin-top:18px;
+  }
+  .mobile-menu-links a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    min-height:54px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+    color:#fff;
+    font-size:1rem;
+    font-weight:800;
+    letter-spacing:.05em;
+  }
+  .mobile-menu-links a:after{
+    content:"→";
+    color:#8c96a1;
+    font-size:1.35rem;
+  }
+  .mobile-inquiry-card{
+    margin-top:24px;
+    padding:18px;
+    border:1px solid rgba(255,255,255,.15);
+    background:#0a0e13;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+  .mobile-inquiry-card span{
+    color:#9ca6b0;
+    font-size:.74rem;
+    line-height:1.7;
+  }
+  .mobile-inquiry-card a{
+    margin-top:6px;
+    color:#e5c15b;
+    font-size:.78rem;
+    font-weight:800;
+  }
+  body.mobile-menu-open{
+    overflow:hidden;
+  }
+  /* HERO */
+  .hero{
+    height:auto;
+    min-height:0;
+    max-height:none;
+    padding:28px 0 14px;
+    overflow:visible;
+  }
+  .hero .wrap.hero-content{
+    width:calc(100% - 36px);
+    margin:0 18px;
+    padding:0 0 0 11px;
+  }
+  .hero .eyebrow{
+    font-size:.58rem;
+    margin:0 0 8px;
+  }
+  .hero h1{
+    font-size:2.65rem;
+    line-height:.96;
+    margin:0 0 9px;
+  }
+  .hero-jp{
+    font-size:.72rem;
+    margin:0 0 12px;
+  }
+  .unified-desc{
+    font-size:.72rem;
+    line-height:1.65;
+  }
+  /* SECTIONS */
+  .section{
+    padding:34px 0;
+  }
+  .section-head{
+    display:block;
+  }
+  .section-head p{
+    text-align:left;
+    margin-top:7px;
+  }
+  /* CATEGORIES */
+  .categories{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+  }
+  .category-card{
+    min-height:78px;
+  }
+  .category-card span{
+    padding:15px 8px;
+    font-size:.78rem;
+  }
+  /* CATALOG */
+  .catalog-intro{
+    display:block;
+  }
+  .catalog-intro .note{
+    margin-top:12px;
+  }
+  /* MAKERS */
+  .makers{
+    grid-template-columns:1fr;
+  }
+  .maker-card{
+    min-height:0;
+    padding:18px;
+  }
+  .maker-name h3{
+    font-size:1.3rem;
+  }
+  /* 写真はPCと同じ4:3比率 */
+  .maker-photo{
+  aspect-ratio:16 / 10;
+  padding:16px 30px 16px 16px;
+  justify-content:flex-end;
+}
+.maker-photo img{
+  width:auto;
+  height:74%;
+  max-width:42%;
+  max-height:74%;
+  object-fit:contain;
+  object-position:center;
+}
+  /* CONTACT */
+  .cta{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:22px 18px;
+  }
+  .cta-links{
+    width:100%;
+  }
+  .cta-links a{
+    flex:1;
+    text-align:center;
+  }
+  /* FEATURED */
+  .featured-head{
+    display:block;
+  }
+  .featured-head p{
+    text-align:left;
+    margin-top:7px;
+  }
+  .featured-grid{
+    grid-template-columns:1fr;
+  }
+  .featured-card img{
+    height:190px;
+  }
+}
+@media(max-width:390px){
+  .categories{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .category-card span{
+    font-size:.74rem;
+  }
+  .maker-card{
+    padding:15px;
+  }
+  .maker-top{
+    gap:10px;
+  }
+}
+@media(max-width:760px){
+.maker-photo{
+  width:100%;
+  height:240px;
+  margin:18px 0 0;
+  padding:12px;
+}
+.maker-photo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+}
+/* Balanced manufacturer cards and catalogs */
+.maker-card{min-height:0;padding:22px}
+.maker-name small{font-size:10px;letter-spacing:.13em;margin-bottom:6px}
+.maker-name h3{font-size:22px;line-height:1.3}
+.maker-content-row{flex:1;display:flex;flex-direction:row;align-items:center;gap:24px;margin-top:18px;min-height:190px}
+.maker-content-row .maker-actions{flex:1 1 0;min-width:0;width:auto;align-items:flex-start;gap:9px;margin:0;padding:0}
+.maker-content-row .catalog-btn{width:100%;max-width:210px;min-height:44px;padding:10px 12px;font-size:12.5px;line-height:1.45;text-align:center;white-space:normal}
+.maker-content-row .maker-photo{flex:0 0 38%;width:38%;height:190px;margin:0;padding:0;border:0;background:transparent;aspect-ratio:auto}
+.maker-content-row .maker-photo img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;user-select:none;-webkit-user-drag:none;pointer-events:none}
+@media(min-width:761px) and (max-width:1000px){.makers{grid-template-columns:1fr}.maker-content-row .maker-photo{flex-basis:32%;width:32%}}
+@media(max-width:760px){
+.maker-card{padding:18px}
+.maker-name h3{font-size:20px;line-height:1.3}
+.maker-name small{font-size:9px;margin-bottom:5px}
+.maker-content-row{flex-direction:row;align-items:center;gap:14px;margin-top:14px;min-height:130px}
+.maker-content-row .maker-actions{width:auto;align-items:stretch;gap:8px}
+.maker-content-row .catalog-btn{max-width:none;min-height:44px;padding:10px;font-size:12px;line-height:1.45}
+.maker-content-row .maker-photo{flex:0 0 34%;width:34%;height:130px;margin:0;padding:0}
+}
+@media(max-width:360px){.maker-card{padding:15px}.maker-name h3{font-size:18px}.maker-content-row{gap:10px}.maker-content-row .catalog-btn{font-size:11.5px;padding:9px 7px}}
 
+/* Compact two-column featured rentals on phones */
+@media(max-width:760px){
+  .featured-section{padding:24px 0 8px}
+  .featured-head{gap:8px;margin-bottom:12px}
+  .featured-head h2{font-size:1.35rem}
+  .featured-head p{font-size:.68rem;line-height:1.6}
+  .featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .featured-card{display:flex;flex-direction:column}
+  .featured-card img{height:clamp(100px,30vw,150px)}
+  .featured-badge{top:6px;left:6px;font-size:8px;letter-spacing:.04em;padding:4px 5px}
+  .featured-body{display:flex;flex:1;flex-direction:column;padding:10px}
+  .featured-body small{font-size:8px;letter-spacing:.08em;margin-bottom:4px}
+  .featured-body h3{font-size:12px;line-height:1.45;margin:0 0 8px;overflow-wrap:anywhere}
+  .featured-meta{gap:4px;margin-bottom:8px}
+  .featured-meta span{padding:3px 4px;font-size:9px;line-height:1.4}
+  .featured-body p{font-size:10px;line-height:1.6;margin:0 0 10px}
+  .featured-link{width:100%;min-height:44px;padding:7px 5px;font-size:10px;line-height:1.4;text-align:center;margin-top:auto}
+}
+
+/* ====================================================
+   RENVIS responsive layout: unified mobile presentation
+   Applies to all phones without changing rental data.
+==================================================== */
+@media (max-width:760px){
+  .wrap,.nav{width:calc(100% - 28px);max-width:100%}
+  .section{padding:30px 0}
+  .section-head h2,.featured-head h2{font-size:clamp(20px,5vw,24px);line-height:1.3}
+  .categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .category-card{min-height:78px}
+  .category-card span{font-size:clamp(12px,3.4vw,14px);padding:12px 7px;line-height:1.4}
+  .makers{grid-template-columns:minmax(0,1fr);gap:12px}
+  .maker-card{min-width:0;min-height:0;padding:16px}
+  .maker-name small{font-size:10px;margin-bottom:5px}
+  .maker-name h3{font-size:clamp(18px,4.6vw,21px);line-height:1.3}
+  .maker-content-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,36%);
+    align-items:center;gap:12px;margin-top:14px;min-height:142px}
+  .maker-content-row .maker-actions{width:100%;min-width:0;margin:0;padding:0;
+    align-items:stretch;gap:8px}
+  .maker-content-row .catalog-btn{box-sizing:border-box;width:100%;max-width:none;
+    min-height:44px;padding:9px 6px;font-size:clamp(11px,3vw,12px);line-height:1.4;
+    overflow-wrap:anywhere;text-align:center}
+  .maker-content-row .maker-photo{box-sizing:border-box;display:flex;width:100%;min-width:0;
+    height:auto;aspect-ratio:4 / 5;margin:0;padding:0;flex:none;border:0;background:transparent;
+    align-items:center;justify-content:center;overflow:hidden}
+  .maker-content-row .maker-photo img{display:block;width:100%;height:100%;max-width:100%;
+    max-height:100%;object-fit:contain;object-position:center;user-select:none;
+    -webkit-user-drag:none;pointer-events:none}
+  .featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .featured-card{display:flex;flex-direction:column}
+  .featured-card img{width:100%;height:auto;aspect-ratio:1.4 / 1;object-fit:cover}
+  .featured-card img.featured-img-contain{object-fit:contain}
+  .featured-body{display:flex;flex-direction:column;flex:1;padding:10px}
+  .featured-body h3{font-size:clamp(11px,3.3vw,13px);line-height:1.45;overflow-wrap:anywhere}
+  .featured-meta{gap:4px;margin-bottom:8px}
+  .featured-meta span{font-size:clamp(9px,2.5vw,10px);padding:4px}
+  .featured-link{width:100%;min-height:44px;font-size:clamp(10px,2.8vw,12px);
+    line-height:1.4;padding:7px 5px;text-align:center;margin-top:auto}
+}
+
+
+/* Spot cooler image tuning */
+.maker-photo--cooler{
+  flex:0 0 42% !important;
+  width:42% !important;
+  height:230px !important;
+  align-items:center;
+  justify-content:center;
+  transform:translateY(-12px);
+}
+.maker-photo--cooler img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+@media (max-width:760px){
+  .maker-content-row .maker-photo--cooler{
+    width:100% !important;
+    height:auto !important;
+    aspect-ratio:3 / 4 !important;
+    transform:translateY(-8px);
+  }
+}
+
+
+</style>
+<style id="renvis-mobile-clean-20261009">
+/* RENVIS mobile final: consolidated, applied before first paint. */
+@media (max-width:760px){
+  header{height:58px!important;border-bottom:0!important;}
+  header .logo{width:175px!important;max-width:145px!important;}
+  .hero .wrap.hero-content,
+  .used-hero .wrap.used-hero-content{border-left:0!important;padding-left:0!important;}
+  .hero,.used-hero{border-bottom:0!important;}
+  .hero{padding-bottom:8px!important;border-bottom:0!important;height:auto!important;min-height:0!important;max-height:none!important;padding:14px 0 9px!important;overflow:visible!important;}
+  .used-hero{padding-bottom:8px!important;}
+  .featured-section{padding-top:24px!important;}
+  .featured-head{margin-bottom:12px!important;}
+  .featured-body{padding:12px!important;display:flex;flex-direction:column;}
+  .featured-body p{margin-bottom:8px!important;}
+  .featured-meta{margin-bottom:10px;}
+  .featured-card .featured-link{min-height:38px;margin-top:10px;}
+  .hero + .section{padding-top:26px;}
+  .section{padding-top:30px;padding-bottom:30px;}
+  .section-head{margin-bottom:14px;}
+  .section-head h2{line-height:1.25;}
+  .hero .wrap.hero-content{padding-left:8px!important;border-left-width:2px!important;}
+  .hero .eyebrow{font-size:.44rem!important;line-height:1.15!important;margin:0 0 5px!important;}
+  .hero h1{font-size:1.55rem!important;line-height:1!important;letter-spacing:-.035em!important;margin:0 0 5px!important;white-space:normal!important;}
+  .hero .hero-jp{font-size:.61rem!important;line-height:1.35!important;margin:0 0 7px!important;}
+  .hero .unified-desc{max-width:100%!important;font-size:.56rem!important;line-height:1.5!important;margin:0!important;}
+}
+</style>
+
+<style id="renvis-four-pages-hero-20261009">
+/* Four-page shared hero, applied before paint. */
+@media(min-width:761px){
+  .hero,.used-hero{height:170px!important;min-height:170px!important;max-height:170px!important;padding:29px 0 20px!important;overflow:visible!important;background:#06080b!important;}
+  .hero .wrap.hero-content,.used-hero .wrap.used-hero-content{border-left:2px solid var(--gold)!important;padding-left:16px!important;}
+  .hero h1,.used-hero h1{font-size:3.15rem!important;line-height:1.05!important;margin:0 0 14px!important;letter-spacing:-.035em!important;white-space:normal!important;}
+  .hero .unified-desc,.hero .hero-desc,.used-hero .used-hero-desc{font-size:.82rem!important;line-height:1.65!important;margin:0!important;color:#bec6ce!important;max-width:920px!important;}
+}
+@media(max-width:760px){
+  .hero,.used-hero{height:auto!important;min-height:0!important;max-height:none!important;padding:20px 0 16px!important;overflow:visible!important;background:#06080b!important;}
+  .hero .wrap.hero-content,.used-hero .wrap.used-hero-content{border-left:0!important;padding-left:0!important;}
+  .hero h1,.used-hero h1{font-size:1.75rem!important;line-height:1.1!important;margin:0 0 10px!important;letter-spacing:-.035em!important;white-space:normal!important;}
+  .hero .unified-desc,.hero .hero-desc,.used-hero .used-hero-desc{font-size:.73rem!important;line-height:1.7!important;margin:0!important;color:#bec6ce!important;max-width:100%!important;}
+}
+</style>
+<style id="renvis-featured-heading-20261009">
+@media(max-width:760px){.featured-head h2{font-size:1.13rem!important;line-height:1.3!important}.featured-head .eyebrow{font-size:.52rem!important;letter-spacing:.12em!important}.featured-section{padding-top:4px!important}.featured-card .featured-badge{font-size:7px!important;padding:3px 5px!important}}
+</style>
+
+<style id="renvis-hero-divider-and-heading-refinement-20261009">
+/* Remove only the horizontal boundary below the hero; retain desktop gold vertical accent. */
+.hero, .used-hero { border-bottom:0!important; }
+/* Slightly reduce the headings immediately below the hero and matching section headings. */
+.section-head h2 { font-size:1.75rem!important; }
+@media (max-width:760px) {
+  .section-head h2 { font-size:1.18rem!important; line-height:1.3!important; }
+}
+.featured-head h2 { font-size:1.7rem!important; line-height:1.3!important; }
+@media (max-width:760px) {
+ .featured-head h2 { font-size:1rem!important; line-height:1.3!important; }
+}
+</style>
+<style id="renvis-mobile-hero-accent-and-wrap-20261009">
+/* Mobile-only: restore left accent and avoid orphaned last characters. */
+@media(max-width:760px){
+  .hero .wrap.hero-content,
+  .used-hero .wrap.used-hero-content{border-left:2px solid var(--gold)!important;padding-left:10px!important;}
+  .hero .unified-desc,
+  .hero .hero-desc,
+  .used-hero .used-hero-desc{font-size:.68rem!important;line-height:1.75!important;overflow-wrap:normal!important;word-break:normal!important;}
+}
+</style>
+<style id="rental-featured-image-uniform">
+/* Featured rental cards only: compact, consistent across screen widths */
+.featured-grid{grid-template-columns:repeat(2,minmax(0,420px));align-items:stretch;justify-content:start;gap:12px}
+.featured-card{display:flex;flex-direction:column;min-width:0}
+.featured-card img,.featured-card img.featured-img-contain{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#11161b}
+.featured-body{flex:1;display:flex;flex-direction:column;padding:12px}
+.featured-body h3{font-size:1rem;line-height:1.4;margin-bottom:8px}
+.featured-meta{margin-bottom:0}
+@media(max-width:760px){
+ .featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .featured-card img,.featured-card img.featured-img-contain{height:auto;aspect-ratio:16/9;object-fit:contain}
+ .featured-body{padding:9px!important}
+ .featured-body h3{font-size:clamp(11px,3.2vw,13px);line-height:1.35;margin-bottom:6px}
+ .featured-meta{margin-bottom:0!important}
+}
+</style>
+<style id="renvis-rental-pickup-css">
+/* RENVIS SNS PICKUP | added section only */
+.rental-pickup{padding:8px 0 34px;background:#06080b}
+.rental-pickup__heading{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.rental-pickup__eyebrow{font-size:10px;letter-spacing:.2em;font-weight:800;color:#ddb646}
+.rental-pickup__heading h2{margin:2px 0 0;font-size:clamp(21px,2.5vw,30px);line-height:1.25;letter-spacing:.015em}
+.rental-pickup__sub{color:#9da7b2;font-size:12px;margin:0}
+.rental-pickup__viewport{min-width:0}
+.rental-pickup__track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;justify-content:center}
+.rental-pickup__slide{min-width:0;display:flex;justify-content:center;align-items:center}
+.rental-pickup__post-link{display:flex;justify-content:center;align-items:center;width:100%;min-width:0;cursor:pointer}
+.rental-pickup__post-link:focus-visible{outline:2px solid #ddb646;outline-offset:3px}
+.rental-pickup__slide img{display:block;width:100%;max-width:390px;height:auto;aspect-ratio:941 / 1672;object-fit:contain;object-position:center;background:#090b0e;border:1px solid rgba(255,255,255,.10);user-select:none;-webkit-user-drag:none}
+.rental-pickup__controls{display:none}
+@media(max-width:760px){
+  .rental-pickup{padding:4px 0 24px}
+  .rental-pickup .wrap{width:100%;max-width:100%}
+  .rental-pickup__heading{margin:0 14px 10px;align-items:center}
+  .rental-pickup__heading h2{font-size:18px}
+  .rental-pickup__sub{display:none}
+  .rental-pickup__viewport{width:100%;overflow:hidden}
+  .rental-pickup__track{display:flex;gap:0;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}
+  .rental-pickup__track::-webkit-scrollbar{display:none}
+  .rental-pickup__slide{flex:0 0 100%;width:100%;scroll-snap-align:start;scroll-snap-stop:always;padding:0 12px;min-height:0}
+  .rental-pickup__slide img{width:auto;max-width:100%;height:auto;max-height:calc(100svh - 195px);aspect-ratio:941 / 1672;object-fit:contain;border:0}
+  .rental-pickup__controls{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:12px}
+  .rental-pickup__arrow{width:36px;height:36px;display:grid;place-items:center;color:#e8e8e8;background:transparent;border:1px solid #41464d;border-radius:50%;cursor:pointer}
+  .rental-pickup__dots{display:flex;align-items:center;gap:8px}
+  .rental-pickup__dot{width:7px;height:7px;border:0;border-radius:50%;background:#61666c;padding:0;cursor:pointer}
+  .rental-pickup__dot[aria-current="true"]{background:#ddb646;width:22px;border-radius:8px}
+}
+@media(prefers-reduced-motion:reduce){.rental-pickup__track{scroll-behavior:auto!important}}
+</style>
+<style id="renvis-mobile-menu-ja-20261019">
+/* Smartphone navigation translations only. */
+.mobile-menu-links .renvis-mobile-menu-label{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:3px;min-width:0;padding:8px 0}
+.mobile-menu-links .renvis-mobile-menu-en{display:block;line-height:1.15}
+.mobile-menu-links .renvis-mobile-menu-ja{display:block;color:#aeb7bf;font-size:.67rem;font-weight:600;line-height:1.3;letter-spacing:.025em}
+</style>
+
+<style id="renvis-mobile-inquiry-layout-20261019">
+@media(max-width:760px){
+  .mobile-inquiry-card{min-width:0;}
+  .mobile-inquiry-card > span{display:block;white-space:normal;overflow-wrap:normal;word-break:normal;line-break:strict;font-size:.74rem;line-height:1.75;}
+  .mobile-inquiry-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px;}
+  .mobile-inquiry-card .mobile-inquiry-actions a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:42px;padding:10px 6px;margin:0;border:1px solid rgba(255,255,255,.24);color:#f5f6f8;font-size:.78rem;font-weight:800;text-align:center;}
+  .mobile-inquiry-card .mobile-inquiry-actions a.mobile-inquiry-line{border-color:#40b76b;color:#65df8a;}
+  .mobile-inquiry-card .mobile-inquiry-form{display:block;margin-top:10px;color:#e5c15b;font-size:.78rem;font-weight:800;}
+}
+</style>
+
+<style id="renvis-mobile-inquiry-buttons-only-20261019">
+@media(max-width:760px){
+  .mobile-inquiry-card{padding:0!important;border:0!important;background:transparent!important;gap:0!important;}
+  .mobile-inquiry-card .mobile-inquiry-actions{margin-top:0!important;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="index.html">
+      <img
+        class="logo"
+        src="renvis-logo.png"
+        alt="RENVIS"
+      >
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">
+        <span class="nav-en">
+          HOME
+        </span>
+        <span class="nav-ja">
+          ホーム
+        </span>
+      </a>
+      <a
+        class="active"
+        href="rental.html"
+      >
+        <span class="nav-en">
+          RENTAL
+        </span>
+        <span class="nav-ja">
+          レンタル
+        </span>
+      </a>
+      <a href="repair.html">
+        <span class="nav-en">
+          REPAIR
+        </span>
+        <span class="nav-ja">
+          修理・再生
+        </span>
+      </a>
+      <a href="used-sales.html">
+        <span class="nav-en">
+          USED SALES
+        </span>
+        <span class="nav-ja">
+          中古販売
+        </span>
+      </a>
+      <a href="management.html">
+        <span class="nav-en">
+          MANAGEMENT
+        </span>
+        <span class="nav-ja">
+          管理・部品製作
+        </span>
+      </a>
+      <a href="index.html#company">
+        <span class="nav-en">
+          COMPANY
+        </span>
+        <span class="nav-ja">
+          会社案内
+        </span>
+      </a>
+    </nav>
+    <a
+      class="home-btn"
+      href="index.html"
+    >
+      <span class="nav-en">
+        TOPへ
+      </span>
+      <span class="nav-ja">
+        トップへ
+      </span>
+    </a>
+    <button
+      aria-controls="mobileDrawer"
+      aria-expanded="false"
+      aria-label="メニューを開く"
+      class="mobile-menu-toggle"
+      id="menuOpen"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<div
+  class="mobile-menu-overlay"
+  id="menuOverlay"
+></div>
+<aside
+  aria-hidden="true"
+  class="mobile-drawer"
+  id="mobileDrawer"
+>
+  <div class="mobile-drawer-head">
+    <img
+      alt="RENVIS"
+      class="mobile-drawer-logo"
+      src="renvis-logo.png"
+    >
+    <button
+      aria-label="メニューを閉じる"
+      class="mobile-close"
+      id="menuClose"
+      type="button"
+    >
+      ×
+    </button>
+  </div>
+  <nav
+    aria-label="スマホメニュー"
+    class="mobile-menu-links"
+  >
+    <a href="index.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">HOME</span><span class="renvis-mobile-menu-ja">ホーム</span></span></a>
+    <a href="rental.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">RENTAL</span><span class="renvis-mobile-menu-ja">レンタル</span></span></a>
+    <a href="repair.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">REPAIR</span><span class="renvis-mobile-menu-ja">修理・再生</span></span></a>
+    <a href="used-sales.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">USED SALES</span><span class="renvis-mobile-menu-ja">中古販売</span></span></a>
+    <a href="management.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">MANAGEMENT</span><span class="renvis-mobile-menu-ja">管理・部品製作</span></span></a>
+    <a href="index.html#company"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">COMPANY</span><span class="renvis-mobile-menu-ja">会社案内</span></span></a>
+    <a href="contact.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">CONTACT</span><span class="renvis-mobile-menu-ja">お問い合わせ</span></span></a>
+  </nav>
+  <div class="mobile-inquiry-card">
+<div class="mobile-inquiry-actions">
+  <a href="tel:0946428311">☎ 電話する</a>
+  <a class="mobile-inquiry-line" href="https://lin.ee/pUDgnDR" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+</div>
+</div>
+</aside>
+<main>
+<section class="hero">
+  <div class="wrap hero-content">
+    <h1>RENTAL</h1>
+    <p class="unified-desc">建機用アタッチメントのレンタル。豊富な種類から現場に最適な一台を。</p>
+  </div>
+</section>
+
+<!-- RENVIS SNS PICKUP START: independent of existing featured rentals -->
+<section class="rental-pickup" aria-label="TikTok レンタル情報">
+  <div class="wrap">
+    <div class="rental-pickup__viewport" aria-roledescription="カルーセル" aria-label="TikTok レンタル情報 4件">
+      <div class="rental-pickup__track" id="rentalPickupTrack">
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="1 / 4：SV30 新品入荷"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7640264523626155271" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「SV30 新品入荷」の投稿を見る（新しいタブ）"><img src="rental-pickup-sv30.png" alt="新品入荷 第2弾 NPK SV30。3トンクラス最大級の開口幅。レンタル可能。" width="941" height="1672" fetchpriority="high"></a></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="2 / 4：1.6クラス大割機"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7639189331361533191" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「1.6クラス大割機」の投稿を見る（新しいタブ）"><img src="rental-pickup-16crusher.png" alt="九州唯一。1.6クラスの大割機 TS-WD1700V-2、レンタルできます。" width="941" height="1672" loading="lazy"></a></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="3 / 4：100V機器"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7660328277575208210" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「100V機器」の投稿を見る（新しいタブ）"><img src="rental-pickup-100v.png" alt="100VだからコンセントでOK。レンタル機器のご案内。" width="941" height="1672" loading="lazy"></a></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="4 / 4：鉄骨カッター3台入荷"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7642164181227080978" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「鉄骨カッター3台入荷」の投稿を見る（新しいタブ）"><img src="rental-pickup-steelcutters.png" alt="鉄骨カッター3台入荷。3トン・7トン・12トン、3台ともにアーツ旋回。" width="941" height="1672" loading="lazy"></a></div>
+      </div>
+    </div>
+    <div class="rental-pickup__controls" aria-label="スライド切り替え">
+      <button type="button" class="rental-pickup__arrow" id="rentalPickupPrev" aria-label="前の画像">&#x2039;</button>
+      <div class="rental-pickup__dots">
+        <button type="button" class="rental-pickup__dot" data-pickup-index="0" aria-label="SV30を表示" aria-current="true"></button>
+        <button type="button" class="rental-pickup__dot" data-pickup-index="1" aria-label="1.6クラス大割機を表示" aria-current="false"></button>
+        <button type="button" class="rental-pickup__dot" data-pickup-index="2" aria-label="100V機器を表示" aria-current="false"></button>
+        <button type="button" class="rental-pickup__dot" data-pickup-index="3" aria-label="鉄骨カッター3台入荷を表示" aria-current="false"></button>
+      </div>
+      <button type="button" class="rental-pickup__arrow" id="rentalPickupNext" aria-label="次の画像">&#x203A;</button>
+    </div>
+  </div>
+</section>
+<!-- RENVIS SNS PICKUP END -->
+<!-- =========================
+     種類から探す
+========================= -->
+<section
+  class="section"
+  id="rental-browser"
+>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>種類</h2>
+    </div>
+    <div
+      class="categories"
+      id="categories"
+    >
+      <button
+        class="category-card ready active"
+        data-category="crusher"
+      >
+        <span>大割機</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="pulverizer"
+      >
+        <span>小割機</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="magpulverizer"
+      >
+        <span>マグネット付き小割機</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="hydmagnet"
+      >
+        <span>油圧式マグネット</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="steelcutter"
+      >
+        <span>鉄骨カッター</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="wastecutter"
+      >
+        <span>産廃カッター</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="woodcutter"
+      >
+        <span>木材カッター</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="breaker"
+      >
+        <span>油圧ブレーカー</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="pilebreaker"
+      >
+        <span>杭打ちブレーカー</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="mechfork"
+      >
+        <span>機械式フォーク</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="hydfork"
+      >
+        <span>油圧式・チルトフォーク</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="rotfork"
+      >
+        <span>回転フォーク</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="orangegrapple"
+      >
+        <span>グラップル</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="skeleton"
+      >
+        <span>スケルトンバケット</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="screener"
+      >
+        <span>油圧式ふるい機</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="bucketcrusher"
+      >
+        <span>バケットクラッシャー</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="auger"
+      >
+        <span>オーガ</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="mower"
+      >
+        <span>草刈機</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="extension"
+      >
+        <span>エキステンションアーム</span>
+      </button>
+      <button
+        class="category-card ready"
+        data-category="cooler"
+      >
+        <span>スポットクーラー</span>
+      </button>
+    </div>
+    <div
+      id="catalogPanel"
+      class="catalog-panel open"
+    ></div>
+  </div>
+</section>
+<!-- =========================
+     CONTACT
+========================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <div class="eyebrow">
+          Contact
+        </div>
+        <h2>
+          在庫・貸出状況を確認する
+        </h2>
+        <p>
+          型式が分からない場合も、ショベルのクラスや用途からご案内します。
+        </p>
+      </div>
+      <div class="cta-links">
+        <a href="tel:0946428311">
+          電話で問い合わせる
+        </a>
+        <a
+          class="mail"
+          href="contact.html"
+        >
+          お問い合わせフォーム
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div style="margin-bottom:8px">
+    <a href="contact.html">
+      お問い合わせ
+    </a>
+    　｜　
+    <a href="legal.html">
+      特定商取引法
+    </a>
+    　｜　
+    <a href="privacy.html">
+      プライバシーポリシー
+    </a>
+  </div>
+  © 2026 RENVIS Co., Ltd. All Rights Reserved.
+</footer>
+<script>
+/* =========================
+   RENTAL DATA
+========================= */
+const DATA = {
+  crusher:{
+    en:"Primary Crusher",
+    title:"大割機",
+    makers:[
+      [
+        "オカダアイヨン",
+        [
+          [
+            "TS-W 公式カタログ",
+            "https://media.okadaaiyon.com/cms/uploads/ctlg_TS-W_Crusher_202606.pdf"
+          ],
+          [
+            "TSRC 公式カタログ",
+            "https://media.okadaaiyon.com/cms/uploads/ctlg_TSRC_Crusher_202606_v2.pdf"
+          ]
+        ],
+        "rental-okada-crusher.png"
+      ],
+      [
+        "NPK",
+        [
+          [
+            "NPK 圧砕機資料",
+            "https://www.npk.jp/construction/shovel/recommendable_excavator_v6.pdf"
+          ]
+        ],
+        "product-01.png"
+      ],
+      [
+        "タグチ",
+        [],
+        ""
+      ],
+      [
+        "古河ロックドリル",
+        [
+          [
+            "大割用 Vxシリーズ",
+            "https://www.furukawarockdrill.co.jp/crusher"
+          ]
+        ],
+        ""
+      ]
+    ]
+  },
+  pulverizer:{
+    en:"Pulverizer",
+    title:"小割機",
+    makers:[
+      [
+        "オカダアイヨン",
+        [
+          [
+            "OSC 公式カタログ",
+            "https://media.okadaaiyon.com/cms/uploads/ctlg_OSC_202604.pdf"
+          ]
+        ],
+        "rental-okada-pulverizer.png"
+      ],
+      [
+        "NPK",
+        [
+          [
+            "メーカー公式カタログ",
+            "http://www.npk.jp/digital/con_j15/index.html#page=17"
+          ]
+        ],
+        "rental-inline-01.png"
+      ],
+      [
+        "タグチ",
+        [
+          [
+            "MC小割機 公式ページ",
+            "https://www.taguchi.co.jp/product/crasher-mc/"
+          ]
+        ],
+        "rental-inline-02.png"
+      ],
+      [
+        "古河ロックドリル",
+        [
+          [
+            "メーカー公式カタログ",
+            "https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"
+          ]
+        ],
+        "rental-inline-03.png"
+      ],
+    ]
+  },
+  magpulverizer:{
+    en:"Magnet Pulverizer",
+    title:"マグネット付き小割機",
+    makers:[
+      [
+        "オカダアイヨン",
+        [
+          [
+            "永久磁石付 マグネットコワリクン 製品情報",
+            "https://okadaaiyon.com/products/product/728"
+          ],
+          [
+            "OSC 公式カタログ",
+            "https://media.okadaaiyon.com/cms/uploads/ctlg_OSC_202604.pdf"
+          ]
+        ],
+        ""
+      ],
+      [
+        "NPK",
+        [
+          [
+            "永久磁石付き小割圧砕機 製品情報",
+            "https://www.npk-construction.com/crunchrs/"
+          ],
+          [
+            "オンラインカタログ",
+            "https://www.npk-construction.com/siryou/catarogue/"
+          ]
+        ],
+        "product-04.png"
+      ],
+      [
+        "古河ロックドリル",
+        [
+          [
+            "アクティブ・マグネット付小割用油圧圧砕機 製品情報",
+            "https://www.furukawarockdrill.co.jp/crusher"
+          ],
+          [
+            "総合カタログ",
+            "https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"
+          ]
+        ],
+        "product-05.png"
+      ],
+      [
+        "タグチ",
+        [
+          [
+            "MC小割機 with マグ・ゴン 製品情報・カタログ",
+            "https://www.taguchi.co.jp/product/mc-magnet/"
+          ]
+        ],
+        "product-06.png"
+      ]
+    ]
+  },
+  hydmagnet:{
+    en:"Hydraulic Magnet",
+    title:"油圧式マグネット",
+    custom:
+      "取扱メーカー・在庫状況はお問い合わせください。"
+  },
+  steelcutter:{
+    en:"Steel Cutter",
+    title:"鉄骨カッター",
+    makers:[
+      [
+        "オカダアイヨン",
+        [
+          [
+            "TS-Sカッター 製品情報",
+            "https://okadaaiyon.com/products/product/723"
+          ],
+          [
+            "商品カタログ一覧",
+            "https://okadaaiyon.com/products/catalog"
+          ]
+        ],
+        "product-07.png"
+      ],
+      [
+        "NPK",
+        [
+          [
+            "鉄骨切断機 製品情報",
+            "https://www.npk-construction.com/steel-shears/"
+          ],
+          [
+            "オンラインカタログ",
+            "https://www.npk-construction.com/siryou/catarogue/"
+          ]
+        ],
+        "product-08.png"
+      ],
+      [
+        "古河ロックドリル",
+        [
+          [
+            "Vcシリーズ 製品情報",
+            "https://www.furukawarockdrill.co.jp/crusher"
+          ],
+          [
+            "総合カタログ",
+            "https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"
+          ]
+        ],
+        "product-09.png"
+      ],
+      [
+        "タグチ",
+        [
+          [
+            "DXカッター 製品情報・カタログ",
+            "https://www.taguchi.co.jp/product/dx-cutter/"
+          ]
+        ],
+        "product-10.png"
+      ]
+    ]
+  },
+  wastecutter:{
+    en:"Waste Cutter",
+    title:"産廃カッター",
+    makers:[
+      [
+        "オカダアイヨン",
+        [
+          [
+            "クリーンカッター製品情報",
+            "https://okadaaiyon.com/products/product/662"
+          ]
+        ],
+        ""
+      ],
+      [
+        "その他保有メーカー",
+        [],
+        ""
+      ]
+    ]
+  },
+  woodcutter:{
+    en:"Wood Cutter",
+    title:"木材カッター",
+    makers:[
+      [
+        "オカダアイヨン",
+        [
+          [
+            "木材切断機 製品情報",
+            "https://okadaaiyon.com/products/category/mokuzai"
+          ],
+          [
+            "商品カタログ一覧",
+            "https://okadaaiyon.com/company/catalog-collection"
+          ]
+        ],
+        "product-11.png"
+      ],
+      [
+        "丸順",
+        [
+          [
+            "ミラクルカッター 製品情報",
+            "https://www.marujun.jp/products/miracle-cutter/index.html"
+          ],
+          [
+            "製品一覧",
+            "https://www.marujun.jp/products/index.html"
+          ]
+        ],
+        "product-12.png"
+      ]
+    ]
+  },
+  breaker:{
+    en:"Hydraulic Breaker",
+    title:"油圧ブレーカー",
+    makers:[
+      [
+        "オカダアイヨン",
+        [
+          [
+            "メーカー製品情報",
+            "https://okadaaiyon.com/products/"
+          ]
+        ],
+        ""
+      ],
+      [
+        "東空",
+        [
+          [
+            "公式カタログ一覧",
+            "https://www.toku-net.co.jp/catalog/index.html"
+          ]
+        ],
+        ""
+      ],
+      [
+        "古河ロックドリル",
+        [
+          [
+            "メーカー公式カタログ",
+            "https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"
+          ]
+        ],
+        ""
+      ],
+      [
+        "MKB系",
+        [],
+        ""
+      ],
+      [
+        "その他",
+        [],
+        ""
+      ]
+    ]
+  },
+  pilebreaker:{
+    en:"Pile Driving Breaker",
+    title:"杭打ちブレーカー",
+    custom:
+      "取扱メーカー・在庫状況はお問い合わせください。"
+  },
+  mechfork:{
+    en:"Mechanical Fork",
+    title:"機械式フォーク",
+    makers:[
+      [
+        "KBL",
+        [
+          [
+            "KRフォーク製品情報",
+            "https://www.kbl-ltd.co.jp/product/attachment/krfork/"
+          ]
+        ],
+        ""
+      ],
+      [
+        "室戸鉄工所",
+        [
+          [
+            "メーカー製品情報",
+            "http://muroto.co.jp/product/"
+          ]
+        ],
+        ""
+      ],
+      [
+        "その他保有メーカー",
+        [],
+        ""
+      ]
+    ]
+  },
+  hydfork:{
+    en:"Tilt Fork",
+    title:"チルトフォーク",
+    makers:[
+      [
+        "丸順",
+        [
+          [
+            "チルトZフォーク 製品情報",
+            "https://www.marujun.jp/products/tilt-z-fork/index.html"
+          ],
+          [
+            "丸順 製品一覧",
+            "https://www.marujun.jp/products/index.html"
+          ]
+        ],
+        "product-13.png"
+      ],
+      [
+        "その他保有メーカー",
+        [],
+        ""
+      ]
+    ]
+  },
+  rotfork:{
+    en:"Rotary Fork",
+    title:"回転フォーク",
+    makers:[
+      [
+        "オカダアイヨン",
+        [
+          [
+            "メーカー製品情報",
+            "https://okadaaiyon.com/products/"
+          ]
+        ],
+        ""
+      ],
+      [
+        "丸順",
+        [
+          [
+            "ロータリーZフォーク 製品情報",
+            "https://www.marujun.jp/products/rotary-z-fork/index.html"
+          ],
+          [
+            "丸順 製品一覧",
+            "https://www.marujun.jp/products/index.html"
+          ]
+        ],
+        "product-14.png"
+      ]
+    ]
+  },
+  orangegrapple:{
+    en:"Grapple",
+    title:"グラップル",
+    makers:[
+      [
+        "丸順",
+        [
+          [
+            "グラップル 製品情報",
+            "https://www.marujun.jp/products/orange-grapple/index.html"
+          ],
+          [
+            "丸順 製品一覧",
+            "https://www.marujun.jp/products/index.html"
+          ]
+        ],
+        "product-15.png"
+      ]
+    ]
+  },
+  skeleton:{
+    en:"Skeleton Bucket",
+    title:"スケルトンバケット",
+    makers:[
+      [
+        "KBL",
+        [
+          [
+            "スケルトンバケット製品情報",
+            "https://www.kbl-ltd.co.jp/product/attachment/skeleton-bucket/"
+          ]
+        ],
+        ""
+      ]
+    ]
+  },
+  screener:{
+    en:"Hydraulic Screener",
+    title:"油圧式ふるい機",
+    custom:
+      "取扱メーカー・在庫状況はお問い合わせください。"
+  },
+  bucketcrusher:{
+    en:"Bucket Crusher",
+    title:"バケットクラッシャー",
+    custom:
+      "取扱メーカー・在庫状況はお問い合わせください。"
+  },
+  auger:{
+    en:"Hydraulic Auger",
+    title:"オーガ",
+    makers:[
+      [
+        "丸善工業",
+        [
+          [
+            "AG-3000 製品情報",
+            "https://maruzenkogyo.co.jp/products/ag-3000"
+          ]
+        ],
+        ""
+      ]
+    ]
+  },
+  mower:{
+    en:"Mower",
+    title:"草刈機",
+    makers:[
+      [
+        "三陽機器",
+        [
+          [
+            "HKMシリーズ製品情報",
+            "https://www.sanyokiki.co.jp/product-guidance/kusakari-top-line-up/hkm"
+          ]
+        ],
+        ""
+      ]
+    ]
+  },
+  extension:{
+    en:"Extension Arm",
+    title:"エキステンションアーム",
+    makers:[
+      [
+        "KBL",
+        [
+          [
+            "アタッチメント総合カタログ",
+            "https://file.kbl-ltd.co.jp/catalog/attachment/attachment-general2026/book/index.html#target/page_no=19"
+          ]
+        ],
+        "product-16.png"
+      ]
+    ]
+  },
+  cooler:{
+    en:"Spot Cooler",
+    title:"スポットクーラー",
+    makers:[
+      [
+        "レンタル品",
+        [],
+        ""
+      ]
+    ]
+  }
+};
+
+/* Added transparent product images */
+DATA.magpulverizer.makers[0][2]="product-17.png";
+DATA.cooler.makers[0][2]="rental-inline-04.png";
+DATA.crusher.makers[2][2]="product-18.png";
+DATA.pulverizer.makers[2][2]="rental-inline-02.png";
+DATA.crusher.makers[3][2]="product-20.png";
+/* Additional OKADA product cutouts */
+DATA.steelcutter.makers[0][2]="product-21.webp";
+DATA.rotfork.makers[0][2]="product-22.webp";
+DATA.wastecutter.makers[0][2]="product-23.webp";
+delete DATA.hydmagnet.custom;
+DATA.hydmagnet.makers=[["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-24.webp"]];
+delete DATA.screener.custom;
+DATA.screener.makers=[["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-25.webp"]];
+delete DATA.woodcutter.custom;
+DATA.woodcutter.makers=[["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-26.webp"]];
+
+/* Additional mechanical fork and TOKU breaker */
+DATA.mechfork.makers.splice(2,0,["丸順",[["丸順 製品一覧","https://www.marujun.jp/products/index.html"]],"product-27.webp"]);
+DATA.breaker.makers.find(m=>m[0]==="東空")[2]="product-28.webp";
+DATA.hydfork.makers.find(m=>m[0]==="丸順")[2]="product-29.webp";
+
+/* KBL, Muroto, FRD images and TAGUCHI link */
+DATA.mechfork.makers.find(m=>m[0]==="KBL")[2]="product-30.webp";
+DATA.breaker.makers.find(m=>m[0]==="古河ロックドリル")[2]="product-31.webp";
+DATA.mechfork.makers.find(m=>m[0]==="室戸鉄工所")[2]="product-32.webp";
+DATA.crusher.makers.find(m=>m[0]==="タグチ")[1].push(["大割機 製品情報","https://www.taguchi.co.jp/product/crusher-d/"]);
+DATA.breaker.makers.find(m=>m[0]==="オカダアイヨン")[2]="product-33.webp";
+DATA.orangegrapple.makers.find(m=>m[0]==="丸順")[2]="product-34.webp";
+DATA.skeleton.makers.find(m=>m[0]==="KBL")[2]="product-35.webp";
+const konanBreaker=DATA.breaker.makers.find(m=>m[0]==="MKB系");
+konanBreaker[0]="甲南建機";
+konanBreaker[1]=[["メーカー公式カタログ","https://www.konan-em.com/kenki/products/"]];
+konanBreaker[2]="product-36.webp";
+DATA.breaker.makers=DATA.breaker.makers.filter(m=>m[0]!=="その他");
+for(const forkKey of ["mechfork","hydfork","rotfork"]){DATA[forkKey].makers=DATA[forkKey].makers.filter(m=>!m[0].includes("その他"));}
+delete DATA.bucketcrusher.custom;
+DATA.bucketcrusher.makers=[["伊藤商会",[["メーカー公式カタログ","https://itoushoukai.co.jp/product/garabuster"]],"product-37.webp"]];
+DATA.auger.makers.find(m=>m[0]==="丸善工業")[2]="product-38.webp";
+DATA.mower.makers[0][2]="product-39.png";
+
+/* Final data cleanup / image fixes */
+DATA.crusher.makers[1][2]="rental-inline-05.png";
+DATA.magpulverizer.makers[1][2]="rental-inline-06.png";
+DATA.steelcutter.makers[1][2]="rental-inline-07.png";
+
+const furuSteel = DATA.steelcutter.makers.find(m=>m[0]==="古河ロックドリル");
+if(furuSteel) furuSteel[2]="rental-inline-08.png";
+
+DATA.extension.makers=[["KBL",[["アタッチメント総合カタログ","https://file.kbl-ltd.co.jp/catalog/attachment/attachment-general2026/book/index.html#target/page_no=19"]],"rental-inline-09.png"]];
+
+DATA.wastecutter.makers=[
+  ["オカダアイヨン",[["クリーンカッター 製品情報","https://okadaaiyon.com/products/product/662"]],"product-23.webp"],
+  ["丸順",[["ミラクルカッター 製品情報","https://www.marujun.jp/products/miracle-cutter/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-inline-10.png"]
+];
+
+DATA.woodcutter.makers=[
+  ["オカダアイヨン",[["与作 製品情報","https://okadaaiyon.com/products/category/mokuzai"],["商品カタログ一覧","https://okadaaiyon.com/company/catalog-collection"]],"rental-inline-11.png"] ,
+  ["丸順",[["ミラクルカッター 製品情報","https://www.marujun.jp/products/miracle-cutter/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-inline-10.png"]
+];
+
+DATA.rotfork.makers=[
+  ["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-22.webp"],
+  ["丸順",[["ロータリーZフォーク 製品情報","https://www.marujun.jp/products/rotary-z-fork/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-inline-12.png"]
+];
+
+
+
+/* =========================
+   RENDER
+========================= */
+const panel =
+  document.getElementById(
+    "catalogPanel"
+  );
+function esc(value){
+  return String(value)
+    .replace(
+      /[&<>"']/g,
+      character => ({
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        '"':"&quot;",
+        "'":"&#39;"
+      }[character])
+    );
+}
+function render(key){
+  const data =
+    DATA[key];
+  if(
+    !data
+  ){
+    return;
+  }
+  let body = "";
+  if(
+    data.custom
+  ){
+    body = `
+      <article
+        class="maker-card"
+        style="grid-column:1/-1;min-height:0"
+      >
+        <div class="maker-name">
+          <small>
+            CONTACT
+          </small>
+          <h3>
+            ${esc(data.title)}
+          </h3>
+        </div>
+        <div class="stock-note">
+          ${esc(data.custom)}
+        </div>
+        <div class="maker-actions">
+          <a
+            class="catalog-btn"
+            href="contact.html"
+          >
+            お問い合わせする
+          </a>
+        </div>
+      </article>
+    `;
+  }
+  else{
+    body =
+      data.makers
+        .map(
+          ([name,links,image]) => `
+<article class="maker-card">
+  <div class="maker-top">
+    <div class="maker-name">
+      <small>
+        MANUFACTURER
+      </small>
+      <h3>
+        ${esc(name)}
+      </h3>
+    </div>
+  </div>
+  <div class="maker-content-row">
+    <div class="maker-actions">
+      ${
+        links.length
+        ?
+        links
+          .map(
+            ([label,url],index) => `
+              <a
+                class="catalog-btn${index ? " secondary" : ""}"
+                href="${esc(url)}"
+                target="_blank"
+                rel="noopener"
+              >
+                製品情報を見る ↗
+              </a>
+            `
+          )
+          .join("")
+        :
+        `
+          <a
+            class="catalog-btn secondary"
+            href="contact.html"
+          >
+            詳細はお問い合わせ
+          </a>
+        `
+      }
+    </div>
+    ${
+      image
+      ?
+      `
+        <div class="maker-photo${data.en === "Spot Cooler" ? " maker-photo--cooler" : ""}">
+          <img
+            src="${esc(image)}"
+            alt="${esc(name)} ${esc(data.title)}"
+            loading="lazy"
+            draggable="false"
+          >
+        </div>
+      `
+      :
+      ""
+    }
+  </div>
+</article>
+          `
+        )
+        .join("");
+  }
+  panel.innerHTML = `
+    <div class="catalog-intro">
+      <div>
+        <div class="eyebrow">
+          ${esc(data.en)}
+        </div>
+        <h3>
+          ${esc(data.title)}｜
+          ${
+            data.custom
+            ?
+            "お問い合わせ"
+            :
+            "メーカーから確認"
+          }
+        </h3>
+        <p>
+          ${
+            data.custom
+            ?
+            "詳しくはお問い合わせください。"
+            :
+            "詳しい仕様はメーカー公式情報をご確認ください。"
+          }
+        </p>
+      </div>
+      <div class="note">
+        ※メーカー公式カタログ・製品ページには、
+        弊社で保有していない機種も掲載されています。<br>
+        最新の在庫・貸出状況はお問い合わせください。
+      </div>
+    </div>
+    <div class="makers">
+      ${body}
+    </div>
+    ${
+      data.custom
+      ?
+      ""
+      :
+      `
+        <div class="stock-note">
+          型式が分からなくても大丈夫です。
+          ショベルのクラス・用途・現場条件をお知らせいただければ、
+          適したアタッチメントをご案内します。
+        </div>
+      `
+    }
+  `;
+}
+/* =========================
+   CATEGORY BUTTON
+========================= */
+const buttons =
+  [
+    ...document.querySelectorAll(
+      ".category-card"
+    )
+  ];
+buttons.forEach(
+  button =>
+    button.addEventListener(
+      "click",
+      () => {
+        buttons.forEach(
+          item =>
+            item
+              .classList
+              .remove(
+                "active"
+              )
+        );
+        button
+          .classList
+          .add(
+            "active"
+          );
+        render(
+          button.dataset.category
+        );
+        panel.scrollIntoView({
+          behavior:"smooth",
+          block:"nearest"
+        });
+      }
+    )
+);
+
+
+/* woodcutter image cleanup 2026-10-09 */
+DATA.woodcutter.makers=[
+  ["オカダアイヨン",[["与作 製品情報","https://www.okada-aito.com/products/yosaku"],["商品カタログ一覧","https://www.okada-aito.com/catalog/"]],"rental-inline-13.png"] ,
+  ["丸順",[["ミラクルカッター 製品情報","https://www.marujun.jp/products/miracle-cutter/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-inline-14.png"]
+];
+
+/* final cleanup 2026-10-09 */
+/* NPK image quality / transparency fixes */
+DATA.crusher.makers.find(m=>m[0]==="NPK")[2]="npk-sv1200d-transparent.png";
+DATA.magpulverizer.makers.find(m=>m[0]==="NPK")[2]="rental-inline-15.png";
+DATA.steelcutter.makers.find(m=>m[0]==="NPK")[2]="rental-inline-16.png";
+
+/* Furukawa images */
+
+/* Wood cutter: use 与作 and cleaned Marujun image */
+DATA.woodcutter.makers=[
+  ["オカダアイヨン",[["与作 製品情報","https://okadaaiyon.com/products/category/mokuzai"],["商品カタログ一覧","https://okadaaiyon.com/company/catalog-collection"]],"rental-inline-13.png"],
+  ["丸順",[["ミラクルカッター 製品情報","https://www.marujun.jp/products/miracle-cutter/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-inline-14.png"]
+];
+
+/* Rotary fork: keep Marujun added */
+if(!DATA.rotfork.makers.find(m=>m[0]==="丸順")){
+  DATA.rotfork.makers.push(["丸順",[["ロータリーZフォーク 製品情報","https://www.marujun.jp/products/rotary-z-fork/index.html"],["丸順 製品一覧","https://www.marujun.jp/products/index.html"]],"product-14.png"]);
+}
+
+/* Extension arm image cleanup */
+DATA.extension.makers=[["KBL",[["アタッチメント総合カタログ","https://file.kbl-ltd.co.jp/catalog/attachment/attachment-general2026/book/index.html#target/page_no=19"]],"rental-inline-09.png"]];
+
+/* ===== 2026-10-15 user requested rental-page updates ===== */
+// 大割機：オカダアイヨン 2段目削除
+if(DATA.crusher?.makers?.[0]){
+  DATA.crusher.makers[0][1] = [["TS-W 公式カタログ","https://media.okadaaiyon.com/cms/uploads/ctlg_TS-W_Crusher_202606.pdf"]];
+}
+
+// マグネット付き小割機：オカダアイヨンは指定URL 1件のみ
+const magOkada = DATA.magpulverizer?.makers?.find(m => m[0] === "オカダアイヨン");
+if(magOkada){
+  magOkada[1] = [["永久磁石付 マグネットコワリクン 製品情報","https://okadaaiyon.com/products/product/726"]];
+}
+
+// 鉄骨カッター：オカダアイヨン/NPKは2段目削除、古河は2段目のみ残す
+const steelOkada = DATA.steelcutter?.makers?.find(m => m[0] === "オカダアイヨン");
+if(steelOkada){
+  steelOkada[1] = [["TS-Sカッター 製品情報","https://okadaaiyon.com/products/product/723"]];
+}
+const steelNpk = DATA.steelcutter?.makers?.find(m => m[0] === "NPK");
+if(steelNpk){
+  steelNpk[1] = [["鉄骨切断機 製品情報","https://www.npk-construction.com/steel-shears/"]];
+}
+const steelFuru = DATA.steelcutter?.makers?.find(m => m[0] === "古河ロックドリル");
+if(steelFuru){
+  steelFuru[1] = [["総合カタログ","https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"]];
+}
+
+// 産廃カッター：丸順を残し、2段目削除。写真差替え
+DATA.wastecutter.makers = [
+  ["オカダアイヨン", [["クリーンカッター製品情報", "https://okadaaiyon.com/products/product/662"]], DATA.wastecutter?.makers?.[0]?.[2] || ""],
+  ["丸順", [["ミラクルカッター 製品情報", "https://www.marujun.jp/products/miracle-cutter/index.html"]], "rental-waste-marujun.png"]
+];
+
+// 木材カッター：オカダ/丸順とも写真差替え、2段目削除
+DATA.woodcutter.makers = [
+  ["オカダアイヨン", [["木材切断機 製品情報", "https://okadaaiyon.com/products/category/mokuzai"]], "rental-wood-okada.png"],
+  ["丸順", [["ミラクルカッター 製品情報", "https://www.marujun.jp/products/miracle-cutter/index.html"]], "rental-wood-marujun.png"]
+];
+
+// チルトフォーク：丸順 2段目削除
+const hydForkMarujun = DATA.hydfork?.makers?.find(m => m[0] === "丸順");
+if(hydForkMarujun){
+  hydForkMarujun[1] = [["チルトZフォーク 製品情報", "https://www.marujun.jp/products/tilt-z-fork/index.html"]];
+}
+
+// 回転フォーク：丸順 2段目削除
+const rotForkMarujun = DATA.rotfork?.makers?.find(m => m[0] === "丸順");
+if(rotForkMarujun){
+  rotForkMarujun[1] = [["ロータリーZフォーク 製品情報", "https://www.marujun.jp/products/rotary-z-fork/index.html"]];
+}
+
+// オレンジグラップル：丸順 2段目削除
+const orangeMarujun = DATA.orangegrapple?.makers?.find(m => m[0] === "丸順");
+if(orangeMarujun){
+  orangeMarujun[1] = [["グラップル 製品情報", "https://www.marujun.jp/products/orange-grapple/index.html"]];
+}
+
+render("crusher");
+
+</script>
+<script>
+/* =========================
+   MOBILE DRAWER
+========================= */
+(() => {
+  const openBtn =
+    document.getElementById(
+      "menuOpen"
+    );
+  const closeBtn =
+    document.getElementById(
+      "menuClose"
+    );
+  const drawer =
+    document.getElementById(
+      "mobileDrawer"
+    );
+  const overlay =
+    document.getElementById(
+      "menuOverlay"
+    );
+  if(
+    !openBtn
+    ||
+    !closeBtn
+    ||
+    !drawer
+    ||
+    !overlay
+  ){
+    return;
+  }
+  const openMenu = () => {
+    drawer
+      .classList
+      .add(
+        "open"
+      );
+    overlay
+      .classList
+      .add(
+        "open"
+      );
+    drawer
+      .setAttribute(
+        "aria-hidden",
+        "false"
+      );
+    openBtn
+      .setAttribute(
+        "aria-expanded",
+        "true"
+      );
+    document
+      .body
+      .classList
+      .add(
+        "mobile-menu-open"
+      );
+  };
+  const closeMenu = () => {
+    drawer
+      .classList
+      .remove(
+        "open"
+      );
+    overlay
+      .classList
+      .remove(
+        "open"
+      );
+    drawer
+      .setAttribute(
+        "aria-hidden",
+        "true"
+      );
+    openBtn
+      .setAttribute(
+        "aria-expanded",
+        "false"
+      );
+    document
+      .body
+      .classList
+      .remove(
+        "mobile-menu-open"
+      );
+  };
+  openBtn.addEventListener(
+    "click",
+    openMenu
+  );
+  closeBtn.addEventListener(
+    "click",
+    closeMenu
+  );
+  overlay.addEventListener(
+    "click",
+    closeMenu
+  );
+  drawer
+    .querySelectorAll(
+      "a"
+    )
+    .forEach(
+      link =>
+        link.addEventListener(
+          "click",
+          closeMenu
+        )
+    );
+  document.addEventListener(
+    "keydown",
+    event => {
+      if(
+        event.key === "Escape"
+      ){
+        closeMenu();
+      }
+    }
+  );
+})();
+</script>
+
+<script id="renvis-rental-pickup-script">
+(function(){
+  const track=document.getElementById('rentalPickupTrack');
+  if(!track)return;
+  const dots=[...document.querySelectorAll('.rental-pickup__dot')];
+  const prev=document.getElementById('rentalPickupPrev');
+  const next=document.getElementById('rentalPickupNext');
+  const count=dots.length;
+  let index=0;
+  const update=(i)=>{index=Math.max(0,Math.min(count-1,i));dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===index)));};
+  const go=(i)=>{const target=(i+count)%count;track.scrollTo({left:target*track.clientWidth,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});update(target);};
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
+  prev.addEventListener('click',()=>go(index-1));
+  next.addEventListener('click',()=>go(index+1));
+  let scheduled=false;
+  track.addEventListener('scroll',()=>{if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{update(Math.round(track.scrollLeft/Math.max(1,track.clientWidth)));scheduled=false;});},{passive:true});
+  window.addEventListener('resize',()=>{if(window.innerWidth<=760)track.scrollLeft=index*track.clientWidth;});
+})();
+</script>
+</body>
+</html>
