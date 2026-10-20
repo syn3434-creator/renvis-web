@@ -1163,6 +1163,18 @@ footer{
   .mobile-inquiry-card .mobile-inquiry-actions{margin-top:0!important;}
 }
 </style>
+<style id="renvis-pickup-mobile-autoplay-20261020">
+/* Only TikTok pickup: preserve four-up desktop layout */
+.rental-pickup__tap-guide{margin:10px 0 0;text-align:center;color:#bec6ce;font-size:12px;line-height:1.7;letter-spacing:.015em}
+.rental-pickup__tap-guide span{color:#ddb646;font-weight:800}
+@media(max-width:760px){
+ .rental-pickup__slide{padding:0 10px}
+ .rental-pickup__post-link{width:100%;height:auto}
+ .rental-pickup__slide img{display:block;width:auto;max-width:100%;height:auto;max-height:min(690px,calc(100svh - 190px));object-fit:contain;object-position:center}
+ .rental-pickup__tap-guide{margin:12px 14px 0;font-size:12px;line-height:1.6}
+ .rental-pickup__controls{margin-top:9px}
+}
+</style>
 </head>
 <body>
 <header>
@@ -1314,6 +1326,7 @@ footer{
         <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="4 / 4：鉄骨カッター3台入荷"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7642164181227080978" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「鉄骨カッター3台入荷」の投稿を見る（新しいタブ）"><img src="rental-pickup-steelcutters.png" alt="鉄骨カッター3台入荷。3トン・7トン・12トン、3台ともにアーツ旋回。" width="941" height="1672" loading="lazy"></a></div>
       </div>
     </div>
+    <p class="rental-pickup__tap-guide"><span aria-hidden="true">↗</span> 画像をタップするとTikTokで動画をご覧いただけます</p>
     <div class="rental-pickup__controls" aria-label="スライド切り替え">
       <button type="button" class="rental-pickup__arrow" id="rentalPickupPrev" aria-label="前の画像">&#x2039;</button>
       <div class="rental-pickup__dots">
@@ -2540,15 +2553,47 @@ render("crusher");
   const prev=document.getElementById('rentalPickupPrev');
   const next=document.getElementById('rentalPickupNext');
   const count=dots.length;
-  let index=0;
-  const update=(i)=>{index=Math.max(0,Math.min(count-1,i));dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===index)));};
-  const go=(i)=>{const target=(i+count)%count;track.scrollTo({left:target*track.clientWidth,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});update(target);};
-  dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
-  prev.addEventListener('click',()=>go(index-1));
-  next.addEventListener('click',()=>go(index+1));
-  let scheduled=false;
-  track.addEventListener('scroll',()=>{if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{update(Math.round(track.scrollLeft/Math.max(1,track.clientWidth)));scheduled=false;});},{passive:true});
-  window.addEventListener('resize',()=>{if(window.innerWidth<=760)track.scrollLeft=index*track.clientWidth;});
+  const mobile=()=>window.matchMedia('(max-width:760px)').matches;
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  let index=0,timer=null,scrollTick=false;
+  const update=i=>{
+    index=(i+count)%count;
+    dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===index)));
+  };
+  const go=(i,instant=false)=>{
+    if(!mobile())return;
+    const target=(i+count)%count;
+    update(target);
+    track.scrollTo({left:target*track.clientWidth,behavior:instant||reduced.matches?'instant':'smooth'});
+  };
+  const stop=()=>{if(timer!==null){clearInterval(timer);timer=null;}};
+  const start=()=>{
+    stop();
+    if(!mobile()||reduced.matches||document.hidden)return;
+    timer=setInterval(()=>go(index+1),3500);
+  };
+  const choose=i=>{go(i);start();};
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>choose(i)));
+  prev.addEventListener('click',()=>choose(index-1));
+  next.addEventListener('click',()=>choose(index+1));
+  track.addEventListener('scroll',()=>{
+    if(!mobile()||scrollTick)return;
+    scrollTick=true;
+    requestAnimationFrame(()=>{
+      update(Math.round(track.scrollLeft/Math.max(1,track.clientWidth)));
+      scrollTick=false;
+    });
+  },{passive:true});
+  track.addEventListener('touchstart',stop,{passive:true});
+  track.addEventListener('touchend',()=>{setTimeout(start,700)},{passive:true});
+  track.addEventListener('pointerenter',stop);
+  track.addEventListener('pointerleave',start);
+  track.addEventListener('focusin',stop);
+  track.addEventListener('focusout',start);
+  document.addEventListener('visibilitychange',start);
+  window.addEventListener('resize',()=>{if(mobile())go(index,true);start();});
+  reduced.addEventListener('change',start);
+  start();
 })();
 </script>
 </body>
