@@ -1,0 +1,3517 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta
+    name="description"
+    content="株式会社レンビスの建機アタッチメント修理実績。特殊修理・肉盛り・溶接補修・刃交換・ピン・ブッシュ交換・オーバーホールに対応。"
+  >
+
+  <title>建機アタッチメント修理 | RENVIS</title>
+
+  <style>
+    :root{
+      --bg:#06080b;
+      --panel:#0b1015;
+      --panel2:#10161d;
+      --text:#f5f7f9;
+      --muted:#98a2ad;
+      --line:rgba(255,255,255,.14);
+      --gold:#e0b63d;
+      --gold-soft:#f0cb68;
+      --max:1460px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    html,
+    body{
+      max-width:100%;
+      overflow-x:hidden;
+    }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Noto Sans JP","Yu Gothic",system-ui,sans-serif;
+      line-height:1.65;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    .wrap{
+      width:min(
+        var(--max),
+        calc(100% - 64px)
+      );
+      margin:auto;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:80;
+
+      height:76px;
+
+      display:flex;
+      align-items:center;
+
+      background:rgba(4,6,8,.96);
+
+      backdrop-filter:blur(14px);
+
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      width:min(
+        var(--max),
+        calc(100% - 64px)
+      );
+
+      margin:auto;
+
+      display:flex;
+      align-items:center;
+
+      gap:28px;
+    }
+
+    .logo{
+      width:245px;
+
+      display:block;
+
+      mix-blend-mode:screen;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:stretch;
+
+      gap:25px;
+
+      margin-left:auto;
+
+      font-size:.77rem;
+      font-weight:800;
+
+      letter-spacing:.06em;
+    }
+
+    .nav-links a,
+    .home-btn{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+
+      gap:3px;
+
+      line-height:1.08;
+
+      white-space:nowrap;
+    }
+
+    .nav-links a{
+      padding:12px 0;
+
+      border-bottom:2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      border-bottom-color:var(--gold);
+    }
+
+    .nav-en{
+      display:block;
+
+      font-weight:900;
+
+      letter-spacing:.06em;
+    }
+
+    .nav-ja{
+      display:block;
+
+      font-size:.52rem;
+      font-weight:700;
+
+      letter-spacing:.05em;
+
+      color:#8e969e;
+    }
+
+    .nav-links a.active .nav-ja,
+    .nav-links a:hover .nav-ja{
+      color:#d8b64d;
+    }
+
+    .home-btn{
+      border:1px solid var(--line);
+
+      padding:9px 14px;
+
+      font-size:.74rem;
+      font-weight:800;
+    }
+
+    .home-btn .nav-ja{
+      font-size:.52rem;
+    }
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    .mobile-menu-toggle,
+    .mobile-menu-overlay,
+    .mobile-drawer{
+      display:none;
+    }
+
+
+    /* =========================
+       HERO
+
+       USED SALESなどの
+       他サービスページと統一
+    ========================= */
+
+    .hero{
+      width:100%;
+
+      height:192px;
+       min-height:192px;
+       max-height:192px;
+
+      display:flex;
+      align-items:flex-start;
+
+      padding:26px 0 10px;
+
+      background:#06080b;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.15);
+
+      overflow:hidden;
+    }
+
+    .hero .wrap.hero-content{
+      box-sizing:border-box;
+
+      width:calc(100% - 36px);
+      max-width:none;
+
+      margin:0 18px;
+
+      padding:
+        0
+        0
+        0
+        11px;
+
+      border-left:
+        3px solid
+        var(--gold);
+    }
+
+    .eyebrow{
+      color:var(--gold);
+
+      font-size:.7rem;
+      font-weight:900;
+
+      letter-spacing:.19em;
+
+      text-transform:uppercase;
+    }
+
+    .hero .eyebrow{
+      font-size:.62rem;
+
+      line-height:1.15;
+
+      margin:
+        0
+        0
+        9px;
+    }
+
+    .hero h1{
+      font-size:3.15rem;
+
+      line-height:.95;
+
+      letter-spacing:-.035em;
+
+      margin:
+        0
+        0
+        10px;
+    }
+
+    .hero-jp{
+      font-size:.78rem;
+      font-weight:800;
+
+      line-height:1.35;
+
+      letter-spacing:.06em;
+
+      margin:
+        0
+        0
+        14px;
+
+      color:#f4f6f8;
+    }
+
+    .hero-desc{
+      max-width:720px;
+
+      margin:0;
+
+      color:#c7ced5;
+
+      font-size:.76rem;
+
+      line-height:1.62;
+    }
+
+    .repair-desc-line{
+      display:block;
+    }
+
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .section{
+      padding:58px 0;
+    }
+
+    .section + .section{
+      padding-top:18px;
+    }
+
+    .section-head{
+      display:flex;
+
+      align-items:flex-end;
+      justify-content:space-between;
+
+      gap:24px;
+
+      margin-bottom:20px;
+    }
+
+    .section-head h2{
+      margin:
+        3px
+        0
+        0;
+
+      font-size:
+        clamp(
+          1.8rem,
+          2.7vw,
+          2.7rem
+        );
+
+      line-height:1.18;
+    }
+
+    .section-head p{
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:.8rem;
+
+      text-align:right;
+    }
+
+
+    /* =========================
+       FEATURED REPAIR
+    ========================= */
+
+    .main-case{
+      display:grid;
+
+      grid-template-columns:
+        minmax(270px,.33fr)
+        minmax(0,.67fr);
+
+      gap:0;
+
+      overflow:hidden;
+
+      border:
+        1px solid
+        var(--line);
+
+      background:
+        linear-gradient(
+          145deg,
+          #0f151c,
+          #080b0f
+        );
+    }
+
+    .case-info{
+      padding:30px;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .case-info h3{
+      margin:
+        8px
+        0
+        10px;
+
+      font-size:
+        clamp(
+          1.55rem,
+          2.1vw,
+          2.15rem
+        );
+
+      line-height:1.25;
+    }
+
+    .case-info p{
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:.82rem;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+
+      gap:7px;
+
+      margin:
+        18px
+        0
+        20px;
+    }
+
+    .tag{
+      border:
+        1px solid
+        rgba(224,182,61,.45);
+
+      color:#e7c86d;
+
+      padding:
+        6px
+        9px;
+
+      font-size:.68rem;
+    }
+
+    .case-actions{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+
+      gap:8px;
+    }
+
+    .detail-btn{
+      display:inline-flex;
+
+      align-items:center;
+      justify-content:center;
+
+      min-height:44px;
+
+      padding:
+        0
+        17px;
+
+      border:
+        1px solid
+        var(--gold);
+
+      background:
+        linear-gradient(
+          135deg,
+          #e4bd4c,
+          #c89423
+        );
+
+      color:#090b0d;
+
+      font-size:.76rem;
+      font-weight:900;
+    }
+
+    .detail-btn:hover{
+      filter:brightness(1.08);
+    }
+
+    .sns-link{
+      display:inline-flex;
+
+      align-items:center;
+      justify-content:center;
+
+      min-height:44px;
+
+      padding:
+        0
+        14px;
+
+      border:
+        1px solid
+        var(--line);
+
+      color:#dfe4e8;
+
+      font-size:.72rem;
+      font-weight:800;
+    }
+
+    .sns-link:hover{
+      border-color:var(--gold);
+
+      color:var(--gold-soft);
+    }
+
+
+    /* =========================
+       BEFORE / AFTER
+    ========================= */
+
+    .compare{
+      display:grid;
+
+      grid-template-columns:
+        1fr
+        42px
+        1fr;
+
+      align-items:stretch;
+
+      min-width:0;
+
+      background:#090d12;
+    }
+
+    .compare-col{
+      position:relative;
+
+      min-width:0;
+    }
+
+    .compare-col h4{
+      position:absolute;
+
+      z-index:2;
+
+      left:16px;
+      bottom:16px;
+
+      margin:0;
+
+      padding:
+        7px
+        10px;
+
+      background:
+        rgba(
+          7,
+          9,
+          12,
+          .82
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.18);
+
+      color:#e1e5e9;
+
+      font-size:.7rem;
+
+      letter-spacing:.16em;
+    }
+
+    .compare-col.after h4{
+      color:#111;
+
+      background:var(--gold);
+
+      border-color:var(--gold);
+    }
+
+    .compare-img{
+      height:100%;
+
+      min-height:420px;
+
+      overflow:hidden;
+
+      background:#141920;
+    }
+
+    .compare-img img{
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+    }
+
+    .arrow{
+      display:grid;
+
+      place-items:center;
+
+      color:var(--gold);
+
+      font-size:2rem;
+
+      background:#080b0f;
+
+      border-left:
+        1px solid
+        var(--line);
+
+      border-right:
+        1px solid
+        var(--line);
+    }
+
+    .cms-img-placeholder{
+      height:100%;
+
+      min-height:300px;
+
+      display:grid;
+
+      place-items:center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #171c22,
+          #0b0f14
+        );
+
+      color:#6e7781;
+
+      font-weight:900;
+
+      letter-spacing:.08em;
+    }
+
+
+    /* =========================
+       REPAIR CARDS
+    ========================= */
+
+    .cases-grid{
+      display:grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0,1fr)
+        );
+
+      gap:14px;
+    }
+
+    .case-card{
+      overflow:hidden;
+
+      border:
+        1px solid
+        var(--line);
+
+      background:#0b0f14;
+
+      transition:
+        transform .22s ease,
+        border-color .22s ease;
+    }
+
+    .case-card:hover{
+      transform:
+        translateY(-3px);
+
+      border-color:
+        rgba(
+          224,
+          182,
+          61,
+          .5
+        );
+    }
+
+    .case-card-media{
+      height:230px;
+
+      overflow:hidden;
+
+      background:#141920;
+    }
+
+    .case-card-media img{
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      filter:
+        saturate(.88)
+        brightness(.88);
+
+      transition:
+        transform .35s ease;
+    }
+
+    .case-card:hover
+    .case-card-media img{
+      transform:
+        scale(1.025);
+    }
+
+    .coming{
+      height:100%;
+
+      display:grid;
+
+      place-items:center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #171c22,
+          #0b0f14
+        );
+
+      color:#6e7781;
+
+      font-weight:900;
+
+      letter-spacing:.1em;
+    }
+
+    .case-card-body{
+      padding:16px;
+    }
+
+    .case-card h3{
+      margin:
+        4px
+        0
+        8px;
+
+      font-size:1.05rem;
+
+      line-height:1.35;
+    }
+
+    .case-card p{
+      margin:
+        0
+        0
+        14px;
+
+      color:var(--muted);
+
+      font-size:.72rem;
+
+      min-height:2.4em;
+    }
+
+    .card-actions{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+
+      gap:10px;
+    }
+
+    .card-btn{
+      color:#e6c55f;
+
+      font-size:.72rem;
+      font-weight:900;
+    }
+
+    .card-sns{
+      color:#9ca6b0;
+
+      font-size:.68rem;
+      font-weight:800;
+    }
+
+    .card-sns:hover{
+      color:#e6c55f;
+    }
+
+
+    /* =========================
+       PHOTO MESSAGE
+    ========================= */
+
+    .photo-message{
+      margin:
+        8px
+        0
+        0;
+
+      border-top:
+        1px solid
+        var(--line);
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(224,182,61,.07),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #0d1319,
+          #080b0f
+        );
+    }
+
+    .photo-message-inner{
+      min-height:150px;
+
+      display:flex;
+
+      align-items:center;
+      justify-content:space-between;
+
+      gap:40px;
+
+      padding:
+        34px
+        0;
+    }
+
+    .photo-message h2{
+      margin:
+        4px
+        0
+        6px;
+
+      font-size:
+        clamp(
+          1.35rem,
+          2.1vw,
+          2rem
+        );
+    }
+
+    .photo-message p{
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:.8rem;
+    }
+
+    .photo-message-mark{
+      flex:
+        0
+        0
+        auto;
+
+      width:150px;
+      height:1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--gold),
+          transparent
+        );
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta-wrap{
+      padding:
+        54px
+        0
+        64px;
+    }
+
+    .cta{
+      border:
+        1px solid
+        rgba(224,182,61,.5);
+
+      background:
+        radial-gradient(
+          circle at 20% 0,
+          rgba(224,182,61,.08),
+          transparent 34%
+        ),
+        linear-gradient(
+          135deg,
+          #111820,
+          #080b0f
+        );
+
+      padding:30px;
+
+      display:flex;
+
+      align-items:center;
+      justify-content:space-between;
+
+      gap:24px;
+    }
+
+    .cta h2{
+      margin:
+        2px
+        0
+        7px;
+
+      font-size:1.55rem;
+    }
+
+    .cta p{
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:.78rem;
+    }
+
+    .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+
+      gap:9px;
+    }
+
+    .cta-actions a{
+      min-width:150px;
+
+      padding:
+        14px
+        18px;
+
+      border:
+        1px solid
+        var(--line);
+
+      font-size:.75rem;
+      font-weight:900;
+
+      text-align:center;
+    }
+
+    .cta-actions .contact{
+      background:var(--gold);
+
+      border-color:var(--gold);
+
+      color:#080a0c;
+    }
+
+    .cta-actions .line{
+      background:#06c755;
+      border-color:#06c755;
+      color:#fff;
+    }
+
+    .cta-actions .line:hover{
+      filter:brightness(1.08);
+    }
+
+    .cta-actions .phone:hover,
+    .cta-actions .instagram:hover,
+    .cta-actions .tiktok:hover{
+      border-color:var(--gold);
+
+      color:var(--gold-soft);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      border-top:
+        1px solid
+        var(--line);
+
+      padding:
+        22px
+        0
+        26px;
+
+      color:#747d87;
+
+      font-size:.68rem;
+
+      text-align:center;
+    }
+
+    footer a:hover{
+      color:#d7dde2;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    
+
+    /* =========================
+       REPAIR MENU BOARD
+    ========================= */
+
+    .repair-menu-board{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .repair-menu-card{
+      border:1px solid var(--line);
+      background:linear-gradient(145deg,#0f151c,#080b0f);
+      overflow:hidden;
+      min-width:0;
+    }
+
+    .repair-menu-card-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 14px 10px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .repair-menu-no{
+      color:var(--gold);
+      font-size:.7rem;
+      font-weight:900;
+      letter-spacing:.18em;
+      white-space:nowrap;
+    }
+
+    .repair-menu-card h3{
+      margin:6px 0 0;
+      font-size:1rem;
+      line-height:1.35;
+    }
+
+    .repair-menu-note{
+      margin:0;
+      color:var(--muted);
+      font-size:.72rem;
+      text-align:right;
+      white-space:nowrap;
+    }
+
+    .repair-menu-body{
+      padding:10px 14px 14px;
+    }
+
+    .mini-compare{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);
+      align-items:stretch;
+      border:1px solid rgba(255,255,255,.08);
+      background:#090d12;
+      min-width:0;
+    }
+
+    .mini-compare-col{
+      position:relative;
+      min-width:0;
+      background:#11161c;
+    }
+
+    .mini-compare-label{
+      position:absolute;
+      left:6px;
+      top:6px;
+      z-index:2;
+      padding:3px 5px;
+      background:rgba(7,9,12,.82);
+      border:1px solid rgba(255,255,255,.18);
+      color:#e1e5e9;
+      font-size:.57rem;
+      font-weight:900;
+      letter-spacing:.16em;
+    }
+
+    .mini-compare-col.after .mini-compare-label{
+      color:#111;
+      background:var(--gold);
+      border-color:var(--gold);
+    }
+
+    .mini-compare-media{
+      height:120px;
+      background:#141920;
+      overflow:hidden;
+    }
+
+    .mini-compare-media img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+    }
+
+    .mini-compare-media.fit-media{
+      height:120px;
+      padding:0;
+      background:#141920;
+    }
+
+    .mini-compare-media.fit-media img{
+      object-fit:contain !important;
+      object-position:center center !important;
+      background:#141920;
+    }
+
+    .mini-compare-media.placeholder{
+      display:grid;
+      place-items:center;
+      border:1px dashed rgba(255,255,255,.16);
+      background:linear-gradient(135deg,#12171d,#0b0f14);
+      color:#6f7882;
+      text-align:center;
+      padding:18px;
+      font-size:.74rem;
+      font-weight:800;
+      line-height:1.7;
+    }
+
+    .mini-arrow{
+      display:grid;
+      place-items:center;
+      color:var(--gold);
+      font-size:1.05rem;
+      background:#080b0f;
+      border-left:1px solid var(--line);
+      border-right:1px solid var(--line);
+    }
+
+    .repair-menu-desc{
+      margin:9px 2px 0;
+      color:var(--muted);
+      font-size:.7rem;
+      line-height:1.75;
+    }
+
+    .repair-menu-help{
+      margin-top:18px;
+      padding:14px 16px;
+      border:1px solid rgba(224,182,61,.22);
+      background:rgba(224,182,61,.06);
+      color:#d6dde4;
+      font-size:.73rem;
+      line-height:1.8;
+    }
+@media(max-width:1100px){
+
+      .repair-menu-board{
+        grid-template-columns:1fr;
+      }
+
+
+      .main-case{
+        grid-template-columns:1fr;
+      }
+
+      .case-info{
+        padding:24px;
+      }
+
+      .compare-img{
+        min-height:360px;
+      }
+
+      .cases-grid{
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0,1fr)
+          );
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:760px){
+
+      .repair-menu-board{
+        grid-template-columns:1fr;
+        gap:16px;
+      }
+
+      .repair-menu-card-head{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .repair-menu-note{
+        text-align:left;
+        white-space:normal;
+      }
+
+      .mini-compare-media{
+        height:125px;
+      }
+
+      .mini-compare-media.fit-media{
+        height:125px;
+        padding:0;
+      }
+
+
+      .wrap,
+      .nav{
+        width:calc(100% - 28px);
+      }
+
+
+      /* HEADER */
+
+      header{
+        height:68px;
+      }
+
+      .logo{
+        width:185px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .home-btn{
+        display:none;
+      }
+
+
+      /* MOBILE MENU */
+
+      .mobile-menu-toggle{
+        display:grid;
+
+        place-content:center;
+
+        gap:6px;
+
+        width:44px;
+        height:44px;
+
+        margin-left:auto;
+
+        border:0;
+
+        background:transparent;
+
+        cursor:pointer;
+      }
+
+      .mobile-menu-toggle span{
+        display:block;
+
+        width:31px;
+        height:2px;
+
+        background:#fff;
+      }
+
+      .mobile-menu-overlay{
+        display:block;
+
+        position:fixed;
+
+        inset:0;
+
+        z-index:998;
+
+        background:
+          rgba(
+            0,
+            0,
+            0,
+            .66
+          );
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transition:.28s ease;
+      }
+
+      .mobile-menu-overlay.open{
+        opacity:1;
+
+        visibility:visible;
+      }
+
+      .mobile-drawer{
+        display:flex;
+
+        flex-direction:column;
+
+        position:fixed;
+
+        top:0;
+        right:0;
+
+        z-index:999;
+
+        width:min(
+          86vw,
+          360px
+        );
+
+        height:100dvh;
+
+        padding:
+          22px
+          20px
+          28px;
+
+        background:
+          linear-gradient(
+            180deg,
+            #0b0f14,
+            #050709
+          );
+
+        border-left:
+          1px solid
+          rgba(255,255,255,.15);
+
+        transform:
+          translateX(105%);
+
+        transition:
+          transform .32s ease;
+
+        box-shadow:
+          -24px
+          0
+          70px
+          rgba(0,0,0,.45);
+
+        overflow-y:auto;
+      }
+
+      .mobile-drawer.open{
+        transform:
+          translateX(0);
+      }
+
+      .mobile-drawer-head{
+        display:flex;
+
+        align-items:center;
+        justify-content:space-between;
+
+        gap:18px;
+
+        padding-bottom:20px;
+
+        border-bottom:
+          1px solid
+          rgba(255,255,255,.15);
+      }
+
+      .mobile-drawer-logo{
+        width:190px;
+
+        mix-blend-mode:screen;
+      }
+
+      .mobile-close{
+        width:42px;
+        height:42px;
+
+        border:
+          1px solid
+          rgba(255,255,255,.15);
+
+        background:transparent;
+
+        color:#fff;
+
+        font-size:1.55rem;
+
+        cursor:pointer;
+      }
+
+      .mobile-menu-links{
+        display:flex;
+
+        flex-direction:column;
+
+        margin-top:18px;
+      }
+
+      .mobile-menu-links a{
+        display:flex;
+
+        align-items:center;
+        justify-content:space-between;
+
+        min-height:54px;
+
+        border-bottom:
+          1px solid
+          rgba(255,255,255,.15);
+
+        color:#fff;
+
+        font-size:1rem;
+        font-weight:800;
+
+        letter-spacing:.05em;
+      }
+
+      .mobile-menu-links a:after{
+        content:"→";
+
+        color:#8c96a1;
+
+        font-size:1.35rem;
+      }
+
+      .mobile-inquiry-card{
+        margin-top:24px;
+
+        padding:18px;
+
+        border:
+          1px solid
+          rgba(255,255,255,.15);
+
+        background:#0a0e13;
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:7px;
+      }
+
+      .mobile-inquiry-card span{
+        color:#9ca6b0;
+
+        font-size:.74rem;
+
+        line-height:1.7;
+      }
+
+      .mobile-inquiry-card a{
+        margin-top:6px;
+
+        color:#e5c15b;
+
+        font-size:.78rem;
+        font-weight:800;
+      }
+
+      body.mobile-menu-open{
+        overflow:hidden;
+      }
+
+
+      /* HERO
+         他ページと同じ位置関係
+      */
+
+      .hero{
+        height:auto;
+        min-height:0;
+        max-height:none;
+        padding:14px 0 9px;
+        overflow:visible;
+      }
+
+      .hero .wrap.hero-content{
+        width:calc(100% - 36px);
+        margin:0 18px;
+        padding:0 0 0 8px;
+        border-left-width:2px;
+      }
+
+      .hero .eyebrow{
+        font-size:.44rem;
+        margin:0 0 5px;
+      }
+
+      .hero h1{
+        font-size:1.55rem;
+        line-height:1;
+        margin:0 0 5px;
+      }
+
+      .hero-jp{
+        font-size:.61rem;
+        margin:0 0 7px;
+      }
+
+      .hero-desc{
+        max-width:100%;
+        font-size:.56rem;
+        line-height:1.5;
+      }
+
+
+      /* SECTION */
+
+      .section{
+        padding:42px 0;
+      }
+
+      .section + .section{
+        padding-top:4px;
+      }
+
+      .section-head{
+        display:block;
+
+        margin-bottom:16px;
+      }
+
+      .section-head p{
+        margin-top:8px;
+
+        text-align:left;
+
+        line-height:1.8;
+      }
+
+
+      /* FEATURED */
+
+      .case-info{
+        padding:
+          20px
+          16px;
+      }
+
+      .case-info h3{
+        font-size:1.45rem;
+      }
+
+      .compare{
+        grid-template-columns:1fr;
+      }
+
+      .compare-img{
+        min-height:0;
+
+        height:280px;
+      }
+
+      .arrow{
+        min-height:42px;
+
+        transform:
+          rotate(90deg);
+
+        border:0;
+      }
+
+      .compare-col h4{
+        left:12px;
+        bottom:12px;
+      }
+
+
+      /* CARDS */
+
+      .cases-grid{
+        grid-template-columns:1fr;
+      }
+
+      .case-card-media{
+        height:230px;
+      }
+
+      .case-card p{
+        min-height:0;
+      }
+
+
+      /* MESSAGE */
+
+      .photo-message-inner{
+        min-height:0;
+
+        display:block;
+
+        padding:
+          28px
+          0;
+      }
+
+      .photo-message-mark{
+        width:90px;
+
+        margin-top:18px;
+      }
+
+
+      /* CTA */
+
+      .cta-wrap{
+        padding:
+          38px
+          0
+          48px;
+      }
+
+      .cta{
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        padding:
+          22px
+          18px;
+      }
+
+      .cta-actions{
+        width:100%;
+      }
+
+      .cta-actions a{
+        width:100%;
+      }
+
+    }
+  
+
+/* RENVIS mobile final: consolidated, applied before first paint. */
+@media (max-width:760px){
+  header{height:58px!important;border-bottom:0!important;}
+  header .logo{width:145px!important;max-width:145px!important;}
+  .hero{border-bottom:0!important;padding-bottom:8px!important;}
+  .hero + .section{padding-top:26px;}
+  .section{padding-top:30px;padding-bottom:30px;}
+  .section-head{margin-bottom:14px;}
+  .section-head h2{line-height:1.25;}
+  .hero .wrap.hero-content,
+  .used-hero .wrap.used-hero-content{border-left:0!important;padding-left:0!important;}
+  .hero,.used-hero{border-bottom:0!important;}
+  .used-hero{padding-bottom:8px!important;}
+  .featured-section{padding-top:18px!important;}
+  .featured-head{margin-bottom:12px!important;}
+  .featured-body{padding:12px!important;}
+  .featured-body p{margin-bottom:8px!important;}
+  .featured-meta{margin-bottom:10px!important;}
+  .featured-card .featured-link{min-height:38px;}
+}
+
+/* Four-page shared hero, applied before paint. */
+@media(min-width:761px){
+  .hero,.used-hero{height:170px!important;min-height:170px!important;max-height:170px!important;padding:29px 0 20px!important;overflow:visible!important;background:#06080b!important;}
+  .hero .wrap.hero-content,.used-hero .wrap.used-hero-content{border-left:2px solid var(--gold)!important;padding-left:16px!important;}
+  .hero h1,.used-hero h1{font-size:3.15rem!important;line-height:1.05!important;margin:0 0 14px!important;letter-spacing:-.035em!important;white-space:normal!important;}
+  .hero .unified-desc,.hero .hero-desc,.used-hero .used-hero-desc{font-size:.82rem!important;line-height:1.65!important;margin:0!important;color:#bec6ce!important;max-width:920px!important;}
+}
+@media(max-width:760px){
+  .hero,.used-hero{height:auto!important;min-height:0!important;max-height:none!important;padding:20px 0 16px!important;overflow:visible!important;background:#06080b!important;}
+  .hero .wrap.hero-content,.used-hero .wrap.used-hero-content{border-left:0!important;padding-left:0!important;}
+  .hero h1,.used-hero h1{font-size:1.75rem!important;line-height:1.1!important;margin:0 0 10px!important;letter-spacing:-.035em!important;white-space:normal!important;}
+  .hero .unified-desc,.hero .hero-desc,.used-hero .used-hero-desc{font-size:.73rem!important;line-height:1.7!important;margin:0!important;color:#bec6ce!important;max-width:100%!important;}
+}
+
+/* Remove only the horizontal boundary below the hero; retain desktop gold vertical accent. */
+.hero, .used-hero { border-bottom:0!important; }
+/* Slightly reduce the headings immediately below the hero and matching section headings. */
+.section-head h2 { font-size:1.75rem!important; }
+@media (max-width:760px) {
+  .section-head h2 { font-size:1.18rem!important; line-height:1.3!important; }
+}
+
+/* Mobile-only: restore left accent and avoid orphaned last characters. */
+@media(max-width:760px){
+  .hero .wrap.hero-content,
+  .used-hero .wrap.used-hero-content{border-left:2px solid var(--gold)!important;padding-left:10px!important;}
+  .hero .unified-desc,
+  .hero .hero-desc,
+  .used-hero .used-hero-desc{font-size:.68rem!important;line-height:1.75!important;overflow-wrap:normal!important;word-break:normal!important;}
+}
+
+/* Only the repair solutions top spacing and the new facilities section */
+.repair-solutions-section{padding-top:34px;}
+.renvis-facilities{padding:18px 0 58px;}
+.renvis-facilities .section-head{margin-bottom:20px;}
+.renvis-facilities-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.renvis-facility-card{min-width:0;border:1px solid var(--line);background:linear-gradient(145deg,#0f151c,#080b0f);overflow:hidden;}
+.renvis-facility-photo{height:auto;aspect-ratio:16/9;background:#11161c;border-bottom:1px solid var(--line);}
+.renvis-facility-title{margin:0;padding:18px 20px;font-size:1.1rem;line-height:1.4;font-weight:800;}
+@media(max-width:760px){
+ .repair-solutions-section{padding-top:16px!important;}
+ .renvis-facilities{padding:12px 0 34px;}
+ .renvis-facilities-grid{grid-template-columns:1fr;gap:14px;}
+ .renvis-facility-photo{height:auto;aspect-ratio:16/9;}
+ .renvis-facility-title{padding:14px 16px;font-size:1rem;}
+}
+
+/* 修理実績：縦写真対応。BEFORE→AFTERを上下に表示 */
+.repair-menu-board .mini-compare{
+  grid-template-columns:minmax(0,1fr);
+  grid-template-rows:auto 26px auto;
+}
+.repair-menu-board .mini-compare-media,
+.repair-menu-board .mini-compare-media.fit-media{
+  height:215px;
+  padding:0;
+}
+.repair-menu-board .mini-compare-media img{
+  width:100%; height:100%; object-fit:contain;
+  object-position:center; 
+}
+.repair-menu-board .mini-arrow{
+  min-height:26px;
+  border-left:0; border-right:0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  transform:none;
+  font-size:0;
+}
+.repair-menu-board .mini-arrow::after{content:"↓"; font-size:1.1rem;}
+@media(max-width:760px){
+  .repair-menu-board .mini-compare-media,
+  .repair-menu-board .mini-compare-media.fit-media{height:230px;padding:0;}
+}
+
+/* 修理実績カード：縦写真に適した幅へ統一（PC 3列、タブレット2列、スマホ1列） */
+@media(min-width:1200px){
+  .repair-menu-board{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+}
+@media(min-width:761px) and (max-width:1199px){
+  .repair-menu-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+}
+@media(max-width:760px){
+  .repair-menu-board{grid-template-columns:1fr;gap:16px;}
+}
+.repair-menu-board .repair-menu-card{display:flex;flex-direction:column;}
+.repair-menu-board .repair-menu-body{display:flex;flex-direction:column;flex:1;gap:0;}
+.repair-menu-board .mini-compare{width:100%;}
+.repair-menu-board .mini-compare-media,
+.repair-menu-board .mini-compare-media.fit-media{height:275px;}
+.repair-menu-board .mini-compare-media img{display:block;max-width:100%;margin-inline:auto;}
+@media(max-width:760px){
+  .repair-menu-board .mini-compare-media,
+  .repair-menu-board .mini-compare-media.fit-media{height:280px;}
+}
+
+
+
+/* 修理実績カード：画像下の不要な余白をなくす */
+.repair-menu-board{align-items:start;}
+.repair-menu-board .repair-menu-card{align-self:start;height:auto;}
+.repair-menu-board .repair-menu-body{flex:0 0 auto;}
+
+
+
+    .repair-collage-media.placeholder{
+      min-height:335px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#7f90a8;
+      font-weight:700;
+      line-height:1.8;
+      letter-spacing:.06em;
+      border:1px dashed rgba(255,255,255,.14);
+      background:linear-gradient(180deg,#101926 0%,#0b111a 100%);
+    }
+    @media (max-width: 760px){
+      .repair-collage-media.placeholder{
+        min-height:280px;
+      }
+    }
+
+    @media (max-width: 980px){
+      .repair-collage-media{
+        border-radius:0;
+      }
+    }
+
+/* Repair Solutions: all six image slots share the same dimensions. */
+.repair-menu-board .repair-collage-media{
+  aspect-ratio:4 / 3;
+  min-height:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.repair-menu-board .repair-collage-media img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+/* BEFORE / AFTER collage cards */
+.repair-collage-media{width:100%;border:1px solid rgba(255,255,255,.08);background:#0b111a;overflow:hidden;}
+.repair-collage-media img{display:block;width:100%;height:auto;object-fit:contain;}
+
+
+    /* Repair CONTACT only: consistent primary buttons, subdued SNS links */
+    .cta-wrap .cta{gap:28px;}
+    .cta-wrap .repair-contact-links{flex:0 1 580px;min-width:0;width:100%;}
+    .cta-wrap .cta-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;}
+    .cta-wrap .cta-actions a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:52px;width:100%;padding:12px 10px;line-height:1.45;white-space:normal;}
+    .cta-wrap .cta-actions .line{background:#06c755;border-color:#06c755;color:#fff;}
+    .cta-wrap .cta-actions .contact{background:transparent;border-color:var(--line);color:var(--text);}
+    .cta-wrap .repair-social-links{display:flex;justify-content:flex-end;gap:22px;margin-top:15px;font-size:.72rem;color:var(--muted);}
+    .cta-wrap .repair-social-links a:hover{color:var(--gold-soft);}
+    @media(max-width:1100px){
+      .cta-wrap .cta{flex-direction:column;align-items:stretch;}
+      .cta-wrap .repair-contact-links{flex:0 1 auto;}
+    }
+    @media(max-width:560px){
+      .cta-wrap .cta-actions{grid-template-columns:1fr;gap:9px;}
+      .cta-wrap .cta-actions a{min-height:46px;}
+      .cta-wrap .repair-social-links{justify-content:center;margin-top:16px;}
+    }
+
+/* Repair hero: cinematic overlay, gentle motion (only this section) */
+.repair-hero{
+  position:relative;display:block!important;width:100%;height:clamp(430px,51vw,680px)!important;
+  min-height:0!important;max-height:none!important;padding:0!important;
+  overflow:hidden!important;background:#080a0d;border:0!important;isolation:isolate;
+}
+.repair-hero .repair-hero-visual{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:#080a0d}
+.repair-hero .repair-hero-visual img{
+  width:100%;height:100%;display:block;object-fit:cover;object-position:center 47%;
+  transform:scale(1);transform-origin:center;
+  animation:renvisHeroZoom 13s ease-out both;
+}
+.repair-hero .repair-hero-visual::after{
+  content:"";pointer-events:none;position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(3,5,8,.93) 0%,rgba(3,5,8,.72) 18%,rgba(3,5,8,.24) 43%,transparent 75%),
+  linear-gradient(90deg,rgba(0,0,0,.33) 0%,transparent 65%);
+}
+.repair-hero .repair-spark-glow{
+  position:absolute;left:36%;top:65%;width:85px;height:55px;transform:translate(-50%,-50%);
+  border-radius:50%;pointer-events:none;mix-blend-mode:screen;
+  background:radial-gradient(ellipse,rgba(255,205,121,.23),rgba(255,177,76,.08) 35%,transparent 70%);
+  filter:blur(13px);animation:renvisSpark 5.6s ease-in-out 1s infinite alternate;
+}
+.repair-hero .repair-hero-copy{
+  position:absolute;z-index:1;bottom:clamp(30px,5.1vw,70px);left:max(32px,calc((100vw - var(--max))/2));
+  width:min(1050px,calc(100% - 64px));margin:0;padding:0;display:block;
+}
+.repair-hero .eyebrow{
+  display:block;color:var(--gold);font-size:clamp(.66rem,1vw,.84rem)!important;
+  font-weight:900;letter-spacing:.29em;margin:0 0 12px!important;
+  opacity:0;animation:renvisReveal .8s ease-out .1s forwards;
+}
+.repair-hero h1{
+  color:#fff;margin:0 0 13px!important;font-size:clamp(2.9rem,6.1vw,6.1rem)!important;
+  line-height:1.18!important;letter-spacing:-.045em;font-weight:900;
+  font-family:"Noto Sans JP","Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;
+  text-shadow:0 3px 20px rgba(0,0,0,.26);
+  opacity:0;animation:renvisReveal .85s cubic-bezier(.2,.8,.2,1) .3s forwards;
+}
+.repair-hero .hero-desc{
+  margin:0!important;max-width:900px!important;font-size:clamp(.8rem,1.25vw,1.02rem)!important;
+  color:#e1e5e9!important;line-height:1.85!important;letter-spacing:.045em;
+  opacity:0;animation:renvisReveal .85s ease-out .55s forwards;
+}
+@keyframes renvisHeroZoom{from{transform:scale(1)}to{transform:scale(1.045)}}
+@keyframes renvisReveal{from{opacity:0;transform:translateY(11px)}to{opacity:1;transform:translateY(0)}}
+@keyframes renvisSpark{0%,100%{opacity:.25}45%{opacity:.56}68%{opacity:.33}}
+@media(max-width:760px){
+  .repair-hero{height:auto!important;min-height:0!important;max-height:none!important;padding:0!important;overflow:hidden!important}
+  .repair-hero .repair-hero-visual{position:relative;inset:auto;height:auto;overflow:hidden}
+  .repair-hero .repair-hero-visual img{width:100%;height:auto;object-fit:contain;object-position:center}
+  .repair-hero .repair-hero-visual::after{background:linear-gradient(0deg,rgba(3,5,8,.42),transparent 55%)}
+  .repair-hero .repair-spark-glow{left:36%;top:36%;width:45px;height:32px;filter:blur(10px)}
+  .repair-hero .repair-hero-copy{
+    position:relative;bottom:auto;left:auto;z-index:1;width:100%;
+    margin:-28px 0 0;padding:35px 18px 23px;
+    background:linear-gradient(0deg,#06080b 70%,rgba(6,8,11,.98) 90%,rgba(6,8,11,0));
+  }
+  .repair-hero .eyebrow{font-size:.58rem!important;letter-spacing:.23em;margin:0 0 10px!important}
+  .repair-hero h1{font-size:clamp(2rem,9vw,3.1rem)!important;line-height:1.2!important;margin:0 0 10px!important;letter-spacing:-.04em}
+  .repair-hero .hero-desc{font-size:clamp(.73rem,3.05vw,.89rem)!important;line-height:1.8!important;letter-spacing:.01em}
+}
+@media(prefers-reduced-motion:reduce){
+  .repair-hero .repair-hero-visual img,.repair-hero .repair-spark-glow,.repair-hero .eyebrow,.repair-hero h1,.repair-hero .hero-desc{
+    animation:none!important;opacity:1!important;transform:none!important;
+  }
+}
+
+
+/* 修理実績の原寸画像は切り抜かず枠内に表示 */
+.repair-menu-board .repair-collage-media { aspect-ratio:4 / 3; height:auto; overflow:hidden; }
+.repair-menu-board .repair-collage-media img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; }
+
+/* RENVIS animated repair hero: independent transparent text layers.
+   All styles below are scoped to this hero; other page content remains unchanged. */
+.repair-hero .repair-hero-visual{position:relative!important;width:100%;height:100%;overflow:hidden!important;background:#080a0d}
+.repair-hero .repair-hero-visual::after{display:none!important}
+.repair-hero .repair-hero-visual img.repair-hero-photo{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ object-fit:cover!important;object-position:center center!important;animation:none!important;transform:none!important;
+}
+.repair-hero .repair-hero-visual img.repair-type-layer{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ object-fit:fill!important;pointer-events:none!important;transform:none;opacity:0;
+}
+.repair-hero .repair-type-bg{animation:repairBgReveal 1.3s ease-out .12s both!important}
+.repair-hero .repair-type-first{animation:repairTextReveal 1s cubic-bezier(.18,.7,.22,1) .55s both!important}
+.repair-hero .repair-type-second{animation:repairTextReveal 1s cubic-bezier(.18,.7,.22,1) 1.05s both!important}
+.repair-hero .repair-hero-sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@keyframes repairBgReveal{from{opacity:0}to{opacity:1}}
+@keyframes repairTextReveal{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@media(max-width:760px){
+ .repair-hero{height:auto!important;aspect-ratio:1672 / 941!important;min-height:0!important;overflow:hidden!important}
+ .repair-hero .repair-hero-visual{position:absolute!important;inset:0!important;height:100%!important}
+ .repair-hero .repair-hero-visual img.repair-hero-photo{object-fit:fill!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .repair-hero .repair-hero-visual img.repair-type-layer{animation:none!important;opacity:1!important;translate:none!important}
+}
+
+</style>
+
+
+  <script src="supabase-config.js"></script>
+
+
+
+
+
+
+
+
+<style id="renvis-mobile-menu-ja-20261019">
+/* Smartphone navigation translations only. */
+.mobile-menu-links .renvis-mobile-menu-label{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:3px;min-width:0;padding:8px 0}
+.mobile-menu-links .renvis-mobile-menu-en{display:block;line-height:1.15}
+.mobile-menu-links .renvis-mobile-menu-ja{display:block;color:#aeb7bf;font-size:.67rem;font-weight:600;line-height:1.3;letter-spacing:.025em}
+</style>
+
+<style id="renvis-mobile-inquiry-layout-20261019">
+@media(max-width:760px){
+  .mobile-inquiry-card{min-width:0;}
+  .mobile-inquiry-card > span{display:block;white-space:normal;overflow-wrap:normal;word-break:normal;line-break:strict;font-size:.74rem;line-height:1.75;}
+  .mobile-inquiry-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px;}
+  .mobile-inquiry-card .mobile-inquiry-actions a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:42px;padding:10px 6px;margin:0;border:1px solid rgba(255,255,255,.24);color:#f5f6f8;font-size:.78rem;font-weight:800;text-align:center;}
+  .mobile-inquiry-card .mobile-inquiry-actions a.mobile-inquiry-line{border-color:#40b76b;color:#65df8a;}
+  .mobile-inquiry-card .mobile-inquiry-form{display:block;margin-top:10px;color:#e5c15b;font-size:.78rem;font-weight:800;}
+}
+</style>
+
+<style id="renvis-mobile-inquiry-buttons-only-20261019">
+@media(max-width:760px){
+  .mobile-inquiry-card{padding:0!important;border:0!important;background:transparent!important;gap:0!important;}
+  .mobile-inquiry-card .mobile-inquiry-actions{margin-top:0!important;}
+}
+</style>
+
+<style id="renvis-repair-mobile-fullscreen-20261019">
+/* Mobile only: one full-height portrait hero, with readable live text. */
+.repair-hero .repair-mobile-hero-text{display:none;}
+@media (max-width:760px){
+  .repair-hero{
+    height:calc(100svh - 68px)!important;
+    min-height:520px!important;max-height:none!important;
+    aspect-ratio:auto!important;position:relative!important;
+    padding:0!important;overflow:hidden!important;
+  }
+  .repair-hero .repair-hero-visual{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;}
+  .repair-hero .repair-hero-visual img.repair-hero-photo{
+    width:100%!important;height:100%!important;
+    object-fit:cover!important;object-position:center center!important;
+  }
+  /* The original landscape lettering would be cropped on portrait screens. */
+  .repair-hero .repair-hero-visual img.repair-type-layer{display:none!important;}
+  .repair-hero .repair-mobile-hero-text{
+    display:flex;position:absolute;z-index:2;inset:auto 0 0;
+    flex-direction:column;align-items:flex-start;justify-content:flex-end;
+    padding:95px 22px max(42px,env(safe-area-inset-bottom));
+    background:linear-gradient(0deg,rgba(3,5,8,.93),rgba(3,5,8,.58) 58%,transparent);
+    color:#fff;pointer-events:none;
+  }
+  .repair-hero .repair-mobile-hero-text strong{
+    display:block;font-size:clamp(2.25rem,10.2vw,3.5rem);
+    font-weight:900;line-height:1.24;letter-spacing:-.055em;
+    text-shadow:0 3px 14px rgba(0,0,0,.5);
+  }
+  .repair-hero .repair-mobile-hero-text p{
+    margin:16px 0 0;color:#e4e7eb;font-size:clamp(.73rem,3.1vw,.9rem);
+    line-height:1.75;letter-spacing:.015em;
+  }
+}
+</style>
+
+<style id="renvis-repair-hero-final-20261019">
+/* Only REPAIR hero: keep exact user-selected artwork, never crop its lettering. */
+.repair-hero{
+  width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;
+  aspect-ratio:1672 / 941!important;overflow:hidden!important;position:relative!important;
+  padding:0!important;background:#07090c!important;border:0!important;
+}
+.repair-hero .repair-hero-visual{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  overflow:hidden!important;background:#07090c!important;
+}
+.repair-hero .repair-hero-visual::after,
+.repair-hero .repair-hero-visual img.repair-type-layer,
+.repair-hero .repair-mobile-hero-text,
+.repair-hero .repair-spark-glow,
+.repair-hero .repair-hero-copy{display:none!important;}
+.repair-hero .repair-hero-visual picture{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;
+}
+.repair-hero .repair-hero-visual img.repair-hero-photo{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  object-fit:contain!important;object-position:center!important;transform:none!important;
+  animation:renvisRepairPosterReveal 1.25s ease-out both!important;
+}
+@keyframes renvisRepairPosterReveal{
+  from{opacity:0;filter:brightness(.82);}
+  to{opacity:1;filter:brightness(1);}
+}
+@media(max-width:760px){
+  .repair-hero{
+    height:calc(100svh - 68px)!important;min-height:0!important;max-height:none!important;
+    aspect-ratio:auto!important;
+  }
+  .repair-hero .repair-hero-visual img.repair-hero-photo{
+    object-fit:contain!important;object-position:center center!important;
+    animation:renvisRepairMobileReveal 1.35s cubic-bezier(.2,.7,.25,1) both!important;
+  }
+}
+@keyframes renvisRepairMobileReveal{
+  from{opacity:0;translate:0 12px;filter:brightness(.84);}
+  to{opacity:1;translate:0 0;filter:brightness(1);}
+}
+@media(prefers-reduced-motion:reduce){
+  .repair-hero .repair-hero-visual img.repair-hero-photo{animation:none!important;opacity:1!important;translate:none!important;filter:none!important;}
+}
+</style>
+
+<style id="renvis-repair-individual-text-animation-20261019">
+/* Repair hero only: the original poster lettering is separated into timed layers. */
+.repair-hero .repair-hero-visual{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#07090c!important}
+.repair-hero .repair-hero-visual::after{display:none!important}
+.repair-hero .repair-hero-background,
+.repair-hero .repair-hero-animated-type{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;overflow:hidden!important}
+.repair-hero .repair-hero-background img.repair-hero-photo,
+.repair-hero .repair-hero-animated-type img{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  display:block!important;object-fit:contain!important;object-position:center!important;
+  max-width:none!important;transform:none!important;filter:none!important;
+}
+.repair-hero .repair-hero-background img.repair-hero-photo{animation:renvisRepairBackgroundIntro 1.05s ease-out both!important}
+.repair-hero .repair-hero-animated-type{opacity:0;pointer-events:none!important;will-change:opacity,transform}
+.repair-hero .repair-hero-type-one{animation:renvisRepairTextIn .95s cubic-bezier(.2,.7,.2,1) .45s forwards!important}
+.repair-hero .repair-hero-type-two{animation:renvisRepairTextIn .95s cubic-bezier(.2,.7,.2,1) 1.08s forwards!important}
+.repair-hero .repair-hero-type-description{animation:renvisRepairTextIn .8s ease-out 2.05s forwards!important}
+.repair-hero .repair-hero-gold-flare{position:absolute;z-index:5;left:75%;top:50%;width:12%;height:20%;pointer-events:none;
+  background:radial-gradient(ellipse,rgba(255,196,73,.38),rgba(255,185,46,.09) 34%,transparent 72%);
+  mix-blend-mode:screen;opacity:0;filter:blur(14px);animation:renvisRepairGoldPulse 1.4s ease-in-out 1.6s both!important}
+@keyframes renvisRepairBackgroundIntro{from{opacity:0;filter:brightness(.7)}to{opacity:1;filter:brightness(1)}}
+@keyframes renvisRepairTextIn{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
+@keyframes renvisRepairGoldPulse{0%{opacity:0}40%{opacity:.8}100%{opacity:0}}
+@media(max-width:760px){
+  .repair-hero{height:calc(100svh - 68px)!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important}
+  .repair-hero .repair-hero-gold-flare{left:48%;top:37%;width:18%;height:13%}
+}
+@media(prefers-reduced-motion:reduce){
+  .repair-hero .repair-hero-background img.repair-hero-photo,
+  .repair-hero .repair-hero-animated-type,
+  .repair-hero .repair-hero-gold-flare{animation:none!important;transform:none!important;filter:none!important}
+  .repair-hero .repair-hero-animated-type{opacity:1!important}
+  .repair-hero .repair-hero-gold-flare{opacity:0!important}
+}
+</style>
+
+<style id="renvis-repair-pc-vector-type-20261019">
+/* PC-only high-resolution live typography. Mobile retains its original layered artwork. */
+@media (min-width:761px){
+  .repair-hero .repair-hero-animated-type{display:none!important;}
+  .repair-hero .repair-hero-pc-live-type{
+    display:flex;position:absolute;z-index:7;top:27%;right:4.2%;width:53%;height:52%;
+    flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;pointer-events:none;color:#fff;
+    font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+    -webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.55));
+  }
+  .repair-hero .repair-hero-pc-line{
+    display:block;white-space:nowrap;font-size:clamp(31px,5.05vw,92px);
+    font-weight:600;line-height:1.28;letter-spacing:-.055em;
+    opacity:0;transform:translateY(12px);
+  }
+  .repair-hero .repair-hero-pc-line-one{animation:renvisRepairPcTypeIn .95s cubic-bezier(.2,.7,.2,1) .45s both;}
+  .repair-hero .repair-hero-pc-line-two{animation:renvisRepairPcTypeIn .95s cubic-bezier(.2,.7,.2,1) 1.08s both;}
+  .repair-hero .repair-hero-pc-gold{
+    background:linear-gradient(165deg,#fff2b5 2%,#ffd87a 30%,#d99a21 67%,#f6d374 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 0 4px rgba(239,171,51,.35));
+  }
+  .repair-hero .repair-hero-pc-desc{
+    margin:clamp(8px,1.1vw,20px) 0 0;padding-top:clamp(7px,.85vw,15px);
+    border-top:1px solid rgba(232,178,72,.85);width:95%;
+    font-size:clamp(10px,1.26vw,22px);line-height:1.55;letter-spacing:.035em;
+    white-space:nowrap;opacity:0;transform:translateY(12px);
+    animation:renvisRepairPcTypeIn .8s ease-out 2.05s both;
+  }
+}
+@media (max-width:760px){.repair-hero .repair-hero-pc-live-type{display:none!important;}}
+@keyframes renvisRepairPcTypeIn{to{opacity:1;transform:translateY(0);}}
+@media (prefers-reduced-motion:reduce){
+  .repair-hero .repair-hero-pc-line,.repair-hero .repair-hero-pc-desc{animation:none!important;opacity:1!important;transform:none!important;}
+}
+</style>
+
+<style id="renvis-repair-pc-exact-image-20261019">
+/* PC only: use the exact user-selected artwork, including its baked-in lettering. */
+@media (min-width:761px){
+  .repair-hero{aspect-ratio:1715 / 917!important;}
+  .repair-hero .repair-hero-pc-live-type,
+  .repair-hero .repair-hero-animated-type,
+  .repair-hero .repair-mobile-hero-text{display:none!important;}
+  .repair-hero .repair-hero-visual img.repair-hero-photo{object-fit:contain!important;}
+}
+</style>
+
+<style id="renvis-repair-mobile-real-text-only-20261019">
+/* Mobile: live typography only, no background-contaminated PNG letter layers. */
+.repair-hero .repair-hero-mobile-live-type{display:none!important}
+@media(max-width:760px){
+  .repair-hero .repair-hero-mobile-live-type{
+    position:absolute!important;z-index:12!important;
+    display:flex!important;flex-direction:column!important;align-items:center!important;
+    justify-content:center!important;text-align:center!important;
+    top:27%!important;left:4%!important;width:92%!important;height:26%!important;
+    color:#fff!important;pointer-events:none!important;
+    font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif!important;
+    -webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.65));
+  }
+  .repair-hero .repair-hero-mobile-live-line{
+    display:block!important;white-space:nowrap!important;
+    font-size:clamp(25px,8.8vw,52px)!important;
+    font-weight:600!important;letter-spacing:-.06em!important;line-height:1.24!important;
+    opacity:0;transform:translateY(12px);
+  }
+  .repair-hero .repair-hero-mobile-live-one{
+    animation:renvisRepairMobileTextOnly .85s cubic-bezier(.2,.7,.2,1) .5s both!important;
+  }
+  .repair-hero .repair-hero-mobile-live-two{
+    animation:renvisRepairMobileTextOnly .85s cubic-bezier(.2,.7,.2,1) 1.12s both!important;
+  }
+  .repair-hero .repair-hero-mobile-live-gold{
+    color:#e8b44c!important;
+    background:linear-gradient(165deg,#fff1b2 5%,#f8d275 35%,#cf9220 75%,#e9bd5a 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .repair-hero .repair-hero-mobile-live-desc{
+    width:100%;margin:clamp(9px,2.5vw,18px) 0 0!important;
+    padding-top:clamp(8px,2vw,14px)!important;
+    border-top:1px solid rgba(226,174,68,.88)!important;
+    color:#f7f7f5!important;font-size:clamp(11px,3.1vw,17px)!important;
+    line-height:1.65!important;letter-spacing:0!important;
+    opacity:0;transform:translateY(10px);
+    animation:renvisRepairMobileTextOnly .8s ease-out 2s both!important;
+  }
+  .repair-hero .repair-hero-gold-flare{display:none!important;animation:none!important}
+}
+@keyframes renvisRepairMobileTextOnly{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(max-width:760px) and (prefers-reduced-motion:reduce){
+  .repair-hero .repair-hero-mobile-live-line,
+  .repair-hero .repair-hero-mobile-live-desc{animation:none!important;opacity:1!important;transform:none!important}
+}
+</style>
+
+<style id="renvis-repair-pc-animation-fix-20261021">
+/* PC only: animate the existing approved poster without duplicating its embedded lettering. */
+@media (min-width:761px){
+  .repair-hero .repair-hero-visual img.repair-hero-photo{
+    animation:renvisRepairPcPosterEntrance 2.1s cubic-bezier(.16,.65,.3,1) both!important;
+  }
+  .repair-hero .repair-hero-visual::before{
+    content:"";display:block!important;position:absolute;inset:0;z-index:3;
+    pointer-events:none;
+    background:linear-gradient(100deg,transparent 27%,rgba(255,227,156,.10) 49%,transparent 70%);
+    opacity:0;animation:renvisRepairPcPosterLight 1.8s ease-in-out .55s both;
+  }
+}
+@keyframes renvisRepairPcPosterEntrance{
+  0%{opacity:0;clip-path:inset(0 0 8% 0)}
+  100%{opacity:1;clip-path:inset(0 0 0 0)}
+}
+@keyframes renvisRepairPcPosterLight{
+  0%,100%{opacity:0}
+  45%{opacity:1}
+}
+@media (min-width:761px) and (prefers-reduced-motion:reduce){
+  .repair-hero .repair-hero-visual img.repair-hero-photo{animation:none!important;opacity:1!important;clip-path:none!important}
+  .repair-hero .repair-hero-visual::before{animation:none!important;opacity:0!important}
+}
+</style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+    <div class="nav">
+
+      <a href="index.html">
+
+        <img
+          class="logo"
+          src="renvis-logo.png"
+          alt="RENVIS"
+        >
+
+      </a>
+
+
+      <nav class="nav-links">
+
+        <a href="index.html">
+
+          <span class="nav-en">
+            HOME
+          </span>
+
+          <span class="nav-ja">
+            ホーム
+          </span>
+
+        </a>
+
+
+        <a href="rental.html">
+
+          <span class="nav-en">
+            RENTAL
+          </span>
+
+          <span class="nav-ja">
+            レンタル
+          </span>
+
+        </a>
+
+
+        <a
+          class="active"
+          href="repair.html"
+        >
+
+          <span class="nav-en">
+            REPAIR
+          </span>
+
+          <span class="nav-ja">
+            修理・再生
+          </span>
+
+        </a>
+
+
+        <a href="used-sales.html">
+
+          <span class="nav-en">
+            USED SALES
+          </span>
+
+          <span class="nav-ja">
+            中古販売
+          </span>
+
+        </a>
+
+
+        <a href="management.html">
+
+          <span class="nav-en">
+            MANAGEMENT
+          </span>
+
+          <span class="nav-ja">
+            管理・部品製作
+          </span>
+
+        </a>
+
+
+        <a href="index.html#company">
+
+          <span class="nav-en">
+            COMPANY
+          </span>
+
+          <span class="nav-ja">
+            会社案内
+          </span>
+
+        </a>
+
+      </nav>
+
+
+      <a
+        class="home-btn"
+        href="index.html"
+      >
+
+        <span class="nav-en">
+          TOPへ
+        </span>
+
+        <span class="nav-ja">
+          トップへ
+        </span>
+
+      </a>
+
+
+      <button
+        class="mobile-menu-toggle"
+        id="menuOpen"
+        type="button"
+        aria-controls="mobileDrawer"
+        aria-expanded="false"
+        aria-label="メニューを開く"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- MOBILE OVERLAY -->
+
+  <div
+    class="mobile-menu-overlay"
+    id="menuOverlay"
+  ></div>
+
+
+  <!-- MOBILE DRAWER -->
+
+  <aside
+    class="mobile-drawer"
+    id="mobileDrawer"
+    aria-hidden="true"
+  >
+
+    <div class="mobile-drawer-head">
+
+      <img
+        alt="RENVIS"
+        class="mobile-drawer-logo"
+        src="renvis-logo.png"
+      >
+
+      <button
+        class="mobile-close"
+        id="menuClose"
+        type="button"
+        aria-label="メニューを閉じる"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <nav
+      class="mobile-menu-links"
+      aria-label="スマホメニュー"
+    >
+
+      <a href="index.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">HOME</span><span class="renvis-mobile-menu-ja">ホーム</span></span></a>
+
+      <a href="rental.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">RENTAL</span><span class="renvis-mobile-menu-ja">レンタル</span></span></a>
+
+      <a href="repair.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">REPAIR</span><span class="renvis-mobile-menu-ja">修理・再生</span></span></a>
+
+      <a href="used-sales.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">USED SALES</span><span class="renvis-mobile-menu-ja">中古販売</span></span></a>
+
+      <a href="management.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">MANAGEMENT</span><span class="renvis-mobile-menu-ja">管理・部品製作</span></span></a>
+
+      <a href="index.html#company"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">COMPANY</span><span class="renvis-mobile-menu-ja">会社案内</span></span></a>
+
+      <a href="contact.html"><span class="renvis-mobile-menu-label"><span class="renvis-mobile-menu-en">CONTACT</span><span class="renvis-mobile-menu-ja">お問い合わせ</span></span></a>
+
+    </nav>
+
+
+    <div class="mobile-inquiry-card">
+<div class="mobile-inquiry-actions">
+  <a href="tel:0946428311">☎ 電話する</a>
+  <a class="mobile-inquiry-line" href="https://lin.ee/pUDgnDR" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+</div>
+</div>
+
+  </aside>
+
+
+  <main>
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero repair-hero" aria-label="諦めるには、まだ早い。溶接補修から油圧機器の再生まで、幅広い修理に対応。">
+      <div class="repair-hero-visual">
+        <picture class="repair-hero-background">
+          <source media="(max-width:760px)" srcset="repair-hero-mobile-clean.png">
+          <img class="repair-hero-photo" src="repair-hero-pc-clean.png" alt="回転ポジショナーでの溶接補修作業" fetchpriority="high">
+        </picture>
+        <div class="repair-hero-mobile-live-type" aria-hidden="true">
+          <div class="repair-hero-mobile-live-line repair-hero-mobile-live-one">諦めるには、</div>
+          <div class="repair-hero-mobile-live-line repair-hero-mobile-live-two">まだ<span class="repair-hero-mobile-live-gold">早</span>い。</div>
+          <p class="repair-hero-mobile-live-desc">溶接補修から油圧機器の再生まで、<br>幅広い修理に対応。</p>
+        </div>
+        <div class="repair-hero-pc-live-type" aria-hidden="true">
+          <div class="repair-hero-pc-line repair-hero-pc-line-one">諦めるには、</div>
+          <div class="repair-hero-pc-line repair-hero-pc-line-two">まだ<span class="repair-hero-pc-gold">早</span>い。</div>
+          <p class="repair-hero-pc-desc">溶接補修から油圧機器の再生まで、幅広い修理に対応。</p>
+        </div>
+        <span class="repair-hero-gold-flare" aria-hidden="true"></span>
+      </div>
+      <h1 class="repair-hero-sr-only">諦めるには、まだ早い。</h1>
+    </section>
+    <!-- =========================
+         REPAIR MENU BOARD
+    ========================== -->
+
+    <section class="section repair-solutions-section">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="eyebrow">
+              OUR REPAIR TECHNOLOGY
+            </div>
+
+            <h2>
+              REPAIR SOLUTIONS
+            </h2>
+
+          </div>
+
+          <p>
+            アタッチメントの特殊修理・再生技術をご紹介します。
+          </p>
+
+        </div>
+
+        <div class="repair-menu-board">
+
+          <article class="repair-menu-card">
+            <div class="repair-menu-card-head">
+              <div>
+                <div class="repair-menu-no">01</div>
+                <h3>肉盛・成形溶接</h3>
+              </div>
+            </div>
+            <div class="repair-menu-body">
+              <div class="repair-collage-media">
+                <img src="repair-welding-before-after.png" alt="肉盛・成形溶接のビフォーアフター">
+              </div>
+            </div>
+          </article>
+
+          <article class="repair-menu-card">
+            <div class="repair-menu-card-head"><div><div class="repair-menu-no">02</div><h3>エッジ切替、特殊硬化溶接</h3></div></div>
+            <div class="repair-menu-body">
+              <div class="repair-collage-media">
+                <img src="repair-edge-before-after.png" alt="エッジ切替、特殊硬化溶接のビフォーアフター">
+              </div>
+            </div>
+          </article>
+
+          <article class="repair-menu-card">
+            <div class="repair-menu-card-head"><div><div class="repair-menu-no">03</div><h3>フレーム摩耗修正</h3></div></div>
+            <div class="repair-menu-body">
+              <div class="repair-collage-media">
+                <img src="repair-frame-wear-before-after.png" alt="フレーム摩耗修正のビフォーアフター">
+              </div>
+            </div>
+          </article>
+
+          <article class="repair-menu-card">
+            <div class="repair-menu-card-head"><div><div class="repair-menu-no">04</div><h3>ボス面肉盛・フライス加工</h3></div></div>
+            <div class="repair-menu-body">
+              <div class="repair-collage-media"><img src="repair-boss-face-before-after.png" alt="ボス面肉盛・フライス加工の修理前後"></div>
+            </div>
+          </article>
+
+          <article class="repair-menu-card">
+            <div class="repair-menu-card-head"><div><div class="repair-menu-no">05</div><h3>大型ベアリング再生</h3></div></div>
+            <div class="repair-menu-body">
+              <div class="repair-collage-media"><img src="repair-bearing-before-after.png" alt="大型ベアリング再生 BEFORE AFTER" loading="lazy"></div>
+            </div>
+          </article>
+
+          <article class="repair-menu-card">
+            <div class="repair-menu-card-head"><div><div class="repair-menu-no">06</div><h3>シリンダーチューブ再生</h3></div></div>
+            <div class="repair-menu-body">
+              <div class="repair-collage-media"><img src="repair-cylinder-before-after.png" alt="シリンダーチューブ再生 BEFORE AFTER" loading="lazy"></div>
+            </div>
+          </article>
+
+          <article class="repair-menu-card">
+            <div class="repair-menu-card-head"><div><div class="repair-menu-no">07</div><h3>アーム曲がり修正</h3></div></div>
+            <div class="repair-menu-body">
+              <div class="repair-collage-media"><img src="arm-bend-before-after.png" alt="アーム曲がり修正 BEFORE AFTER"></div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+<!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta-wrap">
+
+      <div class="wrap">
+
+        <div class="cta">
+
+
+          <div>
+
+            <div class="eyebrow">
+              CONTACT
+            </div>
+
+            <h2>
+              修理のご相談・
+              お見積りはお気軽に。
+            </h2>
+
+            <p>
+              状態が分かる写真だけでも
+              ご相談いただけます。
+            </p>
+
+          </div>
+
+
+          <div class="repair-contact-links">
+            <div class="cta-actions">
+              <a class="line" href="https://line.me/R/ti/p/@347uiyxe" target="_blank" rel="noopener noreferrer">LINEで修理相談</a>
+              <a class="phone" href="tel:0946428311">電話で問い合わせ</a>
+              <a class="contact" href="contact.html">お問い合わせフォーム</a>
+            </div>
+            <div class="repair-social-links" aria-label="公式SNS">
+              <a href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+              <a href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div style="margin-bottom:8px">
+
+      <a href="contact.html">
+        お問い合わせ
+      </a>
+
+      &nbsp;｜&nbsp;
+
+      <a href="legal.html">
+        特定商取引法
+      </a>
+
+      &nbsp;｜&nbsp;
+
+      <a href="privacy.html">
+        プライバシーポリシー
+      </a>
+
+    </div>
+
+    © 2026 RENVIS Co., Ltd.
+    All Rights Reserved.
+
+  </footer>
+
+
+  <!-- =========================
+       SUPABASE
+  ========================== -->
+
+  <script>
+    (() => {
+
+      const cfg =
+        window.RENVIS_SUPABASE;
+
+      if(
+        !cfg?.url ||
+        !cfg?.key
+      ){
+        return;
+      }
+
+
+      const api =
+        cfg.url
+          .replace(/\/$/, '') +
+        '/rest/v1';
+
+
+      const headers = {
+        apikey:cfg.key,
+        Accept:'application/json'
+      };
+
+
+      const esc = (v='') =>
+        String(v).replace(
+          /[&<>"']/g,
+          c => ({
+            '&':'&amp;',
+            '<':'&lt;',
+            '>':'&gt;',
+            '"':'&quot;',
+            "'":'&#39;'
+          }[c])
+        );
+
+
+      const titleOf = repair =>
+        repair.title ||
+        [
+          repair.maker,
+          repair.model
+        ]
+          .filter(Boolean)
+          .join(' ')
+        ||
+        `修理実績 ${repair.id}`;
+
+
+      const descOf = repair =>
+        repair.description ||
+        [
+          repair.maker,
+          repair.model,
+          repair.category
+        ]
+          .filter(Boolean)
+          .join(' / ')
+        ||
+        '修理実績';
+
+
+      const tagsOf = repair =>
+        [
+          repair.maker,
+          repair.model,
+          repair.category
+        ]
+          .filter(Boolean);
+
+
+      async function get(path){
+
+        const response =
+          await fetch(
+            api + path,
+            {
+              headers
+            }
+          );
+
+
+        if(
+          !response.ok
+        ){
+
+          throw new Error(
+            `Supabase ${response.status}`
+          );
+
+        }
+
+
+        return response.json();
+
+      }
+
+
+      function grouped(images){
+
+        const map =
+          new Map();
+
+
+        for(
+          const image of images
+        ){
+
+          const repairId =
+            Number(
+              image.repair_id
+            );
+
+
+          if(
+            !map.has(repairId)
+          ){
+
+            map.set(
+              repairId,
+              []
+            );
+
+          }
+
+
+          map
+            .get(repairId)
+            .push(image);
+
+        }
+
+
+        return map;
+
+      }
+
+
+      function pickImages(
+        images,
+        type
+      ){
+
+        return images
+          .filter(
+            image =>
+              String(
+                image.image_type || ''
+              )
+                .toLowerCase()
+              ===
+              type
+              &&
+              image.image_url
+          )
+          .sort(
+            (a,b) =>
+              (
+                a.sort_order ??
+                999999
+              )
+              -
+              (
+                b.sort_order ??
+                999999
+              )
+              ||
+              a.id -
+              b.id
+          );
+
+      }
+
+
+      function coverFor(
+        repair,
+        images
+      ){
+
+        const after =
+          pickImages(
+            images,
+            'after'
+          )[0]?.image_url;
+
+
+        const before =
+          pickImages(
+            images,
+            'before'
+          )[0]?.image_url;
+
+
+        return (
+          after
+          ||
+          before
+          ||
+          repair.thumbnail_url
+          ||
+          ''
+        );
+
+      }
+
+
+      function imageBox(
+        src,
+        alt
+      ){
+
+        if(
+          !src
+        ){
+
+          return `
+            <div class="cms-img-placeholder">
+              NO IMAGE
+            </div>
+          `;
+
+        }
+
+
+        return `
+          <img
+            src="${esc(src)}"
+            alt="${esc(alt)}"
+            loading="lazy"
+          >
+        `;
+
+      }
+
+
+      function featuredSocialLinks(
+        repair
+      ){
+
+        const links = [];
+
+
+        if(
+          repair.instagram_url
+        ){
+
+          links.push(`
+            <a
+              class="sns-link"
+              href="${esc(repair.instagram_url)}"
+              target="_blank"
+              rel="noopener"
+            >
+              Instagram ↗
+            </a>
+          `);
+
+        }
+
+
+        if(
+          repair.tiktok_url
+        ){
+
+          links.push(`
+            <a
+              class="sns-link"
+              href="${esc(repair.tiktok_url)}"
+              target="_blank"
+              rel="noopener"
+            >
+              TikTok ↗
+            </a>
+          `);
+
+        }
+
+
+        if(
+          repair.youtube_url
+        ){
+
+          links.push(`
+            <a
+              class="sns-link"
+              href="${esc(repair.youtube_url)}"
+              target="_blank"
+              rel="noopener"
+            >
+              YouTube ↗
+            </a>
+          `);
+
+        }
+
+
+        return links.join('');
+
+      }
+
+
+      function cardSocialLinks(
+        repair
+      ){
+
+        const links = [];
+
+
+        if(
+          repair.instagram_url
+        ){
+
+          links.push(`
+            <a
+              class="card-sns"
+              href="${esc(repair.instagram_url)}"
+              target="_blank"
+              rel="noopener"
+            >
+              Instagram ↗
+            </a>
+          `);
+
+        }
+
+
+        if(
+          repair.tiktok_url
+        ){
+
+          links.push(`
+            <a
+              class="card-sns"
+              href="${esc(repair.tiktok_url)}"
+              target="_blank"
+              rel="noopener"
+            >
+              TikTok ↗
+            </a>
+          `);
+
+        }
+
+
+        if(
+          repair.youtube_url
+        ){
+
+          links.push(`
+            <a
+              class="card-sns"
+              href="${esc(repair.youtube_url)}"
+              target="_blank"
+              rel="noopener"
+            >
+              YouTube ↗
+            </a>
+          `);
+
+        }
+
+
+        return links.join('');
+
+      }
+
+
+      async function loadRepairs(){
+
+        const [
+          repairs,
+          images
+        ] =
+        await Promise.all([
+
+          get(
+            '/repairs?select=*&order=sort_order.asc.nullslast,id.desc'
+          ),
+
+          get(
+            '/repair_images?select=*&order=repair_id.asc,sort_order.asc.nullslast,id.asc'
+          )
+
+        ]);
+
+
+        if(
+          !repairs.length
+        ){
+          return;
+        }
+
+
+        const byRepair =
+          grouped(images);
+
+
+        /* =====================
+           FEATURED
+        ====================== */
+
+        const featured =
+          repairs[0];
+
+
+        const featuredImages =
+          byRepair.get(
+            Number(
+              featured.id
+            )
+          )
+          ||
+          [];
+
+
+        const before =
+          pickImages(
+            featuredImages,
+            'before'
+          )[0]?.image_url
+          ||
+          coverFor(
+            featured,
+            featuredImages
+          );
+
+
+        const after =
+          pickImages(
+            featuredImages,
+            'after'
+          )[0]?.image_url
+          ||
+          coverFor(
+            featured,
+            featuredImages
+          );
+
+
+        const featuredTags =
+          tagsOf(featured);
+
+
+        const featuredEl =
+          document.getElementById(
+            'featuredRepair'
+          );
+
+
+        if(
+          featuredEl
+        ){
+
+          featuredEl.innerHTML = `
+
+            <div class="case-info">
+
+              <div class="eyebrow">
+                CASE ${String(featured.id).padStart(2,'0')}
+              </div>
+
+              <h3>
+                ${esc(titleOf(featured))}
+              </h3>
+
+              <p>
+                ${esc(descOf(featured))}
+              </p>
+
+
+              <div class="tags">
+
+                ${
+                  featuredTags
+                    .map(
+                      tag =>
+                        `
+                          <span class="tag">
+                            ${esc(tag)}
+                          </span>
+                        `
+                    )
+                    .join('')
+                }
+
+              </div>
+
+
+              <div class="case-actions">
+
+                <a
+                  class="detail-btn"
+                  href="repair-detail.html?id=${encodeURIComponent(featured.id)}"
+                >
+                  詳細を見る →
+                </a>
+
+                ${
+                  featuredSocialLinks(
+                    featured
+                  )
+                }
+
+              </div>
+
+            </div>
+
+
+            <div class="compare">
+
+
+              <div class="compare-col">
+
+                <h4>
+                  BEFORE
+                </h4>
+
+                <div class="compare-img">
+
+                  ${
+                    imageBox(
+                      before,
+                      '修理前'
+                    )
+                  }
+
+                </div>
+
+              </div>
+
+
+              <div class="arrow">
+                →
+              </div>
+
+
+              <div class="compare-col after">
+
+                <h4>
+                  AFTER
+                </h4>
+
+                <div class="compare-img">
+
+                  ${
+                    imageBox(
+                      after,
+                      '修理後'
+                    )
+                  }
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+          `;
+
+        }
+
+
+        /* =====================
+           REPAIR CARDS
+        ====================== */
+
+        const grid =
+          document.getElementById(
+            'repairCasesGrid'
+          );
+
+
+        if(
+          grid
+        ){
+
+          grid.innerHTML =
+            repairs
+              .map(
+                repair => {
+
+
+                  const repairImages =
+                    byRepair.get(
+                      Number(
+                        repair.id
+                      )
+                    )
+                    ||
+                    [];
+
+
+                  const cover =
+                    coverFor(
+                      repair,
+                      repairImages
+                    );
+
+
+                  return `
+
+                    <article class="case-card">
+
+
+                      <div class="case-card-media">
+
+                        ${
+                          cover
+                          ?
+                          `
+                            <img
+                              src="${esc(cover)}"
+                              alt="${esc(titleOf(repair))}"
+                              loading="lazy"
+                            >
+                          `
+                          :
+                          `
+                            <div class="coming">
+                              NO IMAGE
+                            </div>
+                          `
+                        }
+
+                      </div>
+
+
+                      <div class="case-card-body">
+
+
+                        <div class="eyebrow">
+
+                          CASE ${String(repair.id).padStart(2,'0')}
+
+                        </div>
+
+
+                        <h3>
+
+                          ${esc(titleOf(repair))}
+
+                        </h3>
+
+
+                        <p>
+
+                          ${esc(descOf(repair))}
+
+                        </p>
+
+
+                        <div class="card-actions">
+
+
+                          <a
+                            class="card-btn"
+                            href="repair-detail.html?id=${encodeURIComponent(repair.id)}"
+                          >
+                            詳細を見る →
+                          </a>
+
+
+                          ${
+                            cardSocialLinks(
+                              repair
+                            )
+                          }
+
+
+                        </div>
+
+
+                      </div>
+
+
+                    </article>
+
+                  `;
+
+                }
+              )
+              .join('');
+
+        }
+
+      }
+
+
+      loadRepairs()
+        .catch(
+          error => {
+
+            console.error(
+              'RENVIS CMS load error:',
+              error
+            );
+
+          }
+        );
+
+    })();
+  </script>
+
+
+  <!-- =========================
+       MOBILE MENU
+  ========================== -->
+
+  <script>
+    (() => {
+
+      const openBtn =
+        document.getElementById(
+          'menuOpen'
+        );
+
+      const closeBtn =
+        document.getElementById(
+          'menuClose'
+        );
+
+      const drawer =
+        document.getElementById(
+          'mobileDrawer'
+        );
+
+      const overlay =
+        document.getElementById(
+          'menuOverlay'
+        );
+
+
+      if(
+        !openBtn
+        ||
+        !closeBtn
+        ||
+        !drawer
+        ||
+        !overlay
+      ){
+        return;
+      }
+
+
+      const openMenu = () => {
+
+        drawer
+          .classList
+          .add('open');
+
+        overlay
+          .classList
+          .add('open');
+
+        drawer
+          .setAttribute(
+            'aria-hidden',
+            'false'
+          );
+
+        openBtn
+          .setAttribute(
+            'aria-expanded',
+            'true'
+          );
+
+        document
+          .body
+          .classList
+          .add(
+            'mobile-menu-open'
+          );
+
+      };
+
+
+      const closeMenu = () => {
+
+        drawer
+          .classList
+          .remove('open');
+
+        overlay
+          .classList
+          .remove('open');
+
+        drawer
+          .setAttribute(
+            'aria-hidden',
+            'true'
+          );
+
+        openBtn
+          .setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+        document
+          .body
+          .classList
+          .remove(
+            'mobile-menu-open'
+          );
+
+      };
+
+
+      openBtn
+        .addEventListener(
+          'click',
+          openMenu
+        );
+
+
+      closeBtn
+        .addEventListener(
+          'click',
+          closeMenu
+        );
+
+
+      overlay
+        .addEventListener(
+          'click',
+          closeMenu
+        );
+
+
+      drawer
+        .querySelectorAll('a')
+        .forEach(
+          link => {
+
+            link
+              .addEventListener(
+                'click',
+                closeMenu
+              );
+
+          }
+        );
+      document
+        .addEventListener(
+          'keydown',
+          event => {
+
+            if(
+              event.key ===
+              'Escape'
+            ){
+
+              closeMenu();
+
+            }
+
+          }
+        );
+
+    })();
+  </script>
+</body>
+</html>
