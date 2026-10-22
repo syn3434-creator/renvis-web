@@ -2525,6 +2525,30 @@ main#top > .stats-strip .stat-item small{font-size:clamp(.72rem,.85vw,.88rem)!im
  main#top > .stats-strip .stat-item small{line-height:1.25!important;}
 }
 </style>
+
+<style id="renvis-banner-emphasis-20261022">
+/* New arrival banner only: distinct premium frames, without touching the hero or stats. */
+main#top > .renvis-feature-banner.arrival-slider .arrival-slide .arrival-banner-inner{
+  position:relative!important;overflow:hidden!important;
+  border:2px solid var(--arrival-accent,#d5ad58)!important;
+  outline:1px solid rgba(255,255,255,.12)!important;outline-offset:5px!important;
+  box-shadow:0 0 0 7px rgba(255,255,255,.035),0 18px 42px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.12)!important;
+}
+main#top > .renvis-feature-banner .arrival-slide.used{--arrival-accent:#efc65a;}
+main#top > .renvis-feature-banner .arrival-slide.rental{--arrival-accent:#49b8ef;}
+main#top > .renvis-feature-banner .arrival-slide.repair{--arrival-accent:#f07c67;}
+main#top > .renvis-feature-banner .arrival-slide .arrival-banner-inner:after{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:6px;z-index:3;pointer-events:none;
+  background:var(--arrival-accent,#d5ad58);box-shadow:0 0 17px var(--arrival-accent,#d5ad58);
+}
+main#top > .renvis-feature-banner .arrival-slide.is-active .arrival-banner-inner{
+  box-shadow:0 0 0 7px rgba(255,255,255,.035),0 18px 42px rgba(0,0,0,.45),0 0 24px -13px var(--arrival-accent,#d5ad58),inset 0 0 0 1px rgba(255,255,255,.12)!important;
+}
+@media(max-width:760px){
+ main#top > .renvis-feature-banner.arrival-slider .arrival-slide .arrival-banner-inner{outline-offset:3px!important;}
+ main#top > .renvis-feature-banner .arrival-slide .arrival-banner-inner:after{width:4px;}
+}
+</style>
 </head>
 <body>
 <header id="header">
@@ -2794,7 +2818,7 @@ document.querySelectorAll('.service-cards a.card[href]').forEach(card=>{
   }, {passive:true});
 });
 </script>
-<script id="arrival-slider-js">(()=>{const s=[...document.querySelectorAll('.arrival-slide')],d=[...document.querySelectorAll('[data-dot]')],p=document.querySelector('.arrival-arrow.prev'),n=document.querySelector('.arrival-arrow.next'),box=document.querySelector('.arrival-slider');if(!s.length)return;let i=0,t;const show=x=>{i=(x+s.length)%s.length;s.forEach((e,j)=>e.classList.toggle('is-active',j===i));d.forEach((e,j)=>e.classList.toggle('is-active',j===i))};const start=()=>{clearInterval(t);const delay=6000;t=setInterval(()=>show(i+1),delay)};p.onclick=()=>{show(i-1);start()};n.onclick=()=>{show(i+1);start()};d.forEach((e,j)=>e.onclick=()=>{show(j);start()});box.onmouseenter=()=>clearInterval(t);box.onmouseleave=start;let x=null;box.addEventListener('touchstart',e=>x=e.touches[0].clientX,{passive:true});box.addEventListener('touchend',e=>{if(x!==null&&Math.abs(e.changedTouches[0].clientX-x)>45)show(i+(e.changedTouches[0].clientX<x?1:-1));x=null;start()},{passive:true});show(0);start()})();</script>
+<script id="arrival-slider-js">(()=>{const s=[...document.querySelectorAll('.arrival-slide')],d=[...document.querySelectorAll('[data-dot]')],p=document.querySelector('.arrival-arrow.prev'),n=document.querySelector('.arrival-arrow.next'),box=document.querySelector('.arrival-slider');if(!s.length)return;let i=0,t;const show=x=>{i=(x+s.length)%s.length;s.forEach((e,j)=>e.classList.toggle('is-active',j===i));d.forEach((e,j)=>e.classList.toggle('is-active',j===i))};const start=()=>{clearInterval(t);const delay=3400;t=setInterval(()=>show(i+1),delay)};p.onclick=()=>{show(i-1);start()};n.onclick=()=>{show(i+1);start()};d.forEach((e,j)=>e.onclick=()=>{show(j);start()});box.onmouseenter=()=>clearInterval(t);box.onmouseleave=start;let x=null;box.addEventListener('touchstart',e=>x=e.touches[0].clientX,{passive:true});box.addEventListener('touchend',e=>{if(x!==null&&Math.abs(e.changedTouches[0].clientX-x)>45)show(i+(e.changedTouches[0].clientX<x?1:-1));x=null;start()},{passive:true});show(0);start()})();</script>
 <script id="renvis-home-services-enhanced-js">
 (() => {
   const head = document.querySelector('.renvis-home-services-head');
