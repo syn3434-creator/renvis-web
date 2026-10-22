@@ -2486,7 +2486,29 @@ main#top > .renvis-feature-banner::before,
  .stat-item small{font-size:clamp(.48rem,2.25vw,.62rem);letter-spacing:0;}
  .logo{width:138px!important;max-width:138px!important;}
 }
-</style></head>
+</style>
+<style id="renvis-hero-stats-correction-20261022">
+/* Correct photo exposure without darkening it again with a heavy CSS overlay. */
+main#top > .hero .hero-bg{filter:none!important;}
+main#top > .hero::after{background:linear-gradient(90deg,rgba(3,5,9,.48) 0%,rgba(3,5,9,.19) 42%,rgba(3,5,9,.04) 100%),linear-gradient(0deg,rgba(5,7,10,.40),transparent 27%)!important;}
+/* Full-width, centered overlapping panel; do not let previous section rules pin it left. */
+main#top > .stats-strip{box-sizing:border-box!important;position:relative!important;z-index:5!important;display:block!important;width:calc(100% - 88px)!important;max-width:1500px!important;margin:-36px auto 0!important;padding:0!important;background:linear-gradient(115deg,#161b21,#0c1015)!important;border:1px solid rgba(190,160,100,.40)!important;box-shadow:0 15px 36px rgba(0,0,0,.32)!important;}
+main#top > .stats-strip > .stats-grid,main#top > .stats-strip > .wrap{box-sizing:border-box!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;gap:0!important;min-height:122px!important;}
+main#top > .stats-strip .stat-item{box-sizing:border-box!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;min-height:122px!important;padding:20px 12px!important;gap:9px!important;border:0!important;border-right:1px solid rgba(201,179,136,.22)!important;background:transparent!important;box-shadow:none!important;}
+main#top > .stats-strip .stat-item:last-child{border-right:0!important;}
+main#top > .stats-strip .stat-item strong{font-size:clamp(2rem,3.4vw,3.2rem)!important;line-height:1!important;letter-spacing:-.04em!important;color:#e8c77e!important;}
+main#top > .stats-strip .stat-item strong.area{font-size:clamp(2rem,3.2vw,3.05rem)!important;}
+main#top > .stats-strip .stat-item small{font-size:clamp(.72rem,.85vw,.88rem)!important;color:#c5c8ce!important;letter-spacing:.045em!important;}
+@media(max-width:760px){
+ main#top > .stats-strip{width:calc(100% - 24px)!important;margin:-20px auto 0!important;}
+ main#top > .stats-strip > .stats-grid,main#top > .stats-strip > .wrap{min-height:84px!important;}
+ main#top > .stats-strip .stat-item{min-height:84px!important;padding:12px 3px!important;gap:6px!important;}
+ main#top > .stats-strip .stat-item strong{font-size:clamp(1.15rem,5.3vw,1.7rem)!important;}
+ main#top > .stats-strip .stat-item strong.area{font-size:clamp(1.1rem,5vw,1.65rem)!important;}
+ main#top > .stats-strip .stat-item small{font-size:clamp(.48rem,2.05vw,.65rem)!important;letter-spacing:0!important;text-align:center!important;}
+}
+</style>
+</head>
 <body>
 <header id="header">
 <div class="nav">
