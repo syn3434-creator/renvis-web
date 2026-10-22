@@ -1040,6 +1040,12 @@ html,body{max-width:100%;overflow-x:hidden}
 /* RENTAL: approved original crusher artwork - do not redraw */
 .card.rental .service-icon .rental-approved-original{display:block;width:230px;height:185px;object-fit:contain;margin:auto;image-rendering:auto;}
 @media(max-width:760px){.card.rental .service-icon .rental-approved-original{width:185px;height:150px;}}
+
+/* 2026-10-22: Desktop hero photo and metrics 1cm lower; other areas untouched */
+@media (min-width:769px){
+ main#top > .hero{height:calc(clamp(530px, calc(100svh - 190px), 740px) + 38px)!important;min-height:568px!important;}
+ main#top > .hero .hero-bg{background-position:52% calc(50% + 38px)!important;}
+}
 </style>
 <style id="service-grid-final-layout">
 /* FINAL: 事業内容 PC=4列1段 / スマホ=2列2段 */
