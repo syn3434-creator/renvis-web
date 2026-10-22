@@ -1,5 +1,3 @@
-RENVIS レンタルページ復旧版
-
-1. rental.html と rental-images フォルダ内の画像39個をGitHub上の同じ階層にアップロードしてください。
-2. GitHubで rental.html を開き、サイトで写真を確認してください。
-3. renvis-logo.png、rental-new-kbl-045-fork.webp、rental-new-kbl-07-skeleton.webp の3ファイルは元から外部参照のため、GitHub内の既存ファイルを消さないでください。
+RENVIS トップページ
+index.html と hero.webp を同じフォルダに配置してください。
+hero.webp は元の溶接写真の明るさとコントラストのみ調整しています。人物・設備・構図は変更していません。
