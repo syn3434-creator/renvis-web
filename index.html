@@ -2742,6 +2742,14 @@ main#top > section.stats-strip .renvis-stat-copy strong span{
   .simple-footer-social {gap:12px}
 }
 </style>
+<style id="renvis-hero-lower-20261026">
+/* Desktop: extend hero below the content so the following rental banner no longer crowds it.
+   Keeping the existing bottom alignment moves the headline, lead and metrics together. */
+@media (min-width:761px){
+  main#top > .hero {height:calc(clamp(530px, calc(100svh - 190px), 740px) + 118px)!important;min-height:648px!important;}
+  main#top > .hero .hero-bg {background-position:52% calc(34% + 112px)!important;}
+}
+</style>
 </head>
 <body>
 <header id="header">
