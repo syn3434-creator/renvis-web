@@ -2750,6 +2750,46 @@ main#top > section.stats-strip .renvis-stat-copy strong span{
   main#top > .hero .hero-bg {background-position:52% calc(34% + 112px)!important;}
 }
 </style>
+
+<style id="renvis-mobile-stat-unit-nowrap-20261026">
+/* Smartphone-only: prevent 件以上 / 台以上 from dropping below the number. */
+@media(max-width:760px){
+ main#top > .hero > .stats-strip .renvis-stat-copy{width:100%!important;min-width:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:5px!important}
+ main#top > .hero > .stats-strip .renvis-stat-copy small{display:block!important;font-size:clamp(8px,2.1vw,10px)!important;line-height:1.25!important;white-space:nowrap!important;letter-spacing:-.04em!important}
+ main#top > .hero > .stats-strip .renvis-stat-copy strong{display:flex!important;flex-direction:row!important;align-items:baseline!important;justify-content:center!important;flex-wrap:nowrap!important;white-space:nowrap!important;width:100%!important;min-width:0!important;font-size:clamp(19px,5.3vw,27px)!important;letter-spacing:-.045em!important;line-height:1.15!important}
+ main#top > .hero > .stats-strip .renvis-stat-copy strong span{display:inline!important;position:static!important;white-space:nowrap!important;flex:0 0 auto!important;font-size:clamp(8px,2.1vw,10px)!important;line-height:1!important;letter-spacing:-.04em!important;margin-left:2px!important}
+ main#top > .hero > .stats-strip .renvis-stat-copy strong.area{font-size:clamp(20px,5.6vw,28px)!important}
+ main#top > .hero > .stats-strip .stat-item{min-width:0!important;overflow:visible!important}
+}
+</style>
+<style id="renvis-desktop-hero-balance-20261027">
+/* Desktop-only refinement; mobile, hero photo, navigation and other sections unchanged. */
+@media (min-width:761px) {
+  main#top > .hero .hero-content {padding-bottom:180px!important;}
+  main#top > .hero .hero-copy-box {max-width:740px!important;}
+  main#top > .hero .hero-copy-box h1 {
+    font-size:clamp(4.15rem,6.45vw,7rem)!important;
+    line-height:.87!important;
+    margin-bottom:32px!important;
+  }
+  main#top > .hero .hero-lead {line-height:1.65!important;}
+  main#top > .hero > .stats-strip {
+    bottom:68px!important;
+    width:min(910px,calc(100% - 135px))!important;
+    padding:12px 0!important;
+  }
+  main#top > .hero > .stats-strip > .stats-grid {grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+  main#top > .hero > .stats-strip .stat-item {padding:5px 23px!important;gap:13px!important;}
+  main#top > .hero > .stats-strip .stat-item:first-child {padding-left:8px!important;}
+  main#top > .hero .renvis-scroll-cue {
+    left:50%!important;right:auto!important;transform:translateX(-50%)!important;
+    bottom:0px!important;gap:3px!important;font-size:.61rem!important;
+    letter-spacing:.2em!important;
+  }
+  main#top > .hero .renvis-scroll-cue svg {width:14px!important;height:14px!important;}
+  main#top > .hero .renvis-scroll-cue::after {height:7px!important;}
+}
+</style>
 </head>
 <body>
 <header id="header">
@@ -2815,7 +2855,7 @@ main#top > section.stats-strip .renvis-stat-copy strong span{
 <div class="stat-item"><svg aria-hidden="true" class="renvis-stat-icon" viewbox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle><path d="M4 18l-2 3h20l-2-3"></path></svg><div class="renvis-stat-copy"><small>対応エリア</small><strong class="area">全国</strong></div></div>
 </div>
 </section>
-<a class="renvis-scroll-cue" href="#rental" aria-label="下へスクロール">SCROLL<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></a>
+
 </section>
 
 <section aria-label="新着情報" class="arrival-banner arrival-slider renvis-feature-banner">
