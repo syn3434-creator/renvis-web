@@ -2802,6 +2802,70 @@ main#top > section.stats-strip .renvis-stat-copy strong span{
   }
 }
 </style>
+
+<style id="renvis-hero-position-final-20261027">
+/* PC-only layout positioning. Original photo and all other sections remain unchanged. */
+@media (min-width:761px) {
+  main#top > .hero .hero-bg {
+    background-position:calc(52% + 65px) calc(34% + 112px)!important;
+  }
+  main#top > .hero .hero-content {
+    padding-bottom:140px!important;
+  }
+  main#top > .hero > .stats-strip {
+    bottom:38px!important;
+  }
+}
+</style>
+<style id="renvis-hero-copy-cta-update-20261027">
+/* Only the hero is changed. Keep original image and all downstream sections. */
+.hero .hero-business-line{color:#fff;font-size:clamp(14px,1.15vw,18px);font-weight:800;letter-spacing:.045em;line-height:1.35;margin:0 0 19px;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.hero .hero-primary-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero .hero-primary-actions a{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:12px;width:220px;min-height:45px;padding:10px 15px;border-radius:3px;font-weight:750;font-size:14px;text-decoration:none;transition:filter .2s ease,transform .2s ease}
+.hero .hero-primary-actions a:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.hero .hero-primary-btn{background:#d9b65f;color:#101113;border:1px solid #d9b65f}
+.hero .hero-secondary-btn{background:rgba(0,0,0,.18);color:#fff;border:1px solid rgba(255,255,255,.85)}
+.hero .hero-primary-actions a span{font-size:18px;line-height:1}
+@media(min-width:761px){
+  main#top > .hero .hero-copy-box h1{font-size:clamp(4.5rem,7vw,7.6rem)!important}
+  main#top > .hero .hero-content{padding-bottom:152px!important}
+  main#top > .hero .hero-copy-box{max-width:900px!important}
+  main#top > .hero .hero-bg{background-position:calc(52% + 65px) calc(34% + 112px)!important}
+  main#top > .hero .hero-lead{margin-bottom:12px!important}
+}
+@media(max-width:760px){
+ .hero .hero-business-line{font-size:12px;letter-spacing:.01em;margin:10px 0 13px}
+ .hero .hero-primary-actions{gap:8px;flex-wrap:nowrap}
+ .hero .hero-primary-actions a{width:50%;min-height:43px;font-size:11px;padding:8px 5px;gap:5px;white-space:nowrap}
+}
+</style>
+
+<style id="renvis-cta-contrast-refinement-20261027">
+/* CTA buttons only. */
+.hero .hero-primary-btn{background:#efc96b!important;border-color:#efc96b!important;color:#0b192c!important}
+.hero .hero-secondary-btn{background:rgba(0,0,0,.12)!important;border:2px solid #fff!important;color:#fff!important}
+.hero .hero-primary-actions a{min-height:43px!important}
+.hero .hero-primary-actions a:hover{filter:brightness(1.07)}
+</style>
+
+<style id="renvis-hero-title-correction-20261027">
+/* Desktop headline correction: undo the oversized CTA-era override. */
+@media (min-width:761px){
+ main#top > .hero .hero-copy-box{max-width:760px!important;}
+ main#top > .hero .hero-copy-box h1{font-size:clamp(3.6rem,5.5vw,5.8rem)!important;line-height:.91!important;letter-spacing:-.045em!important;margin-bottom:27px!important;}
+ main#top > .hero .hero-content{padding-bottom:168px!important;}
+}
+</style>
+
+<style id="renvis-hero-copy-down-business-line-removed-20261027">
+/* Move only the hero headline, lead and CTA group down. Do not change photo or stats. */
+@media (min-width:761px){
+  main#top > .hero .hero-copy-box{transform:translateY(32px)!important;}
+}
+@media (max-width:760px){
+  main#top > .hero .hero-copy-box{transform:translateY(12px)!important;}
+}
+</style>
 </head>
 <body>
 <header id="header">
@@ -2859,6 +2923,10 @@ main#top > section.stats-strip .renvis-stat-copy strong span{
 <div class="hero-content"><div class="wrap"><div class="hero-copy-box">
 <h1><span>NO ATTACHMENT</span><span>NO LIFE</span></h1>
 <p class="hero-lead">建設・解体・スクラップ・産廃を支える<br/>アタッチメントのプロフェッショナル</p>
+<div class="hero-primary-actions" aria-label="サービスへのリンク">
+<a class="hero-primary-btn" href="rental.html">レンタルを見る <span aria-hidden="true">→</span></a>
+<a class="hero-secondary-btn" href="repair.html">修理を相談する <span aria-hidden="true">→</span></a>
+</div>
 </div></div></div>
 <section aria-label="実績" class="stats-strip">
 <div class="wrap stats-grid">
