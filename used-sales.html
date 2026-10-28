@@ -1553,19 +1553,23 @@ footer{
 <style id="renvis-used-sales-hero-layout-20261028">
 /* PC版ファーストビューのみ：説明文と電話ボタンの配置調整 */
 @media (min-width:761px){
-  .used-hero{height:194px!important;min-height:194px!important;max-height:194px!important;padding:25px 0 12px!important;}
-  .used-hero .wrap.used-hero-content{display:flex;align-items:center;justify-content:space-between;gap:35px;width:calc(100% - 72px);margin:0 auto;padding-left:20px!important;min-height:145px;}
+  .used-hero{height:182px!important;min-height:182px!important;max-height:182px!important;padding:25px 0 12px!important;}
+  .used-hero .wrap.used-hero-content{display:flex;align-items:center;justify-content:space-between;gap:35px;width:calc(100% - 72px);margin:0 auto;padding-left:20px!important;min-height:133px;}
   .used-hero-copy{min-width:0;flex:1;}
   .used-hero h1{font-size:3.15rem!important;margin:0 0 12px!important;}
   .used-hero-lead{font-size:1.03rem;color:var(--gold);font-weight:900;margin:0 0 7px;line-height:1.4;}
   .used-hero .used-hero-desc{font-size:.82rem!important;line-height:1.6!important;margin:0!important;max-width:none!important;}
-  .used-hero-phone{display:flex;align-items:center;justify-content:center;flex:0 0 185px;min-height:58px;background:var(--gold);color:#07090c;font-weight:900;font-size:.92rem;white-space:nowrap;margin:17px 70px 0 0;}
+  .used-hero-phone{display:flex;align-items:center;justify-content:center;flex:0 0 185px;min-height:58px;background:var(--gold);color:#07090c;font-weight:900;font-size:.92rem;white-space:nowrap;margin:22px 100px 0 0;}
   .used-hero-phone:hover{filter:brightness(1.08);}
   .used-search-overview{padding-top:16px!important;}
 }
 @media (max-width:760px){
-  .used-hero-lead,.used-hero-phone,.used-hero-copy .used-hero-desc{display:none!important;}
-  .used-hero-mobile-original{display:block!important;}
+  /* スマホにもPCと同じ案内文を表示。PC側のレイアウトは変更しない。 */
+  .used-hero .wrap.used-hero-content{display:block;}
+  .used-hero-lead{display:block!important;color:var(--gold);font-size:.78rem;font-weight:900;line-height:1.5;margin:0 0 9px;}
+  .used-hero-copy .used-hero-desc:not(.used-hero-mobile-original){display:block!important;font-size:.68rem!important;line-height:1.75!important;margin:0!important;}
+  .used-hero-mobile-original{display:none!important;}
+  .used-hero-phone{display:flex!important;align-items:center;justify-content:center;width:100%;max-width:260px;min-height:46px;margin:18px 0 0;background:var(--gold);color:#07090c;font-size:.85rem;font-weight:900;}
 }
 @media (min-width:761px){.used-hero-mobile-original{display:none!important;}}
 </style>
