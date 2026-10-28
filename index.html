@@ -3314,6 +3314,28 @@ main#top > .hero .renvis-silver-shine::after{
  .renvis-single-repair-banner-link img{width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;}
 }
 </style>
+
+
+
+<style id="renvis-mobile-stat-and-pc-heading-fix-20261028">
+/* Mobile: align the three actual hero metrics using equal label/value rows. */
+@media (max-width:760px){
+ main#top > .hero .hero-copy-box > .stats-strip .stats-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch!important;}
+ main#top > .hero .hero-copy-box > .stats-strip .stat-item{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;padding:8px 2px!important;min-height:78px!important;gap:0!important;}
+ main#top > .hero .hero-copy-box > .stats-strip .renvis-stat-icon{display:none!important;}
+ main#top > .hero .hero-copy-box > .stats-strip .renvis-stat-copy{display:grid!important;grid-template-rows:27px 32px!important;row-gap:5px!important;align-items:center!important;justify-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;}
+ main#top > .hero .hero-copy-box > .stats-strip .renvis-stat-copy small{display:flex!important;align-items:end!important;justify-content:center!important;height:27px!important;line-height:1.15!important;margin:0!important;padding:0!important;white-space:nowrap!important;font-size:clamp(8px,2vw,10px)!important;}
+ main#top > .hero .hero-copy-box > .stats-strip .renvis-stat-copy strong,
+ main#top > .hero .hero-copy-box > .stats-strip .renvis-stat-copy strong.area{display:flex!important;align-items:baseline!important;justify-content:center!important;height:32px!important;line-height:32px!important;margin:0!important;padding:0!important;transform:none!important;position:static!important;white-space:nowrap!important;font-size:clamp(20px,5.4vw,27px)!important;}
+ main#top > .hero .hero-copy-box > .stats-strip .renvis-stat-copy strong span{font-size:clamp(8px,2vw,10px)!important;line-height:1!important;margin-left:2px!important;}
+}
+/* Desktop only: make the three main section headings a little smaller. */
+@media (min-width:761px){
+ main#top .renvis-home-services-head h2,
+ main#top .company-final > .wrap > .section-head h2,
+ main#top .site-info-section > .wrap > .section-head h2{font-size:clamp(1.7rem,2.35vw,2.55rem)!important;line-height:1.15!important;}
+}
+</style>
 </head>
 <body>
 <header id="header">
