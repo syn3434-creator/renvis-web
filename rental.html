@@ -1224,6 +1224,34 @@ footer{
   }
 }
 </style>
+<style id="renvis-rental-pickup-peek-only-20261028">
+/* Mobile SNS posters only: show the next poster without cropping the artwork. */
+@media(max-width:760px){
+  .rental-pickup .rental-pickup__viewport{width:100%!important;overflow:hidden!important;}
+  .rental-pickup .rental-pickup__track{
+    display:flex!important;gap:10px!important;
+    padding:0 14px 2px!important;
+    scroll-padding-left:14px;
+    scroll-snap-type:x mandatory!important;
+  }
+  .rental-pickup .rental-pickup__slide{
+    flex:0 0 min(76vw,310px)!important;
+    width:min(76vw,310px)!important;
+    max-width:none!important;
+    padding:0!important;
+    scroll-snap-align:start!important;
+  }
+  .rental-pickup .rental-pickup__post-link{width:100%!important;}
+  .rental-pickup .rental-pickup__slide img{
+    width:100%!important;max-width:100%!important;
+    height:auto!important;max-height:none!important;
+    aspect-ratio:941/1672!important;object-fit:contain!important;
+    border:1px solid rgba(255,255,255,.13)!important;
+  }
+  .rental-pickup .rental-pickup__controls{margin-top:12px!important;}
+  .rental-pickup .rental-pickup__tap-hint{display:none!important;}
+}
+</style>
 </head>
 <body>
 <header>
@@ -2599,62 +2627,44 @@ render("crusher");
   const track=document.getElementById('rentalPickupTrack');
   if(!track)return;
   const section=track.closest('.rental-pickup');
+  const slides=[...track.querySelectorAll('.rental-pickup__slide')];
   const dots=[...section.querySelectorAll('.rental-pickup__dot')];
   const prev=document.getElementById('rentalPickupPrev');
   const next=document.getElementById('rentalPickupNext');
-  const count=dots.length;
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
   const mobile=window.matchMedia('(max-width:760px)');
   let index=0;
-  let timer=null;
-  let visible=false;
-  const update=(i)=>{
-    index=Math.max(0,Math.min(count-1,i));
+  function update(i){
+    index=Math.max(0,Math.min(slides.length-1,i));
     dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===index)));
-  };
-  const go=(i)=>{
+  }
+  function go(i){
     if(!mobile.matches)return;
-    const target=(i+count)%count;
-    track.scrollTo({left:target*track.clientWidth,behavior:reduced.matches?'instant':'smooth'});
+    const target=(i+slides.length)%slides.length;
+    track.scrollTo({left:slides[target].offsetLeft-slides[0].offsetLeft,behavior:reduced.matches?'instant':'smooth'});
     update(target);
-  };
-  const stop=()=>{if(timer!==null){clearInterval(timer);timer=null;}};
-  const start=()=>{
-    stop();
-    if(!mobile.matches||reduced.matches||document.hidden||!visible)return;
-    timer=setInterval(()=>go(index+1),3500);
-  };
-  const interact=(i)=>{go(i);start();};
-  dots.forEach((dot,i)=>dot.addEventListener('click',()=>interact(i)));
-  prev.addEventListener('click',()=>interact(index-1));
-  next.addEventListener('click',()=>interact(index+1));
+  }
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
+  prev.addEventListener('click',()=>go(index-1));
+  next.addEventListener('click',()=>go(index+1));
   let scheduled=false;
   track.addEventListener('scroll',()=>{
     if(scheduled||!mobile.matches)return;
     scheduled=true;
     requestAnimationFrame(()=>{
-      update(Math.round(track.scrollLeft/Math.max(1,track.clientWidth)));
+      let nearest=0;
+      let distance=Infinity;
+      slides.forEach((slide,i)=>{
+        const d=Math.abs(track.scrollLeft-(slide.offsetLeft-slides[0].offsetLeft));
+        if(d<distance){distance=d;nearest=i;}
+      });
+      update(nearest);
       scheduled=false;
     });
   },{passive:true});
-  track.addEventListener('touchstart',stop,{passive:true});
-  track.addEventListener('touchend',start,{passive:true});
-  track.addEventListener('pointerenter',stop);
-  track.addEventListener('pointerleave',start);
-  track.addEventListener('focusin',stop);
-  track.addEventListener('focusout',start);
-  document.addEventListener('visibilitychange',start);
   window.addEventListener('resize',()=>{
-    if(mobile.matches)track.scrollLeft=index*track.clientWidth;
-    start();
+    if(mobile.matches)track.scrollLeft=slides[index].offsetLeft-slides[0].offsetLeft;
   });
-  if('IntersectionObserver' in window){
-    const observer=new IntersectionObserver(entries=>{
-      visible=entries[0].isIntersecting;
-      start();
-    },{threshold:.2});
-    observer.observe(section);
-  }else{visible=true;start();}
 })();
 </script>
 </body>
