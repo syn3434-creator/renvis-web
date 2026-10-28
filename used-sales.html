@@ -1574,6 +1574,58 @@ footer{
 @media (min-width:761px){.used-hero-mobile-original{display:none!important;}}
 </style>
 
+<style id="renvis-used-hero-mobile-refine-20261028">
+/* スマホ版のみ：縦ラインを説明文まで、電話ボタンをコンパクトに */
+@media(max-width:760px){
+  .used-hero .wrap.used-hero-content{border-left:0!important;padding-left:0!important;}
+  .used-hero-copy{position:relative;padding-left:12px;}
+  .used-hero-copy::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);}
+  .used-hero-phone{width:70%!important;max-width:210px!important;min-height:46px!important;height:46px!important;margin:14px 10px 0 auto!important;font-size:.82rem!important;}
+  .used-hero{padding-bottom:4px!important;}
+  .used-search-overview{padding-top:17px!important;}
+}
+</style>
+
+<style id="renvis-used-phone-mobile-fine-tune-20261028">
+/* Smartphone only: compact phone CTA and balanced right inset. */
+@media (max-width:760px){
+  .used-hero-phone{
+    width:147px!important;
+    max-width:calc(100% - 20px)!important;
+    min-height:44px!important;
+    height:44px!important;
+    margin:7px 90px 0 auto!important;
+    font-size:.82rem!important;
+  }
+}
+</style>
+<style id="renvis-used-phone-final-position-20261028">
+/* 中古販売：スマホ版の電話ボタンだけを調整。PC版・商品データ・検索処理はそのまま。 */
+@media (max-width:760px){
+  .used-hero .wrap.used-hero-content{position:relative;}
+  .used-hero-phone{
+    box-sizing:border-box;
+    width:138px!important;
+    max-width:138px!important;
+    height:42px!important;
+    min-height:42px!important;
+    margin:9px 26px 0 auto!important;
+    padding:0 10px!important;
+    font-size:.79rem!important;
+  }
+}
+/* 横幅に余裕があるスマホでは説明文の右側に配置 */
+@media (min-width:600px) and (max-width:760px){
+  .used-hero .wrap.used-hero-content{min-height:166px;}
+  .used-hero-copy{max-width:calc(100% - 158px);}
+  .used-hero-phone{
+    position:absolute;
+    right:24px;
+    top:83px;
+    margin:0!important;
+  }
+}
+</style>
 </head>
 
 
