@@ -3414,6 +3414,20 @@ main#top > .hero .renvis-silver-shine::after{
 @media(max-width:760px){.renvis-dual-banner-slide .renvis-single-repair-banner-link{display:flex;align-items:center;justify-content:center;background:#080b0f;}.renvis-dual-banner-slide img{max-height:330px;object-fit:contain;}}
 @media(prefers-reduced-motion:reduce){.renvis-dual-banner-slide{transition:none;}}
 </style>
+<style id="renvis-dual-banner-size-correction-20261028">
+/* Repair original 2400x450 PC / 1312x1199 mobile; matched SNS artwork. */
+#renvisDualBanner{padding:0!important;}
+#renvisDualBanner .wrap{width:100%!important;max-width:none!important;}
+#renvisDualBanner .renvis-dual-banner-stage{position:relative;width:100%;height:auto!important;aspect-ratio:2400/450!important;overflow:hidden;}
+#renvisDualBanner .renvis-dual-banner-slide{position:absolute;inset:0;min-width:0;width:100%;height:100%!important;}
+#renvisDualBanner .renvis-single-repair-banner-link,
+#renvisDualBanner picture{display:block!important;width:100%!important;height:100%!important;line-height:0;}
+#renvisDualBanner .renvis-single-repair-banner-link{border-left:0!important;border-right:0!important;}
+#renvisDualBanner .renvis-dual-banner-slide picture img{display:block!important;width:100%!important;height:100%!important;max-height:none!important;object-fit:fill!important;}
+@media(max-width:760px){
+#renvisDualBanner .renvis-dual-banner-stage{height:auto!important;aspect-ratio:1312/1199!important;max-height:none!important;}
+}
+</style>
 </head>
 <body>
 <header id="header">
