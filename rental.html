@@ -1224,23 +1224,25 @@ footer{
   }
 }
 </style>
-<style id="renvis-rental-pickup-peek-only-20261028">
-/* Mobile SNS posters only: show the next poster without cropping the artwork. */
+<style id="renvis-rental-pickup-two-up-20261028">
+/* Mobile SNS only: two equally sized complete posters per swipe. */
 @media(max-width:760px){
   .rental-pickup .rental-pickup__viewport{width:100%!important;overflow:hidden!important;}
   .rental-pickup .rental-pickup__track{
     display:flex!important;gap:10px!important;
     padding:0 14px 2px!important;
-    scroll-padding-left:14px;
+    scroll-padding-left:14px!important;
     scroll-snap-type:x mandatory!important;
   }
   .rental-pickup .rental-pickup__slide{
-    flex:0 0 min(76vw,310px)!important;
-    width:min(76vw,310px)!important;
+    flex:0 0 calc((100% - 10px - 28px)/2)!important;
+    width:calc((100% - 10px - 28px)/2)!important;
     max-width:none!important;
     padding:0!important;
-    scroll-snap-align:start!important;
+    scroll-snap-align:none!important;
+    scroll-snap-stop:normal!important;
   }
+  .rental-pickup .rental-pickup__slide:nth-child(odd){scroll-snap-align:start!important;}
   .rental-pickup .rental-pickup__post-link{width:100%!important;}
   .rental-pickup .rental-pickup__slide img{
     width:100%!important;max-width:100%!important;
@@ -1407,10 +1409,8 @@ footer{
     <div class="rental-pickup__controls" aria-label="スライド切り替え">
       <button type="button" class="rental-pickup__arrow" id="rentalPickupPrev" aria-label="前の画像">&#x2039;</button>
       <div class="rental-pickup__dots">
-        <button type="button" class="rental-pickup__dot" data-pickup-index="0" aria-label="SV30を表示" aria-current="true"></button>
-        <button type="button" class="rental-pickup__dot" data-pickup-index="1" aria-label="1.6クラス大割機を表示" aria-current="false"></button>
-        <button type="button" class="rental-pickup__dot" data-pickup-index="2" aria-label="100V機器を表示" aria-current="false"></button>
-        <button type="button" class="rental-pickup__dot" data-pickup-index="3" aria-label="鉄骨カッター3台入荷を表示" aria-current="false"></button>
+        <button type="button" class="rental-pickup__dot" data-pickup-index="0" aria-label="1・2枚目を表示" aria-current="true"></button>
+        <button type="button" class="rental-pickup__dot" data-pickup-index="1" aria-label="3・4枚目を表示" aria-current="false"></button>
       </div>
       <button type="button" class="rental-pickup__arrow" id="rentalPickupNext" aria-label="次の画像">&#x203A;</button>
     </div>
@@ -2633,37 +2633,38 @@ render("crusher");
   const next=document.getElementById('rentalPickupNext');
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
   const mobile=window.matchMedia('(max-width:760px)');
-  let index=0;
+  const pageCount=Math.ceil(slides.length/2);
+  let page=0;
+  const pageLeft=i=>slides[i*2].offsetLeft-slides[0].offsetLeft;
   function update(i){
-    index=Math.max(0,Math.min(slides.length-1,i));
-    dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===index)));
+    page=Math.max(0,Math.min(pageCount-1,i));
+    dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===page)));
   }
   function go(i){
     if(!mobile.matches)return;
-    const target=(i+slides.length)%slides.length;
-    track.scrollTo({left:slides[target].offsetLeft-slides[0].offsetLeft,behavior:reduced.matches?'instant':'smooth'});
+    const target=(i+pageCount)%pageCount;
+    track.scrollTo({left:pageLeft(target),behavior:reduced.matches?'instant':'smooth'});
     update(target);
   }
   dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
-  prev.addEventListener('click',()=>go(index-1));
-  next.addEventListener('click',()=>go(index+1));
+  prev.addEventListener('click',()=>go(page-1));
+  next.addEventListener('click',()=>go(page+1));
   let scheduled=false;
   track.addEventListener('scroll',()=>{
     if(scheduled||!mobile.matches)return;
     scheduled=true;
     requestAnimationFrame(()=>{
-      let nearest=0;
-      let distance=Infinity;
-      slides.forEach((slide,i)=>{
-        const d=Math.abs(track.scrollLeft-(slide.offsetLeft-slides[0].offsetLeft));
+      let nearest=0,distance=Infinity;
+      for(let i=0;i<pageCount;i++){
+        const d=Math.abs(track.scrollLeft-pageLeft(i));
         if(d<distance){distance=d;nearest=i;}
-      });
+      }
       update(nearest);
       scheduled=false;
     });
   },{passive:true});
   window.addEventListener('resize',()=>{
-    if(mobile.matches)track.scrollLeft=slides[index].offsetLeft-slides[0].offsetLeft;
+    if(mobile.matches)track.scrollLeft=pageLeft(page);
   });
 })();
 </script>
