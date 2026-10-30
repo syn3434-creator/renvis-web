@@ -1263,8 +1263,8 @@ footer{
 <style id="renvis-rental-pickup-mobile-fix-20261030">
 /* Mobile SNS only: larger two-up cards, readable TikTok hint. */
 @media(max-width:760px){
-  .rental-pickup .rental-pickup__track{gap:6px!important;padding:0 6px 2px!important;scroll-padding-left:6px!important;}
-  .rental-pickup .rental-pickup__slide{flex:0 0 calc((100% - 18px)/2)!important;width:calc((100% - 18px)/2)!important;min-width:0!important;}
+  .rental-pickup .rental-pickup__track{gap:2px!important;padding:0 2px 2px!important;scroll-padding-left:2px!important;}
+  .rental-pickup .rental-pickup__slide{flex:0 0 calc((100% - 6px)/2)!important;width:calc((100% - 6px)/2)!important;min-width:0!important;}
   .rental-pickup .rental-pickup__post-link{display:block!important;width:100%!important;}
   .rental-pickup .rental-pickup__slide img{width:100%!important;max-width:100%!important;height:auto!important;aspect-ratio:941/1672!important;object-fit:contain!important;}
   .rental-pickup .rental-pickup__tap-hint{display:block!important;margin:10px 10px 0!important;text-align:center!important;font-size:11px!important;line-height:1.5!important;color:#c4cad1!important;}
@@ -2696,7 +2696,7 @@ render("crusher");
   function play(){
     stop();
     if(!mobile.matches||reduced.matches||document.hidden||touching||count<2)return;
-    timer=setInterval(()=>go(page+1),4200);
+    timer=setInterval(()=>go(page+1),3000);
   }
   dots.forEach((d,i)=>d.addEventListener('click',()=>{go(i);play();}));
   if(prev)prev.addEventListener('click',()=>{go(page-1);play();});
