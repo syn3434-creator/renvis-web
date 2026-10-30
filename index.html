@@ -3484,6 +3484,68 @@ main#top > .hero .renvis-silver-shine::after{
   .renvis-hero-mobile-line{background:#06C755;color:#fff!important;border:1px solid #06C755}
 }
 </style>
+
+<style id="renvis-mobile-hero-20261030">
+/* INDEX smartphone hero only. Desktop and all other sections unchanged. */
+@media (max-width:760px){
+  /* Keep the existing real hero photo, reveal more of the welding scene. */
+  main#top > .hero{min-height:100svh!important;height:auto!important;align-items:flex-end!important;}
+  main#top > .hero .hero-bg{
+    background-size:auto 100%!important;
+    background-position:52% center!important;
+    transform:none!important;
+  }
+  main#top > .hero .hero-content{padding:170px 0 40px!important;}
+  main#top > .hero .hero-copy-box{max-width:100%!important;}
+  main#top > .hero h1{font-size:clamp(2.15rem,9.8vw,3.65rem)!important;line-height:.98!important;letter-spacing:-.045em!important;margin:0 0 19px!important;}
+  main#top > .hero .hero-lead{font-size:clamp(.78rem,3.5vw,1.03rem)!important;line-height:1.55!important;margin:0 0 24px!important;font-weight:800!important;}
+  main#top > .hero .hero-primary-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;flex-wrap:nowrap!important;}
+  main#top > .hero .hero-primary-actions a{width:100%!important;min-width:0!important;min-height:46px!important;padding:8px 5px!important;font-size:clamp(.68rem,3vw,.85rem)!important;}
+  main#top > .hero .renvis-hero-mobile-contact{display:none!important;}
+  /* The two direct contact actions live in the header, not below the hero CTAs. */
+  header .mobile-contact-button{display:none!important;}
+  header .nav-actions .renvis-top-phone,header .nav-actions .renvis-top-line{display:inline-flex!important;}
+  header .nav{width:calc(100% - 20px)!important;gap:5px!important;}
+  header .nav > .brand{flex:1 1 auto!important;min-width:0!important;}
+  header .logo{width:clamp(110px,34vw,154px)!important;max-width:100%!important;}
+  header .nav-actions{gap:6px!important;}
+  header .nav-actions .renvis-top-phone{width:36px!important;height:36px!important;min-height:36px!important;padding:0!important;border:1px solid rgba(255,255,255,.6)!important;border-radius:3px!important;display:grid!important;place-items:center!important;background:rgba(0,0,0,.3)!important;}
+  header .nav-actions .renvis-top-phone svg{width:20px!important;height:20px!important;}
+  header .nav-actions .renvis-top-phone .renvis-phone-copy{display:none!important;}
+  header .nav-actions .renvis-top-line{width:36px!important;height:36px!important;min-height:36px!important;padding:0!important;border-radius:4px!important;background:#06c755!important;font-size:0!important;}
+  header .nav-actions .renvis-top-line .renvis-line-mark{font-size:9px!important;line-height:1!important;display:grid!important;place-items:center!important;width:30px!important;height:25px!important;background:#fff!important;color:#06a846!important;border-radius:11px!important;font-weight:900!important;}
+  header .nav-actions .renvis-top-line > b{display:none!important;}
+  header .menu-btn{width:36px!important;height:36px!important;}
+}
+@media(max-width:360px){header .logo{width:110px!important;}header .nav-actions{gap:3px!important;}}
+<style id="renvis-mobile-header-desktop-style-20261030">
+/* Smartphone header: desktop phone + LINE styling, scaled to fit. */
+@media(max-width:760px){
+ header .nav{width:calc(100% - 16px)!important;gap:4px!important;}
+ header .nav>.brand{flex:0 1 auto!important;min-width:0!important;}
+ header .logo{width:clamp(82px,25vw,112px)!important;max-width:100%!important;}
+ header .brand-company{font-size:.43rem!important;letter-spacing:0!important;}
+ header .nav-actions{gap:5px!important;margin-left:auto!important;}
+ header .nav-actions .renvis-top-phone{display:inline-flex!important;width:auto!important;height:44px!important;min-height:44px!important;padding:0 2px!important;gap:5px!important;border:0!important;background:transparent!important;white-space:nowrap!important;}
+ header .nav-actions .renvis-top-phone svg{width:17px!important;height:17px!important;flex:0 0 17px!important;color:#e5bc53!important;stroke:#e5bc53!important;}
+ header .nav-actions .renvis-top-phone .renvis-phone-copy{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:2px!important;}
+ header .nav-actions .renvis-top-phone .renvis-phone-copy>b{font-size:clamp(.65rem,2.65vw,.88rem)!important;letter-spacing:-.035em!important;line-height:1.1!important;color:#fff!important;}
+ header .nav-actions .renvis-top-phone .renvis-phone-meta{display:flex!important;gap:3px!important;white-space:nowrap!important;}
+ header .nav-actions .renvis-top-phone .renvis-phone-meta small{font-size:clamp(.38rem,1.35vw,.5rem)!important;line-height:1.2!important;letter-spacing:-.03em!important;}
+ header .nav-actions .renvis-top-line{display:inline-flex!important;width:auto!important;height:39px!important;min-height:39px!important;padding:0 8px!important;gap:5px!important;border-radius:5px!important;background:#06c755!important;font-size:inherit!important;white-space:nowrap!important;}
+ header .nav-actions .renvis-top-line .renvis-line-mark{display:grid!important;place-items:center!important;width:25px!important;height:23px!important;font-size:7px!important;border-radius:50%!important;background:#fff!important;color:#06a846!important;}
+ header .nav-actions .renvis-top-line>b{display:inline!important;font-size:clamp(.58rem,2.2vw,.76rem)!important;color:#fff!important;}
+ header .menu-btn{width:30px!important;height:38px!important;min-width:30px!important;}
+ header .menu-btn span{width:25px!important;}
+}
+@media(max-width:380px){
+ header .logo{width:80px!important;}
+ header .nav-actions{gap:3px!important;}
+ header .nav-actions .renvis-top-line{padding:0 5px!important;}
+ header .nav-actions .renvis-top-phone .renvis-phone-holiday{display:none!important;}
+}
+</style>
+</style>
 </head>
 <body>
 <header id="header">
