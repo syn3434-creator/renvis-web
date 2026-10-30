@@ -1283,6 +1283,18 @@ footer{
 .rental-seo-maker-list span{color:#9da7b2}
 @media(max-width:760px){.rental-seo-maker-list{grid-template-columns:1fr}.rental-seo-maker-index{padding:10px 0 20px}}
 </style>
+<style id="renvis-rental-sns-responsive-consistency-20261030">
+/* SNS posters only: exactly two equal, uncropped portrait images at every mobile width. */
+@media (max-width:760px){
+  .rental-pickup .rental-pickup__viewport{width:100%!important;max-width:100%!important;overflow:hidden!important;}
+  .rental-pickup .rental-pickup__track{box-sizing:border-box!important;display:flex!important;gap:4px!important;padding:0 4px 2px!important;scroll-padding-left:4px!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;}
+  .rental-pickup .rental-pickup__slide{box-sizing:border-box!important;flex:0 0 calc((100% - 4px - 8px)/2)!important;width:calc((100% - 4px - 8px)/2)!important;min-width:0!important;max-width:none!important;padding:0!important;}
+  .rental-pickup .rental-pickup__slide:nth-child(odd){scroll-snap-align:start!important;}
+  .rental-pickup .rental-pickup__post-link{display:block!important;width:100%!important;aspect-ratio:941 / 1672!important;overflow:hidden!important;background:#11161c!important;}
+  .rental-pickup .rental-pickup__slide img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;aspect-ratio:941 / 1672!important;object-fit:contain!important;object-position:center!important;}
+  .rental-pickup .rental-pickup__tap-hint{display:block!important;margin:10px 8px 0!important;text-align:center!important;}
+}
+</style>
 </head>
 <body>
 <header>
@@ -2719,6 +2731,8 @@ render("crusher");
   window.addEventListener('resize',()=>{if(mobile.matches)go(page,false);play();});
   // Keep first poster anchored on initial Android layout after fonts/images settle.
   if(mobile.matches){track.scrollLeft=0;requestAnimationFrame(()=>go(0,false));}
+  // Re-anchor only on initial load; preserve manual navigation thereafter.
+  window.addEventListener('load',()=>{if(mobile.matches && page===0)go(0,false);},{once:true});
   play();
 })();
 </script>
