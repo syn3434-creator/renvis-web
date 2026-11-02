@@ -3496,36 +3496,38 @@ main#top > .hero .renvis-silver-shine::after{
 @media(max-width:760px){.renvis-news-section{padding:46px 0 52px}.renvis-news-header{align-items:flex-end}.renvis-news-row{grid-template-columns:90px 1fr 15px;gap:8px 11px;min-height:78px;padding:14px 2px}.renvis-news-date{font-size:.68rem}.renvis-news-category{justify-self:start;font-size:.62rem;padding:3px 7px}.renvis-news-title{grid-column:1/3;grid-row:2;font-size:.84rem}.renvis-news-arrow{grid-column:3;grid-row:1/3}.renvis-news-all{font-size:.7rem}}
 </style>
 <style id="renvis-mobile-header-hero-final-20261102">
-/* Final mobile-only rules. Desktop layout remains untouched. */
-@media(max-width:760px){
- header{height:82px!important;background:rgba(5,7,10,.74);backdrop-filter:blur(10px)}
- header .nav{width:calc(100% - 12px)!important;gap:3px!important}
- header .nav>.brand{min-width:0!important;flex:1 1 auto!important}
- header .nav .logo{width:clamp(87px,25vw,119px)!important;max-width:100%!important}
- header .nav .brand-company{font-size:.39rem!important;letter-spacing:0!important;white-space:nowrap!important}
- header .nav-actions{display:flex!important;align-items:center!important;gap:4px!important;flex:0 0 auto!important}
- header .nav-actions .mail-icon,header .mobile-contact-button{display:none!important}
- header .nav-actions .renvis-top-phone{display:flex!important;align-items:center!important;min-width:0!important;gap:4px!important;padding-left:5px!important;border-left:1px solid rgba(255,255,255,.3)!important;white-space:nowrap!important}
- header .renvis-top-phone svg{width:16px!important;height:16px!important;flex:0 0 16px!important;stroke:#e7be5e!important}
- header .renvis-top-phone .renvis-phone-copy{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:3px!important}
- header .renvis-top-phone .renvis-phone-copy>b{font-size:clamp(.64rem,2.65vw,.78rem)!important;line-height:1.08!important;letter-spacing:-.03em!important;color:#fff!important}
- header .renvis-top-phone .renvis-phone-meta{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:2px!important}
- header .renvis-top-phone .renvis-phone-meta small,header .renvis-top-phone .renvis-phone-meta .renvis-phone-holiday{display:block!important;font-size:clamp(.43rem,1.8vw,.53rem)!important;line-height:1.13!important;color:#d9dfe6!important;padding:0!important;border:0!important;white-space:nowrap!important}
- header .nav-actions .renvis-top-line{display:flex!important;align-items:center!important;justify-content:center!important;height:33px!important;min-height:33px!important;padding:0 7px!important;gap:0!important;border-radius:4px!important;background:#06c755!important;color:#fff!important}
- header .renvis-top-line .renvis-line-mark{display:none!important}
- header .renvis-top-line>b{font-size:.63rem!important;font-weight:800!important}
- header .nav-actions .menu-btn{width:29px!important;height:33px!important;flex:0 0 29px!important;padding:0!important}
- header .menu-btn span{width:23px!important}
- /* Counteract legacy mobile dark overlays and zoom/crop overrides. */
- main#top > .hero .hero-bg{background-size:auto 90svh!important;background-position:center top!important;background-repeat:no-repeat!important;background-color:#101318!important;transform:none!important;filter:brightness(1.12) contrast(1.01)!important}
- main#top > .hero::after{background:linear-gradient(90deg,rgba(2,4,7,.43) 0%,rgba(2,4,7,.13) 55%,rgba(2,4,7,.04) 100%),linear-gradient(0deg,#07090c 0%,transparent 28%)!important}
+/* Mobile-only approved header/hero: clear overlay, readable controls, natural photo. */
+@media (max-width:760px){
+  header:not(.scrolled){background:transparent!important;backdrop-filter:none!important;border-bottom:0!important;box-shadow:none!important}
+  header.scrolled{background:rgba(6,9,13,.88)!important;backdrop-filter:blur(12px)!important}
+  header{height:78px!important}
+  header .nav{width:calc(100% - 16px)!important;gap:4px!important}
+  header .nav>.brand{flex:1 1 0!important;min-width:0!important;max-width:none!important}
+  header .nav .logo{width:clamp(88px,24vw,112px)!important;max-width:100%!important}
+  header .nav .brand-company{display:block!important;font-size:.44rem!important;letter-spacing:0!important;line-height:1.2!important;white-space:nowrap!important}
+  header .nav-actions{display:flex!important;align-items:center!important;gap:4px!important;flex:0 0 auto!important}
+  header .nav-actions .mail-icon,header .mobile-contact-button{display:none!important}
+  header .nav-actions .renvis-top-phone{display:flex!important;align-items:center!important;gap:4px!important;min-width:0!important;padding-left:5px!important;border-left:1px solid rgba(255,255,255,.38)!important;white-space:nowrap!important}
+  header .renvis-top-phone svg{width:15px!important;height:15px!important;flex:0 0 15px!important;stroke:#e7be5e!important}
+  header .renvis-top-phone .renvis-phone-copy{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:2px!important}
+  header .renvis-top-phone .renvis-phone-copy>b{font-size:clamp(.61rem,2.65vw,.78rem)!important;line-height:1.12!important;letter-spacing:-.025em!important;color:#fff!important}
+  header .renvis-top-phone .renvis-phone-meta{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:1px!important}
+  header .renvis-top-phone .renvis-phone-meta small,header .renvis-top-phone .renvis-phone-meta .renvis-phone-holiday{display:block!important;font-size:clamp(.42rem,1.75vw,.55rem)!important;line-height:1.25!important;color:#e8edf3!important;white-space:nowrap!important;border:0!important;padding:0!important}
+  header .nav-actions .renvis-top-line{display:flex!important;align-items:center!important;justify-content:center!important;min-height:33px!important;height:33px!important;padding:0 7px!important;gap:0!important;background:#06c755!important;border-radius:4px!important;color:#fff!important}
+  header .renvis-top-line .renvis-line-mark{display:none!important}
+  header .renvis-top-line>b{font-size:.63rem!important;font-weight:800!important}
+  header .nav-actions .menu-btn{width:29px!important;height:33px!important;flex:0 0 29px!important;padding:0!important}
+  header .menu-btn span{width:23px!important}
+  /* Keep the existing hero.webp and avoid a dark rectangular header band. */
+  main#top > .hero .hero-bg{background-size:auto 88svh!important;background-position:center top!important;background-repeat:no-repeat!important;background-color:#0c1118!important;transform:none!important;filter:brightness(.91) contrast(1.015)!important}
+  main#top > .hero::after{background:linear-gradient(180deg,rgba(3,6,10,.32) 0%,rgba(3,6,10,0) 19%,rgba(3,6,10,.05) 65%,#07090c 100%),linear-gradient(90deg,rgba(2,4,7,.35),rgba(2,4,7,.07) 70%)!important}
 }
 @media(max-width:360px){
- header .nav .logo{width:84px!important}
- header .nav-actions{gap:2px!important}
- header .renvis-top-phone svg{width:13px!important;height:13px!important;flex-basis:13px!important}
- header .renvis-top-phone .renvis-phone-copy>b{font-size:.61rem!important}
- header .nav-actions .renvis-top-line{padding:0 5px!important}
+  header .nav .logo{width:82px!important}
+  header .nav-actions{gap:2px!important}
+  header .renvis-top-phone svg{width:12px!important;height:12px!important;flex-basis:12px!important}
+  header .renvis-top-phone .renvis-phone-copy>b{font-size:.59rem!important}
+  header .nav-actions .renvis-top-line{padding:0 5px!important}
 }
 </style>
 </head>
