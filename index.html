@@ -3473,17 +3473,6 @@ main#top > .hero .renvis-silver-shine::after{
 }
 </script>
 
-<style id="renvis-mobile-hero-direct-contact-20261030">
-/* Smartphone first-view contact links: no change to desktop layout */
-.renvis-hero-mobile-contact{display:none}
-@media(max-width:760px){
-  .renvis-hero-mobile-contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;margin:12px 0 0;width:100%;max-width:420px}
-  .renvis-hero-mobile-contact a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;min-height:44px;padding:7px 5px;border-radius:5px;font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap;line-height:1.25}
-  .renvis-hero-mobile-phone{flex-wrap:wrap;background:rgba(8,12,18,.82);color:#fff!important;border:1px solid rgba(255,255,255,.48)}
-  .renvis-hero-mobile-phone small{font-size:10px;font-weight:700;letter-spacing:0}
-  .renvis-hero-mobile-line{background:#06C755;color:#fff!important;border:1px solid #06C755}
-}
-</style>
 <style id="renvis-rental-banner-fit-20261031">
 /* Rental banner: preserve the established slider size and make the new image fill without stretching. */
 #renvisDualBanner .renvis-dual-banner-slide:last-child picture img{object-fit:cover!important;object-position:center!important}
@@ -3506,49 +3495,37 @@ main#top > .hero .renvis-silver-shine::after{
 .renvis-news-empty{color:#c4cbd3;padding:22px 4px}
 @media(max-width:760px){.renvis-news-section{padding:46px 0 52px}.renvis-news-header{align-items:flex-end}.renvis-news-row{grid-template-columns:90px 1fr 15px;gap:8px 11px;min-height:78px;padding:14px 2px}.renvis-news-date{font-size:.68rem}.renvis-news-category{justify-self:start;font-size:.62rem;padding:3px 7px}.renvis-news-title{grid-column:1/3;grid-row:2;font-size:.84rem}.renvis-news-arrow{grid-column:3;grid-row:1/3}.renvis-news-all{font-size:.7rem}}
 </style>
-<style id="renvis-mobile-top-contact-20261102">
-/* Mobile uses desktop phone/LINE styling, scaled to fit. */
+<style id="renvis-mobile-header-hero-final-20261102">
+/* Final mobile-only rules. Desktop layout remains untouched. */
 @media(max-width:760px){
- header .nav{width:calc(100% - 16px)!important;gap:5px!important}
- header .nav>.brand{flex:1 1 auto!important;min-width:78px!important;overflow:visible!important}
- header .nav .logo{width:125px!important;max-width:100%!important;height:auto!important}
- header .nav .brand-company{font-size:.42rem!important;letter-spacing:.02em!important;white-space:nowrap!important}
- header .nav-actions{display:flex!important;align-items:center!important;flex:0 0 auto!important;gap:5px!important}
- header .mobile-contact-button,header .nav-actions .mail-icon{display:none!important}
- header .nav-actions .renvis-top-phone{display:flex!important;align-items:center!important;gap:5px!important;border-left:1px solid rgba(255,255,255,.35)!important;padding-left:7px!important;min-width:0!important;white-space:nowrap!important}
- header .renvis-top-phone svg{display:block!important;width:17px!important;height:17px!important;flex:0 0 17px!important;stroke:#e7be5e!important}
- header .renvis-top-phone .renvis-phone-copy{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:2px!important}
- header .renvis-top-phone .renvis-phone-copy>b{font-size:clamp(.65rem,2.75vw,.81rem)!important;line-height:1.1!important;letter-spacing:-.025em!important;color:#fff!important}
- header .renvis-top-phone .renvis-phone-meta{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:1px!important}
- header .renvis-top-phone .renvis-phone-meta small{font-size:.53rem!important;line-height:1.15!important;color:#d6dce4!important;white-space:nowrap!important}
- header .renvis-top-phone .renvis-phone-holiday{display:none!important}
- header .nav-actions .renvis-top-line{display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important;min-height:33px!important;height:33px!important;padding:0 8px!important;border-radius:5px!important;background:#06c755!important;color:#fff!important}
+ header{height:82px!important;background:rgba(5,7,10,.74);backdrop-filter:blur(10px)}
+ header .nav{width:calc(100% - 12px)!important;gap:3px!important}
+ header .nav>.brand{min-width:0!important;flex:1 1 auto!important}
+ header .nav .logo{width:clamp(87px,25vw,119px)!important;max-width:100%!important}
+ header .nav .brand-company{font-size:.39rem!important;letter-spacing:0!important;white-space:nowrap!important}
+ header .nav-actions{display:flex!important;align-items:center!important;gap:4px!important;flex:0 0 auto!important}
+ header .nav-actions .mail-icon,header .mobile-contact-button{display:none!important}
+ header .nav-actions .renvis-top-phone{display:flex!important;align-items:center!important;min-width:0!important;gap:4px!important;padding-left:5px!important;border-left:1px solid rgba(255,255,255,.3)!important;white-space:nowrap!important}
+ header .renvis-top-phone svg{width:16px!important;height:16px!important;flex:0 0 16px!important;stroke:#e7be5e!important}
+ header .renvis-top-phone .renvis-phone-copy{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:3px!important}
+ header .renvis-top-phone .renvis-phone-copy>b{font-size:clamp(.64rem,2.65vw,.78rem)!important;line-height:1.08!important;letter-spacing:-.03em!important;color:#fff!important}
+ header .renvis-top-phone .renvis-phone-meta{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:2px!important}
+ header .renvis-top-phone .renvis-phone-meta small,header .renvis-top-phone .renvis-phone-meta .renvis-phone-holiday{display:block!important;font-size:clamp(.43rem,1.8vw,.53rem)!important;line-height:1.13!important;color:#d9dfe6!important;padding:0!important;border:0!important;white-space:nowrap!important}
+ header .nav-actions .renvis-top-line{display:flex!important;align-items:center!important;justify-content:center!important;height:33px!important;min-height:33px!important;padding:0 7px!important;gap:0!important;border-radius:4px!important;background:#06c755!important;color:#fff!important}
  header .renvis-top-line .renvis-line-mark{display:none!important}
- header .renvis-top-line>b{font-size:.67rem!important;font-weight:800!important;white-space:nowrap!important}
- header .nav-actions .menu-btn{flex:0 0 30px!important;width:30px!important;height:33px!important;padding:0!important}
+ header .renvis-top-line>b{font-size:.63rem!important;font-weight:800!important}
+ header .nav-actions .menu-btn{width:29px!important;height:33px!important;flex:0 0 29px!important;padding:0!important}
  header .menu-btn span{width:23px!important}
+ /* Counteract legacy mobile dark overlays and zoom/crop overrides. */
+ main#top > .hero .hero-bg{background-size:auto 90svh!important;background-position:center top!important;background-repeat:no-repeat!important;background-color:#101318!important;transform:none!important;filter:brightness(1.12) contrast(1.01)!important}
+ main#top > .hero::after{background:linear-gradient(90deg,rgba(2,4,7,.43) 0%,rgba(2,4,7,.13) 55%,rgba(2,4,7,.04) 100%),linear-gradient(0deg,#07090c 0%,transparent 28%)!important}
 }
-@media(max-width:375px){
- header .nav{gap:3px!important}
- header .nav .logo{width:105px!important}
- header .nav-actions{gap:3px!important}
- header .renvis-top-phone svg{width:15px!important;height:15px!important;flex-basis:15px!important}
- header .nav-actions .renvis-top-phone{padding-left:5px!important;gap:3px!important}
- header .renvis-top-phone .renvis-phone-copy>b{font-size:.64rem!important}
- header .nav-actions .renvis-top-line{padding:0 6px!important}
- header .nav-actions .menu-btn{flex-basis:27px!important;width:27px!important}
-}
-</style>
-<style id="renvis-mobile-hero-crop-fix-20261102">
-/* Mobile only: keep the photograph centered and prevent cover scaling with content height. */
-@media (max-width:760px){
-  main#top > .hero .hero-bg{
-    background-size:auto 90svh!important;
-    background-position:center top!important;
-    background-repeat:no-repeat!important;
-    background-color:#07090c!important;
-    transform:none!important;
-  }
+@media(max-width:360px){
+ header .nav .logo{width:84px!important}
+ header .nav-actions{gap:2px!important}
+ header .renvis-top-phone svg{width:13px!important;height:13px!important;flex-basis:13px!important}
+ header .renvis-top-phone .renvis-phone-copy>b{font-size:.61rem!important}
+ header .nav-actions .renvis-top-line{padding:0 5px!important}
 }
 </style>
 </head>
@@ -3563,10 +3540,6 @@ main#top > .hero .renvis-silver-shine::after{
 <a href="management.html"><span class="nav-en">MANAGEMENT</span><span class="nav-ja">管理・部品製作</span></a>
 </nav>
 <div class="nav-actions">
-<a aria-label="電話でお問い合わせ" class="mobile-contact-button" href="tel:0946428311">
-<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"></path></svg>
-<span>お問い合わせ</span>
-</a>
 <a aria-label="0946-42-8311に電話" class="renvis-top-phone" href="tel:0946428311"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"></path></svg><span class="renvis-phone-copy"><b>0946-42-8311</b><span class="renvis-phone-meta"><small>◷ 8:00〜17:30</small><small class="renvis-phone-holiday">第2・4土／日祝休</small></span></span></a><a class="renvis-top-line" href="https://lin.ee/pUDgnDR" rel="noopener noreferrer" target="_blank"><span class="renvis-line-mark">LINE</span><b>LINE</b></a>
 <a aria-label="お問い合わせ" class="icon-link mail-icon" href="contact.html">
 <svg aria-hidden="true" viewbox="0 0 24 24">
