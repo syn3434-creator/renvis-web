@@ -1232,6 +1232,11 @@ footer{
     font-size:.76rem;
   }
 }
+/* renvis-management-number-20261102 */
+/* 中古販売：管理番号のカード内表示（既存レイアウトは維持） */
+.used-management-number{font-size:.74rem;color:#e7c86a;margin:-4px 0 11px;line-height:1.5;font-weight:700;overflow-wrap:anywhere}
+.used-management-number span{font-size:.67rem;color:#aab4bf;font-weight:600;margin-right:7px}
+@media(max-width:760px){.used-management-number{font-size:.7rem;margin:-3px 0 8px}}
 </style>
 <style id="renvis-mobile-clean-20261009">
 /* RENVIS mobile final: consolidated, applied before first paint. */
@@ -2553,6 +2558,10 @@ function image(product){
 }
 
 
+function escapeUsedText(value){
+  return String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+}
+
 function card(
   product,
   arrival = false
@@ -2605,6 +2614,8 @@ function card(
         <div class="maker">
           ${product.maker || ""}
         </div>
+
+        ${product.managementNumber ? `<div class="used-management-number"><span>管理番号 / ITEM NO.</span>${escapeUsedText(product.managementNumber)}</div>` : ""}
 
 
         <div class="tags">
@@ -2801,6 +2812,8 @@ function filtered(){
           ${product.type}
           ${product.model}
           ${product.cls}
+          ${product.managementNumber ?? ""}
+          ${product.freeComment ?? ""}
           ${product.remarks ?? ""}
         `
           .toLowerCase()
@@ -3408,14 +3421,20 @@ async function loadUsedItems(){
               ??
               "",
 
-            // 管理ナンバーは商品登録時の「備考」欄から検索する
+            // 管理番号は専用カラムを優先。移行途中のみ旧descriptionを参照。
+            managementNumber:
+              String(row.management_number || row.description || "").trim(),
+
+            // フリーコメントは管理番号とは独立して取得。
+            freeComment:
+              String(row.free_comment || "").trim(),
+
             remarks:
               row.remarks
               ?? row.remark
               ?? row.notes
               ?? row.note
               ?? row.memo
-              ?? row.description
               ?? row["備考"]
               ?? "",
 
