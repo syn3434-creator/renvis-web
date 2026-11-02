@@ -3530,6 +3530,30 @@ main#top > .hero .renvis-silver-shine::after{
   header .nav-actions .renvis-top-line{padding:0 5px!important}
 }
 </style>
+<style id="mobile-viewport-overflow-repair-20261102">
+/* 2026-11-02 Mobile viewport containment repair. Desktop untouched. */
+@media(max-width:760px){
+ html,body{width:100%!important;max-width:100%!important;overflow-x:clip!important}
+ main#top,main#top>.hero,main#top>.hero .hero-content{width:100%!important;max-width:100%!important;min-width:0!important;margin-left:0!important;left:auto!important;right:auto!important;transform:none!important}
+ main#top>.hero{overflow:hidden!important}
+ main#top>.hero .hero-content>.wrap{width:calc(100% - 28px)!important;max-width:none!important;margin:0 auto!important;min-width:0!important}
+ main#top>.hero .hero-copy-box{width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important;transform:none!important}
+ main#top>.hero .hero-copy-box h1{font-size:clamp(30px,8.9vw,44px)!important;letter-spacing:-.05em!important;line-height:1!important;max-width:100%!important;margin-left:0!important;transform:none!important;text-align:left!important}
+ main#top>.hero .hero-copy-box h1 span{display:block!important;white-space:nowrap!important;max-width:100%!important}
+ main#top>.hero .hero-lead{font-size:clamp(12px,3.5vw,16px)!important;max-width:100%!important;overflow-wrap:anywhere!important}
+ main#top>.hero .hero-primary-actions{width:100%!important;max-width:100%!important;display:flex!important;gap:8px!important;margin-left:0!important;transform:none!important}
+ main#top>.hero .hero-primary-actions a{flex:1 1 0!important;width:auto!important;min-width:0!important;font-size:clamp(10px,2.9vw,13px)!important}
+ header{left:0!important;right:0!important;width:100%!important;max-width:100%!important;transform:none!important}
+ header .nav{width:calc(100% - 20px)!important;margin:0 auto!important;min-width:0!important;max-width:100%!important;display:flex!important;justify-content:space-between!important}
+ header .nav>.brand{flex:1 1 auto!important;min-width:0!important;overflow:hidden!important}
+ header .nav .logo{width:clamp(80px,21vw,105px)!important;max-width:100%!important}
+ header .nav-actions{flex:0 0 auto!important;gap:3px!important}
+ header .nav-actions .renvis-top-phone{padding-left:4px!important;gap:3px!important}
+ header .renvis-top-phone .renvis-phone-copy>b{font-size:clamp(9px,2.5vw,12px)!important}
+ header .nav-actions .renvis-top-line{padding:0 6px!important}
+ main#top>.hero .hero-bg{background-size:cover!important;background-position:54% center!important;filter:brightness(.86) contrast(1.01)!important}
+}
+</style>
 </head>
 <body>
 <header id="header">
