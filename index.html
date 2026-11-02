@@ -3539,6 +3539,18 @@ main#top > .hero .renvis-silver-shine::after{
  header .nav-actions .menu-btn{flex-basis:27px!important;width:27px!important}
 }
 </style>
+<style id="renvis-mobile-hero-crop-fix-20261102">
+/* Mobile only: keep the photograph centered and prevent cover scaling with content height. */
+@media (max-width:760px){
+  main#top > .hero .hero-bg{
+    background-size:auto 90svh!important;
+    background-position:center top!important;
+    background-repeat:no-repeat!important;
+    background-color:#07090c!important;
+    transform:none!important;
+  }
+}
+</style>
 </head>
 <body>
 <header id="header">
