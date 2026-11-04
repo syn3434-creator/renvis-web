@@ -1237,6 +1237,10 @@ footer{
 .used-management-number{font-size:.74rem;color:#e7c86a;margin:-4px 0 11px;line-height:1.5;font-weight:700;overflow-wrap:anywhere}
 .used-management-number span{font-size:.67rem;color:#aab4bf;font-weight:600;margin-right:7px}
 @media(max-width:760px){.used-management-number{font-size:.7rem;margin:-3px 0 8px}}
+/* 中古販売検索：お気に入り絞り込み（PC・スマホ共通） */
+.used-favorite-filter{display:inline-flex;align-items:center;gap:9px;margin-top:14px;padding:9px 12px;border:1px solid var(--line);background:#07090c;color:#f3f5f7;font-size:.78rem;cursor:pointer;user-select:none;max-width:100%}
+.used-favorite-filter input{width:17px;height:17px;accent-color:var(--gold);cursor:pointer}
+.used-favorite-filter:has(input:checked){border-color:var(--gold);color:#f1cf67}
 </style>
 <style id="renvis-mobile-clean-20261009">
 /* RENVIS mobile final: consolidated, applied before first paint. */
@@ -2122,6 +2126,11 @@ footer{
               </div>
 
 
+              <label class="used-favorite-filter" for="favoriteOnly">
+                <input type="checkbox" id="favoriteOnly">
+                <span>★ お気に入りのみ表示</span>
+              </label>
+
               <div class="filter-actions">
 
                 <button
@@ -2483,13 +2492,7 @@ let products = [];
 
 const favorites =
   new Set(
-    JSON.parse(
-      localStorage.getItem(
-        "renvisFavorites"
-      )
-      ||
-      "[]"
-    )
+    (JSON.parse(localStorage.getItem("renvisFavorites") || "[]") || []).map(Number)
   );
 
 
@@ -2713,67 +2716,61 @@ function renderArrivals(){
 }
 
 
-function classMatch(
-  productClass,
-  selectedClass
-){
+// クラス区分はトン数・バケット容量のどちらでも判定する。
+// 単独値だけでなく「0.1～0.2㎥」「3～6t」などの兼用範囲も対応。
+const USED_CLASS_BANDS = [
+  {ton:[0,3],  cubic:[0,0.08]},
+  {ton:[3,4],  cubic:[0.1,0.1]},
+  {ton:[4,6],  cubic:[0.2,0.2]},
+  {ton:[6,9],  cubic:[0.25,0.25]},
+  {ton:[10,17],cubic:[0.45,0.45]},
+  {ton:[18,25],cubic:[0.7,0.7]},
+  {ton:[26,Infinity],cubic:[1,Infinity]}
+];
 
-  if(
-    !selectedClass
-  ){
-    return true;
-  }
+function classMatch(productClass, selectedClass){
+  if(!selectedClass) return true;
+  const choices = Array.from($("class").options).filter(o => o.value);
+  const selectedIndex = choices.findIndex(o => o.value === selectedClass);
+  if(selectedIndex < 0) return false;
+  const target = USED_CLASS_BANDS[selectedIndex];
+  if(!target) return false;
 
+  const source = String(productClass ?? "")
+    .normalize("NFKC")
+    .replace(/[~〜～－–—−]/g,"-")
+    .replace(/\s+/g,"")
+    .toLowerCase();
+  if(!source) return false;
 
-  const productTon =
-    parseFloat(
-      productClass
-    );
+  // 同じ選択肢名が商品データに保存されているケース。
+  if(source === String(selectedClass).normalize("NFKC").replace(/[~〜～－–—−]/g,"-").replace(/\s+/g,"").toLowerCase()) return true;
 
-
-  const range =
-    selectedClass.match(
-      /\d+(?:\.\d+)?/g
-    );
-
-
-  if(
-    !Number.isFinite(productTon)
-    ||
-    !range
-    ||
-    range.length < 2
-  ){
-
-    return (
-      productClass
-      ===
-      selectedClass
-    );
-
-  }
-
-
-  const min =
-    Number(
-      range[0]
-    );
-
-
-  const max =
-    Number(
-      range[1]
-    );
-
-
-  return (
-    productTon >= min
-    &&
-    productTon <= max
+  // 例「3～4t (0.1㎥)」はトン数と容量の両方が含まれるため、
+  // 先に対応区分の完全一致を確認し、別クラスへの誤判定を防ぐ。
+  const exactIndex = choices.findIndex(o =>
+    String(o.value).normalize("NFKC").replace(/[~〜～－–—−]/g,"-").replace(/\s+/g,"").toLowerCase() === source
   );
+  if(exactIndex >= 0) return exactIndex === selectedIndex;
 
+  const numericSource = source.replace(/m(?:\^)?3/g,"㎥");
+  const numbers = [...numericSource.matchAll(/\d+(?:\.\d+)?/g)].map(m => Number(m[0]));
+  if(!numbers.length) return false;
+  const cubicUnit = /(?:m3|m\^3|㎥|立米|りゅうべい)/.test(source);
+  const tonUnit = /(?:t|トン)/.test(source);
+  const hasDecimals = numbers.some(n => !Number.isInteger(n));
+  // 「0.1～0.2」等、単位なしの小数は容量として扱う。
+  const useCubic = (!tonUnit && (cubicUnit || hasDecimals || numbers.some(n => n > 0 && n < 1))) || (tonUnit && cubicUnit && numbers[0] < 3);
+  const [min,max] = useCubic ? target.cubic : target.ton;
+  // 「26t以上」「1.0㎥以上」のような開放区間。
+  const lower = numbers[0];
+  const isRange = /^\D*\d+(?:\.\d+)?-\d/.test(numericSource);
+  const upper = /(?:以上|超|over|\+)$/.test(source) ? Infinity : (isRange ? (numbers[1] ?? lower) : lower);
+  const a = Math.min(lower,upper), b = Math.max(lower,upper);
+  if(b < min || a > max) return false;
+  // 単一クラスの容量値の場合、重ならない範囲のみ一致。
+  return true;
 }
-
 
 function filtered(){
 
@@ -2841,6 +2838,11 @@ function filtered(){
       classMatch(
         product.cls,
         cls
+      )
+
+      &&
+      (
+        !$('favoriteOnly').checked || favorites.has(Number(product.id))
       )
 
       &&
@@ -2988,6 +2990,7 @@ function reset(){
   $("class").value = "";
   $("status").value = "";
   $("sort").value = "new";
+  $("favoriteOnly").checked = false;
 
 
   document
@@ -3008,6 +3011,11 @@ function reset(){
 
 $("resetBtn").onclick =
   reset;
+
+$("favoriteOnly").addEventListener("change", () => {
+  renderArrivals();
+  render();
+});
 
 // リセット時には件数ボタンの選択表示も解除する。
 $("resetBtn").addEventListener("click", () => document.querySelectorAll(".stock-box[data-stock-filter]").forEach(box => box.setAttribute("aria-pressed", "false")));
