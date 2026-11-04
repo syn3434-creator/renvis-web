@@ -1672,6 +1672,16 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
  /* Raise only the catchphrase; keep the buttons, stats and image geometry. */
  main#top > .hero h1{position:relative!important;top:-24px!important;margin-bottom:-10px!important}
 }
+/* 2026-11-04: soften only the mobile hero upper/lower image seams. */
+@media (max-width:760px){
+ main#top > .hero .hero-bg::after{
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.30) 5%,#000 12%,#000 68%,rgba(0,0,0,.65) 79%,transparent 94%)!important;
+  mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.30) 5%,#000 12%,#000 68%,rgba(0,0,0,.65) 79%,transparent 94%)!important;
+ }
+ main#top > .hero:after{
+  background:linear-gradient(to bottom,rgba(7,10,15,.80) 0%,rgba(7,10,15,.38) 6%,transparent 17%,transparent 49%,rgba(7,9,12,.12) 58%,rgba(7,9,12,.57) 73%,rgba(7,9,12,.90) 86%,#07090c 100%)!important;
+ }
+}
 </style></head>
 <body>
 <header id="header">
