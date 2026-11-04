@@ -1640,6 +1640,28 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
   background-color:#0b1016!important;
  }
 }
+
+/* 2026-11-04: mobile hero substantially zoomed out; desktop untouched */
+@media (max-width:760px){
+ main#top > .hero .hero-bg{
+  background-image:none!important;
+  background-color:#0b1016!important;
+  transform:none!important;
+  overflow:hidden!important;
+ }
+ main#top > .hero .hero-bg::before{
+  content:"";position:absolute;inset:-16px;
+  background:url("hero.webp") 52% center/cover no-repeat;
+  filter:blur(22px) brightness(.42);
+  transform:scale(1.04);
+ }
+ main#top > .hero .hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:url("hero.webp") 54% 53%/auto 70% no-repeat;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 13%,#000 75%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 13%,#000 75%,transparent 100%);
+ }
+}
 </style></head>
 <body>
 <header id="header">
