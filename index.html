@@ -1491,6 +1491,41 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
   }
 }
 @media (max-width:360px) { header .nav a.brand > img.logo {width:72px!important;} }
+
+/* RENVIS mobile first-view refinement 2026-11-04: one scoped override */
+.renvis-mobile-hours{display:none}
+@media (max-width:760px){
+ header#header{height:94px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:stretch!important;background:rgba(5,8,12,.87)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.12)!important}
+ header#header .nav{height:55px!important;min-height:55px!important;width:calc(100% - 24px)!important;gap:8px!important;justify-content:space-between!important}
+ header#header .nav>a.brand{flex:1 1 auto!important;min-width:0!important;max-width:none!important;overflow:visible!important;gap:3px!important}
+ header#header .nav a.brand>img.logo{width:100px!important;max-width:100px!important;height:auto!important;position:static!important;transform:none!important}
+ header#header .nav a.brand>span.brand-company{font-size:7px!important;line-height:1.2!important;white-space:nowrap!important}
+ header#header .nav-actions{display:flex!important;gap:7px!important;align-items:center!important;flex:0 0 auto!important}
+ header#header .mobile-contact-button,header#header .nav-actions .icon-link,header#header .nav-actions .mail-icon{display:none!important}
+ header#header .nav-actions .renvis-top-phone{display:grid!important;place-items:center!important;width:42px!important;height:42px!important;min-width:42px!important;max-width:42px!important;padding:0!important;margin:0!important;border:1px solid rgba(255,255,255,.35)!important;border-radius:6px!important;background:rgba(4,7,11,.6)!important;box-shadow:none!important}
+ header#header .renvis-top-phone svg{display:block!important;width:21px!important;height:21px!important;stroke:#f3cb72!important;fill:none!important}
+ header#header .renvis-top-phone .renvis-phone-copy{display:none!important}
+ header#header .nav-actions .renvis-top-line{display:flex!important;align-items:center!important;justify-content:center!important;width:55px!important;min-width:55px!important;height:42px!important;padding:0 5px!important;margin:0!important;border-radius:6px!important;background:#06c755!important;box-shadow:none!important}
+ header#header .renvis-top-line .renvis-line-mark{display:none!important}
+ header#header .renvis-top-line>b{display:block!important;font-size:13px!important;color:white!important;line-height:1!important;letter-spacing:0!important}
+ header#header .nav-actions .menu-btn{display:grid!important;width:42px!important;height:42px!important;min-width:42px!important;flex:0 0 42px!important;padding:0!important;gap:5px!important}
+ header#header .menu-btn span{width:25px!important;height:2px!important}
+ header#header .renvis-mobile-hours{display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;height:29px!important;min-height:29px!important;width:100%!important;border-top:1px solid rgba(255,255,255,.09)!important;color:#cbd0d5!important;font-size:10px!important;line-height:1!important;letter-spacing:.01em!important}
+ header#header .renvis-mobile-hours .hours-divider{color:#6d737b!important}
+ main#top>.hero:after{background:linear-gradient(0deg,rgba(3,6,10,.82) 0%,rgba(3,6,10,.48) 34%,rgba(3,6,10,.08) 72%)!important}
+ main#top>.hero .hero-content{padding-bottom:36px!important}
+ main#top>.hero h1{font-size:clamp(25px,6.8vw,37px)!important;line-height:1.04!important;letter-spacing:-.035em!important;margin-bottom:24px!important}
+ main#top>.hero .hero-lead{font-size:clamp(11px,3.1vw,14px)!important;line-height:1.7!important;margin-bottom:20px!important;max-width:100%!important}
+ main#top>.hero .hero-primary-actions{gap:9px!important;margin-bottom:24px!important}
+ main#top>.hero .hero-primary-btn,main#top>.hero .hero-secondary-btn{height:46px!important;min-height:46px!important;padding:0 10px!important;font-size:clamp(11px,3vw,14px)!important;border-radius:4px!important;box-shadow:none!important}
+ main#top>.hero .hero-secondary-btn{background:rgba(7,10,15,.42)!important;border:1px solid rgba(255,255,255,.68)!important}
+ main#top>.hero .stats-strip .stats-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ main#top>.hero .stats-strip .stat-item:nth-child(3){display:none!important}
+ main#top>.hero .stats-strip .stat-item{min-width:0!important;padding:12px 5px!important}
+ main#top>.hero .stats-strip .stat-item strong{font-size:clamp(23px,6.5vw,31px)!important}
+ main#top>.hero .stats-strip .stat-item small{font-size:10px!important;letter-spacing:0!important}
+}
+@media (max-width:360px){header#header .nav a.brand>img.logo{width:78px!important;max-width:78px!important}header#header .nav-actions{gap:4px!important}header#header .nav-actions .renvis-top-phone,header#header .nav-actions .menu-btn{width:38px!important;min-width:38px!important;height:38px!important}header#header .nav-actions .renvis-top-line{width:49px!important;min-width:49px!important;height:38px!important}}
 </style></head>
 <body>
 <header id="header">
@@ -1517,6 +1552,7 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
 <button aria-controls="mobileDrawer" aria-expanded="false" aria-label="メニューを開く" class="menu-btn" id="menuOpen"><span></span><span></span><span></span></button>
 </div>
 </div>
+<div class="renvis-mobile-hours"><span>◷ 8:00〜17:30</span><span class="hours-divider">|</span><span>第2・4土曜 / 日祝休</span></div>
 </header>
 <div class="mobile-menu-overlay" id="menuOverlay"></div>
 <aside aria-hidden="true" class="mobile-drawer" id="mobileDrawer">
