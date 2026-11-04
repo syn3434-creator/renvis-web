@@ -1587,6 +1587,33 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
  header#header .nav-actions .renvis-top-phone,header#header .nav-actions .menu-btn{width:33px!important;min-width:33px!important;max-width:33px!important;height:33px!important;min-height:33px!important}
  header#header .nav-actions .renvis-top-line{width:43px!important;min-width:43px!important;max-width:43px!important;height:33px!important;min-height:33px!important}
 }
+
+/* 2026-11-04: mobile-only hero and opening-hours alignment */
+@media (max-width:760px){
+ header#header .renvis-mobile-hours{
+  justify-content:flex-end!important;
+  padding-right:15px!important;
+  padding-left:8px!important;
+  text-align:right!important;
+ }
+ main#top > .hero .hero-bg{
+  background-size:100% 100%,auto 68%,cover!important;
+  background-position:center,43% 22%,center 43%!important;
+ }
+ main#top > .hero .hero-content{
+  padding-top:clamp(270px,44svh,440px)!important;
+  padding-bottom:20px!important;
+ }
+ main#top > .hero h1{margin-bottom:14px!important}
+ main#top > .hero h1::after{margin-top:11px!important}
+ main#top > .hero .hero-lead{margin-bottom:15px!important}
+ main#top > .hero .hero-primary-actions{gap:9px!important;margin-bottom:12px!important}
+ main#top > .hero .hero-primary-actions a{
+  min-height:43px!important;height:43px!important;
+ }
+ main#top > .hero .hero-copy-box > .stats-strip{margin-top:12px!important}
+ main#top > .hero .stats-strip .stat-item{padding-top:5px!important;padding-bottom:5px!important}
+}
 </style></head>
 <body>
 <header id="header">
