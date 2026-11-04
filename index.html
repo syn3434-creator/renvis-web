@@ -1547,16 +1547,45 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
  main#top>.hero .stats-strip .stat-item strong span{font-size:.36em!important;margin-left:2px!important}
  main#top>.hero .stats-strip .stat-item small{font-size:clamp(8px,2.2vw,10px)!important;white-space:nowrap!important;letter-spacing:0!important}
 }
-/* Mobile hero photo: substantially wider framing, no enlarged duplicate foreground */
+/* RENVIS mobile hero: balanced subject placement and vertical rhythm (2026-11-04) */
 @media (max-width:760px){
- main#top>.hero .hero-bg{
-  background-image:linear-gradient(180deg,rgba(5,8,12,.35),rgba(5,8,12,.16) 40%,rgba(5,8,12,.55)),url("hero.webp")!important;
-  background-size:100% 100%,auto 67%!important;
-  background-position:center,center 34%!important;
+ main#top > .hero .hero-bg{
+  background-image:linear-gradient(180deg,rgba(5,8,12,.13) 0%,rgba(5,8,12,.04) 35%,rgba(5,8,12,.35) 68%,rgba(5,8,12,.78) 100%),url("hero.webp"),url("hero.webp")!important;
+  background-size:100% 100%,auto 78%,cover!important;
+  background-position:center,43% 27%,center 43%!important;
   background-repeat:no-repeat!important;
   background-color:#0b1016!important;
   transform:none!important;
+  filter:none!important;
  }
+ main#top > .hero .hero-content{
+  padding-top:clamp(285px,46svh,460px)!important;
+  padding-bottom:22px!important;
+ }
+ main#top > .hero h1{margin-bottom:16px!important}
+ main#top > .hero h1::after{margin-top:13px!important}
+ main#top > .hero .hero-lead{margin-bottom:19px!important}
+ main#top > .hero .hero-primary-actions{margin-bottom:14px!important;gap:9px!important}
+ main#top > .hero .hero-copy-box > .stats-strip{margin-top:16px!important}
+ main#top > .hero .hero-copy-box > .stats-strip .stat-item{padding-top:9px!important;padding-bottom:9px!important}
+}
+
+/* Mobile final spacing refinement: header controls and three-column achievements */
+@media (max-width:760px){
+ header#header .nav-actions .renvis-top-phone{width:36px!important;min-width:36px!important;max-width:36px!important;height:36px!important;min-height:36px!important}
+ header#header .renvis-top-phone svg{width:18px!important;height:18px!important}
+ header#header .nav-actions .renvis-top-line{width:47px!important;min-width:47px!important;max-width:47px!important;height:36px!important;min-height:36px!important;padding:0 4px!important}
+ header#header .renvis-top-line>b{font-size:11px!important}
+ header#header .nav-actions .menu-btn{width:36px!important;min-width:36px!important;max-width:36px!important;height:36px!important;min-height:36px!important}
+ header#header .nav-actions .menu-btn span{width:25px!important}
+ main#top>.hero .hero-copy-box>.stats-strip{margin-top:12px!important}
+ main#top>.hero .stats-strip .stat-item{min-height:72px!important;padding:5px 2px!important}
+ main#top>.hero .stats-strip .stat-item small{margin-top:4px!important}
+ main#top>.hero .stats-strip .stats-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media (max-width:360px){
+ header#header .nav-actions .renvis-top-phone,header#header .nav-actions .menu-btn{width:33px!important;min-width:33px!important;max-width:33px!important;height:33px!important;min-height:33px!important}
+ header#header .nav-actions .renvis-top-line{width:43px!important;min-width:43px!important;max-width:43px!important;height:33px!important;min-height:33px!important}
 }
 </style></head>
 <body>
