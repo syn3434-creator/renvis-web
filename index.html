@@ -1630,6 +1630,16 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
   margin-bottom:26px!important;
  }
 }
+/* 2026-11-04: fix mobile hero seam: use one full-bleed image, not stacked duplicate images */
+@media (max-width:760px){
+ main#top > .hero .hero-bg{
+  background-image:linear-gradient(180deg,rgba(5,8,12,.10) 0%,rgba(5,8,12,.03) 38%,rgba(5,8,12,.36) 72%,rgba(5,8,12,.78) 100%),url("hero.webp")!important;
+  background-size:100% 100%,cover!important;
+  background-position:center,56% center!important;
+  background-repeat:no-repeat,no-repeat!important;
+  background-color:#0b1016!important;
+ }
+}
 </style></head>
 <body>
 <header id="header">
