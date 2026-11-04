@@ -1547,6 +1547,17 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
  main#top>.hero .stats-strip .stat-item strong span{font-size:.36em!important;margin-left:2px!important}
  main#top>.hero .stats-strip .stat-item small{font-size:clamp(8px,2.2vw,10px)!important;white-space:nowrap!important;letter-spacing:0!important}
 }
+/* Mobile hero photo: substantially wider framing, no enlarged duplicate foreground */
+@media (max-width:760px){
+ main#top>.hero .hero-bg{
+  background-image:linear-gradient(180deg,rgba(5,8,12,.35),rgba(5,8,12,.16) 40%,rgba(5,8,12,.55)),url("hero.webp")!important;
+  background-size:100% 100%,auto 67%!important;
+  background-position:center,center 34%!important;
+  background-repeat:no-repeat!important;
+  background-color:#0b1016!important;
+  transform:none!important;
+ }
+}
 </style></head>
 <body>
 <header id="header">
