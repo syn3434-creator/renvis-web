@@ -1614,6 +1614,22 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
  main#top > .hero .hero-copy-box > .stats-strip{margin-top:12px!important}
  main#top > .hero .stats-strip .stat-item{padding-top:5px!important;padding-bottom:5px!important}
 }
+/* 2026-11-04: requested mobile hero positioning only */
+@media (max-width:760px){
+ main#top > .hero .hero-bg{
+  background-size:100% 100%,auto 68%,cover!important;
+  background-position:center,43% 30%,center 49%!important;
+ }
+ main#top > .hero .hero-content{
+  padding-top:clamp(235px,calc(44svh - 35px),405px)!important;
+ }
+ main#top > .hero h1{
+  font-size:clamp(28px,7.5vw,41px)!important;
+ }
+ main#top > .hero .hero-lead{
+  margin-bottom:26px!important;
+ }
+}
 </style></head>
 <body>
 <header id="header">
