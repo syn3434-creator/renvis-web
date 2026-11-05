@@ -1260,6 +1260,11 @@ footer{
 .renvis-seo-bottom summary{cursor:pointer;padding:14px 0;font-size:.82rem;font-weight:800;color:#e4e7eb}
 .renvis-seo-bottom details .renvis-seo-detail{padding:0 0 16px}
 @media(max-width:760px){.renvis-seo-bottom{padding:28px 0 35px}.renvis-seo-bottom p{font-size:.76rem}.renvis-seo-bottom details{padding:0 12px}}
+/* 中古商品一覧の見出しを新着商品と同じ文字サイズに統一 */
+.all-products .results-head h2{font-size:1.75rem!important;}
+@media(max-width:760px){
+  .all-products .results-head h2{font-size:1.18rem!important;line-height:1.3!important;}
+}
 </style>
 <style id="renvis-mobile-clean-20261009">
 /* RENVIS mobile final: consolidated, applied before first paint. */
@@ -1849,6 +1854,12 @@ footer{
   }
 }
 </style>
+<style id="renvis-remove-short-hero-line-20261105">
+/* Smartphone: keep the long left border; remove only the short heading accent. */
+@media(max-width:760px){
+  .used-hero h1::before{content:none!important;display:none!important;}
+}
+</style>
 </head>
 
 
@@ -2423,7 +2434,6 @@ footer{
           <h2>
             中古商品一覧
           </h2>
-          <p class="all-products-note">現在掲載中の中古アタッチメントをすべて表示。大割機・小割機・ブレーカーなどの中古建機アタッチメントをご案内しています。</p>
 
           <div
             id="count"
@@ -2871,12 +2881,12 @@ function renderArrivals(){
 
   $("arrivals").innerHTML =
     filtered()
-      .filter(product => product.new && product.status !== "SOLD OUT")
+      .filter(product => product.status !== "SOLD OUT")
       .sort(
         (a,b) =>
-          b.date -
-          a.date
+          b.date - a.date || b.id - a.id
       )
+      .slice(0, 4)
       .map(
         product =>
           card(
@@ -3703,31 +3713,7 @@ async function loadUsedItems(){
               )
                 .getTime()
               :
-              0,
-
-            new:
-              row.created_at
-              ?
-              (
-                Date.now()
-                -
-                new Date(
-                  row.created_at
-                )
-                  .getTime()
-              )
-              <=
-              30
-              *
-              24
-              *
-              60
-              *
-              60
-              *
-              1000
-              :
-              false
+              0
 
           })
         );
