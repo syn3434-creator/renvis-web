@@ -1712,9 +1712,11 @@ footer{
 <meta property="og:site_name" content="株式会社レンビス | RENVIS">
 <meta name="twitter:card" content="summary">
 <style id="renvis-used-mobile-description-wrap-20261105">
-/* 説明文の箇条書き改行のみ調整。PC版は既存表示を維持。 */
+/* 説明文の箇条書き改行と文末の孤立防止。PC版は既存表示を維持。 */
+.used-keep-together{white-space:nowrap;}
 .used-hero-bullet{display:block;}
 @media(max-width:760px){
+  .used-hero-copy .used-hero-desc:not(.used-hero-mobile-original){font-size:12px!important;line-height:1.7!important;}
   .used-hero-copy .used-hero-desc .used-hero-bullet{
     display:block;
     padding-left:1em;
@@ -1863,7 +1865,7 @@ footer{
       <div class="used-hero-copy">
         <h1>USED SALES</h1>
         <p class="used-hero-lead">掲載商品だけが、すべてではありません。</p>
-        <p class="used-hero-desc"><span class="used-hero-bullet">・お探しの中古アタッチメントが見つからない場合も、お気軽にご相談ください。</span><span class="used-hero-bullet">・掲載のない機種・型式についても、ご希望に合わせてお探しします。</span></p>
+        <p class="used-hero-desc"><span class="used-hero-bullet">・お探しの中古アタッチメントが見つからない場合も、お気軽に<span class="used-keep-together">ご相談ください。</span></span><span class="used-hero-bullet">・掲載のない機種・型式についても、ご希望に合わせて<span class="used-keep-together">お探しします。</span></span></p>
         <p class="used-hero-desc used-hero-mobile-original">厳選した中古アタッチメントを、確かな品質でお届けします。</p>
       </div>
       <a class="used-hero-phone" href="tel:0946428311">電話する</a>
@@ -2301,7 +2303,7 @@ footer{
           <h2>
             中古商品一覧
           </h2>
-          <p class="all-products-note">現在掲載中の中古アタッチメントをすべて表示。福岡県を拠点に、大割機・小割機・ブレーカーなどの中古建機アタッチメントをご案内しています。</p>
+          <p class="all-products-note">現在掲載中の中古アタッチメントをすべて表示。大割機・小割機・ブレーカーなどの中古建機アタッチメントをご案内しています。</p>
 
           <div
             id="count"
