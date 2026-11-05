@@ -1812,6 +1812,30 @@ footer{
   .used-hero-phone .used-phone-text{display:inline!important;white-space:nowrap!important;}
 }
 </style>
+<style id="renvis-used-mobile-line-and-phone-20261105">
+/* Mobile-only alignment and overlap correction. */
+@media(max-width:760px){
+  .used-hero .wrap.used-hero-content{
+    width:calc(100% - 28px)!important;
+    margin:0 14px!important;
+    padding:0 0 0 10px!important;
+    border-left:2px solid var(--gold)!important;
+    grid-template-columns:minmax(0,1fr) 72px!important;
+    column-gap:8px!important;
+  }
+  .used-hero-copy::before{content:none!important;display:none!important;}
+  .used-hero-message .used-hero-desc{
+    font-size:clamp(6px,1.55vw,7.5px)!important;
+    letter-spacing:-.055em!important;
+    white-space:nowrap!important;
+  }
+  .used-hero-phone{
+    width:72px!important;max-width:72px!important;
+    gap:0!important;padding:0 5px!important;
+  }
+  .used-hero-phone .used-phone-icon{display:none!important;}
+}
+</style>
 </head>
 
 
@@ -1948,10 +1972,10 @@ footer{
         <h1>USED SALES</h1>
         <div class="used-hero-message">
           <p class="used-hero-lead">掲載商品だけが、すべてではありません。</p>
-          <p class="used-hero-desc">・掲載のない機種・型式についても、ご希望に合わせてお探しします。</p>
+          <p class="used-hero-desc">掲載のない機種・型式についても、ご希望に合わせてお探しします。</p>
         </div>
       </div>
-      <a class="used-hero-phone" href="tel:0946428311" aria-label="電話で問い合わせる"><span class="used-phone-text">電話する</span><svg class="used-phone-icon" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 5.18 2 2 0 0 1 5.08 3h3a2 2 0 0 1 2 1.72l.4 2.81a2 2 0 0 1-.57 1.71L8.1 11.05a16 16 0 0 0 4.85 4.85l1.81-1.81a2 2 0 0 1 1.71-.57l2.81.4A2 2 0 0 1 22 16.92z"/></svg></a>
+      <a class="used-hero-phone" href="tel:0946428311" aria-label="電話で問い合わせる"><span class="used-phone-text">電話する</span></a>
     </div>
 
   </section>
