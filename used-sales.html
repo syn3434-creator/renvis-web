@@ -1759,22 +1759,21 @@ footer{
  .type-chips{margin-top:10px;padding-top:10px;}
 }
 </style>
-<style id="renvis-mobile-only-final-20261105">
-/* Mobile-only changes. Desktop rules and JavaScript untouched. */
-@media screen and (max-width:760px){
- .used-hero .wrap.used-hero-content{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:10px!important;align-items:center!important;}
- .used-hero-copy{display:contents!important;}
- .used-hero-copy h1{grid-column:1/-1!important;grid-row:1!important;margin:0 0 4px!important;}
- .used-hero-copy .used-hero-lead,.used-hero-copy .used-hero-desc{display:none!important;}
- .used-mobile-short-copy{display:block!important;grid-column:1!important;grid-row:2!important;margin:0!important;font-size:12px!important;line-height:1.55!important;color:#c9d0d7!important;font-weight:600!important;}
- .used-hero-phone{grid-column:2!important;grid-row:2!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;width:auto!important;max-width:none!important;min-width:98px!important;height:38px!important;min-height:38px!important;margin:0!important;padding:0 12px!important;border:1px solid var(--gold)!important;border-radius:5px!important;background:#0b0f14!important;color:var(--gold)!important;font-size:12px!important;white-space:nowrap!important;}
- .used-hero-phone .used-phone-icon{display:none!important;}
+<style id="renvis-mobile-ux-refine-20261105">
+/* スマホ版のみ：案内・電話・お気に入りを整理。PC版と検索処理は維持 */
+@media(max-width:760px){
+ .used-hero .wrap.used-hero-content{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:9px!important;}
+ .used-hero-copy{display:block!important;width:100%;padding-left:12px!important;}
+ .used-hero-copy h1{margin:0!important;}
+ .used-mobile-short-copy{display:block!important;margin:0!important;padding-left:12px!important;color:#e0b53f!important;font-size:13px!important;font-weight:800!important;line-height:1.5!important;}
+ .used-hero-phone{display:inline-flex!important;align-self:flex-start!important;width:auto!important;max-width:none!important;height:36px!important;min-height:36px!important;margin:0 0 0 12px!important;padding:0 13px!important;border:1px solid rgba(224,181,63,.75)!important;border-radius:5px!important;background:transparent!important;color:#e0b53f!important;gap:8px!important;font-size:12px!important;}
  .used-hero-phone .used-phone-text{display:inline!important;}
- .used-hero{padding-bottom:8px!important;}
- .filter-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;align-items:stretch!important;}
- .filter-actions .filter-btn{width:100%!important;min-width:0!important;height:40px!important;white-space:nowrap!important;font-size:12px!important;}
- .filter-actions .used-favorite-filter{grid-column:1/-1!important;width:100%!important;height:38px!important;min-height:38px!important;margin:0!important;padding:0 12px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;font-size:12px!important;white-space:nowrap!important;}
- .filter-actions .used-favorite-filter span{white-space:nowrap!important;word-break:keep-all!important;}
+ .used-hero-phone .used-phone-icon{display:block!important;width:16px!important;height:16px!important;}
+ .used-hero{padding-bottom:7px!important;}
+ .filter-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;}
+ .filter-actions .used-favorite-filter{grid-column:1/-1!important;width:100%!important;height:38px!important;min-height:38px!important;justify-content:flex-start!important;padding:0 12px!important;font-size:12px!important;gap:9px!important;}
+ .filter-actions .used-favorite-filter input{width:17px!important;height:17px!important;}
+ .filter-actions .used-favorite-filter span{white-space:nowrap!important;overflow-wrap:normal!important;}
 }
 </style>
 </head>
@@ -1912,10 +1911,10 @@ footer{
       <div class="used-hero-copy">
         <h1>USED SALES</h1>
         <p class="used-hero-lead">掲載商品だけが、すべてではありません。</p>
-        <p class="used-hero-desc"><span class="used-hero-bullet">・お探しの中古アタッチメントが見つからない場合も、お気軽に<span class="used-keep-together">ご相談ください。</span></span><span class="used-hero-bullet">・掲載のない機種・型式についても、ご希望に合わせて<span class="used-keep-together">お探しします。</span></span></p>
+        <p class="used-hero-desc"><span class="used-hero-bullet">・掲載のない機種・型式についても、ご希望に合わせて<span class="used-keep-together">お探しします。</span></span></p>
         <p class="used-hero-desc used-hero-mobile-original">厳選した中古アタッチメントを、確かな品質でお届けします。</p>
       </div>
-      <p class="used-mobile-short-copy">掲載外の機種・型式もお気軽にご相談ください。</p>
+      <p class="used-mobile-short-copy">掲載外の機種・型式もお探しします。</p>
       <a class="used-hero-phone" href="tel:0946428311" aria-label="電話で問い合わせる"><span class="used-phone-text">電話する</span><svg class="used-phone-icon" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 5.18 2 2 0 0 1 5.08 3h3a2 2 0 0 1 2 1.72l.4 2.81a2 2 0 0 1-.57 1.71L8.1 11.05a16 16 0 0 0 4.85 4.85l1.81-1.81a2 2 0 0 1 1.71-.57l2.81.4A2 2 0 0 1 22 16.92z"/></svg></a>
     </div>
 
