@@ -1711,6 +1711,23 @@ footer{
 <!-- SEO metadata -->
 <meta property="og:site_name" content="株式会社レンビス | RENVIS">
 <meta name="twitter:card" content="summary">
+<style id="renvis-used-mobile-description-wrap-20261105">
+/* 説明文の箇条書き改行のみ調整。PC版は既存表示を維持。 */
+.used-hero-bullet{display:block;}
+@media(max-width:760px){
+  .used-hero-copy .used-hero-desc .used-hero-bullet{
+    display:block;
+    padding-left:1em;
+    text-indent:-1em;
+    line-break:strict;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+  .used-hero-copy .used-hero-desc .used-hero-bullet + .used-hero-bullet{
+    margin-top:6px;
+  }
+}
+</style>
 </head>
 
 
@@ -1846,7 +1863,7 @@ footer{
       <div class="used-hero-copy">
         <h1>USED SALES</h1>
         <p class="used-hero-lead">掲載商品だけが、すべてではありません。</p>
-        <p class="used-hero-desc">・お探しの中古アタッチメントが見つからない場合も、お気軽にご相談ください。<br>・掲載のない機種・型式についても、ご希望に合わせてお探しします。</p>
+        <p class="used-hero-desc"><span class="used-hero-bullet">・お探しの中古アタッチメントが見つからない場合も、お気軽にご相談ください。</span><span class="used-hero-bullet">・掲載のない機種・型式についても、ご希望に合わせてお探しします。</span></p>
         <p class="used-hero-desc used-hero-mobile-original">厳選した中古アタッチメントを、確かな品質でお届けします。</p>
       </div>
       <a class="used-hero-phone" href="tel:0946428311">電話する</a>
