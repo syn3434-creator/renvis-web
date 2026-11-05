@@ -2419,21 +2419,21 @@
   }
 }
 </style>
-<style id="renvis-unified-header-actions-20261105">
-/* Top page phone and LINE styling, isolated to the two header buttons */
-header .renvis-unified-actions{display:flex;align-items:center;gap:12px;flex:0 0 auto;margin-left:12px}
-header .renvis-unified-phone{display:flex;align-items:center;gap:9px;color:#fff;white-space:nowrap;border-left:1px solid rgba(255,255,255,.35);padding-left:17px;line-height:1.2;text-decoration:none}
-header .renvis-unified-phone svg{width:26px;height:26px;fill:none;stroke:#e7be5e;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-header .renvis-unified-phone-copy{display:flex;flex-direction:column;gap:4px}
-header .renvis-unified-phone-copy b{font-size:1rem;letter-spacing:.02em}
-header .renvis-unified-meta{display:flex;flex-direction:column;gap:2px}
-header .renvis-unified-meta small{font-size:.67rem;color:#f0f1f3;font-weight:700}
-header .renvis-unified-line{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 15px;min-height:43px;border-radius:5px;background:#06c755;color:#fff;white-space:nowrap;font-size:.82rem;font-weight:800;text-decoration:none}
-header .renvis-unified-line-mark{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#fff;color:#06a84a;font-size:.52rem;font-weight:900}
-header .renvis-unified-phone:hover,header .renvis-unified-line:hover{filter:brightness(1.12)}
-@media(max-width:1250px) and (min-width:761px){header .renvis-unified-actions{gap:7px;margin-left:3px}header .renvis-unified-phone{padding-left:8px;gap:5px}header .renvis-unified-phone-copy b{font-size:.78rem}header .renvis-unified-meta small{font-size:.53rem}header .renvis-unified-line{padding:7px 9px}}
-@media(max-width:760px){header .renvis-unified-actions{margin-left:auto;gap:5px}header .renvis-unified-phone{height:35px;padding:0 7px;border:1px solid #d8b65a;border-radius:4px;background:rgba(5,7,10,.62);gap:4px}header .renvis-unified-phone svg{width:15px;height:15px}header .renvis-unified-phone-copy b{font-size:.58rem}header .renvis-unified-meta{display:none}header .renvis-unified-line{height:35px;min-height:35px;padding:0 7px;font-size:.63rem;gap:4px}header .renvis-unified-line-mark{width:20px;height:20px;font-size:.4rem}header .nav{gap:6px!important}header .logo{max-width:145px}header .renvis-unified-actions{flex-shrink:0}}
-@media(max-width:360px){header .renvis-unified-phone-copy b{font-size:.51rem}header .renvis-unified-phone{padding:0 5px}header .renvis-unified-line{padding:0 5px}header .renvis-unified-actions{gap:3px}}
+
+<style id="renvis-index-mobile-contact-match">
+/* トップページのスマホ用コンパクト電話・LINEと同じ見た目。PCには影響なし */
+.renvis-mobile-quick-actions{display:none}
+@media(max-width:760px){
+ header .nav{gap:4px!important;flex-wrap:nowrap!important}
+ header .nav>a:first-child{min-width:0;flex:1 1 auto}
+ header .nav .logo{width:min(185px,38vw)!important;max-width:100%;height:auto}
+ header .renvis-mobile-quick-actions{display:flex!important;align-items:center;gap:5px;flex:0 0 auto;margin-left:auto}
+ header .renvis-mobile-quick-phone{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border:1px solid #d8b65a;border-radius:6px;background:rgba(5,7,10,.62);color:#e7c86a;text-decoration:none}
+ header .renvis-mobile-quick-phone svg{width:19px;height:19px;fill:none;stroke:#e7c86a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+ header .renvis-mobile-quick-line{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;padding:0 5px;border-radius:6px;background:#06c755;color:#fff;font-size:13px;font-weight:900;line-height:1;text-decoration:none}
+ header .nav .mobile-menu-toggle{margin-left:0!important;flex:0 0 42px!important;width:42px!important;height:42px!important}
+ header .nav .renvis-line-direct{display:none!important}
+}
 </style>
 </head>
 
@@ -2561,7 +2561,11 @@ header .renvis-unified-phone:hover,header .renvis-unified-line:hover{filter:brig
       </a>
 
 
-      <button
+      <div class="renvis-mobile-quick-actions" aria-label="お問い合わせ">
+<a class="renvis-mobile-quick-phone" href="tel:0946428311" aria-label="電話する"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"/></svg></a>
+<a class="renvis-mobile-quick-line" href="https://lin.ee/pUDgnDR" target="_blank" rel="noopener noreferrer" aria-label="LINEで相談">LINE</a>
+</div>
+<button
         class="mobile-menu-toggle"
         id="menuOpen"
         type="button"
@@ -2576,7 +2580,7 @@ header .renvis-unified-phone:hover,header .renvis-unified-line:hover{filter:brig
 
       </button>
 
-    <div class="renvis-unified-actions"><a class="renvis-unified-phone" href="tel:0946428311" aria-label="0946-42-8311に電話"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5.2 3.7l3.1-.7 2 5-2.1 1.7a15.1 15.1 0 0 0 6.1 6.1l1.7-2.1 5 2-.7 3.1c-.2 1-1.1 1.7-2.1 1.7C10 20.5 3.5 14 3.5 5.8c0-1 .7-1.9 1.7-2.1z"/></svg><span class="renvis-unified-phone-copy"><b>0946-42-8311</b><span class="renvis-unified-meta"><small>◷ 8:00〜17:30</small><small>第2・4土／日祝休</small></span></span></a><a class="renvis-unified-line" href="https://lin.ee/pUDgnDR" target="_blank" rel="noopener noreferrer" aria-label="LINEでお問い合わせ"><span class="renvis-unified-line-mark">LINE</span><b>LINE</b></a></div></div>
+    </div>
 
   </header>
 
