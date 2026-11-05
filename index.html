@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="株式会社レンビス（RENVIS）は福岡県筑前町を拠点に、建機アタッチメントのレンタル・修理・中古販売・管理・部品製作に対応。大割機・小割機・ブレーカーなど、建設・解体現場を支えます。" name="description"/>
+<meta content="株式会社レンビス（RENVIS）は福岡県を拠点に、建機アタッチメントのレンタル・修理・中古販売・管理・部品製作に対応。大割機・小割機・ブレーカーなど、建設・解体現場を支えます。" name="description"/>
 <title>福岡の建機アタッチメントレンタル・修理｜株式会社レンビス（RENVIS）</title>
 <link as="image" fetchpriority="high" href="hero.webp" rel="preload" type="image/webp"/>
 
@@ -100,7 +100,7 @@
   "@type": "LocalBusiness",
   "name": "株式会社レンビス",
   "alternateName": "RENVIS",
-  "description": "福岡県筑前町を拠点に、建設機械用アタッチメントのレンタル・修理・中古販売・管理に対応。",
+  "description": "福岡県を拠点に、建設機械用アタッチメントのレンタル・修理・中古販売・管理に対応。",
   "telephone": "+81-946-42-8311",
   "address": {
     "@type": "PostalAddress",
@@ -1641,7 +1641,7 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
  }
 }
 
-/* Mobile hero: final image placement and seamless fade. Desktop unchanged. */
+/* 2026-11-04: mobile hero substantially zoomed out; desktop untouched */
 @media (max-width:760px){
  main#top > .hero .hero-bg{
   background-image:none!important;
@@ -1657,23 +1657,29 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
  }
  main#top > .hero .hero-bg::after{
   content:"";position:absolute;inset:0;
-  background:url("hero.webp") calc(68% + 110px) calc(12% + 43px)/auto 56% no-repeat;
+  background:url("hero.webp") calc(68% + 110px) calc(12% + 78px)/auto 56% no-repeat;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 9%,#000 72%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 9%,#000 72%,transparent 100%);
+ }
+ /* Fade the empty upper edge and the image-to-copy boundary naturally. */
+ main#top > .hero:after{
+  background:linear-gradient(to bottom,
+   rgba(7,10,15,.92) 0%,rgba(7,10,15,.36) 10%,
+   rgba(7,10,15,0) 25%,rgba(7,10,15,.06) 48%,
+   rgba(7,10,15,.52) 70%,rgba(7,10,15,.93) 88%,#07090c 100%)!important;
+  pointer-events:none;
+ }
+ /* Raise only the catchphrase; keep the buttons, stats and image geometry. */
+ main#top > .hero h1{position:relative!important;top:-24px!important;margin-bottom:-10px!important}
+}
+/* 2026-11-04: soften only the mobile hero upper/lower image seams. */
+@media (max-width:760px){
+ main#top > .hero .hero-bg::after{
   -webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.30) 5%,#000 12%,#000 68%,rgba(0,0,0,.65) 79%,transparent 94%)!important;
   mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.30) 5%,#000 12%,#000 68%,rgba(0,0,0,.65) 79%,transparent 94%)!important;
  }
  main#top > .hero:after{
   background:linear-gradient(to bottom,rgba(7,10,15,.80) 0%,rgba(7,10,15,.38) 6%,transparent 17%,transparent 49%,rgba(7,9,12,.12) 58%,rgba(7,9,12,.57) 73%,rgba(7,9,12,.90) 86%,#07090c 100%)!important;
-  pointer-events:none;
- }
- main#top > .hero h1{position:relative!important;top:-24px!important;margin-bottom:-10px!important}
-}
-
-/* 2026-11-05: スマホ版・実績3列の上下余白のみ調整 */
-@media (max-width:760px){
- main#top > .hero .stats-strip .stat-item{
-  min-height:68px!important;
-  padding-top:2px!important;
-  padding-bottom:2px!important;
  }
 }
 </style></head>
@@ -1771,7 +1777,7 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
 </section>
 <section class="section"><div class="wrap">
 <div class="section-head renvis-home-services-head"><div><div class="eyebrow">Our Services</div><h2>事業内容</h2></div><a href="#company">会社概要を見る →</a></div>
-<p class="renvis-seo-intro">福岡県筑前町を拠点に、大割機・小割機・ブレーカーなど建機アタッチメントのレンタル・修理・中古販売に対応しています。</p>
+<p class="renvis-seo-intro">福岡県を拠点に、大割機・小割機・ブレーカーなど建機アタッチメントのレンタル・修理・中古販売に対応しています。</p>
 <div class="service-cards">
 <a aria-label="rentalページを見る" class="card rental" href="rental.html" id="rental">
 <div class="card-top"><div class="card-no">01</div></div>
