@@ -1723,6 +1723,25 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
  #news .news-kicker{color:#d9b84e!important;opacity:1!important}
  #news h2{color:#f1f3f6!important;opacity:1!important}
 }
+
+/* 2026-11-06: final mobile-only contrast and seamless hero refinement */
+@media (max-width:760px){
+  /* Improve the existing logo image without altering its geometry. */
+  header#header .nav .logo{filter:brightness(2.05) contrast(1.28) drop-shadow(0 0 1px rgba(255,255,255,.52))!important;}
+  /* Give the units a closer visual weight to the figures. */
+  main#top > .hero .stats-strip .stat-item strong span{font-size:15px!important;line-height:1.1!important;}
+  main#top > .hero .stats-strip .stat-item small{color:#f0f2f5!important;}
+  /* Match the area caption to the two numeric metrics. */
+  main#top > .hero .stats-strip .stat-item strong.area{font-size:clamp(18px,5vw,22px)!important;white-space:nowrap!important;}
+  /* Continuous fade across the photograph, subtitle and dark copy background. */
+  main#top > .hero .hero-bg::after{
+    -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.70) 0%,#000 7%,#000 60%,rgba(0,0,0,.92) 72%,rgba(0,0,0,.45) 88%,transparent 100%)!important;
+    mask-image:linear-gradient(to bottom,rgba(0,0,0,.70) 0%,#000 7%,#000 60%,rgba(0,0,0,.92) 72%,rgba(0,0,0,.45) 88%,transparent 100%)!important;
+  }
+  main#top > .hero:after{
+    background:linear-gradient(to bottom,rgba(7,10,15,.28) 0%,rgba(7,10,15,.06) 10%,transparent 24%,transparent 40%,rgba(7,9,12,.18) 52%,rgba(7,9,12,.46) 65%,rgba(7,9,12,.72) 78%,rgba(7,9,12,.91) 91%,#07090c 100%)!important;
+  }
+}
 </style>
 <!-- SEO metadata -->
 <link rel="canonical" href="https://renvis.co.jp/">
