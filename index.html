@@ -1682,6 +1682,30 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
   background:linear-gradient(to bottom,rgba(7,10,15,.80) 0%,rgba(7,10,15,.38) 6%,transparent 17%,transparent 49%,rgba(7,9,12,.12) 58%,rgba(7,9,12,.57) 73%,rgba(7,9,12,.90) 86%,#07090c 100%)!important;
  }
 }
+
+/* 2026-11-06: mobile-only header/hero spacing refinement */
+@media (max-width:760px){
+  /* No dividing rules around the opening-hours row. */
+  header#header{border-bottom:0!important;}
+  header#header .renvis-mobile-hours{
+    border:0!important;border-top:0!important;border-bottom:0!important;
+    height:20px!important;min-height:20px!important;
+    background:rgba(5,8,12,.10)!important;
+  }
+  /* Let the photograph emerge sooner below the hours, without moving its subject. */
+  main#top > .hero .hero-bg::after{
+    -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.70) 0%,#000 7%,#000 68%,rgba(0,0,0,.65) 79%,transparent 94%)!important;
+    mask-image:linear-gradient(to bottom,rgba(0,0,0,.70) 0%,#000 7%,#000 68%,rgba(0,0,0,.65) 79%,transparent 94%)!important;
+  }
+  /* Blend the photograph into the dark copy area, keeping legibility. */
+  main#top > .hero:after{
+    background:linear-gradient(to bottom,rgba(7,10,15,.46) 0%,rgba(7,10,15,.13) 9%,transparent 21%,transparent 48%,rgba(7,9,12,.18) 60%,rgba(7,9,12,.58) 75%,rgba(7,9,12,.88) 89%,#07090c 100%)!important;
+  }
+  /* Keep the existing three-column figures, reduce only their vertical spacing. */
+  main#top > .hero .hero-copy-box > .stats-strip{margin-top:8px!important;}
+  main#top > .hero .stats-strip .stat-item{min-height:64px!important;padding-top:3px!important;padding-bottom:3px!important;}
+  main#top > .hero .stats-strip .stat-item small{margin-top:3px!important;}
+}
 </style>
 <!-- SEO metadata -->
 <link rel="canonical" href="https://renvis.co.jp/">
