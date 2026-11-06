@@ -1706,6 +1706,23 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
   main#top > .hero .stats-strip .stat-item{min-height:64px!important;padding-top:3px!important;padding-bottom:3px!important;}
   main#top > .hero .stats-strip .stat-item small{margin-top:3px!important;}
 }
+/* 2026-11-06 mobile readability refinement: desktop unchanged */
+@media (max-width:760px){
+ header#header .renvis-mobile-hours{font-size:11px!important;color:#e0e3e7!important;letter-spacing:0!important}
+ header#header .renvis-mobile-hours span{color:#e0e3e7!important}
+ header#header .renvis-mobile-hours .hours-divider{color:#aeb5bd!important}
+ header#header .nav .logo{filter:brightness(1.55) contrast(1.16) drop-shadow(0 1px 2px rgba(255,255,255,.15))!important}
+ /* Lift the existing photo into the former empty strip; no layout changes. */
+ main#top > .hero .hero-bg::after{background-position:calc(68% + 110px) calc(12% + 26px)!important;background-size:auto 60%!important}
+ main#top > .hero:after{background:linear-gradient(to bottom,rgba(7,10,15,.28) 0%,rgba(7,10,15,.06) 10%,transparent 24%,transparent 43%,rgba(7,9,12,.38) 57%,rgba(7,9,12,.76) 73%,rgba(7,9,12,.94) 88%,#07090c 100%)!important}
+ main#top > .hero .hero-lead,main#top > .hero .hero-lead .renvis-silver-shine{color:#fff!important;-webkit-text-fill-color:#fff!important;background-image:none!important;text-shadow:0 2px 8px rgba(0,0,0,.65)!important}
+ main#top > .hero .hero-secondary-btn{border:2px solid #f2f4f7!important}
+ main#top > .hero .stats-strip .stat-item strong span{font-size:13px!important;letter-spacing:0!important}
+ main#top > .hero .stats-strip .stat-item small{color:#d8dce2!important}
+ main#top > .hero .stats-strip .stat-item strong.area{font-size:clamp(19px,5.5vw,25px)!important;white-space:nowrap!important}
+ #news .news-kicker{color:#d9b84e!important;opacity:1!important}
+ #news h2{color:#f1f3f6!important;opacity:1!important}
+}
 </style>
 <!-- SEO metadata -->
 <link rel="canonical" href="https://renvis.co.jp/">
@@ -1781,7 +1798,7 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
 <div class="wrap stats-grid">
 <div class="stat-item"><svg aria-hidden="true" class="renvis-stat-icon" viewbox="0 0 24 24"><path d="M21 3a6 6 0 0 1-7.9 7.9L6 18l-2 2-2-2 2-2 7.1-7.1A6 6 0 0 1 19 2l-4 4 3 3 3-4z"></path></svg><div class="renvis-stat-copy"><small>累計修理実績</small><strong>8,000<span>件以上</span></strong></div></div>
 <div class="stat-item"><div class="renvis-stat-copy"><small>レンタル保有台数</small><strong>500<span>台以上</span></strong></div></div>
-<div class="stat-item"><svg aria-hidden="true" class="renvis-stat-icon" viewbox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle><path d="M4 18l-2 3h20l-2-3"></path></svg><div class="renvis-stat-copy"><small>対応エリア</small><strong class="area">全国</strong></div></div>
+<div class="stat-item"><svg aria-hidden="true" class="renvis-stat-icon" viewbox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle><path d="M4 18l-2 3h20l-2-3"></path></svg><div class="renvis-stat-copy"><small>対応エリア</small><strong class="area">全国対応</strong></div></div>
 </div>
 </section>
 </div></div></div>
