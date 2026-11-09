@@ -1418,7 +1418,10 @@ main#top > .hero .renvis-silver-shine::after{content:"✦";position:absolute;lef
 .renvis-news-title{font-size:.92rem;font-weight:600;color:#f4f6f8;line-height:1.6}
 .renvis-news-arrow{color:#d8b65a;text-align:right}
 .renvis-news-empty{color:#c4cbd3;padding:22px 4px}
-@media (max-width:760px){.renvis-news-section{padding:46px 0 52px}}
+/* スマホ版 NEWS のみ：見出しを小さくし、セクション上下の余白を縮小 */
+@media (max-width:760px){.renvis-news-section{padding:32px 0 38px}}
+@media (max-width:760px){.renvis-news-header{margin-bottom:15px}}
+@media (max-width:760px){.renvis-news-header h2{font-size:1.75rem;line-height:1.08;margin:2px 0 4px}}
 @media (max-width:760px){.renvis-news-header{align-items:flex-end}}
 @media (max-width:760px){.renvis-news-row{grid-template-columns:90px 1fr 15px;gap:8px 11px;min-height:78px;padding:14px 2px}}
 @media (max-width:760px){.renvis-news-date{font-size:.68rem}}
