@@ -1483,8 +1483,8 @@ footer{
       <div class="rental-pickup__track" id="rentalPickupTrack">
         <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="1 / 4：SV30 新品入荷"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7640264523626155271" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「SV30 新品入荷」の投稿を見る（新しいタブ）"><img src="rental-pickup-sv30.png" alt="新品入荷 第2弾 NPK SV30。3トンクラス最大級の開口幅。レンタル可能。" width="941" height="1672" loading="eager" decoding="async" fetchpriority="high"></a></div>
         <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="2 / 4：1.6クラス大割機"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7639189331361533191" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「1.6クラス大割機」の投稿を見る（新しいタブ）"><img src="rental-pickup-16crusher.png" alt="九州唯一。1.6クラスの大割機 TS-WD1700V-2、レンタルできます。" width="941" height="1672" loading="eager" decoding="async"></a></div>
-        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="3 / 4：100V機器"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7660328277575208210" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「100V機器」の投稿を見る（新しいタブ）"><img src="rental-pickup-100v.png" alt="100VだからコンセントでOK。レンタル機器のご案内。" width="941" height="1672" loading="eager" decoding="async"></a></div>
-        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="4 / 4：鉄骨カッター3台入荷"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7642164181227080978" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「鉄骨カッター3台入荷」の投稿を見る（新しいタブ）"><img src="rental-pickup-steelcutters.png" alt="鉄骨カッター3台入荷。3トン・7トン・12トン、3台ともにアーツ旋回。" width="941" height="1672" loading="eager" decoding="async"></a></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="3 / 4：100V機器"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7660328277575208210" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「100V機器」の投稿を見る（新しいタブ）"><img src="rental-pickup-100v.png" alt="100VだからコンセントでOK。レンタル機器のご案内。" width="941" height="1672" loading="lazy"></a></div>
+        <div class="rental-pickup__slide" role="group" aria-roledescription="スライド" aria-label="4 / 4：鉄骨カッター3台入荷"><a class="rental-pickup__post-link" href="https://www.tiktok.com/@renvisrenvis/video/7642164181227080978" target="_blank" rel="noopener noreferrer" aria-label="TikTokで「鉄骨カッター3台入荷」の投稿を見る（新しいタブ）"><img src="rental-pickup-steelcutters.png" alt="鉄骨カッター3台入荷。3トン・7トン・12トン、3台ともにアーツ旋回。" width="941" height="1672" loading="lazy"></a></div>
       </div>
     </div>
     <p class="rental-pickup__tap-hint">画像をタップするとTikTokで動画をご覧いただけます ↗</p>
@@ -1738,8 +1738,8 @@ const DATA = {
         "オカダアイヨン",
         [
           [
-            "TS-W 公式製品情報",
-            "https://okadaaiyon.com/products/product/1392"
+            "TS-W 公式カタログ",
+            "https://media.okadaaiyon.com/cms/uploads/ctlg_TS-W_Crusher_202606.pdf"
           ],
           [
             "TSRC 公式カタログ",
@@ -2268,7 +2268,7 @@ DATA.breaker.makers.find(m=>m[0]==="東空")[2]="product-28.webp";
 DATA.hydfork.makers.find(m=>m[0]==="丸順")[2]="product-29.webp";
 
 /* KBL, Muroto, FRD images and TAGUCHI link */
-DATA.mechfork.makers.find(m=>m[0]==="KBL")[2]="product-30.webp";
+DATA.mechfork.makers.find(m=>m[0]==="KBL")[2]="kbl-mechanical-fork-v2.png";
 DATA.breaker.makers.find(m=>m[0]==="古河ロックドリル")[2]="product-31.webp";
 DATA.mechfork.makers.find(m=>m[0]==="室戸鉄工所")[2]="product-32.webp";
 DATA.crusher.makers.find(m=>m[0]==="タグチ")[1].push(["大割機 製品情報","https://www.taguchi.co.jp/product/crusher-d/"]);
@@ -2517,7 +2517,6 @@ buttons.forEach(
           .add(
             "active"
           );
-        try { sessionStorage.setItem('renvis-rental-category', button.dataset.category); } catch (e) {}
         render(
           button.dataset.category
         );
@@ -2561,7 +2560,7 @@ DATA.extension.makers=[["KBL",[["アタッチメント総合カタログ","https
 /* ===== 2026-10-15 user requested rental-page updates ===== */
 // 大割機：オカダアイヨン 2段目削除
 if(DATA.crusher?.makers?.[0]){
-  DATA.crusher.makers[0][1] = [["TS-W 公式製品情報","https://okadaaiyon.com/products/product/1392"]];
+  DATA.crusher.makers[0][1] = [["TS-W 公式カタログ","https://media.okadaaiyon.com/cms/uploads/ctlg_TS-W_Crusher_202606.pdf"]];
 }
 
 // マグネット付き小割機：オカダアイヨンは指定URL 1件のみ
@@ -2614,26 +2613,7 @@ if(orangeMarujun){
   orangeMarujun[1] = [["グラップル 製品情報", "https://www.marujun.jp/products/orange-grapple/index.html"]];
 }
 
-// Restore the last selected category after Android browser back or page reload.
-const RENTAL_CATEGORY_KEY = 'renvis-rental-category';
-let rememberedCategory = 'crusher';
-try {
-  const saved = sessionStorage.getItem(RENTAL_CATEGORY_KEY);
-  if (saved && Object.prototype.hasOwnProperty.call(DATA, saved)) rememberedCategory = saved;
-} catch (e) { /* private mode / disabled storage */ }
-function syncRentalCategory(key) {
-  const selected = Object.prototype.hasOwnProperty.call(DATA, key) ? key : 'crusher';
-  buttons.forEach(item => item.classList.toggle('active', item.dataset.category === selected));
-  render(selected);
-  try { sessionStorage.setItem(RENTAL_CATEGORY_KEY, selected); } catch (e) {}
-}
-syncRentalCategory(rememberedCategory);
-window.addEventListener('pageshow', event => {
-  if (event.persisted) return; // bfcache already retains the exact current view.
-  let saved = 'crusher';
-  try { saved = sessionStorage.getItem(RENTAL_CATEGORY_KEY) || 'crusher'; } catch (e) {}
-  if (Object.prototype.hasOwnProperty.call(DATA, saved)) syncRentalCategory(saved);
-});
+render("crusher");
 
 </script>
 <script>
@@ -2784,7 +2764,7 @@ window.addEventListener('pageshow', event => {
     const target=(i+count)%count;
     const x=left(target);
     if(typeof track.scrollTo==='function'){
-      try{track.scrollTo({left:x,behavior:animate&&!reduced.matches?'smooth':'auto'});}
+      try{track.scrollTo({left:x,behavior:animate&&!reduced.matches?'smooth':'instant'});}
       catch(e){track.scrollLeft=x;}
     }else{track.scrollLeft=x;}
     update(target);
@@ -2812,7 +2792,7 @@ window.addEventListener('pageshow', event => {
   },{passive:true});
   document.addEventListener('visibilitychange',play);
   mobile.addEventListener?.('change',()=>{if(mobile.matches)go(page,false);play();});
-  window.addEventListener('pageshow',()=>{play();});
+  window.addEventListener('pageshow',()=>{if(mobile.matches)go(0,false);play();});
   window.addEventListener('resize',()=>{if(mobile.matches)go(page,false);play();});
   // Keep first poster anchored on initial Android layout after fonts/images settle.
   if(mobile.matches){track.scrollLeft=0;requestAnimationFrame(()=>go(0,false));}
