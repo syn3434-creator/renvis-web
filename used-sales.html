@@ -1260,11 +1260,6 @@ footer{
 .renvis-seo-bottom summary{cursor:pointer;padding:14px 0;font-size:.82rem;font-weight:800;color:#e4e7eb}
 .renvis-seo-bottom details .renvis-seo-detail{padding:0 0 16px}
 @media(max-width:760px){.renvis-seo-bottom{padding:28px 0 35px}.renvis-seo-bottom p{font-size:.76rem}.renvis-seo-bottom details{padding:0 12px}}
-/* 中古商品一覧の見出しを新着商品と同じ文字サイズに統一 */
-.all-products .results-head h2{font-size:1.75rem!important;}
-@media(max-width:760px){
-  .all-products .results-head h2{font-size:1.18rem!important;line-height:1.3!important;}
-}
 </style>
 <style id="renvis-mobile-clean-20261009">
 /* RENVIS mobile final: consolidated, applied before first paint. */
@@ -1781,111 +1776,6 @@ footer{
  .filter-actions .used-favorite-filter span{white-space:nowrap!important;overflow-wrap:normal!important;}
 }
 </style>
-<style id="renvis-used-mobile-two-lines-final-20261105">
-/* Mobile-only: two exact lines beside the call button. Desktop untouched. */
-@media(max-width:760px){
-  .used-hero .wrap.used-hero-content{
-    display:grid!important;
-    grid-template-columns:minmax(0,1fr) 74px!important;
-    column-gap:7px!important;
-    row-gap:12px!important;
-    align-items:center!important;
-  }
-  .used-hero-copy{display:contents!important;}
-  .used-hero-copy h1{grid-column:1/-1!important;grid-row:1!important;}
-  .used-hero-message{grid-column:1!important;grid-row:2!important;min-width:0!important;}
-  .used-hero-message .used-hero-lead{
-    display:block!important;white-space:nowrap!important;
-    font-size:clamp(9px,2.65vw,12px)!important;
-    line-height:1.5!important;margin:0 0 5px!important;
-  }
-  .used-hero-message .used-hero-desc{
-    display:block!important;white-space:nowrap!important;
-    font-size:clamp(6.5px,1.75vw,8.5px)!important;
-    line-height:1.5!important;margin:0!important;
-    letter-spacing:-.045em!important;
-  }
-  .used-hero-phone{
-    grid-column:2!important;grid-row:2!important;
-    justify-self:end!important;align-self:center!important;
-    width:74px!important;max-width:74px!important;
-    height:38px!important;min-height:38px!important;
-    margin:0!important;padding:0 4px!important;
-    gap:3px!important;font-size:10px!important;
-  }
-  .used-hero-phone .used-phone-icon{width:13px!important;height:13px!important;flex-shrink:0!important;}
-  .used-hero-phone .used-phone-text{display:inline!important;white-space:nowrap!important;}
-}
-</style>
-<style id="renvis-used-mobile-line-and-phone-20261105">
-/* Mobile-only alignment and overlap correction. */
-@media(max-width:760px){
-  .used-hero .wrap.used-hero-content{
-    width:calc(100% - 28px)!important;
-    margin:0 14px!important;
-    padding:0 0 0 10px!important;
-    border-left:2px solid var(--gold)!important;
-    grid-template-columns:minmax(0,1fr) 72px!important;
-    column-gap:8px!important;
-  }
-  .used-hero-copy::before{content:none!important;display:none!important;}
-  .used-hero-message .used-hero-desc{
-    font-size:clamp(6px,1.55vw,7.5px)!important;
-    letter-spacing:-.055em!important;
-    white-space:nowrap!important;
-  }
-  .used-hero-phone{
-    width:72px!important;max-width:72px!important;
-    gap:0!important;padding:0 5px!important;
-  }
-  .used-hero-phone .used-phone-icon{display:none!important;}
-}
-</style>
-<style id="renvis-used-mobile-font-adjust-20261105">
-/* Requested mobile typography only; keep phone button and desktop unchanged. */
-@media(max-width:760px){
-  .used-hero-message .used-hero-lead{font-size:12px!important;}
-  .used-hero-message .used-hero-desc{
-    font-size:clamp(9px,2.65vw,12px)!important;
-    white-space:normal!important;
-    overflow-wrap:normal!important;
-    word-break:normal!important;
-    letter-spacing:0!important;
-  }
-}
-</style>
-<style id="renvis-remove-short-hero-line-20261105">
-/* Smartphone: keep the long left border; remove only the short heading accent. */
-@media(max-width:760px){
-  .used-hero h1::before{content:none!important;display:none!important;}
-}
-</style>
-<style id="renvis-used-mobile-heading-line-alignment-20261105">
-/* Mobile only: align USED SALES with the long gold line, like the other pages. */
-@media(max-width:760px){
-  .used-hero .used-hero-copy h1{
-    padding-left:0!important;
-    margin-left:0!important;
-  }
-}
-</style>
-<style id="renvis-used-mobile-bottom-contact-20261105">
-/* スマホ版の最下部問い合わせのみ変更。PC版は従来どおり。 */
-.renvis-mobile-bottom-contact{display:none;}
-@media(max-width:760px){
-  .used-bottom-section .bottom-grid{display:none;}
-  .renvis-mobile-bottom-contact{display:block;border:1px solid rgba(224,181,63,.55);background:linear-gradient(145deg,#0d1218,#080b0f);padding:18px 15px 20px;}
-  .renvis-mobile-bottom-contact .contact-eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.12em;color:var(--gold);margin:0 0 7px;}
-  .renvis-mobile-bottom-contact h2{font-size:1.05rem;line-height:1.5;margin:0 0 8px;}
-  .renvis-mobile-bottom-contact p{font-size:.75rem;line-height:1.7;color:#bec5cd;margin:0 0 16px;}
-  .renvis-mobile-contact-main{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
-  .renvis-mobile-contact-main a{display:flex;justify-content:center;align-items:center;min-height:46px;padding:10px 5px;font-size:.8rem;font-weight:900;text-align:center;}
-  .renvis-mobile-contact-main .phone{background:var(--gold);color:#090b0e;}
-  .renvis-mobile-contact-main .line{background:#06c755;color:#fff;}
-  .renvis-mobile-contact-social{display:flex;justify-content:center;gap:26px;border-top:1px solid var(--line);padding-top:15px;margin-top:17px;}
-  .renvis-mobile-contact-social a{font-size:.77rem;color:#c7cdd4;font-weight:700;}
-}
-</style>
 </head>
 
 
@@ -2020,12 +1910,12 @@ footer{
     <div class="wrap used-hero-content">
       <div class="used-hero-copy">
         <h1>USED SALES</h1>
-        <div class="used-hero-message">
-          <p class="used-hero-lead">掲載商品だけが、すべてではありません。</p>
-          <p class="used-hero-desc">掲載のない機種・型式についても、ご希望に合わせてお探しします。</p>
-        </div>
+        <p class="used-hero-lead">掲載商品だけが、すべてではありません。</p>
+        <p class="used-hero-desc"><span class="used-hero-bullet">・お探しの中古アタッチメントが見つからない場合も、お気軽に<span class="used-keep-together">ご相談ください。</span></span><span class="used-hero-bullet">・掲載のない機種・型式についても、ご希望に合わせて<span class="used-keep-together">お探しします。</span></span></p>
+        <p class="used-hero-desc used-hero-mobile-original">厳選した中古アタッチメントを、確かな品質でお届けします。</p>
       </div>
-      <a class="used-hero-phone" href="tel:0946428311" aria-label="電話で問い合わせる"><span class="used-phone-text">電話する</span></a>
+      <p class="used-mobile-short-copy">掲載外の機種・型式もお探しします。</p>
+      <a class="used-hero-phone" href="tel:0946428311" aria-label="電話で問い合わせる"><span class="used-phone-text">電話する</span><svg class="used-phone-icon" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 5.18 2 2 0 0 1 5.08 3h3a2 2 0 0 1 2 1.72l.4 2.81a2 2 0 0 1-.57 1.71L8.1 11.05a16 16 0 0 0 4.85 4.85l1.81-1.81a2 2 0 0 1 1.71-.57l2.81.4A2 2 0 0 1 22 16.92z"/></svg></a>
     </div>
 
   </section>
@@ -2460,6 +2350,7 @@ footer{
           <h2>
             中古商品一覧
           </h2>
+          <p class="all-products-note">現在掲載中の中古アタッチメントをすべて表示。大割機・小割機・ブレーカーなどの中古建機アタッチメントをご案内しています。</p>
 
           <div
             id="count"
@@ -2613,19 +2504,6 @@ footer{
 
 
       </div>
-      <div class="renvis-mobile-bottom-contact">
-        <div class="contact-eyebrow">CONTACT</div>
-        <h2>お探しの商品が見つからない方へ</h2>
-        <p>掲載のない機種・型式についても、お気軽にお問い合わせください。</p>
-        <div class="renvis-mobile-contact-main">
-          <a class="phone" href="tel:0946428311">電話する</a>
-          <a class="line" href="https://lin.ee/pUDgnDR" target="_blank" rel="noopener noreferrer">LINEで相談</a>
-        </div>
-        <div class="renvis-mobile-contact-social">
-          <a href="https://www.instagram.com/renvisrenvis/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.tiktok.com/@renvisrenvis" target="_blank" rel="noopener noreferrer">TikTok</a>
-        </div>
-      </div>
 
     </div>
 
@@ -2769,8 +2647,10 @@ function image(product){
     ?
     `
       <img
-        src="${product.img}"
-        alt="${product.model || product.title || "中古商品"}"
+        src="${escapeUsedText(product.img || "")}" 
+        alt="${escapeUsedText(product.model || product.title || "中古商品")}" 
+        loading="lazy"
+        decoding="async"
       >
     `
     :
@@ -2920,12 +2800,12 @@ function renderArrivals(){
 
   $("arrivals").innerHTML =
     filtered()
-      .filter(product => product.status !== "SOLD OUT")
+      .filter(product => product.new && product.status !== "SOLD OUT")
       .sort(
         (a,b) =>
-          b.date - a.date || b.id - a.id
+          b.date -
+          a.date
       )
-      .slice(0, 4)
       .map(
         product =>
           card(
@@ -3307,12 +3187,64 @@ document.addEventListener(
 );
 
 
+// Android/Chrome: restore the list's filters and position after product detail.
+const USED_RETURN_KEY = "renvis_used_return_v1";
+function rememberUsedListPosition(){
+  try {
+    const fields = {};
+    ["keyword", "maker", "type", "class", "status", "sort"].forEach(id => {
+      const el = $(id);
+      if(el) fields[id] = el.value;
+    });
+    fields.favoriteOnly = Boolean($("favoriteOnly")?.checked);
+    const selectedStock = document.querySelector('.stock-box[data-stock-filter][aria-pressed="true"]');
+    sessionStorage.setItem(USED_RETURN_KEY, JSON.stringify({
+      fields, selectedStock: selectedStock?.dataset.stockFilter || "",
+      scrollY: window.scrollY,
+      arrivalScroll: $("arrivals")?.scrollLeft || 0,
+      at: Date.now(),
+      pending: true
+    }));
+  } catch(e) { console.warn("List return state could not be saved", e); }
+}
+function restoreUsedListPosition(){
+  let state;
+  try { state = JSON.parse(sessionStorage.getItem(USED_RETURN_KEY) || "null"); }
+  catch(e) { return; }
+  if(!state?.pending || Date.now() - state.at > 30 * 60 * 1000) return;
+  for(const [id, value] of Object.entries(state.fields || {})) {
+    const el = $(id);
+    if(!el) continue;
+    if(id === "favoriteOnly") el.checked = Boolean(value);
+    else el.value = value;
+  }
+  document.querySelectorAll(".chip[data-type]").forEach(chip => {
+    chip.classList.toggle("active", chip.dataset.type === $("type")?.value);
+  });
+  document.querySelectorAll(".stock-box[data-stock-filter]").forEach(box => {
+    box.setAttribute("aria-pressed", String(Boolean(state.selectedStock) && box.dataset.stockFilter === state.selectedStock));
+  });
+  renderArrivals();
+  render();
+  // Wait for dynamically fetched items to be painted before restoring scroll.
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    if($("arrivals")) $("arrivals").scrollLeft = Number(state.arrivalScroll) || 0;
+    window.scrollTo({top:Number(state.scrollY) || 0, left:0, behavior:"instant"});
+  }));
+  state.pending = false;
+  try { sessionStorage.setItem(USED_RETURN_KEY, JSON.stringify(state)); } catch(e) {}
+}
+function openUsedDetail(id){
+  rememberUsedListPosition();
+  window.location.assign("used-detail.html?id=" + encodeURIComponent(id));
+}
+
 // Product cards open details; favorite buttons retain their own action.
 document.addEventListener("click", event => {
   if(event.target.closest(".favorite")) return;
   const card = event.target.closest(".card[data-product-id]");
   if(!card || event.target.closest("a, button, input, select")) return;
-  window.location.href = "used-detail.html?id=" + encodeURIComponent(card.dataset.productId);
+  openUsedDetail(card.dataset.productId);
 });
 document.addEventListener("keydown", event => {
   if(event.key !== "Enter" && event.key !== " ") return;
@@ -3320,7 +3252,7 @@ document.addEventListener("keydown", event => {
   const card = event.target.closest(".card[data-product-id]");
   if(!card || event.target !== card) return;
   event.preventDefault();
-  window.location.href = "used-detail.html?id=" + encodeURIComponent(card.dataset.productId);
+  openUsedDetail(card.dataset.productId);
 });
 
 
@@ -3752,7 +3684,31 @@ async function loadUsedItems(){
               )
                 .getTime()
               :
-              0
+              0,
+
+            new:
+              row.created_at
+              ?
+              (
+                Date.now()
+                -
+                new Date(
+                  row.created_at
+                )
+                  .getTime()
+              )
+              <=
+              30
+              *
+              24
+              *
+              60
+              *
+              60
+              *
+              1000
+              :
+              false
 
           })
         );
@@ -3762,6 +3718,7 @@ async function loadUsedItems(){
     updateFavoriteCount();
     renderArrivals();
     render();
+    restoreUsedListPosition();
 
   }
 
@@ -3803,6 +3760,25 @@ async function loadUsedItems(){
 
 }
 
+
+// Android Chrome / back-forward cache: retain the same listing and scroll position.
+window.addEventListener("pageshow", (event) => {
+  if (!event.persisted) return;
+  restoreUsedListPosition();
+});
+// Show the existing NO PHOTO state if an individual remote image fails.
+// Capturing error is necessary because image error does not bubble.
+document.addEventListener("error", (event) => {
+  const img = event.target;
+  if (!(img instanceof HTMLImageElement) || !img.closest(".card-image")) return;
+  const frame = img.closest(".card-image");
+  if (frame.querySelector(".no-photo")) return;
+  img.style.display = "none";
+  const fallback = document.createElement("div");
+  fallback.className = "no-photo";
+  fallback.textContent = "NO PHOTO";
+  frame.appendChild(fallback);
+}, true);
 
 loadUsedItems();
 
