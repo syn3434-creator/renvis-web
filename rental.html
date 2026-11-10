@@ -1332,6 +1332,14 @@ footer{
  header .nav .renvis-line-direct{display:none!important}
 }
 </style>
+<style id="renvis-rental-pickup-first-slide-mobile-fix-20261110">
+@media (max-width:760px){
+  .rental-pickup__track{overflow-anchor:none!important;}
+  .rental-pickup__slide{overflow-anchor:none!important;}
+  .rental-pickup__slide:first-child{visibility:visible!important;opacity:1!important;}
+  .rental-pickup__slide:first-child img{visibility:visible!important;opacity:1!important;}
+}
+</style>
 </head>
 <body>
 <header>
@@ -2792,8 +2800,13 @@ render("crusher");
   },{passive:true});
   document.addEventListener('visibilitychange',play);
   mobile.addEventListener?.('change',()=>{if(mobile.matches)go(page,false);play();});
-  window.addEventListener('pageshow',()=>{if(mobile.matches)go(0,false);play();});
+  window.addEventListener('pageshow',()=>{if(mobile.matches){track.scrollLeft=0;go(0,false);}play();});
   window.addEventListener('resize',()=>{if(mobile.matches)go(page,false);play();});
+  // Ensure the first two posters are visible when mobile restores a previous scroll position.
+  const firstPoster=slides[0]?.querySelector('img');
+  if(firstPoster && !firstPoster.complete){
+    firstPoster.addEventListener('load',()=>{if(mobile.matches && page===0)go(0,false);},{once:true});
+  }
   // Keep first poster anchored on initial Android layout after fonts/images settle.
   if(mobile.matches){track.scrollLeft=0;requestAnimationFrame(()=>go(0,false));}
   // Re-anchor only on initial load; preserve manual navigation thereafter.
