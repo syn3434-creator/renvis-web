@@ -1360,11 +1360,17 @@ footer{
 .arrival-section .section-head h2{
   letter-spacing:.035em;
 }
+.arrival-section-note,.all-products-note{
+  margin:7px 0 0;
+  color:#aab3bc;
+  font-size:.76rem;
+  line-height:1.65;
+}
 .arrival-section .arrivals .card-image{
   height:240px;
 }
 .all-products{
-  background:#1c2126;
+  background:#06080b;
   padding:48px 0 64px;
   scroll-margin-top:84px;
 }
@@ -1391,6 +1397,7 @@ footer{
   .arrival-section{padding:24px 0 34px;}
   .arrival-section .arrivals .card-image{height:190px;}
   .all-products{padding:35px 0 44px;scroll-margin-top:65px;}
+  .arrival-section-note,.all-products-note{font-size:.68rem;}
 }
 @media(prefers-reduced-motion:reduce){
   .card[data-product-id]{transition:none;}
@@ -1769,26 +1776,27 @@ footer{
  .filter-actions .used-favorite-filter span{white-space:nowrap!important;overflow-wrap:normal!important;}
 }
 </style>
-<style id="renvis-used-headings-matched-20261110">
-/* 新着商品と中古商品一覧の見出しサイズをPC・スマホで統一 */
-.all-products .results-head h2{font-size:1.75rem!important;}
-@media(max-width:760px){
-  .all-products .results-head h2{font-size:1.18rem!important;line-height:1.3!important;}
+
+<style id="renvis-pickup-design">
+/* ピックアップエリアだけ特別仕様。既存のカード・検索UIは維持 */
+.arrival-section{
+  background:linear-gradient(120deg,#332818 0%,#171819 47%,#292114 100%);
+  border-top:1px solid rgba(224,181,63,.6);
+  border-bottom:1px solid rgba(224,181,63,.6);
+  box-shadow:inset 0 1px 0 rgba(255,220,138,.12);
+  padding:42px 0 48px;
 }
-</style>
-<style id="renvis-back-to-top-20261110">
-/* 中古販売ページ専用：上に戻るボタン */
-.renvis-back-to-top{position:fixed;right:22px;bottom:24px;z-index:90;width:52px;height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;border:1px solid #ddb646;border-radius:10px;background:rgba(13,19,25,.96);color:#ddb646;font:800 10px/1.2 "Noto Sans JP","Yu Gothic",sans-serif;letter-spacing:.04em;box-shadow:0 4px 18px rgba(0,0,0,.25);cursor:pointer;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s}
-.renvis-back-to-top span:first-child{font-size:23px;line-height:1.05}
-.renvis-back-to-top.is-visible{opacity:1;visibility:visible;pointer-events:auto}
-.renvis-back-to-top:focus-visible{outline:2px solid #fff;outline-offset:3px}
-@media(max-width:760px){.renvis-back-to-top{right:14px;bottom:18px;width:46px;height:46px;border-radius:9px;font-size:9px}.renvis-back-to-top span:first-child{font-size:21px}}
-</style>
-<style id="renvis-used-hero-duplicate-fix-20261110">
-/* スマホ表示で重複する旧テキストのみ非表示。PC表示・文言・その他の要素は維持。 */
+.arrival-section .eyebrow{color:#e6c678;letter-spacing:.19em}
+.arrival-section .section-head h2{color:#f2cb72;letter-spacing:.065em}
+.arrival-section .card{border-color:rgba(218,177,84,.47);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.arrival-section .new-badge{background:linear-gradient(125deg,#e8c56b,#b88931);color:#11100c;border-color:#f0d58b;letter-spacing:.07em}
+.arrival-section .carousel-buttons[hidden]{display:none}
+.pickup-empty{grid-column:1/-1;color:#e6d5aa;font-size:.82rem;padding:24px 0;margin:0}
+.all-products{background:#06080b}
 @media(max-width:760px){
-  .used-hero .used-hero-copy .used-hero-lead,
-  .used-hero .used-hero-copy .used-hero-desc:not(.used-hero-mobile-original){display:none!important;}
+  .arrival-section{padding:28px 0 34px}
+  .arrival-section .section-head h2{font-size:1.35rem!important}
+  .pickup-empty{font-size:.75rem}
 }
 </style>
 </head>
@@ -1926,9 +1934,10 @@ footer{
       <div class="used-hero-copy">
         <h1>USED SALES</h1>
         <p class="used-hero-lead">掲載商品だけが、すべてではありません。</p>
-        <p class="used-hero-desc">掲載外の機種・型式も、ご要望に合わせてご提案します。</p>
+        <p class="used-hero-desc"><span class="used-hero-bullet">・お探しの中古アタッチメントが見つからない場合も、お気軽に<span class="used-keep-together">ご相談ください。</span></span><span class="used-hero-bullet">・掲載のない機種・型式についても、ご希望に合わせて<span class="used-keep-together">お探しします。</span></span></p>
+        <p class="used-hero-desc used-hero-mobile-original">厳選した中古アタッチメントを、確かな品質でお届けします。</p>
       </div>
-      <p class="used-mobile-short-copy">掲載商品だけが、すべてではありません。<span>掲載外の機種・型式も、ご要望に合わせてご提案します。</span></p>
+      <p class="used-mobile-short-copy">掲載外の機種・型式もお探しします。</p>
       <a class="used-hero-phone" href="tel:0946428311" aria-label="電話で問い合わせる"><span class="used-phone-text">電話する</span><svg class="used-phone-icon" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 5.18 2 2 0 0 1 5.08 3h3a2 2 0 0 1 2 1.72l.4 2.81a2 2 0 0 1-.57 1.71L8.1 11.05a16 16 0 0 0 4.85 4.85l1.81-1.81a2 2 0 0 1 1.71-.57l2.81.4A2 2 0 0 1 22 16.92z"/></svg></a>
     </div>
 
@@ -2300,7 +2309,7 @@ footer{
   </section>
 
 
-  <!-- NEW ARRIVALS -->
+  <!-- PICK UP ITEMS -->
 
   <section class="arrival-section">
 
@@ -2311,12 +2320,13 @@ footer{
         <div>
 
           <div class="eyebrow">
-            New Arrivals
+            SPECIAL SELECTION
           </div>
 
           <h2>
-            新着商品
+            PICK UP ITEMS
           </h2>
+          
 
         </div>
 
@@ -2363,6 +2373,7 @@ footer{
           <h2>
             中古商品一覧
           </h2>
+          <p class="all-products-note">現在掲載中の中古アタッチメントをすべて表示。大割機・小割機・ブレーカーなどの中古建機アタッチメントをご案内しています。</p>
 
           <div
             id="count"
@@ -2692,7 +2703,7 @@ function card(
         ${
           arrival
           ?
-          '<span class="new-badge">NEW</span>'
+          '<span class="new-badge">PICK UP</span>'
           :
           `<span class="status ${statusClass(product.status)}">${product.status}</span>`
         }
@@ -2807,24 +2818,17 @@ function updateFavoriteCount(){
 
 
 function renderArrivals(){
-
-  $("arrivals").innerHTML =
-    filtered()
-      .filter(product => product.new && product.status !== "SOLD OUT")
-      .sort(
-        (a,b) =>
-          b.date -
-          a.date
-      )
-      .map(
-        product =>
-          card(
-            product,
-            true
-          )
-      )
-      .join("");
-
+  // Supabase used_items の is_pickup と pickup_order で掲載対象・順位を決定。
+  // 通常の検索条件とは切り離し、指定した商品を常に表示する。
+  const selected = products
+    .filter(product => product.pickup && product.status !== "SOLD OUT")
+    .sort((a,b) => (a.pickupOrder - b.pickupOrder) || (b.date - a.date));
+  const area = $("arrivals");
+  area.innerHTML = selected.length
+    ? selected.map(product => card(product, true)).join("")
+    : '<p class="pickup-empty">現在、ピックアップ商品を準備中です。</p>';
+  const controls = document.querySelector(".arrival-section .carousel-buttons");
+  if(controls) controls.hidden = selected.length <= 1;
 }
 
 
@@ -3634,6 +3638,11 @@ async function loadUsedItems(){
                 )
               ),
 
+            // 管理側の掲載フラグと優先順位。新規列が未設定なら掲載しない。
+            pickup: row.is_pickup === true,
+            pickupOrder: Number.isFinite(Number(row.pickup_order))
+              ? Number(row.pickup_order) : 9999,
+
             date:
               row.created_at
               ?
@@ -3949,17 +3958,6 @@ loadUsedItems();
       observer.observe(el);
     });
   }
-})();
-</script>
-<button id="renvisBackToTop" class="renvis-back-to-top" type="button" aria-label="ページの一番上へ戻る"><span aria-hidden="true">↑</span><span aria-hidden="true">TOP</span></button>
-<script id="renvis-back-to-top-script-20261110">
-(() => {
-  const button = document.getElementById('renvisBackToTop');
-  if (!button) return;
-  const updateVisibility = () => button.classList.toggle('is-visible', window.scrollY > 450);
-  window.addEventListener('scroll', updateVisibility, {passive:true});
-  button.addEventListener('click', () => window.scrollTo({top:0,behavior:'instant'}));
-  updateVisibility();
 })();
 </script>
 </body>
