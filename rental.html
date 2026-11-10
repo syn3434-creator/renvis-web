@@ -1265,6 +1265,18 @@ footer{
   .rental-pickup .rental-pickup__tap-hint{display:none!important;}
 }
 </style>
+<style id="renvis-rental-pickup-mobile-pair-navigation-fix">
+@media(max-width:760px){
+  .rental-pickup .rental-pickup__track{
+    overflow-x:hidden!important;
+    scroll-snap-type:none!important;
+    scroll-behavior:auto!important;
+    touch-action:pan-y!important;
+  }
+  .rental-pickup .rental-pickup__slide,
+  .rental-pickup .rental-pickup__slide:nth-child(odd){scroll-snap-align:none!important;}
+}
+</style>
 <style id="renvis-rental-seo-area-intro-20261029">
 /* Existing cards and interactions stay untouched. */
 .renvis-rental-area-intro{margin:-7px 0 22px;color:var(--muted);font-size:.81rem;line-height:1.75}
@@ -1330,14 +1342,6 @@ footer{
  header .renvis-mobile-quick-line{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;padding:0 5px;border-radius:6px;background:#06c755;color:#fff;font-size:13px;font-weight:900;line-height:1;text-decoration:none}
  header .nav .mobile-menu-toggle{margin-left:0!important;flex:0 0 42px!important;width:42px!important;height:42px!important}
  header .nav .renvis-line-direct{display:none!important}
-}
-</style>
-<style id="renvis-rental-pickup-first-slide-mobile-fix-20261110">
-@media (max-width:760px){
-  .rental-pickup__track{overflow-anchor:none!important;}
-  .rental-pickup__slide{overflow-anchor:none!important;}
-  .rental-pickup__slide:first-child{visibility:visible!important;opacity:1!important;}
-  .rental-pickup__slide:first-child img{visibility:visible!important;opacity:1!important;}
 }
 </style>
 </head>
@@ -2753,64 +2757,59 @@ render("crusher");
   const track=document.getElementById('rentalPickupTrack');
   if(!track)return;
   const section=track.closest('.rental-pickup');
-  const slides=Array.from(track.querySelectorAll('.rental-pickup__slide'));
-  const dots=Array.from(section.querySelectorAll('.rental-pickup__dot'));
+  const slides=[...track.querySelectorAll('.rental-pickup__slide')];
+  const dots=[...section.querySelectorAll('.rental-pickup__dot')];
   const prev=document.getElementById('rentalPickupPrev');
   const next=document.getElementById('rentalPickupNext');
   const mobile=window.matchMedia('(max-width:760px)');
-  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
   const count=Math.ceil(slides.length/2);
   if(!count)return;
-  let page=0, timer=null, touching=false, scheduled=false;
-  const left=i=>Math.max(0,slides[i*2].offsetLeft-slides[0].offsetLeft);
-  function update(i){
-    page=Math.max(0,Math.min(count-1,i));
-    dots.forEach((d,n)=>d.setAttribute('aria-current',String(n===page)));
+  let page=0,timer=null,resumeTimer=null,startX=null,startY=null;
+  function position(i){
+    const slide=slides[i*2];
+    return slide ? slide.offsetLeft-slides[0].offsetLeft : 0;
   }
-  function go(i,animate=true){
+  function show(i){
     if(!mobile.matches)return;
-    const target=(i+count)%count;
-    const x=left(target);
-    if(typeof track.scrollTo==='function'){
-      try{track.scrollTo({left:x,behavior:animate&&!reduced.matches?'smooth':'instant'});}
-      catch(e){track.scrollLeft=x;}
-    }else{track.scrollLeft=x;}
-    update(target);
+    page=(i+count)%count;
+    // Two posters at a time. No smooth-scroll/snap race on mobile.
+    track.scrollLeft=Math.max(0,position(page));
+    dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===page)));
   }
   function stop(){if(timer!==null){clearInterval(timer);timer=null;}}
   function play(){
     stop();
-    if(!mobile.matches||reduced.matches||document.hidden||touching||count<2)return;
-    timer=setInterval(()=>go(page+1),3000);
+    if(!mobile.matches||document.hidden||count<2)return;
+    timer=setInterval(()=>show(page+1),4500);
   }
-  dots.forEach((d,i)=>d.addEventListener('click',()=>{go(i);play();}));
-  if(prev)prev.addEventListener('click',()=>{go(page-1);play();});
-  if(next)next.addEventListener('click',()=>{go(page+1);play();});
-  track.addEventListener('touchstart',()=>{touching=true;stop();},{passive:true});
-  track.addEventListener('touchend',()=>{touching=false;setTimeout(play,800);},{passive:true});
-  track.addEventListener('touchcancel',()=>{touching=false;play();},{passive:true});
-  track.addEventListener('scroll',()=>{
-    if(scheduled||!mobile.matches)return;
-    scheduled=true;
-    requestAnimationFrame(()=>{
-      let index=0,delta=Infinity;
-      for(let i=0;i<count;i++){const d=Math.abs(track.scrollLeft-left(i));if(d<delta){delta=d;index=i;}}
-      update(index);scheduled=false;
-    });
+  function manual(i){
+    show(i);stop();
+    if(resumeTimer!==null)clearTimeout(resumeTimer);
+    resumeTimer=setTimeout(play,10000);
+  }
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>manual(i)));
+  if(prev)prev.addEventListener('click',()=>manual(page-1));
+  if(next)next.addEventListener('click',()=>manual(page+1));
+  track.addEventListener('touchstart',e=>{
+    if(!mobile.matches||!e.touches.length)return;
+    startX=e.touches[0].clientX;startY=e.touches[0].clientY;stop();
   },{passive:true});
-  document.addEventListener('visibilitychange',play);
-  mobile.addEventListener?.('change',()=>{if(mobile.matches)go(page,false);play();});
-  window.addEventListener('pageshow',()=>{if(mobile.matches){track.scrollLeft=0;go(0,false);}play();});
-  window.addEventListener('resize',()=>{if(mobile.matches)go(page,false);play();});
-  // Ensure the first two posters are visible when mobile restores a previous scroll position.
-  const firstPoster=slides[0]?.querySelector('img');
-  if(firstPoster && !firstPoster.complete){
-    firstPoster.addEventListener('load',()=>{if(mobile.matches && page===0)go(0,false);},{once:true});
-  }
-  // Keep first poster anchored on initial Android layout after fonts/images settle.
-  if(mobile.matches){track.scrollLeft=0;requestAnimationFrame(()=>go(0,false));}
-  // Re-anchor only on initial load; preserve manual navigation thereafter.
-  window.addEventListener('load',()=>{if(mobile.matches && page===0)go(0,false);},{once:true});
+  track.addEventListener('touchend',e=>{
+    if(startX===null||!e.changedTouches.length)return;
+    const dx=e.changedTouches[0].clientX-startX;
+    const dy=e.changedTouches[0].clientY-startY;
+    startX=null;startY=null;
+    if(Math.abs(dx)>35&&Math.abs(dx)>Math.abs(dy))manual(page+(dx<0?1:-1));
+    else manual(page);
+  },{passive:true});
+  track.addEventListener('touchcancel',()=>{startX=null;startY=null;manual(page);},{passive:true});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)play();else stop();});
+  function reset(){if(mobile.matches)show(0);play();}
+  window.addEventListener('pageshow',reset);
+  window.addEventListener('resize',()=>{if(mobile.matches)show(page);play();});
+  mobile.addEventListener?.('change',reset);
+  if(mobile.matches){show(0);requestAnimationFrame(()=>show(0));}
+  window.addEventListener('load',()=>{if(mobile.matches)show(0);},{once:true});
   play();
 })();
 </script>
