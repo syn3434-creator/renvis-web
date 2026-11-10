@@ -1823,6 +1823,307 @@ footer{
   .arrival-section .arrivals::-webkit-scrollbar-thumb{background:#866A3B;}
 }
 </style>
+
+<style id="renvis-premium-picks-metallic-20261110">
+/* PREMIUM PICKS: champagne gold x black with diagonal light and fine metallic texture */
+.arrival-section{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:
+    linear-gradient(180deg,#120f0b 0%,#251d14 14%,#c9a66a 37%,#e6c894 50%,#b18a53 67%,#231a12 86%,#0a0908 100%);
+  padding:40px 0 56px;
+}
+.arrival-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 15% 12%,rgba(255,245,224,.92) 0,rgba(255,235,195,.62) 9%,rgba(255,220,160,.12) 19%,transparent 28%),
+    radial-gradient(circle at 89% 17%,rgba(255,245,228,.9) 0,rgba(255,236,204,.56) 8%,rgba(255,221,172,.1) 18%,transparent 28%),
+    radial-gradient(circle at 72% 96%,rgba(255,239,209,.5) 0,rgba(255,221,173,.15) 10%,transparent 22%),
+    linear-gradient(135deg,transparent 6%,rgba(255,240,208,.9) 11%,rgba(255,226,177,.28) 14%,transparent 18%),
+    linear-gradient(135deg,transparent 67%,rgba(255,241,214,.72) 72%,rgba(255,230,190,.2) 75%,transparent 79%),
+    linear-gradient(135deg,transparent 78%,rgba(255,243,220,.78) 82%,rgba(255,228,184,.18) 85%,transparent 89%),
+    linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.18));
+  opacity:.98;
+  pointer-events:none;
+  z-index:-2;
+}
+.arrival-section::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(112deg,rgba(255,255,255,.095) 0 1px,rgba(255,255,255,0) 1px 4px),
+    linear-gradient(90deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.06) 16%,rgba(255,255,255,.08) 50%,rgba(0,0,0,.06) 84%,rgba(0,0,0,.42) 100%);
+  mix-blend-mode:soft-light;
+  opacity:.55;
+  pointer-events:none;
+  z-index:-1;
+}
+.arrival-section .wrap{position:relative;z-index:1;}
+.arrival-section .section-head{
+  align-items:flex-end;
+  gap:18px;
+  margin-bottom:24px;
+}
+.arrival-section .section-head > div:first-child{flex:1;min-width:0;}
+.arrival-section .eyebrow{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  color:#fff3da;
+  font-size:.8rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+}
+.arrival-section .eyebrow::before,
+.arrival-section .eyebrow::after{
+  content:"";
+  display:block;
+  width:68px;
+  max-width:13vw;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,238,201,.9),transparent);
+}
+.arrival-section .section-head h2{
+  margin:8px 0 0;
+  font-size:clamp(2.3rem,5vw,4.6rem)!important;
+  line-height:.95;
+  letter-spacing:.03em;
+  font-weight:900;
+  text-transform:uppercase;
+  color:#ffe5b1;
+  text-shadow:0 2px 0 rgba(96,62,20,.55),0 12px 26px rgba(32,15,0,.45);
+  background:linear-gradient(180deg,#fff7df 0%,#f6d793 18%,#d9ab5d 48%,#fff1cd 58%,#d79e46 86%,#8e6328 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.arrival-section .carousel-buttons button{
+  border-color:rgba(255,231,190,.46);
+  background:linear-gradient(180deg,rgba(19,16,13,.86),rgba(8,7,6,.95));
+  color:#fff2d0;
+  box-shadow:inset 0 1px 0 rgba(255,245,220,.14),0 8px 18px rgba(0,0,0,.18);
+}
+.arrival-section .carousel-buttons button:hover{filter:brightness(1.08);}
+.arrival-section .arrivals{gap:20px;padding:8px 2px 12px;}
+.arrival-section .arrivals::-webkit-scrollbar-thumb{background:rgba(67,53,37,.76);}
+.arrival-section .card{
+  border:1px solid rgba(246,223,180,.62);
+  background:linear-gradient(180deg,rgba(12,13,15,.96),rgba(6,7,8,.98));
+  box-shadow:0 18px 32px rgba(25,14,2,.22),inset 0 0 0 1px rgba(255,246,225,.04);
+}
+.arrival-section .card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border:1px solid rgba(255,232,190,.16);
+  pointer-events:none;
+}
+.arrival-section .arrivals .card-image{
+  height:250px;
+  background:#111;
+}
+.arrival-section .arrivals .card-image img{
+  filter:saturate(.95) contrast(1.02) brightness(.93);
+}
+.arrival-section .new-badge{
+  border-color:rgba(252,231,188,.64);
+  background:linear-gradient(180deg,#f8e6b8,#d8ae63);
+  color:#15110c;
+  box-shadow:0 6px 16px rgba(0,0,0,.2);
+}
+.arrival-section .favorite{
+  border-color:rgba(255,236,198,.55);
+  background:rgba(10,10,10,.8);
+}
+.arrival-section .category{color:#f2cb7f;}
+.arrival-section .maker{color:#d8c5aa;}
+.arrival-section .tag{
+  border-color:rgba(243,217,173,.25);
+  background:rgba(255,246,224,.03);
+}
+.arrival-section .price-row{border-top-color:rgba(244,221,182,.2);}
+.arrival-section .price{
+  color:#f5d287;
+  font-size:1.28rem;
+  letter-spacing:.01em;
+}
+.pickup-empty{
+  margin:0;
+  padding:30px 24px;
+  border:1px solid rgba(255,230,184,.34);
+  background:rgba(7,7,7,.5);
+  color:#f6eddc;
+}
+@media(min-width:761px){
+  .arrival-section .wrap{width:min(var(--max),calc(100% - 72px));}
+}
+@media(max-width:760px){
+  .arrival-section{padding:26px 0 34px;}
+  .arrival-section .eyebrow{font-size:.58rem;gap:11px;letter-spacing:.18em;}
+  .arrival-section .eyebrow::before,
+  .arrival-section .eyebrow::after{width:34px;}
+  .arrival-section .section-head{margin-bottom:16px;}
+  .arrival-section .section-head h2{font-size:1.8rem!important;line-height:1.02;}
+  .arrival-section .carousel-buttons button{width:38px;height:38px;}
+  .arrival-section .arrivals{gap:14px;padding-top:6px;}
+  .arrival-section .arrivals .card-image{height:205px;}
+}
+</style>
+
+<style id="renvis-premium-picks-final-20261110">
+/* Scoped only to PREMIUM PICKS. Product content and existing handlers are untouched. */
+@property --a {syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes rpAuraLeft{to{transform:translate(160px,90px) scale(1.2)}}
+@keyframes rpAuraRight{to{transform:translate(-160px,-90px) scale(1.2)}}
+@keyframes rpGoldLine{to{transform:translateX(65px)}}
+@keyframes rpTitleShine{to{background-position:250% 0}}
+@keyframes rpSpin{to{--a:360deg}}
+@keyframes rpBadgeShine{0%,63%{transform:translateX(-135%) skewX(-25deg)}90%,100%{transform:translateX(350%) skewX(-25deg)}}
+.arrival-section{
+  --gold1:#f6e3a0;--gold2:#d4af37;--ink:#0e121a;
+  position:relative!important;isolation:isolate;overflow:hidden!important;
+  background:radial-gradient(ellipse at 50% -10%,#7a5b18 0%,#3d2c0b 42%,#14100a 75%,#0b0d12 100%)!important;
+  padding:56px 24px 64px!important;
+}
+.arrival-section::before,.arrival-section::after{
+  content:"";position:absolute;width:520px;height:520px;
+  border-radius:50%;filter:blur(90px);opacity:.34;
+  background:radial-gradient(circle,#d4af37,transparent 68%);
+  pointer-events:none;z-index:0;
+}
+.arrival-section::before{left:-260px;top:-250px;animation:rpAuraLeft 14s ease-in-out infinite alternate}
+.arrival-section::after{right:-260px;bottom:-250px;animation:rpAuraRight 18s ease-in-out infinite alternate}
+.arrival-section .wrap{position:relative;z-index:2;}
+.arrival-section .rp-gold-dust{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none;}
+.arrival-section .section-head{position:relative;align-items:end;margin-bottom:26px;gap:12px;}
+.arrival-section .eyebrow{
+  display:flex;align-items:center;gap:12px;position:relative;
+  color:#fff3c2!important;font-size:11px!important;letter-spacing:.28em!important;font-weight:800;
+}
+.arrival-section .eyebrow::before{
+  content:"";display:block;flex:0 0 44px!important;width:44px!important;height:1px;
+  background:linear-gradient(90deg,#8e6b27,#f6e3a0);max-width:none!important;
+}
+.arrival-section .eyebrow::after{
+  content:"";position:absolute;left:0;top:50%;width:16px!important;height:2px;
+  max-width:none!important;background:#fffdf0;box-shadow:0 0 6px 2px rgba(255,244,192,.65);
+  transform:translateY(-50%);animation:rpGoldLine 2.4s linear infinite;
+}
+.arrival-section .section-head h2{
+  margin:12px 0 0!important;font-weight:900!important;
+  font-size:clamp(30px,5vw,44px)!important;letter-spacing:.04em!important;line-height:1.18!important;
+  background:linear-gradient(100deg,#f6e3a0 0%,#fffdf0 25%,#ecca66 45%,#f6e3a0 60%,#fffdf0 80%,#f6e3a0 100%)!important;
+  background-size:250% 100%!important;
+  -webkit-background-clip:text!important;background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;color:#f6e3a0!important;
+  text-shadow:none!important;animation:rpTitleShine 5s linear infinite;
+}
+.arrival-section .carousel-buttons button{
+  border:1px solid rgba(212,175,55,.45);border-radius:4px;
+  background:rgba(14,18,26,.86);color:#f6e3a0;
+}
+.arrival-section .arrivals{gap:16px;padding:7px 2px 14px;}
+.arrival-section .arrivals .card{
+  --a:0deg;position:relative;isolation:isolate;overflow:hidden;
+  padding:1.5px!important;border:0!important;border-radius:8px!important;
+  background:conic-gradient(from var(--a),transparent 0%,var(--gold1) 8%,var(--gold2) 16%,transparent 30%,transparent 55%,var(--gold1) 70%,transparent 85%),linear-gradient(#4a3c15,#2a2208)!important;
+  box-shadow:0 15px 30px rgba(0,0,0,.28)!important;
+  animation:rpSpin 6s linear infinite!important;
+  transform:perspective(1100px) rotateX(var(--rp-tilt-x,0deg)) rotateY(var(--rp-tilt-y,0deg)) translateY(var(--rp-lift,0px))!important;
+  transition:transform .35s ease,box-shadow .35s ease!important;
+  will-change:transform;
+}
+.arrival-section .arrivals .card::before{
+  content:"";position:absolute;inset:1.5px;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,#121722,#0e121a);border-radius:6.5px;
+}
+.arrival-section .arrivals .card::after{
+  content:attr(data-feature-number);position:absolute;top:10px;right:51px;z-index:3;
+  font-size:54px;font-weight:900;font-style:italic;line-height:1;
+  color:transparent;-webkit-text-stroke:1px rgba(246,227,160,.45);
+  border:0;inset:auto;pointer-events:none;
+}
+.arrival-section .arrivals .card > *{position:relative;z-index:1}
+.arrival-section .arrivals .card-image{
+  height:150px!important;overflow:hidden;position:relative;background:#0e121a;
+}
+.arrival-section .arrivals .card-image::after{
+  content:"";position:absolute;inset:35% 0 0;z-index:1;
+  background:linear-gradient(to bottom,transparent,rgba(14,18,26,.08) 35%,#0e121a 100%);
+  pointer-events:none;
+}
+.arrival-section .arrivals .card-image img{
+  width:100%;height:100%;object-fit:cover;
+  filter:none!important;opacity:1!important;scale:1!important;
+  transform:scale(1);transition:transform .8s ease!important;
+}
+.arrival-section .arrivals .new-badge{
+  position:absolute;left:12px;top:12px;z-index:3;
+  overflow:hidden;border:0;border-radius:2px;
+  font-size:10px;font-weight:800;letter-spacing:.06em;color:#241a04;
+  padding:5px 10px;background:linear-gradient(90deg,#f6e3a0,#d4af37);
+}
+.arrival-section .arrivals .new-badge::after{
+  content:"";position:absolute;top:-18px;bottom:-18px;left:0;width:16px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);
+  transform:translateX(-135%) skewX(-25deg);
+  animation:rpBadgeShine 3s linear infinite;
+}
+.arrival-section .arrivals .favorite{z-index:4;position:absolute;top:10px;right:10px;}
+.arrival-section .arrivals .card-body{padding:4px 16px 16px!important;}
+.arrival-section .arrivals .category{
+  color:#d4af37!important;font-size:10px!important;font-weight:700;letter-spacing:.1em;
+}
+.arrival-section .arrivals .card h3{
+  color:#f5f6f7;font-size:23px!important;font-weight:900;line-height:1.17;overflow-wrap:anywhere;
+}
+.arrival-section .arrivals .maker,
+.arrival-section .arrivals .used-management-number,
+.arrival-section .arrivals .used-management-number span{font-size:11px!important;color:#9aa3b2!important;}
+.arrival-section .arrivals .tag{
+  font-size:10px!important;color:#e8d9a6!important;
+  border:1px solid rgba(212,175,55,.4)!important;border-radius:2px;
+  padding:2px 8px!important;background:transparent;
+}
+.arrival-section .arrivals .price-row{
+  border-top:1px solid rgba(212,175,55,.25)!important;padding-top:12px;
+  align-items:center;
+}
+.arrival-section .arrivals .price{
+  color:#f6e3a0!important;font-size:14px!important;font-weight:800!important;
+}
+.arrival-section .arrivals .price-row::after{
+  content:"詳細を見る  →";font-size:12px;font-weight:800;color:#e9cd7e;
+  white-space:nowrap;transition:letter-spacing .35s ease,transform .35s ease;
+  pointer-events:none;
+}
+@media(hover:hover) and (pointer:fine){
+  .arrival-section .arrivals .card:hover{
+    --rp-lift:-6px;
+    animation-duration:2s!important;
+    box-shadow:0 24px 44px rgba(0,0,0,.42),0 0 26px rgba(212,175,55,.17)!important;
+  }
+  .arrival-section .arrivals .card:hover .card-image img{transform:scale(1.12);}
+  .arrival-section .arrivals .card:hover .price-row::after{letter-spacing:.045em;transform:translateX(3px);}
+}
+@media(max-width:760px){
+  .arrival-section{padding:38px 14px 46px!important;}
+  .arrival-section .section-head h2{font-size:clamp(30px,8vw,38px)!important;}
+  .arrival-section .eyebrow{font-size:10px!important;letter-spacing:.2em!important;}
+  .arrival-section .arrivals .card-image{height:150px!important;}
+  .arrival-section .arrivals .card::after{font-size:48px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .arrival-section::before,.arrival-section::after,
+  .arrival-section .eyebrow::after,.arrival-section .section-head h2,
+  .arrival-section .arrivals .card,.arrival-section .arrivals .new-badge::after{animation:none!important;}
+  .arrival-section .arrivals .card,.arrival-section .arrivals .card-image img{transition:none!important;transform:none!important;}
+}
+</style>
 </head>
 
 
@@ -3980,6 +4281,80 @@ loadUsedItems();
       observer.observe(el);
     });
   }
+})();
+</script>
+<script id="renvis-premium-picks-motion-20261110">
+/* Decorative effects only. Existing product rendering, links and favorites are unchanged. */
+(()=>{
+  const section=document.querySelector('.arrival-section');
+  const arrivalRoot=document.getElementById('arrivals');
+  if(!section||!arrivalRoot)return;
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const hover=window.matchMedia('(hover:hover) and (pointer:fine)');
+  const attach=()=>{
+    [...arrivalRoot.querySelectorAll(':scope > .card')].forEach((el,i)=>{
+      el.dataset.featureNumber=String(i+1).padStart(2,'0');
+      if(el.dataset.rpTiltAttached)return;
+      el.dataset.rpTiltAttached='1';
+      el.addEventListener('pointermove',event=>{
+        if(reduced.matches||!hover.matches)return;
+        const rect=el.getBoundingClientRect();
+        const x=(event.clientX-rect.left)/rect.width-.5;
+        const y=(event.clientY-rect.top)/rect.height-.5;
+        el.style.setProperty('--rp-tilt-y',`${Math.max(-5,Math.min(5,x*10)).toFixed(2)}deg`);
+        el.style.setProperty('--rp-tilt-x',`${Math.max(-5,Math.min(5,-y*10)).toFixed(2)}deg`);
+      },{passive:true});
+      el.addEventListener('pointerleave',()=>{
+        el.style.removeProperty('--rp-tilt-x');
+        el.style.removeProperty('--rp-tilt-y');
+      });
+    });
+  };
+  attach();
+  new MutationObserver(attach).observe(arrivalRoot,{childList:true});
+  if(reduced.matches)return;
+  const canvas=document.createElement('canvas');
+  canvas.className='rp-gold-dust';
+  canvas.setAttribute('aria-hidden','true');
+  section.insertBefore(canvas,section.firstChild);
+  const ctx=canvas.getContext('2d');
+  if(!ctx)return;
+  let width=0,height=0,dpr=1,raf=0,visible=true;
+  const count=46;
+  let particles=[];
+  const random=(a,b)=>a+Math.random()*(b-a);
+  const initialize=()=>{
+    const r=section.getBoundingClientRect();
+    width=r.width;height=r.height;
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    particles=Array.from({length:count},()=>({
+      x:random(0,width),y:random(0,height),radius:random(.5,1.5),
+      speed:random(.13,.36),phase:random(0,Math.PI*2),swing:random(3,14),flicker:random(.5,1.35)
+    }));
+  };
+  initialize();
+  if('ResizeObserver'in window)new ResizeObserver(initialize).observe(section);
+  else window.addEventListener('resize',initialize,{passive:true});
+  const draw=(time)=>{
+    raf=requestAnimationFrame(draw);
+    if(!visible||reduced.matches)return;
+    ctx.clearRect(0,0,width,height);
+    for(const p of particles){
+      p.y-=p.speed;
+      if(p.y<-8){p.y=height+8;p.x=random(0,width);}
+      const x=p.x+Math.sin(time*.00055+p.phase)*p.swing;
+      const alpha=Math.max(.06,Math.min(.7,.3+.26*Math.sin(time*.001*p.flicker+p.phase)));
+      ctx.beginPath();ctx.arc(x,p.y,p.radius,0,Math.PI*2);
+      ctx.fillStyle=`rgba(246,227,160,${alpha})`;ctx.fill();
+    }
+  };
+  if('IntersectionObserver'in window){
+    new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting??true;},{rootMargin:'160px'}).observe(section);
+  }
+  raf=requestAnimationFrame(draw);
+  reduced.addEventListener?.('change',()=>{if(reduced.matches){cancelAnimationFrame(raf);ctx.clearRect(0,0,width,height);}else{raf=requestAnimationFrame(draw);}});
 })();
 </script>
 </body>
