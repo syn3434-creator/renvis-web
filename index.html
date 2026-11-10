@@ -1798,30 +1798,26 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
 
 
 
-/* Mobile hero: one final mobile-specific correction (no desktop changes). */
+/* Mobile hero: corrected image seam and copy position. Desktop untouched. */
 @media (max-width:760px){
-  /* Show the actual photo at the very top of the hero, not below a dark image offset. */
+  /* The image layer formerly started too low, leaving a blank dark strip. */
   main#top > .hero .hero-bg::after{
     inset:0!important;
-    background-position:calc(68% + 110px) top!important;
+    background-position:calc(68% + 110px) -42px!important;
     background-size:auto 76%!important;
-    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 63%,rgba(0,0,0,.7) 83%,transparent 100%)!important;
-    mask-image:linear-gradient(to bottom,#000 0%,#000 63%,rgba(0,0,0,.7) 83%,transparent 100%)!important;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 65%,rgba(0,0,0,.7) 84%,transparent 100%)!important;
+    mask-image:linear-gradient(to bottom,#000 0%,#000 65%,rgba(0,0,0,.7) 84%,transparent 100%)!important;
   }
   main#top > .hero::after{
-    background:linear-gradient(to bottom,transparent 0%,transparent 42%,rgba(7,9,12,.10) 56%,rgba(7,9,12,.70) 85%,#07090c 100%)!important;
+    background:linear-gradient(to bottom,transparent 0%,transparent 42%,rgba(7,9,12,.1) 56%,rgba(7,9,12,.7) 85%,#07090c 100%)!important;
   }
-  /* Earlier rules moved the heading up independently. Reset that and lower the full copy. */
-  main#top > .hero .hero-copy-box{
-    top:auto!important;
-    transform:translateY(15px)!important;
+  /* Move the entire copy section, including buttons and statistics, below the welder. */
+  main#top > .hero .hero-content{
+    padding-top:calc(clamp(310px,50svh,510px) + 75px)!important;
   }
-  main#top > .hero .hero-copy-box h1{
-    top:0!important;
-    margin-bottom:14px!important;
-  }
+  main#top > .hero .hero-copy-box{top:auto!important;transform:none!important;}
+  main#top > .hero .hero-copy-box h1{top:0!important;margin-bottom:14px!important;}
 }
-
 </style>
 <!-- SEO metadata -->
 <link rel="canonical" href="https://renvis.co.jp/">
