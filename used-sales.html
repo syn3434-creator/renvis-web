@@ -1360,7 +1360,7 @@ footer{
 .arrival-section .section-head h2{
   letter-spacing:.035em;
 }
-.arrival-section-note,.all-products-note{
+.arrival-section-note{
   margin:7px 0 0;
   color:#aab3bc;
   font-size:.76rem;
@@ -1397,7 +1397,7 @@ footer{
   .arrival-section{padding:24px 0 34px;}
   .arrival-section .arrivals .card-image{height:190px;}
   .all-products{padding:35px 0 44px;scroll-margin-top:65px;}
-  .arrival-section-note,.all-products-note{font-size:.68rem;}
+  .arrival-section-note{font-size:.68rem;}
 }
 @media(prefers-reduced-motion:reduce){
   .card[data-product-id]{transition:none;}
@@ -1776,31 +1776,6 @@ footer{
  .filter-actions .used-favorite-filter span{white-space:nowrap!important;overflow-wrap:normal!important;}
 }
 </style>
-<style id="renvis-used-hero-mobile-restored-20261109">
-/* スマホ版・中古販売の冒頭だけを固定。PC版、検索、商品表示は変更しない。 */
-@media (max-width:760px){
-  .used-hero{height:auto!important;min-height:0!important;max-height:none!important;padding:20px 0 13px!important;overflow:visible!important;border-bottom:0!important;}
-  .used-hero .wrap.used-hero-content{
-    display:grid!important;grid-template-columns:minmax(0,1fr) 104px!important;
-    gap:5px 10px!important;align-items:center!important;
-    width:calc(100% - 36px)!important;margin:0 18px!important;
-    padding:0!important;min-height:0!important;border:0!important;position:static!important;
-  }
-  .used-hero-copy{display:contents!important;padding:0!important;max-width:none!important;}
-  .used-hero-copy::before{content:none!important;display:none!important;}
-  .used-hero h1{grid-column:1/-1!important;grid-row:1!important;font-size:clamp(24px,7vw,29px)!important;line-height:1.12!important;padding-left:13px!important;margin:0 0 8px!important;position:relative!important;}
-  .used-hero h1::before{content:""!important;display:block!important;position:absolute!important;left:0!important;top:0!important;bottom:0!important;height:auto!important;max-height:none!important;width:2px!important;background:var(--gold)!important;}
-  .used-hero .used-hero-lead{display:block!important;grid-column:1/-1!important;grid-row:2!important;margin:0 0 3px!important;color:var(--gold)!important;font-size:12px!important;line-height:1.5!important;font-weight:800!important;}
-  .used-hero-copy .used-hero-desc:not(.used-hero-mobile-original){display:block!important;grid-column:1!important;grid-row:3!important;max-width:100%!important;margin:0!important;color:#bec6ce!important;font-size:12px!important;line-height:1.65!important;word-break:normal!important;overflow-wrap:normal!important;}
-  .used-hero-desc .used-hero-bullet:first-child{display:none!important;}
-  .used-hero-desc .used-hero-bullet:nth-child(2){display:block!important;margin:0!important;padding:0!important;text-indent:0!important;}
-  .used-hero-desc .used-desktop-bullet{display:none!important;}
-  .used-hero-mobile-original,.used-mobile-short-copy{display:none!important;}
-  .used-hero-phone{grid-column:2!important;grid-row:3!important;position:static!important;align-self:center!important;justify-self:end!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;box-sizing:border-box!important;width:104px!important;max-width:104px!important;height:38px!important;min-height:38px!important;margin:0!important;padding:0 7px!important;border:1px solid rgba(224,181,63,.75)!important;border-radius:5px!important;background:transparent!important;color:var(--gold)!important;font-size:12px!important;font-weight:800!important;white-space:nowrap!important;}
-  .used-hero-phone .used-phone-text{display:inline!important;}
-  .used-hero-phone .used-phone-icon{display:block!important;width:15px!important;height:15px!important;flex:0 0 15px!important;}
-}
-</style>
 </head>
 
 
@@ -1936,7 +1911,7 @@ footer{
       <div class="used-hero-copy">
         <h1>USED SALES</h1>
         <p class="used-hero-lead">掲載商品だけが、すべてではありません。</p>
-        <p class="used-hero-desc"><span class="used-hero-bullet">・お探しの中古アタッチメントが見つからない場合も、お気軽に<span class="used-keep-together">ご相談ください。</span></span><span class="used-hero-bullet"><span class="used-desktop-bullet">・</span>掲載のない機種・型式についても、ご希望に合わせて<span class="used-keep-together">お探しします。</span></span></p>
+        <p class="used-hero-desc"><span class="used-hero-bullet">・お探しの中古アタッチメントが見つからない場合も、お気軽に<span class="used-keep-together">ご相談ください。</span></span><span class="used-hero-bullet">・掲載のない機種・型式についても、ご希望に合わせて<span class="used-keep-together">お探しします。</span></span></p>
         <p class="used-hero-desc used-hero-mobile-original">厳選した中古アタッチメントを、確かな品質でお届けします。</p>
       </div>
       <p class="used-mobile-short-copy">掲載外の機種・型式もお探しします。</p>
@@ -2375,7 +2350,6 @@ footer{
           <h2>
             中古商品一覧
           </h2>
-          <p class="all-products-note">現在掲載中の中古アタッチメントをすべて表示。大割機・小割機・ブレーカーなどの中古建機アタッチメントをご案内しています。</p>
 
           <div
             id="count"
