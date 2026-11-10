@@ -2123,6 +2123,22 @@ footer{
   .arrival-section .arrivals .card,.arrival-section .arrivals .new-badge::after{animation:none!important;}
   .arrival-section .arrivals .card,.arrival-section .arrivals .card-image img{transition:none!important;transform:none!important;}
 }
+
+/* 2026-11-10: PC PREMIUM PICKS visual refinement only.
+   Larger photographs, clearer gold frame, restrained heading breathing room. */
+@media(min-width:761px){
+  .arrival-section .section-head{margin-bottom:34px!important;}
+  .arrival-section .section-head h2{margin-top:17px!important;}
+  .arrival-section .arrivals .card-image{height:185px!important;}
+  .arrival-section .arrivals .card{
+    padding:2px!important;
+    background:
+      conic-gradient(from var(--a),transparent 0%,#fff2c9 8%,#ecc768 16%,transparent 30%,transparent 55%,#f6e3a0 70%,transparent 85%),
+      linear-gradient(140deg,#b68b35,#85652b 50%,#b9934d)!important;
+    box-shadow:0 15px 30px rgba(0,0,0,.28),0 0 0 1px rgba(235,194,95,.22)!important;
+  }
+  .arrival-section .arrivals .card::before{inset:2px;}
+}
 </style>
 </head>
 
