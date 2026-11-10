@@ -2001,7 +2001,7 @@ footer{
 .arrival-section .rp-gold-dust{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none;}
 .arrival-section .section-head{position:relative;align-items:end;margin-bottom:26px;gap:12px;}
 .arrival-section .eyebrow{
-  display:flex;align-items:center;gap:12px;position:relative;
+  display:flex;align-items:center;gap:10px;position:relative;
   color:#fff3c2!important;font-size:11px!important;letter-spacing:.28em!important;font-weight:800;
 }
 .arrival-section .eyebrow::before{
@@ -2041,12 +2041,7 @@ footer{
   content:"";position:absolute;inset:1.5px;z-index:0;pointer-events:none;
   background:linear-gradient(180deg,#121722,#0e121a);border-radius:6.5px;
 }
-.arrival-section .arrivals .card::after{
-  content:attr(data-feature-number);position:absolute;top:10px;right:51px;z-index:3;
-  font-size:54px;font-weight:900;font-style:italic;line-height:1;
-  color:transparent;-webkit-text-stroke:1px rgba(246,227,160,.45);
-  border:0;inset:auto;pointer-events:none;
-}
+
 .arrival-section .arrivals .card > *{position:relative;z-index:1}
 .arrival-section .arrivals .card-image{
   height:150px!important;overflow:hidden;position:relative;background:#0e121a;
@@ -2063,12 +2058,12 @@ footer{
 }
 .arrival-section .arrivals .new-badge{
   position:absolute;left:12px;top:12px;z-index:3;
-  overflow:hidden;border:0;border-radius:2px;
+  overflow:hidden;isolation:isolate;border:0;border-radius:2px;
   font-size:10px;font-weight:800;letter-spacing:.06em;color:#241a04;
   padding:5px 10px;background:linear-gradient(90deg,#f6e3a0,#d4af37);
 }
 .arrival-section .arrivals .new-badge::after{
-  content:"";position:absolute;top:-18px;bottom:-18px;left:0;width:16px;
+  content:"";position:absolute;top:-18px;bottom:-18px;left:0;width:16px;z-index:-1;pointer-events:none;
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);
   transform:translateX(-135%) skewX(-25deg);
   animation:rpBadgeShine 3s linear infinite;
@@ -2115,7 +2110,6 @@ footer{
   .arrival-section .section-head h2{font-size:clamp(30px,8vw,38px)!important;}
   .arrival-section .eyebrow{font-size:10px!important;letter-spacing:.2em!important;}
   .arrival-section .arrivals .card-image{height:150px!important;}
-  .arrival-section .arrivals .card::after{font-size:48px;}
 }
 @media(prefers-reduced-motion:reduce){
   .arrival-section::before,.arrival-section::after,
@@ -2186,22 +2180,6 @@ footer{
 }
 </style>
 
-<style id="renvis-premium-photo-fit-20261110">
-/* PREMIUM PICKS の商品写真だけ修正：全体表示・暗いフェードを弱める */
-.arrival-section .arrivals .card-image{background:#0e121a;}
-.arrival-section .arrivals .card-image img{
-  object-fit:contain!important;
-  object-position:center center!important;
-  transform:none!important;
-}
-.arrival-section .arrivals .card-image::after{
-  inset:65% 0 0;
-  background:linear-gradient(to bottom,transparent 0%,rgba(14,18,26,.12) 70%,rgba(14,18,26,.38) 100%)!important;
-}
-@media(hover:hover) and (pointer:fine){
-  .arrival-section .arrivals .card:hover .card-image img{transform:none!important;}
-}
-</style>
 
 <style id="renvis-used-hero-copy-restore-20261110">
 /* スマホ版：確定済みの2行のみ表示。重複した短縮コピーを非表示にする。 */
@@ -2212,33 +2190,6 @@ footer{
 }
 </style>
 
-<style id="renvis-premium-photo-side-fill-20261110">
-/* PREMIUM PICKS の写真左右の黒帯のみ自然に埋める。中央の写真は全体表示を維持 */
-.arrival-section .arrivals .card-image{
-  background:#0e121a;
-  isolation:isolate;
-}
-.arrival-section .arrivals .card-image::before{
-  content:"";
-  position:absolute;
-  inset:-13px;
-  z-index:0;
-  background-image:var(--rp-photo-side-image,none);
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  filter:blur(16px) brightness(.55) saturate(.8);
-  opacity:.85;
-  pointer-events:none;
-}
-.arrival-section .arrivals .card-image img{
-  position:relative;
-  z-index:1;
-  object-fit:contain!important;
-  object-position:center center!important;
-  transform:none!important;
-}
-</style>
 
 
 <style id="renvis-premium-double-gold-frame-20261110">
@@ -2274,7 +2225,31 @@ footer{
 @media(prefers-reduced-motion:reduce){
   .arrival-section .arrivals .card{animation:none!important;}
 }
-</style></head>
+</style>
+<style id="renvis-premium-five-requested-fixes-20261110">
+/* PREMIUM PICKS: only the requested photo display and bottom fade */
+.arrival-section .arrivals .card-image{
+  height:150px!important;
+  background:#0e121a;
+  overflow:hidden;
+}
+.arrival-section .arrivals .card-image img{
+  display:block;
+  width:100%!important;
+  height:150px!important;
+  object-fit:cover!important;
+  object-position:center center;
+}
+.arrival-section .arrivals .card-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:linear-gradient(180deg,transparent 55%,#0e121a 100%)!important;
+  pointer-events:none;
+}
+</style>
+</head>
 
 
 <body>
@@ -4443,7 +4418,6 @@ loadUsedItems();
   const hover=window.matchMedia('(hover:hover) and (pointer:fine)');
   const attach=()=>{
     [...arrivalRoot.querySelectorAll(':scope > .card')].forEach((el,i)=>{
-      el.dataset.featureNumber=String(i+1).padStart(2,'0');
       if(el.dataset.rpTiltAttached)return;
       el.dataset.rpTiltAttached='1';
       el.addEventListener('pointermove',event=>{
@@ -4527,26 +4501,6 @@ loadUsedItems();
 })();
 </script>
 
-<script id="renvis-premium-photo-side-fill-js">
-/* 商品写真のURLを背景に転用。写真自体は変更しない */
-(()=>{
-  const root=document.getElementById('arrivals');
-  if(!root)return;
-  const update=()=>{
-    root.querySelectorAll('.card-image').forEach(frame=>{
-      const img=frame.querySelector('img');
-      if(!img)return;
-      const url=img.currentSrc || img.src;
-      if(url && frame.dataset.rpSidePhoto!==url){
-        frame.style.setProperty('--rp-photo-side-image',`url(${JSON.stringify(url)})`);
-        frame.dataset.rpSidePhoto=url;
-      }
-    });
-  };
-  update();
-  new MutationObserver(update).observe(root,{childList:true,subtree:true});
-})();
-</script>
 
 </body>
 </html>
