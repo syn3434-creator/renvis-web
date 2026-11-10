@@ -2139,6 +2139,51 @@ footer{
   }
   .arrival-section .arrivals .card::before{inset:2px;}
 }
+/* Smartphone PREMIUM PICKS only: compact section, slightly wider product cards. */
+@media(max-width:760px){
+  .arrival-section{padding:20px 10px 24px!important;}
+  .arrival-section .wrap{width:calc(100% - 8px)!important;max-width:none;}
+  .arrival-section .section-head{margin-bottom:10px!important;gap:8px!important;}
+  .arrival-section .section-head h2{margin-top:7px!important;}
+  .arrival-section .arrivals{
+    grid-auto-columns:88vw!important;
+    gap:10px!important;
+    padding:3px 1px 6px!important;
+  }
+  .arrival-section .arrivals .card-image{height:160px!important;}
+  .arrival-section .arrivals .card-body{padding:4px 14px 12px!important;}
+  .arrival-section .arrivals .maker{margin-bottom:7px!important;}
+  .arrival-section .arrivals .tags{margin-bottom:7px!important;}
+  .arrival-section .arrivals .price-row{padding-top:9px!important;}
+}
+
+/* PC版 PREMIUM PICKSのみ：セクションを低くし、商品カードを少しワイドに */
+@media(min-width:761px){
+  .arrival-section{padding:40px 24px 43px!important;}
+  .arrival-section .wrap{width:min(var(--max),calc(100% - 36px))!important;}
+  .arrival-section .section-head{margin-bottom:18px!important;}
+  .arrival-section .section-head h2{margin-top:10px!important;}
+  .arrival-section .arrivals{
+    gap:12px!important;
+    grid-auto-columns:calc((100% - 36px)/4)!important;
+    padding-top:4px!important;
+    padding-bottom:8px!important;
+  }
+}
+</style>
+
+<style id="renvis-premium-picks-mobile-heading-one-line">
+/* スマホ版のPREMIUM PICKS見出しのみ、左右矢印を維持しつつ一行にする */
+@media(max-width:760px){
+  .arrival-section .section-head > div:first-child{min-width:0;}
+  .arrival-section .section-head h2{
+    font-size:clamp(18px,5.8vw,27px)!important;
+    letter-spacing:.02em!important;
+    white-space:nowrap!important;
+    word-break:keep-all!important;
+  }
+  .arrival-section .carousel-buttons{flex-shrink:0;}
+}
 </style>
 </head>
 
