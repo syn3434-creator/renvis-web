@@ -1265,18 +1265,6 @@ footer{
   .rental-pickup .rental-pickup__tap-hint{display:none!important;}
 }
 </style>
-<style id="renvis-rental-pickup-mobile-pair-navigation-fix">
-@media(max-width:760px){
-  .rental-pickup .rental-pickup__track{
-    overflow-x:hidden!important;
-    scroll-snap-type:none!important;
-    scroll-behavior:auto!important;
-    touch-action:pan-y!important;
-  }
-  .rental-pickup .rental-pickup__slide,
-  .rental-pickup .rental-pickup__slide:nth-child(odd){scroll-snap-align:none!important;}
-}
-</style>
 <style id="renvis-rental-seo-area-intro-20261029">
 /* Existing cards and interactions stay untouched. */
 .renvis-rental-area-intro{margin:-7px 0 22px;color:var(--muted);font-size:.81rem;line-height:1.75}
@@ -1342,13 +1330,6 @@ footer{
  header .renvis-mobile-quick-line{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;padding:0 5px;border-radius:6px;background:#06c755;color:#fff;font-size:13px;font-weight:900;line-height:1;text-decoration:none}
  header .nav .mobile-menu-toggle{margin-left:0!important;flex:0 0 42px!important;width:42px!important;height:42px!important}
  header .nav .renvis-line-direct{display:none!important}
-}
-</style>
-
-<style id="renvis-sv30-mobile-pair-display-fix">
-@media(max-width:760px){
- .rental-pickup .rental-pickup__track{overflow-x:hidden!important;scroll-snap-type:none!important;scroll-behavior:auto!important;}
- .rental-pickup .rental-pickup__slide{scroll-snap-align:none!important;}
 }
 </style>
 </head>
@@ -1707,22 +1688,24 @@ footer{
 <section class="renvis-seo-bottom" aria-labelledby="renvis-rental-area-heading">
   <div class="renvis-seo-inner">
     <h2 id="renvis-rental-area-heading">建機アタッチメントレンタルの対応エリア</h2>
-    <p>株式会社レンビスは福岡県を拠点に、九州各県の建設・土木・解体・産業廃棄物処理・中間処理・スクラップ・林業などの現場へ、建機用アタッチメントのレンタルをご案内しています。大割機・小割機（クラッシャ）・油圧ブレーカー・鉄骨カッター・フォーク・グラップル・バケット・スケルトンバケットなど、ショベル・バックホーの機種や作業内容に応じてご相談ください。</p>
-    <p>対応地域は<strong>福岡県・佐賀県・長崎県・大分県・熊本県・宮崎県・鹿児島県</strong>です。機械の在庫、対応クラス、配送・引渡し条件については事前にお問い合わせください。</p>
+    <p>株式会社レンビスは福岡県を拠点に、九州各県および山口県の建設・土木・解体・産業廃棄物処理・中間処理・スクラップ・林業などの現場へ、建機用アタッチメントのレンタルをご案内しています。大割機・小割機（クラッシャ）・油圧ブレーカー・鉄骨カッター・フォーク・グラップル・バケット・スケルトンバケットなど、ショベル・バックホーの機種や作業内容に応じてご相談ください。</p>
+    <p>対応地域は<strong>福岡県・佐賀県・長崎県・大分県・熊本県・宮崎県・鹿児島県・山口県</strong>です。機械の在庫、対応クラス、配送・引渡し条件については事前にお問い合わせください。</p>
     <details>
-      <summary>九州の主な対応地域・市町村を見る</summary>
+      <summary>九州・山口県の主な対応地域・市町村を見る</summary>
       <div class="renvis-seo-detail">
-        <h3>福岡県</h3>
-        <p>福岡市・北九州市・久留米市・筑紫野市・小郡市・朝倉市・うきは市・大刀洗町・筑前町・太宰府市・春日市・大野城市・那珂川市・鳥栖近郊・飯塚市・直方市・宗像市・古賀市・福津市・糸島市・大牟田市・柳川市・八女市・筑後市・みやま市・行橋市・苅田町など</p>
-        <h3>佐賀県</h3>
-        <p>佐賀市・鳥栖市・基山町・みやき町・神埼市・吉野ヶ里町・小城市・多久市・唐津市・伊万里市・武雄市・鹿島市・嬉野市・有田町・白石町など</p>
-        <h3>長崎県</h3>
-        <p>長崎市・佐世保市・諫早市・大村市・島原市・雲仙市・南島原市・西海市・松浦市・長与町・時津町・波佐見町・川棚町など（離島については個別相談）</p>
-        <h3>大分県</h3>
-        <p>大分市・別府市・中津市・日田市・宇佐市・由布市・杵築市・国東市・豊後高田市・臼杵市・津久見市・佐伯市・竹田市・豊後大野市など</p>
-        <h3>その他の九州地域</h3>
-        <p>熊本県・宮崎県・鹿児島県もご相談いただけます。現場所在地やご希望の機械・期間をお知らせください。</p>
-      </div>
+<h3>福岡県</h3>
+<p>福岡市・北九州市・久留米市・筑紫野市・小郡市・朝倉市・うきは市・大刀洗町・筑前町・太宰府市・春日市・大野城市・那珂川市・飯塚市・直方市・宗像市・古賀市・福津市・糸島市・大牟田市・柳川市・八女市・筑後市・みやま市・行橋市・苅田町など</p>
+<h3>佐賀県</h3>
+<p>佐賀市・鳥栖市・基山町・みやき町・神埼市・吉野ヶ里町・小城市・多久市・唐津市・伊万里市・武雄市・鹿島市・嬉野市・有田町・白石町など</p>
+<h3>長崎県</h3>
+<p>長崎市・佐世保市・諫早市・大村市・島原市・雲仙市・南島原市・西海市・松浦市・長与町・時津町・波佐見町・川棚町・平戸市・東彼杵町・佐々町・対馬市・壱岐市・五島市・新上五島町・小値賀町など（離島は配送・運搬条件を個別相談）</p>
+<h3>大分県</h3>
+<p>大分市・別府市・中津市・日田市・宇佐市・由布市・杵築市・国東市・豊後高田市・臼杵市・津久見市・佐伯市・竹田市・豊後大野市など</p>
+<h3>山口県</h3>
+<p>下関市・宇部市・山口市・萩市・防府市・下松市・岩国市・光市・長門市・柳井市・美祢市・周南市・山陽小野田市・周防大島町・和木町・上関町・田布施町・平生町・阿武町</p>
+<h3>その他の九州地域</h3>
+<p>熊本県・宮崎県・鹿児島県もご相談いただけます。現場所在地やご希望の機械・期間をお知らせください。</p>
+</div>
     </details>
   </div>
 </section>
@@ -1771,8 +1754,8 @@ const DATA = {
         "NPK",
         [
           [
-            "NPK 圧砕機 製品情報",
-            "https://www.npk-construction.com/crushers/"
+            "NPK 圧砕機資料",
+            "https://www.npk.jp/construction/shovel/recommendable_excavator_v6.pdf"
           ]
         ],
         "product-01.png"
@@ -2026,7 +2009,7 @@ const DATA = {
         [
           [
             "メーカー製品情報",
-            "https://okadaaiyon.com/products/list"
+            "https://okadaaiyon.com/products/"
           ]
         ],
         ""
@@ -2275,9 +2258,9 @@ DATA.steelcutter.makers[0][2]="product-21.webp";
 DATA.rotfork.makers[0][2]="product-22.webp";
 DATA.wastecutter.makers[0][2]="product-23.webp";
 delete DATA.hydmagnet.custom;
-DATA.hydmagnet.makers=[["オカダアイヨン",[["アイヨンハイマグ 製品情報","https://okadaaiyon.com/products/product/703"]],"product-24.webp"]];
+DATA.hydmagnet.makers=[["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-24.webp"]];
 delete DATA.screener.custom;
-DATA.screener.makers=[["オカダアイヨン",[["サイレントアミダス 製品情報","https://okadaaiyon.com/products/product/706"]],"product-25.webp"]];
+DATA.screener.makers=[["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-25.webp"]];
 delete DATA.woodcutter.custom;
 DATA.woodcutter.makers=[["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-26.webp"]];
 
@@ -2287,7 +2270,7 @@ DATA.breaker.makers.find(m=>m[0]==="東空")[2]="product-28.webp";
 DATA.hydfork.makers.find(m=>m[0]==="丸順")[2]="product-29.webp";
 
 /* KBL, Muroto, FRD images and TAGUCHI link */
-DATA.mechfork.makers.find(m=>m[0]==="KBL")[2]="kbl-mechanical-fork-v2.png";
+DATA.mechfork.makers.find(m=>m[0]==="KBL")[2]="product-30.webp";
 DATA.breaker.makers.find(m=>m[0]==="古河ロックドリル")[2]="product-31.webp";
 DATA.mechfork.makers.find(m=>m[0]==="室戸鉄工所")[2]="product-32.webp";
 DATA.crusher.makers.find(m=>m[0]==="タグチ")[1].push(["大割機 製品情報","https://www.taguchi.co.jp/product/crusher-d/"]);
@@ -2327,7 +2310,7 @@ DATA.woodcutter.makers=[
 
 DATA.rotfork.makers=[
   ["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-22.webp"],
-  ["丸順",[["ロータリーZフォーク 製品情報","https://www.marujun.jp/products/rotary-z-fork/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"marujun-rotary-fork-20261109.png"]
+  ["丸順",[["ロータリーZフォーク 製品情報","https://www.marujun.jp/products/rotary-z-fork/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-catalog-12.png"]
 ];
 
 
@@ -2761,46 +2744,63 @@ render("crusher");
 
 <script id="renvis-rental-pickup-script">
 (function(){
- const track=document.getElementById('rentalPickupTrack');
- if(!track)return;
- const section=track.closest('.rental-pickup');
- const slides=Array.from(track.querySelectorAll('.rental-pickup__slide'));
- const dots=Array.from(section.querySelectorAll('.rental-pickup__dot'));
- const prev=document.getElementById('rentalPickupPrev');
- const next=document.getElementById('rentalPickupNext');
- const mobile=window.matchMedia('(max-width:760px)');
- const pages=Math.ceil(slides.length/2);
- let page=0, timer=null, resume=null, startX=null, startY=null;
- function render(){
-   if(!mobile.matches){
-     slides.forEach(s=>{s.style.removeProperty('display');s.removeAttribute('aria-hidden');});
-     track.style.removeProperty('overflow-x');
-     return;
-   }
-   track.scrollLeft=0;
-   track.style.setProperty('overflow-x','hidden','important');
-   slides.forEach((s,i)=>{
-     const visible=Math.floor(i/2)===page;
-     s.style.setProperty('display',visible?'flex':'none','important');
-     s.setAttribute('aria-hidden',String(!visible));
-   });
-   dots.forEach((d,i)=>d.setAttribute('aria-current',String(i===page)));
- }
- function show(i){page=(i+pages)%pages;render();}
- function stop(){if(timer){clearInterval(timer);timer=null;}}
- function play(){stop();if(mobile.matches&&!document.hidden&&pages>1)timer=setInterval(()=>show(page+1),4500);}
- function manual(i){stop();show(i);if(resume)clearTimeout(resume);resume=setTimeout(play,10000);}
- dots.forEach((d,i)=>d.addEventListener('click',()=>manual(i)));
- if(prev)prev.addEventListener('click',()=>manual(page-1));
- if(next)next.addEventListener('click',()=>manual(page+1));
- track.addEventListener('touchstart',e=>{if(!mobile.matches||!e.touches.length)return;startX=e.touches[0].clientX;startY=e.touches[0].clientY;stop();},{passive:true});
- track.addEventListener('touchend',e=>{if(startX===null||!e.changedTouches.length)return;const dx=e.changedTouches[0].clientX-startX;const dy=e.changedTouches[0].clientY-startY;startX=null;startY=null;if(Math.abs(dx)>35&&Math.abs(dx)>Math.abs(dy))manual(page+(dx<0?1:-1));else manual(page);},{passive:true});
- track.addEventListener('touchcancel',()=>{startX=null;startY=null;play();},{passive:true});
- document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else play();});
- function reset(){page=0;render();play();}
- window.addEventListener('pageshow',reset);
- mobile.addEventListener?.('change',reset);
- render();play();
+  const track=document.getElementById('rentalPickupTrack');
+  if(!track)return;
+  const section=track.closest('.rental-pickup');
+  const slides=Array.from(track.querySelectorAll('.rental-pickup__slide'));
+  const dots=Array.from(section.querySelectorAll('.rental-pickup__dot'));
+  const prev=document.getElementById('rentalPickupPrev');
+  const next=document.getElementById('rentalPickupNext');
+  const mobile=window.matchMedia('(max-width:760px)');
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const count=Math.ceil(slides.length/2);
+  if(!count)return;
+  let page=0, timer=null, touching=false, scheduled=false;
+  const left=i=>Math.max(0,slides[i*2].offsetLeft-slides[0].offsetLeft);
+  function update(i){
+    page=Math.max(0,Math.min(count-1,i));
+    dots.forEach((d,n)=>d.setAttribute('aria-current',String(n===page)));
+  }
+  function go(i,animate=true){
+    if(!mobile.matches)return;
+    const target=(i+count)%count;
+    const x=left(target);
+    if(typeof track.scrollTo==='function'){
+      try{track.scrollTo({left:x,behavior:animate&&!reduced.matches?'smooth':'instant'});}
+      catch(e){track.scrollLeft=x;}
+    }else{track.scrollLeft=x;}
+    update(target);
+  }
+  function stop(){if(timer!==null){clearInterval(timer);timer=null;}}
+  function play(){
+    stop();
+    if(!mobile.matches||reduced.matches||document.hidden||touching||count<2)return;
+    timer=setInterval(()=>go(page+1),3000);
+  }
+  dots.forEach((d,i)=>d.addEventListener('click',()=>{go(i);play();}));
+  if(prev)prev.addEventListener('click',()=>{go(page-1);play();});
+  if(next)next.addEventListener('click',()=>{go(page+1);play();});
+  track.addEventListener('touchstart',()=>{touching=true;stop();},{passive:true});
+  track.addEventListener('touchend',()=>{touching=false;setTimeout(play,800);},{passive:true});
+  track.addEventListener('touchcancel',()=>{touching=false;play();},{passive:true});
+  track.addEventListener('scroll',()=>{
+    if(scheduled||!mobile.matches)return;
+    scheduled=true;
+    requestAnimationFrame(()=>{
+      let index=0,delta=Infinity;
+      for(let i=0;i<count;i++){const d=Math.abs(track.scrollLeft-left(i));if(d<delta){delta=d;index=i;}}
+      update(index);scheduled=false;
+    });
+  },{passive:true});
+  document.addEventListener('visibilitychange',play);
+  mobile.addEventListener?.('change',()=>{if(mobile.matches)go(page,false);play();});
+  window.addEventListener('pageshow',()=>{if(mobile.matches)go(0,false);play();});
+  window.addEventListener('resize',()=>{if(mobile.matches)go(page,false);play();});
+  // Keep first poster anchored on initial Android layout after fonts/images settle.
+  if(mobile.matches){track.scrollLeft=0;requestAnimationFrame(()=>go(0,false));}
+  // Re-anchor only on initial load; preserve manual navigation thereafter.
+  window.addEventListener('load',()=>{if(mobile.matches && page===0)go(0,false);},{once:true});
+  play();
 })();
 </script>
 </body>
