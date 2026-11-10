@@ -2211,7 +2211,70 @@ footer{
   .used-hero .used-hero-copy .used-hero-desc{display:block!important;}
 }
 </style>
-</head>
+
+<style id="renvis-premium-photo-side-fill-20261110">
+/* PREMIUM PICKS の写真左右の黒帯のみ自然に埋める。中央の写真は全体表示を維持 */
+.arrival-section .arrivals .card-image{
+  background:#0e121a;
+  isolation:isolate;
+}
+.arrival-section .arrivals .card-image::before{
+  content:"";
+  position:absolute;
+  inset:-13px;
+  z-index:0;
+  background-image:var(--rp-photo-side-image,none);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  filter:blur(16px) brightness(.55) saturate(.8);
+  opacity:.85;
+  pointer-events:none;
+}
+.arrival-section .arrivals .card-image img{
+  position:relative;
+  z-index:1;
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform:none!important;
+}
+</style>
+
+
+<style id="renvis-premium-double-gold-frame-20261110">
+/* PREMIUM PICKS card framing ONLY. Preserve card content, interactions and images. */
+.arrival-section .arrivals .card{
+  /* Existing rotating gold stroke remains visible beneath the inner frame. */
+  box-shadow:0 15px 30px rgba(0,0,0,.28),
+    0 0 0 1px rgba(245,211,126,.48),
+    0 0 13px rgba(230,187,92,.12)!important;
+}
+.arrival-section .arrivals .card::before{
+  /* Second inner gold line and four short golden corner brackets. */
+  background:
+    linear-gradient(90deg,#fbe8ac,#d4af37) left top/19px 2px no-repeat,
+    linear-gradient(180deg,#fbe8ac,#d4af37) left top/2px 19px no-repeat,
+    linear-gradient(270deg,#fbe8ac,#d4af37) right top/19px 2px no-repeat,
+    linear-gradient(180deg,#fbe8ac,#d4af37) right top/2px 19px no-repeat,
+    linear-gradient(90deg,#fbe8ac,#d4af37) left bottom/19px 2px no-repeat,
+    linear-gradient(0deg,#fbe8ac,#d4af37) left bottom/2px 19px no-repeat,
+    linear-gradient(270deg,#fbe8ac,#d4af37) right bottom/19px 2px no-repeat,
+    linear-gradient(0deg,#fbe8ac,#d4af37) right bottom/2px 19px no-repeat,
+    linear-gradient(180deg,#121722,#0e121a)!important;
+  box-shadow:inset 0 0 0 1px rgba(242,207,129,.42);
+}
+@media(hover:hover) and (pointer:fine){
+  .arrival-section .arrivals .card:hover{
+    box-shadow:0 24px 44px rgba(0,0,0,.42),
+      0 0 0 1px rgba(255,232,177,.72),
+      0 0 21px rgba(242,196,93,.32),
+      0 0 40px rgba(212,175,55,.13)!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .arrival-section .arrivals .card{animation:none!important;}
+}
+</style></head>
 
 
 <body>
@@ -4463,5 +4526,27 @@ loadUsedItems();
   reduced.addEventListener?.('change',()=>{if(reduced.matches){cancelAnimationFrame(raf);ctx.clearRect(0,0,width,height);}else{raf=requestAnimationFrame(draw);}});
 })();
 </script>
+
+<script id="renvis-premium-photo-side-fill-js">
+/* 商品写真のURLを背景に転用。写真自体は変更しない */
+(()=>{
+  const root=document.getElementById('arrivals');
+  if(!root)return;
+  const update=()=>{
+    root.querySelectorAll('.card-image').forEach(frame=>{
+      const img=frame.querySelector('img');
+      if(!img)return;
+      const url=img.currentSrc || img.src;
+      if(url && frame.dataset.rpSidePhoto!==url){
+        frame.style.setProperty('--rp-photo-side-image',`url(${JSON.stringify(url)})`);
+        frame.dataset.rpSidePhoto=url;
+      }
+    });
+  };
+  update();
+  new MutationObserver(update).observe(root,{childList:true,subtree:true});
+})();
+</script>
+
 </body>
 </html>
