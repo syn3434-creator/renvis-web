@@ -1344,6 +1344,13 @@ footer{
  header .nav .renvis-line-direct{display:none!important}
 }
 </style>
+
+<style id="renvis-sv30-mobile-pair-display-fix">
+@media(max-width:760px){
+ .rental-pickup .rental-pickup__track{overflow-x:hidden!important;scroll-snap-type:none!important;scroll-behavior:auto!important;}
+ .rental-pickup .rental-pickup__slide{scroll-snap-align:none!important;}
+}
+</style>
 </head>
 <body>
 <header>
@@ -2754,63 +2761,46 @@ render("crusher");
 
 <script id="renvis-rental-pickup-script">
 (function(){
-  const track=document.getElementById('rentalPickupTrack');
-  if(!track)return;
-  const section=track.closest('.rental-pickup');
-  const slides=[...track.querySelectorAll('.rental-pickup__slide')];
-  const dots=[...section.querySelectorAll('.rental-pickup__dot')];
-  const prev=document.getElementById('rentalPickupPrev');
-  const next=document.getElementById('rentalPickupNext');
-  const mobile=window.matchMedia('(max-width:760px)');
-  const count=Math.ceil(slides.length/2);
-  if(!count)return;
-  let page=0,timer=null,resumeTimer=null,startX=null,startY=null;
-  function position(i){
-    const slide=slides[i*2];
-    return slide ? slide.offsetLeft-slides[0].offsetLeft : 0;
-  }
-  function show(i){
-    if(!mobile.matches)return;
-    page=(i+count)%count;
-    // Two posters at a time. No smooth-scroll/snap race on mobile.
-    track.scrollLeft=Math.max(0,position(page));
-    dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===page)));
-  }
-  function stop(){if(timer!==null){clearInterval(timer);timer=null;}}
-  function play(){
-    stop();
-    if(!mobile.matches||document.hidden||count<2)return;
-    timer=setInterval(()=>show(page+1),4500);
-  }
-  function manual(i){
-    show(i);stop();
-    if(resumeTimer!==null)clearTimeout(resumeTimer);
-    resumeTimer=setTimeout(play,10000);
-  }
-  dots.forEach((dot,i)=>dot.addEventListener('click',()=>manual(i)));
-  if(prev)prev.addEventListener('click',()=>manual(page-1));
-  if(next)next.addEventListener('click',()=>manual(page+1));
-  track.addEventListener('touchstart',e=>{
-    if(!mobile.matches||!e.touches.length)return;
-    startX=e.touches[0].clientX;startY=e.touches[0].clientY;stop();
-  },{passive:true});
-  track.addEventListener('touchend',e=>{
-    if(startX===null||!e.changedTouches.length)return;
-    const dx=e.changedTouches[0].clientX-startX;
-    const dy=e.changedTouches[0].clientY-startY;
-    startX=null;startY=null;
-    if(Math.abs(dx)>35&&Math.abs(dx)>Math.abs(dy))manual(page+(dx<0?1:-1));
-    else manual(page);
-  },{passive:true});
-  track.addEventListener('touchcancel',()=>{startX=null;startY=null;manual(page);},{passive:true});
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden)play();else stop();});
-  function reset(){if(mobile.matches)show(0);play();}
-  window.addEventListener('pageshow',reset);
-  window.addEventListener('resize',()=>{if(mobile.matches)show(page);play();});
-  mobile.addEventListener?.('change',reset);
-  if(mobile.matches){show(0);requestAnimationFrame(()=>show(0));}
-  window.addEventListener('load',()=>{if(mobile.matches)show(0);},{once:true});
-  play();
+ const track=document.getElementById('rentalPickupTrack');
+ if(!track)return;
+ const section=track.closest('.rental-pickup');
+ const slides=Array.from(track.querySelectorAll('.rental-pickup__slide'));
+ const dots=Array.from(section.querySelectorAll('.rental-pickup__dot'));
+ const prev=document.getElementById('rentalPickupPrev');
+ const next=document.getElementById('rentalPickupNext');
+ const mobile=window.matchMedia('(max-width:760px)');
+ const pages=Math.ceil(slides.length/2);
+ let page=0, timer=null, resume=null, startX=null, startY=null;
+ function render(){
+   if(!mobile.matches){
+     slides.forEach(s=>{s.style.removeProperty('display');s.removeAttribute('aria-hidden');});
+     track.style.removeProperty('overflow-x');
+     return;
+   }
+   track.scrollLeft=0;
+   track.style.setProperty('overflow-x','hidden','important');
+   slides.forEach((s,i)=>{
+     const visible=Math.floor(i/2)===page;
+     s.style.setProperty('display',visible?'flex':'none','important');
+     s.setAttribute('aria-hidden',String(!visible));
+   });
+   dots.forEach((d,i)=>d.setAttribute('aria-current',String(i===page)));
+ }
+ function show(i){page=(i+pages)%pages;render();}
+ function stop(){if(timer){clearInterval(timer);timer=null;}}
+ function play(){stop();if(mobile.matches&&!document.hidden&&pages>1)timer=setInterval(()=>show(page+1),4500);}
+ function manual(i){stop();show(i);if(resume)clearTimeout(resume);resume=setTimeout(play,10000);}
+ dots.forEach((d,i)=>d.addEventListener('click',()=>manual(i)));
+ if(prev)prev.addEventListener('click',()=>manual(page-1));
+ if(next)next.addEventListener('click',()=>manual(page+1));
+ track.addEventListener('touchstart',e=>{if(!mobile.matches||!e.touches.length)return;startX=e.touches[0].clientX;startY=e.touches[0].clientY;stop();},{passive:true});
+ track.addEventListener('touchend',e=>{if(startX===null||!e.changedTouches.length)return;const dx=e.changedTouches[0].clientX-startX;const dy=e.changedTouches[0].clientY-startY;startX=null;startY=null;if(Math.abs(dx)>35&&Math.abs(dx)>Math.abs(dy))manual(page+(dx<0?1:-1));else manual(page);},{passive:true});
+ track.addEventListener('touchcancel',()=>{startX=null;startY=null;play();},{passive:true});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else play();});
+ function reset(){page=0;render();play();}
+ window.addEventListener('pageshow',reset);
+ mobile.addEventListener?.('change',reset);
+ render();play();
 })();
 </script>
 </body>
