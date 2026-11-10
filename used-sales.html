@@ -1798,6 +1798,30 @@ footer{
   .arrival-section .section-head h2{font-size:1.35rem!important}
   .pickup-empty{font-size:.75rem}
 }
+<style id="renvis-pickup-champagne-pc">
+/* PC版のみ：ピックアップエリアの背景配色を変更。文章・カード・機能は変更しない。 */
+@media (min-width:761px){
+  .arrival-section{
+    background:linear-gradient(115deg,#B99A61 0%,#E0C99A 48%,#967746 100%);
+    border-top:1px solid #E6CF9D;
+    border-bottom:1px solid #8A6C39;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.34);
+  }
+  .arrival-section .eyebrow{color:#49371D;}
+  .arrival-section .section-head h2{color:#17130C;}
+  .arrival-section .carousel-buttons button{
+    background:#191919;
+    border-color:#5C4728;
+    color:#F4E5C5;
+  }
+  .arrival-section .card{
+    border-color:#70552F;
+    box-shadow:0 12px 28px rgba(38,28,13,.28);
+  }
+  .arrival-section .pickup-empty{color:#382B18;}
+  .arrival-section .arrivals::-webkit-scrollbar-thumb{background:#866A3B;}
+}
+</style>
 </style>
 </head>
 
