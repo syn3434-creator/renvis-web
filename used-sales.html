@@ -1360,12 +1360,6 @@ footer{
 .arrival-section .section-head h2{
   letter-spacing:.035em;
 }
-.arrival-section-note{
-  margin:7px 0 0;
-  color:#aab3bc;
-  font-size:.76rem;
-  line-height:1.65;
-}
 .arrival-section .arrivals .card-image{
   height:240px;
 }
@@ -1397,7 +1391,6 @@ footer{
   .arrival-section{padding:24px 0 34px;}
   .arrival-section .arrivals .card-image{height:190px;}
   .all-products{padding:35px 0 44px;scroll-margin-top:65px;}
-  .arrival-section-note{font-size:.68rem;}
 }
 @media(prefers-reduced-motion:reduce){
   .card[data-product-id]{transition:none;}
@@ -1782,6 +1775,14 @@ footer{
 @media(max-width:760px){
   .all-products .results-head h2{font-size:1.18rem!important;line-height:1.3!important;}
 }
+</style>
+<style id="renvis-back-to-top-20261110">
+/* 中古販売ページ専用：上に戻るボタン */
+.renvis-back-to-top{position:fixed;right:22px;bottom:24px;z-index:90;width:52px;height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;border:1px solid #ddb646;border-radius:10px;background:rgba(13,19,25,.96);color:#ddb646;font:800 10px/1.2 "Noto Sans JP","Yu Gothic",sans-serif;letter-spacing:.04em;box-shadow:0 4px 18px rgba(0,0,0,.25);cursor:pointer;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s}
+.renvis-back-to-top span:first-child{font-size:23px;line-height:1.05}
+.renvis-back-to-top.is-visible{opacity:1;visibility:visible;pointer-events:auto}
+.renvis-back-to-top:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:760px){.renvis-back-to-top{right:14px;bottom:18px;width:46px;height:46px;border-radius:9px;font-size:9px}.renvis-back-to-top span:first-child{font-size:21px}}
 </style>
 </head>
 
@@ -2310,7 +2311,6 @@ footer{
           <h2>
             新着商品
           </h2>
-          <p class="arrival-section-note">新しく入荷したアタッチメントをピックアップ</p>
 
         </div>
 
@@ -3943,6 +3943,17 @@ loadUsedItems();
       observer.observe(el);
     });
   }
+})();
+</script>
+<button id="renvisBackToTop" class="renvis-back-to-top" type="button" aria-label="ページの一番上へ戻る"><span aria-hidden="true">↑</span><span aria-hidden="true">TOP</span></button>
+<script id="renvis-back-to-top-script-20261110">
+(() => {
+  const button = document.getElementById('renvisBackToTop');
+  if (!button) return;
+  const updateVisibility = () => button.classList.toggle('is-visible', window.scrollY > 450);
+  window.addEventListener('scroll', updateVisibility, {passive:true});
+  button.addEventListener('click', () => window.scrollTo({top:0,behavior:'instant'}));
+  updateVisibility();
 })();
 </script>
 </body>
