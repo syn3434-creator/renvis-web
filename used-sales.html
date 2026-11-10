@@ -2185,6 +2185,23 @@ footer{
   .arrival-section .carousel-buttons{flex-shrink:0;}
 }
 </style>
+
+<style id="renvis-premium-photo-fit-20261110">
+/* PREMIUM PICKS の商品写真だけ修正：全体表示・暗いフェードを弱める */
+.arrival-section .arrivals .card-image{background:#0e121a;}
+.arrival-section .arrivals .card-image img{
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform:none!important;
+}
+.arrival-section .arrivals .card-image::after{
+  inset:65% 0 0;
+  background:linear-gradient(to bottom,transparent 0%,rgba(14,18,26,.12) 70%,rgba(14,18,26,.38) 100%)!important;
+}
+@media(hover:hover) and (pointer:fine){
+  .arrival-section .arrivals .card:hover .card-image img{transform:none!important;}
+}
+</style>
 </head>
 
 
