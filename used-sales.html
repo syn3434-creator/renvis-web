@@ -1261,19 +1261,21 @@ footer{
 .renvis-seo-bottom details .renvis-seo-detail{padding:0 0 16px}
 @media(max-width:760px){.renvis-seo-bottom{padding:28px 0 35px}.renvis-seo-bottom p{font-size:.76rem}.renvis-seo-bottom details{padding:0 12px}}
 
-/* 2026-11-12: Used sales mobile-only CTA and scroll-to-top. */
-.help-actions-mobile{display:none;}
-.renvis-scroll-top{display:none;}
+/* 2026-11-12: Used-sales CTA and scroll-to-top for PC and mobile. */
+.help-box{grid-template-columns:1fr;}
+.help-box h2{font-size:clamp(14px,1.6vw,20px);white-space:nowrap;letter-spacing:-.025em;}
+.help-box .help-actions{display:flex;flex-wrap:wrap;gap:9px;width:100%;}
+.help-box .help-actions a{display:flex;justify-content:center;align-items:center;min-width:155px;min-height:46px;padding:12px 16px;line-height:1.4;}
+.help-box .help-actions .line{background:#06c755;border-color:#06c755;color:#fff;}
+.help-box .help-actions .phone{background:linear-gradient(135deg,#e1b23d,#f7d064);border-color:#e1b23d;color:#090b0e;}
+.help-box .help-actions .contact{background:transparent;border-color:var(--line);color:var(--text);}
+.renvis-scroll-top{position:fixed;right:20px;bottom:24px;z-index:999;display:flex;align-items:center;justify-content:center;width:47px;height:47px;border:1px solid rgba(223,182,61,.75);border-radius:50%;background:#111820;color:#f7d064;font-size:12px;font-weight:800;letter-spacing:.02em;box-shadow:0 4px 18px rgba(0,0,0,.4);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s;cursor:pointer;}
+.renvis-scroll-top.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);}
 @media(max-width:760px){
   .help-box h2{font-size:clamp(12px,3.55vw,14px);letter-spacing:-.035em;white-space:nowrap;}
-  .help-box .help-actions:not(.help-actions-mobile){display:none;}
-  .help-box .help-actions-mobile{display:grid;grid-template-columns:1fr;gap:9px;width:100%;}
-  .help-box .help-actions-mobile a{display:flex;justify-content:center;align-items:center;min-width:0;min-height:46px;width:100%;padding:12px 10px;line-height:1.45;white-space:normal;}
-  .help-actions-mobile .line{background:#06c755;border-color:#06c755;color:#fff;}
-  .help-actions-mobile .phone{background:linear-gradient(135deg,#e1b23d,#f7d064);border-color:#e1b23d;color:#090b0e;}
-  .help-actions-mobile .contact{background:transparent;border-color:var(--line);color:var(--text);}
-  .renvis-scroll-top{position:fixed;right:16px;bottom:20px;z-index:999;display:flex;align-items:center;justify-content:center;width:47px;height:47px;border:1px solid rgba(223,182,61,.75);border-radius:50%;background:#111820;color:#f7d064;font-size:12px;font-weight:800;letter-spacing:.02em;box-shadow:0 4px 18px rgba(0,0,0,.4);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s;cursor:pointer;}
-  .renvis-scroll-top.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);}
+  .help-box .help-actions{display:grid;grid-template-columns:1fr;gap:9px;width:100%;}
+  .help-box .help-actions a{min-width:0;width:100%;padding:12px 10px;}
+  .renvis-scroll-top{right:16px;bottom:20px;}
 }
 </style>
 <style id="renvis-mobile-clean-20261009">
@@ -2947,39 +2949,10 @@ footer{
           </div>
 
 
-          <div class="help-actions help-actions-mobile" aria-label="中古販売のお問い合わせ">
+          <div class="help-actions" aria-label="中古販売のお問い合わせ">
             <a class="line" href="https://line.me/R/ti/p/@347uiyxe" target="_blank" rel="noopener noreferrer">LINEで相談</a>
             <a class="phone" href="tel:0946428311">電話で問い合わせ</a>
             <a class="contact" href="contact.html">お問い合わせフォーム</a>
-          </div>
-
-          <div class="help-actions">
-
-            <a
-              class="phone"
-              href="tel:0946428311"
-            >
-              電話で問い合わせ
-            </a>
-
-            <a
-              class="instagram"
-              href="https://www.instagram.com/renvisrenvis/"
-              target="_blank"
-              rel="noopener"
-            >
-              Instagram
-            </a>
-
-            <a
-              class="tiktok"
-              href="https://www.tiktok.com/@renvisrenvis"
-              target="_blank"
-              rel="noopener"
-            >
-              TikTok
-            </a>
-
           </div>
 
         </div>
