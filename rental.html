@@ -1741,11 +1741,11 @@ const DATA = {
         [
           [
             "TS-W 公式カタログ",
-            "https://media.okadaaiyon.com/cms/uploads/ctlg_TS-W_Crusher_202606.pdf"
+            "https://media.okadaaiyon.com/cms/uploads/TS-W_Crusher_2026.09.pdf"
           ],
           [
             "TSRC 公式カタログ",
-            "https://media.okadaaiyon.com/cms/uploads/ctlg_TSRC_Crusher_202606_v2.pdf"
+            "https://media.okadaaiyon.com/cms/uploads/TSRC_Crusher_2026.10.pdf"
           ]
         ],
         "rental-okada-crusher.png"
@@ -1754,8 +1754,8 @@ const DATA = {
         "NPK",
         [
           [
-            "NPK 圧砕機資料",
-            "https://www.npk.jp/construction/shovel/recommendable_excavator_v6.pdf"
+            "NPK メーカー公式カタログ",
+            "https://www.npk-construction.com/siryou/catarogue/"
           ]
         ],
         "product-01.png"
@@ -2562,7 +2562,7 @@ DATA.extension.makers=[["KBL",[["アタッチメント総合カタログ","https
 /* ===== 2026-10-15 user requested rental-page updates ===== */
 // 大割機：オカダアイヨン 2段目削除
 if(DATA.crusher?.makers?.[0]){
-  DATA.crusher.makers[0][1] = [["TS-W 公式カタログ","https://media.okadaaiyon.com/cms/uploads/ctlg_TS-W_Crusher_202606.pdf"]];
+  DATA.crusher.makers[0][1] = [["TS-W 公式カタログ","https://media.okadaaiyon.com/cms/uploads/TS-W_Crusher_2026.09.pdf"]];
 }
 
 // マグネット付き小割機：オカダアイヨンは指定URL 1件のみ
@@ -2613,6 +2613,48 @@ if(rotForkMarujun){
 const orangeMarujun = DATA.orangegrapple?.makers?.find(m => m[0] === "丸順");
 if(orangeMarujun){
   orangeMarujun[1] = [["グラップル 製品情報", "https://www.marujun.jp/products/orange-grapple/index.html"]];
+}
+
+
+/* ===== 2026-11-12 rental-page updates ===== */
+// マグネット付き小割機：NPK / 古河ロックドリルはボタン1つに統一
+const magNpk = DATA.magpulverizer?.makers?.find(m => m[0] === "NPK");
+if(magNpk){
+  magNpk[1] = [["永久磁石付き小割圧砕機 製品情報", "https://www.npk-construction.com/crunchrs/"]];
+}
+const magFurukawa = DATA.magpulverizer?.makers?.find(m => m[0] === "古河ロックドリル");
+if(magFurukawa){
+  magFurukawa[1] = [["アクティブ・マグネット付小割用油圧圧砕機 製品情報", "https://www.furukawarockdrill.co.jp/crusher"]];
+}
+
+// ハイマグ（油圧式マグネット）：オカダアイヨン指定URLへ変更
+const hydMagOkada = DATA.hydmagnet?.makers?.find(m => m[0] === "オカダアイヨン");
+if(hydMagOkada){
+  hydMagOkada[1] = [["ハイマグ 製品情報", "https://okadaaiyon.com/products/product/703"]];
+}
+
+// 油圧ブレーカー：オカダアイヨン指定URLへ変更
+const breakerOkada = DATA.breaker?.makers?.find(m => m[0] === "オカダアイヨン");
+if(breakerOkada){
+  breakerOkada[1] = [["オカダアイヨン 製品情報", "https://okadaaiyon.com/products/category/kaitai"]];
+}
+
+// 機械式フォーク：KBL画像を差し替え
+const mechForkKbl = DATA.mechfork?.makers?.find(m => m[0] === "KBL");
+if(mechForkKbl){
+  mechForkKbl[2] = "kbl-mechanical-fork-transparent.png";
+}
+
+// 回転フォーク：オカダアイヨン指定URLへ変更
+const rotForkOkada = DATA.rotfork?.makers?.find(m => m[0] === "オカダアイヨン");
+if(rotForkOkada){
+  rotForkOkada[1] = [["回転フォーク 製品情報", "https://okadaaiyon.com/products/product/718"]];
+}
+
+// ふるい機：オカダアイヨン指定URLへ変更
+if(DATA.screener){
+  delete DATA.screener.custom;
+  DATA.screener.makers = [["オカダアイヨン", [["ふるい機 製品情報", "https://okadaaiyon.com/products/product/706"]], "product-25.webp"]];
 }
 
 render("crusher");
