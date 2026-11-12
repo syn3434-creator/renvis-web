@@ -1030,6 +1030,11 @@ footer{
 .renvis-seo-bottom summary{cursor:pointer;padding:14px 0;font-size:.82rem;font-weight:800;color:#e4e7eb}
 .renvis-seo-bottom details .renvis-seo-detail{padding:0 0 16px}
 @media(max-width:760px){.renvis-seo-bottom{padding:28px 0 35px}.renvis-seo-bottom p{font-size:.76rem}.renvis-seo-bottom details{padding:0 12px}}
+
+/* Local catalog previews only: original screenshots, no regenerated type or figures */
+.maker-photo--catalog { background:#fff; padding:6px; overflow:hidden; }
+.maker-photo--catalog a { display:flex; width:100%; height:100%; align-items:center; justify-content:center; }
+.maker-photo--catalog img { width:100%; height:100%; object-fit:contain !important; object-position:center !important; }
 </style>
 <style id="renvis-mobile-clean-20261009">
 /* RENVIS mobile final: consolidated, applied before first paint. */
@@ -1677,9 +1682,9 @@ footer{
 <section class="rental-seo-maker-index" aria-labelledby="rental-maker-index-title">
   <div class="wrap">
     <details>
-      <summary id="rental-maker-index-title">取扱機種と掲載メーカーの一覧 <span>＋</span></summary>
+      <summary id="rental-maker-index-title">取扱メーカー一覧 <span>＋</span></summary>
       <p class="rental-seo-maker-note">機種を選択するとメーカー資料を確認できます。以下はページに掲載しているメーカーの一覧です。記載メーカー・カタログ内の全型式について在庫を保証するものではありません。レンタルの可否や適合はお問い合わせください。</p>
-      <ul class="rental-seo-maker-list"><li><strong>大割機</strong><span>オカダアイヨン、NPK、タグチ、古河ロックドリル</span></li><li><strong>小割機</strong><span>オカダアイヨン、NPK、タグチ、古河ロックドリル</span></li><li><strong>マグネット付き小割機</strong><span>オカダアイヨン、NPK、古河ロックドリル、タグチ</span></li><li><strong>鉄骨カッター</strong><span>オカダアイヨン、NPK、古河ロックドリル、タグチ</span></li><li><strong>産廃カッター</strong><span>オカダアイヨン</span></li><li><strong>木材カッター</strong><span>オカダアイヨン、丸順</span></li><li><strong>油圧ブレーカー</strong><span>オカダアイヨン、東空、古河ロックドリル、MKB系</span></li><li><strong>機械式フォーク</strong><span>KBL、室戸鉄工所</span></li><li><strong>チルトフォーク</strong><span>丸順</span></li><li><strong>回転フォーク</strong><span>オカダアイヨン、丸順</span></li><li><strong>グラップル</strong><span>丸順</span></li><li><strong>スケルトンバケット</strong><span>KBL</span></li><li><strong>オーガ</strong><span>丸善工業</span></li><li><strong>草刈機</strong><span>三陽機器</span></li><li><strong>エキステンションアーム</strong><span>KBL</span></li></ul>
+      <ul class="rental-seo-maker-list"><li><strong>大割機</strong><span>オカダアイヨン、NPK、タグチ、古河ロックドリル、坂戸、東空、MAC、コベルコ、コマツ</span></li><li><strong>小割機</strong><span>オカダアイヨン、NPK、タグチ、古河ロックドリル、坂戸</span></li><li><strong>マグネット付き小割機</strong><span>オカダアイヨン、NPK、古河ロックドリル、タグチ、坂戸</span></li><li><strong>鉄骨カッター</strong><span>オカダアイヨン、NPK、古河ロックドリル、タグチ、坂戸</span></li><li><strong>産廃カッター</strong><span>オカダアイヨン、丸順、坂戸、MAC</span></li><li><strong>木材カッター</strong><span>オカダアイヨン、丸順、坂戸、MAC</span></li><li><strong>破砕機</strong><span>伊藤商会、タグチ</span></li><li><strong>油圧ブレーカー</strong><span>オカダアイヨン、東空、古河ロックドリル、MKB系、NPK</span></li><li><strong>機械式フォーク</strong><span>KBL、室戸鉄工所、丸順、飯田</span></li><li><strong>チルトフォーク</strong><span>丸順、室戸、飯田</span></li><li><strong>回転フォーク</strong><span>オカダアイヨン、丸順</span></li><li><strong>グラップル</strong><span>丸順、南星</span></li><li><strong>スケルトンバケット</strong><span>KBL、丸順</span></li><li><strong>オーガ</strong><span>丸善工業</span></li><li><strong>草刈機</strong><span>三陽機器</span></li><li><strong>エキステンションアーム</strong><span>KBL、丸順</span></li></ul>
     </details>
   </div>
 </section>
@@ -2404,7 +2409,7 @@ function render(key){
                 target="_blank"
                 rel="noopener"
               >
-                製品情報を見る ↗
+                ${url.startsWith("catalogs/") ? "カタログを見る ↗" : "製品情報を見る ↗"}
               </a>
             `
           )
@@ -2424,13 +2429,15 @@ function render(key){
       image
       ?
       `
-        <div class="maker-photo${data.en === "Spot Cooler" ? " maker-photo--cooler" : ""}">
+        <div class="maker-photo${data.en === "Spot Cooler" ? " maker-photo--cooler" : ""}${image.startsWith("catalogs/") ? " maker-photo--catalog" : ""}">
+          ${image.startsWith("catalogs/") ? `<a href="${esc(image)}" target="_blank" rel="noopener" aria-label="${esc(name)}の${esc(data.title)}カタログを拡大表示">` : ""}
           <img
             src="${esc(image)}"
             alt="${esc(name)} ${esc(data.title)}"
             loading="lazy"
             draggable="false"
           >
+          ${image.startsWith("catalogs/") ? "</a>" : ""}
         </div>
       `
       :
@@ -2655,6 +2662,79 @@ if(rotForkOkada){
 if(DATA.screener){
   delete DATA.screener.custom;
   DATA.screener.makers = [["オカダアイヨン", [["ふるい機 製品情報", "https://okadaaiyon.com/products/product/706"]], "product-25.webp"]];
+}
+
+
+/* 2026-11-12: オカダカタログ画像をサイト内で表示（外部PDF更新の影響を回避） */
+{
+  const item=DATA.crusher?.makers?.find(m => m[0] === "オカダアイヨン");
+  if(item) {
+    item[1]=[["カタログ画像", "catalogs/okada-crusher.png"]];
+    item[2]="catalogs/okada-crusher.png";
+  }
+}
+{
+  const item=DATA.pulverizer?.makers?.find(m => m[0] === "オカダアイヨン");
+  if(item) {
+    item[1]=[["カタログ画像", "catalogs/okada-pulverizer.png"]];
+    item[2]="catalogs/okada-pulverizer.png";
+  }
+}
+{
+  const item=DATA.magpulverizer?.makers?.find(m => m[0] === "オカダアイヨン");
+  if(item) {
+    item[1]=[["カタログ画像", "catalogs/okada-magnet-pulverizer.png"]];
+    item[2]="catalogs/okada-magnet-pulverizer.png";
+  }
+}
+{
+  const item=DATA.hydmagnet?.makers?.find(m => m[0] === "オカダアイヨン");
+  if(item) {
+    item[1]=[["カタログ画像", "catalogs/okada-hi-mag.png"]];
+    item[2]="catalogs/okada-hi-mag.png";
+  }
+}
+{
+  const item=DATA.screener?.makers?.find(m => m[0] === "オカダアイヨン");
+  if(item) {
+    item[1]=[["カタログ画像", "catalogs/okada-screener.png"]];
+    item[2]="catalogs/okada-screener.png";
+  }
+}
+{
+  const item=DATA.steelcutter?.makers?.find(m => m[0] === "オカダアイヨン");
+  if(item) {
+    item[1]=[["カタログ画像", "catalogs/okada-steel-cutter.png"]];
+    item[2]="catalogs/okada-steel-cutter.png";
+  }
+}
+{
+  const item=DATA.wastecutter?.makers?.find(m => m[0] === "オカダアイヨン");
+  if(item) {
+    item[1]=[["カタログ画像", "catalogs/okada-waste-cutter.png"]];
+    item[2]="catalogs/okada-waste-cutter.png";
+  }
+}
+{
+  const item=DATA.woodcutter?.makers?.find(m => m[0] === "オカダアイヨン");
+  if(item) {
+    item[1]=[["カタログ画像", "catalogs/okada-wood-cutter.png"]];
+    item[2]="catalogs/okada-wood-cutter.png";
+  }
+}
+{
+  const item=DATA.rotfork?.makers?.find(m => m[0] === "オカダアイヨン");
+  if(item) {
+    item[1]=[["カタログ画像", "catalogs/okada-rotary-fork.png"]];
+    item[2]="catalogs/okada-rotary-fork.png";
+  }
+}
+{
+  const item=DATA.breaker?.makers?.find(m => m[0] === "オカダアイヨン");
+  if(item) {
+    item[1]=[["カタログ画像", "catalogs/okada-breaker.png"]];
+    item[2]="catalogs/okada-breaker.png";
+  }
 }
 
 render("crusher");
