@@ -1684,7 +1684,7 @@ footer{
     <details>
       <summary id="rental-maker-index-title">取扱メーカー一覧 <span>＋</span></summary>
       <p class="rental-seo-maker-note">機種を選択するとメーカー資料を確認できます。以下はページに掲載しているメーカーの一覧です。記載メーカー・カタログ内の全型式について在庫を保証するものではありません。レンタルの可否や適合はお問い合わせください。</p>
-      <ul class="rental-seo-maker-list"><li><strong>大割機</strong><span>オカダアイヨン、NPK、タグチ、古河ロックドリル、坂戸、東空、MAC、コベルコ、コマツ</span></li><li><strong>小割機</strong><span>オカダアイヨン、NPK、タグチ、古河ロックドリル、坂戸</span></li><li><strong>マグネット付き小割機</strong><span>オカダアイヨン、NPK、古河ロックドリル、タグチ、坂戸</span></li><li><strong>鉄骨カッター</strong><span>オカダアイヨン、NPK、古河ロックドリル、タグチ、坂戸</span></li><li><strong>産廃カッター</strong><span>オカダアイヨン、丸順、坂戸、MAC</span></li><li><strong>木材カッター</strong><span>オカダアイヨン、丸順、坂戸、MAC</span></li><li><strong>破砕機</strong><span>伊藤商会、タグチ</span></li><li><strong>油圧ブレーカー</strong><span>オカダアイヨン、東空、古河ロックドリル、MKB系、NPK</span></li><li><strong>機械式フォーク</strong><span>KBL、室戸鉄工所、丸順、飯田</span></li><li><strong>チルトフォーク</strong><span>丸順、室戸、飯田</span></li><li><strong>回転フォーク</strong><span>オカダアイヨン、丸順</span></li><li><strong>グラップル</strong><span>丸順、南星</span></li><li><strong>スケルトンバケット</strong><span>KBL、丸順</span></li><li><strong>オーガ</strong><span>丸善工業</span></li><li><strong>草刈機</strong><span>三陽機器</span></li><li><strong>エキステンションアーム</strong><span>KBL、丸順</span></li></ul>
+      <ul class="rental-seo-maker-list"><li><strong>大割機</strong><span>オカダアイヨン、日本ニューマチック工業、タグチ工業、古河ロックドリル、坂戸工作所、東空販売、MAC、コベルコ建機、小松製作所</span></li><li><strong>小割機</strong><span>オカダアイヨン、日本ニューマチック工業、タグチ工業、古河ロックドリル、坂戸工作所</span></li><li><strong>マグネット付き小割機</strong><span>オカダアイヨン、日本ニューマチック工業、古河ロックドリル、タグチ工業、坂戸工作所</span></li><li><strong>鉄骨カッター</strong><span>オカダアイヨン、日本ニューマチック工業、古河ロックドリル、タグチ工業、坂戸工作所</span></li><li><strong>産廃カッター</strong><span>オカダアイヨン、丸順、坂戸工作所、MAC</span></li><li><strong>木材カッター</strong><span>オカダアイヨン、丸順、坂戸工作所、MAC</span></li><li><strong>破砕機</strong><span>伊藤商会、タグチ工業</span></li><li><strong>油圧ブレーカー</strong><span>オカダアイヨン、東空販売、古河ロックドリル、甲南電機、日本ニューマチック工業</span></li><li><strong>機械式フォーク</strong><span>ケービーエル、室戸鉄工所、丸順、飯田鉄工</span></li><li><strong>チルトフォーク</strong><span>丸順、室戸鉄工所、飯田鉄工</span></li><li><strong>回転フォーク</strong><span>オカダアイヨン、丸順</span></li><li><strong>グラップル</strong><span>丸順、南星機械</span></li><li><strong>スケルトンバケット</strong><span>ケービーエル、丸順</span></li><li><strong>オーガ</strong><span>丸善工業</span></li><li><strong>草刈機</strong><span>三陽機器</span></li><li><strong>エキステンションアーム</strong><span>ケービーエル、丸順</span></li></ul>
     </details>
   </div>
 </section>
@@ -2736,6 +2736,23 @@ if(DATA.screener){
     item[2]="catalogs/okada-breaker.png";
   }
 }
+
+
+/* 取扱メーカー正式名称の統一：各機種のカタログカード表示のみ */
+const manufacturerOfficialNames = {
+  "NPK": "日本ニューマチック工業",
+  "タグチ": "タグチ工業",
+  "東空": "東空販売",
+  "KBL": "ケービーエル",
+  "甲南建機": "甲南電機",
+  "MKB系": "甲南電機"
+};
+Object.values(DATA).forEach(category => {
+  if (!Array.isArray(category.makers)) return;
+  category.makers.forEach(maker => {
+    maker[0] = manufacturerOfficialNames[maker[0]] || maker[0];
+  });
+});
 
 render("crusher");
 
