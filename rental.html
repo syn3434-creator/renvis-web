@@ -1338,14 +1338,20 @@ footer{
 }
 </style>
 
-<style id="renvis-inline-spec-style">
-.inline-spec[hidden]{display:none!important}
-.inline-spec{width:100%;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15)}
-.inline-spec-heading{font-size:15px;font-weight:750;color:#f4f6f8;margin-bottom:12px}
-.inline-spec-photo{display:block;width:auto;max-width:100%;height:200px;object-fit:contain;margin:0 auto 14px}
-.inline-spec iframe{width:100%;height:min(72vh,720px);min-height:430px;border:1px solid rgba(255,255,255,.22);border-radius:6px;background:#fff;display:block}
-.inline-spec-open{display:inline-block;margin-top:12px;font-size:13px;color:#f1cc79;text-decoration:underline;text-underline-offset:3px}
-@media(max-width:620px){.inline-spec{margin-top:12px}.inline-spec iframe{height:65vh;min-height:360px}}
+<style id="renvis-product-modal-style">
+.product-modal[hidden]{display:none!important}
+.product-modal{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.84)}
+.product-modal__dialog{width:min(980px,100%);max-height:calc(100dvh - 32px);overflow:auto;background:#0c1117;color:#f5f7f9;border:1px solid rgba(255,255,255,.25);border-radius:12px;box-shadow:0 24px 80px #000c}
+.product-modal__header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.16)}
+.product-modal__title{margin:0;font-size:17px;font-weight:750}
+.product-modal__close{color:#fff;background:#222c38;border:1px solid #526071;border-radius:6px;cursor:pointer;padding:9px 14px;font-size:14px}
+.product-modal__content{padding:16px 18px 22px}
+.product-modal__image{display:block;margin:0 auto 16px;max-width:100%;height:180px;object-fit:contain}
+.product-modal__frame{width:100%;height:min(57vh,650px);min-height:270px;background:#fff;border:1px solid #49505b;border-radius:5px}
+.product-modal__missing{padding:20px;color:#f4f6f8;background:#242c36;border-radius:6px;line-height:1.8}
+.product-modal__open{display:inline-block;color:#f0c96c;margin-top:12px;text-decoration:underline;text-underline-offset:3px}
+body.product-modal-open{overflow:hidden}
+@media(max-width:620px){.product-modal{padding:8px}.product-modal__dialog{max-height:calc(100dvh - 16px)}.product-modal__header{padding:12px}.product-modal__content{padding:12px}.product-modal__frame{height:55vh;min-height:240px}.product-modal__image{height:130px}}
 </style>
 </head>
 <body>
@@ -1756,7 +1762,7 @@ const DATA = {
         [
           [
             "諸元表PDFを見る",
-            "catalogs/ts-w-spec.pdf"
+            "ts-w-spec.pdf"
           ],
           [
             "TS-W 公式カタログ",
@@ -1805,7 +1811,7 @@ const DATA = {
         [
           [
             "諸元表PDFを見る",
-            "catalogs/pulverizer-spec.pdf"
+            "pulverizer-spec.pdf"
           ],
           [
             "OSC 公式カタログ",
@@ -1855,7 +1861,7 @@ const DATA = {
         [
           [
             "諸元表PDFを見る",
-            "catalogs/mag-pulverizer-spec.pdf"
+            "mag-pulverizer-spec.pdf"
           ],
           [
             "永久磁石付 マグネットコワリクン 製品情報",
@@ -1913,7 +1919,7 @@ const DATA = {
     title:"油圧式マグネット",
     custom:
       "取扱メーカー・在庫状況はお問い合わせください。",
-    specPdf:"catalogs/hydraulic-magnet-spec.pdf"
+    specPdf:"hydraulic-magnet-spec.pdf"
   },
   steelcutter:{
     en:"Steel Cutter",
@@ -1924,7 +1930,7 @@ const DATA = {
         [
           [
             "諸元表PDFを見る",
-            "catalogs/steel-cutter-spec.pdf"
+            "steel-cutter-spec.pdf"
           ],
           [
             "TS-Sカッター 製品情報",
@@ -2007,7 +2013,7 @@ const DATA = {
         [
           [
             "諸元表PDFを見る",
-            "catalogs/wood-cutter-spec.pdf"
+            "wood-cutter-spec.pdf"
           ],
           [
             "木材切断機 製品情報",
@@ -2045,7 +2051,7 @@ const DATA = {
         [
           [
             "諸元表PDFを見る",
-            "catalogs/breaker-spec.pdf"
+            "breaker-spec.pdf"
           ],
           [
             "メーカー製品情報",
@@ -2157,7 +2163,7 @@ const DATA = {
         [
           [
             "諸元表PDFを見る",
-            "catalogs/rotary-fork-spec.pdf"
+            "rotary-fork-spec.pdf"
           ],
           [
             "メーカー製品情報",
@@ -2223,7 +2229,7 @@ const DATA = {
     title:"油圧式ふるい機",
     custom:
       "取扱メーカー・在庫状況はお問い合わせください。",
-    specPdf:"catalogs/screener-spec.pdf"
+    specPdf:"screener-spec.pdf"
   },
   bucketcrusher:{
     en:"Bucket Crusher",
@@ -2452,7 +2458,7 @@ function render(key){
                 target="_blank"
                 rel="noopener"
               >
-                ${url.startsWith("#product-spec-") ? "製品情報を見る" : url.startsWith("catalogs/") ? "カタログを見る ↗" : "製品情報を見る ↗"}
+                ${url.startsWith("#product-spec-") ? "製品情報を見る" : /\.pdf(?:[?#]|$)/i.test(url) ? "カタログを見る ↗" : "製品情報を見る ↗"}
               </a>
             `
           )
@@ -2485,14 +2491,7 @@ function render(key){
       ""
     }
   </div>
-  ${links[0]?.[1]?.startsWith("#product-spec-") && data.makers.find(m => m[0]===name)?.[3] ? `
-    <section class="inline-spec" id="product-spec-${esc(key)}" hidden>
-      <div class="inline-spec-heading">${esc(name)}｜${esc(data.title)} 製品情報</div>
-      ${image ? `<img class="inline-spec-photo" src="${esc(image)}" alt="${esc(name)} ${esc(data.title)}" loading="lazy">` : ""}
-      <iframe title="${esc(data.title)} 諸元表PDF" data-src="${esc(data.makers.find(m => m[0]===name)[3])}" loading="lazy"></iframe>
-      <a href="${esc(data.makers.find(m => m[0]===name)[3])}" target="_blank" rel="noopener noreferrer" class="inline-spec-open">PDFを別画面で開く ↗</a>
-    </section>
-  ` : ""}
+
 </article>
           `
         )
@@ -2548,19 +2547,78 @@ function render(key){
     }
   `;
 }
-panel.addEventListener("click",event => {
+// Product details open in a separate overlay. The grid must never expand.
+const productModal=document.createElement('div');
+productModal.className='product-modal';
+productModal.hidden=true;
+productModal.innerHTML=`<div class="product-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+  <div class="product-modal__header"><h3 class="product-modal__title" id="product-modal-title"></h3><button type="button" class="product-modal__close">閉じる ✕</button></div>
+  <div class="product-modal__content"></div>
+</div>`;
+document.body.appendChild(productModal);
+let modalTrigger=null;
+let modalRequest=0;
+function closeProductModal(){
+  if(productModal.hidden)return;
+  ++modalRequest;
+  productModal.hidden=true;
+  productModal.querySelector('.product-modal__content').replaceChildren();
+  document.body.classList.remove('product-modal-open');
+  if(modalTrigger && modalTrigger.isConnected) modalTrigger.focus();
+}
+productModal.querySelector('.product-modal__close').addEventListener('click',closeProductModal);
+productModal.addEventListener('click',e=>{if(e.target===productModal)closeProductModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!productModal.hidden)closeProductModal()});
+panel.addEventListener('click',async event=>{
   const link=event.target.closest('a[href^="#product-spec-"]');
-  if(!link) return;
+  if(!link)return;
   event.preventDefault();
-  const section=panel.querySelector(link.getAttribute("href"));
-  if(!section) return;
-  const opening=section.hidden;
-  section.hidden=!opening;
-  link.setAttribute("aria-expanded",String(opening));
-  if(opening){
-    const frame=section.querySelector("iframe[data-src]");
-    if(frame && !frame.src) frame.src=frame.dataset.src;
-    section.scrollIntoView({behavior:"smooth",block:"nearest"});
+  const key=link.getAttribute('href').slice('#product-spec-'.length);
+  const entry=DATA[key];
+  const maker=entry?.makers?.find(item=>item[0]==='オカダアイヨン' && item[3]);
+  if(!maker)return;
+  modalTrigger=link;
+  productModal.hidden=false;
+  document.body.classList.add('product-modal-open');
+  productModal.querySelector('.product-modal__title').textContent=`${maker[0]}｜${entry.title} 製品情報`;
+  const content=productModal.querySelector('.product-modal__content');
+  content.replaceChildren();
+  if(maker[2]){
+    const image=document.createElement('img');
+    image.src=maker[2];
+    image.alt=`${maker[0]} ${entry.title}`;
+    image.className='product-modal__image';
+    content.appendChild(image);
+  }
+  const pdf=maker[3];
+  const open=document.createElement('a');
+  open.className='product-modal__open';
+  open.href=pdf;
+  open.target='_blank';
+  open.rel='noopener noreferrer';
+  open.textContent='PDFを別画面で開く ↗';
+  const loading=document.createElement('p');
+  loading.textContent='諸元表PDFを確認しています…';
+  content.append(loading,open);
+  productModal.querySelector('.product-modal__close').focus();
+  const request=++modalRequest;
+  try{
+    const response=await fetch(pdf,{method:'HEAD',cache:'no-store'});
+    if(request!==modalRequest || productModal.hidden)return;
+    loading.remove();
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const frame=document.createElement('iframe');
+    frame.className='product-modal__frame';
+    frame.title=`${entry.title} 諸元表PDF`;
+    frame.src=pdf+'#toolbar=1&view=FitH';
+    content.insertBefore(frame,open);
+  }catch(error){
+    if(request!==modalRequest || productModal.hidden)return;
+    loading.remove();
+    const alert=document.createElement('div');
+    alert.className='product-modal__missing';
+    alert.textContent='諸元表PDFが公開先で見つかりません。ZIPに含まれる catalogs フォルダを rental.html と同じ階層へアップロードしてください。';
+    content.insertBefore(alert,open);
   }
 });
 /* =========================
@@ -2748,16 +2806,16 @@ Object.values(DATA).forEach(category => {
 
 /* 2026-11-13: 高画質諸元表を製品情報の中で表示。メーカーと製品種別を照合済み。 */
 const embeddedSpecs = {
-  crusher: "catalogs/ts-w-spec.pdf",
-  pulverizer: "catalogs/pulverizer-spec.pdf",
-  magpulverizer: "catalogs/mag-pulverizer-spec.pdf",
-  hydmagnet: "catalogs/hydraulic-magnet-spec.pdf",
-  steelcutter: "catalogs/steel-cutter-spec.pdf",
-  wastecutter: "catalogs/waste-cutter-spec.pdf",
-  woodcutter: "catalogs/wood-cutter-spec.pdf",
-  breaker: "catalogs/breaker-spec.pdf",
-  rotfork: "catalogs/rotary-fork-spec.pdf",
-  screener: "catalogs/screener-spec.pdf"
+  crusher: "ts-w-spec.pdf",
+  pulverizer: "pulverizer-spec.pdf",
+  magpulverizer: "mag-pulverizer-spec.pdf",
+  hydmagnet: "hydraulic-magnet-spec.pdf",
+  steelcutter: "steel-cutter-spec.pdf",
+  wastecutter: "waste-cutter-spec.pdf",
+  woodcutter: "wood-cutter-spec.pdf",
+  breaker: "breaker-spec.pdf",
+  rotfork: "rotary-fork-spec.pdf",
+  screener: "screener-spec.pdf"
 };
 Object.entries(embeddedSpecs).forEach(([key,pdf]) => {
   const entry=DATA[key];
