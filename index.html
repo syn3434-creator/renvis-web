@@ -1261,28 +1261,21 @@ main#top > .hero .renvis-silver-shine{position:relative;display:inline-block;col
 100%{background-position:0% 0;filter:drop-shadow(0 0 3px rgba(237,246,255,.42))}}
 @media (prefers-reduced-motion:reduce){main#top > .hero .renvis-silver-shine{animation:none!important}}
 main#top > .hero .renvis-silver-shine{isolation:isolate;overflow:visible!important}
-main#top > .hero .renvis-fairy-dust{position:absolute;inset:-18px -12px;pointer-events:none;-webkit-text-fill-color:initial;z-index:2}
-main#top > .hero .renvis-fairy-dust i{position:absolute;left:0;top:50%;width:5px;height:5px;border-radius:50%;opacity:0;background:#fff;box-shadow:0 0 5px 2px rgba(255,255,255,.95),0 0 13px 4px rgba(190,220,255,.7)}
-main#top > .hero .renvis-fairy-dust i:nth-child(1){--y:-21px;--delay:0s;width:7px;height:7px}
-main#top > .hero .renvis-fairy-dust i:nth-child(2){--y:13px;--delay:.10s;width:4px;height:4px}
-main#top > .hero .renvis-fairy-dust i:nth-child(3){--y:-7px;--delay:.20s;width:3px;height:3px}
-main#top > .hero .renvis-fairy-dust i:nth-child(4){--y:23px;--delay:.29s;width:5px;height:5px}
-main#top > .hero .renvis-fairy-dust i:nth-child(5){--y:-28px;--delay:.38s;width:3px;height:3px}
-main#top > .hero .renvis-fairy-dust i:nth-child(6){--y:5px;--delay:.47s;width:6px;height:6px}
-main#top > .hero .renvis-fairy-dust i:nth-child(7){--y:-16px;--delay:.56s;width:4px;height:4px}
-main#top > .hero .renvis-silver-shine::after{content:"✦";position:absolute;left:0;top:-.45em;font-size:.65em;color:#fff;-webkit-text-fill-color:#fff;opacity:0;text-shadow:0 0 5px #fff,0 0 15px #d5eaff;pointer-events:none}
-@media (prefers-reduced-motion:no-preference){main#top > .hero .renvis-fairy-dust i{animation:renvisFairyDust 2.2s ease-in-out calc(1s + var(--delay)) 1 both}}
-@media (prefers-reduced-motion:no-preference){main#top > .hero .renvis-silver-shine::after{animation:renvisFairyStar 2.2s ease-in-out 1s 1 both}}
-@keyframes renvisFairyDust{0%{left:0%;transform:translate(-3px,calc(var(--y) + 8px)) scale(.3);opacity:0}
-12%{opacity:1}
-48%{opacity:.95;transform:translate(0,var(--y)) scale(1.35)}
-80%{opacity:.75}
-100%{left:100%;transform:translate(5px,calc(var(--y) - 10px)) scale(.25);opacity:0}}
-@keyframes renvisFairyStar{0%{left:0%;opacity:0;transform:rotate(0deg) scale(.5)}
-15%{opacity:1}
-50%{opacity:1;transform:rotate(110deg) scale(1.25)}
-90%{opacity:.9}
-100%{left:100%;opacity:0;transform:rotate(230deg) scale(.4)}}
+/* Tiny restrained sparkle: same lettering, no layout changes. */
+main#top > .hero .renvis-fairy-dust{position:absolute;inset:-7px -4px;pointer-events:none;-webkit-text-fill-color:initial;z-index:2}
+main#top > .hero .renvis-fairy-dust i{position:absolute;left:0;top:50%;width:2px;height:2px;border-radius:50%;opacity:0;background:#fff;box-shadow:0 0 3px 1px rgba(255,255,255,.78),0 0 7px 1px rgba(193,220,249,.32)}
+main#top > .hero .renvis-fairy-dust i:nth-child(1){--y:-8px;--delay:0s;width:2px;height:2px}
+main#top > .hero .renvis-fairy-dust i:nth-child(2){--y:6px;--delay:.15s;width:1px;height:1px}
+main#top > .hero .renvis-fairy-dust i:nth-child(3){--y:-3px;--delay:.3s;width:2px;height:2px}
+main#top > .hero .renvis-fairy-dust i:nth-child(4){--y:9px;--delay:.46s;width:1.5px;height:1.5px}
+main#top > .hero .renvis-fairy-dust i:nth-child(5){--y:-10px;--delay:.6s;width:1px;height:1px}
+main#top > .hero .renvis-fairy-dust i:nth-child(6){--y:3px;--delay:.75s;width:2px;height:2px}
+main#top > .hero .renvis-fairy-dust i:nth-child(7){--y:-5px;--delay:.9s;width:1.5px;height:1.5px}
+main#top > .hero .renvis-silver-shine::after{content:"✦";position:absolute;left:0;top:-.28em;font-size:.25em;color:#fff;-webkit-text-fill-color:#fff;opacity:0;text-shadow:0 0 3px rgba(255,255,255,.75);pointer-events:none}
+@media (prefers-reduced-motion:no-preference){main#top > .hero .renvis-fairy-dust i{animation:renvisFairyDust 2.5s ease-in-out calc(.85s + var(--delay)) 1 both}}
+@media (prefers-reduced-motion:no-preference){main#top > .hero .renvis-silver-shine::after{animation:renvisFairyStar 2.5s ease-in-out 1s 1 both}}
+@keyframes renvisFairyDust{0%{left:0%;transform:translate(-2px,calc(var(--y) + 4px)) scale(.5);opacity:0}24%{opacity:.95}45%{opacity:.35}60%{opacity:1}83%{opacity:.45}100%{left:100%;transform:translate(2px,calc(var(--y) - 3px)) scale(.55);opacity:0}}
+@keyframes renvisFairyStar{0%{left:0%;opacity:0;transform:rotate(0deg) scale(.5)}27%{opacity:.85}45%{opacity:.2}62%{opacity:.8;transform:rotate(100deg) scale(1)}100%{left:100%;opacity:0;transform:rotate(180deg) scale(.45)}}
 @media (prefers-reduced-motion:reduce){main#top > .hero .renvis-fairy-dust,main#top > .hero .renvis-silver-shine::after{display:none!important}}
 @media (max-width:760px){main#top > .hero{height:auto!important;min-height:100svh!important;overflow:hidden!important;align-items:flex-end!important}}
 @media (max-width:760px){main#top > .hero .hero-content{padding-top:clamp(340px,53svh,550px)!important;padding-bottom:30px!important}}
@@ -2092,44 +2085,63 @@ document.addEventListener('DOMContentLoaded',()=>{
  }
 });
 </script>
-<!-- RENVIS: 追加スクロール演出。既存レイアウト・既存アニメーションを維持 -->
+<!-- RENVIS: display/scroll fade. Only animation; existing hero/cards/banner behavior untouched. -->
 <script id="renvis-home-page-scroll-motion">
 (() => {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      !Element.prototype.animate) return;
 
-  // 既存のサービスカード・ヒーロー・バナースライダーには手を加えない。
-  const selectors = [
-    '.stats-strip .stat-item',
-    '#news .section-head',
-    '#news .renvis-news-head',
-    '#news .news-list',
+  // 実績はファーストビューに入るため、ロード直後でも順番にアニメーションする。
+  const stats = [...document.querySelectorAll('main#top > .stats-strip .stat-item')];
+  const sections = [
+    '#news .renvis-news-header',
+    '#news #renvisNewsLatest',
     '#company .section-head',
-    '#company .company-name',
     '#company .company-final-row',
     '#contact-links .section-head',
     '#contact-links .site-info-card'
   ];
-  const targets = [...new Set(selectors.flatMap(selector => [...document.querySelectorAll(selector)]))];
-  if (!targets.length) return;
-
-  const observer = new IntersectionObserver(entries => {
-    for (const entry of entries) {
-      if (!entry.isIntersecting) continue;
-      observer.unobserve(entry.target);
-      // 実行中も終了後もCSSのレイアウトやhover効果を上書きしない。
-      entry.target.animate([
-        {opacity:0.35, transform:'translate3d(0, 15px, 0)'},
-        {opacity:1, transform:'translate3d(0, 0, 0)'}
-      ], {duration:650, easing:'cubic-bezier(.22,.8,.22,1)', iterations:1});
-    }
-  }, {threshold:0.12, rootMargin:'0px 0px -20px 0px'});
-
-  for (const el of targets) {
-    const r = el.getBoundingClientRect();
-    // 最初から画面内にある要素は飛び上がらせない。
-    if (r.bottom <= 0 || r.top >= window.innerHeight) observer.observe(el);
+  const other = [...new Set(sections.flatMap(sel => [...document.querySelectorAll(sel)]))];
+  const targets = [...stats, ...other];
+  const seen = new WeakSet();
+  const motion = el => {
+    if (seen.has(el)) return;
+    seen.add(el);
+    const statIndex = stats.indexOf(el);
+    const rowIndex = statIndex < 0 ? other.indexOf(el) : statIndex;
+    // Visible: approximately 0.8s fade, only small upward movement.
+    el.animate([
+      {opacity:0.06, transform:'translate3d(0, 22px, 0)'},
+      {opacity:1, transform:'translate3d(0, 0, 0)'}
+    ], {
+      duration:880,
+      delay:statIndex >= 0 ? 180 + statIndex * 180 : (rowIndex % 3) * 90,
+      easing:'cubic-bezier(.18,.8,.2,1)',
+      fill:'backwards',
+      iterations:1
+    });
+  };
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(motion);
+    return;
   }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      motion(entry.target);
+    });
+  }, {threshold:.06, rootMargin:'0px 0px -16px 0px'});
+
+  targets.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    // First-view stats should fade in, not silently skip the animation.
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      motion(el);
+    } else {
+      observer.observe(el);
+    }
+  });
 })();
 </script>
 </body>
