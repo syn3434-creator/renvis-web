@@ -632,14 +632,14 @@ to{opacity:1;transform:translate3d(0,0,0)}}
 .renvis-home-services-head .eyebrow{position:relative;width:max-content;max-width:100%;padding-bottom:11px}
 .renvis-home-services-head .eyebrow::after{content:"";position:absolute;left:0;bottom:0;width:100%;transform-origin:left center;transform:scaleX(0)}
 @media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .renvis-home-services-head .eyebrow,
-  html.renvis-home-motion-ready .renvis-home-services-head h2{opacity:0;translate:0 22px;transition:opacity .7s ease,translate .7s cubic-bezier(.2,.8,.2,1)}}
+  html.renvis-home-motion-ready .renvis-home-services-head h2{opacity:0;translate:0 34px;transition:opacity .9s ease,translate .9s cubic-bezier(.2,.8,.2,1)}}
 @media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .renvis-home-services-head h2{transition-delay:.15s}}
 @media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .renvis-home-services-head.renvis-inview .eyebrow,
   html.renvis-home-motion-ready .renvis-home-services-head.renvis-inview h2{opacity:1;translate:0 0}}
 @media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .renvis-home-services-head.renvis-inview .eyebrow::after{animation:renvisHomeGoldLine .8s cubic-bezier(.22,.8,.2,1) .28s forwards}}
 @media (prefers-reduced-motion:no-preference){@keyframes renvisHomeGoldLine{to{transform:scaleX(1)}}}
-@media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .service-cards > a.card{transition:opacity .85s ease,translate .85s cubic-bezier(.18,.8,.2,1),transform .3s ease,border-color .3s ease,background .3s ease,box-shadow .3s ease}}
-@media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .service-cards > a.card:not(.renvis-inview){opacity:0;translate:0 34px}}
+@media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .service-cards > a.card{transition:opacity 1.05s ease,translate 1.05s cubic-bezier(.18,.8,.2,1),transform .3s ease,border-color .3s ease,background .3s ease,box-shadow .3s ease}}
+@media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .service-cards > a.card:not(.renvis-inview){opacity:0;translate:0 46px}}
 @media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .service-cards > a.card.renvis-inview{opacity:1;translate:0 0}}
 @media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .service-cards > a.card:nth-child(2){transition-delay:.11s}}
 @media (prefers-reduced-motion:no-preference){html.renvis-home-motion-ready .service-cards > a.card:nth-child(3){transition-delay:.22s}}
@@ -1261,22 +1261,13 @@ main#top > .hero .renvis-silver-shine{position:relative;display:inline-block;col
 100%{background-position:0% 0;filter:drop-shadow(0 0 3px rgba(237,246,255,.42))}}
 @media (prefers-reduced-motion:reduce){main#top > .hero .renvis-silver-shine{animation:none!important}}
 main#top > .hero .renvis-silver-shine{isolation:isolate;overflow:visible!important}
-/* Tiny restrained sparkle: same lettering, no layout changes. */
+/* Tiny silver sparkles, more numerous but never larger than 2px. */
 main#top > .hero .renvis-fairy-dust{position:absolute;inset:-7px -4px;pointer-events:none;-webkit-text-fill-color:initial;z-index:2}
-main#top > .hero .renvis-fairy-dust i{position:absolute;left:0;top:50%;width:2px;height:2px;border-radius:50%;opacity:0;background:#fff;box-shadow:0 0 3px 1px rgba(255,255,255,.78),0 0 7px 1px rgba(193,220,249,.32)}
-main#top > .hero .renvis-fairy-dust i:nth-child(1){--y:-8px;--delay:0s;width:2px;height:2px}
-main#top > .hero .renvis-fairy-dust i:nth-child(2){--y:6px;--delay:.15s;width:1px;height:1px}
-main#top > .hero .renvis-fairy-dust i:nth-child(3){--y:-3px;--delay:.3s;width:2px;height:2px}
-main#top > .hero .renvis-fairy-dust i:nth-child(4){--y:9px;--delay:.46s;width:1.5px;height:1.5px}
-main#top > .hero .renvis-fairy-dust i:nth-child(5){--y:-10px;--delay:.6s;width:1px;height:1px}
-main#top > .hero .renvis-fairy-dust i:nth-child(6){--y:3px;--delay:.75s;width:2px;height:2px}
-main#top > .hero .renvis-fairy-dust i:nth-child(7){--y:-5px;--delay:.9s;width:1.5px;height:1.5px}
-main#top > .hero .renvis-silver-shine::after{content:"✦";position:absolute;left:0;top:-.28em;font-size:.25em;color:#fff;-webkit-text-fill-color:#fff;opacity:0;text-shadow:0 0 3px rgba(255,255,255,.75);pointer-events:none}
-@media (prefers-reduced-motion:no-preference){main#top > .hero .renvis-fairy-dust i{animation:renvisFairyDust 2.5s ease-in-out calc(.85s + var(--delay)) 1 both}}
-@media (prefers-reduced-motion:no-preference){main#top > .hero .renvis-silver-shine::after{animation:renvisFairyStar 2.5s ease-in-out 1s 1 both}}
-@keyframes renvisFairyDust{0%{left:0%;transform:translate(-2px,calc(var(--y) + 4px)) scale(.5);opacity:0}24%{opacity:.95}45%{opacity:.35}60%{opacity:1}83%{opacity:.45}100%{left:100%;transform:translate(2px,calc(var(--y) - 3px)) scale(.55);opacity:0}}
-@keyframes renvisFairyStar{0%{left:0%;opacity:0;transform:rotate(0deg) scale(.5)}27%{opacity:.85}45%{opacity:.2}62%{opacity:.8;transform:rotate(100deg) scale(1)}100%{left:100%;opacity:0;transform:rotate(180deg) scale(.45)}}
-@media (prefers-reduced-motion:reduce){main#top > .hero .renvis-fairy-dust,main#top > .hero .renvis-silver-shine::after{display:none!important}}
+main#top > .hero .renvis-fairy-dust i{position:absolute;left:var(--x,50%);top:calc(50% + var(--y,0px));width:var(--size,1.5px);height:var(--size,1.5px);border-radius:50%;opacity:0;background:#fff;box-shadow:0 0 3px .8px rgba(255,255,255,.86),0 0 5px 1px rgba(193,220,249,.32);pointer-events:none}
+@media (prefers-reduced-motion:no-preference){main#top > .hero .renvis-fairy-dust i{animation:renvisFairyDust 3.5s ease-in-out var(--delay,0s) infinite}}
+@keyframes renvisFairyDust{0%,10%,32%,42%,67%,78%,100%{opacity:0;transform:translateY(2px) scale(.5)}20%,55%{opacity:.9;transform:translateY(-1px) scale(1)}24%,60%{opacity:.4;transform:translateY(-1px) scale(.8)}}
+main#top > .hero .renvis-silver-shine::after{display:none!important}
+@media (prefers-reduced-motion:reduce){main#top > .hero .renvis-fairy-dust{display:none!important}}
 @media (max-width:760px){main#top > .hero{height:auto!important;min-height:100svh!important;overflow:hidden!important;align-items:flex-end!important}}
 @media (max-width:760px){main#top > .hero .hero-content{padding-top:clamp(340px,53svh,550px)!important;padding-bottom:30px!important}}
 @media (max-width:760px){main#top > .hero .hero-copy-box{top:auto!important;transform:none!important}}
@@ -1852,7 +1843,7 @@ header .nav-actions .renvis-top-line{min-width:39px!important;padding:0 4px!impo
 <div class="hero-bg"></div>
 <div class="hero-content"><div class="wrap"><div class="hero-copy-box">
 <h1><span>NO ATTACHMENT</span><span>NO LIFE</span></h1>
-<p class="hero-lead">建設・解体・スクラップ・産廃を支える<br/><span class="renvis-silver-shine">アタッチメントのプロフェッショナル<span aria-hidden="true" class="renvis-fairy-dust"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span></p>
+<p class="hero-lead">建設・解体・スクラップ・産廃を支える<br/><span class="renvis-silver-shine">アタッチメントのプロフェッショナル<span aria-hidden="true" class="renvis-fairy-dust"><i style="--x:5%;--y:-8px;--size:1.6px;--delay:-0.0s"></i><i style="--x:11%;--y:3px;--size:1px;--delay:-1.2s"></i><i style="--x:18%;--y:-3px;--size:1.8px;--delay:-2.0s"></i><i style="--x:25%;--y:8px;--size:1.2px;--delay:-0.6s"></i><i style="--x:32%;--y:-7px;--size:1.6px;--delay:-2.7s"></i><i style="--x:39%;--y:3px;--size:1px;--delay:-1.5s"></i><i style="--x:45%;--y:-10px;--size:1.7px;--delay:-0.2s"></i><i style="--x:51%;--y:7px;--size:1.2px;--delay:-2.2s"></i><i style="--x:57%;--y:-3px;--size:1.8px;--delay:-0.9s"></i><i style="--x:63%;--y:9px;--size:1.2px;--delay:-3.0s"></i><i style="--x:69%;--y:-6px;--size:1.6px;--delay:-1.8s"></i><i style="--x:74%;--y:2px;--size:1.3px;--delay:-0.3s"></i><i style="--x:79%;--y:-9px;--size:1.7px;--delay:-2.5s"></i><i style="--x:84%;--y:5px;--size:1.1px;--delay:-1.1s"></i><i style="--x:89%;--y:-4px;--size:1.8px;--delay:-3.2s"></i><i style="--x:94%;--y:8px;--size:1.1px;--delay:-0.7s"></i><i style="--x:98%;--y:-8px;--size:1.5px;--delay:-1.9s"></i><i style="--x:35%;--y:10px;--size:1.0px;--delay:-3.3s"></i></span></span></p>
 <div aria-label="サービスへのリンク" class="hero-primary-actions">
 <a class="hero-primary-btn" href="rental.html">レンタルを見る <span aria-hidden="true">→</span></a>
 <a class="hero-secondary-btn" href="repair.html">修理を相談する <span aria-hidden="true">→</span></a>
@@ -2088,59 +2079,47 @@ document.addEventListener('DOMContentLoaded',()=>{
 <!-- RENVIS: display/scroll fade. Only animation; existing hero/cards/banner behavior untouched. -->
 <script id="renvis-home-page-scroll-motion">
 (() => {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-      !Element.prototype.animate) return;
-
-  // 実績はファーストビューに入るため、ロード直後でも順番にアニメーションする。
-  const stats = [...document.querySelectorAll('main#top > .stats-strip .stat-item')];
-  const sections = [
-    '#news .renvis-news-header',
-    '#news #renvisNewsLatest',
-    '#company .section-head',
-    '#company .company-final-row',
-    '#contact-links .section-head',
-    '#contact-links .site-info-card'
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !Element.prototype.animate) return;
+  // 正しい配置: stats-strip は main 直下ではない。実績の各項目を個別に表示。
+  const stats = [...document.querySelectorAll('main#top .stats-strip .stat-item')];
+  const selectors = [
+    '#news .renvis-news-header', '#news #renvisNewsLatest',
+    '#company .section-head', '#company .company-final-row',
+    '#contact-links .section-head', '#contact-links .site-info-card'
   ];
-  const other = [...new Set(sections.flatMap(sel => [...document.querySelectorAll(sel)]))];
+  const other = [...new Set(selectors.flatMap(sel => [...document.querySelectorAll(sel)]))];
   const targets = [...stats, ...other];
   const seen = new WeakSet();
-  const motion = el => {
+  function reveal(el) {
     if (seen.has(el)) return;
     seen.add(el);
     const statIndex = stats.indexOf(el);
-    const rowIndex = statIndex < 0 ? other.indexOf(el) : statIndex;
-    // Visible: approximately 0.8s fade, only small upward movement.
+    const company = !!el.closest('#company');
+    const rowIndex = other.indexOf(el);
+    // 会社情報は従来の動きのまま。ほかの箇所だけ明確な上昇＋フェード。
+    const distance = company ? 22 : statIndex >= 0 ? 32 : 44;
+    const duration = company ? 880 : statIndex >= 0 ? 1050 : 1150;
     el.animate([
-      {opacity:0.06, transform:'translate3d(0, 22px, 0)'},
-      {opacity:1, transform:'translate3d(0, 0, 0)'}
+      {opacity:company ? .06 : 0,transform:`translate3d(0,${distance}px,0)`},
+      {opacity:1,transform:'translate3d(0,0,0)'}
     ], {
-      duration:880,
-      delay:statIndex >= 0 ? 180 + statIndex * 180 : (rowIndex % 3) * 90,
-      easing:'cubic-bezier(.18,.8,.2,1)',
-      fill:'backwards',
-      iterations:1
+      duration,
+      delay:statIndex>=0 ? 170+statIndex*190 : company ? (rowIndex%3)*90 : (rowIndex%3)*125,
+      easing:'cubic-bezier(.18,.8,.2,1)',fill:'backwards',iterations:1
     });
-  };
-  if (!('IntersectionObserver' in window)) {
-    targets.forEach(motion);
-    return;
   }
+  if (!('IntersectionObserver' in window)) {targets.forEach(reveal);return;}
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       observer.unobserve(entry.target);
-      motion(entry.target);
+      reveal(entry.target);
     });
-  }, {threshold:.06, rootMargin:'0px 0px -16px 0px'});
-
+  },{threshold:.16,rootMargin:'0px 0px -10% 0px'});
   targets.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    // First-view stats should fade in, not silently skip the animation.
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      motion(el);
-    } else {
-      observer.observe(el);
-    }
+    const rect=el.getBoundingClientRect();
+    if (rect.top < innerHeight && rect.bottom>0) reveal(el);
+    else observer.observe(el);
   });
 })();
 </script>
