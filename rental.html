@@ -1737,43 +1737,42 @@ footer{
 /* =========================
    RENTAL DATA
 ========================= */
+/* RENTAL DATA: 製品情報・メーカー・画像・PDF参照先をここで一元管理 */
 const DATA = {
-  crusher:{
-    en:"Primary Crusher",
-    title:"大割機",
-    makers:[
+  "crusher": {
+    "en": "Primary Crusher",
+    "title": "大割機",
+    "makers": [
       [
         "オカダアイヨン",
         [
           [
-            "諸元表PDFを見る",
+            "製品情報を見る",
             "ts-w-spec.pdf"
-          ],
-          [
-            "TS-W 公式カタログ",
-            "https://media.okadaaiyon.com/cms/uploads/TS-W_Crusher_2026.09.pdf"
-          ],
-          [
-            "TSRC 公式カタログ",
-            "https://media.okadaaiyon.com/cms/uploads/TSRC_Crusher_2026.10.pdf"
           ]
         ],
-        "rental-okada-crusher.png"
+        "rental-okada-crusher.png",
+        "ts-w-spec.pdf"
       ],
       [
-        "NPK",
+        "日本ニューマチック工業",
         [
           [
-            "NPK メーカー公式カタログ",
-            "https://www.npk-construction.com/siryou/catarogue/"
+            "製品情報を見る",
+            "npk-crusher-spec.pdf"
           ]
         ],
-        "product-01.png"
+        "npk-sv1200d-transparent.png"
       ],
       [
-        "タグチ",
-        [],
-        ""
+        "タグチ工業",
+        [
+          [
+            "大割機 製品情報",
+            "https://www.taguchi.co.jp/product/crusher-d/"
+          ]
+        ],
+        "product-18.png"
       ],
       [
         "古河ロックドリル",
@@ -1783,40 +1782,37 @@ const DATA = {
             "https://www.furukawarockdrill.co.jp/crusher"
           ]
         ],
-        ""
+        "product-20.png"
       ]
     ]
   },
-  pulverizer:{
-    en:"Pulverizer",
-    title:"小割機",
-    makers:[
+  "pulverizer": {
+    "en": "Pulverizer",
+    "title": "小割機",
+    "makers": [
       [
         "オカダアイヨン",
         [
           [
-            "諸元表PDFを見る",
+            "製品情報を見る",
             "pulverizer-spec.pdf"
-          ],
-          [
-            "OSC 公式カタログ",
-            "https://media.okadaaiyon.com/cms/uploads/ctlg_OSC_202604.pdf"
           ]
         ],
-        "rental-okada-pulverizer.png"
+        "rental-okada-pulverizer.png",
+        "pulverizer-spec.pdf"
       ],
       [
-        "NPK",
+        "日本ニューマチック工業",
         [
           [
-            "メーカー公式カタログ",
-            "http://www.npk.jp/digital/con_j15/index.html#page=17"
+            "製品情報を見る",
+            "npk-pulverizer-spec.pdf"
           ]
         ],
         "rental-catalog-01.png"
       ],
       [
-        "タグチ",
+        "タグチ工業",
         [
           [
             "MC小割機 公式ページ",
@@ -1834,44 +1830,33 @@ const DATA = {
           ]
         ],
         "rental-catalog-03.png"
-      ],
+      ]
     ]
   },
-  magpulverizer:{
-    en:"Magnet Pulverizer",
-    title:"マグネット付き小割機",
-    makers:[
+  "magpulverizer": {
+    "en": "Magnet Pulverizer",
+    "title": "マグネット付き小割機",
+    "makers": [
       [
         "オカダアイヨン",
         [
           [
-            "諸元表PDFを見る",
+            "製品情報を見る",
             "pulverizer-spec.pdf"
-          ],
-          [
-            "永久磁石付 マグネットコワリクン 製品情報",
-            "https://okadaaiyon.com/products/product/728"
-          ],
-          [
-            "OSC 公式カタログ",
-            "https://media.okadaaiyon.com/cms/uploads/ctlg_OSC_202604.pdf"
           ]
         ],
-        ""
+        "product-17.png",
+        "pulverizer-spec.pdf"
       ],
       [
-        "NPK",
+        "日本ニューマチック工業",
         [
           [
-            "永久磁石付き小割圧砕機 製品情報",
-            "https://www.npk-construction.com/crunchrs/"
-          ],
-          [
-            "オンラインカタログ",
-            "https://www.npk-construction.com/siryou/catarogue/"
+            "製品情報を見る",
+            "npk-mag-pulverizer-spec.pdf"
           ]
         ],
-        "product-04.png"
+        "rental-catalog-15.png"
       ],
       [
         "古河ロックドリル",
@@ -1879,16 +1864,12 @@ const DATA = {
           [
             "アクティブ・マグネット付小割用油圧圧砕機 製品情報",
             "https://www.furukawarockdrill.co.jp/crusher"
-          ],
-          [
-            "総合カタログ",
-            "https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"
           ]
         ],
         "product-05.png"
       ],
       [
-        "タグチ",
+        "タグチ工業",
         [
           [
             "MC小割機 with マグ・ゴン 製品情報・カタログ",
@@ -1899,65 +1880,60 @@ const DATA = {
       ]
     ]
   },
-  hydmagnet:{
-    en:"Hydraulic Magnet",
-    title:"油圧式マグネット",
-    custom:
-      "取扱メーカー・在庫状況はお問い合わせください。",
-    specPdf:"hydraulic-magnet-spec.pdf"
-  },
-  steelcutter:{
-    en:"Steel Cutter",
-    title:"鉄骨カッター",
-    makers:[
+  "hydmagnet": {
+    "en": "Hydraulic Magnet",
+    "title": "油圧式マグネット",
+    "makers": [
       [
         "オカダアイヨン",
         [
           [
-            "諸元表PDFを見る",
-            "steel-cutter-spec.pdf"
-          ],
-          [
-            "TS-Sカッター 製品情報",
-            "https://okadaaiyon.com/products/product/723"
-          ],
-          [
-            "商品カタログ一覧",
-            "https://okadaaiyon.com/products/catalog"
+            "製品情報を見る",
+            "hydraulic-magnet-spec.pdf"
           ]
         ],
-        "product-07.png"
-      ],
+        "product-24.webp",
+        "hydraulic-magnet-spec.pdf"
+      ]
+    ]
+  },
+  "steelcutter": {
+    "en": "Steel Cutter",
+    "title": "鉄骨カッター",
+    "makers": [
       [
-        "NPK",
+        "オカダアイヨン",
         [
           [
-            "鉄骨切断機 製品情報",
-            "https://www.npk-construction.com/steel-shears/"
-          ],
-          [
-            "オンラインカタログ",
-            "https://www.npk-construction.com/siryou/catarogue/"
+            "製品情報を見る",
+            "steel-cutter-spec.pdf"
           ]
         ],
-        "product-08.png"
+        "product-21.webp",
+        "steel-cutter-spec.pdf"
+      ],
+      [
+        "日本ニューマチック工業",
+        [
+          [
+            "製品情報を見る",
+            "npk-steel-cutter-spec.pdf"
+          ]
+        ],
+        "rental-catalog-16.png"
       ],
       [
         "古河ロックドリル",
         [
           [
-            "Vcシリーズ 製品情報",
-            "https://www.furukawarockdrill.co.jp/crusher"
-          ],
-          [
             "総合カタログ",
             "https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"
           ]
         ],
-        "product-09.png"
+        "rental-catalog-08.png"
       ],
       [
-        "タグチ",
+        "タグチ工業",
         [
           [
             "DXカッター 製品情報・カタログ",
@@ -1968,48 +1944,20 @@ const DATA = {
       ]
     ]
   },
-  wastecutter:{
-    en:"Waste Cutter",
-    title:"産廃カッター",
-    makers:[
+  "wastecutter": {
+    "en": "Waste Cutter",
+    "title": "産廃カッター",
+    "makers": [
       [
         "オカダアイヨン",
         [
           [
-            "クリーンカッター製品情報",
-            "https://okadaaiyon.com/products/product/662"
+            "製品情報を見る",
+            "waste-cutter-spec.pdf"
           ]
         ],
-        ""
-      ],
-      [
-        "その他保有メーカー",
-        [],
-        ""
-      ]
-    ]
-  },
-  woodcutter:{
-    en:"Wood Cutter",
-    title:"木材カッター",
-    makers:[
-      [
-        "オカダアイヨン",
-        [
-          [
-            "諸元表PDFを見る",
-            "wood-cutter-spec.pdf"
-          ],
-          [
-            "木材切断機 製品情報",
-            "https://okadaaiyon.com/products/category/mokuzai"
-          ],
-          [
-            "商品カタログ一覧",
-            "https://okadaaiyon.com/company/catalog-collection"
-          ]
-        ],
-        "product-11.png"
+        "product-23.webp",
+        "waste-cutter-spec.pdf"
       ],
       [
         "丸順",
@@ -2017,43 +1965,63 @@ const DATA = {
           [
             "ミラクルカッター 製品情報",
             "https://www.marujun.jp/products/miracle-cutter/index.html"
-          ],
-          [
-            "製品一覧",
-            "https://www.marujun.jp/products/index.html"
           ]
         ],
-        "product-12.png"
+        "rental-waste-marujun.png"
       ]
     ]
   },
-  breaker:{
-    en:"Hydraulic Breaker",
-    title:"油圧ブレーカー",
-    makers:[
+  "woodcutter": {
+    "en": "Wood Cutter",
+    "title": "木材カッター",
+    "makers": [
       [
         "オカダアイヨン",
         [
           [
-            "諸元表PDFを見る",
-            "breaker-spec.pdf"
-          ],
-          [
-            "メーカー製品情報",
-            "https://okadaaiyon.com/products/"
+            "製品情報を見る",
+            "wood-cutter-spec.pdf"
           ]
         ],
-        ""
+        "rental-wood-okada.png",
+        "wood-cutter-spec.pdf"
       ],
       [
-        "東空",
+        "丸順",
+        [
+          [
+            "ミラクルカッター 製品情報",
+            "https://www.marujun.jp/products/miracle-cutter/index.html"
+          ]
+        ],
+        "rental-wood-marujun.png"
+      ]
+    ]
+  },
+  "breaker": {
+    "en": "Hydraulic Breaker",
+    "title": "油圧ブレーカー",
+    "makers": [
+      [
+        "オカダアイヨン",
+        [
+          [
+            "製品情報を見る",
+            "breaker-spec.pdf"
+          ]
+        ],
+        "product-33.webp",
+        "breaker-spec.pdf"
+      ],
+      [
+        "東空販売",
         [
           [
             "公式カタログ一覧",
             "https://www.toku-net.co.jp/catalog/index.html"
           ]
         ],
-        ""
+        "product-28.webp"
       ],
       [
         "古河ロックドリル",
@@ -2063,39 +2031,38 @@ const DATA = {
             "https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"
           ]
         ],
-        ""
+        "product-31.webp"
       ],
       [
-        "MKB系",
-        [],
-        ""
-      ],
-      [
-        "その他",
-        [],
-        ""
+        "甲南電機",
+        [
+          [
+            "メーカー公式カタログ",
+            "https://www.konan-em.com/kenki/products/"
+          ]
+        ],
+        "product-36.webp"
       ]
     ]
   },
-  pilebreaker:{
-    en:"Pile Driving Breaker",
-    title:"杭打ちブレーカー",
-    custom:
-      "取扱メーカー・在庫状況はお問い合わせください。"
+  "pilebreaker": {
+    "en": "Pile Driving Breaker",
+    "title": "杭打ちブレーカー",
+    "custom": "取扱メーカー・在庫状況はお問い合わせください。"
   },
-  mechfork:{
-    en:"Mechanical Fork",
-    title:"機械式フォーク",
-    makers:[
+  "mechfork": {
+    "en": "Mechanical Fork",
+    "title": "機械式フォーク",
+    "makers": [
       [
-        "KBL",
+        "ケービーエル",
         [
           [
             "KRフォーク製品情報",
             "https://www.kbl-ltd.co.jp/product/attachment/krfork/"
           ]
         ],
-        ""
+        "kbl-mechanical-fork-transparent.png"
       ],
       [
         "室戸鉄工所",
@@ -2105,57 +2072,50 @@ const DATA = {
             "http://muroto.co.jp/product/"
           ]
         ],
-        ""
+        "product-32.webp"
       ],
       [
-        "その他保有メーカー",
-        [],
-        ""
+        "丸順",
+        [
+          [
+            "丸順 製品一覧",
+            "https://www.marujun.jp/products/index.html"
+          ]
+        ],
+        "product-27.webp"
       ]
     ]
   },
-  hydfork:{
-    en:"Tilt Fork",
-    title:"チルトフォーク",
-    makers:[
+  "hydfork": {
+    "en": "Tilt Fork",
+    "title": "チルトフォーク",
+    "makers": [
       [
         "丸順",
         [
           [
             "チルトZフォーク 製品情報",
             "https://www.marujun.jp/products/tilt-z-fork/index.html"
-          ],
-          [
-            "丸順 製品一覧",
-            "https://www.marujun.jp/products/index.html"
           ]
         ],
-        "product-13.png"
-      ],
-      [
-        "その他保有メーカー",
-        [],
-        ""
+        "product-29.webp"
       ]
     ]
   },
-  rotfork:{
-    en:"Rotary Fork",
-    title:"回転フォーク",
-    makers:[
+  "rotfork": {
+    "en": "Rotary Fork",
+    "title": "回転フォーク",
+    "makers": [
       [
         "オカダアイヨン",
         [
           [
-            "諸元表PDFを見る",
+            "製品情報を見る",
             "rotary-fork-spec.pdf"
-          ],
-          [
-            "メーカー製品情報",
-            "https://okadaaiyon.com/products/"
           ]
         ],
-        ""
+        "product-22.webp",
+        "rotary-fork-spec.pdf"
       ],
       [
         "丸順",
@@ -2163,69 +2123,81 @@ const DATA = {
           [
             "ロータリーZフォーク 製品情報",
             "https://www.marujun.jp/products/rotary-z-fork/index.html"
-          ],
-          [
-            "丸順 製品一覧",
-            "https://www.marujun.jp/products/index.html"
           ]
         ],
-        "product-14.png"
+        "rental-catalog-12.png"
       ]
     ]
   },
-  orangegrapple:{
-    en:"Grapple",
-    title:"グラップル",
-    makers:[
+  "orangegrapple": {
+    "en": "Grapple",
+    "title": "グラップル",
+    "makers": [
       [
         "丸順",
         [
           [
             "グラップル 製品情報",
             "https://www.marujun.jp/products/orange-grapple/index.html"
-          ],
-          [
-            "丸順 製品一覧",
-            "https://www.marujun.jp/products/index.html"
           ]
         ],
-        "product-15.png"
+        "product-34.webp"
       ]
     ]
   },
-  skeleton:{
-    en:"Skeleton Bucket",
-    title:"スケルトンバケット",
-    makers:[
+  "skeleton": {
+    "en": "Skeleton Bucket",
+    "title": "スケルトンバケット",
+    "makers": [
       [
-        "KBL",
+        "ケービーエル",
         [
           [
             "スケルトンバケット製品情報",
             "https://www.kbl-ltd.co.jp/product/attachment/skeleton-bucket/"
           ]
         ],
-        ""
+        "product-35.webp"
       ]
     ]
   },
-  screener:{
-    en:"Hydraulic Screener",
-    title:"油圧式ふるい機",
-    custom:
-      "取扱メーカー・在庫状況はお問い合わせください。",
-    specPdf:"screener-spec.pdf"
+  "screener": {
+    "en": "Hydraulic Screener",
+    "title": "油圧式ふるい機",
+    "makers": [
+      [
+        "オカダアイヨン",
+        [
+          [
+            "製品情報を見る",
+            "screener-spec.pdf"
+          ]
+        ],
+        "product-25.webp",
+        "screener-spec.pdf"
+      ]
+    ]
   },
-  bucketcrusher:{
-    en:"Bucket Crusher",
-    title:"バケットクラッシャー",
-    custom:
-      "取扱メーカー・在庫状況はお問い合わせください。"
+  "bucketcrusher": {
+    "en": "Bucket Crusher",
+    "title": "バケットクラッシャー",
+    "makers": [
+      [
+        "伊藤商会",
+        [
+          [
+            "メーカー公式カタログ",
+            "https://itoushoukai.co.jp/product/garabuster"
+          ]
+        ],
+        "product-37.webp"
+      ]
+    ]
   },
-  auger:{
-    en:"Hydraulic Auger",
-    title:"オーガ",
-    makers:[
+  "auger": {
+    "en": "Hydraulic Auger",
+    "title": "オーガ",
+    "makers": [
       [
         "丸善工業",
         [
@@ -2234,14 +2206,14 @@ const DATA = {
             "https://maruzenkogyo.co.jp/products/ag-3000"
           ]
         ],
-        ""
+        "product-38.webp"
       ]
     ]
   },
-  mower:{
-    en:"Mower",
-    title:"草刈機",
-    makers:[
+  "mower": {
+    "en": "Mower",
+    "title": "草刈機",
+    "makers": [
       [
         "三陽機器",
         [
@@ -2250,106 +2222,38 @@ const DATA = {
             "https://www.sanyokiki.co.jp/product-guidance/kusakari-top-line-up/hkm"
           ]
         ],
-        ""
+        "product-39.png"
       ]
     ]
   },
-  extension:{
-    en:"Extension Arm",
-    title:"エキステンションアーム",
-    makers:[
+  "extension": {
+    "en": "Extension Arm",
+    "title": "エキステンションアーム",
+    "makers": [
       [
-        "KBL",
+        "ケービーエル",
         [
           [
             "アタッチメント総合カタログ",
             "https://file.kbl-ltd.co.jp/catalog/attachment/attachment-general2026/book/index.html#target/page_no=19"
           ]
         ],
-        "product-16.png"
+        "rental-catalog-09.png"
       ]
     ]
   },
-  cooler:{
-    en:"Spot Cooler",
-    title:"スポットクーラー",
-    makers:[
+  "cooler": {
+    "en": "Spot Cooler",
+    "title": "スポットクーラー",
+    "makers": [
       [
         "レンタル品",
         [],
-        ""
+        "rental-catalog-04.png"
       ]
     ]
   }
 };
-
-/* Added transparent product images */
-DATA.magpulverizer.makers[0][2]="product-17.png";
-DATA.cooler.makers[0][2]="rental-catalog-04.png";
-DATA.crusher.makers[2][2]="product-18.png";
-DATA.pulverizer.makers[2][2]="rental-catalog-02.png";
-DATA.crusher.makers[3][2]="product-20.png";
-/* Additional OKADA product cutouts */
-DATA.steelcutter.makers[0][2]="product-21.webp";
-DATA.rotfork.makers[0][2]="product-22.webp";
-DATA.wastecutter.makers[0][2]="product-23.webp";
-delete DATA.hydmagnet.custom;
-DATA.hydmagnet.makers=[["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-24.webp"]];
-delete DATA.screener.custom;
-DATA.screener.makers=[["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-25.webp"]];
-delete DATA.woodcutter.custom;
-DATA.woodcutter.makers=[["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-26.webp"]];
-
-/* Additional mechanical fork and TOKU breaker */
-DATA.mechfork.makers.splice(2,0,["丸順",[["丸順 製品一覧","https://www.marujun.jp/products/index.html"]],"product-27.webp"]);
-DATA.breaker.makers.find(m=>m[0]==="東空")[2]="product-28.webp";
-DATA.hydfork.makers.find(m=>m[0]==="丸順")[2]="product-29.webp";
-
-/* KBL, Muroto, FRD images and TAGUCHI link */
-DATA.mechfork.makers.find(m=>m[0]==="KBL")[2]="product-30.webp";
-DATA.breaker.makers.find(m=>m[0]==="古河ロックドリル")[2]="product-31.webp";
-DATA.mechfork.makers.find(m=>m[0]==="室戸鉄工所")[2]="product-32.webp";
-DATA.crusher.makers.find(m=>m[0]==="タグチ")[1].push(["大割機 製品情報","https://www.taguchi.co.jp/product/crusher-d/"]);
-DATA.breaker.makers.find(m=>m[0]==="オカダアイヨン")[2]="product-33.webp";
-DATA.orangegrapple.makers.find(m=>m[0]==="丸順")[2]="product-34.webp";
-DATA.skeleton.makers.find(m=>m[0]==="KBL")[2]="product-35.webp";
-const konanBreaker=DATA.breaker.makers.find(m=>m[0]==="MKB系");
-konanBreaker[0]="甲南建機";
-konanBreaker[1]=[["メーカー公式カタログ","https://www.konan-em.com/kenki/products/"]];
-konanBreaker[2]="product-36.webp";
-DATA.breaker.makers=DATA.breaker.makers.filter(m=>m[0]!=="その他");
-for(const forkKey of ["mechfork","hydfork","rotfork"]){DATA[forkKey].makers=DATA[forkKey].makers.filter(m=>!m[0].includes("その他"));}
-delete DATA.bucketcrusher.custom;
-DATA.bucketcrusher.makers=[["伊藤商会",[["メーカー公式カタログ","https://itoushoukai.co.jp/product/garabuster"]],"product-37.webp"]];
-DATA.auger.makers.find(m=>m[0]==="丸善工業")[2]="product-38.webp";
-DATA.mower.makers[0][2]="product-39.png";
-
-/* Final data cleanup / image fixes */
-DATA.crusher.makers[1][2]="rental-catalog-05.png";
-DATA.magpulverizer.makers[1][2]="rental-catalog-06.png";
-DATA.steelcutter.makers[1][2]="rental-catalog-07.png";
-
-const furuSteel = DATA.steelcutter.makers.find(m=>m[0]==="古河ロックドリル");
-if(furuSteel) furuSteel[2]="rental-catalog-08.png";
-
-DATA.extension.makers=[["KBL",[["アタッチメント総合カタログ","https://file.kbl-ltd.co.jp/catalog/attachment/attachment-general2026/book/index.html#target/page_no=19"]],"rental-catalog-09.png"]];
-
-DATA.wastecutter.makers=[
-  ["オカダアイヨン",[["クリーンカッター 製品情報","https://okadaaiyon.com/products/product/662"]],"product-23.webp"],
-  ["丸順",[["ミラクルカッター 製品情報","https://www.marujun.jp/products/miracle-cutter/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-catalog-10.png"]
-];
-
-DATA.woodcutter.makers=[
-  ["オカダアイヨン",[["与作 製品情報","https://okadaaiyon.com/products/category/mokuzai"],["商品カタログ一覧","https://okadaaiyon.com/company/catalog-collection"]],"rental-catalog-11.png"] ,
-  ["丸順",[["ミラクルカッター 製品情報","https://www.marujun.jp/products/miracle-cutter/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-catalog-10.png"]
-];
-
-DATA.rotfork.makers=[
-  ["オカダアイヨン",[["メーカー製品情報","https://okadaaiyon.com/products/"]],"product-22.webp"],
-  ["丸順",[["ロータリーZフォーク 製品情報","https://www.marujun.jp/products/rotary-z-fork/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-catalog-12.png"]
-];
-
-
 
 /* =========================
    RENDER
@@ -2571,185 +2475,6 @@ buttons.forEach(
 );
 
 
-/* woodcutter image cleanup 2026-10-09 */
-DATA.woodcutter.makers=[
-  ["オカダアイヨン",[["与作 製品情報","https://www.okada-aito.com/products/yosaku"],["商品カタログ一覧","https://www.okada-aito.com/catalog/"]],"rental-catalog-13.png"] ,
-  ["丸順",[["ミラクルカッター 製品情報","https://www.marujun.jp/products/miracle-cutter/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-catalog-14.png"]
-];
-
-/* final cleanup 2026-10-09 */
-/* NPK image quality / transparency fixes */
-DATA.crusher.makers.find(m=>m[0]==="NPK")[2]="npk-sv1200d-transparent.png";
-DATA.magpulverizer.makers.find(m=>m[0]==="NPK")[2]="rental-catalog-15.png";
-DATA.steelcutter.makers.find(m=>m[0]==="NPK")[2]="rental-catalog-16.png";
-
-/* Furukawa images */
-
-/* Wood cutter: use 与作 and cleaned Marujun image */
-DATA.woodcutter.makers=[
-  ["オカダアイヨン",[["与作 製品情報","https://okadaaiyon.com/products/category/mokuzai"],["商品カタログ一覧","https://okadaaiyon.com/company/catalog-collection"]],"rental-catalog-13.png"],
-  ["丸順",[["ミラクルカッター 製品情報","https://www.marujun.jp/products/miracle-cutter/index.html"],["製品一覧","https://www.marujun.jp/products/index.html"]],"rental-catalog-14.png"]
-];
-
-/* Rotary fork: keep Marujun added */
-if(!DATA.rotfork.makers.find(m=>m[0]==="丸順")){
-  DATA.rotfork.makers.push(["丸順",[["ロータリーZフォーク 製品情報","https://www.marujun.jp/products/rotary-z-fork/index.html"],["丸順 製品一覧","https://www.marujun.jp/products/index.html"]],"product-14.png"]);
-}
-
-/* Extension arm image cleanup */
-DATA.extension.makers=[["KBL",[["アタッチメント総合カタログ","https://file.kbl-ltd.co.jp/catalog/attachment/attachment-general2026/book/index.html#target/page_no=19"]],"rental-catalog-09.png"]];
-
-/* ===== 2026-10-15 user requested rental-page updates ===== */
-// 大割機：オカダアイヨン 2段目削除
-if(DATA.crusher?.makers?.[0]){
-  DATA.crusher.makers[0][1] = [["TS-W 公式カタログ","https://media.okadaaiyon.com/cms/uploads/TS-W_Crusher_2026.09.pdf"]];
-}
-
-// マグネット付き小割機：オカダアイヨンは指定URL 1件のみ
-const magOkada = DATA.magpulverizer?.makers?.find(m => m[0] === "オカダアイヨン");
-if(magOkada){
-  magOkada[1] = [["永久磁石付 マグネットコワリクン 製品情報","https://okadaaiyon.com/products/product/726"]];
-}
-
-// 鉄骨カッター：オカダアイヨン/NPKは2段目削除、古河は2段目のみ残す
-const steelOkada = DATA.steelcutter?.makers?.find(m => m[0] === "オカダアイヨン");
-if(steelOkada){
-  steelOkada[1] = [["TS-Sカッター 製品情報","https://okadaaiyon.com/products/product/723"]];
-}
-const steelNpk = DATA.steelcutter?.makers?.find(m => m[0] === "NPK");
-if(steelNpk){
-  steelNpk[1] = [["鉄骨切断機 製品情報","https://www.npk-construction.com/steel-shears/"]];
-}
-const steelFuru = DATA.steelcutter?.makers?.find(m => m[0] === "古河ロックドリル");
-if(steelFuru){
-  steelFuru[1] = [["総合カタログ","https://www.furukawarockdrill.co.jp/wordpress/wp-content/themes/furukawa/img/pdf/attachment_all_products_f9.pdf"]];
-}
-
-// 産廃カッター：丸順を残し、2段目削除。写真差替え
-DATA.wastecutter.makers = [
-  ["オカダアイヨン", [["クリーンカッター製品情報", "https://okadaaiyon.com/products/product/662"]], DATA.wastecutter?.makers?.[0]?.[2] || ""],
-  ["丸順", [["ミラクルカッター 製品情報", "https://www.marujun.jp/products/miracle-cutter/index.html"]], "rental-waste-marujun.png"]
-];
-
-// 木材カッター：オカダ/丸順とも写真差替え、2段目削除
-DATA.woodcutter.makers = [
-  ["オカダアイヨン", [["木材切断機 製品情報", "https://okadaaiyon.com/products/category/mokuzai"]], "rental-wood-okada.png"],
-  ["丸順", [["ミラクルカッター 製品情報", "https://www.marujun.jp/products/miracle-cutter/index.html"]], "rental-wood-marujun.png"]
-];
-
-// チルトフォーク：丸順 2段目削除
-const hydForkMarujun = DATA.hydfork?.makers?.find(m => m[0] === "丸順");
-if(hydForkMarujun){
-  hydForkMarujun[1] = [["チルトZフォーク 製品情報", "https://www.marujun.jp/products/tilt-z-fork/index.html"]];
-}
-
-// 回転フォーク：丸順 2段目削除
-const rotForkMarujun = DATA.rotfork?.makers?.find(m => m[0] === "丸順");
-if(rotForkMarujun){
-  rotForkMarujun[1] = [["ロータリーZフォーク 製品情報", "https://www.marujun.jp/products/rotary-z-fork/index.html"]];
-}
-
-// オレンジグラップル：丸順 2段目削除
-const orangeMarujun = DATA.orangegrapple?.makers?.find(m => m[0] === "丸順");
-if(orangeMarujun){
-  orangeMarujun[1] = [["グラップル 製品情報", "https://www.marujun.jp/products/orange-grapple/index.html"]];
-}
-
-
-/* ===== 2026-11-12 rental-page updates ===== */
-// マグネット付き小割機：NPK / 古河ロックドリルはボタン1つに統一
-const magNpk = DATA.magpulverizer?.makers?.find(m => m[0] === "NPK");
-if(magNpk){
-  magNpk[1] = [["永久磁石付き小割圧砕機 製品情報", "https://www.npk-construction.com/crunchrs/"]];
-}
-const magFurukawa = DATA.magpulverizer?.makers?.find(m => m[0] === "古河ロックドリル");
-if(magFurukawa){
-  magFurukawa[1] = [["アクティブ・マグネット付小割用油圧圧砕機 製品情報", "https://www.furukawarockdrill.co.jp/crusher"]];
-}
-
-// ハイマグ（油圧式マグネット）：オカダアイヨン指定URLへ変更
-const hydMagOkada = DATA.hydmagnet?.makers?.find(m => m[0] === "オカダアイヨン");
-if(hydMagOkada){
-  hydMagOkada[1] = [["ハイマグ 製品情報", "https://okadaaiyon.com/products/product/703"]];
-}
-
-// 油圧ブレーカー：オカダアイヨン指定URLへ変更
-const breakerOkada = DATA.breaker?.makers?.find(m => m[0] === "オカダアイヨン");
-if(breakerOkada){
-  breakerOkada[1] = [["オカダアイヨン 製品情報", "https://okadaaiyon.com/products/category/kaitai"]];
-}
-
-// 機械式フォーク：KBL画像を差し替え
-const mechForkKbl = DATA.mechfork?.makers?.find(m => m[0] === "KBL");
-if(mechForkKbl){
-  mechForkKbl[2] = "kbl-mechanical-fork-transparent.png";
-}
-
-// 回転フォーク：オカダアイヨン指定URLへ変更
-const rotForkOkada = DATA.rotfork?.makers?.find(m => m[0] === "オカダアイヨン");
-if(rotForkOkada){
-  rotForkOkada[1] = [["回転フォーク 製品情報", "https://okadaaiyon.com/products/product/718"]];
-}
-
-// ふるい機：オカダアイヨン指定URLへ変更
-if(DATA.screener){
-  delete DATA.screener.custom;
-  DATA.screener.makers = [["オカダアイヨン", [["ふるい機 製品情報", "https://okadaaiyon.com/products/product/706"]], "product-25.webp"]];
-}
-
-
-/* 取扱メーカー正式名称の統一：各機種のカタログカード表示のみ */
-const manufacturerOfficialNames = {
-  "NPK": "日本ニューマチック工業",
-  "タグチ": "タグチ工業",
-  "東空": "東空販売",
-  "KBL": "ケービーエル",
-  "甲南建機": "甲南電機",
-  "MKB系": "甲南電機"
-};
-Object.values(DATA).forEach(category => {
-  if (!Array.isArray(category.makers)) return;
-  category.makers.forEach(maker => {
-    maker[0] = manufacturerOfficialNames[maker[0]] || maker[0];
-  });
-});
-
-
-/* 2026-11-13: 高画質諸元表を製品情報の中で表示。メーカーと製品種別を照合済み。 */
-const embeddedSpecs = {
-  crusher: "ts-w-spec.pdf",
-  pulverizer: "pulverizer-spec.pdf",
-  magpulverizer: "pulverizer-spec.pdf",
-  hydmagnet: "hydraulic-magnet-spec.pdf",
-  steelcutter: "steel-cutter-spec.pdf",
-  wastecutter: "waste-cutter-spec.pdf",
-  woodcutter: "wood-cutter-spec.pdf",
-  breaker: "breaker-spec.pdf",
-  rotfork: "rotary-fork-spec.pdf",
-  screener: "screener-spec.pdf"
-};
-Object.entries(embeddedSpecs).forEach(([key,pdf]) => {
-  const entry=DATA[key];
-  const maker=entry?.makers?.find(item => item[0] === "オカダアイヨン");
-  if(!maker) return;
-  maker[1]=[["製品情報を見る", pdf]];
-  maker[3]=pdf;
-});
-
-
-/* NPK（日本ニューマチック工業）：ユーザー指定カタログページに変更 */
-const npkProductSpecs = {
-  crusher: "npk-crusher-spec.pdf",
-  pulverizer: "npk-pulverizer-spec.pdf",
-  magpulverizer: "npk-mag-pulverizer-spec.pdf",
-  steelcutter: "npk-steel-cutter-spec.pdf"
-};
-Object.entries(npkProductSpecs).forEach(([key, pdf]) => {
-  const category = DATA[key];
-  const maker = category?.makers?.find(item => item[0] === "NPK");
-  if (!maker) return;
-  maker[1] = [["製品情報を見る", pdf]];
-});
 
 render("crusher");
 
