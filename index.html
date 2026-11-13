@@ -2092,5 +2092,45 @@ document.addEventListener('DOMContentLoaded',()=>{
  }
 });
 </script>
+<!-- RENVIS: 追加スクロール演出。既存レイアウト・既存アニメーションを維持 -->
+<script id="renvis-home-page-scroll-motion">
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
+
+  // 既存のサービスカード・ヒーロー・バナースライダーには手を加えない。
+  const selectors = [
+    '.stats-strip .stat-item',
+    '#news .section-head',
+    '#news .renvis-news-head',
+    '#news .news-list',
+    '#company .section-head',
+    '#company .company-name',
+    '#company .company-final-row',
+    '#contact-links .section-head',
+    '#contact-links .site-info-card'
+  ];
+  const targets = [...new Set(selectors.flatMap(selector => [...document.querySelectorAll(selector)]))];
+  if (!targets.length) return;
+
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      observer.unobserve(entry.target);
+      // 実行中も終了後もCSSのレイアウトやhover効果を上書きしない。
+      entry.target.animate([
+        {opacity:0.35, transform:'translate3d(0, 15px, 0)'},
+        {opacity:1, transform:'translate3d(0, 0, 0)'}
+      ], {duration:650, easing:'cubic-bezier(.22,.8,.22,1)', iterations:1});
+    }
+  }, {threshold:0.12, rootMargin:'0px 0px -20px 0px'});
+
+  for (const el of targets) {
+    const r = el.getBoundingClientRect();
+    // 最初から画面内にある要素は飛び上がらせない。
+    if (r.bottom <= 0 || r.top >= window.innerHeight) observer.observe(el);
+  }
+})();
+</script>
 </body>
 </html>
