@@ -2746,7 +2746,7 @@ const npkProductSpecs = {
 };
 Object.entries(npkProductSpecs).forEach(([key, pdf]) => {
   const category = DATA[key];
-  const maker = category?.makers?.find(item => item[0] === "日本ニューマチック工業");
+  const maker = category?.makers?.find(item => item[0] === "NPK");
   if (!maker) return;
   maker[1] = [["製品情報を見る", pdf]];
 });
