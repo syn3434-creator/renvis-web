@@ -2736,6 +2736,21 @@ Object.entries(embeddedSpecs).forEach(([key,pdf]) => {
   maker[3]=pdf;
 });
 
+
+/* NPK（日本ニューマチック工業）：ユーザー指定カタログページに変更 */
+const npkProductSpecs = {
+  crusher: "npk-crusher-spec.pdf",
+  pulverizer: "npk-pulverizer-spec.pdf",
+  magpulverizer: "npk-mag-pulverizer-spec.pdf",
+  steelcutter: "npk-steel-cutter-spec.pdf"
+};
+Object.entries(npkProductSpecs).forEach(([key, pdf]) => {
+  const category = DATA[key];
+  const maker = category?.makers?.find(item => item[0] === "日本ニューマチック工業");
+  if (!maker) return;
+  maker[1] = [["製品情報を見る", pdf]];
+});
+
 render("crusher");
 
 </script>
